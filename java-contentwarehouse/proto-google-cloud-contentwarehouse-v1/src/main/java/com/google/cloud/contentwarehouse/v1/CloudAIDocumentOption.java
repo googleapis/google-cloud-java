@@ -77,7 +77,7 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ENABLE_ENTITIES_CONVERSIONS_FIELD_NUMBER = 1;
-  private boolean enableEntitiesConversions_;
+  private boolean enableEntitiesConversions_ = false;
   /**
    *
    *
@@ -107,6 +107,7 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
       customizedEntitiesPropertiesConversions_;
 
@@ -169,8 +170,10 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
    * <code>map&lt;string, string&gt; customized_entities_properties_conversions = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getCustomizedEntitiesPropertiesConversionsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getCustomizedEntitiesPropertiesConversionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -442,8 +445,8 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableEntitiesConversions_ = false;
-
       internalGetMutableCustomizedEntitiesPropertiesConversions().clear();
       return this;
     }
@@ -472,13 +475,23 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
     public com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption buildPartial() {
       com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption result =
           new com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption(this);
-      int from_bitField0_ = bitField0_;
-      result.enableEntitiesConversions_ = enableEntitiesConversions_;
-      result.customizedEntitiesPropertiesConversions_ =
-          internalGetCustomizedEntitiesPropertiesConversions();
-      result.customizedEntitiesPropertiesConversions_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableEntitiesConversions_ = enableEntitiesConversions_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.customizedEntitiesPropertiesConversions_ =
+            internalGetCustomizedEntitiesPropertiesConversions();
+        result.customizedEntitiesPropertiesConversions_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -532,6 +545,7 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
       }
       internalGetMutableCustomizedEntitiesPropertiesConversions()
           .mergeFrom(other.internalGetCustomizedEntitiesPropertiesConversions());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -561,7 +575,7 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
             case 8:
               {
                 enableEntitiesConversions_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -577,6 +591,7 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
                     .put(
                         customizedEntitiesPropertiesConversions__.getKey(),
                         customizedEntitiesPropertiesConversions__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -629,6 +644,7 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
     public Builder setEnableEntitiesConversions(boolean value) {
 
       enableEntitiesConversions_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -644,7 +660,7 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearEnableEntitiesConversions() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableEntitiesConversions_ = false;
       onChanged();
       return this;
@@ -664,8 +680,6 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableCustomizedEntitiesPropertiesConversions() {
-      onChanged();
-      ;
       if (customizedEntitiesPropertiesConversions_ == null) {
         customizedEntitiesPropertiesConversions_ =
             com.google.protobuf.MapField.newMapField(
@@ -674,6 +688,8 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
       if (!customizedEntitiesPropertiesConversions_.isMutable()) {
         customizedEntitiesPropertiesConversions_ = customizedEntitiesPropertiesConversions_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return customizedEntitiesPropertiesConversions_;
     }
 
@@ -727,8 +743,10 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, string&gt; customized_entities_properties_conversions = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getCustomizedEntitiesPropertiesConversionsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getCustomizedEntitiesPropertiesConversionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -760,6 +778,7 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
     }
 
     public Builder clearCustomizedEntitiesPropertiesConversions() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableCustomizedEntitiesPropertiesConversions().getMutableMap().clear();
       return this;
     }
@@ -783,6 +802,7 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
         getMutableCustomizedEntitiesPropertiesConversions() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableCustomizedEntitiesPropertiesConversions().getMutableMap();
     }
     /**
@@ -802,8 +822,8 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableCustomizedEntitiesPropertiesConversions().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -818,6 +838,7 @@ public final class CloudAIDocumentOption extends com.google.protobuf.GeneratedMe
     public Builder putAllCustomizedEntitiesPropertiesConversions(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableCustomizedEntitiesPropertiesConversions().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

@@ -70,7 +70,9 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
   }
 
   public static final int ENTRY_GROUP_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object entryGroupId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entryGroupId_ = "";
   /**
    *
    *
@@ -226,7 +230,9 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.EntryGroupOrBuilder getEntryGroupOrBuilder() {
-    return getEntryGroup();
+    return entryGroup_ == null
+        ? com.google.cloud.datacatalog.v1beta1.EntryGroup.getDefaultInstance()
+        : entryGroup_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -451,14 +457,12 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       entryGroupId_ = "";
-
-      if (entryGroupBuilder_ == null) {
-        entryGroup_ = null;
-      } else {
-        entryGroup_ = null;
+      entryGroup_ = null;
+      if (entryGroupBuilder_ != null) {
+        entryGroupBuilder_.dispose();
         entryGroupBuilder_ = null;
       }
       return this;
@@ -489,15 +493,25 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
     public com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest buildPartial() {
       com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest result =
           new com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest(this);
-      result.parent_ = parent_;
-      result.entryGroupId_ = entryGroupId_;
-      if (entryGroupBuilder_ == null) {
-        result.entryGroup_ = entryGroup_;
-      } else {
-        result.entryGroup_ = entryGroupBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entryGroupId_ = entryGroupId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.entryGroup_ = entryGroupBuilder_ == null ? entryGroup_ : entryGroupBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -549,10 +563,12 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEntryGroupId().isEmpty()) {
         entryGroupId_ = other.entryGroupId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasEntryGroup()) {
@@ -587,19 +603,19 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEntryGroupFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 entryGroupId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -618,6 +634,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -695,8 +713,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -744,8 +762,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -817,8 +835,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       entryGroupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -836,8 +854,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearEntryGroupId() {
-
       entryGroupId_ = getDefaultInstance().getEntryGroupId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -860,8 +878,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entryGroupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -884,7 +902,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      * @return Whether the entryGroup field is set.
      */
     public boolean hasEntryGroup() {
-      return entryGroupBuilder_ != null || entryGroup_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -921,11 +939,11 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         entryGroup_ = value;
-        onChanged();
       } else {
         entryGroupBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -941,11 +959,11 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
         com.google.cloud.datacatalog.v1beta1.EntryGroup.Builder builderForValue) {
       if (entryGroupBuilder_ == null) {
         entryGroup_ = builderForValue.build();
-        onChanged();
       } else {
         entryGroupBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -959,19 +977,19 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      */
     public Builder mergeEntryGroup(com.google.cloud.datacatalog.v1beta1.EntryGroup value) {
       if (entryGroupBuilder_ == null) {
-        if (entryGroup_ != null) {
-          entryGroup_ =
-              com.google.cloud.datacatalog.v1beta1.EntryGroup.newBuilder(entryGroup_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && entryGroup_ != null
+            && entryGroup_
+                != com.google.cloud.datacatalog.v1beta1.EntryGroup.getDefaultInstance()) {
+          getEntryGroupBuilder().mergeFrom(value);
         } else {
           entryGroup_ = value;
         }
-        onChanged();
       } else {
         entryGroupBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -984,14 +1002,13 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      * <code>.google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 2;</code>
      */
     public Builder clearEntryGroup() {
-      if (entryGroupBuilder_ == null) {
-        entryGroup_ = null;
-        onChanged();
-      } else {
-        entryGroup_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      entryGroup_ = null;
+      if (entryGroupBuilder_ != null) {
+        entryGroupBuilder_.dispose();
         entryGroupBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1004,7 +1021,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      * <code>.google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 2;</code>
      */
     public com.google.cloud.datacatalog.v1beta1.EntryGroup.Builder getEntryGroupBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEntryGroupFieldBuilder().getBuilder();
     }

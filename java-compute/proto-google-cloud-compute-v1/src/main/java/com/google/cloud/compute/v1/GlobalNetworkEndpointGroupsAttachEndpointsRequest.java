@@ -70,6 +70,8 @@ public final class GlobalNetworkEndpointGroupsAttachEndpointsRequest
   }
 
   public static final int NETWORK_ENDPOINTS_FIELD_NUMBER = 149850285;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NetworkEndpoint> networkEndpoints_;
   /**
    *
@@ -349,6 +351,7 @@ public final class GlobalNetworkEndpointGroupsAttachEndpointsRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (networkEndpointsBuilder_ == null) {
         networkEndpoints_ = java.util.Collections.emptyList();
       } else {
@@ -387,7 +390,16 @@ public final class GlobalNetworkEndpointGroupsAttachEndpointsRequest
         buildPartial() {
       com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsAttachEndpointsRequest result =
           new com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsAttachEndpointsRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsAttachEndpointsRequest result) {
       if (networkEndpointsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           networkEndpoints_ = java.util.Collections.unmodifiableList(networkEndpoints_);
@@ -397,8 +409,11 @@ public final class GlobalNetworkEndpointGroupsAttachEndpointsRequest
       } else {
         result.networkEndpoints_ = networkEndpointsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsAttachEndpointsRequest result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

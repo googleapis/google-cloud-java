@@ -69,7 +69,9 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
 
   private int bitField0_;
   public static final int NODE_TEMPLATE_FIELD_NUMBER = 323154455;
-  private volatile java.lang.Object nodeTemplate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeTemplate_ = "";
   /**
    *
    *
@@ -334,8 +336,8 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       nodeTemplate_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -364,15 +366,22 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     public com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest buildPartial() {
       com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest result =
           new com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nodeTemplate_ = nodeTemplate_;
         to_bitField0_ |= 0x00000001;
       }
-      result.nodeTemplate_ = nodeTemplate_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -423,8 +432,8 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
           == com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.getDefaultInstance())
         return this;
       if (other.hasNodeTemplate()) {
-        bitField0_ |= 0x00000001;
         nodeTemplate_ = other.nodeTemplate_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -553,8 +562,8 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       nodeTemplate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -570,8 +579,8 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearNodeTemplate() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       nodeTemplate_ = getDefaultInstance().getNodeTemplate();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -592,8 +601,8 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       nodeTemplate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

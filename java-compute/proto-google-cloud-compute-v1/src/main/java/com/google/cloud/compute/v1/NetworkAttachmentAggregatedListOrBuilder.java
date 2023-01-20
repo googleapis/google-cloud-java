@@ -112,7 +112,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * map&lt;string, .google.cloud.compute.v1.NetworkAttachmentsScopedList&gt; items = 100526016;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.NetworkAttachmentsScopedList getItemsOrDefault(
       java.lang.String key,

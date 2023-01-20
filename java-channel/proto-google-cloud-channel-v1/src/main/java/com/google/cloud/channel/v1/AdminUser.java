@@ -70,7 +70,9 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EMAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object email_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GIVEN_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object givenName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object givenName_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAMILY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object familyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object familyName_ = "";
   /**
    *
    *
@@ -429,12 +435,10 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       email_ = "";
-
       givenName_ = "";
-
       familyName_ = "";
-
       return this;
     }
 
@@ -462,11 +466,24 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.AdminUser buildPartial() {
       com.google.cloud.channel.v1.AdminUser result =
           new com.google.cloud.channel.v1.AdminUser(this);
-      result.email_ = email_;
-      result.givenName_ = givenName_;
-      result.familyName_ = familyName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.AdminUser result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.email_ = email_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.givenName_ = givenName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.familyName_ = familyName_;
+      }
     }
 
     @java.lang.Override
@@ -516,14 +533,17 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.channel.v1.AdminUser.getDefaultInstance()) return this;
       if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getGivenName().isEmpty()) {
         givenName_ = other.givenName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getFamilyName().isEmpty()) {
         familyName_ = other.familyName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -555,19 +575,19 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 email_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 givenName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 familyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -586,6 +606,8 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object email_ = "";
     /**
@@ -648,8 +670,8 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,8 +687,8 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-
       email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -687,8 +709,8 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -754,8 +776,8 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       givenName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -771,8 +793,8 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGivenName() {
-
       givenName_ = getDefaultInstance().getGivenName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -793,8 +815,8 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       givenName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -860,8 +882,8 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       familyName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -877,8 +899,8 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFamilyName() {
-
       familyName_ = getDefaultInstance().getFamilyName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -899,8 +921,8 @@ public final class AdminUser extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       familyName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

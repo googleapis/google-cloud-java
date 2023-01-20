@@ -75,7 +75,6 @@ public interface ShareSettingsOrBuilder
    * map&lt;string, .google.cloud.compute.v1.ShareSettingsProjectConfig&gt; project_map = 134212406;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.ShareSettingsProjectConfig getProjectMapOrDefault(
       java.lang.String key,

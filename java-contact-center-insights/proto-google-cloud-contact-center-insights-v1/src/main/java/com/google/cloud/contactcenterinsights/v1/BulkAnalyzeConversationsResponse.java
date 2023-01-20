@@ -68,7 +68,7 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
   }
 
   public static final int SUCCESSFUL_ANALYSIS_COUNT_FIELD_NUMBER = 1;
-  private int successfulAnalysisCount_;
+  private int successfulAnalysisCount_ = 0;
   /**
    *
    *
@@ -86,7 +86,7 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
   }
 
   public static final int FAILED_ANALYSIS_COUNT_FIELD_NUMBER = 2;
-  private int failedAnalysisCount_;
+  private int failedAnalysisCount_ = 0;
   /**
    *
    *
@@ -319,10 +319,9 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       successfulAnalysisCount_ = 0;
-
       failedAnalysisCount_ = 0;
-
       return this;
     }
 
@@ -354,10 +353,22 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
         buildPartial() {
       com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse result =
           new com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse(this);
-      result.successfulAnalysisCount_ = successfulAnalysisCount_;
-      result.failedAnalysisCount_ = failedAnalysisCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.successfulAnalysisCount_ = successfulAnalysisCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.failedAnalysisCount_ = failedAnalysisCount_;
+      }
     }
 
     @java.lang.Override
@@ -445,13 +456,13 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
             case 8:
               {
                 successfulAnalysisCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 failedAnalysisCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -470,6 +481,8 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int successfulAnalysisCount_;
     /**
@@ -502,6 +515,7 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
     public Builder setSuccessfulAnalysisCount(int value) {
 
       successfulAnalysisCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -517,7 +531,7 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearSuccessfulAnalysisCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       successfulAnalysisCount_ = 0;
       onChanged();
       return this;
@@ -554,6 +568,7 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
     public Builder setFailedAnalysisCount(int value) {
 
       failedAnalysisCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -569,7 +584,7 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearFailedAnalysisCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       failedAnalysisCount_ = 0;
       onChanged();
       return this;

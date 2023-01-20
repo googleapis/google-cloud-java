@@ -276,7 +276,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
 
   private int bitField0_;
   public static final int EXPECTED_RTT_MS_FIELD_NUMBER = 422543866;
-  private long expectedRttMs_;
+  private long expectedRttMs_ = 0L;
   /**
    *
    *
@@ -309,7 +309,9 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
   }
 
   public static final int LOCATION_PRESENCE_FIELD_NUMBER = 101517893;
-  private volatile java.lang.Object locationPresence_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locationPresence_ = "";
   /**
    *
    *
@@ -376,7 +378,9 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -671,12 +675,10 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       expectedRttMs_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       locationPresence_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -704,6 +706,14 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.InterconnectLocationRegionInfo buildPartial() {
       com.google.cloud.compute.v1.InterconnectLocationRegionInfo result =
           new com.google.cloud.compute.v1.InterconnectLocationRegionInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InterconnectLocationRegionInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -711,16 +721,14 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.locationPresence_ = locationPresence_;
         to_bitField0_ |= 0x00000002;
       }
-      result.locationPresence_ = locationPresence_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
         to_bitField0_ |= 0x00000004;
       }
-      result.region_ = region_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -773,13 +781,13 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
         setExpectedRttMs(other.getExpectedRttMs());
       }
       if (other.hasLocationPresence()) {
-        bitField0_ |= 0x00000002;
         locationPresence_ = other.locationPresence_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00000004;
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -889,8 +897,9 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setExpectedRttMs(long value) {
-      bitField0_ |= 0x00000001;
+
       expectedRttMs_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -991,8 +1000,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       locationPresence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1009,8 +1018,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearLocationPresence() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       locationPresence_ = getDefaultInstance().getLocationPresence();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1032,8 +1041,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       locationPresence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1113,8 +1122,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1130,8 +1139,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1152,8 +1161,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

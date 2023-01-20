@@ -74,7 +74,9 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -188,7 +190,9 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -252,7 +256,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -285,7 +289,9 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -349,7 +355,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MAXIMUM_CARDS_PER_INSTANCE_FIELD_NUMBER = 263814482;
-  private int maximumCardsPerInstance_;
+  private int maximumCardsPerInstance_ = 0;
   /**
    *
    *
@@ -382,7 +388,9 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -446,7 +454,9 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -510,7 +520,9 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -899,28 +911,20 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (deprecatedBuilder_ == null) {
-        deprecated_ = null;
-      } else {
-        deprecatedBuilder_.clear();
+      deprecated_ = null;
+      if (deprecatedBuilder_ != null) {
+        deprecatedBuilder_.dispose();
+        deprecatedBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       maximumCardsPerInstance_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       zone_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -948,51 +952,53 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.AcceleratorType buildPartial() {
       com.google.cloud.compute.v1.AcceleratorType result =
           new com.google.cloud.compute.v1.AcceleratorType(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AcceleratorType result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000001;
       }
-      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (deprecatedBuilder_ == null) {
-          result.deprecated_ = deprecated_;
-        } else {
-          result.deprecated_ = deprecatedBuilder_.build();
-        }
+        result.deprecated_ = deprecatedBuilder_ == null ? deprecated_ : deprecatedBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000004;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.id_ = id_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000010;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.maximumCardsPerInstance_ = maximumCardsPerInstance_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000040;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000080;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.zone_ = zone_;
         to_bitField0_ |= 0x00000100;
       }
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1041,42 +1047,42 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.compute.v1.AcceleratorType other) {
       if (other == com.google.cloud.compute.v1.AcceleratorType.getDefaultInstance()) return this;
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000001;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDeprecated()) {
         mergeDeprecated(other.getDeprecated());
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000004;
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000010;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasMaximumCardsPerInstance()) {
         setMaximumCardsPerInstance(other.getMaximumCardsPerInstance());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000040;
         name_ = other.name_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000080;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasZone()) {
-        bitField0_ |= 0x00000100;
         zone_ = other.zone_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1253,8 +1259,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1270,8 +1276,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1292,8 +1298,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1353,11 +1359,11 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         deprecated_ = value;
-        onChanged();
       } else {
         deprecatedBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1373,11 +1379,11 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.compute.v1.DeprecationStatus.Builder builderForValue) {
       if (deprecatedBuilder_ == null) {
         deprecated_ = builderForValue.build();
-        onChanged();
       } else {
         deprecatedBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1394,18 +1400,15 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
         if (((bitField0_ & 0x00000002) != 0)
             && deprecated_ != null
             && deprecated_ != com.google.cloud.compute.v1.DeprecationStatus.getDefaultInstance()) {
-          deprecated_ =
-              com.google.cloud.compute.v1.DeprecationStatus.newBuilder(deprecated_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getDeprecatedBuilder().mergeFrom(value);
         } else {
           deprecated_ = value;
         }
-        onChanged();
       } else {
         deprecatedBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1418,13 +1421,13 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder clearDeprecated() {
-      if (deprecatedBuilder_ == null) {
-        deprecated_ = null;
-        onChanged();
-      } else {
-        deprecatedBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      deprecated_ = null;
+      if (deprecatedBuilder_ != null) {
+        deprecatedBuilder_.dispose();
+        deprecatedBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1560,8 +1563,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1577,8 +1580,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1599,8 +1602,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1649,8 +1652,9 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000008;
+
       id_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1747,8 +1751,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       kind_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1764,8 +1768,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1786,8 +1790,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       kind_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1836,8 +1840,9 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setMaximumCardsPerInstance(int value) {
-      bitField0_ |= 0x00000020;
+
       maximumCardsPerInstance_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1934,8 +1939,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       name_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1951,8 +1956,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1973,8 +1978,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       name_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2054,8 +2059,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       selfLink_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2071,8 +2076,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2093,8 +2098,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       selfLink_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2174,8 +2179,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       zone_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2191,8 +2196,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2213,8 +2218,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       zone_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

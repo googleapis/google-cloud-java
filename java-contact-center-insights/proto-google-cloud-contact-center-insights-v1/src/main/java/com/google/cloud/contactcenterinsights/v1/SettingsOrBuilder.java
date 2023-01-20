@@ -287,7 +287,6 @@ public interface SettingsOrBuilder
    *
    * <code>map&lt;string, string&gt; pubsub_notification_settings = 6;</code>
    */
-
   /* nullable */
   java.lang.String getPubsubNotificationSettingsOrDefault(
       java.lang.String key,

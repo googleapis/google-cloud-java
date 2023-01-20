@@ -102,7 +102,6 @@ public interface DiskAggregatedListOrBuilder
    *
    * <code>map&lt;string, .google.cloud.compute.v1.DisksScopedList&gt; items = 100526016;</code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.DisksScopedList getItemsOrDefault(
       java.lang.String key,

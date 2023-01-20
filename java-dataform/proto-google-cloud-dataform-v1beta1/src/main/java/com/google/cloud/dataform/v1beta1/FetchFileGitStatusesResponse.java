@@ -386,7 +386,9 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
     }
 
     public static final int PATH_FIELD_NUMBER = 1;
-    private volatile java.lang.Object path_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
     /**
      *
      *
@@ -435,7 +437,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
     }
 
     public static final int STATE_FIELD_NUMBER = 2;
-    private int state_;
+    private int state_ = 0;
     /**
      *
      *
@@ -470,11 +472,10 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
     public com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange
             .State
         getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State
           result =
               com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange
-                  .State.valueOf(state_);
+                  .State.forNumber(state_);
       return result == null
           ? com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange
               .State.UNRECOGNIZED
@@ -723,10 +724,9 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         path_ = "";
-
         state_ = 0;
-
         return this;
       }
 
@@ -761,10 +761,23 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
             result =
                 new com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse
                     .UncommittedFileChange(this);
-        result.path_ = path_;
-        result.state_ = state_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.state_ = state_;
+        }
       }
 
       @java.lang.Override
@@ -824,6 +837,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
                 .getDefaultInstance()) return this;
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.state_ != 0) {
@@ -858,13 +872,13 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
               case 10:
                 {
                   path_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   state_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -883,6 +897,8 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object path_ = "";
       /**
@@ -945,8 +961,8 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         if (value == null) {
           throw new NullPointerException();
         }
-
         path_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -962,8 +978,8 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-
         path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -984,8 +1000,8 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         path_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1023,8 +1039,8 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-
         state_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1045,11 +1061,10 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       public com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange
               .State
           getState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State
             result =
                 com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange
-                    .State.valueOf(state_);
+                    .State.forNumber(state_);
         return result == null
             ? com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange
                 .State.UNRECOGNIZED
@@ -1075,7 +1090,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -1094,7 +1109,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearState() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         state_ = 0;
         onChanged();
         return this;
@@ -1172,6 +1187,8 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
   }
 
   public static final int UNCOMMITTED_FILE_CHANGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange>
       uncommittedFileChanges_;
@@ -1468,6 +1485,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (uncommittedFileChangesBuilder_ == null) {
         uncommittedFileChanges_ = java.util.Collections.emptyList();
       } else {
@@ -1503,7 +1521,16 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
     public com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse buildPartial() {
       com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse result =
           new com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse result) {
       if (uncommittedFileChangesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           uncommittedFileChanges_ = java.util.Collections.unmodifiableList(uncommittedFileChanges_);
@@ -1513,8 +1540,11 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       } else {
         result.uncommittedFileChanges_ = uncommittedFileChangesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

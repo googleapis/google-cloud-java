@@ -318,7 +318,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
 
   private int bitField0_;
   public static final int ALL_INSTANCES_FIELD_NUMBER = 403676512;
-  private boolean allInstances_;
+  private boolean allInstances_ = false;
   /**
    *
    *
@@ -351,6 +351,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
   }
 
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList instances_;
   /**
    *
@@ -412,7 +414,9 @@ public final class InstanceGroupManagersApplyUpdatesRequest
   }
 
   public static final int MINIMAL_ACTION_FIELD_NUMBER = 270567060;
-  private volatile java.lang.Object minimalAction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object minimalAction_ = "";
   /**
    *
    *
@@ -479,7 +483,9 @@ public final class InstanceGroupManagersApplyUpdatesRequest
   }
 
   public static final int MOST_DISRUPTIVE_ALLOWED_ACTION_FIELD_NUMBER = 66103053;
-  private volatile java.lang.Object mostDisruptiveAllowedAction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mostDisruptiveAllowedAction_ = "";
   /**
    *
    *
@@ -798,14 +804,12 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allInstances_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       minimalAction_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       mostDisruptiveAllowedAction_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -835,28 +839,40 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     public com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest result =
           new com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest(this);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        instances_ = instances_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.instances_ = instances_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.allInstances_ = allInstances_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        instances_ = instances_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.instances_ = instances_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.minimalAction_ = minimalAction_;
         to_bitField0_ |= 0x00000002;
       }
-      result.minimalAction_ = minimalAction_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.mostDisruptiveAllowedAction_ = mostDisruptiveAllowedAction_;
         to_bitField0_ |= 0x00000004;
       }
-      result.mostDisruptiveAllowedAction_ = mostDisruptiveAllowedAction_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -922,13 +938,13 @@ public final class InstanceGroupManagersApplyUpdatesRequest
         onChanged();
       }
       if (other.hasMinimalAction()) {
-        bitField0_ |= 0x00000004;
         minimalAction_ = other.minimalAction_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasMostDisruptiveAllowedAction()) {
-        bitField0_ |= 0x00000008;
         mostDisruptiveAllowedAction_ = other.mostDisruptiveAllowedAction_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1045,8 +1061,9 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * @return This builder for chaining.
      */
     public Builder setAllInstances(boolean value) {
-      bitField0_ |= 0x00000001;
+
       allInstances_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1315,8 +1332,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       minimalAction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1333,8 +1350,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * @return This builder for chaining.
      */
     public Builder clearMinimalAction() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       minimalAction_ = getDefaultInstance().getMinimalAction();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1356,8 +1373,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       minimalAction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1441,8 +1458,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       mostDisruptiveAllowedAction_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1459,8 +1476,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * @return This builder for chaining.
      */
     public Builder clearMostDisruptiveAllowedAction() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       mostDisruptiveAllowedAction_ = getDefaultInstance().getMostDisruptiveAllowedAction();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1482,8 +1499,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       mostDisruptiveAllowedAction_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

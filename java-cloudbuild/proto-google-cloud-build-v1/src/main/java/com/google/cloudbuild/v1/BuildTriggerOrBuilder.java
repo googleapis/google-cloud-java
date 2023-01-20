@@ -559,7 +559,6 @@ public interface BuildTriggerOrBuilder
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
    */
-
   /* nullable */
   java.lang.String getSubstitutionsOrDefault(
       java.lang.String key,

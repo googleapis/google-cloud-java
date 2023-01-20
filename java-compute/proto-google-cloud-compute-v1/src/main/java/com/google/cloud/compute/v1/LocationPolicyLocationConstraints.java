@@ -68,7 +68,7 @@ public final class LocationPolicyLocationConstraints extends com.google.protobuf
 
   private int bitField0_;
   public static final int MAX_COUNT_FIELD_NUMBER = 287620724;
-  private int maxCount_;
+  private int maxCount_ = 0;
   /**
    *
    *
@@ -303,8 +303,8 @@ public final class LocationPolicyLocationConstraints extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maxCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -333,15 +333,22 @@ public final class LocationPolicyLocationConstraints extends com.google.protobuf
     public com.google.cloud.compute.v1.LocationPolicyLocationConstraints buildPartial() {
       com.google.cloud.compute.v1.LocationPolicyLocationConstraints result =
           new com.google.cloud.compute.v1.LocationPolicyLocationConstraints(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.LocationPolicyLocationConstraints result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.maxCount_ = maxCount_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -489,8 +496,9 @@ public final class LocationPolicyLocationConstraints extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder setMaxCount(int value) {
-      bitField0_ |= 0x00000001;
+
       maxCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int I_P_PROTOCOL_FIELD_NUMBER = 488094525;
-  private volatile java.lang.Object iPProtocol_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object iPProtocol_ = "";
   /**
    *
    *
@@ -133,6 +135,8 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PORTS_FIELD_NUMBER = 106854418;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ports_;
   /**
    *
@@ -408,8 +412,8 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       iPProtocol_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
@@ -438,20 +442,30 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Allowed buildPartial() {
       com.google.cloud.compute.v1.Allowed result = new com.google.cloud.compute.v1.Allowed(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.iPProtocol_ = iPProtocol_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Allowed result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         ports_ = ports_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.ports_ = ports_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Allowed result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.iPProtocol_ = iPProtocol_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -500,8 +514,8 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Allowed other) {
       if (other == com.google.cloud.compute.v1.Allowed.getDefaultInstance()) return this;
       if (other.hasIPProtocol()) {
-        bitField0_ |= 0x00000001;
         iPProtocol_ = other.iPProtocol_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.ports_.isEmpty()) {
@@ -647,8 +661,8 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       iPProtocol_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -664,8 +678,8 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIPProtocol() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       iPProtocol_ = getDefaultInstance().getIPProtocol();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -686,8 +700,8 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       iPProtocol_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -72,6 +72,8 @@ public final class RegionInstanceGroupManagersListErrorsResponse
 
   private int bitField0_;
   public static final int ITEMS_FIELD_NUMBER = 100526016;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceManagedByIgmError> items_;
   /**
    *
@@ -142,7 +144,9 @@ public final class RegionInstanceGroupManagersListErrorsResponse
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 79797525;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -422,6 +426,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
       } else {
@@ -430,7 +435,6 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -462,8 +466,16 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         buildPartial() {
       com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse result =
           new com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse result) {
       if (itemsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           items_ = java.util.Collections.unmodifiableList(items_);
@@ -473,13 +485,17 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       } else {
         result.items_ = itemsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
         to_bitField0_ |= 0x00000001;
       }
-      result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -560,8 +576,8 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         }
       }
       if (other.hasNextPageToken()) {
-        bitField0_ |= 0x00000002;
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1062,8 +1078,8 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1079,8 +1095,8 @@ public final class RegionInstanceGroupManagersListErrorsResponse
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1101,8 +1117,8 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

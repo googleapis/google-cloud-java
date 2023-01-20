@@ -66,7 +66,7 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CASE_SENSITIVE_FIELD_NUMBER = 1;
-  private boolean caseSensitive_;
+  private boolean caseSensitive_ = false;
   /**
    *
    *
@@ -281,8 +281,8 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       caseSensitive_ = false;
-
       return this;
     }
 
@@ -310,9 +310,18 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.contactcenterinsights.v1.ExactMatchConfig buildPartial() {
       com.google.cloud.contactcenterinsights.v1.ExactMatchConfig result =
           new com.google.cloud.contactcenterinsights.v1.ExactMatchConfig(this);
-      result.caseSensitive_ = caseSensitive_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.ExactMatchConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.caseSensitive_ = caseSensitive_;
+      }
     }
 
     @java.lang.Override
@@ -393,7 +402,7 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 caseSensitive_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -412,6 +421,8 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean caseSensitive_;
     /**
@@ -444,6 +455,7 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
     public Builder setCaseSensitive(boolean value) {
 
       caseSensitive_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -459,7 +471,7 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCaseSensitive() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       caseSensitive_ = false;
       onChanged();
       return this;

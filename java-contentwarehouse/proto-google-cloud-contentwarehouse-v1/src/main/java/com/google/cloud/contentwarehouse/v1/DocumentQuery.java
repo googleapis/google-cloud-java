@@ -67,7 +67,9 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IS_NL_QUERY_FIELD_NUMBER = 12;
-  private boolean isNlQuery_;
+  private boolean isNlQuery_ = false;
   /**
    *
    *
@@ -143,7 +145,9 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_PROPERTY_FILTER_FIELD_NUMBER = 4;
-  private volatile java.lang.Object customPropertyFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customPropertyFilter_ = "";
   /**
    *
    *
@@ -228,6 +232,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIME_FILTERS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.TimeFilter> timeFilters_;
   /**
    *
@@ -303,6 +309,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENT_SCHEMA_NAMES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList documentSchemaNames_;
   /**
    *
@@ -388,6 +396,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROPERTY_FILTER_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.PropertyFilter> propertyFilter_;
   /**
    *
@@ -525,11 +535,15 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.FileTypeFilterOrBuilder getFileTypeFilterOrBuilder() {
-    return getFileTypeFilter();
+    return fileTypeFilter_ == null
+        ? com.google.cloud.contentwarehouse.v1.FileTypeFilter.getDefaultInstance()
+        : fileTypeFilter_;
   }
 
   public static final int FOLDER_NAME_FILTER_FIELD_NUMBER = 9;
-  private volatile java.lang.Object folderNameFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object folderNameFilter_ = "";
   /**
    *
    *
@@ -582,6 +596,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_CONTEXT_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList queryContext_;
   /**
    *
@@ -667,6 +683,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENT_CREATOR_FILTER_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList documentCreatorFilter_;
   /**
    *
@@ -1044,40 +1062,36 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       query_ = "";
-
       isNlQuery_ = false;
-
       customPropertyFilter_ = "";
-
       if (timeFiltersBuilder_ == null) {
         timeFilters_ = java.util.Collections.emptyList();
       } else {
         timeFilters_ = null;
         timeFiltersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       documentSchemaNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (propertyFilterBuilder_ == null) {
         propertyFilter_ = java.util.Collections.emptyList();
       } else {
         propertyFilter_ = null;
         propertyFilterBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (fileTypeFilterBuilder_ == null) {
-        fileTypeFilter_ = null;
-      } else {
-        fileTypeFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      fileTypeFilter_ = null;
+      if (fileTypeFilterBuilder_ != null) {
+        fileTypeFilterBuilder_.dispose();
         fileTypeFilterBuilder_ = null;
       }
       folderNameFilter_ = "";
-
       queryContext_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1105,51 +1119,69 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.DocumentQuery buildPartial() {
       com.google.cloud.contentwarehouse.v1.DocumentQuery result =
           new com.google.cloud.contentwarehouse.v1.DocumentQuery(this);
-      int from_bitField0_ = bitField0_;
-      result.query_ = query_;
-      result.isNlQuery_ = isNlQuery_;
-      result.customPropertyFilter_ = customPropertyFilter_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.DocumentQuery result) {
       if (timeFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           timeFilters_ = java.util.Collections.unmodifiableList(timeFilters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.timeFilters_ = timeFilters_;
       } else {
         result.timeFilters_ = timeFiltersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         documentSchemaNames_ = documentSchemaNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.documentSchemaNames_ = documentSchemaNames_;
       if (propertyFilterBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           propertyFilter_ = java.util.Collections.unmodifiableList(propertyFilter_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.propertyFilter_ = propertyFilter_;
       } else {
         result.propertyFilter_ = propertyFilterBuilder_.build();
       }
-      if (fileTypeFilterBuilder_ == null) {
-        result.fileTypeFilter_ = fileTypeFilter_;
-      } else {
-        result.fileTypeFilter_ = fileTypeFilterBuilder_.build();
-      }
-      result.folderNameFilter_ = folderNameFilter_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         queryContext_ = queryContext_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.queryContext_ = queryContext_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         documentCreatorFilter_ = documentCreatorFilter_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.documentCreatorFilter_ = documentCreatorFilter_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.DocumentQuery result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.isNlQuery_ = isNlQuery_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.customPropertyFilter_ = customPropertyFilter_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.fileTypeFilter_ =
+            fileTypeFilterBuilder_ == null ? fileTypeFilter_ : fileTypeFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.folderNameFilter_ = folderNameFilter_;
+      }
     }
 
     @java.lang.Override
@@ -1200,6 +1232,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getIsNlQuery() != false) {
@@ -1207,13 +1240,14 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCustomPropertyFilter().isEmpty()) {
         customPropertyFilter_ = other.customPropertyFilter_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (timeFiltersBuilder_ == null) {
         if (!other.timeFilters_.isEmpty()) {
           if (timeFilters_.isEmpty()) {
             timeFilters_ = other.timeFilters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureTimeFiltersIsMutable();
             timeFilters_.addAll(other.timeFilters_);
@@ -1226,7 +1260,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
             timeFiltersBuilder_.dispose();
             timeFiltersBuilder_ = null;
             timeFilters_ = other.timeFilters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             timeFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTimeFiltersFieldBuilder()
@@ -1239,7 +1273,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.documentSchemaNames_.isEmpty()) {
         if (documentSchemaNames_.isEmpty()) {
           documentSchemaNames_ = other.documentSchemaNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureDocumentSchemaNamesIsMutable();
           documentSchemaNames_.addAll(other.documentSchemaNames_);
@@ -1250,7 +1284,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         if (!other.propertyFilter_.isEmpty()) {
           if (propertyFilter_.isEmpty()) {
             propertyFilter_ = other.propertyFilter_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensurePropertyFilterIsMutable();
             propertyFilter_.addAll(other.propertyFilter_);
@@ -1263,7 +1297,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
             propertyFilterBuilder_.dispose();
             propertyFilterBuilder_ = null;
             propertyFilter_ = other.propertyFilter_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
             propertyFilterBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPropertyFilterFieldBuilder()
@@ -1278,12 +1312,13 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFolderNameFilter().isEmpty()) {
         folderNameFilter_ = other.folderNameFilter_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.queryContext_.isEmpty()) {
         if (queryContext_.isEmpty()) {
           queryContext_ = other.queryContext_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureQueryContextIsMutable();
           queryContext_.addAll(other.queryContext_);
@@ -1293,7 +1328,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.documentCreatorFilter_.isEmpty()) {
         if (documentCreatorFilter_.isEmpty()) {
           documentCreatorFilter_ = other.documentCreatorFilter_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           ensureDocumentCreatorFilterIsMutable();
           documentCreatorFilter_.addAll(other.documentCreatorFilter_);
@@ -1329,13 +1364,13 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 34:
               {
                 customPropertyFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
@@ -1376,13 +1411,13 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getFileTypeFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
               {
                 folderNameFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
@@ -1402,7 +1437,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
             case 96:
               {
                 isNlQuery_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 96
             default:
@@ -1491,8 +1526,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1510,8 +1545,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1534,8 +1569,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1581,6 +1616,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsNlQuery(boolean value) {
 
       isNlQuery_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1601,7 +1637,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsNlQuery() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       isNlQuery_ = false;
       onChanged();
       return this;
@@ -1722,8 +1758,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       customPropertyFilter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1757,8 +1793,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearCustomPropertyFilter() {
-
       customPropertyFilter_ = getDefaultInstance().getCustomPropertyFilter();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1797,8 +1833,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       customPropertyFilter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1807,10 +1843,10 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTimeFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         timeFilters_ =
             new java.util.ArrayList<com.google.cloud.contentwarehouse.v1.TimeFilter>(timeFilters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2039,7 +2075,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTimeFilters() {
       if (timeFiltersBuilder_ == null) {
         timeFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         timeFiltersBuilder_.clear();
@@ -2171,7 +2207,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.contentwarehouse.v1.TimeFilter,
                 com.google.cloud.contentwarehouse.v1.TimeFilter.Builder,
                 com.google.cloud.contentwarehouse.v1.TimeFilterOrBuilder>(
-                timeFilters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                timeFilters_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         timeFilters_ = null;
       }
       return timeFiltersBuilder_;
@@ -2181,9 +2217,9 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDocumentSchemaNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         documentSchemaNames_ = new com.google.protobuf.LazyStringArrayList(documentSchemaNames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2366,7 +2402,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDocumentSchemaNames() {
       documentSchemaNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2403,11 +2439,11 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePropertyFilterIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         propertyFilter_ =
             new java.util.ArrayList<com.google.cloud.contentwarehouse.v1.PropertyFilter>(
                 propertyFilter_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2648,7 +2684,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPropertyFilter() {
       if (propertyFilterBuilder_ == null) {
         propertyFilter_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         propertyFilterBuilder_.clear();
@@ -2789,7 +2825,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.contentwarehouse.v1.PropertyFilter.Builder,
                 com.google.cloud.contentwarehouse.v1.PropertyFilterOrBuilder>(
                 propertyFilter_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         propertyFilter_ = null;
@@ -2819,7 +2855,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fileTypeFilter field is set.
      */
     public boolean hasFileTypeFilter() {
-      return fileTypeFilterBuilder_ != null || fileTypeFilter_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2864,11 +2900,11 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         fileTypeFilter_ = value;
-        onChanged();
       } else {
         fileTypeFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2888,11 +2924,11 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.contentwarehouse.v1.FileTypeFilter.Builder builderForValue) {
       if (fileTypeFilterBuilder_ == null) {
         fileTypeFilter_ = builderForValue.build();
-        onChanged();
       } else {
         fileTypeFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2910,19 +2946,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFileTypeFilter(com.google.cloud.contentwarehouse.v1.FileTypeFilter value) {
       if (fileTypeFilterBuilder_ == null) {
-        if (fileTypeFilter_ != null) {
-          fileTypeFilter_ =
-              com.google.cloud.contentwarehouse.v1.FileTypeFilter.newBuilder(fileTypeFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && fileTypeFilter_ != null
+            && fileTypeFilter_
+                != com.google.cloud.contentwarehouse.v1.FileTypeFilter.getDefaultInstance()) {
+          getFileTypeFilterBuilder().mergeFrom(value);
         } else {
           fileTypeFilter_ = value;
         }
-        onChanged();
       } else {
         fileTypeFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2939,14 +2975,13 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.contentwarehouse.v1.FileTypeFilter file_type_filter = 8;</code>
      */
     public Builder clearFileTypeFilter() {
-      if (fileTypeFilterBuilder_ == null) {
-        fileTypeFilter_ = null;
-        onChanged();
-      } else {
-        fileTypeFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      fileTypeFilter_ = null;
+      if (fileTypeFilterBuilder_ != null) {
+        fileTypeFilterBuilder_.dispose();
         fileTypeFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2963,7 +2998,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.contentwarehouse.v1.FileTypeFilter file_type_filter = 8;</code>
      */
     public com.google.cloud.contentwarehouse.v1.FileTypeFilter.Builder getFileTypeFilterBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getFileTypeFilterFieldBuilder().getBuilder();
     }
@@ -3087,8 +3122,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       folderNameFilter_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3106,8 +3141,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFolderNameFilter() {
-
       folderNameFilter_ = getDefaultInstance().getFolderNameFilter();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3130,8 +3165,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       folderNameFilter_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3140,9 +3175,9 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureQueryContextIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         queryContext_ = new com.google.protobuf.LazyStringArrayList(queryContext_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -3325,7 +3360,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearQueryContext() {
       queryContext_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3362,10 +3397,10 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDocumentCreatorFilterIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         documentCreatorFilter_ =
             new com.google.protobuf.LazyStringArrayList(documentCreatorFilter_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000200;
       }
     }
     /**
@@ -3532,7 +3567,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDocumentCreatorFilter() {
       documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }

@@ -336,12 +336,12 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (preconfiguredExpressionSetsBuilder_ == null) {
-        preconfiguredExpressionSets_ = null;
-      } else {
-        preconfiguredExpressionSetsBuilder_.clear();
+      bitField0_ = 0;
+      preconfiguredExpressionSets_ = null;
+      if (preconfiguredExpressionSetsBuilder_ != null) {
+        preconfiguredExpressionSetsBuilder_.dispose();
+        preconfiguredExpressionSetsBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -375,19 +375,26 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse result =
           new com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse(
               this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse
+            result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (preconfiguredExpressionSetsBuilder_ == null) {
-          result.preconfiguredExpressionSets_ = preconfiguredExpressionSets_;
-        } else {
-          result.preconfiguredExpressionSets_ = preconfiguredExpressionSetsBuilder_.build();
-        }
+        result.preconfiguredExpressionSets_ =
+            preconfiguredExpressionSetsBuilder_ == null
+                ? preconfiguredExpressionSets_
+                : preconfiguredExpressionSetsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -541,11 +548,11 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
           throw new NullPointerException();
         }
         preconfiguredExpressionSets_ = value;
-        onChanged();
       } else {
         preconfiguredExpressionSetsBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -557,11 +564,11 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
         com.google.cloud.compute.v1.SecurityPoliciesWafConfig.Builder builderForValue) {
       if (preconfiguredExpressionSetsBuilder_ == null) {
         preconfiguredExpressionSets_ = builderForValue.build();
-        onChanged();
       } else {
         preconfiguredExpressionSetsBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -576,19 +583,15 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
             && preconfiguredExpressionSets_ != null
             && preconfiguredExpressionSets_
                 != com.google.cloud.compute.v1.SecurityPoliciesWafConfig.getDefaultInstance()) {
-          preconfiguredExpressionSets_ =
-              com.google.cloud.compute.v1.SecurityPoliciesWafConfig.newBuilder(
-                      preconfiguredExpressionSets_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPreconfiguredExpressionSetsBuilder().mergeFrom(value);
         } else {
           preconfiguredExpressionSets_ = value;
         }
-        onChanged();
       } else {
         preconfiguredExpressionSetsBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -597,13 +600,13 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
      * </code>
      */
     public Builder clearPreconfiguredExpressionSets() {
-      if (preconfiguredExpressionSetsBuilder_ == null) {
-        preconfiguredExpressionSets_ = null;
-        onChanged();
-      } else {
-        preconfiguredExpressionSetsBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      preconfiguredExpressionSets_ = null;
+      if (preconfiguredExpressionSetsBuilder_ != null) {
+        preconfiguredExpressionSetsBuilder_.dispose();
+        preconfiguredExpressionSetsBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

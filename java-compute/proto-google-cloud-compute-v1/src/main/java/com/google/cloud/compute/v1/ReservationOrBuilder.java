@@ -275,7 +275,6 @@ public interface ReservationOrBuilder
    *
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
    */
-
   /* nullable */
   java.lang.String getResourcePoliciesOrDefault(
       java.lang.String key,

@@ -220,7 +220,9 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -271,7 +273,9 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int TYPE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object type_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
     /**
      *
      *
@@ -322,7 +326,9 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int DATA_FIELD_NUMBER = 3;
-    private volatile java.lang.Object data_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object data_ = "";
     /**
      *
      *
@@ -599,12 +605,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         type_ = "";
-
         data_ = "";
-
         return this;
       }
 
@@ -636,11 +640,25 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           buildPartial() {
         com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord result =
             new com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord(this);
-        result.name_ = name_;
-        result.type_ = type_;
-        result.data_ = data_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.data_ = data_;
+        }
       }
 
       @java.lang.Override
@@ -697,14 +715,17 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getData().isEmpty()) {
           data_ = other.data_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -736,19 +757,19 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   type_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   data_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -767,6 +788,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -832,8 +855,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -850,8 +873,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -873,8 +896,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -943,8 +966,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         type_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -961,8 +984,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
         type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -984,8 +1007,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         type_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1051,8 +1074,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         data_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1068,8 +1091,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearData() {
-
         data_ = getDefaultInstance().getData();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1090,8 +1113,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         data_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1165,7 +1188,9 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1263,7 +1288,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -1312,7 +1337,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -1328,6 +1353,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -1385,7 +1411,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1414,7 +1443,9 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1463,7 +1494,9 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DOMAIN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object domain_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domain_ = "";
   /**
    *
    *
@@ -1579,7 +1612,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecordOrBuilder
       getDnsResourceRecordOrBuilder() {
-    return getDnsResourceRecord();
+    return dnsResourceRecord_ == null
+        ? com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord
+            .getDefaultInstance()
+        : dnsResourceRecord_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1878,29 +1914,24 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       description_ = "";
-
       domain_ = "";
-
-      if (dnsResourceRecordBuilder_ == null) {
-        dnsResourceRecord_ = null;
-      } else {
-        dnsResourceRecord_ = null;
+      dnsResourceRecord_ = null;
+      if (dnsResourceRecordBuilder_ != null) {
+        dnsResourceRecordBuilder_.dispose();
         dnsResourceRecordBuilder_ = null;
       }
       return this;
@@ -1930,29 +1961,40 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.certificatemanager.v1.DnsAuthorization buildPartial() {
       com.google.cloud.certificatemanager.v1.DnsAuthorization result =
           new com.google.cloud.certificatemanager.v1.DnsAuthorization(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.description_ = description_;
-      result.domain_ = domain_;
-      if (dnsResourceRecordBuilder_ == null) {
-        result.dnsResourceRecord_ = dnsResourceRecord_;
-      } else {
-        result.dnsResourceRecord_ = dnsResourceRecordBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.certificatemanager.v1.DnsAuthorization result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.domain_ = domain_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.dnsResourceRecord_ =
+            dnsResourceRecordBuilder_ == null
+                ? dnsResourceRecord_
+                : dnsResourceRecordBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2003,6 +2045,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2012,12 +2055,15 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDomain().isEmpty()) {
         domain_ = other.domain_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasDnsResourceRecord()) {
@@ -2052,19 +2098,19 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -2076,25 +2122,26 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 domain_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 82:
               {
                 input.readMessage(
                     getDnsResourceRecordFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             default:
@@ -2183,8 +2230,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2202,8 +2249,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2226,8 +2273,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2252,7 +2299,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2293,11 +2340,11 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2314,11 +2361,11 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2334,17 +2381,18 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2359,14 +2407,13 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2381,7 +2428,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2453,7 +2500,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2494,11 +2541,11 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2515,11 +2562,11 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2535,17 +2582,18 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2560,14 +2608,13 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2582,7 +2629,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2645,14 +2692,14 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -2704,8 +2751,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2734,6 +2783,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2756,6 +2806,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2774,8 +2825,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2789,6 +2840,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -2853,8 +2905,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2870,8 +2922,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2892,8 +2944,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2974,8 +3026,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       domain_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2996,8 +3048,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDomain() {
-
       domain_ = getDefaultInstance().getDomain();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3023,8 +3075,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       domain_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3051,7 +3103,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * @return Whether the dnsResourceRecord field is set.
      */
     public boolean hasDnsResourceRecord() {
-      return dnsResourceRecordBuilder_ != null || dnsResourceRecord_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3097,11 +3149,11 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         dnsResourceRecord_ = value;
-        onChanged();
       } else {
         dnsResourceRecordBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3121,11 +3173,11 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             builderForValue) {
       if (dnsResourceRecordBuilder_ == null) {
         dnsResourceRecord_ = builderForValue.build();
-        onChanged();
       } else {
         dnsResourceRecordBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3143,20 +3195,20 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     public Builder mergeDnsResourceRecord(
         com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord value) {
       if (dnsResourceRecordBuilder_ == null) {
-        if (dnsResourceRecord_ != null) {
-          dnsResourceRecord_ =
-              com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord.newBuilder(
-                      dnsResourceRecord_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && dnsResourceRecord_ != null
+            && dnsResourceRecord_
+                != com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord
+                    .getDefaultInstance()) {
+          getDnsResourceRecordBuilder().mergeFrom(value);
         } else {
           dnsResourceRecord_ = value;
         }
-        onChanged();
       } else {
         dnsResourceRecordBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3172,14 +3224,13 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDnsResourceRecord() {
-      if (dnsResourceRecordBuilder_ == null) {
-        dnsResourceRecord_ = null;
-        onChanged();
-      } else {
-        dnsResourceRecord_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      dnsResourceRecord_ = null;
+      if (dnsResourceRecordBuilder_ != null) {
+        dnsResourceRecordBuilder_.dispose();
         dnsResourceRecordBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3196,7 +3247,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord.Builder
         getDnsResourceRecordBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getDnsResourceRecordFieldBuilder().getBuilder();
     }

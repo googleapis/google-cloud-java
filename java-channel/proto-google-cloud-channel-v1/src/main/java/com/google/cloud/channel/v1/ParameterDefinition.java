@@ -250,7 +250,9 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -299,7 +301,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARAMETER_TYPE_FIELD_NUMBER = 2;
-  private int parameterType_;
+  private int parameterType_ = 0;
   /**
    *
    *
@@ -330,9 +332,8 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ParameterDefinition.ParameterType getParameterType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.ParameterDefinition.ParameterType result =
-        com.google.cloud.channel.v1.ParameterDefinition.ParameterType.valueOf(parameterType_);
+        com.google.cloud.channel.v1.ParameterDefinition.ParameterType.forNumber(parameterType_);
     return result == null
         ? com.google.cloud.channel.v1.ParameterDefinition.ParameterType.UNRECOGNIZED
         : result;
@@ -387,7 +388,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ValueOrBuilder getMinValueOrBuilder() {
-    return getMinValue();
+    return minValue_ == null ? com.google.cloud.channel.v1.Value.getDefaultInstance() : minValue_;
   }
 
   public static final int MAX_VALUE_FIELD_NUMBER = 4;
@@ -439,10 +440,12 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ValueOrBuilder getMaxValueOrBuilder() {
-    return getMaxValue();
+    return maxValue_ == null ? com.google.cloud.channel.v1.Value.getDefaultInstance() : maxValue_;
   }
 
   public static final int ALLOWED_VALUES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.Value> allowedValues_;
   /**
    *
@@ -522,7 +525,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
   }
 
   public static final int OPTIONAL_FIELD_NUMBER = 6;
-  private boolean optional_;
+  private boolean optional_ = false;
   /**
    *
    *
@@ -798,20 +801,17 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       parameterType_ = 0;
-
-      if (minValueBuilder_ == null) {
-        minValue_ = null;
-      } else {
-        minValue_ = null;
+      minValue_ = null;
+      if (minValueBuilder_ != null) {
+        minValueBuilder_.dispose();
         minValueBuilder_ = null;
       }
-      if (maxValueBuilder_ == null) {
-        maxValue_ = null;
-      } else {
-        maxValue_ = null;
+      maxValue_ = null;
+      if (maxValueBuilder_ != null) {
+        maxValueBuilder_.dispose();
         maxValueBuilder_ = null;
       }
       if (allowedValuesBuilder_ == null) {
@@ -820,9 +820,8 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
         allowedValues_ = null;
         allowedValuesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       optional_ = false;
-
       return this;
     }
 
@@ -850,31 +849,44 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     public com.google.cloud.channel.v1.ParameterDefinition buildPartial() {
       com.google.cloud.channel.v1.ParameterDefinition result =
           new com.google.cloud.channel.v1.ParameterDefinition(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.parameterType_ = parameterType_;
-      if (minValueBuilder_ == null) {
-        result.minValue_ = minValue_;
-      } else {
-        result.minValue_ = minValueBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (maxValueBuilder_ == null) {
-        result.maxValue_ = maxValue_;
-      } else {
-        result.maxValue_ = maxValueBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.channel.v1.ParameterDefinition result) {
       if (allowedValuesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           allowedValues_ = java.util.Collections.unmodifiableList(allowedValues_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.allowedValues_ = allowedValues_;
       } else {
         result.allowedValues_ = allowedValuesBuilder_.build();
       }
-      result.optional_ = optional_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ParameterDefinition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parameterType_ = parameterType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.minValue_ = minValueBuilder_ == null ? minValue_ : minValueBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxValue_ = maxValueBuilder_ == null ? maxValue_ : maxValueBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.optional_ = optional_;
+      }
     }
 
     @java.lang.Override
@@ -925,6 +937,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.parameterType_ != 0) {
@@ -940,7 +953,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
         if (!other.allowedValues_.isEmpty()) {
           if (allowedValues_.isEmpty()) {
             allowedValues_ = other.allowedValues_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAllowedValuesIsMutable();
             allowedValues_.addAll(other.allowedValues_);
@@ -953,7 +966,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
             allowedValuesBuilder_.dispose();
             allowedValuesBuilder_ = null;
             allowedValues_ = other.allowedValues_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             allowedValuesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAllowedValuesFieldBuilder()
@@ -995,25 +1008,25 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 parameterType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getMinValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getMaxValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1032,7 +1045,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
             case 48:
               {
                 optional_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -1115,8 +1128,8 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1132,8 +1145,8 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1154,8 +1167,8 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1191,8 +1204,8 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setParameterTypeValue(int value) {
-
       parameterType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1210,9 +1223,8 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.ParameterDefinition.ParameterType getParameterType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.ParameterDefinition.ParameterType result =
-          com.google.cloud.channel.v1.ParameterDefinition.ParameterType.valueOf(parameterType_);
+          com.google.cloud.channel.v1.ParameterDefinition.ParameterType.forNumber(parameterType_);
       return result == null
           ? com.google.cloud.channel.v1.ParameterDefinition.ParameterType.UNRECOGNIZED
           : result;
@@ -1235,7 +1247,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       parameterType_ = value.getNumber();
       onChanged();
       return this;
@@ -1253,7 +1265,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParameterType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       parameterType_ = 0;
       onChanged();
       return this;
@@ -1279,7 +1291,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * @return Whether the minValue field is set.
      */
     public boolean hasMinValue() {
-      return minValueBuilder_ != null || minValue_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1320,11 +1332,11 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         minValue_ = value;
-        onChanged();
       } else {
         minValueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1341,11 +1353,11 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     public Builder setMinValue(com.google.cloud.channel.v1.Value.Builder builderForValue) {
       if (minValueBuilder_ == null) {
         minValue_ = builderForValue.build();
-        onChanged();
       } else {
         minValueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1361,19 +1373,18 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeMinValue(com.google.cloud.channel.v1.Value value) {
       if (minValueBuilder_ == null) {
-        if (minValue_ != null) {
-          minValue_ =
-              com.google.cloud.channel.v1.Value.newBuilder(minValue_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && minValue_ != null
+            && minValue_ != com.google.cloud.channel.v1.Value.getDefaultInstance()) {
+          getMinValueBuilder().mergeFrom(value);
         } else {
           minValue_ = value;
         }
-        onChanged();
       } else {
         minValueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1388,14 +1399,13 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.channel.v1.Value min_value = 3;</code>
      */
     public Builder clearMinValue() {
-      if (minValueBuilder_ == null) {
-        minValue_ = null;
-        onChanged();
-      } else {
-        minValue_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      minValue_ = null;
+      if (minValueBuilder_ != null) {
+        minValueBuilder_.dispose();
         minValueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1410,7 +1420,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.channel.v1.Value min_value = 3;</code>
      */
     public com.google.cloud.channel.v1.Value.Builder getMinValueBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMinValueFieldBuilder().getBuilder();
     }
@@ -1482,7 +1492,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * @return Whether the maxValue field is set.
      */
     public boolean hasMaxValue() {
-      return maxValueBuilder_ != null || maxValue_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1523,11 +1533,11 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         maxValue_ = value;
-        onChanged();
       } else {
         maxValueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1544,11 +1554,11 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     public Builder setMaxValue(com.google.cloud.channel.v1.Value.Builder builderForValue) {
       if (maxValueBuilder_ == null) {
         maxValue_ = builderForValue.build();
-        onChanged();
       } else {
         maxValueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1564,19 +1574,18 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeMaxValue(com.google.cloud.channel.v1.Value value) {
       if (maxValueBuilder_ == null) {
-        if (maxValue_ != null) {
-          maxValue_ =
-              com.google.cloud.channel.v1.Value.newBuilder(maxValue_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && maxValue_ != null
+            && maxValue_ != com.google.cloud.channel.v1.Value.getDefaultInstance()) {
+          getMaxValueBuilder().mergeFrom(value);
         } else {
           maxValue_ = value;
         }
-        onChanged();
       } else {
         maxValueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1591,14 +1600,13 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.channel.v1.Value max_value = 4;</code>
      */
     public Builder clearMaxValue() {
-      if (maxValueBuilder_ == null) {
-        maxValue_ = null;
-        onChanged();
-      } else {
-        maxValue_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      maxValue_ = null;
+      if (maxValueBuilder_ != null) {
+        maxValueBuilder_.dispose();
         maxValueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1613,7 +1621,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.channel.v1.Value max_value = 4;</code>
      */
     public com.google.cloud.channel.v1.Value.Builder getMaxValueBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getMaxValueFieldBuilder().getBuilder();
     }
@@ -1669,9 +1677,9 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureAllowedValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         allowedValues_ = new java.util.ArrayList<com.google.cloud.channel.v1.Value>(allowedValues_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1908,7 +1916,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     public Builder clearAllowedValues() {
       if (allowedValuesBuilder_ == null) {
         allowedValues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         allowedValuesBuilder_.clear();
@@ -2044,7 +2052,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
                 com.google.cloud.channel.v1.Value.Builder,
                 com.google.cloud.channel.v1.ValueOrBuilder>(
                 allowedValues_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         allowedValues_ = null;
@@ -2083,6 +2091,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     public Builder setOptional(boolean value) {
 
       optional_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2098,7 +2107,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearOptional() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       optional_ = false;
       onChanged();
       return this;

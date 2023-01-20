@@ -69,7 +69,9 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.CustomerOrBuilder getCustomerOrBuilder() {
-    return getCustomer();
+    return customer_ == null
+        ? com.google.cloud.channel.v1.Customer.getDefaultInstance()
+        : customer_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,12 +386,11 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (customerBuilder_ == null) {
-        customer_ = null;
-      } else {
-        customer_ = null;
+      customer_ = null;
+      if (customerBuilder_ != null) {
+        customerBuilder_.dispose();
         customerBuilder_ = null;
       }
       return this;
@@ -417,14 +420,21 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.channel.v1.CreateCustomerRequest buildPartial() {
       com.google.cloud.channel.v1.CreateCustomerRequest result =
           new com.google.cloud.channel.v1.CreateCustomerRequest(this);
-      result.parent_ = parent_;
-      if (customerBuilder_ == null) {
-        result.customer_ = customer_;
-      } else {
-        result.customer_ = customerBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.CreateCustomerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.customer_ = customerBuilder_ == null ? customer_ : customerBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -475,6 +485,7 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCustomer()) {
@@ -509,13 +520,13 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCustomerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -534,6 +545,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -599,8 +612,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -617,8 +630,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -640,8 +653,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -666,7 +679,7 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the customer field is set.
      */
     public boolean hasCustomer() {
-      return customerBuilder_ != null || customer_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -707,11 +720,11 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         customer_ = value;
-        onChanged();
       } else {
         customerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -728,11 +741,11 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
     public Builder setCustomer(com.google.cloud.channel.v1.Customer.Builder builderForValue) {
       if (customerBuilder_ == null) {
         customer_ = builderForValue.build();
-        onChanged();
       } else {
         customerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -748,19 +761,18 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeCustomer(com.google.cloud.channel.v1.Customer value) {
       if (customerBuilder_ == null) {
-        if (customer_ != null) {
-          customer_ =
-              com.google.cloud.channel.v1.Customer.newBuilder(customer_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && customer_ != null
+            && customer_ != com.google.cloud.channel.v1.Customer.getDefaultInstance()) {
+          getCustomerBuilder().mergeFrom(value);
         } else {
           customer_ = value;
         }
-        onChanged();
       } else {
         customerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -775,14 +787,13 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearCustomer() {
-      if (customerBuilder_ == null) {
-        customer_ = null;
-        onChanged();
-      } else {
-        customer_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      customer_ = null;
+      if (customerBuilder_ != null) {
+        customerBuilder_.dispose();
         customerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -797,7 +808,7 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.channel.v1.Customer.Builder getCustomerBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCustomerFieldBuilder().getBuilder();
     }

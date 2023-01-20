@@ -69,7 +69,9 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VERSION_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object versionName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object versionName_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENV_FIELD_NUMBER = 2;
-  private volatile java.lang.Object env_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object env_ = "";
   /**
    *
    *
@@ -378,10 +382,9 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       versionName_ = "";
-
       env_ = "";
-
       return this;
     }
 
@@ -409,10 +412,21 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
     public com.google.cloudbuild.v1.SecretManagerSecret buildPartial() {
       com.google.cloudbuild.v1.SecretManagerSecret result =
           new com.google.cloudbuild.v1.SecretManagerSecret(this);
-      result.versionName_ = versionName_;
-      result.env_ = env_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.SecretManagerSecret result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.versionName_ = versionName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.env_ = env_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloudbuild.v1.SecretManagerSecret.getDefaultInstance()) return this;
       if (!other.getVersionName().isEmpty()) {
         versionName_ = other.versionName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEnv().isEmpty()) {
         env_ = other.env_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 versionName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 env_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +538,8 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object versionName_ = "";
     /**
@@ -587,8 +605,8 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       versionName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -605,8 +623,8 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearVersionName() {
-
       versionName_ = getDefaultInstance().getVersionName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -628,8 +646,8 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       versionName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -701,8 +719,8 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       env_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -720,8 +738,8 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEnv() {
-
       env_ = getDefaultInstance().getEnv();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -744,8 +762,8 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       env_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

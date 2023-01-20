@@ -294,7 +294,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CURRENT_NUM_WORKERS_FIELD_NUMBER = 1;
-  private long currentNumWorkers_;
+  private long currentNumWorkers_ = 0L;
   /**
    *
    *
@@ -312,7 +312,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TARGET_NUM_WORKERS_FIELD_NUMBER = 2;
-  private long targetNumWorkers_;
+  private long targetNumWorkers_ = 0L;
   /**
    *
    *
@@ -330,7 +330,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 3;
-  private int eventType_;
+  private int eventType_ = 0;
   /**
    *
    *
@@ -359,9 +359,8 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.AutoscalingEvent.AutoscalingEventType getEventType() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.AutoscalingEvent.AutoscalingEventType result =
-        com.google.dataflow.v1beta3.AutoscalingEvent.AutoscalingEventType.valueOf(eventType_);
+        com.google.dataflow.v1beta3.AutoscalingEvent.AutoscalingEventType.forNumber(eventType_);
     return result == null
         ? com.google.dataflow.v1beta3.AutoscalingEvent.AutoscalingEventType.UNRECOGNIZED
         : result;
@@ -418,7 +417,9 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.StructuredMessageOrBuilder getDescriptionOrBuilder() {
-    return getDescription();
+    return description_ == null
+        ? com.google.dataflow.v1beta3.StructuredMessage.getDefaultInstance()
+        : description_;
   }
 
   public static final int TIME_FIELD_NUMBER = 5;
@@ -467,11 +468,13 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
-    return getTime();
+    return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
   }
 
   public static final int WORKER_POOL_FIELD_NUMBER = 7;
-  private volatile java.lang.Object workerPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerPool_ = "";
   /**
    *
    *
@@ -776,26 +779,21 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       currentNumWorkers_ = 0L;
-
       targetNumWorkers_ = 0L;
-
       eventType_ = 0;
-
-      if (descriptionBuilder_ == null) {
-        description_ = null;
-      } else {
-        description_ = null;
+      description_ = null;
+      if (descriptionBuilder_ != null) {
+        descriptionBuilder_.dispose();
         descriptionBuilder_ = null;
       }
-      if (timeBuilder_ == null) {
-        time_ = null;
-      } else {
-        time_ = null;
+      time_ = null;
+      if (timeBuilder_ != null) {
+        timeBuilder_.dispose();
         timeBuilder_ = null;
       }
       workerPool_ = "";
-
       return this;
     }
 
@@ -823,22 +821,34 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
     public com.google.dataflow.v1beta3.AutoscalingEvent buildPartial() {
       com.google.dataflow.v1beta3.AutoscalingEvent result =
           new com.google.dataflow.v1beta3.AutoscalingEvent(this);
-      result.currentNumWorkers_ = currentNumWorkers_;
-      result.targetNumWorkers_ = targetNumWorkers_;
-      result.eventType_ = eventType_;
-      if (descriptionBuilder_ == null) {
-        result.description_ = description_;
-      } else {
-        result.description_ = descriptionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (timeBuilder_ == null) {
-        result.time_ = time_;
-      } else {
-        result.time_ = timeBuilder_.build();
-      }
-      result.workerPool_ = workerPool_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.AutoscalingEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.currentNumWorkers_ = currentNumWorkers_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetNumWorkers_ = targetNumWorkers_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.eventType_ = eventType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ =
+            descriptionBuilder_ == null ? description_ : descriptionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.time_ = timeBuilder_ == null ? time_ : timeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.workerPool_ = workerPool_;
+      }
     }
 
     @java.lang.Override
@@ -903,6 +913,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getWorkerPool().isEmpty()) {
         workerPool_ = other.workerPool_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -934,37 +945,37 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 currentNumWorkers_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 targetNumWorkers_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 eventType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getDescriptionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 58:
               {
                 workerPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -983,6 +994,8 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long currentNumWorkers_;
     /**
@@ -1015,6 +1028,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
     public Builder setCurrentNumWorkers(long value) {
 
       currentNumWorkers_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1030,7 +1044,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCurrentNumWorkers() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       currentNumWorkers_ = 0L;
       onChanged();
       return this;
@@ -1067,6 +1081,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
     public Builder setTargetNumWorkers(long value) {
 
       targetNumWorkers_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1082,7 +1097,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTargetNumWorkers() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       targetNumWorkers_ = 0L;
       onChanged();
       return this;
@@ -1117,8 +1132,8 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setEventTypeValue(int value) {
-
       eventType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1135,9 +1150,8 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.AutoscalingEvent.AutoscalingEventType getEventType() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.AutoscalingEvent.AutoscalingEventType result =
-          com.google.dataflow.v1beta3.AutoscalingEvent.AutoscalingEventType.valueOf(eventType_);
+          com.google.dataflow.v1beta3.AutoscalingEvent.AutoscalingEventType.forNumber(eventType_);
       return result == null
           ? com.google.dataflow.v1beta3.AutoscalingEvent.AutoscalingEventType.UNRECOGNIZED
           : result;
@@ -1159,7 +1173,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       eventType_ = value.getNumber();
       onChanged();
       return this;
@@ -1176,7 +1190,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEventType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       eventType_ = 0;
       onChanged();
       return this;
@@ -1202,7 +1216,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return descriptionBuilder_ != null || description_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1243,11 +1257,11 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         description_ = value;
-        onChanged();
       } else {
         descriptionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1265,11 +1279,11 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
         com.google.dataflow.v1beta3.StructuredMessage.Builder builderForValue) {
       if (descriptionBuilder_ == null) {
         description_ = builderForValue.build();
-        onChanged();
       } else {
         descriptionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1285,19 +1299,18 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDescription(com.google.dataflow.v1beta3.StructuredMessage value) {
       if (descriptionBuilder_ == null) {
-        if (description_ != null) {
-          description_ =
-              com.google.dataflow.v1beta3.StructuredMessage.newBuilder(description_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && description_ != null
+            && description_ != com.google.dataflow.v1beta3.StructuredMessage.getDefaultInstance()) {
+          getDescriptionBuilder().mergeFrom(value);
         } else {
           description_ = value;
         }
-        onChanged();
       } else {
         descriptionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1312,14 +1325,13 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.dataflow.v1beta3.StructuredMessage description = 4;</code>
      */
     public Builder clearDescription() {
-      if (descriptionBuilder_ == null) {
-        description_ = null;
-        onChanged();
-      } else {
-        description_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      description_ = null;
+      if (descriptionBuilder_ != null) {
+        descriptionBuilder_.dispose();
         descriptionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1334,7 +1346,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.dataflow.v1beta3.StructuredMessage description = 4;</code>
      */
     public com.google.dataflow.v1beta3.StructuredMessage.Builder getDescriptionBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDescriptionFieldBuilder().getBuilder();
     }
@@ -1405,7 +1417,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the time field is set.
      */
     public boolean hasTime() {
-      return timeBuilder_ != null || time_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1442,11 +1454,11 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         time_ = value;
-        onChanged();
       } else {
         timeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1462,11 +1474,11 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
     public Builder setTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timeBuilder_ == null) {
         time_ = builderForValue.build();
-        onChanged();
       } else {
         timeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1481,16 +1493,18 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTime(com.google.protobuf.Timestamp value) {
       if (timeBuilder_ == null) {
-        if (time_ != null) {
-          time_ = com.google.protobuf.Timestamp.newBuilder(time_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && time_ != null
+            && time_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getTimeBuilder().mergeFrom(value);
         } else {
           time_ = value;
         }
-        onChanged();
       } else {
         timeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1504,14 +1518,13 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp time = 5;</code>
      */
     public Builder clearTime() {
-      if (timeBuilder_ == null) {
-        time_ = null;
-        onChanged();
-      } else {
-        time_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      time_ = null;
+      if (timeBuilder_ != null) {
+        timeBuilder_.dispose();
         timeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1525,7 +1538,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTimeFieldBuilder().getBuilder();
     }
@@ -1634,8 +1647,8 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerPool_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1651,8 +1664,8 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearWorkerPool() {
-
       workerPool_ = getDefaultInstance().getWorkerPool();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1673,8 +1686,8 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerPool_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

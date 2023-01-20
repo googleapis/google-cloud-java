@@ -121,11 +121,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceTemplateOrBuilder
       getInstanceTemplateResourceOrBuilder() {
-    return getInstanceTemplateResource();
+    return instanceTemplateResource_ == null
+        ? com.google.cloud.compute.v1.InstanceTemplate.getDefaultInstance()
+        : instanceTemplateResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -469,16 +475,14 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (instanceTemplateResourceBuilder_ == null) {
-        instanceTemplateResource_ = null;
-      } else {
-        instanceTemplateResource_ = null;
+      bitField0_ = 0;
+      instanceTemplateResource_ = null;
+      if (instanceTemplateResourceBuilder_ != null) {
+        instanceTemplateResourceBuilder_.dispose();
         instanceTemplateResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -506,21 +510,30 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.InsertInstanceTemplateRequest buildPartial() {
       com.google.cloud.compute.v1.InsertInstanceTemplateRequest result =
           new com.google.cloud.compute.v1.InsertInstanceTemplateRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (instanceTemplateResourceBuilder_ == null) {
-        result.instanceTemplateResource_ = instanceTemplateResource_;
-      } else {
-        result.instanceTemplateResource_ = instanceTemplateResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertInstanceTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceTemplateResource_ =
+            instanceTemplateResourceBuilder_ == null
+                ? instanceTemplateResource_
+                : instanceTemplateResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -574,11 +587,12 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -611,19 +625,19 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
               {
                 input.readMessage(
                     getInstanceTemplateResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 85436490
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             default:
@@ -665,7 +679,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
      * @return Whether the instanceTemplateResource field is set.
      */
     public boolean hasInstanceTemplateResource() {
-      return instanceTemplateResourceBuilder_ != null || instanceTemplateResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -706,11 +720,11 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         instanceTemplateResource_ = value;
-        onChanged();
       } else {
         instanceTemplateResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -728,11 +742,11 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
         com.google.cloud.compute.v1.InstanceTemplate.Builder builderForValue) {
       if (instanceTemplateResourceBuilder_ == null) {
         instanceTemplateResource_ = builderForValue.build();
-        onChanged();
       } else {
         instanceTemplateResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -749,19 +763,19 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
     public Builder mergeInstanceTemplateResource(
         com.google.cloud.compute.v1.InstanceTemplate value) {
       if (instanceTemplateResourceBuilder_ == null) {
-        if (instanceTemplateResource_ != null) {
-          instanceTemplateResource_ =
-              com.google.cloud.compute.v1.InstanceTemplate.newBuilder(instanceTemplateResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && instanceTemplateResource_ != null
+            && instanceTemplateResource_
+                != com.google.cloud.compute.v1.InstanceTemplate.getDefaultInstance()) {
+          getInstanceTemplateResourceBuilder().mergeFrom(value);
         } else {
           instanceTemplateResource_ = value;
         }
-        onChanged();
       } else {
         instanceTemplateResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -776,14 +790,13 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearInstanceTemplateResource() {
-      if (instanceTemplateResourceBuilder_ == null) {
-        instanceTemplateResource_ = null;
-        onChanged();
-      } else {
-        instanceTemplateResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      instanceTemplateResource_ = null;
+      if (instanceTemplateResourceBuilder_ != null) {
+        instanceTemplateResourceBuilder_.dispose();
         instanceTemplateResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -799,7 +812,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
      */
     public com.google.cloud.compute.v1.InstanceTemplate.Builder
         getInstanceTemplateResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInstanceTemplateResourceFieldBuilder().getBuilder();
     }
@@ -919,8 +932,8 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -938,8 +951,8 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -962,8 +975,8 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -981,7 +994,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1043,8 +1056,8 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1060,8 +1073,8 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1082,8 +1095,8 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

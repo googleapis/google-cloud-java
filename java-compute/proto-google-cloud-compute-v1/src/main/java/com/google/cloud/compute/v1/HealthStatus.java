@@ -422,6 +422,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -480,8 +481,10 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -510,7 +513,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORWARDING_RULE_FIELD_NUMBER = 269964030;
-  private volatile java.lang.Object forwardingRule_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object forwardingRule_ = "";
   /**
    *
    *
@@ -574,7 +579,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORWARDING_RULE_IP_FIELD_NUMBER = 172250632;
-  private volatile java.lang.Object forwardingRuleIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object forwardingRuleIp_ = "";
   /**
    *
    *
@@ -638,7 +645,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HEALTH_STATE_FIELD_NUMBER = 324007150;
-  private volatile java.lang.Object healthState_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object healthState_ = "";
   /**
    *
    *
@@ -705,7 +714,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -769,7 +780,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -833,7 +846,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PORT_FIELD_NUMBER = 3446913;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -866,7 +879,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEIGHT_FIELD_NUMBER = 282149496;
-  private volatile java.lang.Object weight_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object weight_ = "";
   /**
    * <code>optional string weight = 282149496;</code>
    *
@@ -912,7 +927,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEIGHT_ERROR_FIELD_NUMBER = 522501505;
-  private volatile java.lang.Object weightError_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object weightError_ = "";
   /**
    *
    *
@@ -1314,23 +1331,16 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableAnnotations().clear();
       forwardingRule_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       forwardingRuleIp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       healthState_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       instance_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       ipAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       port_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
       weight_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       weightError_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1358,45 +1368,53 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.HealthStatus buildPartial() {
       com.google.cloud.compute.v1.HealthStatus result =
           new com.google.cloud.compute.v1.HealthStatus(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HealthStatus result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
       int to_bitField0_ = 0;
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.forwardingRule_ = forwardingRule_;
         to_bitField0_ |= 0x00000001;
       }
-      result.forwardingRule_ = forwardingRule_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.forwardingRuleIp_ = forwardingRuleIp_;
         to_bitField0_ |= 0x00000002;
       }
-      result.forwardingRuleIp_ = forwardingRuleIp_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.healthState_ = healthState_;
         to_bitField0_ |= 0x00000004;
       }
-      result.healthState_ = healthState_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.instance_ = instance_;
         to_bitField0_ |= 0x00000008;
       }
-      result.instance_ = instance_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.ipAddress_ = ipAddress_;
         to_bitField0_ |= 0x00000010;
       }
-      result.ipAddress_ = ipAddress_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.port_ = port_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.weight_ = weight_;
         to_bitField0_ |= 0x00000040;
       }
-      result.weight_ = weight_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.weightError_ = weightError_;
         to_bitField0_ |= 0x00000080;
       }
-      result.weightError_ = weightError_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1445,42 +1463,43 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.HealthStatus other) {
       if (other == com.google.cloud.compute.v1.HealthStatus.getDefaultInstance()) return this;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000001;
       if (other.hasForwardingRule()) {
-        bitField0_ |= 0x00000002;
         forwardingRule_ = other.forwardingRule_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasForwardingRuleIp()) {
-        bitField0_ |= 0x00000004;
         forwardingRuleIp_ = other.forwardingRuleIp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasHealthState()) {
-        bitField0_ |= 0x00000008;
         healthState_ = other.healthState_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasInstance()) {
-        bitField0_ |= 0x00000010;
         instance_ = other.instance_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasIpAddress()) {
-        bitField0_ |= 0x00000020;
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasPort()) {
         setPort(other.getPort());
       }
       if (other.hasWeight()) {
-        bitField0_ |= 0x00000080;
         weight_ = other.weight_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasWeightError()) {
-        bitField0_ |= 0x00000100;
         weightError_ = other.weightError_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1530,6 +1549,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 896260386
             case 1378005058:
@@ -1600,8 +1620,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -1609,6 +1627,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return annotations_;
     }
 
@@ -1660,8 +1680,10 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1690,6 +1712,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -1712,6 +1735,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -1730,8 +1754,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1745,6 +1769,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -1823,8 +1848,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       forwardingRule_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1840,8 +1865,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearForwardingRule() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       forwardingRule_ = getDefaultInstance().getForwardingRule();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1862,8 +1887,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       forwardingRule_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1943,8 +1968,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       forwardingRuleIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1960,8 +1985,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearForwardingRuleIp() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       forwardingRuleIp_ = getDefaultInstance().getForwardingRuleIp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1982,8 +2007,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       forwardingRuleIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2067,8 +2092,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       healthState_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2085,8 +2110,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHealthState() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       healthState_ = getDefaultInstance().getHealthState();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2108,8 +2133,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       healthState_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2189,8 +2214,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       instance_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2206,8 +2231,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2228,8 +2253,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       instance_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2309,8 +2334,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       ipAddress_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2326,8 +2351,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2348,8 +2373,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       ipAddress_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2398,8 +2423,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-      bitField0_ |= 0x00000040;
+
       port_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2472,8 +2498,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       weight_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2483,8 +2509,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWeight() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       weight_ = getDefaultInstance().getWeight();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2499,8 +2525,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       weight_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2584,8 +2610,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       weightError_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2602,8 +2628,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWeightError() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       weightError_ = getDefaultInstance().getWeightError();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2625,8 +2651,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       weightError_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

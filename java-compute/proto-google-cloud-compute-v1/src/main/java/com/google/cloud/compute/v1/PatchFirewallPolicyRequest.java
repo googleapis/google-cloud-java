@@ -70,7 +70,9 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int FIREWALL_POLICY_FIELD_NUMBER = 498173265;
-  private volatile java.lang.Object firewallPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewallPolicy_ = "";
   /**
    *
    *
@@ -169,11 +171,15 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallPolicyOrBuilder getFirewallPolicyResourceOrBuilder() {
-    return getFirewallPolicyResource();
+    return firewallPolicyResource_ == null
+        ? com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance()
+        : firewallPolicyResource_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -464,16 +470,14 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firewallPolicy_ = "";
-
-      if (firewallPolicyResourceBuilder_ == null) {
-        firewallPolicyResource_ = null;
-      } else {
-        firewallPolicyResource_ = null;
+      firewallPolicyResource_ = null;
+      if (firewallPolicyResourceBuilder_ != null) {
+        firewallPolicyResourceBuilder_.dispose();
         firewallPolicyResourceBuilder_ = null;
       }
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -501,21 +505,30 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.PatchFirewallPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.PatchFirewallPolicyRequest result =
           new com.google.cloud.compute.v1.PatchFirewallPolicyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.firewallPolicy_ = firewallPolicy_;
-      if (firewallPolicyResourceBuilder_ == null) {
-        result.firewallPolicyResource_ = firewallPolicyResource_;
-      } else {
-        result.firewallPolicyResource_ = firewallPolicyResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PatchFirewallPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firewallPolicy_ = firewallPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.firewallPolicyResource_ =
+            firewallPolicyResourceBuilder_ == null
+                ? firewallPolicyResource_
+                : firewallPolicyResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -566,14 +579,15 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getFirewallPolicy().isEmpty()) {
         firewallPolicy_ = other.firewallPolicy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFirewallPolicyResource()) {
         mergeFirewallPolicyResource(other.getFirewallPolicyResource());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -605,20 +619,20 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case -334571038:
               {
                 input.readMessage(
                     getFirewallPolicyResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -334571038
             case -309581174:
               {
                 firewallPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -309581174
             default:
@@ -701,8 +715,8 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -718,8 +732,8 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearFirewallPolicy() {
-
       firewallPolicy_ = getDefaultInstance().getFirewallPolicy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -740,8 +754,8 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,7 +780,7 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
      * @return Whether the firewallPolicyResource field is set.
      */
     public boolean hasFirewallPolicyResource() {
-      return firewallPolicyResourceBuilder_ != null || firewallPolicyResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -807,11 +821,11 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         firewallPolicyResource_ = value;
-        onChanged();
       } else {
         firewallPolicyResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -829,11 +843,11 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
         com.google.cloud.compute.v1.FirewallPolicy.Builder builderForValue) {
       if (firewallPolicyResourceBuilder_ == null) {
         firewallPolicyResource_ = builderForValue.build();
-        onChanged();
       } else {
         firewallPolicyResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -849,19 +863,19 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
      */
     public Builder mergeFirewallPolicyResource(com.google.cloud.compute.v1.FirewallPolicy value) {
       if (firewallPolicyResourceBuilder_ == null) {
-        if (firewallPolicyResource_ != null) {
-          firewallPolicyResource_ =
-              com.google.cloud.compute.v1.FirewallPolicy.newBuilder(firewallPolicyResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && firewallPolicyResource_ != null
+            && firewallPolicyResource_
+                != com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance()) {
+          getFirewallPolicyResourceBuilder().mergeFrom(value);
         } else {
           firewallPolicyResource_ = value;
         }
-        onChanged();
       } else {
         firewallPolicyResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -876,14 +890,13 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearFirewallPolicyResource() {
-      if (firewallPolicyResourceBuilder_ == null) {
-        firewallPolicyResource_ = null;
-        onChanged();
-      } else {
-        firewallPolicyResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      firewallPolicyResource_ = null;
+      if (firewallPolicyResourceBuilder_ != null) {
+        firewallPolicyResourceBuilder_.dispose();
         firewallPolicyResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -898,7 +911,7 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.compute.v1.FirewallPolicy.Builder getFirewallPolicyResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFirewallPolicyResourceFieldBuilder().getBuilder();
     }
@@ -964,7 +977,7 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1026,8 +1039,8 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1043,8 +1056,8 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1065,8 +1078,8 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

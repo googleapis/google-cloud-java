@@ -68,7 +68,9 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
 
   private int bitField0_;
   public static final int ORGANIZATION_FIELD_NUMBER = 105180467;
-  private volatile java.lang.Object organization_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organization_ = "";
   /**
    *
    *
@@ -333,8 +335,8 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       organization_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -362,15 +364,21 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.ProjectsListXpnHostsRequest buildPartial() {
       com.google.cloud.compute.v1.ProjectsListXpnHostsRequest result =
           new com.google.cloud.compute.v1.ProjectsListXpnHostsRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ProjectsListXpnHostsRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.organization_ = organization_;
         to_bitField0_ |= 0x00000001;
       }
-      result.organization_ = organization_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -420,8 +428,8 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
       if (other == com.google.cloud.compute.v1.ProjectsListXpnHostsRequest.getDefaultInstance())
         return this;
       if (other.hasOrganization()) {
-        bitField0_ |= 0x00000001;
         organization_ = other.organization_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -550,8 +558,8 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       organization_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -567,8 +575,8 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearOrganization() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       organization_ = getDefaultInstance().getOrganization();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -589,8 +597,8 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       organization_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

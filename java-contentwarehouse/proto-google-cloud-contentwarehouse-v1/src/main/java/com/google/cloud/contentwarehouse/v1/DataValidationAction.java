@@ -89,6 +89,7 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> conditions_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetConditions() {
@@ -152,8 +153,10 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; conditions = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getConditionsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getConditionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -409,6 +412,7 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableConditions().clear();
       return this;
     }
@@ -437,11 +441,19 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
     public com.google.cloud.contentwarehouse.v1.DataValidationAction buildPartial() {
       com.google.cloud.contentwarehouse.v1.DataValidationAction result =
           new com.google.cloud.contentwarehouse.v1.DataValidationAction(this);
-      int from_bitField0_ = bitField0_;
-      result.conditions_ = internalGetConditions();
-      result.conditions_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.DataValidationAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conditions_ = internalGetConditions();
+        result.conditions_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -491,6 +503,7 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.contentwarehouse.v1.DataValidationAction.getDefaultInstance())
         return this;
       internalGetMutableConditions().mergeFrom(other.internalGetConditions());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -526,6 +539,7 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
                 internalGetMutableConditions()
                     .getMutableMap()
                     .put(conditions__.getKey(), conditions__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -560,8 +574,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableConditions() {
-      onChanged();
-      ;
       if (conditions_ == null) {
         conditions_ =
             com.google.protobuf.MapField.newMapField(ConditionsDefaultEntryHolder.defaultEntry);
@@ -569,6 +581,8 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
       if (!conditions_.isMutable()) {
         conditions_ = conditions_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return conditions_;
     }
 
@@ -626,8 +640,10 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, string&gt; conditions = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getConditionsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getConditionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -658,6 +674,7 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearConditions() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableConditions().getMutableMap().clear();
       return this;
     }
@@ -682,6 +699,7 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableConditions() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableConditions().getMutableMap();
     }
     /**
@@ -702,8 +720,8 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableConditions().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -719,6 +737,7 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllConditions(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableConditions().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

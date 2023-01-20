@@ -72,7 +72,9 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
 
   private int bitField0_;
   public static final int FIREWALL_POLICY_FIELD_NUMBER = 498173265;
-  private volatile java.lang.Object firewallPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewallPolicy_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -185,7 +189,9 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
   }
 
   public static final int SOURCE_FIREWALL_POLICY_FIELD_NUMBER = 25013549;
-  private volatile java.lang.Object sourceFirewallPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceFirewallPolicy_ = "";
   /**
    *
    *
@@ -475,12 +481,10 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firewallPolicy_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       sourceFirewallPolicy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -508,20 +512,28 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
     public com.google.cloud.compute.v1.CloneRulesFirewallPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.CloneRulesFirewallPolicyRequest result =
           new com.google.cloud.compute.v1.CloneRulesFirewallPolicyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.firewallPolicy_ = firewallPolicy_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.sourceFirewallPolicy_ = sourceFirewallPolicy_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.CloneRulesFirewallPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firewallPolicy_ = firewallPolicy_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sourceFirewallPolicy_ = sourceFirewallPolicy_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -572,16 +584,17 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
         return this;
       if (!other.getFirewallPolicy().isEmpty()) {
         firewallPolicy_ = other.firewallPolicy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSourceFirewallPolicy()) {
-        bitField0_ |= 0x00000002;
         sourceFirewallPolicy_ = other.sourceFirewallPolicy_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -613,19 +626,19 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
             case 200108394:
               {
                 sourceFirewallPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 200108394
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 296879706
             case -309581174:
               {
                 firewallPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -309581174
             default:
@@ -708,8 +721,8 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -725,8 +738,8 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearFirewallPolicy() {
-
       firewallPolicy_ = getDefaultInstance().getFirewallPolicy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -747,8 +760,8 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,7 +779,7 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -828,8 +841,8 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -845,8 +858,8 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -867,8 +880,8 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -886,7 +899,7 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
      * @return Whether the sourceFirewallPolicy field is set.
      */
     public boolean hasSourceFirewallPolicy() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -948,8 +961,8 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       sourceFirewallPolicy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -965,8 +978,8 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearSourceFirewallPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       sourceFirewallPolicy_ = getDefaultInstance().getSourceFirewallPolicy();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -987,8 +1000,8 @@ public final class CloneRulesFirewallPolicyRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       sourceFirewallPolicy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -67,6 +67,8 @@ public final class TestPermissionsResponse extends com.google.protobuf.Generated
   }
 
   public static final int PERMISSIONS_FIELD_NUMBER = 59962500;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList permissions_;
   /**
    *
@@ -330,6 +332,7 @@ public final class TestPermissionsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -359,14 +362,25 @@ public final class TestPermissionsResponse extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.TestPermissionsResponse buildPartial() {
       com.google.cloud.compute.v1.TestPermissionsResponse result =
           new com.google.cloud.compute.v1.TestPermissionsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.TestPermissionsResponse result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         permissions_ = permissions_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.permissions_ = permissions_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.TestPermissionsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

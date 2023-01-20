@@ -114,7 +114,9 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.BigQueryConnectionSpecOrBuilder
       getBigqueryConnectionSpecOrBuilder() {
-    return getBigqueryConnectionSpec();
+    return bigqueryConnectionSpec_ == null
+        ? com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.getDefaultInstance()
+        : bigqueryConnectionSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -324,10 +326,10 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (bigqueryConnectionSpecBuilder_ == null) {
-        bigqueryConnectionSpec_ = null;
-      } else {
-        bigqueryConnectionSpec_ = null;
+      bitField0_ = 0;
+      bigqueryConnectionSpec_ = null;
+      if (bigqueryConnectionSpecBuilder_ != null) {
+        bigqueryConnectionSpecBuilder_.dispose();
         bigqueryConnectionSpecBuilder_ = null;
       }
       return this;
@@ -357,13 +359,21 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
     public com.google.cloud.datacatalog.v1.DataSourceConnectionSpec buildPartial() {
       com.google.cloud.datacatalog.v1.DataSourceConnectionSpec result =
           new com.google.cloud.datacatalog.v1.DataSourceConnectionSpec(this);
-      if (bigqueryConnectionSpecBuilder_ == null) {
-        result.bigqueryConnectionSpec_ = bigqueryConnectionSpec_;
-      } else {
-        result.bigqueryConnectionSpec_ = bigqueryConnectionSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.DataSourceConnectionSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bigqueryConnectionSpec_ =
+            bigqueryConnectionSpecBuilder_ == null
+                ? bigqueryConnectionSpec_
+                : bigqueryConnectionSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -445,7 +455,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
               {
                 input.readMessage(
                     getBigqueryConnectionSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -464,6 +474,8 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigqueryConnectionSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -484,7 +496,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      * @return Whether the bigqueryConnectionSpec field is set.
      */
     public boolean hasBigqueryConnectionSpec() {
-      return bigqueryConnectionSpecBuilder_ != null || bigqueryConnectionSpec_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -524,11 +536,11 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         bigqueryConnectionSpec_ = value;
-        onChanged();
       } else {
         bigqueryConnectionSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -545,11 +557,11 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
         com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.Builder builderForValue) {
       if (bigqueryConnectionSpecBuilder_ == null) {
         bigqueryConnectionSpec_ = builderForValue.build();
-        onChanged();
       } else {
         bigqueryConnectionSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -565,20 +577,19 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
     public Builder mergeBigqueryConnectionSpec(
         com.google.cloud.datacatalog.v1.BigQueryConnectionSpec value) {
       if (bigqueryConnectionSpecBuilder_ == null) {
-        if (bigqueryConnectionSpec_ != null) {
-          bigqueryConnectionSpec_ =
-              com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.newBuilder(
-                      bigqueryConnectionSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && bigqueryConnectionSpec_ != null
+            && bigqueryConnectionSpec_
+                != com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.getDefaultInstance()) {
+          getBigqueryConnectionSpecBuilder().mergeFrom(value);
         } else {
           bigqueryConnectionSpec_ = value;
         }
-        onChanged();
       } else {
         bigqueryConnectionSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -592,14 +603,13 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearBigqueryConnectionSpec() {
-      if (bigqueryConnectionSpecBuilder_ == null) {
-        bigqueryConnectionSpec_ = null;
-        onChanged();
-      } else {
-        bigqueryConnectionSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      bigqueryConnectionSpec_ = null;
+      if (bigqueryConnectionSpecBuilder_ != null) {
+        bigqueryConnectionSpecBuilder_.dispose();
         bigqueryConnectionSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -614,7 +624,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      */
     public com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.Builder
         getBigqueryConnectionSpecBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBigqueryConnectionSpecFieldBuilder().getBuilder();
     }

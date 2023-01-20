@@ -69,6 +69,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_PATTERNS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList filePatterns_;
   /**
    *
@@ -222,6 +224,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SAMPLE_GCS_FILE_SPECS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1beta1.GcsFileSpec> sampleGcsFileSpecs_;
   /**
    *
@@ -523,6 +527,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       if (sampleGcsFileSpecsBuilder_ == null) {
@@ -559,7 +564,16 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec buildPartial() {
       com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec result =
           new com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         filePatterns_ = filePatterns_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -574,8 +588,10 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.sampleGcsFileSpecs_ = sampleGcsFileSpecsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

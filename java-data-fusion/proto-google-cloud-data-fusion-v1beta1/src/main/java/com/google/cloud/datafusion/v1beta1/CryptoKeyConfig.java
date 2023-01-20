@@ -69,7 +69,9 @@ public final class CryptoKeyConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int KEY_REFERENCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object keyReference_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyReference_ = "";
   /**
    *
    *
@@ -319,8 +321,8 @@ public final class CryptoKeyConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       keyReference_ = "";
-
       return this;
     }
 
@@ -348,9 +350,18 @@ public final class CryptoKeyConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.datafusion.v1beta1.CryptoKeyConfig buildPartial() {
       com.google.cloud.datafusion.v1beta1.CryptoKeyConfig result =
           new com.google.cloud.datafusion.v1beta1.CryptoKeyConfig(this);
-      result.keyReference_ = keyReference_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datafusion.v1beta1.CryptoKeyConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keyReference_ = keyReference_;
+      }
     }
 
     @java.lang.Override
@@ -401,6 +412,7 @@ public final class CryptoKeyConfig extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getKeyReference().isEmpty()) {
         keyReference_ = other.keyReference_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -432,7 +444,7 @@ public final class CryptoKeyConfig extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 keyReference_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -451,6 +463,8 @@ public final class CryptoKeyConfig extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object keyReference_ = "";
     /**
@@ -519,8 +533,8 @@ public final class CryptoKeyConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyReference_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -538,8 +552,8 @@ public final class CryptoKeyConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearKeyReference() {
-
       keyReference_ = getDefaultInstance().getKeyReference();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -562,8 +576,8 @@ public final class CryptoKeyConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyReference_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

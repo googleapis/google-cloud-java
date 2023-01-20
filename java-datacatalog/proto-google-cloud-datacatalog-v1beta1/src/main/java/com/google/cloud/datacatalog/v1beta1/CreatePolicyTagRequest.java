@@ -69,7 +69,9 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -166,7 +168,9 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.PolicyTagOrBuilder getPolicyTagOrBuilder() {
-    return getPolicyTag();
+    return policyTag_ == null
+        ? com.google.cloud.datacatalog.v1beta1.PolicyTag.getDefaultInstance()
+        : policyTag_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,12 +386,11 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (policyTagBuilder_ == null) {
-        policyTag_ = null;
-      } else {
-        policyTag_ = null;
+      policyTag_ = null;
+      if (policyTagBuilder_ != null) {
+        policyTagBuilder_.dispose();
         policyTagBuilder_ = null;
       }
       return this;
@@ -417,14 +420,21 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.datacatalog.v1beta1.CreatePolicyTagRequest buildPartial() {
       com.google.cloud.datacatalog.v1beta1.CreatePolicyTagRequest result =
           new com.google.cloud.datacatalog.v1beta1.CreatePolicyTagRequest(this);
-      result.parent_ = parent_;
-      if (policyTagBuilder_ == null) {
-        result.policyTag_ = policyTag_;
-      } else {
-        result.policyTag_ = policyTagBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.CreatePolicyTagRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.policyTag_ = policyTagBuilder_ == null ? policyTag_ : policyTagBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -475,6 +485,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPolicyTag()) {
@@ -509,13 +520,13 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPolicyTagFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -534,6 +545,8 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -602,8 +615,8 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,8 +634,8 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -645,8 +658,8 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,7 +682,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
      * @return Whether the policyTag field is set.
      */
     public boolean hasPolicyTag() {
-      return policyTagBuilder_ != null || policyTag_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -706,11 +719,11 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         policyTag_ = value;
-        onChanged();
       } else {
         policyTagBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -726,11 +739,11 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.datacatalog.v1beta1.PolicyTag.Builder builderForValue) {
       if (policyTagBuilder_ == null) {
         policyTag_ = builderForValue.build();
-        onChanged();
       } else {
         policyTagBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -744,19 +757,18 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergePolicyTag(com.google.cloud.datacatalog.v1beta1.PolicyTag value) {
       if (policyTagBuilder_ == null) {
-        if (policyTag_ != null) {
-          policyTag_ =
-              com.google.cloud.datacatalog.v1beta1.PolicyTag.newBuilder(policyTag_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && policyTag_ != null
+            && policyTag_ != com.google.cloud.datacatalog.v1beta1.PolicyTag.getDefaultInstance()) {
+          getPolicyTagBuilder().mergeFrom(value);
         } else {
           policyTag_ = value;
         }
-        onChanged();
       } else {
         policyTagBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -769,14 +781,13 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 2;</code>
      */
     public Builder clearPolicyTag() {
-      if (policyTagBuilder_ == null) {
-        policyTag_ = null;
-        onChanged();
-      } else {
-        policyTag_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      policyTag_ = null;
+      if (policyTagBuilder_ != null) {
+        policyTagBuilder_.dispose();
         policyTagBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -789,7 +800,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 2;</code>
      */
     public com.google.cloud.datacatalog.v1beta1.PolicyTag.Builder getPolicyTagBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPolicyTagFieldBuilder().getBuilder();
     }

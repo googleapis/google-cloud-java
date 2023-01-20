@@ -71,7 +71,9 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
 
   private int bitField0_;
   public static final int NETWORK_FIELD_NUMBER = 232872494;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -170,11 +172,15 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkOrBuilder getNetworkResourceOrBuilder() {
-    return getNetworkResource();
+    return networkResource_ == null
+        ? com.google.cloud.compute.v1.Network.getDefaultInstance()
+        : networkResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -227,7 +233,9 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -525,18 +533,15 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       network_ = "";
-
-      if (networkResourceBuilder_ == null) {
-        networkResource_ = null;
-      } else {
-        networkResource_ = null;
+      networkResource_ = null;
+      if (networkResourceBuilder_ != null) {
+        networkResourceBuilder_.dispose();
         networkResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -564,22 +569,31 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.PatchNetworkRequest buildPartial() {
       com.google.cloud.compute.v1.PatchNetworkRequest result =
           new com.google.cloud.compute.v1.PatchNetworkRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.network_ = network_;
-      if (networkResourceBuilder_ == null) {
-        result.networkResource_ = networkResource_;
-      } else {
-        result.networkResource_ = networkResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PatchNetworkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.networkResource_ =
+            networkResourceBuilder_ == null ? networkResource_ : networkResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -630,6 +644,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasNetworkResource()) {
@@ -637,11 +652,12 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -673,25 +689,25 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 976844794:
               {
                 input.readMessage(getNetworkResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 976844794
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1862979954
             default:
@@ -774,8 +790,8 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -791,8 +807,8 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -813,8 +829,8 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -839,7 +855,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the networkResource field is set.
      */
     public boolean hasNetworkResource() {
-      return networkResourceBuilder_ != null || networkResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -880,11 +896,11 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         networkResource_ = value;
-        onChanged();
       } else {
         networkResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -901,11 +917,11 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     public Builder setNetworkResource(com.google.cloud.compute.v1.Network.Builder builderForValue) {
       if (networkResourceBuilder_ == null) {
         networkResource_ = builderForValue.build();
-        onChanged();
       } else {
         networkResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -921,19 +937,18 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeNetworkResource(com.google.cloud.compute.v1.Network value) {
       if (networkResourceBuilder_ == null) {
-        if (networkResource_ != null) {
-          networkResource_ =
-              com.google.cloud.compute.v1.Network.newBuilder(networkResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && networkResource_ != null
+            && networkResource_ != com.google.cloud.compute.v1.Network.getDefaultInstance()) {
+          getNetworkResourceBuilder().mergeFrom(value);
         } else {
           networkResource_ = value;
         }
-        onChanged();
       } else {
         networkResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -948,14 +963,13 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearNetworkResource() {
-      if (networkResourceBuilder_ == null) {
-        networkResource_ = null;
-        onChanged();
-      } else {
-        networkResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      networkResource_ = null;
+      if (networkResourceBuilder_ != null) {
+        networkResourceBuilder_.dispose();
         networkResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -970,7 +984,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.compute.v1.Network.Builder getNetworkResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNetworkResourceFieldBuilder().getBuilder();
     }
@@ -1089,8 +1103,8 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1108,8 +1122,8 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1132,8 +1146,8 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1151,7 +1165,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1213,8 +1227,8 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1230,8 +1244,8 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1252,8 +1266,8 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

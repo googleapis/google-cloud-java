@@ -108,7 +108,7 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 2;
@@ -159,7 +159,9 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.contentwarehouse.v1.ResponseMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -379,16 +381,15 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      bitField0_ = 0;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -418,18 +419,21 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.contentwarehouse.v1.FetchAclResponse buildPartial() {
       com.google.cloud.contentwarehouse.v1.FetchAclResponse result =
           new com.google.cloud.contentwarehouse.v1.FetchAclResponse(this);
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
-      }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.FetchAclResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -513,13 +517,13 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -539,6 +543,8 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.iam.v1.Policy policy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.iam.v1.Policy,
@@ -557,7 +563,7 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -592,11 +598,11 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -611,11 +617,11 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
     public Builder setPolicy(com.google.iam.v1.Policy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -629,16 +635,18 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePolicy(com.google.iam.v1.Policy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ = com.google.iam.v1.Policy.newBuilder(policy_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && policy_ != null
+            && policy_ != com.google.iam.v1.Policy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -651,14 +659,13 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
      * <code>.google.iam.v1.Policy policy = 1;</code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -671,7 +678,7 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
      * <code>.google.iam.v1.Policy policy = 1;</code>
      */
     public com.google.iam.v1.Policy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
@@ -735,7 +742,7 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -774,11 +781,11 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -795,11 +802,11 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
         com.google.cloud.contentwarehouse.v1.ResponseMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -814,19 +821,19 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeMetadata(com.google.cloud.contentwarehouse.v1.ResponseMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.contentwarehouse.v1.ResponseMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.contentwarehouse.v1.ResponseMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -840,14 +847,13 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.contentwarehouse.v1.ResponseMetadata metadata = 2;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -861,7 +867,7 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.contentwarehouse.v1.ResponseMetadata metadata = 2;</code>
      */
     public com.google.cloud.contentwarehouse.v1.ResponseMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

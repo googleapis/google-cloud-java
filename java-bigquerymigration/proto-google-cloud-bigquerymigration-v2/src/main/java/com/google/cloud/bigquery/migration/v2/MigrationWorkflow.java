@@ -293,7 +293,9 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -350,7 +352,9 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -417,6 +421,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
                         com.google.cloud.bigquery.migration.v2.MigrationTask.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.bigquery.migration.v2.MigrationTask>
       tasks_;
@@ -486,8 +491,10 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    * <code>map&lt;string, .google.cloud.bigquery.migration.v2.MigrationTask&gt; tasks = 2;</code>
    */
   @java.lang.Override
-  public com.google.cloud.bigquery.migration.v2.MigrationTask getTasksOrDefault(
-      java.lang.String key, com.google.cloud.bigquery.migration.v2.MigrationTask defaultValue) {
+  public /* nullable */ com.google.cloud.bigquery.migration.v2.MigrationTask getTasksOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.bigquery.migration.v2.MigrationTask defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -521,7 +528,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STATE_FIELD_NUMBER = 3;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -554,9 +561,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State result =
-        com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State.valueOf(state_);
+        com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State.forNumber(state_);
     return result == null
         ? com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State.UNRECOGNIZED
         : result;
@@ -605,7 +611,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 5;
@@ -653,7 +659,9 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
-    return getLastUpdateTime();
+    return lastUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastUpdateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -944,23 +952,19 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       internalGetMutableTasks().clear();
       state_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (lastUpdateTimeBuilder_ == null) {
-        lastUpdateTime_ = null;
-      } else {
-        lastUpdateTime_ = null;
+      lastUpdateTime_ = null;
+      if (lastUpdateTimeBuilder_ != null) {
+        lastUpdateTimeBuilder_.dispose();
         lastUpdateTimeBuilder_ = null;
       }
       return this;
@@ -990,24 +994,35 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.bigquery.migration.v2.MigrationWorkflow buildPartial() {
       com.google.cloud.bigquery.migration.v2.MigrationWorkflow result =
           new com.google.cloud.bigquery.migration.v2.MigrationWorkflow(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.tasks_ = internalGetTasks();
-      result.tasks_.makeImmutable();
-      result.state_ = state_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (lastUpdateTimeBuilder_ == null) {
-        result.lastUpdateTime_ = lastUpdateTime_;
-      } else {
-        result.lastUpdateTime_ = lastUpdateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2.MigrationWorkflow result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.tasks_ = internalGetTasks();
+        result.tasks_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.lastUpdateTime_ =
+            lastUpdateTimeBuilder_ == null ? lastUpdateTime_ : lastUpdateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1058,13 +1073,16 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableTasks().mergeFrom(other.internalGetTasks());
+      bitField0_ |= 0x00000004;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -1103,7 +1121,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1115,30 +1133,31 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
                             TasksDefaultEntryHolder.defaultEntry.getParserForType(),
                             extensionRegistry);
                 internalGetMutableTasks().getMutableMap().put(tasks__.getKey(), tasks__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 24:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getLastUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             default:
@@ -1233,8 +1252,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1254,8 +1273,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1280,8 +1299,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1350,8 +1369,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1368,8 +1387,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1391,8 +1410,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1413,14 +1432,14 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.bigquery.migration.v2.MigrationTask>
         internalGetMutableTasks() {
-      onChanged();
-      ;
       if (tasks_ == null) {
         tasks_ = com.google.protobuf.MapField.newMapField(TasksDefaultEntryHolder.defaultEntry);
       }
       if (!tasks_.isMutable()) {
         tasks_ = tasks_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return tasks_;
     }
 
@@ -1480,8 +1499,10 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, .google.cloud.bigquery.migration.v2.MigrationTask&gt; tasks = 2;</code>
      */
     @java.lang.Override
-    public com.google.cloud.bigquery.migration.v2.MigrationTask getTasksOrDefault(
-        java.lang.String key, com.google.cloud.bigquery.migration.v2.MigrationTask defaultValue) {
+    public /* nullable */ com.google.cloud.bigquery.migration.v2.MigrationTask getTasksOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.bigquery.migration.v2.MigrationTask defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1515,6 +1536,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearTasks() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableTasks().getMutableMap().clear();
       return this;
     }
@@ -1540,6 +1562,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.MigrationTask>
         getMutableTasks() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableTasks().getMutableMap();
     }
     /**
@@ -1561,8 +1584,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableTasks().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1580,6 +1603,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.MigrationTask>
             values) {
       internalGetMutableTasks().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1616,8 +1640,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1636,9 +1660,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State result =
-          com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State.valueOf(state_);
+          com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State.forNumber(state_);
       return result == null
           ? com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State.UNRECOGNIZED
           : result;
@@ -1661,7 +1684,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1680,7 +1703,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -1704,7 +1727,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1741,11 +1764,11 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1760,11 +1783,11 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1778,17 +1801,18 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1801,14 +1825,13 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1821,7 +1844,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1887,7 +1910,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * @return Whether the lastUpdateTime field is set.
      */
     public boolean hasLastUpdateTime() {
-      return lastUpdateTimeBuilder_ != null || lastUpdateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1924,11 +1947,11 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         lastUpdateTime_ = value;
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1943,11 +1966,11 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastUpdateTimeBuilder_ == null) {
         lastUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1961,19 +1984,18 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
-        if (lastUpdateTime_ != null) {
-          lastUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && lastUpdateTime_ != null
+            && lastUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastUpdateTimeBuilder().mergeFrom(value);
         } else {
           lastUpdateTime_ = value;
         }
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1986,14 +2008,13 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
      */
     public Builder clearLastUpdateTime() {
-      if (lastUpdateTimeBuilder_ == null) {
-        lastUpdateTime_ = null;
-        onChanged();
-      } else {
-        lastUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      lastUpdateTime_ = null;
+      if (lastUpdateTimeBuilder_ != null) {
+        lastUpdateTimeBuilder_.dispose();
         lastUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2006,7 +2027,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }

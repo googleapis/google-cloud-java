@@ -69,7 +69,9 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
-  private volatile java.lang.Object healthCheck_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object healthCheck_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       healthCheck_ = "";
-
       project_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.GetHealthCheckRequest buildPartial() {
       com.google.cloud.compute.v1.GetHealthCheckRequest result =
           new com.google.cloud.compute.v1.GetHealthCheckRequest(this);
-      result.healthCheck_ = healthCheck_;
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetHealthCheckRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.healthCheck_ = healthCheck_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -457,10 +471,12 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getHealthCheck().isEmpty()) {
         healthCheck_ = other.healthCheck_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -492,13 +508,13 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1823954134:
               {
                 healthCheck_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1823954134
             default:
@@ -517,6 +533,8 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object healthCheck_ = "";
     /**
@@ -579,8 +597,8 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       healthCheck_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -596,8 +614,8 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearHealthCheck() {
-
       healthCheck_ = getDefaultInstance().getHealthCheck();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -618,8 +636,8 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       healthCheck_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,8 +703,8 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -702,8 +720,8 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

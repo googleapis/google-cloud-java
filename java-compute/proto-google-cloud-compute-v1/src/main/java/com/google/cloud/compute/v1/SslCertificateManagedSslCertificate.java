@@ -326,6 +326,7 @@ public final class SslCertificateManagedSslCertificate
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> domainStatus_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -385,8 +386,10 @@ public final class SslCertificateManagedSslCertificate
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
    */
   @java.lang.Override
-  public java.lang.String getDomainStatusOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getDomainStatusOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -415,6 +418,8 @@ public final class SslCertificateManagedSslCertificate
   }
 
   public static final int DOMAINS_FIELD_NUMBER = 226935855;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList domains_;
   /**
    *
@@ -476,7 +481,9 @@ public final class SslCertificateManagedSslCertificate
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -798,11 +805,11 @@ public final class SslCertificateManagedSslCertificate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableDomainStatus().clear();
       domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -831,22 +838,36 @@ public final class SslCertificateManagedSslCertificate
     public com.google.cloud.compute.v1.SslCertificateManagedSslCertificate buildPartial() {
       com.google.cloud.compute.v1.SslCertificateManagedSslCertificate result =
           new com.google.cloud.compute.v1.SslCertificateManagedSslCertificate(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.domainStatus_ = internalGetDomainStatus();
-      result.domainStatus_.makeImmutable();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.SslCertificateManagedSslCertificate result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         domains_ = domains_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.domains_ = domains_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SslCertificateManagedSslCertificate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.domainStatus_ = internalGetDomainStatus();
+        result.domainStatus_.makeImmutable();
+      }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = status_;
         to_bitField0_ |= 0x00000001;
       }
-      result.status_ = status_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -898,6 +919,7 @@ public final class SslCertificateManagedSslCertificate
           == com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.getDefaultInstance())
         return this;
       internalGetMutableDomainStatus().mergeFrom(other.internalGetDomainStatus());
+      bitField0_ |= 0x00000001;
       if (!other.domains_.isEmpty()) {
         if (domains_.isEmpty()) {
           domains_ = other.domains_;
@@ -909,8 +931,8 @@ public final class SslCertificateManagedSslCertificate
         onChanged();
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00000004;
         status_ = other.status_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -961,6 +983,7 @@ public final class SslCertificateManagedSslCertificate
                 internalGetMutableDomainStatus()
                     .getMutableMap()
                     .put(domainStatus__.getKey(), domainStatus__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1412522390
             default:
@@ -995,8 +1018,6 @@ public final class SslCertificateManagedSslCertificate
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableDomainStatus() {
-      onChanged();
-      ;
       if (domainStatus_ == null) {
         domainStatus_ =
             com.google.protobuf.MapField.newMapField(DomainStatusDefaultEntryHolder.defaultEntry);
@@ -1004,6 +1025,8 @@ public final class SslCertificateManagedSslCertificate
       if (!domainStatus_.isMutable()) {
         domainStatus_ = domainStatus_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return domainStatus_;
     }
 
@@ -1055,8 +1078,10 @@ public final class SslCertificateManagedSslCertificate
      * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
      */
     @java.lang.Override
-    public java.lang.String getDomainStatusOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDomainStatusOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1085,6 +1110,7 @@ public final class SslCertificateManagedSslCertificate
     }
 
     public Builder clearDomainStatus() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableDomainStatus().getMutableMap().clear();
       return this;
     }
@@ -1107,6 +1133,7 @@ public final class SslCertificateManagedSslCertificate
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDomainStatus() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableDomainStatus().getMutableMap();
     }
     /**
@@ -1125,8 +1152,8 @@ public final class SslCertificateManagedSslCertificate
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDomainStatus().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1140,6 +1167,7 @@ public final class SslCertificateManagedSslCertificate
      */
     public Builder putAllDomainStatus(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDomainStatus().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -1390,8 +1418,8 @@ public final class SslCertificateManagedSslCertificate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       status_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1408,8 +1436,8 @@ public final class SslCertificateManagedSslCertificate
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1431,8 +1459,8 @@ public final class SslCertificateManagedSslCertificate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       status_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

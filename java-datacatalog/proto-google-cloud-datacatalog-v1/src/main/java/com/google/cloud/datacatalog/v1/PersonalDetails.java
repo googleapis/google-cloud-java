@@ -66,7 +66,7 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int STARRED_FIELD_NUMBER = 1;
-  private boolean starred_;
+  private boolean starred_ = false;
   /**
    *
    *
@@ -126,7 +126,7 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStarTimeOrBuilder() {
-    return getStarTime();
+    return starTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : starTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -340,12 +340,11 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       starred_ = false;
-
-      if (starTimeBuilder_ == null) {
-        starTime_ = null;
-      } else {
-        starTime_ = null;
+      starTime_ = null;
+      if (starTimeBuilder_ != null) {
+        starTimeBuilder_.dispose();
         starTimeBuilder_ = null;
       }
       return this;
@@ -375,14 +374,21 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.datacatalog.v1.PersonalDetails buildPartial() {
       com.google.cloud.datacatalog.v1.PersonalDetails result =
           new com.google.cloud.datacatalog.v1.PersonalDetails(this);
-      result.starred_ = starred_;
-      if (starTimeBuilder_ == null) {
-        result.starTime_ = starTime_;
-      } else {
-        result.starTime_ = starTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.PersonalDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.starred_ = starred_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.starTime_ = starTimeBuilder_ == null ? starTime_ : starTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -466,13 +472,13 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 starred_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getStarTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -491,6 +497,8 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean starred_;
     /**
@@ -523,6 +531,7 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
     public Builder setStarred(boolean value) {
 
       starred_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -538,7 +547,7 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearStarred() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       starred_ = false;
       onChanged();
       return this;
@@ -562,7 +571,7 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
      * @return Whether the starTime field is set.
      */
     public boolean hasStarTime() {
-      return starTimeBuilder_ != null || starTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -597,11 +606,11 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         starTime_ = value;
-        onChanged();
       } else {
         starTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -616,11 +625,11 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
     public Builder setStarTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (starTimeBuilder_ == null) {
         starTime_ = builderForValue.build();
-        onChanged();
       } else {
         starTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -634,17 +643,18 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeStarTime(com.google.protobuf.Timestamp value) {
       if (starTimeBuilder_ == null) {
-        if (starTime_ != null) {
-          starTime_ =
-              com.google.protobuf.Timestamp.newBuilder(starTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && starTime_ != null
+            && starTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStarTimeBuilder().mergeFrom(value);
         } else {
           starTime_ = value;
         }
-        onChanged();
       } else {
         starTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -657,14 +667,13 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp star_time = 2;</code>
      */
     public Builder clearStarTime() {
-      if (starTimeBuilder_ == null) {
-        starTime_ = null;
-        onChanged();
-      } else {
-        starTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      starTime_ = null;
+      if (starTimeBuilder_ != null) {
+        starTimeBuilder_.dispose();
         starTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -677,7 +686,7 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp star_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStarTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStarTimeFieldBuilder().getBuilder();
     }

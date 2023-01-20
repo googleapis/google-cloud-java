@@ -68,6 +68,8 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FOLDERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList folders_;
   /**
    *
@@ -341,6 +343,7 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -370,14 +373,25 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.contentwarehouse.v1.AddToFolderAction buildPartial() {
       com.google.cloud.contentwarehouse.v1.AddToFolderAction result =
           new com.google.cloud.contentwarehouse.v1.AddToFolderAction(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.AddToFolderAction result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         folders_ = folders_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.folders_ = folders_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.AddToFolderAction result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

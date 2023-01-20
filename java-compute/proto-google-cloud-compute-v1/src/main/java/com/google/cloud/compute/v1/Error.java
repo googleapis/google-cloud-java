@@ -68,6 +68,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERRORS_FIELD_NUMBER = 315977579;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Errors> errors_;
   /**
    *
@@ -333,6 +335,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
       } else {
@@ -366,7 +369,15 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Error buildPartial() {
       com.google.cloud.compute.v1.Error result = new com.google.cloud.compute.v1.Error(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Error result) {
       if (errorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
@@ -376,8 +387,10 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Error result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

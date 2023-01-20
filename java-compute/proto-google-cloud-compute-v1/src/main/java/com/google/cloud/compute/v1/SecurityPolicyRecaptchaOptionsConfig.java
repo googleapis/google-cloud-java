@@ -70,7 +70,9 @@ public final class SecurityPolicyRecaptchaOptionsConfig
 
   private int bitField0_;
   public static final int REDIRECT_SITE_KEY_FIELD_NUMBER = 447677034;
-  private volatile java.lang.Object redirectSiteKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redirectSiteKey_ = "";
   /**
    *
    *
@@ -335,8 +337,8 @@ public final class SecurityPolicyRecaptchaOptionsConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       redirectSiteKey_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -365,15 +367,22 @@ public final class SecurityPolicyRecaptchaOptionsConfig
     public com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig result =
           new com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.redirectSiteKey_ = redirectSiteKey_;
         to_bitField0_ |= 0x00000001;
       }
-      result.redirectSiteKey_ = redirectSiteKey_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -425,8 +434,8 @@ public final class SecurityPolicyRecaptchaOptionsConfig
           == com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.getDefaultInstance())
         return this;
       if (other.hasRedirectSiteKey()) {
-        bitField0_ |= 0x00000001;
         redirectSiteKey_ = other.redirectSiteKey_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -555,8 +564,8 @@ public final class SecurityPolicyRecaptchaOptionsConfig
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       redirectSiteKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -572,8 +581,8 @@ public final class SecurityPolicyRecaptchaOptionsConfig
      * @return This builder for chaining.
      */
     public Builder clearRedirectSiteKey() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       redirectSiteKey_ = getDefaultInstance().getRedirectSiteKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -594,8 +603,8 @@ public final class SecurityPolicyRecaptchaOptionsConfig
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       redirectSiteKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

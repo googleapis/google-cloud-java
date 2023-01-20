@@ -73,7 +73,9 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
 
   private int bitField0_;
   public static final int NETWORK_ENDPOINT_GROUP_FIELD_NUMBER = 433907078;
-  private volatile java.lang.Object networkEndpointGroup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkEndpointGroup_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -465,12 +471,10 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       networkEndpointGroup_ = "";
-
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -500,17 +504,28 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
     public com.google.cloud.compute.v1.DeleteGlobalNetworkEndpointGroupRequest buildPartial() {
       com.google.cloud.compute.v1.DeleteGlobalNetworkEndpointGroupRequest result =
           new com.google.cloud.compute.v1.DeleteGlobalNetworkEndpointGroupRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.networkEndpointGroup_ = networkEndpointGroup_;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.DeleteGlobalNetworkEndpointGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.networkEndpointGroup_ = networkEndpointGroup_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -564,15 +579,17 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
               .getDefaultInstance()) return this;
       if (!other.getNetworkEndpointGroup().isEmpty()) {
         networkEndpointGroup_ = other.networkEndpointGroup_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -604,19 +621,19 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -823710670:
               {
                 networkEndpointGroup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -823710670
             default:
@@ -702,8 +719,8 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkEndpointGroup_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -720,8 +737,8 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearNetworkEndpointGroup() {
-
       networkEndpointGroup_ = getDefaultInstance().getNetworkEndpointGroup();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +760,8 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkEndpointGroup_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -816,8 +833,8 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -835,8 +852,8 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -859,8 +876,8 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,7 +895,7 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -940,8 +957,8 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -957,8 +974,8 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -979,8 +996,8 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

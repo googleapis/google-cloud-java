@@ -68,7 +68,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int AUTOSCALER_FIELD_NUMBER = 517258967;
-  private volatile java.lang.Object autoscaler_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object autoscaler_ = "";
   /**
    *
    *
@@ -132,7 +134,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
   }
 
   public static final int IS_STABLE_FIELD_NUMBER = 108410864;
-  private boolean isStable_;
+  private boolean isStable_ = false;
   /**
    *
    *
@@ -533,22 +535,19 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       autoscaler_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       isStable_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (statefulBuilder_ == null) {
-        stateful_ = null;
-      } else {
-        statefulBuilder_.clear();
+      stateful_ = null;
+      if (statefulBuilder_ != null) {
+        statefulBuilder_.dispose();
+        statefulBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (versionTargetBuilder_ == null) {
-        versionTarget_ = null;
-      } else {
-        versionTargetBuilder_.clear();
+      versionTarget_ = null;
+      if (versionTargetBuilder_ != null) {
+        versionTargetBuilder_.dispose();
+        versionTargetBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -576,35 +575,34 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.InstanceGroupManagerStatus buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerStatus result =
           new com.google.cloud.compute.v1.InstanceGroupManagerStatus(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InstanceGroupManagerStatus result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoscaler_ = autoscaler_;
         to_bitField0_ |= 0x00000001;
       }
-      result.autoscaler_ = autoscaler_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.isStable_ = isStable_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (statefulBuilder_ == null) {
-          result.stateful_ = stateful_;
-        } else {
-          result.stateful_ = statefulBuilder_.build();
-        }
+        result.stateful_ = statefulBuilder_ == null ? stateful_ : statefulBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (versionTargetBuilder_ == null) {
-          result.versionTarget_ = versionTarget_;
-        } else {
-          result.versionTarget_ = versionTargetBuilder_.build();
-        }
+        result.versionTarget_ =
+            versionTargetBuilder_ == null ? versionTarget_ : versionTargetBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -654,8 +652,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       if (other == com.google.cloud.compute.v1.InstanceGroupManagerStatus.getDefaultInstance())
         return this;
       if (other.hasAutoscaler()) {
-        bitField0_ |= 0x00000001;
         autoscaler_ = other.autoscaler_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasIsStable()) {
@@ -811,8 +809,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       autoscaler_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -828,8 +826,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearAutoscaler() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       autoscaler_ = getDefaultInstance().getAutoscaler();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -850,8 +848,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       autoscaler_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -900,8 +898,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setIsStable(boolean value) {
-      bitField0_ |= 0x00000002;
+
       isStable_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -985,11 +984,11 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         stateful_ = value;
-        onChanged();
       } else {
         statefulBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1007,11 +1006,11 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.Builder builderForValue) {
       if (statefulBuilder_ == null) {
         stateful_ = builderForValue.build();
-        onChanged();
       } else {
         statefulBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1033,18 +1032,15 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             && stateful_
                 != com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful
                     .getDefaultInstance()) {
-          stateful_ =
-              com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.newBuilder(stateful_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getStatefulBuilder().mergeFrom(value);
         } else {
           stateful_ = value;
         }
-        onChanged();
       } else {
         statefulBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1059,13 +1055,13 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearStateful() {
-      if (statefulBuilder_ == null) {
-        stateful_ = null;
-        onChanged();
-      } else {
-        statefulBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      stateful_ = null;
+      if (statefulBuilder_ != null) {
+        statefulBuilder_.dispose();
+        statefulBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1197,11 +1193,11 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         versionTarget_ = value;
-        onChanged();
       } else {
         versionTargetBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1220,11 +1216,11 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             builderForValue) {
       if (versionTargetBuilder_ == null) {
         versionTarget_ = builderForValue.build();
-        onChanged();
       } else {
         versionTargetBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1246,19 +1242,15 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             && versionTarget_
                 != com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget
                     .getDefaultInstance()) {
-          versionTarget_ =
-              com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.newBuilder(
-                      versionTarget_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getVersionTargetBuilder().mergeFrom(value);
         } else {
           versionTarget_ = value;
         }
-        onChanged();
       } else {
         versionTargetBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1273,13 +1265,13 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearVersionTarget() {
-      if (versionTargetBuilder_ == null) {
-        versionTarget_ = null;
-        onChanged();
-      } else {
-        versionTargetBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      versionTarget_ = null;
+      if (versionTargetBuilder_ != null) {
+        versionTargetBuilder_.dispose();
+        versionTargetBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

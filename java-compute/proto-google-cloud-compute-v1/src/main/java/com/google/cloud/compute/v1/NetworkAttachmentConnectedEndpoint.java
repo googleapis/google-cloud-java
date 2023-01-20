@@ -305,7 +305,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
 
   private int bitField0_;
   public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -369,7 +371,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   }
 
   public static final int PROJECT_ID_OR_NUM_FIELD_NUMBER = 349783336;
-  private volatile java.lang.Object projectIdOrNum_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectIdOrNum_ = "";
   /**
    *
    *
@@ -433,6 +437,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   }
 
   public static final int SECONDARY_IP_CIDR_RANGES_FIELD_NUMBER = 117184788;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList secondaryIpCidrRanges_;
   /**
    *
@@ -494,7 +500,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -561,7 +569,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -886,16 +896,13 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       projectIdOrNum_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       secondaryIpCidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       subnetwork_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -924,32 +931,44 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint buildPartial() {
       com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint result =
           new com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.ipAddress_ = ipAddress_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.projectIdOrNum_ = projectIdOrNum_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint result) {
       if (((bitField0_ & 0x00000004) != 0)) {
         secondaryIpCidrRanges_ = secondaryIpCidrRanges_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.secondaryIpCidrRanges_ = secondaryIpCidrRanges_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ipAddress_ = ipAddress_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectIdOrNum_ = projectIdOrNum_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.status_ = status_;
         to_bitField0_ |= 0x00000004;
       }
-      result.status_ = status_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.subnetwork_ = subnetwork_;
         to_bitField0_ |= 0x00000008;
       }
-      result.subnetwork_ = subnetwork_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1000,13 +1019,13 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
           == com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint.getDefaultInstance())
         return this;
       if (other.hasIpAddress()) {
-        bitField0_ |= 0x00000001;
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasProjectIdOrNum()) {
-        bitField0_ |= 0x00000002;
         projectIdOrNum_ = other.projectIdOrNum_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.secondaryIpCidrRanges_.isEmpty()) {
@@ -1020,13 +1039,13 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         onChanged();
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00000008;
         status_ = other.status_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSubnetwork()) {
-        bitField0_ |= 0x00000010;
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1180,8 +1199,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       ipAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1197,8 +1216,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1219,8 +1238,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       ipAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1300,8 +1319,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       projectIdOrNum_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1317,8 +1336,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearProjectIdOrNum() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       projectIdOrNum_ = getDefaultInstance().getProjectIdOrNum();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1339,8 +1358,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       projectIdOrNum_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1593,8 +1612,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       status_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1611,8 +1630,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1634,8 +1653,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       status_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1715,8 +1734,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       subnetwork_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1732,8 +1751,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1754,8 +1773,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       subnetwork_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -72,7 +72,9 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
 
   private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 3059181;
-  private volatile java.lang.Object code_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object code_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 418054151;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -419,10 +423,9 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       message_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -454,19 +457,26 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
         buildPartial() {
       com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError result =
           new com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
         to_bitField0_ |= 0x00000001;
       }
-      result.code_ = code_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.message_ = message_;
         to_bitField0_ |= 0x00000002;
       }
-      result.message_ = message_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -520,13 +530,13 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
           == com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError
               .getDefaultInstance()) return this;
       if (other.hasCode()) {
-        bitField0_ |= 0x00000001;
         code_ = other.code_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMessage()) {
-        bitField0_ |= 0x00000002;
         message_ = other.message_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -661,8 +671,8 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -678,8 +688,8 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = getDefaultInstance().getCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -700,8 +710,8 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -781,8 +791,8 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       message_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -798,8 +808,8 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -820,8 +830,8 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       message_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

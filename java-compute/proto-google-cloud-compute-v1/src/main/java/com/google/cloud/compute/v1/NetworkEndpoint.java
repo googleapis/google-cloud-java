@@ -94,6 +94,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -152,8 +153,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -182,7 +185,9 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int FQDN_FIELD_NUMBER = 3150485;
-  private volatile java.lang.Object fqdn_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fqdn_ = "";
   /**
    *
    *
@@ -246,7 +251,9 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -310,7 +317,9 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -374,7 +383,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PORT_FIELD_NUMBER = 3446913;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -687,15 +696,12 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableAnnotations().clear();
       fqdn_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       instance_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       ipAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       port_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -723,29 +729,37 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.NetworkEndpoint buildPartial() {
       com.google.cloud.compute.v1.NetworkEndpoint result =
           new com.google.cloud.compute.v1.NetworkEndpoint(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NetworkEndpoint result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
       int to_bitField0_ = 0;
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fqdn_ = fqdn_;
         to_bitField0_ |= 0x00000001;
       }
-      result.fqdn_ = fqdn_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.instance_ = instance_;
         to_bitField0_ |= 0x00000002;
       }
-      result.instance_ = instance_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.ipAddress_ = ipAddress_;
         to_bitField0_ |= 0x00000004;
       }
-      result.ipAddress_ = ipAddress_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.port_ = port_;
         to_bitField0_ |= 0x00000008;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -794,19 +808,20 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.compute.v1.NetworkEndpoint other) {
       if (other == com.google.cloud.compute.v1.NetworkEndpoint.getDefaultInstance()) return this;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000001;
       if (other.hasFqdn()) {
-        bitField0_ |= 0x00000002;
         fqdn_ = other.fqdn_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasInstance()) {
-        bitField0_ |= 0x00000004;
         instance_ = other.instance_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasIpAddress()) {
-        bitField0_ |= 0x00000008;
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasPort()) {
@@ -865,6 +880,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 896260386
             case -1044789534:
@@ -905,8 +921,6 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -914,6 +928,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return annotations_;
     }
 
@@ -965,8 +981,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -995,6 +1013,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -1017,6 +1036,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -1035,8 +1055,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1050,6 +1070,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -1128,8 +1149,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       fqdn_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1145,8 +1166,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearFqdn() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       fqdn_ = getDefaultInstance().getFqdn();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1167,8 +1188,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       fqdn_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1248,8 +1269,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       instance_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1265,8 +1286,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1287,8 +1308,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       instance_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1368,8 +1389,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       ipAddress_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1385,8 +1406,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1407,8 +1428,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       ipAddress_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1457,8 +1478,9 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-      bitField0_ |= 0x00000010;
+
       port_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

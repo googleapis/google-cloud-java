@@ -69,7 +69,9 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
-  private volatile java.lang.Object fingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fingerprint_ = "";
   /**
    *
    *
@@ -133,6 +135,8 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ITEMS_FIELD_NUMBER = 100526016;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList items_;
   /**
    *
@@ -409,8 +413,8 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fingerprint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       items_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
@@ -439,20 +443,30 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Tags buildPartial() {
       com.google.cloud.compute.v1.Tags result = new com.google.cloud.compute.v1.Tags(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.fingerprint_ = fingerprint_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Tags result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         items_ = items_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.items_ = items_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Tags result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fingerprint_ = fingerprint_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -501,8 +515,8 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Tags other) {
       if (other == com.google.cloud.compute.v1.Tags.getDefaultInstance()) return this;
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000001;
         fingerprint_ = other.fingerprint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.items_.isEmpty()) {
@@ -648,8 +662,8 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,8 +679,8 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       fingerprint_ = getDefaultInstance().getFingerprint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -687,8 +701,8 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

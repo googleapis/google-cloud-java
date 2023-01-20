@@ -584,7 +584,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, string&gt; additional_options = 14;</code>
      */
-
     /* nullable */
     java.lang.String getAdditionalOptionsOrDefault(
         java.lang.String key,
@@ -1179,7 +1178,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       public static final int INCREMENTAL_SELECT_QUERY_FIELD_NUMBER = 1;
-      private volatile java.lang.Object incrementalSelectQuery_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object incrementalSelectQuery_ = "";
       /**
        *
        *
@@ -1230,7 +1231,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       public static final int REFRESH_DISABLED_FIELD_NUMBER = 2;
-      private boolean refreshDisabled_;
+      private boolean refreshDisabled_ = false;
       /**
        *
        *
@@ -1248,6 +1249,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       public static final int UNIQUE_KEY_PARTS_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList uniqueKeyParts_;
       /**
        *
@@ -1321,7 +1324,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       public static final int UPDATE_PARTITION_FILTER_FIELD_NUMBER = 4;
-      private volatile java.lang.Object updatePartitionFilter_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object updatePartitionFilter_ = "";
       /**
        *
        *
@@ -1374,6 +1379,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       public static final int INCREMENTAL_PRE_OPERATIONS_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList incrementalPreOperations_;
       /**
        *
@@ -1439,6 +1446,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       public static final int INCREMENTAL_POST_OPERATIONS_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList incrementalPostOperations_;
       /**
        *
@@ -1807,18 +1816,16 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           incrementalSelectQuery_ = "";
-
           refreshDisabled_ = false;
-
           uniqueKeyParts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          updatePartitionFilter_ = "";
-
-          incrementalPreOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          incrementalPostOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000004);
+          updatePartitionFilter_ = "";
+          incrementalPreOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000010);
+          incrementalPostOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
@@ -1856,27 +1863,49 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               result =
                   new com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation
                       .IncrementalTableConfig(this);
-          int from_bitField0_ = bitField0_;
-          result.incrementalSelectQuery_ = incrementalSelectQuery_;
-          result.refreshDisabled_ = refreshDisabled_;
-          if (((bitField0_ & 0x00000001) != 0)) {
-            uniqueKeyParts_ = uniqueKeyParts_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          result.uniqueKeyParts_ = uniqueKeyParts_;
-          result.updatePartitionFilter_ = updatePartitionFilter_;
-          if (((bitField0_ & 0x00000002) != 0)) {
-            incrementalPreOperations_ = incrementalPreOperations_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.incrementalPreOperations_ = incrementalPreOperations_;
-          if (((bitField0_ & 0x00000004) != 0)) {
-            incrementalPostOperations_ = incrementalPostOperations_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.incrementalPostOperations_ = incrementalPostOperations_;
           onBuilt();
           return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation
+                    .IncrementalTableConfig
+                result) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            uniqueKeyParts_ = uniqueKeyParts_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.uniqueKeyParts_ = uniqueKeyParts_;
+          if (((bitField0_ & 0x00000010) != 0)) {
+            incrementalPreOperations_ = incrementalPreOperations_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.incrementalPreOperations_ = incrementalPreOperations_;
+          if (((bitField0_ & 0x00000020) != 0)) {
+            incrementalPostOperations_ = incrementalPostOperations_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.incrementalPostOperations_ = incrementalPostOperations_;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation
+                    .IncrementalTableConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.incrementalSelectQuery_ = incrementalSelectQuery_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.refreshDisabled_ = refreshDisabled_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.updatePartitionFilter_ = updatePartitionFilter_;
+          }
         }
 
         @java.lang.Override
@@ -1939,6 +1968,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                   .IncrementalTableConfig.getDefaultInstance()) return this;
           if (!other.getIncrementalSelectQuery().isEmpty()) {
             incrementalSelectQuery_ = other.incrementalSelectQuery_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.getRefreshDisabled() != false) {
@@ -1947,7 +1977,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           if (!other.uniqueKeyParts_.isEmpty()) {
             if (uniqueKeyParts_.isEmpty()) {
               uniqueKeyParts_ = other.uniqueKeyParts_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureUniqueKeyPartsIsMutable();
               uniqueKeyParts_.addAll(other.uniqueKeyParts_);
@@ -1956,12 +1986,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           }
           if (!other.getUpdatePartitionFilter().isEmpty()) {
             updatePartitionFilter_ = other.updatePartitionFilter_;
+            bitField0_ |= 0x00000008;
             onChanged();
           }
           if (!other.incrementalPreOperations_.isEmpty()) {
             if (incrementalPreOperations_.isEmpty()) {
               incrementalPreOperations_ = other.incrementalPreOperations_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureIncrementalPreOperationsIsMutable();
               incrementalPreOperations_.addAll(other.incrementalPreOperations_);
@@ -1971,7 +2002,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           if (!other.incrementalPostOperations_.isEmpty()) {
             if (incrementalPostOperations_.isEmpty()) {
               incrementalPostOperations_ = other.incrementalPostOperations_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureIncrementalPostOperationsIsMutable();
               incrementalPostOperations_.addAll(other.incrementalPostOperations_);
@@ -2007,13 +2038,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                 case 10:
                   {
                     incrementalSelectQuery_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 16:
                   {
                     refreshDisabled_ = input.readBool();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 26:
@@ -2026,7 +2057,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                 case 34:
                   {
                     updatePartitionFilter_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 34
                 case 42:
@@ -2126,8 +2157,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           if (value == null) {
             throw new NullPointerException();
           }
-
           incrementalSelectQuery_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2144,8 +2175,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          * @return This builder for chaining.
          */
         public Builder clearIncrementalSelectQuery() {
-
           incrementalSelectQuery_ = getDefaultInstance().getIncrementalSelectQuery();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -2167,8 +2198,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           incrementalSelectQuery_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2204,6 +2235,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public Builder setRefreshDisabled(boolean value) {
 
           refreshDisabled_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2219,7 +2251,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          * @return This builder for chaining.
          */
         public Builder clearRefreshDisabled() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           refreshDisabled_ = false;
           onChanged();
           return this;
@@ -2229,9 +2261,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureUniqueKeyPartsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000004) != 0)) {
             uniqueKeyParts_ = new com.google.protobuf.LazyStringArrayList(uniqueKeyParts_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000004;
           }
         }
         /**
@@ -2390,7 +2422,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          */
         public Builder clearUniqueKeyParts() {
           uniqueKeyParts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -2487,8 +2519,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           if (value == null) {
             throw new NullPointerException();
           }
-
           updatePartitionFilter_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -2506,8 +2538,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          * @return This builder for chaining.
          */
         public Builder clearUpdatePartitionFilter() {
-
           updatePartitionFilter_ = getDefaultInstance().getUpdatePartitionFilter();
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
           return this;
         }
@@ -2530,8 +2562,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           updatePartitionFilter_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -2540,10 +2572,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureIncrementalPreOperationsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000010) != 0)) {
             incrementalPreOperations_ =
                 new com.google.protobuf.LazyStringArrayList(incrementalPreOperations_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000010;
           }
         }
         /**
@@ -2686,7 +2718,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          */
         public Builder clearIncrementalPreOperations() {
           incrementalPreOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
@@ -2718,10 +2750,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureIncrementalPostOperationsIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
+          if (!((bitField0_ & 0x00000020) != 0)) {
             incrementalPostOperations_ =
                 new com.google.protobuf.LazyStringArrayList(incrementalPostOperations_);
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000020;
           }
         }
         /**
@@ -2866,7 +2898,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          */
         public Builder clearIncrementalPostOperations() {
           incrementalPostOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
           return this;
         }
@@ -2967,6 +2999,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int DEPENDENCY_TARGETS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dataform.v1alpha2.Target> dependencyTargets_;
     /**
      *
@@ -3037,7 +3071,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int DISABLED_FIELD_NUMBER = 2;
-    private boolean disabled_;
+    private boolean disabled_ = false;
     /**
      *
      *
@@ -3055,6 +3089,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int TAGS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList tags_;
     /**
      *
@@ -3161,11 +3197,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @java.lang.Override
     public com.google.cloud.dataform.v1alpha2.RelationDescriptorOrBuilder
         getRelationDescriptorOrBuilder() {
-      return getRelationDescriptor();
+      return relationDescriptor_ == null
+          ? com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()
+          : relationDescriptor_;
     }
 
     public static final int RELATION_TYPE_FIELD_NUMBER = 5;
-    private int relationType_;
+    private int relationType_ = 0;
     /**
      *
      *
@@ -3199,10 +3237,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @java.lang.Override
     public com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.RelationType
         getRelationType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.RelationType result =
-          com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.RelationType.valueOf(
-              relationType_);
+          com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.RelationType
+              .forNumber(relationType_);
       return result == null
           ? com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.RelationType
               .UNRECOGNIZED
@@ -3210,7 +3247,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int SELECT_QUERY_FIELD_NUMBER = 6;
-    private volatile java.lang.Object selectQuery_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object selectQuery_ = "";
     /**
      *
      *
@@ -3259,6 +3298,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int PRE_OPERATIONS_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList preOperations_;
     /**
      *
@@ -3320,6 +3361,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int POST_OPERATIONS_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList postOperations_;
     /**
      *
@@ -3441,11 +3484,16 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation
             .IncrementalTableConfigOrBuilder
         getIncrementalTableConfigOrBuilder() {
-      return getIncrementalTableConfig();
+      return incrementalTableConfig_ == null
+          ? com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation
+              .IncrementalTableConfig.getDefaultInstance()
+          : incrementalTableConfig_;
     }
 
     public static final int PARTITION_EXPRESSION_FIELD_NUMBER = 10;
-    private volatile java.lang.Object partitionExpression_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object partitionExpression_ = "";
     /**
      *
      *
@@ -3494,6 +3542,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int CLUSTER_EXPRESSIONS_FIELD_NUMBER = 11;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList clusterExpressions_;
     /**
      *
@@ -3555,7 +3605,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int PARTITION_EXPIRATION_DAYS_FIELD_NUMBER = 12;
-    private int partitionExpirationDays_;
+    private int partitionExpirationDays_ = 0;
     /**
      *
      *
@@ -3573,7 +3623,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int REQUIRE_PARTITION_FILTER_FIELD_NUMBER = 13;
-    private boolean requirePartitionFilter_;
+    private boolean requirePartitionFilter_ = false;
     /**
      *
      *
@@ -3604,6 +3654,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               "");
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> additionalOptions_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -3672,8 +3723,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>map&lt;string, string&gt; additional_options = 14;</code>
      */
     @java.lang.Override
-    public java.lang.String getAdditionalOptionsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAdditionalOptionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4109,6 +4162,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (dependencyTargetsBuilder_ == null) {
           dependencyTargets_ = java.util.Collections.emptyList();
         } else {
@@ -4117,37 +4171,29 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         disabled_ = false;
-
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (relationDescriptorBuilder_ == null) {
-          relationDescriptor_ = null;
-        } else {
-          relationDescriptor_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        relationDescriptor_ = null;
+        if (relationDescriptorBuilder_ != null) {
+          relationDescriptorBuilder_.dispose();
           relationDescriptorBuilder_ = null;
         }
         relationType_ = 0;
-
         selectQuery_ = "";
-
         preOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000040);
         postOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        if (incrementalTableConfigBuilder_ == null) {
-          incrementalTableConfig_ = null;
-        } else {
-          incrementalTableConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        incrementalTableConfig_ = null;
+        if (incrementalTableConfigBuilder_ != null) {
+          incrementalTableConfigBuilder_.dispose();
           incrementalTableConfigBuilder_ = null;
         }
         partitionExpression_ = "";
-
         clusterExpressions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000400);
         partitionExpirationDays_ = 0;
-
         requirePartitionFilter_ = false;
-
         internalGetMutableAdditionalOptions().clear();
         return this;
       }
@@ -4178,7 +4224,16 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation buildPartial() {
         com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation result =
             new com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation result) {
         if (dependencyTargetsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             dependencyTargets_ = java.util.Collections.unmodifiableList(dependencyTargets_);
@@ -4188,46 +4243,65 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         } else {
           result.dependencyTargets_ = dependencyTargetsBuilder_.build();
         }
-        result.disabled_ = disabled_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.tags_ = tags_;
-        if (relationDescriptorBuilder_ == null) {
-          result.relationDescriptor_ = relationDescriptor_;
-        } else {
-          result.relationDescriptor_ = relationDescriptorBuilder_.build();
-        }
-        result.relationType_ = relationType_;
-        result.selectQuery_ = selectQuery_;
         if (((bitField0_ & 0x00000004) != 0)) {
-          preOperations_ = preOperations_.getUnmodifiableView();
+          tags_ = tags_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
+        result.tags_ = tags_;
+        if (((bitField0_ & 0x00000040) != 0)) {
+          preOperations_ = preOperations_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
         result.preOperations_ = preOperations_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           postOperations_ = postOperations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.postOperations_ = postOperations_;
-        if (incrementalTableConfigBuilder_ == null) {
-          result.incrementalTableConfig_ = incrementalTableConfig_;
-        } else {
-          result.incrementalTableConfig_ = incrementalTableConfigBuilder_.build();
-        }
-        result.partitionExpression_ = partitionExpression_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           clusterExpressions_ = clusterExpressions_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.clusterExpressions_ = clusterExpressions_;
-        result.partitionExpirationDays_ = partitionExpirationDays_;
-        result.requirePartitionFilter_ = requirePartitionFilter_;
-        result.additionalOptions_ = internalGetAdditionalOptions();
-        result.additionalOptions_.makeImmutable();
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.disabled_ = disabled_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.relationDescriptor_ =
+              relationDescriptorBuilder_ == null
+                  ? relationDescriptor_
+                  : relationDescriptorBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.relationType_ = relationType_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.selectQuery_ = selectQuery_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.incrementalTableConfig_ =
+              incrementalTableConfigBuilder_ == null
+                  ? incrementalTableConfig_
+                  : incrementalTableConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.partitionExpression_ = partitionExpression_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.partitionExpirationDays_ = partitionExpirationDays_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.requirePartitionFilter_ = requirePartitionFilter_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.additionalOptions_ = internalGetAdditionalOptions();
+          result.additionalOptions_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -4314,7 +4388,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -4329,12 +4403,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         if (!other.getSelectQuery().isEmpty()) {
           selectQuery_ = other.selectQuery_;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.preOperations_.isEmpty()) {
           if (preOperations_.isEmpty()) {
             preOperations_ = other.preOperations_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensurePreOperationsIsMutable();
             preOperations_.addAll(other.preOperations_);
@@ -4344,7 +4419,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.postOperations_.isEmpty()) {
           if (postOperations_.isEmpty()) {
             postOperations_ = other.postOperations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensurePostOperationsIsMutable();
             postOperations_.addAll(other.postOperations_);
@@ -4356,12 +4431,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         if (!other.getPartitionExpression().isEmpty()) {
           partitionExpression_ = other.partitionExpression_;
+          bitField0_ |= 0x00000200;
           onChanged();
         }
         if (!other.clusterExpressions_.isEmpty()) {
           if (clusterExpressions_.isEmpty()) {
             clusterExpressions_ = other.clusterExpressions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureClusterExpressionsIsMutable();
             clusterExpressions_.addAll(other.clusterExpressions_);
@@ -4375,6 +4451,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           setRequirePartitionFilter(other.getRequirePartitionFilter());
         }
         internalGetMutableAdditionalOptions().mergeFrom(other.internalGetAdditionalOptions());
+        bitField0_ |= 0x00002000;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4417,7 +4494,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               case 16:
                 {
                   disabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
@@ -4431,19 +4508,19 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                 {
                   input.readMessage(
                       getRelationDescriptorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 40:
                 {
                   relationType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 50:
                 {
                   selectQuery_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 50
               case 58:
@@ -4464,13 +4541,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                 {
                   input.readMessage(
                       getIncrementalTableConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 74
               case 82:
                 {
                   partitionExpression_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 82
               case 90:
@@ -4483,13 +4560,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               case 96:
                 {
                   partitionExpirationDays_ = input.readInt32();
-
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 96
               case 104:
                 {
                   requirePartitionFilter_ = input.readBool();
-
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 104
               case 114:
@@ -4502,6 +4579,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                   internalGetMutableAdditionalOptions()
                       .getMutableMap()
                       .put(additionalOptions__.getKey(), additionalOptions__.getValue());
+                  bitField0_ |= 0x00002000;
                   break;
                 } // case 114
               default:
@@ -4914,6 +4992,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder setDisabled(boolean value) {
 
         disabled_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4929,7 +5008,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearDisabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         disabled_ = false;
         onChanged();
         return this;
@@ -4939,9 +5018,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -5076,7 +5155,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -5121,7 +5200,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return Whether the relationDescriptor field is set.
        */
       public boolean hasRelationDescriptor() {
-        return relationDescriptorBuilder_ != null || relationDescriptor_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -5159,11 +5238,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             throw new NullPointerException();
           }
           relationDescriptor_ = value;
-          onChanged();
         } else {
           relationDescriptorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -5179,11 +5258,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder builderForValue) {
         if (relationDescriptorBuilder_ == null) {
           relationDescriptor_ = builderForValue.build();
-          onChanged();
         } else {
           relationDescriptorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -5198,20 +5277,19 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder mergeRelationDescriptor(
           com.google.cloud.dataform.v1alpha2.RelationDescriptor value) {
         if (relationDescriptorBuilder_ == null) {
-          if (relationDescriptor_ != null) {
-            relationDescriptor_ =
-                com.google.cloud.dataform.v1alpha2.RelationDescriptor.newBuilder(
-                        relationDescriptor_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && relationDescriptor_ != null
+              && relationDescriptor_
+                  != com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()) {
+            getRelationDescriptorBuilder().mergeFrom(value);
           } else {
             relationDescriptor_ = value;
           }
-          onChanged();
         } else {
           relationDescriptorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -5224,14 +5302,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>.google.cloud.dataform.v1alpha2.RelationDescriptor relation_descriptor = 4;</code>
        */
       public Builder clearRelationDescriptor() {
-        if (relationDescriptorBuilder_ == null) {
-          relationDescriptor_ = null;
-          onChanged();
-        } else {
-          relationDescriptor_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        relationDescriptor_ = null;
+        if (relationDescriptorBuilder_ != null) {
+          relationDescriptorBuilder_.dispose();
           relationDescriptorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5245,7 +5322,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder
           getRelationDescriptorBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getRelationDescriptorFieldBuilder().getBuilder();
       }
@@ -5327,8 +5404,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder setRelationTypeValue(int value) {
-
         relationType_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -5348,10 +5425,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       @java.lang.Override
       public com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.RelationType
           getRelationType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.RelationType result =
             com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.RelationType
-                .valueOf(relationType_);
+                .forNumber(relationType_);
         return result == null
             ? com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.RelationType
                 .UNRECOGNIZED
@@ -5376,7 +5452,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000010;
         relationType_ = value.getNumber();
         onChanged();
         return this;
@@ -5395,7 +5471,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearRelationType() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         relationType_ = 0;
         onChanged();
         return this;
@@ -5462,8 +5538,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         selectQuery_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -5479,8 +5555,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearSelectQuery() {
-
         selectQuery_ = getDefaultInstance().getSelectQuery();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -5501,8 +5577,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         selectQuery_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -5511,9 +5587,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePreOperationsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           preOperations_ = new com.google.protobuf.LazyStringArrayList(preOperations_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000040;
         }
       }
       /**
@@ -5648,7 +5724,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public Builder clearPreOperations() {
         preOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -5679,9 +5755,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePostOperationsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           postOperations_ = new com.google.protobuf.LazyStringArrayList(postOperations_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000080;
         }
       }
       /**
@@ -5816,7 +5892,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public Builder clearPostOperations() {
         postOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -5869,7 +5945,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return Whether the incrementalTableConfig field is set.
        */
       public boolean hasIncrementalTableConfig() {
-        return incrementalTableConfigBuilder_ != null || incrementalTableConfig_ != null;
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        *
@@ -5917,11 +5993,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             throw new NullPointerException();
           }
           incrementalTableConfig_ = value;
-          onChanged();
         } else {
           incrementalTableConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -5942,11 +6018,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               builderForValue) {
         if (incrementalTableConfigBuilder_ == null) {
           incrementalTableConfig_ = builderForValue.build();
-          onChanged();
         } else {
           incrementalTableConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -5965,20 +6041,20 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.IncrementalTableConfig
               value) {
         if (incrementalTableConfigBuilder_ == null) {
-          if (incrementalTableConfig_ != null) {
-            incrementalTableConfig_ =
-                com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation
-                    .IncrementalTableConfig.newBuilder(incrementalTableConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000100) != 0)
+              && incrementalTableConfig_ != null
+              && incrementalTableConfig_
+                  != com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation
+                      .IncrementalTableConfig.getDefaultInstance()) {
+            getIncrementalTableConfigBuilder().mergeFrom(value);
           } else {
             incrementalTableConfig_ = value;
           }
-          onChanged();
         } else {
           incrementalTableConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -5994,14 +6070,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * </code>
        */
       public Builder clearIncrementalTableConfig() {
-        if (incrementalTableConfigBuilder_ == null) {
-          incrementalTableConfig_ = null;
-          onChanged();
-        } else {
-          incrementalTableConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        incrementalTableConfig_ = null;
+        if (incrementalTableConfigBuilder_ != null) {
+          incrementalTableConfigBuilder_.dispose();
           incrementalTableConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -6019,7 +6094,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation
               .IncrementalTableConfig.Builder
           getIncrementalTableConfigBuilder() {
-
+        bitField0_ |= 0x00000100;
         onChanged();
         return getIncrementalTableConfigFieldBuilder().getBuilder();
       }
@@ -6143,8 +6218,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         partitionExpression_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -6160,8 +6235,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearPartitionExpression() {
-
         partitionExpression_ = getDefaultInstance().getPartitionExpression();
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -6182,8 +6257,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         partitionExpression_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -6192,9 +6267,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureClusterExpressionsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000400) != 0)) {
           clusterExpressions_ = new com.google.protobuf.LazyStringArrayList(clusterExpressions_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000400;
         }
       }
       /**
@@ -6329,7 +6404,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public Builder clearClusterExpressions() {
         clusterExpressions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -6387,6 +6462,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder setPartitionExpirationDays(int value) {
 
         partitionExpirationDays_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -6402,7 +6478,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearPartitionExpirationDays() {
-
+        bitField0_ = (bitField0_ & ~0x00000800);
         partitionExpirationDays_ = 0;
         onChanged();
         return this;
@@ -6441,6 +6517,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder setRequirePartitionFilter(boolean value) {
 
         requirePartitionFilter_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -6457,7 +6534,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearRequirePartitionFilter() {
-
+        bitField0_ = (bitField0_ & ~0x00001000);
         requirePartitionFilter_ = false;
         onChanged();
         return this;
@@ -6476,8 +6553,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
           internalGetMutableAdditionalOptions() {
-        onChanged();
-        ;
         if (additionalOptions_ == null) {
           additionalOptions_ =
               com.google.protobuf.MapField.newMapField(
@@ -6486,6 +6561,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!additionalOptions_.isMutable()) {
           additionalOptions_ = additionalOptions_.copy();
         }
+        bitField0_ |= 0x00002000;
+        onChanged();
         return additionalOptions_;
       }
 
@@ -6546,8 +6623,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>map&lt;string, string&gt; additional_options = 14;</code>
        */
       @java.lang.Override
-      public java.lang.String getAdditionalOptionsOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getAdditionalOptionsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -6581,6 +6660,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       public Builder clearAdditionalOptions() {
+        bitField0_ = (bitField0_ & ~0x00002000);
         internalGetMutableAdditionalOptions().getMutableMap().clear();
         return this;
       }
@@ -6606,6 +6686,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableAdditionalOptions() {
+        bitField0_ |= 0x00002000;
         return internalGetMutableAdditionalOptions().getMutableMap();
       }
       /**
@@ -6627,8 +6708,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableAdditionalOptions().getMutableMap().put(key, value);
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
@@ -6646,6 +6727,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder putAllAdditionalOptions(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableAdditionalOptions().getMutableMap().putAll(values);
+        bitField0_ |= 0x00002000;
         return this;
       }
 
@@ -6995,6 +7077,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int DEPENDENCY_TARGETS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dataform.v1alpha2.Target> dependencyTargets_;
     /**
      *
@@ -7065,7 +7149,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int DISABLED_FIELD_NUMBER = 2;
-    private boolean disabled_;
+    private boolean disabled_ = false;
     /**
      *
      *
@@ -7083,6 +7167,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int TAGS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList tags_;
     /**
      *
@@ -7192,10 +7278,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @java.lang.Override
     public com.google.cloud.dataform.v1alpha2.RelationDescriptorOrBuilder
         getRelationDescriptorOrBuilder() {
-      return getRelationDescriptor();
+      return relationDescriptor_ == null
+          ? com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()
+          : relationDescriptor_;
     }
 
     public static final int QUERIES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList queries_;
     /**
      *
@@ -7261,7 +7351,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int HAS_OUTPUT_FIELD_NUMBER = 5;
-    private boolean hasOutput_;
+    private boolean hasOutput_ = false;
     /**
      *
      *
@@ -7549,6 +7639,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (dependencyTargetsBuilder_ == null) {
           dependencyTargets_ = java.util.Collections.emptyList();
         } else {
@@ -7557,19 +7648,16 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         disabled_ = false;
-
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (relationDescriptorBuilder_ == null) {
-          relationDescriptor_ = null;
-        } else {
-          relationDescriptor_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        relationDescriptor_ = null;
+        if (relationDescriptorBuilder_ != null) {
+          relationDescriptorBuilder_.dispose();
           relationDescriptorBuilder_ = null;
         }
         queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         hasOutput_ = false;
-
         return this;
       }
 
@@ -7600,7 +7688,16 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.cloud.dataform.v1alpha2.CompilationResultAction.Operations buildPartial() {
         com.google.cloud.dataform.v1alpha2.CompilationResultAction.Operations result =
             new com.google.cloud.dataform.v1alpha2.CompilationResultAction.Operations(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataform.v1alpha2.CompilationResultAction.Operations result) {
         if (dependencyTargetsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             dependencyTargets_ = java.util.Collections.unmodifiableList(dependencyTargets_);
@@ -7610,25 +7707,33 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         } else {
           result.dependencyTargets_ = dependencyTargetsBuilder_.build();
         }
-        result.disabled_ = disabled_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.tags_ = tags_;
-        if (relationDescriptorBuilder_ == null) {
-          result.relationDescriptor_ = relationDescriptor_;
-        } else {
-          result.relationDescriptor_ = relationDescriptorBuilder_.build();
-        }
         if (((bitField0_ & 0x00000004) != 0)) {
-          queries_ = queries_.getUnmodifiableView();
+          tags_ = tags_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
+        result.tags_ = tags_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          queries_ = queries_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
         result.queries_ = queries_;
-        result.hasOutput_ = hasOutput_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1alpha2.CompilationResultAction.Operations result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.disabled_ = disabled_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.relationDescriptor_ =
+              relationDescriptorBuilder_ == null
+                  ? relationDescriptor_
+                  : relationDescriptorBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.hasOutput_ = hasOutput_;
+        }
       }
 
       @java.lang.Override
@@ -7716,7 +7821,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -7729,7 +7834,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.queries_.isEmpty()) {
           if (queries_.isEmpty()) {
             queries_ = other.queries_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureQueriesIsMutable();
             queries_.addAll(other.queries_);
@@ -7781,7 +7886,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               case 16:
                 {
                   disabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
@@ -7801,14 +7906,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               case 40:
                 {
                   hasOutput_ = input.readBool();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 40
               case 50:
                 {
                   input.readMessage(
                       getRelationDescriptorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 50
               default:
@@ -8221,6 +8326,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder setDisabled(boolean value) {
 
         disabled_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8236,7 +8342,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearDisabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         disabled_ = false;
         onChanged();
         return this;
@@ -8246,9 +8352,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -8383,7 +8489,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -8429,7 +8535,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return Whether the relationDescriptor field is set.
        */
       public boolean hasRelationDescriptor() {
-        return relationDescriptorBuilder_ != null || relationDescriptor_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -8469,11 +8575,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             throw new NullPointerException();
           }
           relationDescriptor_ = value;
-          onChanged();
         } else {
           relationDescriptorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -8490,11 +8596,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder builderForValue) {
         if (relationDescriptorBuilder_ == null) {
           relationDescriptor_ = builderForValue.build();
-          onChanged();
         } else {
           relationDescriptorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -8510,20 +8616,19 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder mergeRelationDescriptor(
           com.google.cloud.dataform.v1alpha2.RelationDescriptor value) {
         if (relationDescriptorBuilder_ == null) {
-          if (relationDescriptor_ != null) {
-            relationDescriptor_ =
-                com.google.cloud.dataform.v1alpha2.RelationDescriptor.newBuilder(
-                        relationDescriptor_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && relationDescriptor_ != null
+              && relationDescriptor_
+                  != com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()) {
+            getRelationDescriptorBuilder().mergeFrom(value);
           } else {
             relationDescriptor_ = value;
           }
-          onChanged();
         } else {
           relationDescriptorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -8537,14 +8642,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>.google.cloud.dataform.v1alpha2.RelationDescriptor relation_descriptor = 6;</code>
        */
       public Builder clearRelationDescriptor() {
-        if (relationDescriptorBuilder_ == null) {
-          relationDescriptor_ = null;
-          onChanged();
-        } else {
-          relationDescriptor_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        relationDescriptor_ = null;
+        if (relationDescriptorBuilder_ != null) {
+          relationDescriptorBuilder_.dispose();
           relationDescriptorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -8559,7 +8663,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder
           getRelationDescriptorBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getRelationDescriptorFieldBuilder().getBuilder();
       }
@@ -8614,9 +8718,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureQueriesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           queries_ = new com.google.protobuf.LazyStringArrayList(queries_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000010;
         }
       }
       /**
@@ -8759,7 +8863,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public Builder clearQueries() {
         queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -8818,6 +8922,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder setHasOutput(boolean value) {
 
         hasOutput_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -8833,7 +8938,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearHasOutput() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         hasOutput_ = false;
         onChanged();
         return this;
@@ -9184,6 +9289,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int DEPENDENCY_TARGETS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dataform.v1alpha2.Target> dependencyTargets_;
     /**
      *
@@ -9301,11 +9408,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public com.google.cloud.dataform.v1alpha2.TargetOrBuilder getParentActionOrBuilder() {
-      return getParentAction();
+      return parentAction_ == null
+          ? com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()
+          : parentAction_;
     }
 
     public static final int DISABLED_FIELD_NUMBER = 2;
-    private boolean disabled_;
+    private boolean disabled_ = false;
     /**
      *
      *
@@ -9323,6 +9432,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int TAGS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList tags_;
     /**
      *
@@ -9384,7 +9495,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     public static final int SELECT_QUERY_FIELD_NUMBER = 4;
-    private volatile java.lang.Object selectQuery_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object selectQuery_ = "";
     /**
      *
      *
@@ -9483,7 +9596,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @java.lang.Override
     public com.google.cloud.dataform.v1alpha2.RelationDescriptorOrBuilder
         getRelationDescriptorOrBuilder() {
-      return getRelationDescriptor();
+      return relationDescriptor_ == null
+          ? com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()
+          : relationDescriptor_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9755,6 +9870,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (dependencyTargetsBuilder_ == null) {
           dependencyTargets_ = java.util.Collections.emptyList();
         } else {
@@ -9762,22 +9878,18 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           dependencyTargetsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (parentActionBuilder_ == null) {
-          parentAction_ = null;
-        } else {
-          parentAction_ = null;
+        parentAction_ = null;
+        if (parentActionBuilder_ != null) {
+          parentActionBuilder_.dispose();
           parentActionBuilder_ = null;
         }
         disabled_ = false;
-
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         selectQuery_ = "";
-
-        if (relationDescriptorBuilder_ == null) {
-          relationDescriptor_ = null;
-        } else {
-          relationDescriptor_ = null;
+        relationDescriptor_ = null;
+        if (relationDescriptorBuilder_ != null) {
+          relationDescriptorBuilder_.dispose();
           relationDescriptorBuilder_ = null;
         }
         return this;
@@ -9810,7 +9922,16 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.cloud.dataform.v1alpha2.CompilationResultAction.Assertion buildPartial() {
         com.google.cloud.dataform.v1alpha2.CompilationResultAction.Assertion result =
             new com.google.cloud.dataform.v1alpha2.CompilationResultAction.Assertion(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataform.v1alpha2.CompilationResultAction.Assertion result) {
         if (dependencyTargetsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             dependencyTargets_ = java.util.Collections.unmodifiableList(dependencyTargets_);
@@ -9820,25 +9941,32 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         } else {
           result.dependencyTargets_ = dependencyTargetsBuilder_.build();
         }
-        if (parentActionBuilder_ == null) {
-          result.parentAction_ = parentAction_;
-        } else {
-          result.parentAction_ = parentActionBuilder_.build();
-        }
-        result.disabled_ = disabled_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.tags_ = tags_;
-        result.selectQuery_ = selectQuery_;
-        if (relationDescriptorBuilder_ == null) {
-          result.relationDescriptor_ = relationDescriptor_;
-        } else {
-          result.relationDescriptor_ = relationDescriptorBuilder_.build();
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1alpha2.CompilationResultAction.Assertion result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.parentAction_ =
+              parentActionBuilder_ == null ? parentAction_ : parentActionBuilder_.build();
         }
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.disabled_ = disabled_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.selectQuery_ = selectQuery_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.relationDescriptor_ =
+              relationDescriptorBuilder_ == null
+                  ? relationDescriptor_
+                  : relationDescriptorBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -9928,7 +10056,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -9937,6 +10065,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         if (!other.getSelectQuery().isEmpty()) {
           selectQuery_ = other.selectQuery_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.hasRelationDescriptor()) {
@@ -9984,7 +10113,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               case 16:
                 {
                   disabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 16
               case 26:
@@ -9997,20 +10126,20 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               case 34:
                 {
                   selectQuery_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(getParentActionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 42
               case 50:
                 {
                   input.readMessage(
                       getRelationDescriptorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 50
               default:
@@ -10411,7 +10540,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return Whether the parentAction field is set.
        */
       public boolean hasParentAction() {
-        return parentActionBuilder_ != null || parentAction_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -10450,11 +10579,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             throw new NullPointerException();
           }
           parentAction_ = value;
-          onChanged();
         } else {
           parentActionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -10471,11 +10600,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.cloud.dataform.v1alpha2.Target.Builder builderForValue) {
         if (parentActionBuilder_ == null) {
           parentAction_ = builderForValue.build();
-          onChanged();
         } else {
           parentActionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -10490,19 +10619,18 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public Builder mergeParentAction(com.google.cloud.dataform.v1alpha2.Target value) {
         if (parentActionBuilder_ == null) {
-          if (parentAction_ != null) {
-            parentAction_ =
-                com.google.cloud.dataform.v1alpha2.Target.newBuilder(parentAction_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && parentAction_ != null
+              && parentAction_ != com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()) {
+            getParentActionBuilder().mergeFrom(value);
           } else {
             parentAction_ = value;
           }
-          onChanged();
         } else {
           parentActionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -10516,14 +10644,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>.google.cloud.dataform.v1alpha2.Target parent_action = 5;</code>
        */
       public Builder clearParentAction() {
-        if (parentActionBuilder_ == null) {
-          parentAction_ = null;
-          onChanged();
-        } else {
-          parentAction_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        parentAction_ = null;
+        if (parentActionBuilder_ != null) {
+          parentActionBuilder_.dispose();
           parentActionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -10537,7 +10664,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>.google.cloud.dataform.v1alpha2.Target parent_action = 5;</code>
        */
       public com.google.cloud.dataform.v1alpha2.Target.Builder getParentActionBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getParentActionFieldBuilder().getBuilder();
       }
@@ -10618,6 +10745,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder setDisabled(boolean value) {
 
         disabled_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -10633,7 +10761,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearDisabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         disabled_ = false;
         onChanged();
         return this;
@@ -10643,9 +10771,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -10780,7 +10908,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -10871,8 +10999,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         selectQuery_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -10889,8 +11017,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearSelectQuery() {
-
         selectQuery_ = getDefaultInstance().getSelectQuery();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -10912,8 +11040,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         selectQuery_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -10937,7 +11065,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return Whether the relationDescriptor field is set.
        */
       public boolean hasRelationDescriptor() {
-        return relationDescriptorBuilder_ != null || relationDescriptor_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -10977,11 +11105,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             throw new NullPointerException();
           }
           relationDescriptor_ = value;
-          onChanged();
         } else {
           relationDescriptorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -10998,11 +11126,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder builderForValue) {
         if (relationDescriptorBuilder_ == null) {
           relationDescriptor_ = builderForValue.build();
-          onChanged();
         } else {
           relationDescriptorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -11018,20 +11146,19 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder mergeRelationDescriptor(
           com.google.cloud.dataform.v1alpha2.RelationDescriptor value) {
         if (relationDescriptorBuilder_ == null) {
-          if (relationDescriptor_ != null) {
-            relationDescriptor_ =
-                com.google.cloud.dataform.v1alpha2.RelationDescriptor.newBuilder(
-                        relationDescriptor_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && relationDescriptor_ != null
+              && relationDescriptor_
+                  != com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()) {
+            getRelationDescriptorBuilder().mergeFrom(value);
           } else {
             relationDescriptor_ = value;
           }
-          onChanged();
         } else {
           relationDescriptorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -11045,14 +11172,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>.google.cloud.dataform.v1alpha2.RelationDescriptor relation_descriptor = 6;</code>
        */
       public Builder clearRelationDescriptor() {
-        if (relationDescriptorBuilder_ == null) {
-          relationDescriptor_ = null;
-          onChanged();
-        } else {
-          relationDescriptor_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        relationDescriptor_ = null;
+        if (relationDescriptorBuilder_ != null) {
+          relationDescriptorBuilder_.dispose();
           relationDescriptorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -11067,7 +11193,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder
           getRelationDescriptorBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getRelationDescriptorFieldBuilder().getBuilder();
       }
@@ -11325,7 +11451,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @java.lang.Override
     public com.google.cloud.dataform.v1alpha2.RelationDescriptorOrBuilder
         getRelationDescriptorOrBuilder() {
-      return getRelationDescriptor();
+      return relationDescriptor_ == null
+          ? com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()
+          : relationDescriptor_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11539,10 +11667,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (relationDescriptorBuilder_ == null) {
-          relationDescriptor_ = null;
-        } else {
-          relationDescriptor_ = null;
+        bitField0_ = 0;
+        relationDescriptor_ = null;
+        if (relationDescriptorBuilder_ != null) {
+          relationDescriptorBuilder_.dispose();
           relationDescriptorBuilder_ = null;
         }
         return this;
@@ -11575,13 +11703,22 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.cloud.dataform.v1alpha2.CompilationResultAction.Declaration buildPartial() {
         com.google.cloud.dataform.v1alpha2.CompilationResultAction.Declaration result =
             new com.google.cloud.dataform.v1alpha2.CompilationResultAction.Declaration(this);
-        if (relationDescriptorBuilder_ == null) {
-          result.relationDescriptor_ = relationDescriptor_;
-        } else {
-          result.relationDescriptor_ = relationDescriptorBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1alpha2.CompilationResultAction.Declaration result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.relationDescriptor_ =
+              relationDescriptorBuilder_ == null
+                  ? relationDescriptor_
+                  : relationDescriptorBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -11669,7 +11806,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                 {
                   input.readMessage(
                       getRelationDescriptorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -11688,6 +11825,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.dataform.v1alpha2.RelationDescriptor relationDescriptor_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -11708,7 +11847,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return Whether the relationDescriptor field is set.
        */
       public boolean hasRelationDescriptor() {
-        return relationDescriptorBuilder_ != null || relationDescriptor_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -11748,11 +11887,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             throw new NullPointerException();
           }
           relationDescriptor_ = value;
-          onChanged();
         } else {
           relationDescriptorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -11769,11 +11908,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder builderForValue) {
         if (relationDescriptorBuilder_ == null) {
           relationDescriptor_ = builderForValue.build();
-          onChanged();
         } else {
           relationDescriptorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -11789,20 +11928,19 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder mergeRelationDescriptor(
           com.google.cloud.dataform.v1alpha2.RelationDescriptor value) {
         if (relationDescriptorBuilder_ == null) {
-          if (relationDescriptor_ != null) {
-            relationDescriptor_ =
-                com.google.cloud.dataform.v1alpha2.RelationDescriptor.newBuilder(
-                        relationDescriptor_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && relationDescriptor_ != null
+              && relationDescriptor_
+                  != com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()) {
+            getRelationDescriptorBuilder().mergeFrom(value);
           } else {
             relationDescriptor_ = value;
           }
-          onChanged();
         } else {
           relationDescriptorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -11816,14 +11954,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>.google.cloud.dataform.v1alpha2.RelationDescriptor relation_descriptor = 1;</code>
        */
       public Builder clearRelationDescriptor() {
-        if (relationDescriptorBuilder_ == null) {
-          relationDescriptor_ = null;
-          onChanged();
-        } else {
-          relationDescriptor_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        relationDescriptor_ = null;
+        if (relationDescriptorBuilder_ != null) {
+          relationDescriptorBuilder_.dispose();
           relationDescriptorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -11838,7 +11975,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       public com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder
           getRelationDescriptorBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getRelationDescriptorFieldBuilder().getBuilder();
       }
@@ -12055,7 +12192,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.dataform.v1alpha2.TargetOrBuilder getTargetOrBuilder() {
-    return getTarget();
+    return target_ == null
+        ? com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()
+        : target_;
   }
 
   public static final int CANONICAL_TARGET_FIELD_NUMBER = 2;
@@ -12106,11 +12245,15 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.dataform.v1alpha2.TargetOrBuilder getCanonicalTargetOrBuilder() {
-    return getCanonicalTarget();
+    return canonicalTarget_ == null
+        ? com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()
+        : canonicalTarget_;
   }
 
   public static final int FILE_PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object filePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filePath_ = "";
   /**
    *
    *
@@ -12691,20 +12834,18 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (targetBuilder_ == null) {
-        target_ = null;
-      } else {
-        target_ = null;
+      bitField0_ = 0;
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
         targetBuilder_ = null;
       }
-      if (canonicalTargetBuilder_ == null) {
-        canonicalTarget_ = null;
-      } else {
-        canonicalTarget_ = null;
+      canonicalTarget_ = null;
+      if (canonicalTargetBuilder_ != null) {
+        canonicalTargetBuilder_.dispose();
         canonicalTargetBuilder_ = null;
       }
       filePath_ = "";
-
       if (relationBuilder_ != null) {
         relationBuilder_.clear();
       }
@@ -12746,48 +12887,44 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.cloud.dataform.v1alpha2.CompilationResultAction buildPartial() {
       com.google.cloud.dataform.v1alpha2.CompilationResultAction result =
           new com.google.cloud.dataform.v1alpha2.CompilationResultAction(this);
-      if (targetBuilder_ == null) {
-        result.target_ = target_;
-      } else {
-        result.target_ = targetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (canonicalTargetBuilder_ == null) {
-        result.canonicalTarget_ = canonicalTarget_;
-      } else {
-        result.canonicalTarget_ = canonicalTargetBuilder_.build();
-      }
-      result.filePath_ = filePath_;
-      if (compiledObjectCase_ == 4) {
-        if (relationBuilder_ == null) {
-          result.compiledObject_ = compiledObject_;
-        } else {
-          result.compiledObject_ = relationBuilder_.build();
-        }
-      }
-      if (compiledObjectCase_ == 5) {
-        if (operationsBuilder_ == null) {
-          result.compiledObject_ = compiledObject_;
-        } else {
-          result.compiledObject_ = operationsBuilder_.build();
-        }
-      }
-      if (compiledObjectCase_ == 6) {
-        if (assertionBuilder_ == null) {
-          result.compiledObject_ = compiledObject_;
-        } else {
-          result.compiledObject_ = assertionBuilder_.build();
-        }
-      }
-      if (compiledObjectCase_ == 7) {
-        if (declarationBuilder_ == null) {
-          result.compiledObject_ = compiledObject_;
-        } else {
-          result.compiledObject_ = declarationBuilder_.build();
-        }
-      }
-      result.compiledObjectCase_ = compiledObjectCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataform.v1alpha2.CompilationResultAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.canonicalTarget_ =
+            canonicalTargetBuilder_ == null ? canonicalTarget_ : canonicalTargetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.filePath_ = filePath_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dataform.v1alpha2.CompilationResultAction result) {
+      result.compiledObjectCase_ = compiledObjectCase_;
+      result.compiledObject_ = this.compiledObject_;
+      if (compiledObjectCase_ == 4 && relationBuilder_ != null) {
+        result.compiledObject_ = relationBuilder_.build();
+      }
+      if (compiledObjectCase_ == 5 && operationsBuilder_ != null) {
+        result.compiledObject_ = operationsBuilder_.build();
+      }
+      if (compiledObjectCase_ == 6 && assertionBuilder_ != null) {
+        result.compiledObject_ = assertionBuilder_.build();
+      }
+      if (compiledObjectCase_ == 7 && declarationBuilder_ != null) {
+        result.compiledObject_ = declarationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -12844,6 +12981,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       if (!other.getFilePath().isEmpty()) {
         filePath_ = other.filePath_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getCompiledObjectCase()) {
@@ -12901,19 +13039,19 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getTargetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCanonicalTargetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 filePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -12971,6 +13109,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dataform.v1alpha2.Target target_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataform.v1alpha2.Target,
@@ -12989,7 +13129,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return targetBuilder_ != null || target_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -13026,11 +13166,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         target_ = value;
-        onChanged();
       } else {
         targetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -13045,11 +13185,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public Builder setTarget(com.google.cloud.dataform.v1alpha2.Target.Builder builderForValue) {
       if (targetBuilder_ == null) {
         target_ = builderForValue.build();
-        onChanged();
       } else {
         targetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -13063,19 +13203,18 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     public Builder mergeTarget(com.google.cloud.dataform.v1alpha2.Target value) {
       if (targetBuilder_ == null) {
-        if (target_ != null) {
-          target_ =
-              com.google.cloud.dataform.v1alpha2.Target.newBuilder(target_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && target_ != null
+            && target_ != com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()) {
+          getTargetBuilder().mergeFrom(value);
         } else {
           target_ = value;
         }
-        onChanged();
       } else {
         targetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -13088,14 +13227,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>.google.cloud.dataform.v1alpha2.Target target = 1;</code>
      */
     public Builder clearTarget() {
-      if (targetBuilder_ == null) {
-        target_ = null;
-        onChanged();
-      } else {
-        target_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
         targetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -13108,7 +13246,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>.google.cloud.dataform.v1alpha2.Target target = 1;</code>
      */
     public com.google.cloud.dataform.v1alpha2.Target.Builder getTargetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }
@@ -13175,7 +13313,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return Whether the canonicalTarget field is set.
      */
     public boolean hasCanonicalTarget() {
-      return canonicalTargetBuilder_ != null || canonicalTarget_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -13214,11 +13352,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         canonicalTarget_ = value;
-        onChanged();
       } else {
         canonicalTargetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -13235,11 +13373,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         com.google.cloud.dataform.v1alpha2.Target.Builder builderForValue) {
       if (canonicalTargetBuilder_ == null) {
         canonicalTarget_ = builderForValue.build();
-        onChanged();
       } else {
         canonicalTargetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -13254,19 +13392,18 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     public Builder mergeCanonicalTarget(com.google.cloud.dataform.v1alpha2.Target value) {
       if (canonicalTargetBuilder_ == null) {
-        if (canonicalTarget_ != null) {
-          canonicalTarget_ =
-              com.google.cloud.dataform.v1alpha2.Target.newBuilder(canonicalTarget_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && canonicalTarget_ != null
+            && canonicalTarget_ != com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()) {
+          getCanonicalTargetBuilder().mergeFrom(value);
         } else {
           canonicalTarget_ = value;
         }
-        onChanged();
       } else {
         canonicalTargetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -13280,14 +13417,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>.google.cloud.dataform.v1alpha2.Target canonical_target = 2;</code>
      */
     public Builder clearCanonicalTarget() {
-      if (canonicalTargetBuilder_ == null) {
-        canonicalTarget_ = null;
-        onChanged();
-      } else {
-        canonicalTarget_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      canonicalTarget_ = null;
+      if (canonicalTargetBuilder_ != null) {
+        canonicalTargetBuilder_.dispose();
         canonicalTargetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -13301,7 +13437,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>.google.cloud.dataform.v1alpha2.Target canonical_target = 2;</code>
      */
     public com.google.cloud.dataform.v1alpha2.Target.Builder getCanonicalTargetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCanonicalTargetFieldBuilder().getBuilder();
     }
@@ -13415,8 +13551,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       filePath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -13433,8 +13569,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearFilePath() {
-
       filePath_ = getDefaultInstance().getFilePath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -13456,8 +13592,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filePath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -13684,7 +13820,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       compiledObjectCase_ = 4;
       onChanged();
-      ;
       return relationBuilder_;
     }
 
@@ -13919,7 +14054,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       compiledObjectCase_ = 5;
       onChanged();
-      ;
       return operationsBuilder_;
     }
 
@@ -14145,7 +14279,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       compiledObjectCase_ = 6;
       onChanged();
-      ;
       return assertionBuilder_;
     }
 
@@ -14380,7 +14513,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       compiledObjectCase_ = 7;
       onChanged();
-      ;
       return declarationBuilder_;
     }
 

@@ -790,7 +790,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int IAM_FIELD_NUMBER = 104021;
-  private volatile java.lang.Object iam_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object iam_ = "";
   /**
    *
    *
@@ -857,7 +859,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OP_FIELD_NUMBER = 3553;
-  private volatile java.lang.Object op_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object op_ = "";
   /**
    *
    *
@@ -924,7 +928,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SVC_FIELD_NUMBER = 114272;
-  private volatile java.lang.Object svc_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object svc_ = "";
   /**
    *
    *
@@ -988,7 +994,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SYS_FIELD_NUMBER = 114381;
-  private volatile java.lang.Object sys_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sys_ = "";
   /**
    *
    *
@@ -1055,6 +1063,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUES_FIELD_NUMBER = 249928994;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList values_;
   /**
    *
@@ -1373,14 +1383,11 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       iam_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       op_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       svc_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       sys_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
       return this;
@@ -1410,32 +1417,42 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Condition buildPartial() {
       com.google.cloud.compute.v1.Condition result =
           new com.google.cloud.compute.v1.Condition(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.iam_ = iam_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.op_ = op_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.svc_ = svc_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.sys_ = sys_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Condition result) {
       if (((bitField0_ & 0x00000010) != 0)) {
         values_ = values_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.values_ = values_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Condition result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.iam_ = iam_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.op_ = op_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.svc_ = svc_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sys_ = sys_;
+        to_bitField0_ |= 0x00000008;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1484,23 +1501,23 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Condition other) {
       if (other == com.google.cloud.compute.v1.Condition.getDefaultInstance()) return this;
       if (other.hasIam()) {
-        bitField0_ |= 0x00000001;
         iam_ = other.iam_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasOp()) {
-        bitField0_ |= 0x00000002;
         op_ = other.op_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSvc()) {
-        bitField0_ |= 0x00000004;
         svc_ = other.svc_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasSys()) {
-        bitField0_ |= 0x00000008;
         sys_ = other.sys_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.values_.isEmpty()) {
@@ -1668,8 +1685,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       iam_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1686,8 +1703,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIam() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       iam_ = getDefaultInstance().getIam();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1709,8 +1726,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       iam_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1794,8 +1811,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       op_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1812,8 +1829,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOp() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       op_ = getDefaultInstance().getOp();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1835,8 +1852,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       op_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1916,8 +1933,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       svc_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1933,8 +1950,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSvc() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       svc_ = getDefaultInstance().getSvc();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1955,8 +1972,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       svc_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2040,8 +2057,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       sys_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2058,8 +2075,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSys() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       sys_ = getDefaultInstance().getSys();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2081,8 +2098,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       sys_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

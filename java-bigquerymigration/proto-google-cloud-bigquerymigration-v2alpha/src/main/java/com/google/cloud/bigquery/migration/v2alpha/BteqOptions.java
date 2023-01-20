@@ -127,11 +127,15 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2alpha.DatasetReferenceOrBuilder
       getProjectDatasetOrBuilder() {
-    return getProjectDataset();
+    return projectDataset_ == null
+        ? com.google.cloud.bigquery.migration.v2alpha.DatasetReference.getDefaultInstance()
+        : projectDataset_;
   }
 
   public static final int DEFAULT_PATH_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object defaultPathUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultPathUri_ = "";
   /**
    *
    *
@@ -194,6 +198,7 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> fileReplacementMap_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -259,8 +264,10 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; file_replacement_map = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getFileReplacementMapOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getFileReplacementMapOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -545,14 +552,13 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (projectDatasetBuilder_ == null) {
-        projectDataset_ = null;
-      } else {
-        projectDataset_ = null;
+      bitField0_ = 0;
+      projectDataset_ = null;
+      if (projectDatasetBuilder_ != null) {
+        projectDatasetBuilder_.dispose();
         projectDatasetBuilder_ = null;
       }
       defaultPathUri_ = "";
-
       internalGetMutableFileReplacementMap().clear();
       return this;
     }
@@ -581,17 +587,26 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2alpha.BteqOptions buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.BteqOptions result =
           new com.google.cloud.bigquery.migration.v2alpha.BteqOptions(this);
-      int from_bitField0_ = bitField0_;
-      if (projectDatasetBuilder_ == null) {
-        result.projectDataset_ = projectDataset_;
-      } else {
-        result.projectDataset_ = projectDatasetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.defaultPathUri_ = defaultPathUri_;
-      result.fileReplacementMap_ = internalGetFileReplacementMap();
-      result.fileReplacementMap_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2alpha.BteqOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectDataset_ =
+            projectDatasetBuilder_ == null ? projectDataset_ : projectDatasetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.defaultPathUri_ = defaultPathUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fileReplacementMap_ = internalGetFileReplacementMap();
+        result.fileReplacementMap_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -645,9 +660,11 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDefaultPathUri().isEmpty()) {
         defaultPathUri_ = other.defaultPathUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableFileReplacementMap().mergeFrom(other.internalGetFileReplacementMap());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -677,13 +694,13 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getProjectDatasetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 defaultPathUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -696,6 +713,7 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableFileReplacementMap()
                     .getMutableMap()
                     .put(fileReplacementMap__.getKey(), fileReplacementMap__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -736,7 +754,7 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the projectDataset field is set.
      */
     public boolean hasProjectDataset() {
-      return projectDatasetBuilder_ != null || projectDataset_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -776,11 +794,11 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         projectDataset_ = value;
-        onChanged();
       } else {
         projectDatasetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -797,11 +815,11 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.bigquery.migration.v2alpha.DatasetReference.Builder builderForValue) {
       if (projectDatasetBuilder_ == null) {
         projectDataset_ = builderForValue.build();
-        onChanged();
       } else {
         projectDatasetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -817,20 +835,20 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeProjectDataset(
         com.google.cloud.bigquery.migration.v2alpha.DatasetReference value) {
       if (projectDatasetBuilder_ == null) {
-        if (projectDataset_ != null) {
-          projectDataset_ =
-              com.google.cloud.bigquery.migration.v2alpha.DatasetReference.newBuilder(
-                      projectDataset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && projectDataset_ != null
+            && projectDataset_
+                != com.google.cloud.bigquery.migration.v2alpha.DatasetReference
+                    .getDefaultInstance()) {
+          getProjectDatasetBuilder().mergeFrom(value);
         } else {
           projectDataset_ = value;
         }
-        onChanged();
       } else {
         projectDatasetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -844,14 +862,13 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.bigquery.migration.v2alpha.DatasetReference project_dataset = 1;</code>
      */
     public Builder clearProjectDataset() {
-      if (projectDatasetBuilder_ == null) {
-        projectDataset_ = null;
-        onChanged();
-      } else {
-        projectDataset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      projectDataset_ = null;
+      if (projectDatasetBuilder_ != null) {
+        projectDatasetBuilder_.dispose();
         projectDatasetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -866,7 +883,7 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.bigquery.migration.v2alpha.DatasetReference.Builder
         getProjectDatasetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getProjectDatasetFieldBuilder().getBuilder();
     }
@@ -981,8 +998,8 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       defaultPathUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -999,8 +1016,8 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultPathUri() {
-
       defaultPathUri_ = getDefaultInstance().getDefaultPathUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1022,8 +1039,8 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       defaultPathUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1041,8 +1058,6 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableFileReplacementMap() {
-      onChanged();
-      ;
       if (fileReplacementMap_ == null) {
         fileReplacementMap_ =
             com.google.protobuf.MapField.newMapField(
@@ -1051,6 +1066,8 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
       if (!fileReplacementMap_.isMutable()) {
         fileReplacementMap_ = fileReplacementMap_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return fileReplacementMap_;
     }
 
@@ -1108,8 +1125,10 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; file_replacement_map = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getFileReplacementMapOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getFileReplacementMapOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1142,6 +1161,7 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearFileReplacementMap() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableFileReplacementMap().getMutableMap().clear();
       return this;
     }
@@ -1166,6 +1186,7 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableFileReplacementMap() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableFileReplacementMap().getMutableMap();
     }
     /**
@@ -1186,8 +1207,8 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableFileReplacementMap().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1204,6 +1225,7 @@ public final class BteqOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllFileReplacementMap(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableFileReplacementMap().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

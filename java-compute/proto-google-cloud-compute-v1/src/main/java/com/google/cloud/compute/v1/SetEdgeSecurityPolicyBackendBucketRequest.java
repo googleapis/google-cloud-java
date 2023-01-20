@@ -73,7 +73,9 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
 
   private int bitField0_;
   public static final int BACKEND_BUCKET_FIELD_NUMBER = 91714037;
-  private volatile java.lang.Object backendBucket_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backendBucket_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -175,7 +179,9 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -290,7 +296,9 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.SecurityPolicyReferenceOrBuilder
       getSecurityPolicyReferenceResourceOrBuilder() {
-    return getSecurityPolicyReferenceResource();
+    return securityPolicyReferenceResource_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyReference.getDefaultInstance()
+        : securityPolicyReferenceResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -534,16 +542,13 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       backendBucket_ = "";
-
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (securityPolicyReferenceResourceBuilder_ == null) {
-        securityPolicyReferenceResource_ = null;
-      } else {
-        securityPolicyReferenceResource_ = null;
+      securityPolicyReferenceResource_ = null;
+      if (securityPolicyReferenceResourceBuilder_ != null) {
+        securityPolicyReferenceResourceBuilder_.dispose();
         securityPolicyReferenceResourceBuilder_ = null;
       }
       return this;
@@ -575,22 +580,34 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
     public com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendBucketRequest buildPartial() {
       com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendBucketRequest result =
           new com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendBucketRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.backendBucket_ = backendBucket_;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      if (securityPolicyReferenceResourceBuilder_ == null) {
-        result.securityPolicyReferenceResource_ = securityPolicyReferenceResource_;
-      } else {
-        result.securityPolicyReferenceResource_ = securityPolicyReferenceResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendBucketRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.backendBucket_ = backendBucket_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.securityPolicyReferenceResource_ =
+            securityPolicyReferenceResourceBuilder_ == null
+                ? securityPolicyReferenceResource_
+                : securityPolicyReferenceResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -644,15 +661,17 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
               .getDefaultInstance()) return this;
       if (!other.getBackendBucket().isEmpty()) {
         backendBucket_ = other.backendBucket_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasSecurityPolicyReferenceResource()) {
@@ -687,13 +706,13 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 733712298:
               {
                 backendBucket_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 733712298
             case 1633080194:
@@ -701,13 +720,13 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
                 input.readMessage(
                     getSecurityPolicyReferenceResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1633080194
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             default:
@@ -790,8 +809,8 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       backendBucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -807,8 +826,8 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
      * @return This builder for chaining.
      */
     public Builder clearBackendBucket() {
-
       backendBucket_ = getDefaultInstance().getBackendBucket();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -829,8 +848,8 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       backendBucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -902,8 +921,8 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -921,8 +940,8 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -945,8 +964,8 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -964,7 +983,7 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1026,8 +1045,8 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1043,8 +1062,8 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1065,8 +1084,8 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1091,8 +1110,7 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
      * @return Whether the securityPolicyReferenceResource field is set.
      */
     public boolean hasSecurityPolicyReferenceResource() {
-      return securityPolicyReferenceResourceBuilder_ != null
-          || securityPolicyReferenceResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1135,11 +1153,11 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
           throw new NullPointerException();
         }
         securityPolicyReferenceResource_ = value;
-        onChanged();
       } else {
         securityPolicyReferenceResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1157,11 +1175,11 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
         com.google.cloud.compute.v1.SecurityPolicyReference.Builder builderForValue) {
       if (securityPolicyReferenceResourceBuilder_ == null) {
         securityPolicyReferenceResource_ = builderForValue.build();
-        onChanged();
       } else {
         securityPolicyReferenceResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1178,20 +1196,19 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
     public Builder mergeSecurityPolicyReferenceResource(
         com.google.cloud.compute.v1.SecurityPolicyReference value) {
       if (securityPolicyReferenceResourceBuilder_ == null) {
-        if (securityPolicyReferenceResource_ != null) {
-          securityPolicyReferenceResource_ =
-              com.google.cloud.compute.v1.SecurityPolicyReference.newBuilder(
-                      securityPolicyReferenceResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && securityPolicyReferenceResource_ != null
+            && securityPolicyReferenceResource_
+                != com.google.cloud.compute.v1.SecurityPolicyReference.getDefaultInstance()) {
+          getSecurityPolicyReferenceResourceBuilder().mergeFrom(value);
         } else {
           securityPolicyReferenceResource_ = value;
         }
-        onChanged();
       } else {
         securityPolicyReferenceResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1206,14 +1223,13 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
      * </code>
      */
     public Builder clearSecurityPolicyReferenceResource() {
-      if (securityPolicyReferenceResourceBuilder_ == null) {
-        securityPolicyReferenceResource_ = null;
-        onChanged();
-      } else {
-        securityPolicyReferenceResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      securityPolicyReferenceResource_ = null;
+      if (securityPolicyReferenceResourceBuilder_ != null) {
+        securityPolicyReferenceResourceBuilder_.dispose();
         securityPolicyReferenceResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1229,7 +1245,7 @@ public final class SetEdgeSecurityPolicyBackendBucketRequest
      */
     public com.google.cloud.compute.v1.SecurityPolicyReference.Builder
         getSecurityPolicyReferenceResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSecurityPolicyReferenceResourceFieldBuilder().getBuilder();
     }

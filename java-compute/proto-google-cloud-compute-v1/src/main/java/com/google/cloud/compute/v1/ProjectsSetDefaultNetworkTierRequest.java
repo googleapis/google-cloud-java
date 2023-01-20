@@ -273,7 +273,9 @@ public final class ProjectsSetDefaultNetworkTierRequest
 
   private int bitField0_;
   public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
-  private volatile java.lang.Object networkTier_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkTier_ = "";
   /**
    *
    *
@@ -541,8 +543,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       networkTier_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -571,15 +573,22 @@ public final class ProjectsSetDefaultNetworkTierRequest
     public com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest buildPartial() {
       com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest result =
           new com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.networkTier_ = networkTier_;
         to_bitField0_ |= 0x00000001;
       }
-      result.networkTier_ = networkTier_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -631,8 +640,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
           == com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.getDefaultInstance())
         return this;
       if (other.hasNetworkTier()) {
-        bitField0_ |= 0x00000001;
         networkTier_ = other.networkTier_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -765,8 +774,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       networkTier_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -783,8 +792,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * @return This builder for chaining.
      */
     public Builder clearNetworkTier() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       networkTier_ = getDefaultInstance().getNetworkTier();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -806,8 +815,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       networkTier_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

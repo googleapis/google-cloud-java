@@ -68,6 +68,8 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
   }
 
   public static final int REQUEST_HEADERS_TO_ADDS_FIELD_NUMBER = 87987661;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption>
       requestHeadersToAdds_;
@@ -356,6 +358,7 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (requestHeadersToAddsBuilder_ == null) {
         requestHeadersToAdds_ = java.util.Collections.emptyList();
       } else {
@@ -391,7 +394,16 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
     public com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction result =
           new com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction result) {
       if (requestHeadersToAddsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           requestHeadersToAdds_ = java.util.Collections.unmodifiableList(requestHeadersToAdds_);
@@ -401,8 +413,11 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       } else {
         result.requestHeadersToAdds_ = requestHeadersToAddsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

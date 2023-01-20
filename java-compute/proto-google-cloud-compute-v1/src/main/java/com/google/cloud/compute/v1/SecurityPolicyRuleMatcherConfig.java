@@ -68,6 +68,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
   }
 
   public static final int SRC_IP_RANGES_FIELD_NUMBER = 432128083;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList srcIpRanges_;
   /**
    *
@@ -332,6 +334,7 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -361,14 +364,25 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
     public com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig result =
           new com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         srcIpRanges_ = srcIpRanges_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.srcIpRanges_ = srcIpRanges_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

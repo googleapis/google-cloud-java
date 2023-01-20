@@ -68,7 +68,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIZE_GB_FIELD_NUMBER = 1;
-  private int sizeGb_;
+  private int sizeGb_ = 0;
   /**
    *
    *
@@ -87,7 +87,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object diskType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object diskType_ = "";
   /**
    *
    *
@@ -164,7 +166,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MOUNT_POINT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object mountPoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mountPoint_ = "";
   /**
    *
    *
@@ -425,12 +429,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sizeGb_ = 0;
-
       diskType_ = "";
-
       mountPoint_ = "";
-
       return this;
     }
 
@@ -457,11 +459,24 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.dataflow.v1beta3.Disk buildPartial() {
       com.google.dataflow.v1beta3.Disk result = new com.google.dataflow.v1beta3.Disk(this);
-      result.sizeGb_ = sizeGb_;
-      result.diskType_ = diskType_;
-      result.mountPoint_ = mountPoint_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.Disk result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sizeGb_ = sizeGb_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.diskType_ = diskType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mountPoint_ = mountPoint_;
+      }
     }
 
     @java.lang.Override
@@ -514,10 +529,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDiskType().isEmpty()) {
         diskType_ = other.diskType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMountPoint().isEmpty()) {
         mountPoint_ = other.mountPoint_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -549,19 +566,19 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 sizeGb_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 diskType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 mountPoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -580,6 +597,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int sizeGb_;
     /**
@@ -614,6 +633,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder setSizeGb(int value) {
 
       sizeGb_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -630,7 +650,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sizeGb_ = 0;
       onChanged();
       return this;
@@ -739,8 +759,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       diskType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -770,8 +790,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskType() {
-
       diskType_ = getDefaultInstance().getDiskType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -806,8 +826,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       diskType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -873,8 +893,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mountPoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -890,8 +910,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMountPoint() {
-
       mountPoint_ = getDefaultInstance().getMountPoint();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -912,8 +932,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mountPoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

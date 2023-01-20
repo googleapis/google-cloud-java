@@ -72,7 +72,9 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
 
   private int bitField0_;
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -136,7 +138,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
   }
 
   public static final int DISABLED_FIELD_NUMBER = 270940796;
-  private boolean disabled_;
+  private boolean disabled_ = false;
   /**
    *
    *
@@ -169,7 +171,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
   }
 
   public static final int DURATION_SEC_FIELD_NUMBER = 212356902;
-  private int durationSec_;
+  private int durationSec_ = 0;
   /**
    *
    *
@@ -202,7 +204,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
   }
 
   public static final int MIN_REQUIRED_REPLICAS_FIELD_NUMBER = 365514414;
-  private int minRequiredReplicas_;
+  private int minRequiredReplicas_ = 0;
   /**
    *
    *
@@ -235,7 +237,9 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
   }
 
   public static final int SCHEDULE_FIELD_NUMBER = 375820951;
-  private volatile java.lang.Object schedule_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object schedule_ = "";
   /**
    *
    *
@@ -299,7 +303,9 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 36848094;
-  private volatile java.lang.Object timeZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
   /**
    *
    *
@@ -636,18 +642,13 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       disabled_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       durationSec_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       minRequiredReplicas_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       schedule_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       timeZone_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -676,12 +677,21 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
     public com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule buildPartial() {
       com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule result =
           new com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000001;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.disabled_ = disabled_;
         to_bitField0_ |= 0x00000002;
@@ -695,16 +705,14 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.schedule_ = schedule_;
         to_bitField0_ |= 0x00000010;
       }
-      result.schedule_ = schedule_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.timeZone_ = timeZone_;
         to_bitField0_ |= 0x00000020;
       }
-      result.timeZone_ = timeZone_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -755,8 +763,8 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
           == com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule.getDefaultInstance())
         return this;
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000001;
         description_ = other.description_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDisabled()) {
@@ -769,13 +777,13 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
         setMinRequiredReplicas(other.getMinRequiredReplicas());
       }
       if (other.hasSchedule()) {
-        bitField0_ |= 0x00000010;
         schedule_ = other.schedule_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasTimeZone()) {
-        bitField0_ |= 0x00000020;
         timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -934,8 +942,8 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -951,8 +959,8 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -973,8 +981,8 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1023,8 +1031,9 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setDisabled(boolean value) {
-      bitField0_ |= 0x00000002;
+
       disabled_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1090,8 +1099,9 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setDurationSec(int value) {
-      bitField0_ |= 0x00000004;
+
       durationSec_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1157,8 +1167,9 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setMinRequiredReplicas(int value) {
-      bitField0_ |= 0x00000008;
+
       minRequiredReplicas_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1255,8 +1266,8 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       schedule_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1272,8 +1283,8 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearSchedule() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       schedule_ = getDefaultInstance().getSchedule();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1294,8 +1305,8 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       schedule_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1375,8 +1386,8 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       timeZone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1392,8 +1403,8 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1414,8 +1425,8 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       timeZone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
   }
 
   public static final int INPUT_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object inputPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object inputPath_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
   }
 
   public static final int OUTPUT_PATH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object outputPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputPath_ = "";
   /**
    *
    *
@@ -375,10 +379,9 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       inputPath_ = "";
-
       outputPath_ = "";
-
       return this;
     }
 
@@ -408,10 +411,22 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
     public com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping result =
           new com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping(this);
-      result.inputPath_ = inputPath_;
-      result.outputPath_ = outputPath_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputPath_ = inputPath_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputPath_ = outputPath_;
+      }
     }
 
     @java.lang.Override
@@ -465,10 +480,12 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
               .getDefaultInstance()) return this;
       if (!other.getInputPath().isEmpty()) {
         inputPath_ = other.inputPath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getOutputPath().isEmpty()) {
         outputPath_ = other.outputPath_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -500,13 +517,13 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
             case 10:
               {
                 inputPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 outputPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -525,6 +542,8 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object inputPath_ = "";
     /**
@@ -587,8 +606,8 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       inputPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -604,8 +623,8 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearInputPath() {
-
       inputPath_ = getDefaultInstance().getInputPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -626,8 +645,8 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       inputPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,8 +712,8 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -710,8 +729,8 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearOutputPath() {
-
       outputPath_ = getDefaultInstance().getOutputPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -732,8 +751,8 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

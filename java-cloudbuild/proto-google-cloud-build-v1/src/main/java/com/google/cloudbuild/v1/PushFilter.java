@@ -265,7 +265,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INVERT_REGEX_FIELD_NUMBER = 4;
-  private boolean invertRegex_;
+  private boolean invertRegex_ = false;
   /**
    *
    *
@@ -513,8 +513,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       invertRegex_ = false;
-
       gitRefCase_ = 0;
       gitRef_ = null;
       return this;
@@ -543,16 +543,24 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloudbuild.v1.PushFilter buildPartial() {
       com.google.cloudbuild.v1.PushFilter result = new com.google.cloudbuild.v1.PushFilter(this);
-      if (gitRefCase_ == 2) {
-        result.gitRef_ = gitRef_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (gitRefCase_ == 3) {
-        result.gitRef_ = gitRef_;
-      }
-      result.invertRegex_ = invertRegex_;
-      result.gitRefCase_ = gitRefCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.PushFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.invertRegex_ = invertRegex_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloudbuild.v1.PushFilter result) {
+      result.gitRefCase_ = gitRefCase_;
+      result.gitRef_ = this.gitRef_;
     }
 
     @java.lang.Override
@@ -666,7 +674,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 invertRegex_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             default:
@@ -699,6 +707,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1025,6 +1035,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder setInvertRegex(boolean value) {
 
       invertRegex_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1041,7 +1052,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInvertRegex() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       invertRegex_ = false;
       onChanged();
       return this;

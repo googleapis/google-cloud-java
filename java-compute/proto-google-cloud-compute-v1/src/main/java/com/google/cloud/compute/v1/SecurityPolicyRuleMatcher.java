@@ -305,7 +305,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
   }
 
   public static final int VERSIONED_EXPR_FIELD_NUMBER = 322286013;
-  private volatile java.lang.Object versionedExpr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object versionedExpr_ = "";
   /**
    *
    *
@@ -612,20 +614,18 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        configBuilder_.clear();
+      bitField0_ = 0;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
+        configBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (exprBuilder_ == null) {
-        expr_ = null;
-      } else {
-        exprBuilder_.clear();
+      expr_ = null;
+      if (exprBuilder_ != null) {
+        exprBuilder_.dispose();
+        exprBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       versionedExpr_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -653,31 +653,29 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.SecurityPolicyRuleMatcher buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRuleMatcher result =
           new com.google.cloud.compute.v1.SecurityPolicyRuleMatcher(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SecurityPolicyRuleMatcher result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (configBuilder_ == null) {
-          result.config_ = config_;
-        } else {
-          result.config_ = configBuilder_.build();
-        }
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (exprBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = exprBuilder_.build();
-        }
+        result.expr_ = exprBuilder_ == null ? expr_ : exprBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.versionedExpr_ = versionedExpr_;
         to_bitField0_ |= 0x00000004;
       }
-      result.versionedExpr_ = versionedExpr_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -733,8 +731,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         mergeExpr(other.getExpr());
       }
       if (other.hasVersionedExpr()) {
-        bitField0_ |= 0x00000004;
         versionedExpr_ = other.versionedExpr_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -858,11 +856,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -879,11 +877,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -903,18 +901,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
             && config_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig
                     .getDefaultInstance()) {
-          config_ =
-              com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -928,13 +923,13 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        configBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
+        configBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1052,11 +1047,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         expr_ = value;
-        onChanged();
       } else {
         exprBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1071,11 +1066,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder setExpr(com.google.cloud.compute.v1.Expr.Builder builderForValue) {
       if (exprBuilder_ == null) {
         expr_ = builderForValue.build();
-        onChanged();
       } else {
         exprBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1092,16 +1087,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         if (((bitField0_ & 0x00000002) != 0)
             && expr_ != null
             && expr_ != com.google.cloud.compute.v1.Expr.getDefaultInstance()) {
-          expr_ =
-              com.google.cloud.compute.v1.Expr.newBuilder(expr_).mergeFrom(value).buildPartial();
+          getExprBuilder().mergeFrom(value);
         } else {
           expr_ = value;
         }
-        onChanged();
       } else {
         exprBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1114,13 +1108,13 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
      */
     public Builder clearExpr() {
-      if (exprBuilder_ == null) {
-        expr_ = null;
-        onChanged();
-      } else {
-        exprBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      expr_ = null;
+      if (exprBuilder_ != null) {
+        exprBuilder_.dispose();
+        exprBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1258,8 +1252,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       versionedExpr_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1276,8 +1270,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearVersionedExpr() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       versionedExpr_ = getDefaultInstance().getVersionedExpr();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1299,8 +1293,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       versionedExpr_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

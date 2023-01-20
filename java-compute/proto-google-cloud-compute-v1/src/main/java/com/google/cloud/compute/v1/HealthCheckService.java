@@ -239,7 +239,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -303,7 +305,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -367,7 +371,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
-  private volatile java.lang.Object fingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fingerprint_ = "";
   /**
    *
    *
@@ -431,6 +437,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int HEALTH_CHECKS_FIELD_NUMBER = 448370606;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList healthChecks_;
   /**
    *
@@ -492,7 +500,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int HEALTH_STATUS_AGGREGATION_POLICY_FIELD_NUMBER = 253163129;
-  private volatile java.lang.Object healthStatusAggregationPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object healthStatusAggregationPolicy_ = "";
   /**
    *
    *
@@ -559,7 +569,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -592,7 +602,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -656,7 +668,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -720,6 +734,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NETWORK_ENDPOINT_GROUPS_FIELD_NUMBER = 29346733;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList networkEndpointGroups_;
   /**
    *
@@ -781,6 +797,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NOTIFICATION_ENDPOINTS_FIELD_NUMBER = 406728490;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList notificationEndpoints_;
   /**
    *
@@ -842,7 +860,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -906,7 +926,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -1340,30 +1362,22 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       fingerprint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
       healthStatusAggregationPolicy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       networkEndpointGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000100);
       notificationEndpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000200);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1391,41 +1405,20 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.HealthCheckService buildPartial() {
       com.google.cloud.compute.v1.HealthCheckService result =
           new com.google.cloud.compute.v1.HealthCheckService(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.creationTimestamp_ = creationTimestamp_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.fingerprint_ = fingerprint_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HealthCheckService result) {
       if (((bitField0_ & 0x00000008) != 0)) {
         healthChecks_ = healthChecks_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.healthChecks_ = healthChecks_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.healthStatusAggregationPolicy_ = healthStatusAggregationPolicy_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        to_bitField0_ |= 0x00000020;
-      }
-      result.kind_ = kind_;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        to_bitField0_ |= 0x00000040;
-      }
-      result.name_ = name_;
       if (((bitField0_ & 0x00000100) != 0)) {
         networkEndpointGroups_ = networkEndpointGroups_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -1436,17 +1429,48 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.notificationEndpoints_ = notificationEndpoints_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HealthCheckService result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fingerprint_ = fingerprint_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.healthStatusAggregationPolicy_ = healthStatusAggregationPolicy_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000040;
+      }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.region_ = region_;
         to_bitField0_ |= 0x00000080;
       }
-      result.region_ = region_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000100;
       }
-      result.selfLink_ = selfLink_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1495,18 +1519,18 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.compute.v1.HealthCheckService other) {
       if (other == com.google.cloud.compute.v1.HealthCheckService.getDefaultInstance()) return this;
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000001;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000002;
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000004;
         fingerprint_ = other.fingerprint_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.healthChecks_.isEmpty()) {
@@ -1520,21 +1544,21 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         onChanged();
       }
       if (other.hasHealthStatusAggregationPolicy()) {
-        bitField0_ |= 0x00000010;
         healthStatusAggregationPolicy_ = other.healthStatusAggregationPolicy_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000040;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000080;
         name_ = other.name_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.networkEndpointGroups_.isEmpty()) {
@@ -1558,13 +1582,13 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00000400;
         region_ = other.region_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000800;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1762,8 +1786,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1779,8 +1803,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1801,8 +1825,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1882,8 +1906,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1899,8 +1923,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1921,8 +1945,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2002,8 +2026,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       fingerprint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2019,8 +2043,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       fingerprint_ = getDefaultInstance().getFingerprint();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2041,8 +2065,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       fingerprint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2294,8 +2318,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       healthStatusAggregationPolicy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2312,8 +2336,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearHealthStatusAggregationPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       healthStatusAggregationPolicy_ = getDefaultInstance().getHealthStatusAggregationPolicy();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2335,8 +2359,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       healthStatusAggregationPolicy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2385,8 +2409,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000020;
+
       id_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2483,8 +2508,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       kind_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2500,8 +2525,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2522,8 +2547,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       kind_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2603,8 +2628,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       name_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2620,8 +2645,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2642,8 +2667,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       name_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3061,8 +3086,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       region_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3078,8 +3103,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3100,8 +3125,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       region_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3181,8 +3206,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       selfLink_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3198,8 +3223,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3220,8 +3245,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       selfLink_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

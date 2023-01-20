@@ -74,7 +74,9 @@ public final class AggregatedListTargetVpnGatewaysRequest
 
   private int bitField0_;
   public static final int FILTER_FIELD_NUMBER = 336120696;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -138,7 +140,7 @@ public final class AggregatedListTargetVpnGatewaysRequest
   }
 
   public static final int INCLUDE_ALL_SCOPES_FIELD_NUMBER = 391327988;
-  private boolean includeAllScopes_;
+  private boolean includeAllScopes_ = false;
   /**
    *
    *
@@ -171,7 +173,7 @@ public final class AggregatedListTargetVpnGatewaysRequest
   }
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
-  private int maxResults_;
+  private int maxResults_ = 0;
   /**
    *
    *
@@ -204,7 +206,9 @@ public final class AggregatedListTargetVpnGatewaysRequest
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 160562920;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -268,7 +272,9 @@ public final class AggregatedListTargetVpnGatewaysRequest
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 19994697;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -332,7 +338,9 @@ public final class AggregatedListTargetVpnGatewaysRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -381,7 +389,7 @@ public final class AggregatedListTargetVpnGatewaysRequest
   }
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
-  private boolean returnPartialSuccess_;
+  private boolean returnPartialSuccess_ = false;
   /**
    *
    *
@@ -698,20 +706,14 @@ public final class AggregatedListTargetVpnGatewaysRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filter_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       includeAllScopes_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       maxResults_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       orderBy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       pageToken_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       project_ = "";
-
       returnPartialSuccess_ = false;
-      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -741,12 +743,21 @@ public final class AggregatedListTargetVpnGatewaysRequest
     public com.google.cloud.compute.v1.AggregatedListTargetVpnGatewaysRequest buildPartial() {
       com.google.cloud.compute.v1.AggregatedListTargetVpnGatewaysRequest result =
           new com.google.cloud.compute.v1.AggregatedListTargetVpnGatewaysRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.AggregatedListTargetVpnGatewaysRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.filter_ = filter_;
         to_bitField0_ |= 0x00000001;
       }
-      result.filter_ = filter_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.includeAllScopes_ = includeAllScopes_;
         to_bitField0_ |= 0x00000002;
@@ -756,21 +767,21 @@ public final class AggregatedListTargetVpnGatewaysRequest
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.orderBy_ = orderBy_;
         to_bitField0_ |= 0x00000008;
       }
-      result.orderBy_ = orderBy_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageToken_ = pageToken_;
         to_bitField0_ |= 0x00000010;
       }
-      result.pageToken_ = pageToken_;
-      result.project_ = project_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.returnPartialSuccess_ = returnPartialSuccess_;
         to_bitField0_ |= 0x00000020;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -823,8 +834,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
           == com.google.cloud.compute.v1.AggregatedListTargetVpnGatewaysRequest
               .getDefaultInstance()) return this;
       if (other.hasFilter()) {
-        bitField0_ |= 0x00000001;
         filter_ = other.filter_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasIncludeAllScopes()) {
@@ -834,17 +845,18 @@ public final class AggregatedListTargetVpnGatewaysRequest
         setMaxResults(other.getMaxResults());
       }
       if (other.hasOrderBy()) {
-        bitField0_ |= 0x00000008;
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasPageToken()) {
-        bitField0_ |= 0x00000010;
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasReturnPartialSuccess()) {
@@ -897,7 +909,7 @@ public final class AggregatedListTargetVpnGatewaysRequest
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1820481738
             case -1606001726:
@@ -915,7 +927,7 @@ public final class AggregatedListTargetVpnGatewaysRequest
             case -157380176:
               {
                 returnPartialSuccess_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -157380176
             default:
@@ -1012,8 +1024,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1029,8 +1041,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1051,8 +1063,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1101,8 +1113,9 @@ public final class AggregatedListTargetVpnGatewaysRequest
      * @return This builder for chaining.
      */
     public Builder setIncludeAllScopes(boolean value) {
-      bitField0_ |= 0x00000002;
+
       includeAllScopes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1168,8 +1181,9 @@ public final class AggregatedListTargetVpnGatewaysRequest
      * @return This builder for chaining.
      */
     public Builder setMaxResults(int value) {
-      bitField0_ |= 0x00000004;
+
       maxResults_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1266,8 +1280,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       orderBy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1283,8 +1297,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1305,8 +1319,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       orderBy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1386,8 +1400,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1403,8 +1417,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1425,8 +1439,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1492,8 +1506,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1509,8 +1523,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1531,8 +1545,8 @@ public final class AggregatedListTargetVpnGatewaysRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1551,7 +1565,7 @@ public final class AggregatedListTargetVpnGatewaysRequest
      */
     @java.lang.Override
     public boolean hasReturnPartialSuccess() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1581,8 +1595,9 @@ public final class AggregatedListTargetVpnGatewaysRequest
      * @return This builder for chaining.
      */
     public Builder setReturnPartialSuccess(boolean value) {
-      bitField0_ |= 0x00000020;
+
       returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1598,7 +1613,7 @@ public final class AggregatedListTargetVpnGatewaysRequest
      * @return This builder for chaining.
      */
     public Builder clearReturnPartialSuccess() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       returnPartialSuccess_ = false;
       onChanged();
       return this;

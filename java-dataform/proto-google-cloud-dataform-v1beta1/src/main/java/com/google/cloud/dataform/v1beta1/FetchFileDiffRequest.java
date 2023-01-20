@@ -69,7 +69,9 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int WORKSPACE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object workspace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workspace_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PATH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       workspace_ = "";
-
       path_ = "";
-
       return this;
     }
 
@@ -408,10 +411,21 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dataform.v1beta1.FetchFileDiffRequest buildPartial() {
       com.google.cloud.dataform.v1beta1.FetchFileDiffRequest result =
           new com.google.cloud.dataform.v1beta1.FetchFileDiffRequest(this);
-      result.workspace_ = workspace_;
-      result.path_ = path_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataform.v1beta1.FetchFileDiffRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.workspace_ = workspace_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.path_ = path_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getWorkspace().isEmpty()) {
         workspace_ = other.workspace_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 workspace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +538,8 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object workspace_ = "";
     /**
@@ -590,8 +608,8 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       workspace_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -609,8 +627,8 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearWorkspace() {
-
       workspace_ = getDefaultInstance().getWorkspace();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -633,8 +651,8 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workspace_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,8 +718,8 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class FetchFileDiffRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

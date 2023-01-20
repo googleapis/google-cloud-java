@@ -119,7 +119,9 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
   }
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
-  private volatile java.lang.Object startTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object startTime_ = "";
   /**
    *
    *
@@ -410,14 +412,13 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (maintenanceDurationBuilder_ == null) {
-        maintenanceDuration_ = null;
-      } else {
-        maintenanceDurationBuilder_.clear();
+      bitField0_ = 0;
+      maintenanceDuration_ = null;
+      if (maintenanceDurationBuilder_ != null) {
+        maintenanceDurationBuilder_.dispose();
+        maintenanceDurationBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       startTime_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -445,23 +446,28 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.NodeGroupMaintenanceWindow buildPartial() {
       com.google.cloud.compute.v1.NodeGroupMaintenanceWindow result =
           new com.google.cloud.compute.v1.NodeGroupMaintenanceWindow(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NodeGroupMaintenanceWindow result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (maintenanceDurationBuilder_ == null) {
-          result.maintenanceDuration_ = maintenanceDuration_;
-        } else {
-          result.maintenanceDuration_ = maintenanceDurationBuilder_.build();
-        }
+        result.maintenanceDuration_ =
+            maintenanceDurationBuilder_ == null
+                ? maintenanceDuration_
+                : maintenanceDurationBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.startTime_ = startTime_;
         to_bitField0_ |= 0x00000002;
       }
-      result.startTime_ = startTime_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -514,8 +520,8 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
         mergeMaintenanceDuration(other.getMaintenanceDuration());
       }
       if (other.hasStartTime()) {
-        bitField0_ |= 0x00000002;
         startTime_ = other.startTime_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -631,11 +637,11 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         maintenanceDuration_ = value;
-        onChanged();
       } else {
         maintenanceDurationBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -651,11 +657,11 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
         com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (maintenanceDurationBuilder_ == null) {
         maintenanceDuration_ = builderForValue.build();
-        onChanged();
       } else {
         maintenanceDurationBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -672,18 +678,15 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
         if (((bitField0_ & 0x00000001) != 0)
             && maintenanceDuration_ != null
             && maintenanceDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
-          maintenanceDuration_ =
-              com.google.cloud.compute.v1.Duration.newBuilder(maintenanceDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getMaintenanceDurationBuilder().mergeFrom(value);
         } else {
           maintenanceDuration_ = value;
         }
-        onChanged();
       } else {
         maintenanceDurationBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -696,13 +699,13 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public Builder clearMaintenanceDuration() {
-      if (maintenanceDurationBuilder_ == null) {
-        maintenanceDuration_ = null;
-        onChanged();
-      } else {
-        maintenanceDurationBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      maintenanceDuration_ = null;
+      if (maintenanceDurationBuilder_ != null) {
+        maintenanceDurationBuilder_.dispose();
+        maintenanceDurationBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -838,8 +841,8 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       startTime_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -855,8 +858,8 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       startTime_ = getDefaultInstance().getStartTime();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -877,8 +880,8 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       startTime_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

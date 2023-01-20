@@ -363,7 +363,6 @@ public interface AutoscalingPolicyOrBuilder
    * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule getScalingSchedulesOrDefault(
       java.lang.String key,

@@ -122,7 +122,9 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -410,14 +412,13 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (consumptionInfoBuilder_ == null) {
-        consumptionInfo_ = null;
-      } else {
-        consumptionInfoBuilder_.clear();
+      bitField0_ = 0;
+      consumptionInfo_ = null;
+      if (consumptionInfoBuilder_ != null) {
+        consumptionInfoBuilder_.dispose();
+        consumptionInfoBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       instance_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -445,23 +446,26 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.InstanceConsumptionData buildPartial() {
       com.google.cloud.compute.v1.InstanceConsumptionData result =
           new com.google.cloud.compute.v1.InstanceConsumptionData(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InstanceConsumptionData result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (consumptionInfoBuilder_ == null) {
-          result.consumptionInfo_ = consumptionInfo_;
-        } else {
-          result.consumptionInfo_ = consumptionInfoBuilder_.build();
-        }
+        result.consumptionInfo_ =
+            consumptionInfoBuilder_ == null ? consumptionInfo_ : consumptionInfoBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instance_ = instance_;
         to_bitField0_ |= 0x00000002;
       }
-      result.instance_ = instance_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -514,8 +518,8 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
         mergeConsumptionInfo(other.getConsumptionInfo());
       }
       if (other.hasInstance()) {
-        bitField0_ |= 0x00000002;
         instance_ = other.instance_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -633,11 +637,11 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         consumptionInfo_ = value;
-        onChanged();
       } else {
         consumptionInfoBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -654,11 +658,11 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
         com.google.cloud.compute.v1.InstanceConsumptionInfo.Builder builderForValue) {
       if (consumptionInfoBuilder_ == null) {
         consumptionInfo_ = builderForValue.build();
-        onChanged();
       } else {
         consumptionInfoBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -677,18 +681,15 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
             && consumptionInfo_ != null
             && consumptionInfo_
                 != com.google.cloud.compute.v1.InstanceConsumptionInfo.getDefaultInstance()) {
-          consumptionInfo_ =
-              com.google.cloud.compute.v1.InstanceConsumptionInfo.newBuilder(consumptionInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getConsumptionInfoBuilder().mergeFrom(value);
         } else {
           consumptionInfo_ = value;
         }
-        onChanged();
       } else {
         consumptionInfoBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -702,13 +703,13 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearConsumptionInfo() {
-      if (consumptionInfoBuilder_ == null) {
-        consumptionInfo_ = null;
-        onChanged();
-      } else {
-        consumptionInfoBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      consumptionInfo_ = null;
+      if (consumptionInfoBuilder_ != null) {
+        consumptionInfoBuilder_.dispose();
+        consumptionInfoBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -848,8 +849,8 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       instance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,8 +866,8 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -887,8 +888,8 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       instance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

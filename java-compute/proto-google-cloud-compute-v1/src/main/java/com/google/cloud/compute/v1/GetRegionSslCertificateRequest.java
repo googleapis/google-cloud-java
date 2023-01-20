@@ -71,7 +71,9 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -169,7 +173,9 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
   }
 
   public static final int SSL_CERTIFICATE_FIELD_NUMBER = 46443492;
-  private volatile java.lang.Object sslCertificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sslCertificate_ = "";
   /**
    *
    *
@@ -433,12 +439,10 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       sslCertificate_ = "";
-
       return this;
     }
 
@@ -466,11 +470,24 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.GetRegionSslCertificateRequest buildPartial() {
       com.google.cloud.compute.v1.GetRegionSslCertificateRequest result =
           new com.google.cloud.compute.v1.GetRegionSslCertificateRequest(this);
-      result.project_ = project_;
-      result.region_ = region_;
-      result.sslCertificate_ = sslCertificate_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetRegionSslCertificateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sslCertificate_ = sslCertificate_;
+      }
     }
 
     @java.lang.Override
@@ -521,14 +538,17 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSslCertificate().isEmpty()) {
         sslCertificate_ = other.sslCertificate_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -560,19 +580,19 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
             case 371547938:
               {
                 sslCertificate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 371547938
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -591,6 +611,8 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -653,8 +675,8 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -670,8 +692,8 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -692,8 +714,8 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,8 +781,8 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -776,8 +798,8 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -798,8 +820,8 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,8 +887,8 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       sslCertificate_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -882,8 +904,8 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearSslCertificate() {
-
       sslCertificate_ = getDefaultInstance().getSslCertificate();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -904,8 +926,8 @@ public final class GetRegionSslCertificateRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sslCertificate_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

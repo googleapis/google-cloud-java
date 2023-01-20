@@ -236,7 +236,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int BUCKET_NAME_FIELD_NUMBER = 283610048;
-  private volatile java.lang.Object bucketName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bucketName_ = "";
   /**
    *
    *
@@ -350,7 +352,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPRESSION_MODE_FIELD_NUMBER = 95520988;
-  private volatile java.lang.Object compressionMode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object compressionMode_ = "";
   /**
    *
    *
@@ -417,7 +421,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -481,6 +487,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_RESPONSE_HEADERS_FIELD_NUMBER = 387539094;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList customResponseHeaders_;
   /**
    *
@@ -542,7 +550,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -606,7 +616,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EDGE_SECURITY_POLICY_FIELD_NUMBER = 41036943;
-  private volatile java.lang.Object edgeSecurityPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object edgeSecurityPolicy_ = "";
   /**
    *
    *
@@ -670,7 +682,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_CDN_FIELD_NUMBER = 282942321;
-  private boolean enableCdn_;
+  private boolean enableCdn_ = false;
   /**
    *
    *
@@ -703,7 +715,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -736,7 +748,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -800,7 +814,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -864,7 +880,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -1297,34 +1315,24 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bucketName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (cdnPolicyBuilder_ == null) {
-        cdnPolicy_ = null;
-      } else {
-        cdnPolicyBuilder_.clear();
+      cdnPolicy_ = null;
+      if (cdnPolicyBuilder_ != null) {
+        cdnPolicyBuilder_.dispose();
+        cdnPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       compressionMode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       edgeSecurityPolicy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       enableCdn_ = false;
-      bitField0_ = (bitField0_ & ~0x00000080);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1352,41 +1360,49 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.BackendBucket buildPartial() {
       com.google.cloud.compute.v1.BackendBucket result =
           new com.google.cloud.compute.v1.BackendBucket(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.bucketName_ = bucketName_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (cdnPolicyBuilder_ == null) {
-          result.cdnPolicy_ = cdnPolicy_;
-        } else {
-          result.cdnPolicy_ = cdnPolicyBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.compressionMode_ = compressionMode_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.creationTimestamp_ = creationTimestamp_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.BackendBucket result) {
       if (((bitField0_ & 0x00000010) != 0)) {
         customResponseHeaders_ = customResponseHeaders_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.customResponseHeaders_ = customResponseHeaders_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BackendBucket result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bucketName_ = bucketName_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cdnPolicy_ = cdnPolicyBuilder_ == null ? cdnPolicy_ : cdnPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.compressionMode_ = compressionMode_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000008;
+      }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000010;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.edgeSecurityPolicy_ = edgeSecurityPolicy_;
         to_bitField0_ |= 0x00000020;
       }
-      result.edgeSecurityPolicy_ = edgeSecurityPolicy_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.enableCdn_ = enableCdn_;
         to_bitField0_ |= 0x00000040;
@@ -1396,20 +1412,18 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000100;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000200;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000400;
       }
-      result.selfLink_ = selfLink_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1458,21 +1472,21 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.BackendBucket other) {
       if (other == com.google.cloud.compute.v1.BackendBucket.getDefaultInstance()) return this;
       if (other.hasBucketName()) {
-        bitField0_ |= 0x00000001;
         bucketName_ = other.bucketName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCdnPolicy()) {
         mergeCdnPolicy(other.getCdnPolicy());
       }
       if (other.hasCompressionMode()) {
-        bitField0_ |= 0x00000004;
         compressionMode_ = other.compressionMode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000008;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.customResponseHeaders_.isEmpty()) {
@@ -1486,13 +1500,13 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000020;
         description_ = other.description_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasEdgeSecurityPolicy()) {
-        bitField0_ |= 0x00000040;
         edgeSecurityPolicy_ = other.edgeSecurityPolicy_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasEnableCdn()) {
@@ -1502,18 +1516,18 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000200;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000400;
         name_ = other.name_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000800;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1709,8 +1723,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       bucketName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1726,8 +1740,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBucketName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       bucketName_ = getDefaultInstance().getBucketName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1748,8 +1762,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       bucketName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1809,11 +1823,11 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         cdnPolicy_ = value;
-        onChanged();
       } else {
         cdnPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1829,11 +1843,11 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.BackendBucketCdnPolicy.Builder builderForValue) {
       if (cdnPolicyBuilder_ == null) {
         cdnPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         cdnPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1851,18 +1865,15 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
             && cdnPolicy_ != null
             && cdnPolicy_
                 != com.google.cloud.compute.v1.BackendBucketCdnPolicy.getDefaultInstance()) {
-          cdnPolicy_ =
-              com.google.cloud.compute.v1.BackendBucketCdnPolicy.newBuilder(cdnPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getCdnPolicyBuilder().mergeFrom(value);
         } else {
           cdnPolicy_ = value;
         }
-        onChanged();
       } else {
         cdnPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1875,13 +1886,13 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
      */
     public Builder clearCdnPolicy() {
-      if (cdnPolicyBuilder_ == null) {
-        cdnPolicy_ = null;
-        onChanged();
-      } else {
-        cdnPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      cdnPolicy_ = null;
+      if (cdnPolicyBuilder_ != null) {
+        cdnPolicyBuilder_.dispose();
+        cdnPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2021,8 +2032,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       compressionMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2039,8 +2050,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCompressionMode() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       compressionMode_ = getDefaultInstance().getCompressionMode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2062,8 +2073,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       compressionMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2143,8 +2154,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2160,8 +2171,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2182,8 +2193,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2432,8 +2443,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2449,8 +2460,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2471,8 +2482,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2552,8 +2563,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       edgeSecurityPolicy_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2569,8 +2580,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEdgeSecurityPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       edgeSecurityPolicy_ = getDefaultInstance().getEdgeSecurityPolicy();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2591,8 +2602,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       edgeSecurityPolicy_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2641,8 +2652,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEnableCdn(boolean value) {
-      bitField0_ |= 0x00000080;
+
       enableCdn_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2708,8 +2720,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000100;
+
       id_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2806,8 +2819,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       kind_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2823,8 +2836,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2845,8 +2858,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       kind_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2926,8 +2939,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       name_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2943,8 +2956,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2965,8 +2978,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       name_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3046,8 +3059,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       selfLink_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3063,8 +3076,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3085,8 +3098,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       selfLink_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

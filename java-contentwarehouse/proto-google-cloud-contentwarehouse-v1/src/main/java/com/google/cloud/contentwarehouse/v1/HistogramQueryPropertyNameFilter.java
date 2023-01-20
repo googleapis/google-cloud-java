@@ -206,6 +206,8 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   }
 
   public static final int DOCUMENT_SCHEMAS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList documentSchemas_;
   /**
    *
@@ -291,6 +293,8 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   }
 
   public static final int PROPERTY_NAMES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList propertyNames_;
   /**
    *
@@ -376,7 +380,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   }
 
   public static final int Y_AXIS_FIELD_NUMBER = 3;
-  private int yAxis_;
+  private int yAxis_ = 0;
   /**
    *
    *
@@ -412,10 +416,9 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.HistogramYAxis
       getYAxis() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.HistogramYAxis result =
         com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.HistogramYAxis
-            .valueOf(yAxis_);
+            .forNumber(yAxis_);
     return result == null
         ? com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.HistogramYAxis
             .UNRECOGNIZED
@@ -652,12 +655,12 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       documentSchemas_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       propertyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       yAxis_ = 0;
-
       return this;
     }
 
@@ -687,7 +690,16 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter buildPartial() {
       com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter result =
           new com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         documentSchemas_ = documentSchemas_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -698,9 +710,14 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.propertyNames_ = propertyNames_;
-      result.yAxis_ = yAxis_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.yAxis_ = yAxis_;
+      }
     }
 
     @java.lang.Override
@@ -818,7 +835,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
             case 24:
               {
                 yAxis_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1319,8 +1336,8 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setYAxisValue(int value) {
-
       yAxis_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1341,10 +1358,9 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     @java.lang.Override
     public com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.HistogramYAxis
         getYAxis() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.HistogramYAxis result =
           com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.HistogramYAxis
-              .valueOf(yAxis_);
+              .forNumber(yAxis_);
       return result == null
           ? com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.HistogramYAxis
               .UNRECOGNIZED
@@ -1371,7 +1387,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       yAxis_ = value.getNumber();
       onChanged();
       return this;
@@ -1391,7 +1407,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearYAxis() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       yAxis_ = 0;
       onChanged();
       return this;

@@ -385,7 +385,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int AUTHENTICATION_PRESENT_FIELD_NUMBER = 105974260;
-  private boolean authenticationPresent_;
+  private boolean authenticationPresent_ = false;
   /**
    *
    *
@@ -418,7 +418,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTROL_PLANE_INDEPENDENT_FIELD_NUMBER = 62363573;
-  private boolean controlPlaneIndependent_;
+  private boolean controlPlaneIndependent_ = false;
   /**
    *
    *
@@ -451,7 +451,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEMAND_FIELD_NUMBER = 275180107;
-  private boolean demand_;
+  private boolean demand_ = false;
   /**
    *
    *
@@ -484,7 +484,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIAGNOSTIC_FIELD_NUMBER = 62708647;
-  private volatile java.lang.Object diagnostic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object diagnostic_ = "";
   /**
    *
    *
@@ -551,7 +553,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FINAL_FIELD_NUMBER = 97436022;
-  private boolean final_;
+  private boolean final_ = false;
   /**
    *
    *
@@ -584,7 +586,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LENGTH_FIELD_NUMBER = 504249062;
-  private int length_;
+  private int length_ = 0;
   /**
    *
    *
@@ -617,7 +619,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIN_ECHO_RX_INTERVAL_MS_FIELD_NUMBER = 97286868;
-  private int minEchoRxIntervalMs_;
+  private int minEchoRxIntervalMs_ = 0;
   /**
    *
    *
@@ -650,7 +652,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIN_RX_INTERVAL_MS_FIELD_NUMBER = 463399028;
-  private int minRxIntervalMs_;
+  private int minRxIntervalMs_ = 0;
   /**
    *
    *
@@ -683,7 +685,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIN_TX_INTERVAL_MS_FIELD_NUMBER = 526023602;
-  private int minTxIntervalMs_;
+  private int minTxIntervalMs_ = 0;
   /**
    *
    *
@@ -716,7 +718,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MULTIPLIER_FIELD_NUMBER = 191331777;
-  private int multiplier_;
+  private int multiplier_ = 0;
   /**
    *
    *
@@ -749,7 +751,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MULTIPOINT_FIELD_NUMBER = 191421431;
-  private boolean multipoint_;
+  private boolean multipoint_ = false;
   /**
    *
    *
@@ -782,7 +784,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MY_DISCRIMINATOR_FIELD_NUMBER = 76663113;
-  private int myDiscriminator_;
+  private int myDiscriminator_ = 0;
   /**
    *
    *
@@ -815,7 +817,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POLL_FIELD_NUMBER = 3446719;
-  private boolean poll_;
+  private boolean poll_ = false;
   /**
    *
    *
@@ -848,7 +850,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -915,7 +919,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 351608024;
-  private int version_;
+  private int version_ = 0;
   /**
    *
    *
@@ -948,7 +952,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int YOUR_DISCRIMINATOR_FIELD_NUMBER = 515634064;
-  private int yourDiscriminator_;
+  private int yourDiscriminator_ = 0;
   /**
    *
    *
@@ -1393,38 +1397,23 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       authenticationPresent_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       controlPlaneIndependent_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       demand_ = false;
-      bitField0_ = (bitField0_ & ~0x00000004);
       diagnostic_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       final_ = false;
-      bitField0_ = (bitField0_ & ~0x00000010);
       length_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
       minEchoRxIntervalMs_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
       minRxIntervalMs_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000080);
       minTxIntervalMs_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000100);
       multiplier_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000200);
       multipoint_ = false;
-      bitField0_ = (bitField0_ & ~0x00000400);
       myDiscriminator_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000800);
       poll_ = false;
-      bitField0_ = (bitField0_ & ~0x00001000);
       state_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
       version_ = 0;
-      bitField0_ = (bitField0_ & ~0x00004000);
       yourDiscriminator_ = 0;
-      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1452,6 +1441,14 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.BfdPacket buildPartial() {
       com.google.cloud.compute.v1.BfdPacket result =
           new com.google.cloud.compute.v1.BfdPacket(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BfdPacket result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -1467,9 +1464,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.diagnostic_ = diagnostic_;
         to_bitField0_ |= 0x00000008;
       }
-      result.diagnostic_ = diagnostic_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.final_ = final_;
         to_bitField0_ |= 0x00000010;
@@ -1507,9 +1504,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x00002000;
       }
-      result.state_ = state_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.version_ = version_;
         to_bitField0_ |= 0x00004000;
@@ -1518,9 +1515,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
         result.yourDiscriminator_ = yourDiscriminator_;
         to_bitField0_ |= 0x00008000;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1578,8 +1573,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
         setDemand(other.getDemand());
       }
       if (other.hasDiagnostic()) {
-        bitField0_ |= 0x00000008;
         diagnostic_ = other.diagnostic_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasFinal()) {
@@ -1610,8 +1605,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
         setPoll(other.getPoll());
       }
       if (other.hasState()) {
-        bitField0_ |= 0x00002000;
         state_ = other.state_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasVersion()) {
@@ -1805,8 +1800,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAuthenticationPresent(boolean value) {
-      bitField0_ |= 0x00000001;
+
       authenticationPresent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1872,8 +1868,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setControlPlaneIndependent(boolean value) {
-      bitField0_ |= 0x00000002;
+
       controlPlaneIndependent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1939,8 +1936,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDemand(boolean value) {
-      bitField0_ |= 0x00000004;
+
       demand_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2041,8 +2039,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       diagnostic_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2059,8 +2057,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiagnostic() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       diagnostic_ = getDefaultInstance().getDiagnostic();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2082,8 +2080,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       diagnostic_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2132,8 +2130,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFinal(boolean value) {
-      bitField0_ |= 0x00000010;
+
       final_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2199,8 +2198,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLength(int value) {
-      bitField0_ |= 0x00000020;
+
       length_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2266,8 +2266,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMinEchoRxIntervalMs(int value) {
-      bitField0_ |= 0x00000040;
+
       minEchoRxIntervalMs_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2333,8 +2334,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMinRxIntervalMs(int value) {
-      bitField0_ |= 0x00000080;
+
       minRxIntervalMs_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2400,8 +2402,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMinTxIntervalMs(int value) {
-      bitField0_ |= 0x00000100;
+
       minTxIntervalMs_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2467,8 +2470,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMultiplier(int value) {
-      bitField0_ |= 0x00000200;
+
       multiplier_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2534,8 +2538,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMultipoint(boolean value) {
-      bitField0_ |= 0x00000400;
+
       multipoint_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2601,8 +2606,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMyDiscriminator(int value) {
-      bitField0_ |= 0x00000800;
+
       myDiscriminator_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2668,8 +2674,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPoll(boolean value) {
-      bitField0_ |= 0x00001000;
+
       poll_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2770,8 +2777,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
       state_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2788,8 +2795,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00002000);
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -2811,8 +2818,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
       state_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2861,8 +2868,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setVersion(int value) {
-      bitField0_ |= 0x00004000;
+
       version_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -2928,8 +2936,9 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setYourDiscriminator(int value) {
-      bitField0_ |= 0x00008000;
+
       yourDiscriminator_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

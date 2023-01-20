@@ -70,7 +70,9 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INSTANCE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object instanceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceId_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DATABASE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object databaseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseId_ = "";
   /**
    *
    *
@@ -431,12 +437,10 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       instanceId_ = "";
-
       databaseId_ = "";
-
       return this;
     }
 
@@ -464,11 +468,24 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
     public com.google.dataflow.v1beta3.SpannerIODetails buildPartial() {
       com.google.dataflow.v1beta3.SpannerIODetails result =
           new com.google.dataflow.v1beta3.SpannerIODetails(this);
-      result.projectId_ = projectId_;
-      result.instanceId_ = instanceId_;
-      result.databaseId_ = databaseId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.SpannerIODetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instanceId_ = instanceId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.databaseId_ = databaseId_;
+      }
     }
 
     @java.lang.Override
@@ -518,14 +535,17 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       if (other == com.google.dataflow.v1beta3.SpannerIODetails.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDatabaseId().isEmpty()) {
         databaseId_ = other.databaseId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -557,19 +577,19 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 instanceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 databaseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -588,6 +608,8 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
@@ -650,8 +672,8 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -667,8 +689,8 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -689,8 +711,8 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -756,8 +778,8 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -773,8 +795,8 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
-
       instanceId_ = getDefaultInstance().getInstanceId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -795,8 +817,8 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -862,8 +884,8 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       databaseId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -879,8 +901,8 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDatabaseId() {
-
       databaseId_ = getDefaultInstance().getDatabaseId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -901,8 +923,8 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       databaseId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int HEADER_NAME_FIELD_NUMBER = 110223613;
-  private volatile java.lang.Object headerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object headerName_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int HEADER_VALUE_FIELD_NUMBER = 203094335;
-  private volatile java.lang.Object headerValue_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object headerValue_ = "";
   /**
    *
    *
@@ -198,7 +202,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REPLACE_FIELD_NUMBER = 20755124;
-  private boolean replace_;
+  private boolean replace_ = false;
   /**
    *
    *
@@ -460,12 +464,10 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       headerName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       headerValue_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       replace_ = false;
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -493,23 +495,29 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.HttpHeaderOption buildPartial() {
       com.google.cloud.compute.v1.HttpHeaderOption result =
           new com.google.cloud.compute.v1.HttpHeaderOption(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpHeaderOption result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.headerName_ = headerName_;
         to_bitField0_ |= 0x00000001;
       }
-      result.headerName_ = headerName_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.headerValue_ = headerValue_;
         to_bitField0_ |= 0x00000002;
       }
-      result.headerValue_ = headerValue_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.replace_ = replace_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -558,13 +566,13 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     public Builder mergeFrom(com.google.cloud.compute.v1.HttpHeaderOption other) {
       if (other == com.google.cloud.compute.v1.HttpHeaderOption.getDefaultInstance()) return this;
       if (other.hasHeaderName()) {
-        bitField0_ |= 0x00000001;
         headerName_ = other.headerName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHeaderValue()) {
-        bitField0_ |= 0x00000002;
         headerValue_ = other.headerValue_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasReplace()) {
@@ -708,8 +716,8 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       headerName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -725,8 +733,8 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearHeaderName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       headerName_ = getDefaultInstance().getHeaderName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -747,8 +755,8 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       headerName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -828,8 +836,8 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       headerValue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -845,8 +853,8 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearHeaderValue() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       headerValue_ = getDefaultInstance().getHeaderValue();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -867,8 +875,8 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       headerValue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -917,8 +925,9 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setReplace(boolean value) {
-      bitField0_ |= 0x00000004;
+
       replace_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

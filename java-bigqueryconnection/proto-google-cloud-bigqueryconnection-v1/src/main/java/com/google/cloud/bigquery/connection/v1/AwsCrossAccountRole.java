@@ -71,7 +71,9 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
   }
 
   public static final int IAM_ROLE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object iamRoleId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object iamRoleId_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
   }
 
   public static final int IAM_USER_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object iamUserId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object iamUserId_ = "";
   /**
    *
    *
@@ -171,7 +175,9 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
   }
 
   public static final int EXTERNAL_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object externalId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalId_ = "";
   /**
    *
    *
@@ -440,12 +446,10 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       iamRoleId_ = "";
-
       iamUserId_ = "";
-
       externalId_ = "";
-
       return this;
     }
 
@@ -473,11 +477,24 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
     public com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole buildPartial() {
       com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole result =
           new com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole(this);
-      result.iamRoleId_ = iamRoleId_;
-      result.iamUserId_ = iamUserId_;
-      result.externalId_ = externalId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.iamRoleId_ = iamRoleId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.iamUserId_ = iamUserId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.externalId_ = externalId_;
+      }
     }
 
     @java.lang.Override
@@ -528,14 +545,17 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getIamRoleId().isEmpty()) {
         iamRoleId_ = other.iamRoleId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getIamUserId().isEmpty()) {
         iamUserId_ = other.iamUserId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getExternalId().isEmpty()) {
         externalId_ = other.externalId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -567,19 +587,19 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 iamRoleId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 iamUserId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 externalId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -598,6 +618,8 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object iamRoleId_ = "";
     /**
@@ -663,8 +685,8 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       iamRoleId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -681,8 +703,8 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearIamRoleId() {
-
       iamRoleId_ = getDefaultInstance().getIamRoleId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -704,8 +726,8 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       iamRoleId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -771,8 +793,8 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       iamUserId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -788,8 +810,8 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearIamUserId() {
-
       iamUserId_ = getDefaultInstance().getIamUserId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -810,8 +832,8 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       iamUserId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -883,8 +905,8 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       externalId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -902,8 +924,8 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearExternalId() {
-
       externalId_ = getDefaultInstance().getExternalId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -926,8 +948,8 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       externalId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

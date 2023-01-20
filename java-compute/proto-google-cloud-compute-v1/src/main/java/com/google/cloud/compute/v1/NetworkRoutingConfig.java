@@ -194,7 +194,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int ROUTING_MODE_FIELD_NUMBER = 475143548;
-  private volatile java.lang.Object routingMode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object routingMode_ = "";
   /**
    *
    *
@@ -462,8 +464,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       routingMode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -491,15 +493,21 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.NetworkRoutingConfig buildPartial() {
       com.google.cloud.compute.v1.NetworkRoutingConfig result =
           new com.google.cloud.compute.v1.NetworkRoutingConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NetworkRoutingConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.routingMode_ = routingMode_;
         to_bitField0_ |= 0x00000001;
       }
-      result.routingMode_ = routingMode_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -549,8 +557,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.compute.v1.NetworkRoutingConfig.getDefaultInstance())
         return this;
       if (other.hasRoutingMode()) {
-        bitField0_ |= 0x00000001;
         routingMode_ = other.routingMode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -683,8 +691,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       routingMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -701,8 +709,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRoutingMode() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       routingMode_ = getDefaultInstance().getRoutingMode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -724,8 +732,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       routingMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

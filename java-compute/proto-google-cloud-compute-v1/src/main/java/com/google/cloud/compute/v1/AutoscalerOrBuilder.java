@@ -348,7 +348,6 @@ public interface AutoscalerOrBuilder
    * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrDefault(
       java.lang.String key,

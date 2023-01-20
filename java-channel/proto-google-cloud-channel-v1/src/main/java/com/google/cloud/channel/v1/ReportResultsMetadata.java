@@ -111,11 +111,11 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ReportOrBuilder getReportOrBuilder() {
-    return getReport();
+    return report_ == null ? com.google.cloud.channel.v1.Report.getDefaultInstance() : report_;
   }
 
   public static final int ROW_COUNT_FIELD_NUMBER = 2;
-  private long rowCount_;
+  private long rowCount_ = 0L;
   /**
    *
    *
@@ -177,7 +177,9 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.DateRangeOrBuilder getDateRangeOrBuilder() {
-    return getDateRange();
+    return dateRange_ == null
+        ? com.google.cloud.channel.v1.DateRange.getDefaultInstance()
+        : dateRange_;
   }
 
   public static final int PRECEDING_DATE_RANGE_FIELD_NUMBER = 4;
@@ -237,7 +239,9 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.DateRangeOrBuilder getPrecedingDateRangeOrBuilder() {
-    return getPrecedingDateRange();
+    return precedingDateRange_ == null
+        ? com.google.cloud.channel.v1.DateRange.getDefaultInstance()
+        : precedingDateRange_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -482,24 +486,21 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (reportBuilder_ == null) {
-        report_ = null;
-      } else {
-        report_ = null;
+      bitField0_ = 0;
+      report_ = null;
+      if (reportBuilder_ != null) {
+        reportBuilder_.dispose();
         reportBuilder_ = null;
       }
       rowCount_ = 0L;
-
-      if (dateRangeBuilder_ == null) {
-        dateRange_ = null;
-      } else {
-        dateRange_ = null;
+      dateRange_ = null;
+      if (dateRangeBuilder_ != null) {
+        dateRangeBuilder_.dispose();
         dateRangeBuilder_ = null;
       }
-      if (precedingDateRangeBuilder_ == null) {
-        precedingDateRange_ = null;
-      } else {
-        precedingDateRange_ = null;
+      precedingDateRange_ = null;
+      if (precedingDateRangeBuilder_ != null) {
+        precedingDateRangeBuilder_.dispose();
         precedingDateRangeBuilder_ = null;
       }
       return this;
@@ -529,24 +530,30 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     public com.google.cloud.channel.v1.ReportResultsMetadata buildPartial() {
       com.google.cloud.channel.v1.ReportResultsMetadata result =
           new com.google.cloud.channel.v1.ReportResultsMetadata(this);
-      if (reportBuilder_ == null) {
-        result.report_ = report_;
-      } else {
-        result.report_ = reportBuilder_.build();
-      }
-      result.rowCount_ = rowCount_;
-      if (dateRangeBuilder_ == null) {
-        result.dateRange_ = dateRange_;
-      } else {
-        result.dateRange_ = dateRangeBuilder_.build();
-      }
-      if (precedingDateRangeBuilder_ == null) {
-        result.precedingDateRange_ = precedingDateRange_;
-      } else {
-        result.precedingDateRange_ = precedingDateRangeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ReportResultsMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.report_ = reportBuilder_ == null ? report_ : reportBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rowCount_ = rowCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dateRange_ = dateRangeBuilder_ == null ? dateRange_ : dateRangeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.precedingDateRange_ =
+            precedingDateRangeBuilder_ == null
+                ? precedingDateRange_
+                : precedingDateRangeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -636,26 +643,26 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getReportFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 rowCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getDateRangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getPrecedingDateRangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -675,6 +682,8 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.channel.v1.Report report_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.channel.v1.Report,
@@ -693,7 +702,7 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      * @return Whether the report field is set.
      */
     public boolean hasReport() {
-      return reportBuilder_ != null || report_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -728,11 +737,11 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         report_ = value;
-        onChanged();
       } else {
         reportBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -747,11 +756,11 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     public Builder setReport(com.google.cloud.channel.v1.Report.Builder builderForValue) {
       if (reportBuilder_ == null) {
         report_ = builderForValue.build();
-        onChanged();
       } else {
         reportBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -765,19 +774,18 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeReport(com.google.cloud.channel.v1.Report value) {
       if (reportBuilder_ == null) {
-        if (report_ != null) {
-          report_ =
-              com.google.cloud.channel.v1.Report.newBuilder(report_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && report_ != null
+            && report_ != com.google.cloud.channel.v1.Report.getDefaultInstance()) {
+          getReportBuilder().mergeFrom(value);
         } else {
           report_ = value;
         }
-        onChanged();
       } else {
         reportBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -790,14 +798,13 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.channel.v1.Report report = 1;</code>
      */
     public Builder clearReport() {
-      if (reportBuilder_ == null) {
-        report_ = null;
-        onChanged();
-      } else {
-        report_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      report_ = null;
+      if (reportBuilder_ != null) {
+        reportBuilder_.dispose();
         reportBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -810,7 +817,7 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.channel.v1.Report report = 1;</code>
      */
     public com.google.cloud.channel.v1.Report.Builder getReportBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getReportFieldBuilder().getBuilder();
     }
@@ -887,6 +894,7 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     public Builder setRowCount(long value) {
 
       rowCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -902,7 +910,7 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRowCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       rowCount_ = 0L;
       onChanged();
       return this;
@@ -926,7 +934,7 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      * @return Whether the dateRange field is set.
      */
     public boolean hasDateRange() {
-      return dateRangeBuilder_ != null || dateRange_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -963,11 +971,11 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         dateRange_ = value;
-        onChanged();
       } else {
         dateRangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -982,11 +990,11 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     public Builder setDateRange(com.google.cloud.channel.v1.DateRange.Builder builderForValue) {
       if (dateRangeBuilder_ == null) {
         dateRange_ = builderForValue.build();
-        onChanged();
       } else {
         dateRangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1000,19 +1008,18 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeDateRange(com.google.cloud.channel.v1.DateRange value) {
       if (dateRangeBuilder_ == null) {
-        if (dateRange_ != null) {
-          dateRange_ =
-              com.google.cloud.channel.v1.DateRange.newBuilder(dateRange_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && dateRange_ != null
+            && dateRange_ != com.google.cloud.channel.v1.DateRange.getDefaultInstance()) {
+          getDateRangeBuilder().mergeFrom(value);
         } else {
           dateRange_ = value;
         }
-        onChanged();
       } else {
         dateRangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1025,14 +1032,13 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.channel.v1.DateRange date_range = 3;</code>
      */
     public Builder clearDateRange() {
-      if (dateRangeBuilder_ == null) {
-        dateRange_ = null;
-        onChanged();
-      } else {
-        dateRange_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      dateRange_ = null;
+      if (dateRangeBuilder_ != null) {
+        dateRangeBuilder_.dispose();
         dateRangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1045,7 +1051,7 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.channel.v1.DateRange date_range = 3;</code>
      */
     public com.google.cloud.channel.v1.DateRange.Builder getDateRangeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDateRangeFieldBuilder().getBuilder();
     }
@@ -1115,7 +1121,7 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      * @return Whether the precedingDateRange field is set.
      */
     public boolean hasPrecedingDateRange() {
-      return precedingDateRangeBuilder_ != null || precedingDateRange_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1160,11 +1166,11 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         precedingDateRange_ = value;
-        onChanged();
       } else {
         precedingDateRangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1184,11 +1190,11 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
         com.google.cloud.channel.v1.DateRange.Builder builderForValue) {
       if (precedingDateRangeBuilder_ == null) {
         precedingDateRange_ = builderForValue.build();
-        onChanged();
       } else {
         precedingDateRangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1206,19 +1212,18 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      */
     public Builder mergePrecedingDateRange(com.google.cloud.channel.v1.DateRange value) {
       if (precedingDateRangeBuilder_ == null) {
-        if (precedingDateRange_ != null) {
-          precedingDateRange_ =
-              com.google.cloud.channel.v1.DateRange.newBuilder(precedingDateRange_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && precedingDateRange_ != null
+            && precedingDateRange_ != com.google.cloud.channel.v1.DateRange.getDefaultInstance()) {
+          getPrecedingDateRangeBuilder().mergeFrom(value);
         } else {
           precedingDateRange_ = value;
         }
-        onChanged();
       } else {
         precedingDateRangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1235,14 +1240,13 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.channel.v1.DateRange preceding_date_range = 4;</code>
      */
     public Builder clearPrecedingDateRange() {
-      if (precedingDateRangeBuilder_ == null) {
-        precedingDateRange_ = null;
-        onChanged();
-      } else {
-        precedingDateRange_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      precedingDateRange_ = null;
+      if (precedingDateRangeBuilder_ != null) {
+        precedingDateRangeBuilder_.dispose();
         precedingDateRangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1259,7 +1263,7 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.channel.v1.DateRange preceding_date_range = 4;</code>
      */
     public com.google.cloud.channel.v1.DateRange.Builder getPrecedingDateRangeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPrecedingDateRangeFieldBuilder().getBuilder();
     }

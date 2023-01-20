@@ -123,7 +123,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
   }
 
   public static final int SOURCE_FIELD_NUMBER = 177235995;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -413,14 +415,13 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (diskEncryptionKeyBuilder_ == null) {
-        diskEncryptionKey_ = null;
-      } else {
-        diskEncryptionKeyBuilder_.clear();
+      bitField0_ = 0;
+      diskEncryptionKey_ = null;
+      if (diskEncryptionKeyBuilder_ != null) {
+        diskEncryptionKeyBuilder_.dispose();
+        diskEncryptionKeyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       source_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -449,23 +450,29 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
     public com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk buildPartial() {
       com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk result =
           new com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (diskEncryptionKeyBuilder_ == null) {
-          result.diskEncryptionKey_ = diskEncryptionKey_;
-        } else {
-          result.diskEncryptionKey_ = diskEncryptionKeyBuilder_.build();
-        }
+        result.diskEncryptionKey_ =
+            diskEncryptionKeyBuilder_ == null
+                ? diskEncryptionKey_
+                : diskEncryptionKeyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.source_ = source_;
         to_bitField0_ |= 0x00000002;
       }
-      result.source_ = source_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -519,8 +526,8 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
         mergeDiskEncryptionKey(other.getDiskEncryptionKey());
       }
       if (other.hasSource()) {
-        bitField0_ |= 0x00000002;
         source_ = other.source_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -642,11 +649,11 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
           throw new NullPointerException();
         }
         diskEncryptionKey_ = value;
-        onChanged();
       } else {
         diskEncryptionKeyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -664,11 +671,11 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
         com.google.cloud.compute.v1.CustomerEncryptionKey.Builder builderForValue) {
       if (diskEncryptionKeyBuilder_ == null) {
         diskEncryptionKey_ = builderForValue.build();
-        onChanged();
       } else {
         diskEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -688,18 +695,15 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
             && diskEncryptionKey_ != null
             && diskEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
-          diskEncryptionKey_ =
-              com.google.cloud.compute.v1.CustomerEncryptionKey.newBuilder(diskEncryptionKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getDiskEncryptionKeyBuilder().mergeFrom(value);
         } else {
           diskEncryptionKey_ = value;
         }
-        onChanged();
       } else {
         diskEncryptionKeyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -714,13 +718,13 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * </code>
      */
     public Builder clearDiskEncryptionKey() {
-      if (diskEncryptionKeyBuilder_ == null) {
-        diskEncryptionKey_ = null;
-        onChanged();
-      } else {
-        diskEncryptionKeyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      diskEncryptionKey_ = null;
+      if (diskEncryptionKeyBuilder_ != null) {
+        diskEncryptionKeyBuilder_.dispose();
+        diskEncryptionKeyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -863,8 +867,8 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       source_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -880,8 +884,8 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -902,8 +906,8 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       source_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

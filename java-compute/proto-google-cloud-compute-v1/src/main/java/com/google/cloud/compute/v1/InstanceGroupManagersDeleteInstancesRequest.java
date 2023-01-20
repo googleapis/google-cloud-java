@@ -70,6 +70,8 @@ public final class InstanceGroupManagersDeleteInstancesRequest
 
   private int bitField0_;
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList instances_;
   /**
    *
@@ -131,7 +133,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
   }
 
   public static final int SKIP_INSTANCES_ON_VALIDATION_ERROR_FIELD_NUMBER = 40631073;
-  private boolean skipInstancesOnValidationError_;
+  private boolean skipInstancesOnValidationError_ = false;
   /**
    *
    *
@@ -390,10 +392,10 @@ public final class InstanceGroupManagersDeleteInstancesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       skipInstancesOnValidationError_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -424,20 +426,32 @@ public final class InstanceGroupManagersDeleteInstancesRequest
     public com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest result =
           new com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         instances_ = instances_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.instances_ = instances_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.skipInstancesOnValidationError_ = skipInstancesOnValidationError_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -773,8 +787,9 @@ public final class InstanceGroupManagersDeleteInstancesRequest
      * @return This builder for chaining.
      */
     public Builder setSkipInstancesOnValidationError(boolean value) {
-      bitField0_ |= 0x00000002;
+
       skipInstancesOnValidationError_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

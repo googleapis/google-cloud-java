@@ -90,7 +90,6 @@ public interface LaunchTemplateParametersOrBuilder
    *
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
-
   /* nullable */
   java.lang.String getParametersOrDefault(
       java.lang.String key,
@@ -202,7 +201,6 @@ public interface LaunchTemplateParametersOrBuilder
    *
    * <code>map&lt;string, string&gt; transform_name_mapping = 5;</code>
    */
-
   /* nullable */
   java.lang.String getTransformNameMappingOrDefault(
       java.lang.String key,

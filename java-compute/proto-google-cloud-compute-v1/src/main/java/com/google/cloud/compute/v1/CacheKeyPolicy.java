@@ -72,7 +72,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int INCLUDE_HOST_FIELD_NUMBER = 486867679;
-  private boolean includeHost_;
+  private boolean includeHost_ = false;
   /**
    *
    *
@@ -105,6 +105,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCLUDE_HTTP_HEADERS_FIELD_NUMBER = 2489606;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList includeHttpHeaders_;
   /**
    *
@@ -166,6 +168,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCLUDE_NAMED_COOKIES_FIELD_NUMBER = 87316530;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList includeNamedCookies_;
   /**
    *
@@ -227,7 +231,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCLUDE_PROTOCOL_FIELD_NUMBER = 303507535;
-  private boolean includeProtocol_;
+  private boolean includeProtocol_ = false;
   /**
    *
    *
@@ -260,7 +264,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCLUDE_QUERY_STRING_FIELD_NUMBER = 474036639;
-  private boolean includeQueryString_;
+  private boolean includeQueryString_ = false;
   /**
    *
    *
@@ -293,6 +297,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_STRING_BLACKLIST_FIELD_NUMBER = 354964742;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList queryStringBlacklist_;
   /**
    *
@@ -354,6 +360,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_STRING_WHITELIST_FIELD_NUMBER = 52456496;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList queryStringWhitelist_;
   /**
    *
@@ -712,16 +720,14 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       includeHost_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       includeNamedCookies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
       includeProtocol_ = false;
-      bitField0_ = (bitField0_ & ~0x00000008);
       includeQueryString_ = false;
-      bitField0_ = (bitField0_ & ~0x00000010);
       queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
       queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -753,12 +759,15 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.CacheKeyPolicy buildPartial() {
       com.google.cloud.compute.v1.CacheKeyPolicy result =
           new com.google.cloud.compute.v1.CacheKeyPolicy(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.includeHost_ = includeHost_;
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.CacheKeyPolicy result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         includeHttpHeaders_ = includeHttpHeaders_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -769,14 +778,6 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.includeNamedCookies_ = includeNamedCookies_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.includeProtocol_ = includeProtocol_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.includeQueryString_ = includeQueryString_;
-        to_bitField0_ |= 0x00000004;
-      }
       if (((bitField0_ & 0x00000020) != 0)) {
         queryStringBlacklist_ = queryStringBlacklist_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -787,9 +788,24 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.queryStringWhitelist_ = queryStringWhitelist_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.CacheKeyPolicy result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.includeHost_ = includeHost_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.includeProtocol_ = includeProtocol_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.includeQueryString_ = includeQueryString_;
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1021,8 +1037,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIncludeHost(boolean value) {
-      bitField0_ |= 0x00000001;
+
       includeHost_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1424,8 +1441,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIncludeProtocol(boolean value) {
-      bitField0_ |= 0x00000008;
+
       includeProtocol_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1491,8 +1509,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIncludeQueryString(boolean value) {
-      bitField0_ |= 0x00000010;
+
       includeQueryString_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

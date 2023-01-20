@@ -69,7 +69,9 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
   }
 
   public static final int FAMILY_FIELD_NUMBER = 328751972;
-  private volatile java.lang.Object family_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object family_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -373,10 +377,9 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       family_ = "";
-
       project_ = "";
-
       return this;
     }
 
@@ -404,10 +407,21 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.GetFromFamilyImageRequest buildPartial() {
       com.google.cloud.compute.v1.GetFromFamilyImageRequest result =
           new com.google.cloud.compute.v1.GetFromFamilyImageRequest(this);
-      result.family_ = family_;
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetFromFamilyImageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.family_ = family_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -458,10 +472,12 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getFamily().isEmpty()) {
         family_ = other.family_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -493,13 +509,13 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1664951518:
               {
                 family_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1664951518
             default:
@@ -518,6 +534,8 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object family_ = "";
     /**
@@ -580,8 +598,8 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       family_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -597,8 +615,8 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearFamily() {
-
       family_ = getDefaultInstance().getFamily();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -619,8 +637,8 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       family_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,8 +704,8 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -703,8 +721,8 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -725,8 +743,8 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

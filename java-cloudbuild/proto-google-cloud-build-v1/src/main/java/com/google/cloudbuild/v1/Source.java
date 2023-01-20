@@ -516,6 +516,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (storageSourceBuilder_ != null) {
         storageSourceBuilder_.clear();
       }
@@ -553,30 +554,30 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloudbuild.v1.Source buildPartial() {
       com.google.cloudbuild.v1.Source result = new com.google.cloudbuild.v1.Source(this);
-      if (sourceCase_ == 2) {
-        if (storageSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = storageSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 3) {
-        if (repoSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = repoSourceBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 8) {
-        if (storageSourceManifestBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = storageSourceManifestBuilder_.build();
-        }
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.Source result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloudbuild.v1.Source result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 2 && storageSourceBuilder_ != null) {
+        result.source_ = storageSourceBuilder_.build();
+      }
+      if (sourceCase_ == 3 && repoSourceBuilder_ != null) {
+        result.source_ = repoSourceBuilder_.build();
+      }
+      if (sourceCase_ == 8 && storageSourceManifestBuilder_ != null) {
+        result.source_ = storageSourceManifestBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -720,6 +721,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.StorageSource,
@@ -927,7 +930,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return storageSourceBuilder_;
     }
 
@@ -1143,7 +1145,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return repoSourceBuilder_;
     }
 
@@ -1383,7 +1384,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 8;
       onChanged();
-      ;
       return storageSourceManifestBuilder_;
     }
 

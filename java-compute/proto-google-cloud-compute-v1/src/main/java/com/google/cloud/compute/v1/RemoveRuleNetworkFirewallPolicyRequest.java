@@ -73,7 +73,9 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
 
   private int bitField0_;
   public static final int FIREWALL_POLICY_FIELD_NUMBER = 498173265;
-  private volatile java.lang.Object firewallPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewallPolicy_ = "";
   /**
    *
    *
@@ -122,7 +124,7 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
   }
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
-  private int priority_;
+  private int priority_ = 0;
   /**
    *
    *
@@ -155,7 +157,9 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -208,7 +212,9 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -508,14 +514,11 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firewallPolicy_ = "";
-
       priority_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -545,21 +548,32 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
     public com.google.cloud.compute.v1.RemoveRuleNetworkFirewallPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.RemoveRuleNetworkFirewallPolicyRequest result =
           new com.google.cloud.compute.v1.RemoveRuleNetworkFirewallPolicyRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RemoveRuleNetworkFirewallPolicyRequest result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.firewallPolicy_ = firewallPolicy_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firewallPolicy_ = firewallPolicy_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.priority_ = priority_;
         to_bitField0_ |= 0x00000001;
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
         to_bitField0_ |= 0x00000002;
       }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -613,6 +627,7 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
               .getDefaultInstance()) return this;
       if (!other.getFirewallPolicy().isEmpty()) {
         firewallPolicy_ = other.firewallPolicy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPriority()) {
@@ -620,11 +635,12 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -656,25 +672,25 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -733754080:
               {
                 priority_ = input.readInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -733754080
             case -309581174:
               {
                 firewallPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -309581174
             default:
@@ -757,8 +773,8 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -774,8 +790,8 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearFirewallPolicy() {
-
       firewallPolicy_ = getDefaultInstance().getFirewallPolicy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -796,8 +812,8 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -816,7 +832,7 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
      */
     @java.lang.Override
     public boolean hasPriority() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -846,8 +862,9 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-      bitField0_ |= 0x00000001;
+
       priority_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,7 +880,7 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       priority_ = 0;
       onChanged();
       return this;
@@ -936,8 +953,8 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -955,8 +972,8 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -979,8 +996,8 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -998,7 +1015,7 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1060,8 +1077,8 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1077,8 +1094,8 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1099,8 +1116,8 @@ public final class RemoveRuleNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

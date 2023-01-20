@@ -69,7 +69,9 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LISTING_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object listingId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object listingId_ = "";
   /**
    *
    *
@@ -231,7 +235,9 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.bigquery.dataexchange.v1beta1.ListingOrBuilder getListingOrBuilder() {
-    return getListing();
+    return listing_ == null
+        ? com.google.cloud.bigquery.dataexchange.v1beta1.Listing.getDefaultInstance()
+        : listing_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -457,14 +463,12 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       listingId_ = "";
-
-      if (listingBuilder_ == null) {
-        listing_ = null;
-      } else {
-        listing_ = null;
+      listing_ = null;
+      if (listingBuilder_ != null) {
+        listingBuilder_.dispose();
         listingBuilder_ = null;
       }
       return this;
@@ -496,15 +500,25 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest buildPartial() {
       com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest result =
           new com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest(this);
-      result.parent_ = parent_;
-      result.listingId_ = listingId_;
-      if (listingBuilder_ == null) {
-        result.listing_ = listing_;
-      } else {
-        result.listing_ = listingBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.listingId_ = listingId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.listing_ = listingBuilder_ == null ? listing_ : listingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -558,10 +572,12 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getListingId().isEmpty()) {
         listingId_ = other.listingId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasListing()) {
@@ -596,19 +612,19 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 listingId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getListingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -627,6 +643,8 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -698,8 +716,8 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -718,8 +736,8 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +761,8 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -822,8 +840,8 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       listingId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -843,8 +861,8 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearListingId() {
-
       listingId_ = getDefaultInstance().getListingId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -869,8 +887,8 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       listingId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -895,7 +913,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the listing field is set.
      */
     public boolean hasListing() {
-      return listingBuilder_ != null || listing_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -936,11 +954,11 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         listing_ = value;
-        onChanged();
       } else {
         listingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -958,11 +976,11 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Builder builderForValue) {
       if (listingBuilder_ == null) {
         listing_ = builderForValue.build();
-        onChanged();
       } else {
         listingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -978,19 +996,19 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeListing(com.google.cloud.bigquery.dataexchange.v1beta1.Listing value) {
       if (listingBuilder_ == null) {
-        if (listing_ != null) {
-          listing_ =
-              com.google.cloud.bigquery.dataexchange.v1beta1.Listing.newBuilder(listing_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && listing_ != null
+            && listing_
+                != com.google.cloud.bigquery.dataexchange.v1beta1.Listing.getDefaultInstance()) {
+          getListingBuilder().mergeFrom(value);
         } else {
           listing_ = value;
         }
-        onChanged();
       } else {
         listingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1005,14 +1023,13 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearListing() {
-      if (listingBuilder_ == null) {
-        listing_ = null;
-        onChanged();
-      } else {
-        listing_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      listing_ = null;
+      if (listingBuilder_ != null) {
+        listingBuilder_.dispose();
         listingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1027,7 +1044,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Builder getListingBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getListingFieldBuilder().getBuilder();
     }

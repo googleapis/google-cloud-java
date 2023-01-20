@@ -68,6 +68,8 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAXONOMIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.SerializedTaxonomy> taxonomies_;
   /**
    *
@@ -346,6 +348,7 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (taxonomiesBuilder_ == null) {
         taxonomies_ = java.util.Collections.emptyList();
       } else {
@@ -380,7 +383,15 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.InlineSource buildPartial() {
       com.google.cloud.datacatalog.v1.InlineSource result =
           new com.google.cloud.datacatalog.v1.InlineSource(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datacatalog.v1.InlineSource result) {
       if (taxonomiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           taxonomies_ = java.util.Collections.unmodifiableList(taxonomies_);
@@ -390,8 +401,10 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.taxonomies_ = taxonomiesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.InlineSource result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -74,7 +74,9 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int FULL_PATH_MATCH_FIELD_NUMBER = 214598875;
-  private volatile java.lang.Object fullPathMatch_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fullPathMatch_ = "";
   /**
    *
    *
@@ -138,6 +140,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int HEADER_MATCHES_FIELD_NUMBER = 361903489;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HttpHeaderMatch> headerMatches_;
   /**
    *
@@ -207,7 +211,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IGNORE_CASE_FIELD_NUMBER = 464324989;
-  private boolean ignoreCase_;
+  private boolean ignoreCase_ = false;
   /**
    *
    *
@@ -240,6 +244,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int METADATA_FILTERS_FIELD_NUMBER = 464725739;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.MetadataFilter> metadataFilters_;
   /**
    *
@@ -310,7 +316,9 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PREFIX_MATCH_FIELD_NUMBER = 257898968;
-  private volatile java.lang.Object prefixMatch_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object prefixMatch_ = "";
   /**
    *
    *
@@ -374,6 +382,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int QUERY_PARAMETER_MATCHES_FIELD_NUMBER = 286231270;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HttpQueryParameterMatch>
       queryParameterMatches_;
   /**
@@ -456,7 +466,9 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REGEX_MATCH_FIELD_NUMBER = 107387853;
-  private volatile java.lang.Object regexMatch_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object regexMatch_ = "";
   /**
    *
    *
@@ -802,8 +814,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fullPathMatch_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (headerMatchesBuilder_ == null) {
         headerMatches_ = java.util.Collections.emptyList();
       } else {
@@ -812,7 +824,6 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       ignoreCase_ = false;
-      bitField0_ = (bitField0_ & ~0x00000004);
       if (metadataFiltersBuilder_ == null) {
         metadataFilters_ = java.util.Collections.emptyList();
       } else {
@@ -821,7 +832,6 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ = (bitField0_ & ~0x00000008);
       prefixMatch_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       if (queryParameterMatchesBuilder_ == null) {
         queryParameterMatches_ = java.util.Collections.emptyList();
       } else {
@@ -830,7 +840,6 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ = (bitField0_ & ~0x00000020);
       regexMatch_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -858,12 +867,15 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.HttpRouteRuleMatch buildPartial() {
       com.google.cloud.compute.v1.HttpRouteRuleMatch result =
           new com.google.cloud.compute.v1.HttpRouteRuleMatch(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.fullPathMatch_ = fullPathMatch_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HttpRouteRuleMatch result) {
       if (headerMatchesBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           headerMatches_ = java.util.Collections.unmodifiableList(headerMatches_);
@@ -872,10 +884,6 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         result.headerMatches_ = headerMatches_;
       } else {
         result.headerMatches_ = headerMatchesBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.ignoreCase_ = ignoreCase_;
-        to_bitField0_ |= 0x00000002;
       }
       if (metadataFiltersBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
@@ -886,10 +894,6 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       } else {
         result.metadataFilters_ = metadataFiltersBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.prefixMatch_ = prefixMatch_;
       if (queryParameterMatchesBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           queryParameterMatches_ = java.util.Collections.unmodifiableList(queryParameterMatches_);
@@ -899,13 +903,28 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       } else {
         result.queryParameterMatches_ = queryParameterMatchesBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpRouteRuleMatch result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fullPathMatch_ = fullPathMatch_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ignoreCase_ = ignoreCase_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.prefixMatch_ = prefixMatch_;
+        to_bitField0_ |= 0x00000004;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.regexMatch_ = regexMatch_;
         to_bitField0_ |= 0x00000008;
       }
-      result.regexMatch_ = regexMatch_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -954,8 +973,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.compute.v1.HttpRouteRuleMatch other) {
       if (other == com.google.cloud.compute.v1.HttpRouteRuleMatch.getDefaultInstance()) return this;
       if (other.hasFullPathMatch()) {
-        bitField0_ |= 0x00000001;
         fullPathMatch_ = other.fullPathMatch_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (headerMatchesBuilder_ == null) {
@@ -1016,8 +1035,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         }
       }
       if (other.hasPrefixMatch()) {
-        bitField0_ |= 0x00000010;
         prefixMatch_ = other.prefixMatch_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (queryParameterMatchesBuilder_ == null) {
@@ -1048,8 +1067,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         }
       }
       if (other.hasRegexMatch()) {
-        bitField0_ |= 0x00000040;
         regexMatch_ = other.regexMatch_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1236,8 +1255,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       fullPathMatch_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1253,8 +1272,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearFullPathMatch() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       fullPathMatch_ = getDefaultInstance().getFullPathMatch();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1275,8 +1294,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       fullPathMatch_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1680,8 +1699,9 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setIgnoreCase(boolean value) {
-      bitField0_ |= 0x00000004;
+
       ignoreCase_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2133,8 +2153,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       prefixMatch_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2150,8 +2170,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPrefixMatch() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       prefixMatch_ = getDefaultInstance().getPrefixMatch();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2172,8 +2192,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       prefixMatch_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2653,8 +2673,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       regexMatch_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2670,8 +2690,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRegexMatch() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       regexMatch_ = getDefaultInstance().getRegexMatch();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2692,8 +2712,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       regexMatch_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

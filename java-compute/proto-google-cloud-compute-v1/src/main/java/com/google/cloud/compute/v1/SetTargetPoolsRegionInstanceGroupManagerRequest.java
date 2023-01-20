@@ -75,7 +75,9 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
 
   private int bitField0_;
   public static final int INSTANCE_GROUP_MANAGER_FIELD_NUMBER = 249363395;
-  private volatile java.lang.Object instanceGroupManager_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceGroupManager_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -287,11 +293,16 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
       getRegionInstanceGroupManagersSetTargetPoolsRequestResourceOrBuilder() {
-    return getRegionInstanceGroupManagersSetTargetPoolsRequestResource();
+    return regionInstanceGroupManagersSetTargetPoolsRequestResource_ == null
+        ? com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest
+            .getDefaultInstance()
+        : regionInstanceGroupManagersSetTargetPoolsRequestResource_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -616,20 +627,16 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceGroupManager_ = "";
-
       project_ = "";
-
       region_ = "";
-
-      if (regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ == null) {
-        regionInstanceGroupManagersSetTargetPoolsRequestResource_ = null;
-      } else {
-        regionInstanceGroupManagersSetTargetPoolsRequestResource_ = null;
+      regionInstanceGroupManagersSetTargetPoolsRequestResource_ = null;
+      if (regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ != null) {
+        regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_.dispose();
         regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ = null;
       }
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -661,25 +668,37 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
         buildPartial() {
       com.google.cloud.compute.v1.SetTargetPoolsRegionInstanceGroupManagerRequest result =
           new com.google.cloud.compute.v1.SetTargetPoolsRegionInstanceGroupManagerRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.instanceGroupManager_ = instanceGroupManager_;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ == null) {
-        result.regionInstanceGroupManagersSetTargetPoolsRequestResource_ =
-            regionInstanceGroupManagersSetTargetPoolsRequestResource_;
-      } else {
-        result.regionInstanceGroupManagersSetTargetPoolsRequestResource_ =
-            regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SetTargetPoolsRegionInstanceGroupManagerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceGroupManager_ = instanceGroupManager_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.regionInstanceGroupManagersSetTargetPoolsRequestResource_ =
+            regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ == null
+                ? regionInstanceGroupManagersSetTargetPoolsRequestResource_
+                : regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -734,14 +753,17 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
               .getDefaultInstance()) return this;
       if (!other.getInstanceGroupManager().isEmpty()) {
         instanceGroupManager_ = other.instanceGroupManager_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRegionInstanceGroupManagersSetTargetPoolsRequestResource()) {
@@ -749,8 +771,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
             other.getRegionInstanceGroupManagersSetTargetPoolsRequestResource());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -782,7 +804,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 296879706
             case 629877738:
@@ -791,25 +813,25 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
                     getRegionInstanceGroupManagersSetTargetPoolsRequestResourceFieldBuilder()
                         .getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 629877738
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case 1994907162:
               {
                 instanceGroupManager_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1994907162
             default:
@@ -895,8 +917,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceGroupManager_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -913,8 +935,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearInstanceGroupManager() {
-
       instanceGroupManager_ = getDefaultInstance().getInstanceGroupManager();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -936,8 +958,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceGroupManager_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1009,8 +1031,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1028,8 +1050,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1052,8 +1074,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1125,8 +1147,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1144,8 +1166,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1168,8 +1190,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1195,8 +1217,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
      * @return Whether the regionInstanceGroupManagersSetTargetPoolsRequestResource field is set.
      */
     public boolean hasRegionInstanceGroupManagersSetTargetPoolsRequestResource() {
-      return regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ != null
-          || regionInstanceGroupManagersSetTargetPoolsRequestResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1240,11 +1261,11 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
           throw new NullPointerException();
         }
         regionInstanceGroupManagersSetTargetPoolsRequestResource_ = value;
-        onChanged();
       } else {
         regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1263,12 +1284,12 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
             builderForValue) {
       if (regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ == null) {
         regionInstanceGroupManagersSetTargetPoolsRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_.setMessage(
             builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1285,20 +1306,20 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
     public Builder mergeRegionInstanceGroupManagersSetTargetPoolsRequestResource(
         com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest value) {
       if (regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ == null) {
-        if (regionInstanceGroupManagersSetTargetPoolsRequestResource_ != null) {
-          regionInstanceGroupManagersSetTargetPoolsRequestResource_ =
-              com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest
-                  .newBuilder(regionInstanceGroupManagersSetTargetPoolsRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && regionInstanceGroupManagersSetTargetPoolsRequestResource_ != null
+            && regionInstanceGroupManagersSetTargetPoolsRequestResource_
+                != com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest
+                    .getDefaultInstance()) {
+          getRegionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder().mergeFrom(value);
         } else {
           regionInstanceGroupManagersSetTargetPoolsRequestResource_ = value;
         }
-        onChanged();
       } else {
         regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1313,14 +1334,13 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
      * </code>
      */
     public Builder clearRegionInstanceGroupManagersSetTargetPoolsRequestResource() {
-      if (regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ == null) {
-        regionInstanceGroupManagersSetTargetPoolsRequestResource_ = null;
-        onChanged();
-      } else {
-        regionInstanceGroupManagersSetTargetPoolsRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      regionInstanceGroupManagersSetTargetPoolsRequestResource_ = null;
+      if (regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ != null) {
+        regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_.dispose();
         regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1336,7 +1356,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest.Builder
         getRegionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRegionInstanceGroupManagersSetTargetPoolsRequestResourceFieldBuilder().getBuilder();
     }
@@ -1408,7 +1428,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1470,8 +1490,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1487,8 +1507,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1509,8 +1529,8 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

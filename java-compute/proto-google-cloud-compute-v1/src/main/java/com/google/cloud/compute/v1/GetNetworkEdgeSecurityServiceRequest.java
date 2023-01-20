@@ -72,7 +72,9 @@ public final class GetNetworkEdgeSecurityServiceRequest
   }
 
   public static final int NETWORK_EDGE_SECURITY_SERVICE_FIELD_NUMBER = 157011879;
-  private volatile java.lang.Object networkEdgeSecurityService_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkEdgeSecurityService_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class GetNetworkEdgeSecurityServiceRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -174,7 +178,9 @@ public final class GetNetworkEdgeSecurityServiceRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -442,12 +448,10 @@ public final class GetNetworkEdgeSecurityServiceRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       networkEdgeSecurityService_ = "";
-
       project_ = "";
-
       region_ = "";
-
       return this;
     }
 
@@ -476,11 +480,25 @@ public final class GetNetworkEdgeSecurityServiceRequest
     public com.google.cloud.compute.v1.GetNetworkEdgeSecurityServiceRequest buildPartial() {
       com.google.cloud.compute.v1.GetNetworkEdgeSecurityServiceRequest result =
           new com.google.cloud.compute.v1.GetNetworkEdgeSecurityServiceRequest(this);
-      result.networkEdgeSecurityService_ = networkEdgeSecurityService_;
-      result.project_ = project_;
-      result.region_ = region_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.GetNetworkEdgeSecurityServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.networkEdgeSecurityService_ = networkEdgeSecurityService_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
     }
 
     @java.lang.Override
@@ -533,14 +551,17 @@ public final class GetNetworkEdgeSecurityServiceRequest
         return this;
       if (!other.getNetworkEdgeSecurityService().isEmpty()) {
         networkEdgeSecurityService_ = other.networkEdgeSecurityService_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -572,19 +593,19 @@ public final class GetNetworkEdgeSecurityServiceRequest
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1256095034:
               {
                 networkEdgeSecurityService_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1256095034
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             default:
@@ -603,6 +624,8 @@ public final class GetNetworkEdgeSecurityServiceRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object networkEdgeSecurityService_ = "";
     /**
@@ -671,8 +694,8 @@ public final class GetNetworkEdgeSecurityServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkEdgeSecurityService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -690,8 +713,8 @@ public final class GetNetworkEdgeSecurityServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearNetworkEdgeSecurityService() {
-
       networkEdgeSecurityService_ = getDefaultInstance().getNetworkEdgeSecurityService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -714,8 +737,8 @@ public final class GetNetworkEdgeSecurityServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkEdgeSecurityService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -781,8 +804,8 @@ public final class GetNetworkEdgeSecurityServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -798,8 +821,8 @@ public final class GetNetworkEdgeSecurityServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -820,8 +843,8 @@ public final class GetNetworkEdgeSecurityServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -887,8 +910,8 @@ public final class GetNetworkEdgeSecurityServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -904,8 +927,8 @@ public final class GetNetworkEdgeSecurityServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -926,8 +949,8 @@ public final class GetNetworkEdgeSecurityServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

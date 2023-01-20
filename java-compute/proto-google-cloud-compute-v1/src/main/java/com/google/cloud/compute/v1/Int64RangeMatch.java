@@ -67,7 +67,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int RANGE_END_FIELD_NUMBER = 322439897;
-  private long rangeEnd_;
+  private long rangeEnd_ = 0L;
   /**
    *
    *
@@ -100,7 +100,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RANGE_START_FIELD_NUMBER = 103333600;
-  private long rangeStart_;
+  private long rangeStart_ = 0L;
   /**
    *
    *
@@ -348,10 +348,9 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rangeEnd_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       rangeStart_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -379,6 +378,14 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.Int64RangeMatch buildPartial() {
       com.google.cloud.compute.v1.Int64RangeMatch result =
           new com.google.cloud.compute.v1.Int64RangeMatch(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Int64RangeMatch result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -389,9 +396,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
         result.rangeStart_ = rangeStart_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -546,8 +551,9 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setRangeEnd(long value) {
-      bitField0_ |= 0x00000001;
+
       rangeEnd_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -613,8 +619,9 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setRangeStart(long value) {
-      bitField0_ |= 0x00000002;
+
       rangeStart_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

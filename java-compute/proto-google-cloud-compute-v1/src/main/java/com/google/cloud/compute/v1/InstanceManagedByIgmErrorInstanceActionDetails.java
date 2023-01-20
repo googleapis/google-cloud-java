@@ -475,7 +475,9 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
 
   private int bitField0_;
   public static final int ACTION_FIELD_NUMBER = 187661878;
-  private volatile java.lang.Object action_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object action_ = "";
   /**
    *
    *
@@ -542,7 +544,9 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -903,16 +907,14 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       action_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       instance_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        versionBuilder_.clear();
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
+        versionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -944,27 +946,30 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         buildPartial() {
       com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails result =
           new com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.action_ = action_;
         to_bitField0_ |= 0x00000001;
       }
-      result.action_ = action_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instance_ = instance_;
         to_bitField0_ |= 0x00000002;
       }
-      result.instance_ = instance_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (versionBuilder_ == null) {
-          result.version_ = version_;
-        } else {
-          result.version_ = versionBuilder_.build();
-        }
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1018,13 +1023,13 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
           == com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
               .getDefaultInstance()) return this;
       if (other.hasAction()) {
-        bitField0_ |= 0x00000001;
         action_ = other.action_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInstance()) {
-        bitField0_ |= 0x00000002;
         instance_ = other.instance_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasVersion()) {
@@ -1172,8 +1177,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1190,8 +1195,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       action_ = getDefaultInstance().getAction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1213,8 +1218,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1294,8 +1299,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       instance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1311,8 +1316,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1333,8 +1338,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       instance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1394,11 +1399,11 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1414,11 +1419,11 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         com.google.cloud.compute.v1.ManagedInstanceVersion.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1436,18 +1441,15 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
             && version_ != null
             && version_
                 != com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()) {
-          version_ =
-              com.google.cloud.compute.v1.ManagedInstanceVersion.newBuilder(version_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1460,13 +1462,13 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        versionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
+        versionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

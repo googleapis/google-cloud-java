@@ -71,7 +71,9 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int KEY_FIELD_NUMBER = 106079;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAMESPACE_FIELD_NUMBER = 178476379;
-  private volatile java.lang.Object namespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namespace_ = "";
   /**
    *
    *
@@ -199,7 +203,9 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VALUE_FIELD_NUMBER = 111972721;
-  private volatile java.lang.Object value_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object value_ = "";
   /**
    *
    *
@@ -492,12 +498,10 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       namespace_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       value_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -525,23 +529,29 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.GuestAttributesEntry buildPartial() {
       com.google.cloud.compute.v1.GuestAttributesEntry result =
           new com.google.cloud.compute.v1.GuestAttributesEntry(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GuestAttributesEntry result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
         to_bitField0_ |= 0x00000001;
       }
-      result.key_ = key_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.namespace_ = namespace_;
         to_bitField0_ |= 0x00000002;
       }
-      result.namespace_ = namespace_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.value_ = value_;
         to_bitField0_ |= 0x00000004;
       }
-      result.value_ = value_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -591,18 +601,18 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.compute.v1.GuestAttributesEntry.getDefaultInstance())
         return this;
       if (other.hasKey()) {
-        bitField0_ |= 0x00000001;
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasNamespace()) {
-        bitField0_ |= 0x00000002;
         namespace_ = other.namespace_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasValue()) {
-        bitField0_ |= 0x00000004;
         value_ = other.value_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -743,8 +753,8 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -760,8 +770,8 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -782,8 +792,8 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -863,8 +873,8 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       namespace_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -880,8 +890,8 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNamespace() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       namespace_ = getDefaultInstance().getNamespace();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -902,8 +912,8 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       namespace_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -983,8 +993,8 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       value_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1000,8 +1010,8 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       value_ = getDefaultInstance().getValue();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1022,8 +1032,8 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       value_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -282,7 +282,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int COOL_DOWN_PERIOD_SEC_FIELD_NUMBER = 107692954;
-  private int coolDownPeriodSec_;
+  private int coolDownPeriodSec_ = 0;
   /**
    *
    *
@@ -372,6 +372,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CUSTOM_METRIC_UTILIZATIONS_FIELD_NUMBER = 131972850;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization>
       customMetricUtilizations_;
   /**
@@ -515,7 +517,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MAX_NUM_REPLICAS_FIELD_NUMBER = 62327375;
-  private int maxNumReplicas_;
+  private int maxNumReplicas_ = 0;
   /**
    *
    *
@@ -548,7 +550,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MIN_NUM_REPLICAS_FIELD_NUMBER = 535329825;
-  private int minNumReplicas_;
+  private int minNumReplicas_ = 0;
   /**
    *
    *
@@ -581,7 +583,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MODE_FIELD_NUMBER = 3357091;
-  private volatile java.lang.Object mode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mode_ = "";
   /**
    *
    *
@@ -704,6 +708,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
       scalingSchedules_;
@@ -776,9 +781,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule getScalingSchedulesOrDefault(
-      java.lang.String key,
-      com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule defaultValue) {
+  public /* nullable */ com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule
+      getScalingSchedulesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1171,14 +1178,13 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       coolDownPeriodSec_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (cpuUtilizationBuilder_ == null) {
-        cpuUtilization_ = null;
-      } else {
-        cpuUtilizationBuilder_.clear();
+      cpuUtilization_ = null;
+      if (cpuUtilizationBuilder_ != null) {
+        cpuUtilizationBuilder_.dispose();
+        cpuUtilizationBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       if (customMetricUtilizationsBuilder_ == null) {
         customMetricUtilizations_ = java.util.Collections.emptyList();
       } else {
@@ -1186,24 +1192,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         customMetricUtilizationsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      if (loadBalancingUtilizationBuilder_ == null) {
-        loadBalancingUtilization_ = null;
-      } else {
-        loadBalancingUtilizationBuilder_.clear();
+      loadBalancingUtilization_ = null;
+      if (loadBalancingUtilizationBuilder_ != null) {
+        loadBalancingUtilizationBuilder_.dispose();
+        loadBalancingUtilizationBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       maxNumReplicas_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       minNumReplicas_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
       mode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
-      if (scaleInControlBuilder_ == null) {
-        scaleInControl_ = null;
-      } else {
-        scaleInControlBuilder_.clear();
+      scaleInControl_ = null;
+      if (scaleInControlBuilder_ != null) {
+        scaleInControlBuilder_.dispose();
+        scaleInControlBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableScalingSchedules().clear();
       return this;
     }
@@ -1232,20 +1233,15 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.AutoscalingPolicy buildPartial() {
       com.google.cloud.compute.v1.AutoscalingPolicy result =
           new com.google.cloud.compute.v1.AutoscalingPolicy(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.coolDownPeriodSec_ = coolDownPeriodSec_;
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (cpuUtilizationBuilder_ == null) {
-          result.cpuUtilization_ = cpuUtilization_;
-        } else {
-          result.cpuUtilization_ = cpuUtilizationBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000002;
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.AutoscalingPolicy result) {
       if (customMetricUtilizationsBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           customMetricUtilizations_ =
@@ -1256,12 +1252,25 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       } else {
         result.customMetricUtilizations_ = customMetricUtilizationsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AutoscalingPolicy result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.coolDownPeriodSec_ = coolDownPeriodSec_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cpuUtilization_ =
+            cpuUtilizationBuilder_ == null ? cpuUtilization_ : cpuUtilizationBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (loadBalancingUtilizationBuilder_ == null) {
-          result.loadBalancingUtilization_ = loadBalancingUtilization_;
-        } else {
-          result.loadBalancingUtilization_ = loadBalancingUtilizationBuilder_.build();
-        }
+        result.loadBalancingUtilization_ =
+            loadBalancingUtilizationBuilder_ == null
+                ? loadBalancingUtilization_
+                : loadBalancingUtilizationBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
@@ -1273,22 +1282,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.mode_ = mode_;
         to_bitField0_ |= 0x00000020;
       }
-      result.mode_ = mode_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        if (scaleInControlBuilder_ == null) {
-          result.scaleInControl_ = scaleInControl_;
-        } else {
-          result.scaleInControl_ = scaleInControlBuilder_.build();
-        }
+        result.scaleInControl_ =
+            scaleInControlBuilder_ == null ? scaleInControl_ : scaleInControlBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      result.scalingSchedules_ = internalGetScalingSchedules();
-      result.scalingSchedules_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.scalingSchedules_ = internalGetScalingSchedules();
+        result.scalingSchedules_.makeImmutable();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1379,14 +1385,15 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         setMinNumReplicas(other.getMinNumReplicas());
       }
       if (other.hasMode()) {
-        bitField0_ |= 0x00000040;
         mode_ = other.mode_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasScaleInControl()) {
         mergeScaleInControl(other.getScaleInControl());
       }
       internalGetMutableScalingSchedules().mergeFrom(other.internalGetScalingSchedules());
+      bitField0_ |= 0x00000100;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1458,6 +1465,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
                 internalGetMutableScalingSchedules()
                     .getMutableMap()
                     .put(scalingSchedules__.getKey(), scalingSchedules__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case -1451634654
             case -1245278118:
@@ -1548,8 +1556,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setCoolDownPeriodSec(int value) {
-      bitField0_ |= 0x00000001;
+
       coolDownPeriodSec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1633,11 +1642,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         cpuUtilization_ = value;
-        onChanged();
       } else {
         cpuUtilizationBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1655,11 +1664,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.Builder builderForValue) {
       if (cpuUtilizationBuilder_ == null) {
         cpuUtilization_ = builderForValue.build();
-        onChanged();
       } else {
         cpuUtilizationBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1681,19 +1690,15 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             && cpuUtilization_
                 != com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization
                     .getDefaultInstance()) {
-          cpuUtilization_ =
-              com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.newBuilder(
-                      cpuUtilization_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getCpuUtilizationBuilder().mergeFrom(value);
         } else {
           cpuUtilization_ = value;
         }
-        onChanged();
       } else {
         cpuUtilizationBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1708,13 +1713,13 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearCpuUtilization() {
-      if (cpuUtilizationBuilder_ == null) {
-        cpuUtilization_ = null;
-        onChanged();
-      } else {
-        cpuUtilizationBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      cpuUtilization_ = null;
+      if (cpuUtilizationBuilder_ != null) {
+        cpuUtilizationBuilder_.dispose();
+        cpuUtilizationBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2263,11 +2268,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         loadBalancingUtilization_ = value;
-        onChanged();
       } else {
         loadBalancingUtilizationBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2286,11 +2291,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (loadBalancingUtilizationBuilder_ == null) {
         loadBalancingUtilization_ = builderForValue.build();
-        onChanged();
       } else {
         loadBalancingUtilizationBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2312,19 +2317,15 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             && loadBalancingUtilization_
                 != com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization
                     .getDefaultInstance()) {
-          loadBalancingUtilization_ =
-              com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization.newBuilder(
-                      loadBalancingUtilization_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getLoadBalancingUtilizationBuilder().mergeFrom(value);
         } else {
           loadBalancingUtilization_ = value;
         }
-        onChanged();
       } else {
         loadBalancingUtilizationBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2339,13 +2340,13 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearLoadBalancingUtilization() {
-      if (loadBalancingUtilizationBuilder_ == null) {
-        loadBalancingUtilization_ = null;
-        onChanged();
-      } else {
-        loadBalancingUtilizationBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      loadBalancingUtilization_ = null;
+      if (loadBalancingUtilizationBuilder_ != null) {
+        loadBalancingUtilizationBuilder_.dispose();
+        loadBalancingUtilizationBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2459,8 +2460,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setMaxNumReplicas(int value) {
-      bitField0_ |= 0x00000010;
+
       maxNumReplicas_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2526,8 +2528,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setMinNumReplicas(int value) {
-      bitField0_ |= 0x00000020;
+
       minNumReplicas_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2628,8 +2631,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       mode_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2646,8 +2649,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       mode_ = getDefaultInstance().getMode();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2669,8 +2672,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       mode_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2719,11 +2722,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         scaleInControl_ = value;
-        onChanged();
       } else {
         scaleInControlBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2735,11 +2738,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl.Builder builderForValue) {
       if (scaleInControlBuilder_ == null) {
         scaleInControl_ = builderForValue.build();
-        onChanged();
       } else {
         scaleInControlBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2755,19 +2758,15 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             && scaleInControl_
                 != com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl
                     .getDefaultInstance()) {
-          scaleInControl_ =
-              com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl.newBuilder(
-                      scaleInControl_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getScaleInControlBuilder().mergeFrom(value);
         } else {
           scaleInControl_ = value;
         }
-        onChanged();
       } else {
         scaleInControlBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2776,13 +2775,13 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearScaleInControl() {
-      if (scaleInControlBuilder_ == null) {
-        scaleInControl_ = null;
-        onChanged();
-      } else {
-        scaleInControlBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000080);
+      scaleInControl_ = null;
+      if (scaleInControlBuilder_ != null) {
+        scaleInControlBuilder_.dispose();
+        scaleInControlBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2850,8 +2849,6 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
         internalGetMutableScalingSchedules() {
-      onChanged();
-      ;
       if (scalingSchedules_ == null) {
         scalingSchedules_ =
             com.google.protobuf.MapField.newMapField(
@@ -2860,6 +2857,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       if (!scalingSchedules_.isMutable()) {
         scalingSchedules_ = scalingSchedules_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return scalingSchedules_;
     }
 
@@ -2921,9 +2920,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule
+    public /* nullable */ com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule
         getScalingSchedulesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -2958,6 +2958,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearScalingSchedules() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableScalingSchedules().getMutableMap().clear();
       return this;
     }
@@ -2984,6 +2985,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public java.util.Map<
             java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
         getMutableScalingSchedules() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableScalingSchedules().getMutableMap();
     }
     /**
@@ -3005,8 +3007,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableScalingSchedules().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -3025,6 +3027,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
                 java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
             values) {
       internalGetMutableScalingSchedules().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 

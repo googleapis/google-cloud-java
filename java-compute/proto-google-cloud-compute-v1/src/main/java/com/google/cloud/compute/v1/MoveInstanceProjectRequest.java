@@ -121,11 +121,15 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceMoveRequestOrBuilder
       getInstanceMoveRequestResourceOrBuilder() {
-    return getInstanceMoveRequestResource();
+    return instanceMoveRequestResource_ == null
+        ? com.google.cloud.compute.v1.InstanceMoveRequest.getDefaultInstance()
+        : instanceMoveRequestResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -470,16 +476,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (instanceMoveRequestResourceBuilder_ == null) {
-        instanceMoveRequestResource_ = null;
-      } else {
-        instanceMoveRequestResource_ = null;
+      bitField0_ = 0;
+      instanceMoveRequestResource_ = null;
+      if (instanceMoveRequestResourceBuilder_ != null) {
+        instanceMoveRequestResourceBuilder_.dispose();
         instanceMoveRequestResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -507,21 +511,30 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.MoveInstanceProjectRequest buildPartial() {
       com.google.cloud.compute.v1.MoveInstanceProjectRequest result =
           new com.google.cloud.compute.v1.MoveInstanceProjectRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (instanceMoveRequestResourceBuilder_ == null) {
-        result.instanceMoveRequestResource_ = instanceMoveRequestResource_;
-      } else {
-        result.instanceMoveRequestResource_ = instanceMoveRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.MoveInstanceProjectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceMoveRequestResource_ =
+            instanceMoveRequestResourceBuilder_ == null
+                ? instanceMoveRequestResource_
+                : instanceMoveRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -575,11 +588,12 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -611,20 +625,20 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1801653742:
               {
                 input.readMessage(
                     getInstanceMoveRequestResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1801653742
             default:
@@ -666,7 +680,7 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
      * @return Whether the instanceMoveRequestResource field is set.
      */
     public boolean hasInstanceMoveRequestResource() {
-      return instanceMoveRequestResourceBuilder_ != null || instanceMoveRequestResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -708,11 +722,11 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         instanceMoveRequestResource_ = value;
-        onChanged();
       } else {
         instanceMoveRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -730,11 +744,11 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
         com.google.cloud.compute.v1.InstanceMoveRequest.Builder builderForValue) {
       if (instanceMoveRequestResourceBuilder_ == null) {
         instanceMoveRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         instanceMoveRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -751,20 +765,19 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
     public Builder mergeInstanceMoveRequestResource(
         com.google.cloud.compute.v1.InstanceMoveRequest value) {
       if (instanceMoveRequestResourceBuilder_ == null) {
-        if (instanceMoveRequestResource_ != null) {
-          instanceMoveRequestResource_ =
-              com.google.cloud.compute.v1.InstanceMoveRequest.newBuilder(
-                      instanceMoveRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && instanceMoveRequestResource_ != null
+            && instanceMoveRequestResource_
+                != com.google.cloud.compute.v1.InstanceMoveRequest.getDefaultInstance()) {
+          getInstanceMoveRequestResourceBuilder().mergeFrom(value);
         } else {
           instanceMoveRequestResource_ = value;
         }
-        onChanged();
       } else {
         instanceMoveRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -779,14 +792,13 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearInstanceMoveRequestResource() {
-      if (instanceMoveRequestResourceBuilder_ == null) {
-        instanceMoveRequestResource_ = null;
-        onChanged();
-      } else {
-        instanceMoveRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      instanceMoveRequestResource_ = null;
+      if (instanceMoveRequestResourceBuilder_ != null) {
+        instanceMoveRequestResourceBuilder_.dispose();
         instanceMoveRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -802,7 +814,7 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
      */
     public com.google.cloud.compute.v1.InstanceMoveRequest.Builder
         getInstanceMoveRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInstanceMoveRequestResourceFieldBuilder().getBuilder();
     }
@@ -922,8 +934,8 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -941,8 +953,8 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -965,8 +977,8 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -984,7 +996,7 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1046,8 +1058,8 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1063,8 +1075,8 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1085,8 +1097,8 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

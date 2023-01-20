@@ -68,6 +68,8 @@ public final class ActionExecutorOutput extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RULE_ACTIONS_PAIRS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.RuleActionsPair> ruleActionsPairs_;
   /**
    *
@@ -338,6 +340,7 @@ public final class ActionExecutorOutput extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (ruleActionsPairsBuilder_ == null) {
         ruleActionsPairs_ = java.util.Collections.emptyList();
       } else {
@@ -372,7 +375,16 @@ public final class ActionExecutorOutput extends com.google.protobuf.GeneratedMes
     public com.google.cloud.contentwarehouse.v1.ActionExecutorOutput buildPartial() {
       com.google.cloud.contentwarehouse.v1.ActionExecutorOutput result =
           new com.google.cloud.contentwarehouse.v1.ActionExecutorOutput(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.ActionExecutorOutput result) {
       if (ruleActionsPairsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           ruleActionsPairs_ = java.util.Collections.unmodifiableList(ruleActionsPairs_);
@@ -382,8 +394,10 @@ public final class ActionExecutorOutput extends com.google.protobuf.GeneratedMes
       } else {
         result.ruleActionsPairs_ = ruleActionsPairsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.ActionExecutorOutput result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

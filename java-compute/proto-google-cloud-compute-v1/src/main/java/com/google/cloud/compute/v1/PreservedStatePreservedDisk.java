@@ -356,7 +356,9 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
 
   private int bitField0_;
   public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
-  private volatile java.lang.Object autoDelete_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object autoDelete_ = "";
   /**
    *
    *
@@ -423,7 +425,9 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
   }
 
   public static final int MODE_FIELD_NUMBER = 3357091;
-  private volatile java.lang.Object mode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mode_ = "";
   /**
    *
    *
@@ -490,7 +494,9 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
   }
 
   public static final int SOURCE_FIELD_NUMBER = 177235995;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -783,12 +789,10 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       autoDelete_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       mode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       source_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -816,23 +820,29 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.PreservedStatePreservedDisk buildPartial() {
       com.google.cloud.compute.v1.PreservedStatePreservedDisk result =
           new com.google.cloud.compute.v1.PreservedStatePreservedDisk(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PreservedStatePreservedDisk result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoDelete_ = autoDelete_;
         to_bitField0_ |= 0x00000001;
       }
-      result.autoDelete_ = autoDelete_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mode_ = mode_;
         to_bitField0_ |= 0x00000002;
       }
-      result.mode_ = mode_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.source_ = source_;
         to_bitField0_ |= 0x00000004;
       }
-      result.source_ = source_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -882,18 +892,18 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       if (other == com.google.cloud.compute.v1.PreservedStatePreservedDisk.getDefaultInstance())
         return this;
       if (other.hasAutoDelete()) {
-        bitField0_ |= 0x00000001;
         autoDelete_ = other.autoDelete_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMode()) {
-        bitField0_ |= 0x00000002;
         mode_ = other.mode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSource()) {
-        bitField0_ |= 0x00000004;
         source_ = other.source_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1038,8 +1048,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       autoDelete_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1056,8 +1066,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAutoDelete() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       autoDelete_ = getDefaultInstance().getAutoDelete();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1079,8 +1089,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       autoDelete_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1164,8 +1174,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       mode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1182,8 +1192,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       mode_ = getDefaultInstance().getMode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1205,8 +1215,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       mode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1286,8 +1296,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       source_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1303,8 +1313,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1325,8 +1335,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       source_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

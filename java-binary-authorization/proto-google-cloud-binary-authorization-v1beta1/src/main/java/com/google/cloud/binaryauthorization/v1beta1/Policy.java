@@ -245,7 +245,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -296,7 +298,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -345,7 +349,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GLOBAL_POLICY_EVALUATION_MODE_FIELD_NUMBER = 7;
-  private int globalPolicyEvaluationMode_;
+  private int globalPolicyEvaluationMode_ = 0;
   /**
    *
    *
@@ -385,9 +389,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.binaryauthorization.v1beta1.Policy.GlobalPolicyEvaluationMode
       getGlobalPolicyEvaluationMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.binaryauthorization.v1beta1.Policy.GlobalPolicyEvaluationMode result =
-        com.google.cloud.binaryauthorization.v1beta1.Policy.GlobalPolicyEvaluationMode.valueOf(
+        com.google.cloud.binaryauthorization.v1beta1.Policy.GlobalPolicyEvaluationMode.forNumber(
             globalPolicyEvaluationMode_);
     return result == null
         ? com.google.cloud.binaryauthorization.v1beta1.Policy.GlobalPolicyEvaluationMode
@@ -396,6 +399,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADMISSION_WHITELIST_PATTERNS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern>
       admissionWhitelistPatterns_;
   /**
@@ -508,6 +513,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       clusterAdmissionRules_;
@@ -596,9 +602,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+  public /* nullable */ com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
       getClusterAdmissionRulesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -657,6 +664,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       kubernetesNamespaceAdmissionRules_;
@@ -730,9 +738,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+  public /* nullable */ com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
       getKubernetesNamespaceAdmissionRulesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -786,6 +795,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       kubernetesServiceAccountAdmissionRules_;
@@ -859,9 +869,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+  public /* nullable */ com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
       getKubernetesServiceAccountAdmissionRulesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -915,6 +926,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       istioServiceIdentityAdmissionRules_;
@@ -997,9 +1009,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+  public /* nullable */ com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
       getIstioServiceIdentityAdmissionRulesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -1092,7 +1105,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.binaryauthorization.v1beta1.AdmissionRuleOrBuilder
       getDefaultAdmissionRuleOrBuilder() {
-    return getDefaultAdmissionRule();
+    return defaultAdmissionRule_ == null
+        ? com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.getDefaultInstance()
+        : defaultAdmissionRule_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
@@ -1141,7 +1156,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1542,33 +1557,29 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
       globalPolicyEvaluationMode_ = 0;
-
       if (admissionWhitelistPatternsBuilder_ == null) {
         admissionWhitelistPatterns_ = java.util.Collections.emptyList();
       } else {
         admissionWhitelistPatterns_ = null;
         admissionWhitelistPatternsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableClusterAdmissionRules().clear();
       internalGetMutableKubernetesNamespaceAdmissionRules().clear();
       internalGetMutableKubernetesServiceAccountAdmissionRules().clear();
       internalGetMutableIstioServiceIdentityAdmissionRules().clear();
-      if (defaultAdmissionRuleBuilder_ == null) {
-        defaultAdmissionRule_ = null;
-      } else {
-        defaultAdmissionRule_ = null;
+      defaultAdmissionRule_ = null;
+      if (defaultAdmissionRuleBuilder_ != null) {
+        defaultAdmissionRuleBuilder_.dispose();
         defaultAdmissionRuleBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       return this;
@@ -1598,41 +1609,66 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.binaryauthorization.v1beta1.Policy buildPartial() {
       com.google.cloud.binaryauthorization.v1beta1.Policy result =
           new com.google.cloud.binaryauthorization.v1beta1.Policy(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.description_ = description_;
-      result.globalPolicyEvaluationMode_ = globalPolicyEvaluationMode_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.binaryauthorization.v1beta1.Policy result) {
       if (admissionWhitelistPatternsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           admissionWhitelistPatterns_ =
               java.util.Collections.unmodifiableList(admissionWhitelistPatterns_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.admissionWhitelistPatterns_ = admissionWhitelistPatterns_;
       } else {
         result.admissionWhitelistPatterns_ = admissionWhitelistPatternsBuilder_.build();
       }
-      result.clusterAdmissionRules_ = internalGetClusterAdmissionRules();
-      result.clusterAdmissionRules_.makeImmutable();
-      result.kubernetesNamespaceAdmissionRules_ = internalGetKubernetesNamespaceAdmissionRules();
-      result.kubernetesNamespaceAdmissionRules_.makeImmutable();
-      result.kubernetesServiceAccountAdmissionRules_ =
-          internalGetKubernetesServiceAccountAdmissionRules();
-      result.kubernetesServiceAccountAdmissionRules_.makeImmutable();
-      result.istioServiceIdentityAdmissionRules_ = internalGetIstioServiceIdentityAdmissionRules();
-      result.istioServiceIdentityAdmissionRules_.makeImmutable();
-      if (defaultAdmissionRuleBuilder_ == null) {
-        result.defaultAdmissionRule_ = defaultAdmissionRule_;
-      } else {
-        result.defaultAdmissionRule_ = defaultAdmissionRuleBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.binaryauthorization.v1beta1.Policy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.globalPolicyEvaluationMode_ = globalPolicyEvaluationMode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.clusterAdmissionRules_ = internalGetClusterAdmissionRules();
+        result.clusterAdmissionRules_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.kubernetesNamespaceAdmissionRules_ = internalGetKubernetesNamespaceAdmissionRules();
+        result.kubernetesNamespaceAdmissionRules_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.kubernetesServiceAccountAdmissionRules_ =
+            internalGetKubernetesServiceAccountAdmissionRules();
+        result.kubernetesServiceAccountAdmissionRules_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.istioServiceIdentityAdmissionRules_ =
+            internalGetIstioServiceIdentityAdmissionRules();
+        result.istioServiceIdentityAdmissionRules_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.defaultAdmissionRule_ =
+            defaultAdmissionRuleBuilder_ == null
+                ? defaultAdmissionRule_
+                : defaultAdmissionRuleBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1683,10 +1719,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.globalPolicyEvaluationMode_ != 0) {
@@ -1696,7 +1734,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         if (!other.admissionWhitelistPatterns_.isEmpty()) {
           if (admissionWhitelistPatterns_.isEmpty()) {
             admissionWhitelistPatterns_ = other.admissionWhitelistPatterns_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureAdmissionWhitelistPatternsIsMutable();
             admissionWhitelistPatterns_.addAll(other.admissionWhitelistPatterns_);
@@ -1709,7 +1747,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             admissionWhitelistPatternsBuilder_.dispose();
             admissionWhitelistPatternsBuilder_ = null;
             admissionWhitelistPatterns_ = other.admissionWhitelistPatterns_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             admissionWhitelistPatternsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdmissionWhitelistPatternsFieldBuilder()
@@ -1720,12 +1758,16 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableClusterAdmissionRules().mergeFrom(other.internalGetClusterAdmissionRules());
+      bitField0_ |= 0x00000010;
       internalGetMutableKubernetesNamespaceAdmissionRules()
           .mergeFrom(other.internalGetKubernetesNamespaceAdmissionRules());
+      bitField0_ |= 0x00000020;
       internalGetMutableKubernetesServiceAccountAdmissionRules()
           .mergeFrom(other.internalGetKubernetesServiceAccountAdmissionRules());
+      bitField0_ |= 0x00000040;
       internalGetMutableIstioServiceIdentityAdmissionRules()
           .mergeFrom(other.internalGetIstioServiceIdentityAdmissionRules());
+      bitField0_ |= 0x00000080;
       if (other.hasDefaultAdmissionRule()) {
         mergeDefaultAdmissionRule(other.getDefaultAdmissionRule());
       }
@@ -1761,7 +1803,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1791,31 +1833,32 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableClusterAdmissionRules()
                     .getMutableMap()
                     .put(clusterAdmissionRules__.getKey(), clusterAdmissionRules__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getDefaultAdmissionRuleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 42
             case 50:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             case 56:
               {
                 globalPolicyEvaluationMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 56
             case 66:
@@ -1833,6 +1876,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                     .put(
                         kubernetesServiceAccountAdmissionRules__.getKey(),
                         kubernetesServiceAccountAdmissionRules__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
@@ -1850,6 +1894,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                     .put(
                         istioServiceIdentityAdmissionRules__.getKey(),
                         istioServiceIdentityAdmissionRules__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
@@ -1867,6 +1912,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                     .put(
                         kubernetesNamespaceAdmissionRules__.getKey(),
                         kubernetesNamespaceAdmissionRules__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 82
             default:
@@ -1952,8 +1998,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1970,8 +2016,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1993,8 +2039,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2060,8 +2106,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2077,8 +2123,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2099,8 +2145,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2144,8 +2190,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setGlobalPolicyEvaluationModeValue(int value) {
-
       globalPolicyEvaluationMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2168,9 +2214,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.binaryauthorization.v1beta1.Policy.GlobalPolicyEvaluationMode
         getGlobalPolicyEvaluationMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.binaryauthorization.v1beta1.Policy.GlobalPolicyEvaluationMode result =
-          com.google.cloud.binaryauthorization.v1beta1.Policy.GlobalPolicyEvaluationMode.valueOf(
+          com.google.cloud.binaryauthorization.v1beta1.Policy.GlobalPolicyEvaluationMode.forNumber(
               globalPolicyEvaluationMode_);
       return result == null
           ? com.google.cloud.binaryauthorization.v1beta1.Policy.GlobalPolicyEvaluationMode
@@ -2199,7 +2244,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       globalPolicyEvaluationMode_ = value.getNumber();
       onChanged();
       return this;
@@ -2221,7 +2266,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGlobalPolicyEvaluationMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       globalPolicyEvaluationMode_ = 0;
       onChanged();
       return this;
@@ -2231,12 +2276,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         admissionWhitelistPatterns_ = java.util.Collections.emptyList();
 
     private void ensureAdmissionWhitelistPatternsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         admissionWhitelistPatterns_ =
             new java.util.ArrayList<
                 com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern>(
                 admissionWhitelistPatterns_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2508,7 +2553,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdmissionWhitelistPatterns() {
       if (admissionWhitelistPatternsBuilder_ == null) {
         admissionWhitelistPatterns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         admissionWhitelistPatternsBuilder_.clear();
@@ -2671,7 +2716,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern.Builder,
                 com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPatternOrBuilder>(
                 admissionWhitelistPatterns_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         admissionWhitelistPatterns_ = null;
@@ -2696,8 +2741,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         internalGetMutableClusterAdmissionRules() {
-      onChanged();
-      ;
       if (clusterAdmissionRules_ == null) {
         clusterAdmissionRules_ =
             com.google.protobuf.MapField.newMapField(
@@ -2706,6 +2749,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (!clusterAdmissionRules_.isMutable()) {
         clusterAdmissionRules_ = clusterAdmissionRules_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return clusterAdmissionRules_;
     }
 
@@ -2785,9 +2830,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+    public /* nullable */ com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
         getClusterAdmissionRulesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -2828,6 +2874,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearClusterAdmissionRules() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableClusterAdmissionRules().getMutableMap().clear();
       return this;
     }
@@ -2860,6 +2907,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<
             java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         getMutableClusterAdmissionRules() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableClusterAdmissionRules().getMutableMap();
     }
     /**
@@ -2887,8 +2935,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableClusterAdmissionRules().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -2912,6 +2960,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
             values) {
       internalGetMutableClusterAdmissionRules().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -2932,8 +2981,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         internalGetMutableKubernetesNamespaceAdmissionRules() {
-      onChanged();
-      ;
       if (kubernetesNamespaceAdmissionRules_ == null) {
         kubernetesNamespaceAdmissionRules_ =
             com.google.protobuf.MapField.newMapField(
@@ -2942,6 +2989,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (!kubernetesNamespaceAdmissionRules_.isMutable()) {
         kubernetesNamespaceAdmissionRules_ = kubernetesNamespaceAdmissionRules_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return kubernetesNamespaceAdmissionRules_;
     }
 
@@ -3006,9 +3055,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+    public /* nullable */ com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
         getKubernetesNamespaceAdmissionRulesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -3044,6 +3094,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearKubernetesNamespaceAdmissionRules() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().clear();
       return this;
     }
@@ -3071,6 +3122,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<
             java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         getMutableKubernetesNamespaceAdmissionRules() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap();
     }
     /**
@@ -3093,8 +3145,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -3113,6 +3165,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
             values) {
       internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -3133,8 +3186,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         internalGetMutableKubernetesServiceAccountAdmissionRules() {
-      onChanged();
-      ;
       if (kubernetesServiceAccountAdmissionRules_ == null) {
         kubernetesServiceAccountAdmissionRules_ =
             com.google.protobuf.MapField.newMapField(
@@ -3143,6 +3194,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (!kubernetesServiceAccountAdmissionRules_.isMutable()) {
         kubernetesServiceAccountAdmissionRules_ = kubernetesServiceAccountAdmissionRules_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return kubernetesServiceAccountAdmissionRules_;
     }
 
@@ -3207,9 +3260,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+    public /* nullable */ com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
         getKubernetesServiceAccountAdmissionRulesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -3245,6 +3299,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearKubernetesServiceAccountAdmissionRules() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().clear();
       return this;
     }
@@ -3272,6 +3327,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<
             java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         getMutableKubernetesServiceAccountAdmissionRules() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap();
     }
     /**
@@ -3294,8 +3350,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -3314,6 +3370,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
             values) {
       internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -3334,8 +3391,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         internalGetMutableIstioServiceIdentityAdmissionRules() {
-      onChanged();
-      ;
       if (istioServiceIdentityAdmissionRules_ == null) {
         istioServiceIdentityAdmissionRules_ =
             com.google.protobuf.MapField.newMapField(
@@ -3344,6 +3399,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (!istioServiceIdentityAdmissionRules_.isMutable()) {
         istioServiceIdentityAdmissionRules_ = istioServiceIdentityAdmissionRules_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return istioServiceIdentityAdmissionRules_;
     }
 
@@ -3417,9 +3474,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+    public /* nullable */ com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
         getIstioServiceIdentityAdmissionRulesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -3458,6 +3516,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearIstioServiceIdentityAdmissionRules() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().clear();
       return this;
     }
@@ -3488,6 +3547,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<
             java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         getMutableIstioServiceIdentityAdmissionRules() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap();
     }
     /**
@@ -3513,8 +3573,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -3536,6 +3596,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
             values) {
       internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -3560,7 +3621,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the defaultAdmissionRule field is set.
      */
     public boolean hasDefaultAdmissionRule() {
-      return defaultAdmissionRuleBuilder_ != null || defaultAdmissionRule_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3604,11 +3665,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         defaultAdmissionRule_ = value;
-        onChanged();
       } else {
         defaultAdmissionRuleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3627,11 +3688,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.Builder builderForValue) {
       if (defaultAdmissionRuleBuilder_ == null) {
         defaultAdmissionRule_ = builderForValue.build();
-        onChanged();
       } else {
         defaultAdmissionRuleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3649,20 +3710,20 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDefaultAdmissionRule(
         com.google.cloud.binaryauthorization.v1beta1.AdmissionRule value) {
       if (defaultAdmissionRuleBuilder_ == null) {
-        if (defaultAdmissionRule_ != null) {
-          defaultAdmissionRule_ =
-              com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.newBuilder(
-                      defaultAdmissionRule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && defaultAdmissionRule_ != null
+            && defaultAdmissionRule_
+                != com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+                    .getDefaultInstance()) {
+          getDefaultAdmissionRuleBuilder().mergeFrom(value);
         } else {
           defaultAdmissionRule_ = value;
         }
-        onChanged();
       } else {
         defaultAdmissionRuleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3678,14 +3739,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDefaultAdmissionRule() {
-      if (defaultAdmissionRuleBuilder_ == null) {
-        defaultAdmissionRule_ = null;
-        onChanged();
-      } else {
-        defaultAdmissionRule_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      defaultAdmissionRule_ = null;
+      if (defaultAdmissionRuleBuilder_ != null) {
+        defaultAdmissionRuleBuilder_.dispose();
         defaultAdmissionRuleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3702,7 +3762,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.Builder
         getDefaultAdmissionRuleBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDefaultAdmissionRuleFieldBuilder().getBuilder();
     }
@@ -3777,7 +3837,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3818,11 +3878,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3839,11 +3899,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3859,17 +3919,18 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3884,14 +3945,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3906,7 +3966,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

@@ -186,7 +186,9 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object key_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object key_ = "";
     /**
      *
      *
@@ -277,7 +279,7 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
-      return getValue();
+      return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -494,12 +496,11 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         key_ = "";
-
-        if (valueBuilder_ == null) {
-          value_ = null;
-        } else {
-          value_ = null;
+        value_ = null;
+        if (valueBuilder_ != null) {
+          valueBuilder_.dispose();
           valueBuilder_ = null;
         }
         return this;
@@ -529,14 +530,21 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       public com.google.dataflow.v1beta3.StructuredMessage.Parameter buildPartial() {
         com.google.dataflow.v1beta3.StructuredMessage.Parameter result =
             new com.google.dataflow.v1beta3.StructuredMessage.Parameter(this);
-        result.key_ = key_;
-        if (valueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = valueBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.dataflow.v1beta3.StructuredMessage.Parameter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.key_ = key_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = valueBuilder_ == null ? value_ : valueBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -589,6 +597,7 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
           return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasValue()) {
@@ -623,13 +632,13 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   key_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -648,6 +657,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object key_ = "";
       /**
@@ -710,8 +721,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -727,8 +738,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-
         key_ = getDefaultInstance().getKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -749,8 +760,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -773,7 +784,7 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
        * @return Whether the value field is set.
        */
       public boolean hasValue() {
-        return valueBuilder_ != null || value_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -808,11 +819,11 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           value_ = value;
-          onChanged();
         } else {
           valueBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -827,11 +838,11 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       public Builder setValue(com.google.protobuf.Value.Builder builderForValue) {
         if (valueBuilder_ == null) {
           value_ = builderForValue.build();
-          onChanged();
         } else {
           valueBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -845,16 +856,18 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
        */
       public Builder mergeValue(com.google.protobuf.Value value) {
         if (valueBuilder_ == null) {
-          if (value_ != null) {
-            value_ = com.google.protobuf.Value.newBuilder(value_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && value_ != null
+              && value_ != com.google.protobuf.Value.getDefaultInstance()) {
+            getValueBuilder().mergeFrom(value);
           } else {
             value_ = value;
           }
-          onChanged();
         } else {
           valueBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -867,14 +880,13 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
        * <code>.google.protobuf.Value value = 2;</code>
        */
       public Builder clearValue() {
-        if (valueBuilder_ == null) {
-          value_ = null;
-          onChanged();
-        } else {
-          value_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        value_ = null;
+        if (valueBuilder_ != null) {
+          valueBuilder_.dispose();
           valueBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -887,7 +899,7 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
        * <code>.google.protobuf.Value value = 2;</code>
        */
       public com.google.protobuf.Value.Builder getValueBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
@@ -998,7 +1010,9 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MESSAGE_TEXT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object messageText_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object messageText_ = "";
   /**
    *
    *
@@ -1047,7 +1061,9 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MESSAGE_KEY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object messageKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object messageKey_ = "";
   /**
    *
    *
@@ -1098,6 +1114,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.StructuredMessage.Parameter> parameters_;
   /**
    *
@@ -1387,17 +1405,16 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       messageText_ = "";
-
       messageKey_ = "";
-
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
       } else {
         parameters_ = null;
         parametersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1425,20 +1442,34 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
     public com.google.dataflow.v1beta3.StructuredMessage buildPartial() {
       com.google.dataflow.v1beta3.StructuredMessage result =
           new com.google.dataflow.v1beta3.StructuredMessage(this);
-      int from_bitField0_ = bitField0_;
-      result.messageText_ = messageText_;
-      result.messageKey_ = messageKey_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.StructuredMessage result) {
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.StructuredMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.messageText_ = messageText_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.messageKey_ = messageKey_;
+      }
     }
 
     @java.lang.Override
@@ -1488,17 +1519,19 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       if (other == com.google.dataflow.v1beta3.StructuredMessage.getDefaultInstance()) return this;
       if (!other.getMessageText().isEmpty()) {
         messageText_ = other.messageText_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMessageKey().isEmpty()) {
         messageKey_ = other.messageKey_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (parametersBuilder_ == null) {
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -1511,7 +1544,7 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             parametersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParametersFieldBuilder()
@@ -1550,13 +1583,13 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 messageText_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 messageKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1653,8 +1686,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       messageText_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1670,8 +1703,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMessageText() {
-
       messageText_ = getDefaultInstance().getMessageText();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1692,8 +1725,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       messageText_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1762,8 +1795,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       messageKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1780,8 +1813,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMessageKey() {
-
       messageKey_ = getDefaultInstance().getMessageKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1803,8 +1836,8 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       messageKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1813,11 +1846,11 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         parameters_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.StructuredMessage.Parameter>(
                 parameters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2039,7 +2072,7 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -2166,7 +2199,7 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
                 com.google.dataflow.v1beta3.StructuredMessage.Parameter,
                 com.google.dataflow.v1beta3.StructuredMessage.Parameter.Builder,
                 com.google.dataflow.v1beta3.StructuredMessage.ParameterOrBuilder>(
-                parameters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                parameters_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;

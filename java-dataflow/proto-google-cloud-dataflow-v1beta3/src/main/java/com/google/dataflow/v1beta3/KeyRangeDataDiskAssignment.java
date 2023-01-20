@@ -73,7 +73,9 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
   }
 
   public static final int START_FIELD_NUMBER = 1;
-  private volatile java.lang.Object start_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object start_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
   }
 
   public static final int END_FIELD_NUMBER = 2;
-  private volatile java.lang.Object end_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object end_ = "";
   /**
    *
    *
@@ -171,7 +175,9 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
   }
 
   public static final int DATA_DISK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object dataDisk_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataDisk_ = "";
   /**
    *
    *
@@ -444,12 +450,10 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       start_ = "";
-
       end_ = "";
-
       dataDisk_ = "";
-
       return this;
     }
 
@@ -477,11 +481,24 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
     public com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment buildPartial() {
       com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment result =
           new com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment(this);
-      result.start_ = start_;
-      result.end_ = end_;
-      result.dataDisk_ = dataDisk_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.start_ = start_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.end_ = end_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dataDisk_ = dataDisk_;
+      }
     }
 
     @java.lang.Override
@@ -532,14 +549,17 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
         return this;
       if (!other.getStart().isEmpty()) {
         start_ = other.start_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEnd().isEmpty()) {
         end_ = other.end_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDataDisk().isEmpty()) {
         dataDisk_ = other.dataDisk_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -571,19 +591,19 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
             case 10:
               {
                 start_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 end_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 dataDisk_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -602,6 +622,8 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object start_ = "";
     /**
@@ -664,8 +686,8 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       start_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -681,8 +703,8 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearStart() {
-
       start_ = getDefaultInstance().getStart();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -703,8 +725,8 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       start_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -770,8 +792,8 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       end_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -787,8 +809,8 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearEnd() {
-
       end_ = getDefaultInstance().getEnd();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -809,8 +831,8 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       end_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -885,8 +907,8 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataDisk_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -905,8 +927,8 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearDataDisk() {
-
       dataDisk_ = getDefaultInstance().getDataDisk();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -930,8 +952,8 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataDisk_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

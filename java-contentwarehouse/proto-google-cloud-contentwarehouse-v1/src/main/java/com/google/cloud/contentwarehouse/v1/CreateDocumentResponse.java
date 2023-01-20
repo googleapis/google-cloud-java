@@ -110,7 +110,9 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.DocumentOrBuilder getDocumentOrBuilder() {
-    return getDocument();
+    return document_ == null
+        ? com.google.cloud.contentwarehouse.v1.Document.getDefaultInstance()
+        : document_;
   }
 
   public static final int RULE_ENGINE_OUTPUT_FIELD_NUMBER = 2;
@@ -165,7 +167,9 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.RuleEngineOutputOrBuilder
       getRuleEngineOutputOrBuilder() {
-    return getRuleEngineOutput();
+    return ruleEngineOutput_ == null
+        ? com.google.cloud.contentwarehouse.v1.RuleEngineOutput.getDefaultInstance()
+        : ruleEngineOutput_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 3;
@@ -216,7 +220,9 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.contentwarehouse.v1.ResponseMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -450,22 +456,20 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (documentBuilder_ == null) {
-        document_ = null;
-      } else {
-        document_ = null;
+      bitField0_ = 0;
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
-      if (ruleEngineOutputBuilder_ == null) {
-        ruleEngineOutput_ = null;
-      } else {
-        ruleEngineOutput_ = null;
+      ruleEngineOutput_ = null;
+      if (ruleEngineOutputBuilder_ != null) {
+        ruleEngineOutputBuilder_.dispose();
         ruleEngineOutputBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -495,23 +499,25 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.contentwarehouse.v1.CreateDocumentResponse buildPartial() {
       com.google.cloud.contentwarehouse.v1.CreateDocumentResponse result =
           new com.google.cloud.contentwarehouse.v1.CreateDocumentResponse(this);
-      if (documentBuilder_ == null) {
-        result.document_ = document_;
-      } else {
-        result.document_ = documentBuilder_.build();
-      }
-      if (ruleEngineOutputBuilder_ == null) {
-        result.ruleEngineOutput_ = ruleEngineOutput_;
-      } else {
-        result.ruleEngineOutput_ = ruleEngineOutputBuilder_.build();
-      }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.CreateDocumentResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ruleEngineOutput_ =
+            ruleEngineOutputBuilder_ == null ? ruleEngineOutput_ : ruleEngineOutputBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -598,20 +604,20 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getDocumentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getRuleEngineOutputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -631,6 +637,8 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.contentwarehouse.v1.Document document_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.contentwarehouse.v1.Document,
@@ -649,7 +657,7 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      * @return Whether the document field is set.
      */
     public boolean hasDocument() {
-      return documentBuilder_ != null || document_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -686,11 +694,11 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         document_ = value;
-        onChanged();
       } else {
         documentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -706,11 +714,11 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
         com.google.cloud.contentwarehouse.v1.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
         document_ = builderForValue.build();
-        onChanged();
       } else {
         documentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -724,19 +732,18 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeDocument(com.google.cloud.contentwarehouse.v1.Document value) {
       if (documentBuilder_ == null) {
-        if (document_ != null) {
-          document_ =
-              com.google.cloud.contentwarehouse.v1.Document.newBuilder(document_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && document_ != null
+            && document_ != com.google.cloud.contentwarehouse.v1.Document.getDefaultInstance()) {
+          getDocumentBuilder().mergeFrom(value);
         } else {
           document_ = value;
         }
-        onChanged();
       } else {
         documentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -749,14 +756,13 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.contentwarehouse.v1.Document document = 1;</code>
      */
     public Builder clearDocument() {
-      if (documentBuilder_ == null) {
-        document_ = null;
-        onChanged();
-      } else {
-        document_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -769,7 +775,7 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.contentwarehouse.v1.Document document = 1;</code>
      */
     public com.google.cloud.contentwarehouse.v1.Document.Builder getDocumentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
@@ -837,7 +843,7 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      * @return Whether the ruleEngineOutput field is set.
      */
     public boolean hasRuleEngineOutput() {
-      return ruleEngineOutputBuilder_ != null || ruleEngineOutput_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -879,11 +885,11 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         ruleEngineOutput_ = value;
-        onChanged();
       } else {
         ruleEngineOutputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -901,11 +907,11 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
         com.google.cloud.contentwarehouse.v1.RuleEngineOutput.Builder builderForValue) {
       if (ruleEngineOutputBuilder_ == null) {
         ruleEngineOutput_ = builderForValue.build();
-        onChanged();
       } else {
         ruleEngineOutputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -922,19 +928,19 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
     public Builder mergeRuleEngineOutput(
         com.google.cloud.contentwarehouse.v1.RuleEngineOutput value) {
       if (ruleEngineOutputBuilder_ == null) {
-        if (ruleEngineOutput_ != null) {
-          ruleEngineOutput_ =
-              com.google.cloud.contentwarehouse.v1.RuleEngineOutput.newBuilder(ruleEngineOutput_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && ruleEngineOutput_ != null
+            && ruleEngineOutput_
+                != com.google.cloud.contentwarehouse.v1.RuleEngineOutput.getDefaultInstance()) {
+          getRuleEngineOutputBuilder().mergeFrom(value);
         } else {
           ruleEngineOutput_ = value;
         }
-        onChanged();
       } else {
         ruleEngineOutputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -949,14 +955,13 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.contentwarehouse.v1.RuleEngineOutput rule_engine_output = 2;</code>
      */
     public Builder clearRuleEngineOutput() {
-      if (ruleEngineOutputBuilder_ == null) {
-        ruleEngineOutput_ = null;
-        onChanged();
-      } else {
-        ruleEngineOutput_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ruleEngineOutput_ = null;
+      if (ruleEngineOutputBuilder_ != null) {
+        ruleEngineOutputBuilder_.dispose();
         ruleEngineOutputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -972,7 +977,7 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.contentwarehouse.v1.RuleEngineOutput.Builder
         getRuleEngineOutputBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRuleEngineOutputFieldBuilder().getBuilder();
     }
@@ -1044,7 +1049,7 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1083,11 +1088,11 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1104,11 +1109,11 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
         com.google.cloud.contentwarehouse.v1.ResponseMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1123,19 +1128,19 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeMetadata(com.google.cloud.contentwarehouse.v1.ResponseMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.contentwarehouse.v1.ResponseMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.contentwarehouse.v1.ResponseMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1149,14 +1154,13 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.contentwarehouse.v1.ResponseMetadata metadata = 3;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1170,7 +1174,7 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.contentwarehouse.v1.ResponseMetadata metadata = 3;</code>
      */
     public com.google.cloud.contentwarehouse.v1.ResponseMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

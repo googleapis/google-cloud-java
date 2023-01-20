@@ -69,7 +69,9 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
   }
 
   public static final int ADDRESS_FIELD_NUMBER = 462920692;
-  private volatile java.lang.Object address_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object address_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       address_ = "";
-
       project_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.GetGlobalAddressRequest buildPartial() {
       com.google.cloud.compute.v1.GetGlobalAddressRequest result =
           new com.google.cloud.compute.v1.GetGlobalAddressRequest(this);
-      result.address_ = address_;
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetGlobalAddressRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.address_ = address_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -457,10 +471,12 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getAddress().isEmpty()) {
         address_ = other.address_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -492,13 +508,13 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -591601758:
               {
                 address_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -591601758
             default:
@@ -517,6 +533,8 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object address_ = "";
     /**
@@ -579,8 +597,8 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       address_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -596,8 +614,8 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearAddress() {
-
       address_ = getDefaultInstance().getAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -618,8 +636,8 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       address_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,8 +703,8 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -702,8 +720,8 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

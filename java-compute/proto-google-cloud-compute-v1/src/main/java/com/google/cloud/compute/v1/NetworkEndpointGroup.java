@@ -372,6 +372,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -430,8 +431,10 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -624,7 +627,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -688,7 +693,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DEFAULT_PORT_FIELD_NUMBER = 423377855;
-  private int defaultPort_;
+  private int defaultPort_ = 0;
   /**
    *
    *
@@ -721,7 +726,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -785,7 +792,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -818,7 +825,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -882,7 +891,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -946,7 +957,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NETWORK_FIELD_NUMBER = 232872494;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -1010,7 +1023,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NETWORK_ENDPOINT_TYPE_FIELD_NUMBER = 118301523;
-  private volatile java.lang.Object networkEndpointType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkEndpointType_ = "";
   /**
    *
    *
@@ -1109,7 +1124,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PSC_TARGET_SERVICE_FIELD_NUMBER = 269132134;
-  private volatile java.lang.Object pscTargetService_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pscTargetService_ = "";
   /**
    *
    *
@@ -1173,7 +1190,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -1237,7 +1256,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -1301,7 +1322,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SIZE_FIELD_NUMBER = 3530753;
-  private int size_;
+  private int size_ = 0;
   /**
    *
    *
@@ -1334,7 +1355,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -1398,7 +1421,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -1954,59 +1979,42 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableAnnotations().clear();
-      if (appEngineBuilder_ == null) {
-        appEngine_ = null;
-      } else {
-        appEngineBuilder_.clear();
+      appEngine_ = null;
+      if (appEngineBuilder_ != null) {
+        appEngineBuilder_.dispose();
+        appEngineBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (cloudFunctionBuilder_ == null) {
-        cloudFunction_ = null;
-      } else {
-        cloudFunctionBuilder_.clear();
+      cloudFunction_ = null;
+      if (cloudFunctionBuilder_ != null) {
+        cloudFunctionBuilder_.dispose();
+        cloudFunctionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (cloudRunBuilder_ == null) {
-        cloudRun_ = null;
-      } else {
-        cloudRunBuilder_.clear();
+      cloudRun_ = null;
+      if (cloudRunBuilder_ != null) {
+        cloudRunBuilder_.dispose();
+        cloudRunBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       defaultPort_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000080);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
       network_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
       networkEndpointType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
-      if (pscDataBuilder_ == null) {
-        pscData_ = null;
-      } else {
-        pscDataBuilder_.clear();
+      pscData_ = null;
+      if (pscDataBuilder_ != null) {
+        pscDataBuilder_.dispose();
+        pscDataBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
       pscTargetService_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x00004000);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00008000);
       size_ = 0;
-      bitField0_ = (bitField0_ & ~0x00010000);
       subnetwork_ = "";
-      bitField0_ = (bitField0_ & ~0x00020000);
       zone_ = "";
-      bitField0_ = (bitField0_ & ~0x00040000);
       return this;
     }
 
@@ -2034,101 +2042,94 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.NetworkEndpointGroup buildPartial() {
       com.google.cloud.compute.v1.NetworkEndpointGroup result =
           new com.google.cloud.compute.v1.NetworkEndpointGroup(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NetworkEndpointGroup result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
       int to_bitField0_ = 0;
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (appEngineBuilder_ == null) {
-          result.appEngine_ = appEngine_;
-        } else {
-          result.appEngine_ = appEngineBuilder_.build();
-        }
+        result.appEngine_ = appEngineBuilder_ == null ? appEngine_ : appEngineBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (cloudFunctionBuilder_ == null) {
-          result.cloudFunction_ = cloudFunction_;
-        } else {
-          result.cloudFunction_ = cloudFunctionBuilder_.build();
-        }
+        result.cloudFunction_ =
+            cloudFunctionBuilder_ == null ? cloudFunction_ : cloudFunctionBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (cloudRunBuilder_ == null) {
-          result.cloudRun_ = cloudRun_;
-        } else {
-          result.cloudRun_ = cloudRunBuilder_.build();
-        }
+        result.cloudRun_ = cloudRunBuilder_ == null ? cloudRun_ : cloudRunBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000008;
       }
-      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.defaultPort_ = defaultPort_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000020;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.id_ = id_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000080;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000100;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.network_ = network_;
         to_bitField0_ |= 0x00000200;
       }
-      result.network_ = network_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.networkEndpointType_ = networkEndpointType_;
         to_bitField0_ |= 0x00000400;
       }
-      result.networkEndpointType_ = networkEndpointType_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        if (pscDataBuilder_ == null) {
-          result.pscData_ = pscData_;
-        } else {
-          result.pscData_ = pscDataBuilder_.build();
-        }
+        result.pscData_ = pscDataBuilder_ == null ? pscData_ : pscDataBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.pscTargetService_ = pscTargetService_;
         to_bitField0_ |= 0x00001000;
       }
-      result.pscTargetService_ = pscTargetService_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.region_ = region_;
         to_bitField0_ |= 0x00002000;
       }
-      result.region_ = region_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00004000;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.size_ = size_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.subnetwork_ = subnetwork_;
         to_bitField0_ |= 0x00010000;
       }
-      result.subnetwork_ = subnetwork_;
       if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.zone_ = zone_;
         to_bitField0_ |= 0x00020000;
       }
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2178,6 +2179,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.compute.v1.NetworkEndpointGroup.getDefaultInstance())
         return this;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000001;
       if (other.hasAppEngine()) {
         mergeAppEngine(other.getAppEngine());
       }
@@ -2188,70 +2190,70 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         mergeCloudRun(other.getCloudRun());
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000010;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasDefaultPort()) {
         setDefaultPort(other.getDefaultPort());
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000040;
         description_ = other.description_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000100;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000200;
         name_ = other.name_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasNetwork()) {
-        bitField0_ |= 0x00000400;
         network_ = other.network_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasNetworkEndpointType()) {
-        bitField0_ |= 0x00000800;
         networkEndpointType_ = other.networkEndpointType_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasPscData()) {
         mergePscData(other.getPscData());
       }
       if (other.hasPscTargetService()) {
-        bitField0_ |= 0x00002000;
         pscTargetService_ = other.pscTargetService_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00004000;
         region_ = other.region_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00008000;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSize()) {
         setSize(other.getSize());
       }
       if (other.hasSubnetwork()) {
-        bitField0_ |= 0x00020000;
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasZone()) {
-        bitField0_ |= 0x00040000;
         zone_ = other.zone_;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2337,6 +2339,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 896260386
             case 946412186:
@@ -2431,8 +2434,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -2440,6 +2441,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return annotations_;
     }
 
@@ -2491,8 +2494,10 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2521,6 +2526,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -2543,6 +2549,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -2561,8 +2568,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -2576,6 +2583,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -2637,11 +2645,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         appEngine_ = value;
-        onChanged();
       } else {
         appEngineBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2658,11 +2666,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder builderForValue) {
       if (appEngineBuilder_ == null) {
         appEngine_ = builderForValue.build();
-        onChanged();
       } else {
         appEngineBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2681,18 +2689,15 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             && appEngine_ != null
             && appEngine_
                 != com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.getDefaultInstance()) {
-          appEngine_ =
-              com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.newBuilder(appEngine_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getAppEngineBuilder().mergeFrom(value);
         } else {
           appEngine_ = value;
         }
-        onChanged();
       } else {
         appEngineBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2706,13 +2711,13 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearAppEngine() {
-      if (appEngineBuilder_ == null) {
-        appEngine_ = null;
-        onChanged();
-      } else {
-        appEngineBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      appEngine_ = null;
+      if (appEngineBuilder_ != null) {
+        appEngineBuilder_.dispose();
+        appEngineBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2839,11 +2844,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         cloudFunction_ = value;
-        onChanged();
       } else {
         cloudFunctionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2861,11 +2866,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.Builder builderForValue) {
       if (cloudFunctionBuilder_ == null) {
         cloudFunction_ = builderForValue.build();
-        onChanged();
       } else {
         cloudFunctionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2887,19 +2892,15 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             && cloudFunction_
                 != com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction
                     .getDefaultInstance()) {
-          cloudFunction_ =
-              com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.newBuilder(
-                      cloudFunction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getCloudFunctionBuilder().mergeFrom(value);
         } else {
           cloudFunction_ = value;
         }
-        onChanged();
       } else {
         cloudFunctionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2914,13 +2915,13 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCloudFunction() {
-      if (cloudFunctionBuilder_ == null) {
-        cloudFunction_ = null;
-        onChanged();
-      } else {
-        cloudFunctionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      cloudFunction_ = null;
+      if (cloudFunctionBuilder_ != null) {
+        cloudFunctionBuilder_.dispose();
+        cloudFunctionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3047,11 +3048,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         cloudRun_ = value;
-        onChanged();
       } else {
         cloudRunBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3068,11 +3069,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.Builder builderForValue) {
       if (cloudRunBuilder_ == null) {
         cloudRun_ = builderForValue.build();
-        onChanged();
       } else {
         cloudRunBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3091,18 +3092,15 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             && cloudRun_ != null
             && cloudRun_
                 != com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.getDefaultInstance()) {
-          cloudRun_ =
-              com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.newBuilder(cloudRun_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getCloudRunBuilder().mergeFrom(value);
         } else {
           cloudRun_ = value;
         }
-        onChanged();
       } else {
         cloudRunBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3116,13 +3114,13 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCloudRun() {
-      if (cloudRunBuilder_ == null) {
-        cloudRun_ = null;
-        onChanged();
-      } else {
-        cloudRunBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      cloudRun_ = null;
+      if (cloudRunBuilder_ != null) {
+        cloudRunBuilder_.dispose();
+        cloudRunBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3262,8 +3260,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3279,8 +3277,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3301,8 +3299,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3351,8 +3349,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setDefaultPort(int value) {
-      bitField0_ |= 0x00000020;
+
       defaultPort_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3449,8 +3448,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3466,8 +3465,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3488,8 +3487,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3538,8 +3537,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000080;
+
       id_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3636,8 +3636,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       kind_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3653,8 +3653,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3675,8 +3675,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       kind_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3756,8 +3756,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       name_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3773,8 +3773,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3795,8 +3795,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       name_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3876,8 +3876,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       network_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3893,8 +3893,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3915,8 +3915,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       network_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4000,8 +4000,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       networkEndpointType_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4018,8 +4018,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNetworkEndpointType() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       networkEndpointType_ = getDefaultInstance().getNetworkEndpointType();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4041,8 +4041,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       networkEndpointType_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4087,11 +4087,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         pscData_ = value;
-        onChanged();
       } else {
         pscDataBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4102,11 +4102,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         com.google.cloud.compute.v1.NetworkEndpointGroupPscData.Builder builderForValue) {
       if (pscDataBuilder_ == null) {
         pscData_ = builderForValue.build();
-        onChanged();
       } else {
         pscDataBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4119,18 +4119,15 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             && pscData_ != null
             && pscData_
                 != com.google.cloud.compute.v1.NetworkEndpointGroupPscData.getDefaultInstance()) {
-          pscData_ =
-              com.google.cloud.compute.v1.NetworkEndpointGroupPscData.newBuilder(pscData_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPscDataBuilder().mergeFrom(value);
         } else {
           pscData_ = value;
         }
-        onChanged();
       } else {
         pscDataBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4138,13 +4135,13 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearPscData() {
-      if (pscDataBuilder_ == null) {
-        pscData_ = null;
-        onChanged();
-      } else {
-        pscDataBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00001000);
+      pscData_ = null;
+      if (pscDataBuilder_ != null) {
+        pscDataBuilder_.dispose();
+        pscDataBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -4265,8 +4262,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
       pscTargetService_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4282,8 +4279,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPscTargetService() {
-      bitField0_ = (bitField0_ & ~0x00002000);
       pscTargetService_ = getDefaultInstance().getPscTargetService();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4304,8 +4301,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
       pscTargetService_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4385,8 +4382,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
       region_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4402,8 +4399,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00004000);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4424,8 +4421,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
       region_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4505,8 +4502,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
       selfLink_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4522,8 +4519,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00008000);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4544,8 +4541,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
       selfLink_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4594,8 +4591,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSize(int value) {
-      bitField0_ |= 0x00010000;
+
       size_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4692,8 +4690,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00020000;
       subnetwork_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4709,8 +4707,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-      bitField0_ = (bitField0_ & ~0x00020000);
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4731,8 +4729,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00020000;
       subnetwork_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4812,8 +4810,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00040000;
       zone_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4829,8 +4827,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-      bitField0_ = (bitField0_ & ~0x00040000);
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -4851,8 +4849,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00040000;
       zone_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

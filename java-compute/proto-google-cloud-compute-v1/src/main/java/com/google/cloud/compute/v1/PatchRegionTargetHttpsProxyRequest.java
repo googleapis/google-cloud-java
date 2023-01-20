@@ -73,7 +73,9 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -243,7 +249,9 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
   }
 
   public static final int TARGET_HTTPS_PROXY_FIELD_NUMBER = 52336748;
-  private volatile java.lang.Object targetHttpsProxy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetHttpsProxy_ = "";
   /**
    *
    *
@@ -343,7 +351,9 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder
       getTargetHttpsProxyResourceOrBuilder() {
-    return getTargetHttpsProxyResource();
+    return targetHttpsProxyResource_ == null
+        ? com.google.cloud.compute.v1.TargetHttpsProxy.getDefaultInstance()
+        : targetHttpsProxyResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -592,18 +602,14 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       targetHttpsProxy_ = "";
-
-      if (targetHttpsProxyResourceBuilder_ == null) {
-        targetHttpsProxyResource_ = null;
-      } else {
-        targetHttpsProxyResource_ = null;
+      targetHttpsProxyResource_ = null;
+      if (targetHttpsProxyResourceBuilder_ != null) {
+        targetHttpsProxyResourceBuilder_.dispose();
         targetHttpsProxyResourceBuilder_ = null;
       }
       return this;
@@ -634,23 +640,37 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     public com.google.cloud.compute.v1.PatchRegionTargetHttpsProxyRequest buildPartial() {
       com.google.cloud.compute.v1.PatchRegionTargetHttpsProxyRequest result =
           new com.google.cloud.compute.v1.PatchRegionTargetHttpsProxyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.targetHttpsProxy_ = targetHttpsProxy_;
-      if (targetHttpsProxyResourceBuilder_ == null) {
-        result.targetHttpsProxyResource_ = targetHttpsProxyResource_;
-      } else {
-        result.targetHttpsProxyResource_ = targetHttpsProxyResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.PatchRegionTargetHttpsProxyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetHttpsProxy_ = targetHttpsProxy_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.targetHttpsProxyResource_ =
+            targetHttpsProxyResourceBuilder_ == null
+                ? targetHttpsProxyResource_
+                : targetHttpsProxyResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -702,19 +722,22 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTargetHttpsProxy().isEmpty()) {
         targetHttpsProxy_ = other.targetHttpsProxy_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasTargetHttpsProxyResource()) {
@@ -749,32 +772,32 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 418693986:
               {
                 targetHttpsProxy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 418693986
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -825707510:
               {
                 input.readMessage(
                     getTargetHttpsProxyResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case -825707510
             default:
@@ -863,8 +886,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -882,8 +905,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -906,8 +929,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -979,8 +1002,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -998,8 +1021,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1022,8 +1045,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1041,7 +1064,7 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1103,8 +1126,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1120,8 +1143,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1142,8 +1165,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1209,8 +1232,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetHttpsProxy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1226,8 +1249,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearTargetHttpsProxy() {
-
       targetHttpsProxy_ = getDefaultInstance().getTargetHttpsProxy();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1248,8 +1271,8 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetHttpsProxy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1274,7 +1297,7 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
      * @return Whether the targetHttpsProxyResource field is set.
      */
     public boolean hasTargetHttpsProxyResource() {
-      return targetHttpsProxyResourceBuilder_ != null || targetHttpsProxyResource_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1315,11 +1338,11 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
           throw new NullPointerException();
         }
         targetHttpsProxyResource_ = value;
-        onChanged();
       } else {
         targetHttpsProxyResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1337,11 +1360,11 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         com.google.cloud.compute.v1.TargetHttpsProxy.Builder builderForValue) {
       if (targetHttpsProxyResourceBuilder_ == null) {
         targetHttpsProxyResource_ = builderForValue.build();
-        onChanged();
       } else {
         targetHttpsProxyResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1358,19 +1381,19 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     public Builder mergeTargetHttpsProxyResource(
         com.google.cloud.compute.v1.TargetHttpsProxy value) {
       if (targetHttpsProxyResourceBuilder_ == null) {
-        if (targetHttpsProxyResource_ != null) {
-          targetHttpsProxyResource_ =
-              com.google.cloud.compute.v1.TargetHttpsProxy.newBuilder(targetHttpsProxyResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && targetHttpsProxyResource_ != null
+            && targetHttpsProxyResource_
+                != com.google.cloud.compute.v1.TargetHttpsProxy.getDefaultInstance()) {
+          getTargetHttpsProxyResourceBuilder().mergeFrom(value);
         } else {
           targetHttpsProxyResource_ = value;
         }
-        onChanged();
       } else {
         targetHttpsProxyResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1385,14 +1408,13 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
      * </code>
      */
     public Builder clearTargetHttpsProxyResource() {
-      if (targetHttpsProxyResourceBuilder_ == null) {
-        targetHttpsProxyResource_ = null;
-        onChanged();
-      } else {
-        targetHttpsProxyResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      targetHttpsProxyResource_ = null;
+      if (targetHttpsProxyResourceBuilder_ != null) {
+        targetHttpsProxyResourceBuilder_.dispose();
         targetHttpsProxyResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1408,7 +1430,7 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
      */
     public com.google.cloud.compute.v1.TargetHttpsProxy.Builder
         getTargetHttpsProxyResourceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTargetHttpsProxyResourceFieldBuilder().getBuilder();
     }

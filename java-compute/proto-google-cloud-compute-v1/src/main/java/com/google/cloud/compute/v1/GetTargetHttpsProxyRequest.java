@@ -69,7 +69,9 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
   }
 
   public static final int TARGET_HTTPS_PROXY_FIELD_NUMBER = 52336748;
-  private volatile java.lang.Object targetHttpsProxy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetHttpsProxy_ = "";
   /**
    *
    *
@@ -373,10 +377,9 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       targetHttpsProxy_ = "";
-
       return this;
     }
 
@@ -404,10 +407,21 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.GetTargetHttpsProxyRequest buildPartial() {
       com.google.cloud.compute.v1.GetTargetHttpsProxyRequest result =
           new com.google.cloud.compute.v1.GetTargetHttpsProxyRequest(this);
-      result.project_ = project_;
-      result.targetHttpsProxy_ = targetHttpsProxy_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetTargetHttpsProxyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetHttpsProxy_ = targetHttpsProxy_;
+      }
     }
 
     @java.lang.Override
@@ -458,10 +472,12 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTargetHttpsProxy().isEmpty()) {
         targetHttpsProxy_ = other.targetHttpsProxy_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -493,13 +509,13 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
             case 418693986:
               {
                 targetHttpsProxy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 418693986
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -518,6 +534,8 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -580,8 +598,8 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -597,8 +615,8 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -619,8 +637,8 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,8 +704,8 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetHttpsProxy_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -703,8 +721,8 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearTargetHttpsProxy() {
-
       targetHttpsProxy_ = getDefaultInstance().getTargetHttpsProxy();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -725,8 +743,8 @@ public final class GetTargetHttpsProxyRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetHttpsProxy_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

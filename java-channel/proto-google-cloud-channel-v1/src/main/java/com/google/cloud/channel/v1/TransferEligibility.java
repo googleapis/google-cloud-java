@@ -248,7 +248,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
   }
 
   public static final int IS_ELIGIBLE_FIELD_NUMBER = 1;
-  private boolean isEligible_;
+  private boolean isEligible_ = false;
   /**
    *
    *
@@ -266,7 +266,9 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -315,7 +317,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INELIGIBILITY_REASON_FIELD_NUMBER = 3;
-  private int ineligibilityReason_;
+  private int ineligibilityReason_ = 0;
   /**
    *
    *
@@ -344,9 +346,8 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.TransferEligibility.Reason getIneligibilityReason() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.TransferEligibility.Reason result =
-        com.google.cloud.channel.v1.TransferEligibility.Reason.valueOf(ineligibilityReason_);
+        com.google.cloud.channel.v1.TransferEligibility.Reason.forNumber(ineligibilityReason_);
     return result == null
         ? com.google.cloud.channel.v1.TransferEligibility.Reason.UNRECOGNIZED
         : result;
@@ -569,12 +570,10 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       isEligible_ = false;
-
       description_ = "";
-
       ineligibilityReason_ = 0;
-
       return this;
     }
 
@@ -602,11 +601,24 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     public com.google.cloud.channel.v1.TransferEligibility buildPartial() {
       com.google.cloud.channel.v1.TransferEligibility result =
           new com.google.cloud.channel.v1.TransferEligibility(this);
-      result.isEligible_ = isEligible_;
-      result.description_ = description_;
-      result.ineligibilityReason_ = ineligibilityReason_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.TransferEligibility result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.isEligible_ = isEligible_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ineligibilityReason_ = ineligibilityReason_;
+      }
     }
 
     @java.lang.Override
@@ -660,6 +672,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.ineligibilityReason_ != 0) {
@@ -694,19 +707,19 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 isEligible_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 ineligibilityReason_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -725,6 +738,8 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean isEligible_;
     /**
@@ -757,6 +772,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     public Builder setIsEligible(boolean value) {
 
       isEligible_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -772,7 +788,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearIsEligible() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       isEligible_ = false;
       onChanged();
       return this;
@@ -839,8 +855,8 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -856,8 +872,8 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -878,8 +894,8 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -913,8 +929,8 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setIneligibilityReasonValue(int value) {
-
       ineligibilityReason_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -931,9 +947,8 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.TransferEligibility.Reason getIneligibilityReason() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.TransferEligibility.Reason result =
-          com.google.cloud.channel.v1.TransferEligibility.Reason.valueOf(ineligibilityReason_);
+          com.google.cloud.channel.v1.TransferEligibility.Reason.forNumber(ineligibilityReason_);
       return result == null
           ? com.google.cloud.channel.v1.TransferEligibility.Reason.UNRECOGNIZED
           : result;
@@ -955,7 +970,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       ineligibilityReason_ = value.getNumber();
       onChanged();
       return this;
@@ -972,7 +987,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearIneligibilityReason() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       ineligibilityReason_ = 0;
       onChanged();
       return this;

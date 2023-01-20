@@ -73,7 +73,9 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
   }
 
   public static final int PUBLIC_DELEGATED_PREFIX_FIELD_NUMBER = 204238440;
-  private volatile java.lang.Object publicDelegatedPrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicDelegatedPrefix_ = "";
   /**
    *
    *
@@ -228,11 +232,15 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
   @java.lang.Override
   public com.google.cloud.compute.v1.PublicDelegatedPrefixOrBuilder
       getPublicDelegatedPrefixResourceOrBuilder() {
-    return getPublicDelegatedPrefixResource();
+    return publicDelegatedPrefixResource_ == null
+        ? com.google.cloud.compute.v1.PublicDelegatedPrefix.getDefaultInstance()
+        : publicDelegatedPrefixResource_;
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -285,7 +293,9 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -598,20 +608,16 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       publicDelegatedPrefix_ = "";
-
-      if (publicDelegatedPrefixResourceBuilder_ == null) {
-        publicDelegatedPrefixResource_ = null;
-      } else {
-        publicDelegatedPrefixResource_ = null;
+      publicDelegatedPrefixResource_ = null;
+      if (publicDelegatedPrefixResourceBuilder_ != null) {
+        publicDelegatedPrefixResourceBuilder_.dispose();
         publicDelegatedPrefixResourceBuilder_ = null;
       }
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -640,23 +646,37 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
     public com.google.cloud.compute.v1.PatchPublicDelegatedPrefixeRequest buildPartial() {
       com.google.cloud.compute.v1.PatchPublicDelegatedPrefixeRequest result =
           new com.google.cloud.compute.v1.PatchPublicDelegatedPrefixeRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.publicDelegatedPrefix_ = publicDelegatedPrefix_;
-      if (publicDelegatedPrefixResourceBuilder_ == null) {
-        result.publicDelegatedPrefixResource_ = publicDelegatedPrefixResource_;
-      } else {
-        result.publicDelegatedPrefixResource_ = publicDelegatedPrefixResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.PatchPublicDelegatedPrefixeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.publicDelegatedPrefix_ = publicDelegatedPrefix_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.publicDelegatedPrefixResource_ =
+            publicDelegatedPrefixResourceBuilder_ == null
+                ? publicDelegatedPrefixResource_
+                : publicDelegatedPrefixResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -708,10 +728,12 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPublicDelegatedPrefix().isEmpty()) {
         publicDelegatedPrefix_ = other.publicDelegatedPrefix_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPublicDelegatedPrefixResource()) {
@@ -719,11 +741,12 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -755,32 +778,32 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 296879706
             case 380756010:
               {
                 input.readMessage(
                     getPublicDelegatedPrefixResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 380756010
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1111570338
             case 1633907522:
               {
                 publicDelegatedPrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1633907522
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -869,8 +892,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -888,8 +911,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -912,8 +935,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -982,8 +1005,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicDelegatedPrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1000,8 +1023,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearPublicDelegatedPrefix() {
-
       publicDelegatedPrefix_ = getDefaultInstance().getPublicDelegatedPrefix();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1023,8 +1046,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publicDelegatedPrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1049,8 +1072,7 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
      * @return Whether the publicDelegatedPrefixResource field is set.
      */
     public boolean hasPublicDelegatedPrefixResource() {
-      return publicDelegatedPrefixResourceBuilder_ != null
-          || publicDelegatedPrefixResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1092,11 +1114,11 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
           throw new NullPointerException();
         }
         publicDelegatedPrefixResource_ = value;
-        onChanged();
       } else {
         publicDelegatedPrefixResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1114,11 +1136,11 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
         com.google.cloud.compute.v1.PublicDelegatedPrefix.Builder builderForValue) {
       if (publicDelegatedPrefixResourceBuilder_ == null) {
         publicDelegatedPrefixResource_ = builderForValue.build();
-        onChanged();
       } else {
         publicDelegatedPrefixResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1135,20 +1157,19 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
     public Builder mergePublicDelegatedPrefixResource(
         com.google.cloud.compute.v1.PublicDelegatedPrefix value) {
       if (publicDelegatedPrefixResourceBuilder_ == null) {
-        if (publicDelegatedPrefixResource_ != null) {
-          publicDelegatedPrefixResource_ =
-              com.google.cloud.compute.v1.PublicDelegatedPrefix.newBuilder(
-                      publicDelegatedPrefixResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && publicDelegatedPrefixResource_ != null
+            && publicDelegatedPrefixResource_
+                != com.google.cloud.compute.v1.PublicDelegatedPrefix.getDefaultInstance()) {
+          getPublicDelegatedPrefixResourceBuilder().mergeFrom(value);
         } else {
           publicDelegatedPrefixResource_ = value;
         }
-        onChanged();
       } else {
         publicDelegatedPrefixResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1163,14 +1184,13 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
      * </code>
      */
     public Builder clearPublicDelegatedPrefixResource() {
-      if (publicDelegatedPrefixResourceBuilder_ == null) {
-        publicDelegatedPrefixResource_ = null;
-        onChanged();
-      } else {
-        publicDelegatedPrefixResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      publicDelegatedPrefixResource_ = null;
+      if (publicDelegatedPrefixResourceBuilder_ != null) {
+        publicDelegatedPrefixResourceBuilder_.dispose();
         publicDelegatedPrefixResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1186,7 +1206,7 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
      */
     public com.google.cloud.compute.v1.PublicDelegatedPrefix.Builder
         getPublicDelegatedPrefixResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPublicDelegatedPrefixResourceFieldBuilder().getBuilder();
     }
@@ -1306,8 +1326,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1325,8 +1345,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1349,8 +1369,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1368,7 +1388,7 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1430,8 +1450,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1447,8 +1467,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1469,8 +1489,8 @@ public final class PatchPublicDelegatedPrefixeRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

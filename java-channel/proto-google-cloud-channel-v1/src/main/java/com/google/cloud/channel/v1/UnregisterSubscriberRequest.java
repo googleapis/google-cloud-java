@@ -69,7 +69,9 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
   }
 
   public static final int ACCOUNT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object account_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object account_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -375,10 +379,9 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       account_ = "";
-
       serviceAccount_ = "";
-
       return this;
     }
 
@@ -406,10 +409,21 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
     public com.google.cloud.channel.v1.UnregisterSubscriberRequest buildPartial() {
       com.google.cloud.channel.v1.UnregisterSubscriberRequest result =
           new com.google.cloud.channel.v1.UnregisterSubscriberRequest(this);
-      result.account_ = account_;
-      result.serviceAccount_ = serviceAccount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.UnregisterSubscriberRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.account_ = account_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
     }
 
     @java.lang.Override
@@ -460,10 +474,12 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getAccount().isEmpty()) {
         account_ = other.account_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -495,13 +511,13 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
             case 10:
               {
                 account_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -520,6 +536,8 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object account_ = "";
     /**
@@ -582,8 +600,8 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       account_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -599,8 +617,8 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAccount() {
-
       account_ = getDefaultInstance().getAccount();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -621,8 +639,8 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       account_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,8 +709,8 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -709,8 +727,8 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -732,8 +750,8 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

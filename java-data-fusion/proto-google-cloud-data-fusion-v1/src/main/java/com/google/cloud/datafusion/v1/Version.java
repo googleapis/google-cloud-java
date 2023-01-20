@@ -228,7 +228,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_NUMBER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object versionNumber_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object versionNumber_ = "";
   /**
    *
    *
@@ -277,7 +279,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_VERSION_FIELD_NUMBER = 2;
-  private boolean defaultVersion_;
+  private boolean defaultVersion_ = false;
   /**
    *
    *
@@ -295,6 +297,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVAILABLE_FEATURES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList availableFeatures_;
   /**
    *
@@ -356,7 +360,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 4;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -385,9 +389,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datafusion.v1.Version.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datafusion.v1.Version.Type result =
-        com.google.cloud.datafusion.v1.Version.Type.valueOf(type_);
+        com.google.cloud.datafusion.v1.Version.Type.forNumber(type_);
     return result == null ? com.google.cloud.datafusion.v1.Version.Type.UNRECOGNIZED : result;
   }
 
@@ -622,14 +625,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       versionNumber_ = "";
-
       defaultVersion_ = false;
-
       availableFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       type_ = 0;
-
       return this;
     }
 
@@ -657,17 +658,33 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datafusion.v1.Version buildPartial() {
       com.google.cloud.datafusion.v1.Version result =
           new com.google.cloud.datafusion.v1.Version(this);
-      int from_bitField0_ = bitField0_;
-      result.versionNumber_ = versionNumber_;
-      result.defaultVersion_ = defaultVersion_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        availableFeatures_ = availableFeatures_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.availableFeatures_ = availableFeatures_;
-      result.type_ = type_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datafusion.v1.Version result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        availableFeatures_ = availableFeatures_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.availableFeatures_ = availableFeatures_;
+    }
+
+    private void buildPartial0(com.google.cloud.datafusion.v1.Version result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.versionNumber_ = versionNumber_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.defaultVersion_ = defaultVersion_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -717,6 +734,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datafusion.v1.Version.getDefaultInstance()) return this;
       if (!other.getVersionNumber().isEmpty()) {
         versionNumber_ = other.versionNumber_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getDefaultVersion() != false) {
@@ -725,7 +743,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (!other.availableFeatures_.isEmpty()) {
         if (availableFeatures_.isEmpty()) {
           availableFeatures_ = other.availableFeatures_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureAvailableFeaturesIsMutable();
           availableFeatures_.addAll(other.availableFeatures_);
@@ -764,13 +782,13 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 versionNumber_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 defaultVersion_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -783,7 +801,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -866,8 +884,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       versionNumber_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -883,8 +901,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersionNumber() {
-
       versionNumber_ = getDefaultInstance().getVersionNumber();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -905,8 +923,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       versionNumber_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -942,6 +960,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public Builder setDefaultVersion(boolean value) {
 
       defaultVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -957,7 +976,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       defaultVersion_ = false;
       onChanged();
       return this;
@@ -967,9 +986,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAvailableFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         availableFeatures_ = new com.google.protobuf.LazyStringArrayList(availableFeatures_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1104,7 +1123,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAvailableFeatures() {
       availableFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1160,8 +1179,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1178,9 +1197,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datafusion.v1.Version.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datafusion.v1.Version.Type result =
-          com.google.cloud.datafusion.v1.Version.Type.valueOf(type_);
+          com.google.cloud.datafusion.v1.Version.Type.forNumber(type_);
       return result == null ? com.google.cloud.datafusion.v1.Version.Type.UNRECOGNIZED : result;
     }
     /**
@@ -1199,7 +1217,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1216,7 +1234,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       type_ = 0;
       onChanged();
       return this;

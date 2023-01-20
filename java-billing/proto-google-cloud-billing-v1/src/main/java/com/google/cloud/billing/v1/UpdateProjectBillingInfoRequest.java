@@ -69,7 +69,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.cloud.billing.v1.ProjectBillingInfoOrBuilder getProjectBillingInfoOrBuilder() {
-    return getProjectBillingInfo();
+    return projectBillingInfo_ == null
+        ? com.google.cloud.billing.v1.ProjectBillingInfo.getDefaultInstance()
+        : projectBillingInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,12 +386,11 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (projectBillingInfoBuilder_ == null) {
-        projectBillingInfo_ = null;
-      } else {
-        projectBillingInfo_ = null;
+      projectBillingInfo_ = null;
+      if (projectBillingInfoBuilder_ != null) {
+        projectBillingInfoBuilder_.dispose();
         projectBillingInfoBuilder_ = null;
       }
       return this;
@@ -417,14 +420,24 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
     public com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest buildPartial() {
       com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest result =
           new com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest(this);
-      result.name_ = name_;
-      if (projectBillingInfoBuilder_ == null) {
-        result.projectBillingInfo_ = projectBillingInfo_;
-      } else {
-        result.projectBillingInfo_ = projectBillingInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectBillingInfo_ =
+            projectBillingInfoBuilder_ == null
+                ? projectBillingInfo_
+                : projectBillingInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -475,6 +488,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasProjectBillingInfo()) {
@@ -509,14 +523,14 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getProjectBillingInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -535,6 +549,8 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -600,8 +616,8 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -618,8 +634,8 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -641,8 +657,8 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -666,7 +682,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      * @return Whether the projectBillingInfo field is set.
      */
     public boolean hasProjectBillingInfo() {
-      return projectBillingInfoBuilder_ != null || projectBillingInfo_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -705,11 +721,11 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         projectBillingInfo_ = value;
-        onChanged();
       } else {
         projectBillingInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -726,11 +742,11 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
         com.google.cloud.billing.v1.ProjectBillingInfo.Builder builderForValue) {
       if (projectBillingInfoBuilder_ == null) {
         projectBillingInfo_ = builderForValue.build();
-        onChanged();
       } else {
         projectBillingInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -745,19 +761,19 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      */
     public Builder mergeProjectBillingInfo(com.google.cloud.billing.v1.ProjectBillingInfo value) {
       if (projectBillingInfoBuilder_ == null) {
-        if (projectBillingInfo_ != null) {
-          projectBillingInfo_ =
-              com.google.cloud.billing.v1.ProjectBillingInfo.newBuilder(projectBillingInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && projectBillingInfo_ != null
+            && projectBillingInfo_
+                != com.google.cloud.billing.v1.ProjectBillingInfo.getDefaultInstance()) {
+          getProjectBillingInfoBuilder().mergeFrom(value);
         } else {
           projectBillingInfo_ = value;
         }
-        onChanged();
       } else {
         projectBillingInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -771,14 +787,13 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
      */
     public Builder clearProjectBillingInfo() {
-      if (projectBillingInfoBuilder_ == null) {
-        projectBillingInfo_ = null;
-        onChanged();
-      } else {
-        projectBillingInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      projectBillingInfo_ = null;
+      if (projectBillingInfoBuilder_ != null) {
+        projectBillingInfoBuilder_.dispose();
         projectBillingInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -792,7 +807,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
      */
     public com.google.cloud.billing.v1.ProjectBillingInfo.Builder getProjectBillingInfoBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProjectBillingInfoFieldBuilder().getBuilder();
     }

@@ -66,7 +66,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int DISK_GB_FIELD_NUMBER = 60990141;
-  private int diskGb_;
+  private int diskGb_ = 0;
   /**
    *
    *
@@ -298,8 +298,8 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       diskGb_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -327,15 +327,21 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.ScratchDisks buildPartial() {
       com.google.cloud.compute.v1.ScratchDisks result =
           new com.google.cloud.compute.v1.ScratchDisks(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ScratchDisks result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.diskGb_ = diskGb_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -481,8 +487,9 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDiskGb(int value) {
-      bitField0_ |= 0x00000001;
+
       diskGb_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

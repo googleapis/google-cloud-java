@@ -249,7 +249,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
   }
 
   public static final int CONNECTION_TYPE_FIELD_NUMBER = 1;
-  private int connectionType_;
+  private int connectionType_ = 0;
   /**
    *
    *
@@ -280,9 +280,8 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType getConnectionType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType result =
-        com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType.valueOf(
+        com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType.forNumber(
             connectionType_);
     return result == null
         ? com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType.UNRECOGNIZED
@@ -342,7 +341,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
   }
 
   public static final int HAS_CREDENTIAL_FIELD_NUMBER = 3;
-  private boolean hasCredential_;
+  private boolean hasCredential_ = false;
   /**
    *
    *
@@ -598,13 +597,12 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       connectionType_ = 0;
-
       if (cloudSqlBuilder_ != null) {
         cloudSqlBuilder_.clear();
       }
       hasCredential_ = false;
-
       connectionSpecCase_ = 0;
       connectionSpec_ = null;
       return this;
@@ -634,18 +632,30 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     public com.google.cloud.datacatalog.v1.BigQueryConnectionSpec buildPartial() {
       com.google.cloud.datacatalog.v1.BigQueryConnectionSpec result =
           new com.google.cloud.datacatalog.v1.BigQueryConnectionSpec(this);
-      result.connectionType_ = connectionType_;
-      if (connectionSpecCase_ == 2) {
-        if (cloudSqlBuilder_ == null) {
-          result.connectionSpec_ = connectionSpec_;
-        } else {
-          result.connectionSpec_ = cloudSqlBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.hasCredential_ = hasCredential_;
-      result.connectionSpecCase_ = connectionSpecCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.BigQueryConnectionSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.connectionType_ = connectionType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.hasCredential_ = hasCredential_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datacatalog.v1.BigQueryConnectionSpec result) {
+      result.connectionSpecCase_ = connectionSpecCase_;
+      result.connectionSpec_ = this.connectionSpec_;
+      if (connectionSpecCase_ == 2 && cloudSqlBuilder_ != null) {
+        result.connectionSpec_ = cloudSqlBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -740,7 +750,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
             case 8:
               {
                 connectionType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -752,7 +762,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
             case 24:
               {
                 hasCredential_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -786,6 +796,8 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private int connectionType_ = 0;
     /**
      *
@@ -817,8 +829,8 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setConnectionTypeValue(int value) {
-
       connectionType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,9 +849,8 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType
         getConnectionType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType result =
-          com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType.valueOf(
+          com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType.forNumber(
               connectionType_);
       return result == null
           ? com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType.UNRECOGNIZED
@@ -863,7 +874,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       connectionType_ = value.getNumber();
       onChanged();
       return this;
@@ -881,7 +892,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearConnectionType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       connectionType_ = 0;
       onChanged();
       return this;
@@ -1101,7 +1112,6 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       }
       connectionSpecCase_ = 2;
       onChanged();
-      ;
       return cloudSqlBuilder_;
     }
 
@@ -1138,6 +1148,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     public Builder setHasCredential(boolean value) {
 
       hasCredential_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1154,7 +1165,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearHasCredential() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       hasCredential_ = false;
       onChanged();
       return this;

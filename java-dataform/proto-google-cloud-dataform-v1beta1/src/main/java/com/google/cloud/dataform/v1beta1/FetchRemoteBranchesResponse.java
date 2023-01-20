@@ -68,6 +68,8 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
   }
 
   public static final int BRANCHES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList branches_;
   /**
    *
@@ -333,6 +335,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       branches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -363,14 +366,26 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
     public com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse buildPartial() {
       com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse result =
           new com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         branches_ = branches_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.branches_ = branches_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

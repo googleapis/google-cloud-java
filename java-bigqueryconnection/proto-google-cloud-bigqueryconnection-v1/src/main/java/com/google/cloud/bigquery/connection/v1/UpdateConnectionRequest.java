@@ -68,7 +68,9 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.bigquery.connection.v1.ConnectionOrBuilder getConnectionOrBuilder() {
-    return getConnection();
+    return connection_ == null
+        ? com.google.cloud.bigquery.connection.v1.Connection.getDefaultInstance()
+        : connection_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -222,7 +226,7 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -451,18 +455,16 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (connectionBuilder_ == null) {
-        connection_ = null;
-      } else {
-        connection_ = null;
+      connection_ = null;
+      if (connectionBuilder_ != null) {
+        connectionBuilder_.dispose();
         connectionBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -493,19 +495,25 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
     public com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest buildPartial() {
       com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest result =
           new com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest(this);
-      result.name_ = name_;
-      if (connectionBuilder_ == null) {
-        result.connection_ = connection_;
-      } else {
-        result.connection_ = connectionBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.connection_ = connectionBuilder_ == null ? connection_ : connectionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -558,6 +566,7 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasConnection()) {
@@ -595,19 +604,19 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getConnectionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -626,6 +635,8 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -697,8 +708,8 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +728,8 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -742,8 +753,8 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -768,7 +779,7 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
      * @return Whether the connection field is set.
      */
     public boolean hasConnection() {
-      return connectionBuilder_ != null || connection_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -809,11 +820,11 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         connection_ = value;
-        onChanged();
       } else {
         connectionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -831,11 +842,11 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
         com.google.cloud.bigquery.connection.v1.Connection.Builder builderForValue) {
       if (connectionBuilder_ == null) {
         connection_ = builderForValue.build();
-        onChanged();
       } else {
         connectionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -851,19 +862,19 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
      */
     public Builder mergeConnection(com.google.cloud.bigquery.connection.v1.Connection value) {
       if (connectionBuilder_ == null) {
-        if (connection_ != null) {
-          connection_ =
-              com.google.cloud.bigquery.connection.v1.Connection.newBuilder(connection_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && connection_ != null
+            && connection_
+                != com.google.cloud.bigquery.connection.v1.Connection.getDefaultInstance()) {
+          getConnectionBuilder().mergeFrom(value);
         } else {
           connection_ = value;
         }
-        onChanged();
       } else {
         connectionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -878,14 +889,13 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearConnection() {
-      if (connectionBuilder_ == null) {
-        connection_ = null;
-        onChanged();
-      } else {
-        connection_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      connection_ = null;
+      if (connectionBuilder_ != null) {
+        connectionBuilder_.dispose();
         connectionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -900,7 +910,7 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.bigquery.connection.v1.Connection.Builder getConnectionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConnectionFieldBuilder().getBuilder();
     }
@@ -971,7 +981,7 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1010,11 +1020,11 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1030,11 +1040,11 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1049,17 +1059,18 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1073,14 +1084,13 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1094,7 +1104,7 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

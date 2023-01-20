@@ -69,7 +69,9 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
   }
 
   public static final int TAG_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tag_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
   }
 
   public static final int STATE_FAMILY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object stateFamily_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stateFamily_ = "";
   /**
    *
    *
@@ -373,10 +377,9 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tag_ = "";
-
       stateFamily_ = "";
-
       return this;
     }
 
@@ -404,10 +407,21 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
     public com.google.dataflow.v1beta3.StreamingSideInputLocation buildPartial() {
       com.google.dataflow.v1beta3.StreamingSideInputLocation result =
           new com.google.dataflow.v1beta3.StreamingSideInputLocation(this);
-      result.tag_ = tag_;
-      result.stateFamily_ = stateFamily_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.StreamingSideInputLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tag_ = tag_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stateFamily_ = stateFamily_;
+      }
     }
 
     @java.lang.Override
@@ -458,10 +472,12 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
         return this;
       if (!other.getTag().isEmpty()) {
         tag_ = other.tag_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getStateFamily().isEmpty()) {
         stateFamily_ = other.stateFamily_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -493,13 +509,13 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
             case 10:
               {
                 tag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 stateFamily_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -518,6 +534,8 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object tag_ = "";
     /**
@@ -580,8 +598,8 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       tag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -597,8 +615,8 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearTag() {
-
       tag_ = getDefaultInstance().getTag();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -619,8 +637,8 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,8 +704,8 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       stateFamily_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -703,8 +721,8 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearStateFamily() {
-
       stateFamily_ = getDefaultInstance().getStateFamily();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -725,8 +743,8 @@ public final class StreamingSideInputLocation extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stateFamily_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

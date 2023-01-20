@@ -71,7 +71,9 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int ACTION_FIELD_NUMBER = 187661878;
-  private volatile java.lang.Object action_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object action_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -256,7 +260,9 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -370,7 +376,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PREVIEW_FIELD_NUMBER = 218686408;
-  private boolean preview_;
+  private boolean preview_ = false;
   /**
    *
    *
@@ -403,7 +409,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
-  private int priority_;
+  private int priority_ = 0;
   /**
    *
    *
@@ -878,40 +884,32 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       action_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (headerActionBuilder_ == null) {
-        headerAction_ = null;
-      } else {
-        headerActionBuilder_.clear();
+      headerAction_ = null;
+      if (headerActionBuilder_ != null) {
+        headerActionBuilder_.dispose();
+        headerActionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
-      if (matchBuilder_ == null) {
-        match_ = null;
-      } else {
-        matchBuilder_.clear();
+      match_ = null;
+      if (matchBuilder_ != null) {
+        matchBuilder_.dispose();
+        matchBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
       preview_ = false;
-      bitField0_ = (bitField0_ & ~0x00000020);
       priority_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      if (rateLimitOptionsBuilder_ == null) {
-        rateLimitOptions_ = null;
-      } else {
-        rateLimitOptionsBuilder_.clear();
+      rateLimitOptions_ = null;
+      if (rateLimitOptionsBuilder_ != null) {
+        rateLimitOptionsBuilder_.dispose();
+        rateLimitOptionsBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
-      if (redirectOptionsBuilder_ == null) {
-        redirectOptions_ = null;
-      } else {
-        redirectOptionsBuilder_.clear();
+      redirectOptions_ = null;
+      if (redirectOptionsBuilder_ != null) {
+        redirectOptionsBuilder_.dispose();
+        redirectOptionsBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -939,34 +937,35 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.SecurityPolicyRule buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRule result =
           new com.google.cloud.compute.v1.SecurityPolicyRule(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SecurityPolicyRule result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.action_ = action_;
         to_bitField0_ |= 0x00000001;
       }
-      result.action_ = action_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000002;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (headerActionBuilder_ == null) {
-          result.headerAction_ = headerAction_;
-        } else {
-          result.headerAction_ = headerActionBuilder_.build();
-        }
+        result.headerAction_ =
+            headerActionBuilder_ == null ? headerAction_ : headerActionBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000008;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        if (matchBuilder_ == null) {
-          result.match_ = match_;
-        } else {
-          result.match_ = matchBuilder_.build();
-        }
+        result.match_ = matchBuilder_ == null ? match_ : matchBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
@@ -978,24 +977,16 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        if (rateLimitOptionsBuilder_ == null) {
-          result.rateLimitOptions_ = rateLimitOptions_;
-        } else {
-          result.rateLimitOptions_ = rateLimitOptionsBuilder_.build();
-        }
+        result.rateLimitOptions_ =
+            rateLimitOptionsBuilder_ == null ? rateLimitOptions_ : rateLimitOptionsBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        if (redirectOptionsBuilder_ == null) {
-          result.redirectOptions_ = redirectOptions_;
-        } else {
-          result.redirectOptions_ = redirectOptionsBuilder_.build();
-        }
+        result.redirectOptions_ =
+            redirectOptionsBuilder_ == null ? redirectOptions_ : redirectOptionsBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1044,21 +1035,21 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.compute.v1.SecurityPolicyRule other) {
       if (other == com.google.cloud.compute.v1.SecurityPolicyRule.getDefaultInstance()) return this;
       if (other.hasAction()) {
-        bitField0_ |= 0x00000001;
         action_ = other.action_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000002;
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasHeaderAction()) {
         mergeHeaderAction(other.getHeaderAction());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000008;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasMatch()) {
@@ -1251,8 +1242,8 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1268,8 +1259,8 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       action_ = getDefaultInstance().getAction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1290,8 +1281,8 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1371,8 +1362,8 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1388,8 +1379,8 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1410,8 +1401,8 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1478,11 +1469,11 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         headerAction_ = value;
-        onChanged();
       } else {
         headerActionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1500,11 +1491,11 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.Builder builderForValue) {
       if (headerActionBuilder_ == null) {
         headerAction_ = builderForValue.build();
-        onChanged();
       } else {
         headerActionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1526,19 +1517,15 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             && headerAction_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction
                     .getDefaultInstance()) {
-          headerAction_ =
-              com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.newBuilder(
-                      headerAction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getHeaderActionBuilder().mergeFrom(value);
         } else {
           headerAction_ = value;
         }
-        onChanged();
       } else {
         headerActionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1553,13 +1540,13 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearHeaderAction() {
-      if (headerActionBuilder_ == null) {
-        headerAction_ = null;
-        onChanged();
-      } else {
-        headerActionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      headerAction_ = null;
+      if (headerActionBuilder_ != null) {
+        headerActionBuilder_.dispose();
+        headerActionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1703,8 +1690,8 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       kind_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1720,8 +1707,8 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1742,8 +1729,8 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       kind_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1803,11 +1790,11 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         match_ = value;
-        onChanged();
       } else {
         matchBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1823,11 +1810,11 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.Builder builderForValue) {
       if (matchBuilder_ == null) {
         match_ = builderForValue.build();
-        onChanged();
       } else {
         matchBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1845,18 +1832,15 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             && match_ != null
             && match_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.getDefaultInstance()) {
-          match_ =
-              com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.newBuilder(match_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getMatchBuilder().mergeFrom(value);
         } else {
           match_ = value;
         }
-        onChanged();
       } else {
         matchBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1869,13 +1853,13 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher match = 103668165;</code>
      */
     public Builder clearMatch() {
-      if (matchBuilder_ == null) {
-        match_ = null;
-        onChanged();
-      } else {
-        matchBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000010);
+      match_ = null;
+      if (matchBuilder_ != null) {
+        matchBuilder_.dispose();
+        matchBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1980,8 +1964,9 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setPreview(boolean value) {
-      bitField0_ |= 0x00000020;
+
       preview_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2047,8 +2032,9 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-      bitField0_ |= 0x00000040;
+
       priority_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2132,11 +2118,11 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         rateLimitOptions_ = value;
-        onChanged();
       } else {
         rateLimitOptionsBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2154,11 +2140,11 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.Builder builderForValue) {
       if (rateLimitOptionsBuilder_ == null) {
         rateLimitOptions_ = builderForValue.build();
-        onChanged();
       } else {
         rateLimitOptionsBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2180,19 +2166,15 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             && rateLimitOptions_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions
                     .getDefaultInstance()) {
-          rateLimitOptions_ =
-              com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.newBuilder(
-                      rateLimitOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getRateLimitOptionsBuilder().mergeFrom(value);
         } else {
           rateLimitOptions_ = value;
         }
-        onChanged();
       } else {
         rateLimitOptionsBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2207,13 +2189,13 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRateLimitOptions() {
-      if (rateLimitOptionsBuilder_ == null) {
-        rateLimitOptions_ = null;
-        onChanged();
-      } else {
-        rateLimitOptionsBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000080);
+      rateLimitOptions_ = null;
+      if (rateLimitOptionsBuilder_ != null) {
+        rateLimitOptionsBuilder_.dispose();
+        rateLimitOptionsBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2344,11 +2326,11 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         redirectOptions_ = value;
-        onChanged();
       } else {
         redirectOptionsBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2366,11 +2348,11 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder builderForValue) {
       if (redirectOptionsBuilder_ == null) {
         redirectOptions_ = builderForValue.build();
-        onChanged();
       } else {
         redirectOptionsBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2392,19 +2374,15 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             && redirectOptions_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions
                     .getDefaultInstance()) {
-          redirectOptions_ =
-              com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.newBuilder(
-                      redirectOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getRedirectOptionsBuilder().mergeFrom(value);
         } else {
           redirectOptions_ = value;
         }
-        onChanged();
       } else {
         redirectOptionsBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2419,13 +2397,13 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRedirectOptions() {
-      if (redirectOptionsBuilder_ == null) {
-        redirectOptions_ = null;
-        onChanged();
-      } else {
-        redirectOptionsBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000100);
+      redirectOptions_ = null;
+      if (redirectOptionsBuilder_ != null) {
+        redirectOptionsBuilder_.dispose();
+        redirectOptionsBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

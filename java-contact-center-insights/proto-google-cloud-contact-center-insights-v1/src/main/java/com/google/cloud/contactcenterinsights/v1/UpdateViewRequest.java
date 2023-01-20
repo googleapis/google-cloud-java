@@ -116,7 +116,9 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.ViewOrBuilder getViewOrBuilder() {
-    return getView();
+    return view_ == null
+        ? com.google.cloud.contactcenterinsights.v1.View.getDefaultInstance()
+        : view_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -162,7 +164,7 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,16 +384,15 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (viewBuilder_ == null) {
-        view_ = null;
-      } else {
-        view_ = null;
+      bitField0_ = 0;
+      view_ = null;
+      if (viewBuilder_ != null) {
+        viewBuilder_.dispose();
         viewBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -421,18 +422,21 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.contactcenterinsights.v1.UpdateViewRequest buildPartial() {
       com.google.cloud.contactcenterinsights.v1.UpdateViewRequest result =
           new com.google.cloud.contactcenterinsights.v1.UpdateViewRequest(this);
-      if (viewBuilder_ == null) {
-        result.view_ = view_;
-      } else {
-        result.view_ = viewBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.UpdateViewRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.view_ = viewBuilder_ == null ? view_ : viewBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -516,13 +520,13 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getViewFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -541,6 +545,8 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.contactcenterinsights.v1.View view_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -562,7 +568,7 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the view field is set.
      */
     public boolean hasView() {
-      return viewBuilder_ != null || view_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -603,11 +609,11 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         view_ = value;
-        onChanged();
       } else {
         viewBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -624,11 +630,11 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
     public Builder setView(com.google.cloud.contactcenterinsights.v1.View.Builder builderForValue) {
       if (viewBuilder_ == null) {
         view_ = builderForValue.build();
-        onChanged();
       } else {
         viewBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -644,19 +650,18 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeView(com.google.cloud.contactcenterinsights.v1.View value) {
       if (viewBuilder_ == null) {
-        if (view_ != null) {
-          view_ =
-              com.google.cloud.contactcenterinsights.v1.View.newBuilder(view_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && view_ != null
+            && view_ != com.google.cloud.contactcenterinsights.v1.View.getDefaultInstance()) {
+          getViewBuilder().mergeFrom(value);
         } else {
           view_ = value;
         }
-        onChanged();
       } else {
         viewBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -671,14 +676,13 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearView() {
-      if (viewBuilder_ == null) {
-        view_ = null;
-        onChanged();
-      } else {
-        view_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      view_ = null;
+      if (viewBuilder_ != null) {
+        viewBuilder_.dispose();
         viewBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -693,7 +697,7 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.contactcenterinsights.v1.View.Builder getViewBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getViewFieldBuilder().getBuilder();
     }
@@ -763,7 +767,7 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -800,11 +804,11 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,11 +823,11 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -837,17 +841,18 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -860,14 +865,13 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -880,7 +884,7 @@ public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

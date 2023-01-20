@@ -73,7 +73,9 @@ public final class ResourcePolicyInstanceSchedulePolicy
 
   private int bitField0_;
   public static final int EXPIRATION_TIME_FIELD_NUMBER = 230299229;
-  private volatile java.lang.Object expirationTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object expirationTime_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class ResourcePolicyInstanceSchedulePolicy
   }
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
-  private volatile java.lang.Object startTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object startTime_ = "";
   /**
    *
    *
@@ -201,7 +205,9 @@ public final class ResourcePolicyInstanceSchedulePolicy
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 36848094;
-  private volatile java.lang.Object timeZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
   /**
    *
    *
@@ -655,24 +661,20 @@ public final class ResourcePolicyInstanceSchedulePolicy
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       expirationTime_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       startTime_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       timeZone_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (vmStartScheduleBuilder_ == null) {
-        vmStartSchedule_ = null;
-      } else {
-        vmStartScheduleBuilder_.clear();
+      vmStartSchedule_ = null;
+      if (vmStartScheduleBuilder_ != null) {
+        vmStartScheduleBuilder_.dispose();
+        vmStartScheduleBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
-      if (vmStopScheduleBuilder_ == null) {
-        vmStopSchedule_ = null;
-      } else {
-        vmStopScheduleBuilder_.clear();
+      vmStopSchedule_ = null;
+      if (vmStopScheduleBuilder_ != null) {
+        vmStopScheduleBuilder_.dispose();
+        vmStopScheduleBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -701,39 +703,40 @@ public final class ResourcePolicyInstanceSchedulePolicy
     public com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy result =
           new com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.expirationTime_ = expirationTime_;
         to_bitField0_ |= 0x00000001;
       }
-      result.expirationTime_ = expirationTime_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.startTime_ = startTime_;
         to_bitField0_ |= 0x00000002;
       }
-      result.startTime_ = startTime_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.timeZone_ = timeZone_;
         to_bitField0_ |= 0x00000004;
       }
-      result.timeZone_ = timeZone_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (vmStartScheduleBuilder_ == null) {
-          result.vmStartSchedule_ = vmStartSchedule_;
-        } else {
-          result.vmStartSchedule_ = vmStartScheduleBuilder_.build();
-        }
+        result.vmStartSchedule_ =
+            vmStartScheduleBuilder_ == null ? vmStartSchedule_ : vmStartScheduleBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        if (vmStopScheduleBuilder_ == null) {
-          result.vmStopSchedule_ = vmStopSchedule_;
-        } else {
-          result.vmStopSchedule_ = vmStopScheduleBuilder_.build();
-        }
+        result.vmStopSchedule_ =
+            vmStopScheduleBuilder_ == null ? vmStopSchedule_ : vmStopScheduleBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -785,18 +788,18 @@ public final class ResourcePolicyInstanceSchedulePolicy
           == com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy.getDefaultInstance())
         return this;
       if (other.hasExpirationTime()) {
-        bitField0_ |= 0x00000001;
         expirationTime_ = other.expirationTime_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasStartTime()) {
-        bitField0_ |= 0x00000002;
         startTime_ = other.startTime_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTimeZone()) {
-        bitField0_ |= 0x00000004;
         timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasVmStartSchedule()) {
@@ -955,8 +958,8 @@ public final class ResourcePolicyInstanceSchedulePolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       expirationTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -972,8 +975,8 @@ public final class ResourcePolicyInstanceSchedulePolicy
      * @return This builder for chaining.
      */
     public Builder clearExpirationTime() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       expirationTime_ = getDefaultInstance().getExpirationTime();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -994,8 +997,8 @@ public final class ResourcePolicyInstanceSchedulePolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       expirationTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1075,8 +1078,8 @@ public final class ResourcePolicyInstanceSchedulePolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       startTime_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1092,8 +1095,8 @@ public final class ResourcePolicyInstanceSchedulePolicy
      * @return This builder for chaining.
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       startTime_ = getDefaultInstance().getStartTime();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1114,8 +1117,8 @@ public final class ResourcePolicyInstanceSchedulePolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       startTime_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1195,8 +1198,8 @@ public final class ResourcePolicyInstanceSchedulePolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       timeZone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1212,8 +1215,8 @@ public final class ResourcePolicyInstanceSchedulePolicy
      * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1234,8 +1237,8 @@ public final class ResourcePolicyInstanceSchedulePolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       timeZone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1305,11 +1308,11 @@ public final class ResourcePolicyInstanceSchedulePolicy
           throw new NullPointerException();
         }
         vmStartSchedule_ = value;
-        onChanged();
       } else {
         vmStartScheduleBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1328,11 +1331,11 @@ public final class ResourcePolicyInstanceSchedulePolicy
             builderForValue) {
       if (vmStartScheduleBuilder_ == null) {
         vmStartSchedule_ = builderForValue.build();
-        onChanged();
       } else {
         vmStartScheduleBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1354,19 +1357,15 @@ public final class ResourcePolicyInstanceSchedulePolicy
             && vmStartSchedule_
                 != com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule
                     .getDefaultInstance()) {
-          vmStartSchedule_ =
-              com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule.newBuilder(
-                      vmStartSchedule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getVmStartScheduleBuilder().mergeFrom(value);
         } else {
           vmStartSchedule_ = value;
         }
-        onChanged();
       } else {
         vmStartScheduleBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1381,13 +1380,13 @@ public final class ResourcePolicyInstanceSchedulePolicy
      * </code>
      */
     public Builder clearVmStartSchedule() {
-      if (vmStartScheduleBuilder_ == null) {
-        vmStartSchedule_ = null;
-        onChanged();
-      } else {
-        vmStartScheduleBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      vmStartSchedule_ = null;
+      if (vmStartScheduleBuilder_ != null) {
+        vmStartScheduleBuilder_.dispose();
+        vmStartScheduleBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1522,11 +1521,11 @@ public final class ResourcePolicyInstanceSchedulePolicy
           throw new NullPointerException();
         }
         vmStopSchedule_ = value;
-        onChanged();
       } else {
         vmStopScheduleBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1545,11 +1544,11 @@ public final class ResourcePolicyInstanceSchedulePolicy
             builderForValue) {
       if (vmStopScheduleBuilder_ == null) {
         vmStopSchedule_ = builderForValue.build();
-        onChanged();
       } else {
         vmStopScheduleBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1571,19 +1570,15 @@ public final class ResourcePolicyInstanceSchedulePolicy
             && vmStopSchedule_
                 != com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule
                     .getDefaultInstance()) {
-          vmStopSchedule_ =
-              com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule.newBuilder(
-                      vmStopSchedule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getVmStopScheduleBuilder().mergeFrom(value);
         } else {
           vmStopSchedule_ = value;
         }
-        onChanged();
       } else {
         vmStopScheduleBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1598,13 +1593,13 @@ public final class ResourcePolicyInstanceSchedulePolicy
      * </code>
      */
     public Builder clearVmStopSchedule() {
-      if (vmStopScheduleBuilder_ == null) {
-        vmStopSchedule_ = null;
-        onChanged();
-      } else {
-        vmStopScheduleBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000010);
+      vmStopSchedule_ = null;
+      if (vmStopScheduleBuilder_ != null) {
+        vmStopScheduleBuilder_.dispose();
+        vmStopScheduleBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

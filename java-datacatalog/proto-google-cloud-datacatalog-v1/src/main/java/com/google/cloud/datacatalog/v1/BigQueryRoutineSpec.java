@@ -68,6 +68,8 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
   }
 
   public static final int IMPORTED_LIBRARIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList importedLibraries_;
   /**
    *
@@ -332,6 +334,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       importedLibraries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -361,14 +364,25 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datacatalog.v1.BigQueryRoutineSpec buildPartial() {
       com.google.cloud.datacatalog.v1.BigQueryRoutineSpec result =
           new com.google.cloud.datacatalog.v1.BigQueryRoutineSpec(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datacatalog.v1.BigQueryRoutineSpec result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         importedLibraries_ = importedLibraries_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.importedLibraries_ = importedLibraries_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.BigQueryRoutineSpec result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

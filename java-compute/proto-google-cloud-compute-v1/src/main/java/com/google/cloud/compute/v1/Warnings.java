@@ -777,7 +777,9 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 3059181;
-  private volatile java.lang.Object code_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object code_ = "";
   /**
    *
    *
@@ -844,6 +846,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_FIELD_NUMBER = 3076010;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Data> data_;
   /**
    *
@@ -913,7 +917,9 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 418054151;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -1200,8 +1206,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (dataBuilder_ == null) {
         data_ = java.util.Collections.emptyList();
       } else {
@@ -1210,7 +1216,6 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       message_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1237,12 +1242,15 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Warnings buildPartial() {
       com.google.cloud.compute.v1.Warnings result = new com.google.cloud.compute.v1.Warnings(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.code_ = code_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Warnings result) {
       if (dataBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           data_ = java.util.Collections.unmodifiableList(data_);
@@ -1252,13 +1260,20 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.data_ = dataBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Warnings result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+        to_bitField0_ |= 0x00000001;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.message_ = message_;
         to_bitField0_ |= 0x00000002;
       }
-      result.message_ = message_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1307,8 +1322,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Warnings other) {
       if (other == com.google.cloud.compute.v1.Warnings.getDefaultInstance()) return this;
       if (other.hasCode()) {
-        bitField0_ |= 0x00000001;
         code_ = other.code_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (dataBuilder_ == null) {
@@ -1339,8 +1354,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasMessage()) {
-        bitField0_ |= 0x00000004;
         message_ = other.message_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1491,8 +1506,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1509,8 +1524,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = getDefaultInstance().getCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1532,8 +1547,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1959,8 +1974,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1976,8 +1991,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1998,8 +2013,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

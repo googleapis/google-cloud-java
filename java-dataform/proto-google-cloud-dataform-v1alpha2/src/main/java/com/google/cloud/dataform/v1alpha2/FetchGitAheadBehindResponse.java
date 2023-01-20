@@ -66,7 +66,7 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
   }
 
   public static final int COMMITS_AHEAD_FIELD_NUMBER = 1;
-  private int commitsAhead_;
+  private int commitsAhead_ = 0;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
   }
 
   public static final int COMMITS_BEHIND_FIELD_NUMBER = 2;
-  private int commitsBehind_;
+  private int commitsBehind_ = 0;
   /**
    *
    *
@@ -308,10 +308,9 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       commitsAhead_ = 0;
-
       commitsBehind_ = 0;
-
       return this;
     }
 
@@ -340,10 +339,22 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
     public com.google.cloud.dataform.v1alpha2.FetchGitAheadBehindResponse buildPartial() {
       com.google.cloud.dataform.v1alpha2.FetchGitAheadBehindResponse result =
           new com.google.cloud.dataform.v1alpha2.FetchGitAheadBehindResponse(this);
-      result.commitsAhead_ = commitsAhead_;
-      result.commitsBehind_ = commitsBehind_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataform.v1alpha2.FetchGitAheadBehindResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.commitsAhead_ = commitsAhead_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.commitsBehind_ = commitsBehind_;
+      }
     }
 
     @java.lang.Override
@@ -428,13 +439,13 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
             case 8:
               {
                 commitsAhead_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 commitsBehind_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -453,6 +464,8 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int commitsAhead_;
     /**
@@ -485,6 +498,7 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
     public Builder setCommitsAhead(int value) {
 
       commitsAhead_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -500,7 +514,7 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearCommitsAhead() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       commitsAhead_ = 0;
       onChanged();
       return this;
@@ -537,6 +551,7 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
     public Builder setCommitsBehind(int value) {
 
       commitsBehind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -552,7 +567,7 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearCommitsBehind() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       commitsBehind_ = 0;
       onChanged();
       return this;

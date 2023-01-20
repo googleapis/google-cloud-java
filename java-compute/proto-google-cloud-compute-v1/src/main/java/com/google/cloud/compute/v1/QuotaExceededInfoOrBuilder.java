@@ -65,7 +65,6 @@ public interface QuotaExceededInfoOrBuilder
    *
    * <code>map&lt;string, string&gt; dimensions = 414334925;</code>
    */
-
   /* nullable */
   java.lang.String getDimensionsOrDefault(
       java.lang.String key,

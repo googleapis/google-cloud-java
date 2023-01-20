@@ -69,7 +69,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RUN_INTERRUPTION_ANNOTATOR_FIELD_NUMBER = 1;
-  private boolean runInterruptionAnnotator_;
+  private boolean runInterruptionAnnotator_ = false;
   /**
    *
    *
@@ -87,7 +87,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RUN_SILENCE_ANNOTATOR_FIELD_NUMBER = 2;
-  private boolean runSilenceAnnotator_;
+  private boolean runSilenceAnnotator_ = false;
   /**
    *
    *
@@ -105,7 +105,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RUN_PHRASE_MATCHER_ANNOTATOR_FIELD_NUMBER = 3;
-  private boolean runPhraseMatcherAnnotator_;
+  private boolean runPhraseMatcherAnnotator_ = false;
   /**
    *
    *
@@ -123,6 +123,8 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PHRASE_MATCHERS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList phraseMatchers_;
   /**
    *
@@ -200,7 +202,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RUN_SENTIMENT_ANNOTATOR_FIELD_NUMBER = 5;
-  private boolean runSentimentAnnotator_;
+  private boolean runSentimentAnnotator_ = false;
   /**
    *
    *
@@ -218,7 +220,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RUN_ENTITY_ANNOTATOR_FIELD_NUMBER = 6;
-  private boolean runEntityAnnotator_;
+  private boolean runEntityAnnotator_ = false;
   /**
    *
    *
@@ -236,7 +238,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RUN_INTENT_ANNOTATOR_FIELD_NUMBER = 7;
-  private boolean runIntentAnnotator_;
+  private boolean runIntentAnnotator_ = false;
   /**
    *
    *
@@ -254,7 +256,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RUN_ISSUE_MODEL_ANNOTATOR_FIELD_NUMBER = 8;
-  private boolean runIssueModelAnnotator_;
+  private boolean runIssueModelAnnotator_ = false;
   /**
    *
    *
@@ -273,6 +275,8 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ISSUE_MODELS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList issueModels_;
   /**
    *
@@ -633,24 +637,18 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       runInterruptionAnnotator_ = false;
-
       runSilenceAnnotator_ = false;
-
       runPhraseMatcherAnnotator_ = false;
-
       phraseMatchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       runSentimentAnnotator_ = false;
-
       runEntityAnnotator_ = false;
-
       runIntentAnnotator_ = false;
-
       runIssueModelAnnotator_ = false;
-
       issueModels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -678,26 +676,51 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector buildPartial() {
       com.google.cloud.contactcenterinsights.v1.AnnotatorSelector result =
           new com.google.cloud.contactcenterinsights.v1.AnnotatorSelector(this);
-      int from_bitField0_ = bitField0_;
-      result.runInterruptionAnnotator_ = runInterruptionAnnotator_;
-      result.runSilenceAnnotator_ = runSilenceAnnotator_;
-      result.runPhraseMatcherAnnotator_ = runPhraseMatcherAnnotator_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        phraseMatchers_ = phraseMatchers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.phraseMatchers_ = phraseMatchers_;
-      result.runSentimentAnnotator_ = runSentimentAnnotator_;
-      result.runEntityAnnotator_ = runEntityAnnotator_;
-      result.runIntentAnnotator_ = runIntentAnnotator_;
-      result.runIssueModelAnnotator_ = runIssueModelAnnotator_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        issueModels_ = issueModels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.issueModels_ = issueModels_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        phraseMatchers_ = phraseMatchers_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.phraseMatchers_ = phraseMatchers_;
+      if (((bitField0_ & 0x00000100) != 0)) {
+        issueModels_ = issueModels_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.issueModels_ = issueModels_;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.AnnotatorSelector result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.runInterruptionAnnotator_ = runInterruptionAnnotator_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.runSilenceAnnotator_ = runSilenceAnnotator_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.runPhraseMatcherAnnotator_ = runPhraseMatcherAnnotator_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.runSentimentAnnotator_ = runSentimentAnnotator_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.runEntityAnnotator_ = runEntityAnnotator_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.runIntentAnnotator_ = runIntentAnnotator_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.runIssueModelAnnotator_ = runIssueModelAnnotator_;
+      }
     }
 
     @java.lang.Override
@@ -758,7 +781,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       if (!other.phraseMatchers_.isEmpty()) {
         if (phraseMatchers_.isEmpty()) {
           phraseMatchers_ = other.phraseMatchers_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensurePhraseMatchersIsMutable();
           phraseMatchers_.addAll(other.phraseMatchers_);
@@ -780,7 +803,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       if (!other.issueModels_.isEmpty()) {
         if (issueModels_.isEmpty()) {
           issueModels_ = other.issueModels_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureIssueModelsIsMutable();
           issueModels_.addAll(other.issueModels_);
@@ -816,19 +839,19 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 runInterruptionAnnotator_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 runSilenceAnnotator_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 runPhraseMatcherAnnotator_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -841,25 +864,25 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
             case 40:
               {
                 runSentimentAnnotator_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 runEntityAnnotator_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 runIntentAnnotator_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 runIssueModelAnnotator_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 82:
@@ -919,6 +942,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public Builder setRunInterruptionAnnotator(boolean value) {
 
       runInterruptionAnnotator_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -934,7 +958,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRunInterruptionAnnotator() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       runInterruptionAnnotator_ = false;
       onChanged();
       return this;
@@ -971,6 +995,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public Builder setRunSilenceAnnotator(boolean value) {
 
       runSilenceAnnotator_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -986,7 +1011,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRunSilenceAnnotator() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       runSilenceAnnotator_ = false;
       onChanged();
       return this;
@@ -1023,6 +1048,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public Builder setRunPhraseMatcherAnnotator(boolean value) {
 
       runPhraseMatcherAnnotator_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1038,7 +1064,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRunPhraseMatcherAnnotator() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       runPhraseMatcherAnnotator_ = false;
       onChanged();
       return this;
@@ -1048,9 +1074,9 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePhraseMatchersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         phraseMatchers_ = new com.google.protobuf.LazyStringArrayList(phraseMatchers_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1217,7 +1243,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearPhraseMatchers() {
       phraseMatchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1279,6 +1305,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public Builder setRunSentimentAnnotator(boolean value) {
 
       runSentimentAnnotator_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1294,7 +1321,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRunSentimentAnnotator() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       runSentimentAnnotator_ = false;
       onChanged();
       return this;
@@ -1331,6 +1358,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public Builder setRunEntityAnnotator(boolean value) {
 
       runEntityAnnotator_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1346,7 +1374,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRunEntityAnnotator() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       runEntityAnnotator_ = false;
       onChanged();
       return this;
@@ -1383,6 +1411,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public Builder setRunIntentAnnotator(boolean value) {
 
       runIntentAnnotator_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1398,7 +1427,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRunIntentAnnotator() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       runIntentAnnotator_ = false;
       onChanged();
       return this;
@@ -1437,6 +1466,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public Builder setRunIssueModelAnnotator(boolean value) {
 
       runIssueModelAnnotator_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1453,7 +1483,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRunIssueModelAnnotator() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       runIssueModelAnnotator_ = false;
       onChanged();
       return this;
@@ -1463,9 +1493,9 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIssueModelsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         issueModels_ = new com.google.protobuf.LazyStringArrayList(issueModels_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -1632,7 +1662,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearIssueModels() {
       issueModels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }

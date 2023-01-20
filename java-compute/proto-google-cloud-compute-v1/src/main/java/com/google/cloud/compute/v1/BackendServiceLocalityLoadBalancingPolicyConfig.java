@@ -391,18 +391,17 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (customPolicyBuilder_ == null) {
-        customPolicy_ = null;
-      } else {
-        customPolicyBuilder_.clear();
+      bitField0_ = 0;
+      customPolicy_ = null;
+      if (customPolicyBuilder_ != null) {
+        customPolicyBuilder_.dispose();
+        customPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policyBuilder_.clear();
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
+        policyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -434,27 +433,27 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
         buildPartial() {
       com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig result =
           new com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (customPolicyBuilder_ == null) {
-          result.customPolicy_ = customPolicy_;
-        } else {
-          result.customPolicy_ = customPolicyBuilder_.build();
-        }
+        result.customPolicy_ =
+            customPolicyBuilder_ == null ? customPolicy_ : customPolicyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (policyBuilder_ == null) {
-          result.policy_ = policy_;
-        } else {
-          result.policy_ = policyBuilder_.build();
-        }
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -620,11 +619,11 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
           throw new NullPointerException();
         }
         customPolicy_ = value;
-        onChanged();
       } else {
         customPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -638,11 +637,11 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
             builderForValue) {
       if (customPolicyBuilder_ == null) {
         customPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         customPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -660,20 +659,15 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
                 != com.google.cloud.compute.v1
                     .BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
                     .getDefaultInstance()) {
-          customPolicy_ =
-              com.google.cloud.compute.v1
-                  .BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy.newBuilder(
-                      customPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getCustomPolicyBuilder().mergeFrom(value);
         } else {
           customPolicy_ = value;
         }
-        onChanged();
       } else {
         customPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -682,13 +676,13 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
      * </code>
      */
     public Builder clearCustomPolicy() {
-      if (customPolicyBuilder_ == null) {
-        customPolicy_ = null;
-        onChanged();
-      } else {
-        customPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      customPolicy_ = null;
+      if (customPolicyBuilder_ != null) {
+        customPolicyBuilder_.dispose();
+        customPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -796,11 +790,11 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -813,11 +807,11 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
             builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -833,19 +827,15 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
             && policy_
                 != com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy
                     .getDefaultInstance()) {
-          policy_ =
-              com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy
-                  .newBuilder(policy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -854,13 +844,13 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
      * </code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
+        policyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

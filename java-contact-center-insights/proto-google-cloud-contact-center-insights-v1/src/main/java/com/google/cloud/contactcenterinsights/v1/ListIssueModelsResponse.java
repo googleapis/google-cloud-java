@@ -68,6 +68,8 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
   }
 
   public static final int ISSUE_MODELS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.IssueModel> issueModels_;
   /**
    *
@@ -339,6 +341,7 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (issueModelsBuilder_ == null) {
         issueModels_ = java.util.Collections.emptyList();
       } else {
@@ -374,7 +377,16 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
     public com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse buildPartial() {
       com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse result =
           new com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse result) {
       if (issueModelsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           issueModels_ = java.util.Collections.unmodifiableList(issueModels_);
@@ -384,8 +396,11 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       } else {
         result.issueModels_ = issueModelsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

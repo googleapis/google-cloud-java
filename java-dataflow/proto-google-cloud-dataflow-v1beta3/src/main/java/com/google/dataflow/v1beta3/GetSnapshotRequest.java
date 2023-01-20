@@ -70,7 +70,9 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SNAPSHOT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object snapshotId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object snapshotId_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LOCATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -431,12 +437,10 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       snapshotId_ = "";
-
       location_ = "";
-
       return this;
     }
 
@@ -464,11 +468,24 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
     public com.google.dataflow.v1beta3.GetSnapshotRequest buildPartial() {
       com.google.dataflow.v1beta3.GetSnapshotRequest result =
           new com.google.dataflow.v1beta3.GetSnapshotRequest(this);
-      result.projectId_ = projectId_;
-      result.snapshotId_ = snapshotId_;
-      result.location_ = location_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.GetSnapshotRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.snapshotId_ = snapshotId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.location_ = location_;
+      }
     }
 
     @java.lang.Override
@@ -518,14 +535,17 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.dataflow.v1beta3.GetSnapshotRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSnapshotId().isEmpty()) {
         snapshotId_ = other.snapshotId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -557,19 +577,19 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 snapshotId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -588,6 +608,8 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
@@ -650,8 +672,8 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -667,8 +689,8 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -689,8 +711,8 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -756,8 +778,8 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       snapshotId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -773,8 +795,8 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSnapshotId() {
-
       snapshotId_ = getDefaultInstance().getSnapshotId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -795,8 +817,8 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       snapshotId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -862,8 +884,8 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -879,8 +901,8 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -901,8 +923,8 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

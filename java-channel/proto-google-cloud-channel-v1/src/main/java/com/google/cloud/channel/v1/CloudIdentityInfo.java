@@ -230,7 +230,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CUSTOMER_TYPE_FIELD_NUMBER = 1;
-  private int customerType_;
+  private int customerType_ = 0;
   /**
    *
    *
@@ -259,16 +259,17 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType getCustomerType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType result =
-        com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.valueOf(customerType_);
+        com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.forNumber(customerType_);
     return result == null
         ? com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.UNRECOGNIZED
         : result;
   }
 
   public static final int PRIMARY_DOMAIN_FIELD_NUMBER = 9;
-  private volatile java.lang.Object primaryDomain_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object primaryDomain_ = "";
   /**
    *
    *
@@ -317,7 +318,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int IS_DOMAIN_VERIFIED_FIELD_NUMBER = 4;
-  private boolean isDomainVerified_;
+  private boolean isDomainVerified_ = false;
   /**
    *
    *
@@ -339,7 +340,9 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ALTERNATE_EMAIL_FIELD_NUMBER = 6;
-  private volatile java.lang.Object alternateEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object alternateEmail_ = "";
   /**
    *
    *
@@ -388,7 +391,9 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PHONE_NUMBER_FIELD_NUMBER = 7;
-  private volatile java.lang.Object phoneNumber_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object phoneNumber_ = "";
   /**
    *
    *
@@ -437,7 +442,9 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -486,7 +493,9 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ADMIN_CONSOLE_URI_FIELD_NUMBER = 10;
-  private volatile java.lang.Object adminConsoleUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object adminConsoleUri_ = "";
   /**
    *
    *
@@ -577,7 +586,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.EduDataOrBuilder getEduDataOrBuilder() {
-    return getEduData();
+    return eduData_ == null ? com.google.cloud.channel.v1.EduData.getDefaultInstance() : eduData_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -849,24 +858,17 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       customerType_ = 0;
-
       primaryDomain_ = "";
-
       isDomainVerified_ = false;
-
       alternateEmail_ = "";
-
       phoneNumber_ = "";
-
       languageCode_ = "";
-
       adminConsoleUri_ = "";
-
-      if (eduDataBuilder_ == null) {
-        eduData_ = null;
-      } else {
-        eduData_ = null;
+      eduData_ = null;
+      if (eduDataBuilder_ != null) {
+        eduDataBuilder_.dispose();
         eduDataBuilder_ = null;
       }
       return this;
@@ -896,20 +898,39 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.channel.v1.CloudIdentityInfo buildPartial() {
       com.google.cloud.channel.v1.CloudIdentityInfo result =
           new com.google.cloud.channel.v1.CloudIdentityInfo(this);
-      result.customerType_ = customerType_;
-      result.primaryDomain_ = primaryDomain_;
-      result.isDomainVerified_ = isDomainVerified_;
-      result.alternateEmail_ = alternateEmail_;
-      result.phoneNumber_ = phoneNumber_;
-      result.languageCode_ = languageCode_;
-      result.adminConsoleUri_ = adminConsoleUri_;
-      if (eduDataBuilder_ == null) {
-        result.eduData_ = eduData_;
-      } else {
-        result.eduData_ = eduDataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.CloudIdentityInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.customerType_ = customerType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.primaryDomain_ = primaryDomain_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.isDomainVerified_ = isDomainVerified_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.alternateEmail_ = alternateEmail_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.phoneNumber_ = phoneNumber_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.adminConsoleUri_ = adminConsoleUri_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.eduData_ = eduDataBuilder_ == null ? eduData_ : eduDataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -962,6 +983,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getPrimaryDomain().isEmpty()) {
         primaryDomain_ = other.primaryDomain_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getIsDomainVerified() != false) {
@@ -969,18 +991,22 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getAlternateEmail().isEmpty()) {
         alternateEmail_ = other.alternateEmail_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getPhoneNumber().isEmpty()) {
         phoneNumber_ = other.phoneNumber_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getAdminConsoleUri().isEmpty()) {
         adminConsoleUri_ = other.adminConsoleUri_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasEduData()) {
@@ -1015,49 +1041,49 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 customerType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 32:
               {
                 isDomainVerified_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 50:
               {
                 alternateEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 58:
               {
                 phoneNumber_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 66:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             case 74:
               {
                 primaryDomain_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 74
             case 82:
               {
                 adminConsoleUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             case 178:
               {
                 input.readMessage(getEduDataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 178
             default:
@@ -1076,6 +1102,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int customerType_ = 0;
     /**
@@ -1106,8 +1134,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setCustomerTypeValue(int value) {
-
       customerType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1124,9 +1152,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType getCustomerType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType result =
-          com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.valueOf(customerType_);
+          com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.forNumber(customerType_);
       return result == null
           ? com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.UNRECOGNIZED
           : result;
@@ -1148,7 +1175,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       customerType_ = value.getNumber();
       onChanged();
       return this;
@@ -1165,7 +1192,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCustomerType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       customerType_ = 0;
       onChanged();
       return this;
@@ -1232,8 +1259,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       primaryDomain_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1249,8 +1276,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPrimaryDomain() {
-
       primaryDomain_ = getDefaultInstance().getPrimaryDomain();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1271,8 +1298,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       primaryDomain_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1316,6 +1343,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     public Builder setIsDomainVerified(boolean value) {
 
       isDomainVerified_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1335,7 +1363,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearIsDomainVerified() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       isDomainVerified_ = false;
       onChanged();
       return this;
@@ -1402,8 +1430,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       alternateEmail_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1419,8 +1447,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAlternateEmail() {
-
       alternateEmail_ = getDefaultInstance().getAlternateEmail();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1441,8 +1469,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       alternateEmail_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1508,8 +1536,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       phoneNumber_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1525,8 +1553,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPhoneNumber() {
-
       phoneNumber_ = getDefaultInstance().getPhoneNumber();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1547,8 +1575,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       phoneNumber_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1614,8 +1642,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1631,8 +1659,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1653,8 +1681,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1720,8 +1748,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       adminConsoleUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1737,8 +1765,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAdminConsoleUri() {
-
       adminConsoleUri_ = getDefaultInstance().getAdminConsoleUri();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1759,8 +1787,8 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       adminConsoleUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1783,7 +1811,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * @return Whether the eduData field is set.
      */
     public boolean hasEduData() {
-      return eduDataBuilder_ != null || eduData_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1820,11 +1848,11 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         eduData_ = value;
-        onChanged();
       } else {
         eduDataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1839,11 +1867,11 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     public Builder setEduData(com.google.cloud.channel.v1.EduData.Builder builderForValue) {
       if (eduDataBuilder_ == null) {
         eduData_ = builderForValue.build();
-        onChanged();
       } else {
         eduDataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1857,19 +1885,18 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeEduData(com.google.cloud.channel.v1.EduData value) {
       if (eduDataBuilder_ == null) {
-        if (eduData_ != null) {
-          eduData_ =
-              com.google.cloud.channel.v1.EduData.newBuilder(eduData_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && eduData_ != null
+            && eduData_ != com.google.cloud.channel.v1.EduData.getDefaultInstance()) {
+          getEduDataBuilder().mergeFrom(value);
         } else {
           eduData_ = value;
         }
-        onChanged();
       } else {
         eduDataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1882,14 +1909,13 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.channel.v1.EduData edu_data = 22;</code>
      */
     public Builder clearEduData() {
-      if (eduDataBuilder_ == null) {
-        eduData_ = null;
-        onChanged();
-      } else {
-        eduData_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      eduData_ = null;
+      if (eduDataBuilder_ != null) {
+        eduDataBuilder_.dispose();
         eduDataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1902,7 +1928,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.channel.v1.EduData edu_data = 22;</code>
      */
     public com.google.cloud.channel.v1.EduData.Builder getEduDataBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getEduDataFieldBuilder().getBuilder();
     }

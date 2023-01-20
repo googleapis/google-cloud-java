@@ -380,7 +380,9 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int HOST_FIELD_NUMBER = 3208616;
-  private volatile java.lang.Object host_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object host_ = "";
   /**
    *
    *
@@ -444,7 +446,7 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PORT_FIELD_NUMBER = 3446913;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -477,7 +479,9 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PORT_NAME_FIELD_NUMBER = 41534345;
-  private volatile java.lang.Object portName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object portName_ = "";
   /**
    *
    *
@@ -541,7 +545,9 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PORT_SPECIFICATION_FIELD_NUMBER = 51590597;
-  private volatile java.lang.Object portSpecification_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object portSpecification_ = "";
   /**
    *
    *
@@ -608,7 +614,9 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PROXY_HEADER_FIELD_NUMBER = 160374142;
-  private volatile java.lang.Object proxyHeader_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object proxyHeader_ = "";
   /**
    *
    *
@@ -675,7 +683,9 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REQUEST_PATH_FIELD_NUMBER = 229403605;
-  private volatile java.lang.Object requestPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestPath_ = "";
   /**
    *
    *
@@ -739,7 +749,9 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RESPONSE_FIELD_NUMBER = 196547649;
-  private volatile java.lang.Object response_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object response_ = "";
   /**
    *
    *
@@ -1088,20 +1100,14 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       host_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       port_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       portName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       portSpecification_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       proxyHeader_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       requestPath_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       response_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -1129,39 +1135,45 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.HTTPSHealthCheck buildPartial() {
       com.google.cloud.compute.v1.HTTPSHealthCheck result =
           new com.google.cloud.compute.v1.HTTPSHealthCheck(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HTTPSHealthCheck result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.host_ = host_;
         to_bitField0_ |= 0x00000001;
       }
-      result.host_ = host_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.port_ = port_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.portName_ = portName_;
         to_bitField0_ |= 0x00000004;
       }
-      result.portName_ = portName_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.portSpecification_ = portSpecification_;
         to_bitField0_ |= 0x00000008;
       }
-      result.portSpecification_ = portSpecification_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.proxyHeader_ = proxyHeader_;
         to_bitField0_ |= 0x00000010;
       }
-      result.proxyHeader_ = proxyHeader_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.requestPath_ = requestPath_;
         to_bitField0_ |= 0x00000020;
       }
-      result.requestPath_ = requestPath_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.response_ = response_;
         to_bitField0_ |= 0x00000040;
       }
-      result.response_ = response_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1210,36 +1222,36 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
     public Builder mergeFrom(com.google.cloud.compute.v1.HTTPSHealthCheck other) {
       if (other == com.google.cloud.compute.v1.HTTPSHealthCheck.getDefaultInstance()) return this;
       if (other.hasHost()) {
-        bitField0_ |= 0x00000001;
         host_ = other.host_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPort()) {
         setPort(other.getPort());
       }
       if (other.hasPortName()) {
-        bitField0_ |= 0x00000004;
         portName_ = other.portName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasPortSpecification()) {
-        bitField0_ |= 0x00000008;
         portSpecification_ = other.portSpecification_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasProxyHeader()) {
-        bitField0_ |= 0x00000010;
         proxyHeader_ = other.proxyHeader_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasRequestPath()) {
-        bitField0_ |= 0x00000020;
         requestPath_ = other.requestPath_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasResponse()) {
-        bitField0_ |= 0x00000040;
         response_ = other.response_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1404,8 +1416,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       host_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1421,8 +1433,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearHost() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       host_ = getDefaultInstance().getHost();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1443,8 +1455,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       host_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1493,8 +1505,9 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-      bitField0_ |= 0x00000002;
+
       port_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1591,8 +1604,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       portName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1608,8 +1621,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPortName() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       portName_ = getDefaultInstance().getPortName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1630,8 +1643,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       portName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1715,8 +1728,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       portSpecification_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1733,8 +1746,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPortSpecification() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       portSpecification_ = getDefaultInstance().getPortSpecification();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1756,8 +1769,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       portSpecification_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1841,8 +1854,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       proxyHeader_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1859,8 +1872,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearProxyHeader() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       proxyHeader_ = getDefaultInstance().getProxyHeader();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1882,8 +1895,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       proxyHeader_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1963,8 +1976,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       requestPath_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1980,8 +1993,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRequestPath() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       requestPath_ = getDefaultInstance().getRequestPath();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2002,8 +2015,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       requestPath_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2083,8 +2096,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       response_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2100,8 +2113,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearResponse() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       response_ = getDefaultInstance().getResponse();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2122,8 +2135,8 @@ public final class HTTPSHealthCheck extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       response_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

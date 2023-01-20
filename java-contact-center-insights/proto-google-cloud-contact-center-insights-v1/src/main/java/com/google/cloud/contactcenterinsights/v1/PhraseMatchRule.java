@@ -68,7 +68,9 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int QUERY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NEGATED_FIELD_NUMBER = 2;
-  private boolean negated_;
+  private boolean negated_ = false;
   /**
    *
    *
@@ -184,7 +186,9 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfigOrBuilder
       getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null
+        ? com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig.getDefaultInstance()
+        : config_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -408,14 +412,12 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       query_ = "";
-
       negated_ = false;
-
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
       return this;
@@ -445,15 +447,24 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.contactcenterinsights.v1.PhraseMatchRule buildPartial() {
       com.google.cloud.contactcenterinsights.v1.PhraseMatchRule result =
           new com.google.cloud.contactcenterinsights.v1.PhraseMatchRule(this);
-      result.query_ = query_;
-      result.negated_ = negated_;
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.PhraseMatchRule result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.negated_ = negated_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -504,6 +515,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getNegated() != false) {
@@ -541,19 +553,19 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 negated_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -572,6 +584,8 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object query_ = "";
     /**
@@ -634,8 +648,8 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -651,8 +665,8 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -673,8 +687,8 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -712,6 +726,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
     public Builder setNegated(boolean value) {
 
       negated_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -728,7 +743,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearNegated() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       negated_ = false;
       onChanged();
       return this;
@@ -753,7 +768,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -793,11 +808,11 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -814,11 +829,11 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -834,19 +849,20 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
     public Builder mergeConfig(
         com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && config_ != null
+            && config_
+                != com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig
+                    .getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -860,14 +876,13 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig config = 3;</code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -882,7 +897,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig.Builder
         getConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }

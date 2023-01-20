@@ -110,7 +110,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.UserInfoOrBuilder getUserInfoOrBuilder() {
-    return getUserInfo();
+    return userInfo_ == null
+        ? com.google.cloud.contentwarehouse.v1.UserInfo.getDefaultInstance()
+        : userInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +317,10 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (userInfoBuilder_ == null) {
-        userInfo_ = null;
-      } else {
-        userInfo_ = null;
+      bitField0_ = 0;
+      userInfo_ = null;
+      if (userInfoBuilder_ != null) {
+        userInfoBuilder_.dispose();
         userInfoBuilder_ = null;
       }
       return this;
@@ -348,13 +350,18 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.contentwarehouse.v1.RequestMetadata buildPartial() {
       com.google.cloud.contentwarehouse.v1.RequestMetadata result =
           new com.google.cloud.contentwarehouse.v1.RequestMetadata(this);
-      if (userInfoBuilder_ == null) {
-        result.userInfo_ = userInfo_;
-      } else {
-        result.userInfo_ = userInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.RequestMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.userInfo_ = userInfoBuilder_ == null ? userInfo_ : userInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -435,7 +442,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getUserInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +462,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.contentwarehouse.v1.UserInfo userInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.contentwarehouse.v1.UserInfo,
@@ -473,7 +482,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * @return Whether the userInfo field is set.
      */
     public boolean hasUserInfo() {
-      return userInfoBuilder_ != null || userInfo_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -510,11 +519,11 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         userInfo_ = value;
-        onChanged();
       } else {
         userInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -530,11 +539,11 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.contentwarehouse.v1.UserInfo.Builder builderForValue) {
       if (userInfoBuilder_ == null) {
         userInfo_ = builderForValue.build();
-        onChanged();
       } else {
         userInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -548,19 +557,18 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeUserInfo(com.google.cloud.contentwarehouse.v1.UserInfo value) {
       if (userInfoBuilder_ == null) {
-        if (userInfo_ != null) {
-          userInfo_ =
-              com.google.cloud.contentwarehouse.v1.UserInfo.newBuilder(userInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && userInfo_ != null
+            && userInfo_ != com.google.cloud.contentwarehouse.v1.UserInfo.getDefaultInstance()) {
+          getUserInfoBuilder().mergeFrom(value);
         } else {
           userInfo_ = value;
         }
-        onChanged();
       } else {
         userInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -573,14 +581,13 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.contentwarehouse.v1.UserInfo user_info = 1;</code>
      */
     public Builder clearUserInfo() {
-      if (userInfoBuilder_ == null) {
-        userInfo_ = null;
-        onChanged();
-      } else {
-        userInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      userInfo_ = null;
+      if (userInfoBuilder_ != null) {
+        userInfoBuilder_.dispose();
         userInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -593,7 +600,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.contentwarehouse.v1.UserInfo user_info = 1;</code>
      */
     public com.google.cloud.contentwarehouse.v1.UserInfo.Builder getUserInfoBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUserInfoFieldBuilder().getBuilder();
     }

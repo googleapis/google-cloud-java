@@ -131,11 +131,16 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsAttachEndpointsRequestOrBuilder
       getGlobalNetworkEndpointGroupsAttachEndpointsRequestResourceOrBuilder() {
-    return getGlobalNetworkEndpointGroupsAttachEndpointsRequestResource();
+    return globalNetworkEndpointGroupsAttachEndpointsRequestResource_ == null
+        ? com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsAttachEndpointsRequest
+            .getDefaultInstance()
+        : globalNetworkEndpointGroupsAttachEndpointsRequestResource_;
   }
 
   public static final int NETWORK_ENDPOINT_GROUP_FIELD_NUMBER = 433907078;
-  private volatile java.lang.Object networkEndpointGroup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkEndpointGroup_ = "";
   /**
    *
    *
@@ -186,7 +191,9 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -239,7 +246,9 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -560,18 +569,15 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ == null) {
-        globalNetworkEndpointGroupsAttachEndpointsRequestResource_ = null;
-      } else {
-        globalNetworkEndpointGroupsAttachEndpointsRequestResource_ = null;
+      bitField0_ = 0;
+      globalNetworkEndpointGroupsAttachEndpointsRequestResource_ = null;
+      if (globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ != null) {
+        globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_.dispose();
         globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ = null;
       }
       networkEndpointGroup_ = "";
-
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -605,24 +611,35 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
       com.google.cloud.compute.v1.AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest result =
           new com.google.cloud.compute.v1.AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest(
               this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ == null) {
-        result.globalNetworkEndpointGroupsAttachEndpointsRequestResource_ =
-            globalNetworkEndpointGroupsAttachEndpointsRequestResource_;
-      } else {
-        result.globalNetworkEndpointGroupsAttachEndpointsRequestResource_ =
-            globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.networkEndpointGroup_ = networkEndpointGroup_;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.globalNetworkEndpointGroupsAttachEndpointsRequestResource_ =
+            globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ == null
+                ? globalNetworkEndpointGroupsAttachEndpointsRequestResource_
+                : globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.networkEndpointGroup_ = networkEndpointGroup_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -683,15 +700,17 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
       }
       if (!other.getNetworkEndpointGroup().isEmpty()) {
         networkEndpointGroup_ = other.networkEndpointGroup_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -726,25 +745,25 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
                     getGlobalNetworkEndpointGroupsAttachEndpointsRequestResourceFieldBuilder()
                         .getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 245532506
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -823710670:
               {
                 networkEndpointGroup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -823710670
             default:
@@ -787,8 +806,7 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
      * @return Whether the globalNetworkEndpointGroupsAttachEndpointsRequestResource field is set.
      */
     public boolean hasGlobalNetworkEndpointGroupsAttachEndpointsRequestResource() {
-      return globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ != null
-          || globalNetworkEndpointGroupsAttachEndpointsRequestResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -832,11 +850,11 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
           throw new NullPointerException();
         }
         globalNetworkEndpointGroupsAttachEndpointsRequestResource_ = value;
-        onChanged();
       } else {
         globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -855,12 +873,12 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
             builderForValue) {
       if (globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ == null) {
         globalNetworkEndpointGroupsAttachEndpointsRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_.setMessage(
             builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -877,20 +895,20 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
     public Builder mergeGlobalNetworkEndpointGroupsAttachEndpointsRequestResource(
         com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsAttachEndpointsRequest value) {
       if (globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ == null) {
-        if (globalNetworkEndpointGroupsAttachEndpointsRequestResource_ != null) {
-          globalNetworkEndpointGroupsAttachEndpointsRequestResource_ =
-              com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsAttachEndpointsRequest
-                  .newBuilder(globalNetworkEndpointGroupsAttachEndpointsRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && globalNetworkEndpointGroupsAttachEndpointsRequestResource_ != null
+            && globalNetworkEndpointGroupsAttachEndpointsRequestResource_
+                != com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsAttachEndpointsRequest
+                    .getDefaultInstance()) {
+          getGlobalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder().mergeFrom(value);
         } else {
           globalNetworkEndpointGroupsAttachEndpointsRequestResource_ = value;
         }
-        onChanged();
       } else {
         globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -905,14 +923,13 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
      * </code>
      */
     public Builder clearGlobalNetworkEndpointGroupsAttachEndpointsRequestResource() {
-      if (globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ == null) {
-        globalNetworkEndpointGroupsAttachEndpointsRequestResource_ = null;
-        onChanged();
-      } else {
-        globalNetworkEndpointGroupsAttachEndpointsRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      globalNetworkEndpointGroupsAttachEndpointsRequestResource_ = null;
+      if (globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ != null) {
+        globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_.dispose();
         globalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -928,7 +945,7 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
      */
     public com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsAttachEndpointsRequest.Builder
         getGlobalNetworkEndpointGroupsAttachEndpointsRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGlobalNetworkEndpointGroupsAttachEndpointsRequestResourceFieldBuilder()
           .getBuilder();
@@ -1052,8 +1069,8 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkEndpointGroup_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1070,8 +1087,8 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearNetworkEndpointGroup() {
-
       networkEndpointGroup_ = getDefaultInstance().getNetworkEndpointGroup();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1093,8 +1110,8 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkEndpointGroup_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1166,8 +1183,8 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1185,8 +1202,8 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1209,8 +1226,8 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1228,7 +1245,7 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1290,8 +1307,8 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1307,8 +1324,8 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1329,8 +1346,8 @@ public final class AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

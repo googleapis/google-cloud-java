@@ -520,6 +520,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       targetNameCase_ = 0;
       targetName_ = null;
       return this;
@@ -549,15 +550,22 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datacatalog.v1beta1.LookupEntryRequest buildPartial() {
       com.google.cloud.datacatalog.v1beta1.LookupEntryRequest result =
           new com.google.cloud.datacatalog.v1beta1.LookupEntryRequest(this);
-      if (targetNameCase_ == 1) {
-        result.targetName_ = targetName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (targetNameCase_ == 3) {
-        result.targetName_ = targetName_;
-      }
-      result.targetNameCase_ = targetNameCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.LookupEntryRequest result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datacatalog.v1beta1.LookupEntryRequest result) {
+      result.targetNameCase_ = targetNameCase_;
+      result.targetName_ = this.targetName_;
     }
 
     @java.lang.Override
@@ -696,6 +704,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

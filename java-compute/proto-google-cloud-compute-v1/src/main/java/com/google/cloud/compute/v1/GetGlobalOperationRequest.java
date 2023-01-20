@@ -69,7 +69,9 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
   }
 
   public static final int OPERATION_FIELD_NUMBER = 52090215;
-  private volatile java.lang.Object operation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operation_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       operation_ = "";
-
       project_ = "";
-
       return this;
     }
 
@@ -408,10 +411,21 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.GetGlobalOperationRequest buildPartial() {
       com.google.cloud.compute.v1.GetGlobalOperationRequest result =
           new com.google.cloud.compute.v1.GetGlobalOperationRequest(this);
-      result.operation_ = operation_;
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetGlobalOperationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operation_ = operation_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getOperation().isEmpty()) {
         operation_ = other.operation_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
             case 416721722:
               {
                 operation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 416721722
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             default:
@@ -522,6 +538,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object operation_ = "";
     /**
@@ -590,8 +608,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       operation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -609,8 +627,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearOperation() {
-
       operation_ = getDefaultInstance().getOperation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -633,8 +651,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,8 +718,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

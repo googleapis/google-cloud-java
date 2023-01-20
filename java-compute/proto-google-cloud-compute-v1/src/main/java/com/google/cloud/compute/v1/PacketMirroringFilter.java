@@ -251,6 +251,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   public static final int I_P_PROTOCOLS_FIELD_NUMBER = 98544854;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList iPProtocols_;
   /**
    *
@@ -312,6 +314,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CIDR_RANGES_FIELD_NUMBER = 487901697;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList cidrRanges_;
   /**
    *
@@ -373,7 +377,9 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DIRECTION_FIELD_NUMBER = 111150975;
-  private volatile java.lang.Object direction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object direction_ = "";
   /**
    *
    *
@@ -672,12 +678,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       iPProtocols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       cidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       direction_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -705,8 +711,16 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.PacketMirroringFilter buildPartial() {
       com.google.cloud.compute.v1.PacketMirroringFilter result =
           new com.google.cloud.compute.v1.PacketMirroringFilter(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.PacketMirroringFilter result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         iPProtocols_ = iPProtocols_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -717,13 +731,16 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.cidrRanges_ = cidrRanges_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PacketMirroringFilter result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.direction_ = direction_;
         to_bitField0_ |= 0x00000001;
       }
-      result.direction_ = direction_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -793,8 +810,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
         onChanged();
       }
       if (other.hasDirection()) {
-        bitField0_ |= 0x00000004;
         direction_ = other.direction_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1277,8 +1294,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       direction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1295,8 +1312,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDirection() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       direction_ = getDefaultInstance().getDirection();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1318,8 +1335,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       direction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

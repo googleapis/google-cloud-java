@@ -68,7 +68,9 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -174,7 +176,9 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.RepricingConfigOrBuilder getRepricingConfigOrBuilder() {
-    return getRepricingConfig();
+    return repricingConfig_ == null
+        ? com.google.cloud.channel.v1.RepricingConfig.getDefaultInstance()
+        : repricingConfig_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -232,7 +236,7 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -460,18 +464,16 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (repricingConfigBuilder_ == null) {
-        repricingConfig_ = null;
-      } else {
-        repricingConfig_ = null;
+      repricingConfig_ = null;
+      if (repricingConfigBuilder_ != null) {
+        repricingConfigBuilder_.dispose();
         repricingConfigBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       return this;
@@ -501,19 +503,25 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
     public com.google.cloud.channel.v1.CustomerRepricingConfig buildPartial() {
       com.google.cloud.channel.v1.CustomerRepricingConfig result =
           new com.google.cloud.channel.v1.CustomerRepricingConfig(this);
-      result.name_ = name_;
-      if (repricingConfigBuilder_ == null) {
-        result.repricingConfig_ = repricingConfig_;
-      } else {
-        result.repricingConfig_ = repricingConfigBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.CustomerRepricingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.repricingConfig_ =
+            repricingConfigBuilder_ == null ? repricingConfig_ : repricingConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -564,6 +572,7 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRepricingConfig()) {
@@ -601,19 +610,19 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRepricingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -632,6 +641,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -700,8 +711,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -719,8 +730,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +754,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -770,7 +781,7 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      * @return Whether the repricingConfig field is set.
      */
     public boolean hasRepricingConfig() {
-      return repricingConfigBuilder_ != null || repricingConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -813,11 +824,11 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         repricingConfig_ = value;
-        onChanged();
       } else {
         repricingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -836,11 +847,11 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
         com.google.cloud.channel.v1.RepricingConfig.Builder builderForValue) {
       if (repricingConfigBuilder_ == null) {
         repricingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         repricingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -857,19 +868,19 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      */
     public Builder mergeRepricingConfig(com.google.cloud.channel.v1.RepricingConfig value) {
       if (repricingConfigBuilder_ == null) {
-        if (repricingConfig_ != null) {
-          repricingConfig_ =
-              com.google.cloud.channel.v1.RepricingConfig.newBuilder(repricingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && repricingConfig_ != null
+            && repricingConfig_
+                != com.google.cloud.channel.v1.RepricingConfig.getDefaultInstance()) {
+          getRepricingConfigBuilder().mergeFrom(value);
         } else {
           repricingConfig_ = value;
         }
-        onChanged();
       } else {
         repricingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -885,14 +896,13 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearRepricingConfig() {
-      if (repricingConfigBuilder_ == null) {
-        repricingConfig_ = null;
-        onChanged();
-      } else {
-        repricingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      repricingConfig_ = null;
+      if (repricingConfigBuilder_ != null) {
+        repricingConfigBuilder_.dispose();
         repricingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -908,7 +918,7 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.channel.v1.RepricingConfig.Builder getRepricingConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRepricingConfigFieldBuilder().getBuilder();
     }
@@ -985,7 +995,7 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1032,11 +1042,11 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1056,11 +1066,11 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1079,17 +1089,18 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1107,14 +1118,13 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1132,7 +1142,7 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

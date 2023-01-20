@@ -797,7 +797,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
 
       public static final int IMAGE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object image_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object image_ = "";
       /**
        *
        *
@@ -846,7 +848,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
 
       public static final int RESULT_FIELD_NUMBER = 2;
-      private int result_;
+      private int result_ = 0;
       /**
        *
        *
@@ -881,12 +883,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
               .ContinuousValidationPodEvent.ImageDetails.AuditResult
           getResult() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                 .ContinuousValidationPodEvent.ImageDetails.AuditResult
             result =
                 com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                    .ContinuousValidationPodEvent.ImageDetails.AuditResult.valueOf(result_);
+                    .ContinuousValidationPodEvent.ImageDetails.AuditResult.forNumber(result_);
         return result == null
             ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                 .ContinuousValidationPodEvent.ImageDetails.AuditResult.UNRECOGNIZED
@@ -894,7 +895,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
 
       public static final int DESCRIPTION_FIELD_NUMBER = 3;
-      private volatile java.lang.Object description_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object description_ = "";
       /**
        *
        *
@@ -1200,12 +1203,10 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           image_ = "";
-
           result_ = 0;
-
           description_ = "";
-
           return this;
         }
 
@@ -1245,11 +1246,27 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
               result =
                   new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                       .ContinuousValidationPodEvent.ImageDetails(this);
-          result.image_ = image_;
-          result.result_ = result_;
-          result.description_ = description_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.image_ = image_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.result_ = result_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.description_ = description_;
+          }
         }
 
         @java.lang.Override
@@ -1312,6 +1329,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                   .ContinuousValidationPodEvent.ImageDetails.getDefaultInstance()) return this;
           if (!other.getImage().isEmpty()) {
             image_ = other.image_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.result_ != 0) {
@@ -1319,6 +1337,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           }
           if (!other.getDescription().isEmpty()) {
             description_ = other.description_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -1350,19 +1369,19 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                 case 10:
                   {
                     image_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 16:
                   {
                     result_ = input.readEnum();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 26:
                   {
                     description_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 default:
@@ -1381,6 +1400,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object image_ = "";
         /**
@@ -1443,8 +1464,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           if (value == null) {
             throw new NullPointerException();
           }
-
           image_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1460,8 +1481,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
          * @return This builder for chaining.
          */
         public Builder clearImage() {
-
           image_ = getDefaultInstance().getImage();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -1482,8 +1503,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           image_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1521,8 +1542,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
          * @return This builder for chaining.
          */
         public Builder setResultValue(int value) {
-
           result_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1543,12 +1564,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                 .ContinuousValidationPodEvent.ImageDetails.AuditResult
             getResult() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                   .ContinuousValidationPodEvent.ImageDetails.AuditResult
               result =
                   com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                      .ContinuousValidationPodEvent.ImageDetails.AuditResult.valueOf(result_);
+                      .ContinuousValidationPodEvent.ImageDetails.AuditResult.forNumber(result_);
           return result == null
               ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                   .ContinuousValidationPodEvent.ImageDetails.AuditResult.UNRECOGNIZED
@@ -1575,7 +1595,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000002;
           result_ = value.getNumber();
           onChanged();
           return this;
@@ -1594,7 +1614,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
          * @return This builder for chaining.
          */
         public Builder clearResult() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           result_ = 0;
           onChanged();
           return this;
@@ -1661,8 +1681,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           if (value == null) {
             throw new NullPointerException();
           }
-
           description_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1678,8 +1698,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
          * @return This builder for chaining.
          */
         public Builder clearDescription() {
-
           description_ = getDefaultInstance().getDescription();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -1700,8 +1720,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           description_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1779,7 +1799,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     public static final int POD_NAMESPACE_FIELD_NUMBER = 7;
-    private volatile java.lang.Object podNamespace_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object podNamespace_ = "";
     /**
      *
      *
@@ -1828,7 +1850,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     public static final int POD_FIELD_NUMBER = 1;
-    private volatile java.lang.Object pod_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pod_ = "";
     /**
      *
      *
@@ -1919,7 +1943,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getDeployTimeOrBuilder() {
-      return getDeployTime();
+      return deployTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deployTime_;
     }
 
     public static final int END_TIME_FIELD_NUMBER = 3;
@@ -1965,11 +1989,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-      return getEndTime();
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
 
     public static final int VERDICT_FIELD_NUMBER = 4;
-    private int verdict_;
+    private int verdict_ = 0;
     /**
      *
      *
@@ -2004,12 +2028,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
             .ContinuousValidationPodEvent.PolicyConformanceVerdict
         getVerdict() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
               .ContinuousValidationPodEvent.PolicyConformanceVerdict
           result =
               com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .ContinuousValidationPodEvent.PolicyConformanceVerdict.valueOf(verdict_);
+                  .ContinuousValidationPodEvent.PolicyConformanceVerdict.forNumber(verdict_);
       return result == null
           ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
               .ContinuousValidationPodEvent.PolicyConformanceVerdict.UNRECOGNIZED
@@ -2017,6 +2040,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     public static final int IMAGES_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                 .ContinuousValidationPodEvent.ImageDetails>
@@ -2405,31 +2430,27 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         podNamespace_ = "";
-
         pod_ = "";
-
-        if (deployTimeBuilder_ == null) {
-          deployTime_ = null;
-        } else {
-          deployTime_ = null;
+        deployTime_ = null;
+        if (deployTimeBuilder_ != null) {
+          deployTimeBuilder_.dispose();
           deployTimeBuilder_ = null;
         }
-        if (endTimeBuilder_ == null) {
-          endTime_ = null;
-        } else {
-          endTime_ = null;
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
           endTimeBuilder_ = null;
         }
         verdict_ = 0;
-
         if (imagesBuilder_ == null) {
           images_ = java.util.Collections.emptyList();
         } else {
           images_ = null;
           imagesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -2469,31 +2490,50 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             result =
                 new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                     .ContinuousValidationPodEvent(this);
-        int from_bitField0_ = bitField0_;
-        result.podNamespace_ = podNamespace_;
-        result.pod_ = pod_;
-        if (deployTimeBuilder_ == null) {
-          result.deployTime_ = deployTime_;
-        } else {
-          result.deployTime_ = deployTimeBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (endTimeBuilder_ == null) {
-          result.endTime_ = endTime_;
-        } else {
-          result.endTime_ = endTimeBuilder_.build();
-        }
-        result.verdict_ = verdict_;
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent
+              result) {
         if (imagesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             images_ = java.util.Collections.unmodifiableList(images_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.images_ = images_;
         } else {
           result.images_ = imagesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.podNamespace_ = podNamespace_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pod_ = pod_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.deployTime_ =
+              deployTimeBuilder_ == null ? deployTime_ : deployTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.verdict_ = verdict_;
+        }
       }
 
       @java.lang.Override
@@ -2556,10 +2596,12 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                 .ContinuousValidationPodEvent.getDefaultInstance()) return this;
         if (!other.getPodNamespace().isEmpty()) {
           podNamespace_ = other.podNamespace_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPod().isEmpty()) {
           pod_ = other.pod_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasDeployTime()) {
@@ -2575,7 +2617,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           if (!other.images_.isEmpty()) {
             if (images_.isEmpty()) {
               images_ = other.images_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureImagesIsMutable();
               images_.addAll(other.images_);
@@ -2588,7 +2630,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
               imagesBuilder_.dispose();
               imagesBuilder_ = null;
               images_ = other.images_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000020);
               imagesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getImagesFieldBuilder()
@@ -2627,25 +2669,25 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
               case 10:
                 {
                   pod_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getDeployTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
               case 32:
                 {
                   verdict_ = input.readEnum();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 32
               case 42:
@@ -2668,7 +2710,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
               case 58:
                 {
                   podNamespace_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 58
               default:
@@ -2751,8 +2793,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         podNamespace_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2768,8 +2810,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearPodNamespace() {
-
         podNamespace_ = getDefaultInstance().getPodNamespace();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2790,8 +2832,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         podNamespace_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2857,8 +2899,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         pod_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2874,8 +2916,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearPod() {
-
         pod_ = getDefaultInstance().getPod();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2896,8 +2938,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         pod_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2920,7 +2962,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return Whether the deployTime field is set.
        */
       public boolean hasDeployTime() {
-        return deployTimeBuilder_ != null || deployTime_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -2957,11 +2999,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             throw new NullPointerException();
           }
           deployTime_ = value;
-          onChanged();
         } else {
           deployTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2976,11 +3018,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       public Builder setDeployTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (deployTimeBuilder_ == null) {
           deployTime_ = builderForValue.build();
-          onChanged();
         } else {
           deployTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2994,19 +3036,18 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        */
       public Builder mergeDeployTime(com.google.protobuf.Timestamp value) {
         if (deployTimeBuilder_ == null) {
-          if (deployTime_ != null) {
-            deployTime_ =
-                com.google.protobuf.Timestamp.newBuilder(deployTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && deployTime_ != null
+              && deployTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getDeployTimeBuilder().mergeFrom(value);
           } else {
             deployTime_ = value;
           }
-          onChanged();
         } else {
           deployTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3019,14 +3060,13 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
        */
       public Builder clearDeployTime() {
-        if (deployTimeBuilder_ == null) {
-          deployTime_ = null;
-          onChanged();
-        } else {
-          deployTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        deployTime_ = null;
+        if (deployTimeBuilder_ != null) {
+          deployTimeBuilder_.dispose();
           deployTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3039,7 +3079,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getDeployTimeBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getDeployTimeFieldBuilder().getBuilder();
       }
@@ -3105,7 +3145,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return Whether the endTime field is set.
        */
       public boolean hasEndTime() {
-        return endTimeBuilder_ != null || endTime_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -3140,11 +3180,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             throw new NullPointerException();
           }
           endTime_ = value;
-          onChanged();
         } else {
           endTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3159,11 +3199,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (endTimeBuilder_ == null) {
           endTime_ = builderForValue.build();
-          onChanged();
         } else {
           endTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3177,17 +3217,18 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        */
       public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
         if (endTimeBuilder_ == null) {
-          if (endTime_ != null) {
-            endTime_ =
-                com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && endTime_ != null
+              && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getEndTimeBuilder().mergeFrom(value);
           } else {
             endTime_ = value;
           }
-          onChanged();
         } else {
           endTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3200,14 +3241,13 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * <code>.google.protobuf.Timestamp end_time = 3;</code>
        */
       public Builder clearEndTime() {
-        if (endTimeBuilder_ == null) {
-          endTime_ = null;
-          onChanged();
-        } else {
-          endTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
           endTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3220,7 +3260,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * <code>.google.protobuf.Timestamp end_time = 3;</code>
        */
       public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
@@ -3299,8 +3339,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder setVerdictValue(int value) {
-
         verdict_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3321,12 +3361,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
               .ContinuousValidationPodEvent.PolicyConformanceVerdict
           getVerdict() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                 .ContinuousValidationPodEvent.PolicyConformanceVerdict
             result =
                 com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                    .ContinuousValidationPodEvent.PolicyConformanceVerdict.valueOf(verdict_);
+                    .ContinuousValidationPodEvent.PolicyConformanceVerdict.forNumber(verdict_);
         return result == null
             ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                 .ContinuousValidationPodEvent.PolicyConformanceVerdict.UNRECOGNIZED
@@ -3353,7 +3392,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000010;
         verdict_ = value.getNumber();
         onChanged();
         return this;
@@ -3372,7 +3411,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearVerdict() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         verdict_ = 0;
         onChanged();
         return this;
@@ -3384,12 +3423,12 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           images_ = java.util.Collections.emptyList();
 
       private void ensureImagesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           images_ =
               new java.util.ArrayList<
                   com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                       .ContinuousValidationPodEvent.ImageDetails>(images_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000020;
         }
       }
 
@@ -3658,7 +3697,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       public Builder clearImages() {
         if (imagesBuilder_ == null) {
           images_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           imagesBuilder_.clear();
@@ -3818,7 +3857,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                       .ContinuousValidationPodEvent.ImageDetails.Builder,
                   com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                       .ContinuousValidationPodEvent.ImageDetailsOrBuilder>(
-                  images_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  images_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
           images_ = null;
         }
         return imagesBuilder_;
@@ -3979,7 +4018,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -4258,8 +4299,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         description_ = "";
-
         return this;
       }
 
@@ -4299,9 +4340,21 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             result =
                 new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                     .UnsupportedPolicyEvent(this);
-        result.description_ = description_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .UnsupportedPolicyEvent
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.description_ = description_;
+        }
       }
 
       @java.lang.Override
@@ -4364,6 +4417,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                 .UnsupportedPolicyEvent.getDefaultInstance()) return this;
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4395,7 +4449,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
               case 10:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -4414,6 +4468,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object description_ = "";
       /**
@@ -4476,8 +4532,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4493,8 +4549,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4515,8 +4571,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5018,6 +5074,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (podEventBuilder_ != null) {
         podEventBuilder_.clear();
       }
@@ -5056,23 +5113,29 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent buildPartial() {
       com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent result =
           new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent(this);
-      if (eventTypeCase_ == 1) {
-        if (podEventBuilder_ == null) {
-          result.eventType_ = eventType_;
-        } else {
-          result.eventType_ = podEventBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (eventTypeCase_ == 2) {
-        if (unsupportedPolicyEventBuilder_ == null) {
-          result.eventType_ = eventType_;
-        } else {
-          result.eventType_ = unsupportedPolicyEventBuilder_.build();
-        }
-      }
-      result.eventTypeCase_ = eventTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent result) {
+      result.eventTypeCase_ = eventTypeCase_;
+      result.eventType_ = this.eventType_;
+      if (eventTypeCase_ == 1 && podEventBuilder_ != null) {
+        result.eventType_ = podEventBuilder_.build();
+      }
+      if (eventTypeCase_ == 2 && unsupportedPolicyEventBuilder_ != null) {
+        result.eventType_ = unsupportedPolicyEventBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5209,6 +5272,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
@@ -5473,7 +5538,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
       eventTypeCase_ = 1;
       onChanged();
-      ;
       return podEventBuilder_;
     }
 
@@ -5740,7 +5804,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
       eventTypeCase_ = 2;
       onChanged();
-      ;
       return unsupportedPolicyEventBuilder_;
     }
 

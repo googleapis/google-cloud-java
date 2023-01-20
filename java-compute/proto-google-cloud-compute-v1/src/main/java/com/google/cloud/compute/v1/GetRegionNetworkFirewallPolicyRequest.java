@@ -72,7 +72,9 @@ public final class GetRegionNetworkFirewallPolicyRequest
   }
 
   public static final int FIREWALL_POLICY_FIELD_NUMBER = 498173265;
-  private volatile java.lang.Object firewallPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewallPolicy_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class GetRegionNetworkFirewallPolicyRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -170,7 +174,9 @@ public final class GetRegionNetworkFirewallPolicyRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -436,12 +442,10 @@ public final class GetRegionNetworkFirewallPolicyRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firewallPolicy_ = "";
-
       project_ = "";
-
       region_ = "";
-
       return this;
     }
 
@@ -470,11 +474,25 @@ public final class GetRegionNetworkFirewallPolicyRequest
     public com.google.cloud.compute.v1.GetRegionNetworkFirewallPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.GetRegionNetworkFirewallPolicyRequest result =
           new com.google.cloud.compute.v1.GetRegionNetworkFirewallPolicyRequest(this);
-      result.firewallPolicy_ = firewallPolicy_;
-      result.project_ = project_;
-      result.region_ = region_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.GetRegionNetworkFirewallPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firewallPolicy_ = firewallPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
     }
 
     @java.lang.Override
@@ -527,14 +545,17 @@ public final class GetRegionNetworkFirewallPolicyRequest
         return this;
       if (!other.getFirewallPolicy().isEmpty()) {
         firewallPolicy_ = other.firewallPolicy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -566,19 +587,19 @@ public final class GetRegionNetworkFirewallPolicyRequest
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -309581174:
               {
                 firewallPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -309581174
             default:
@@ -597,6 +618,8 @@ public final class GetRegionNetworkFirewallPolicyRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
     /**
@@ -659,8 +682,8 @@ public final class GetRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,8 +699,8 @@ public final class GetRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearFirewallPolicy() {
-
       firewallPolicy_ = getDefaultInstance().getFirewallPolicy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -698,8 +721,8 @@ public final class GetRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -765,8 +788,8 @@ public final class GetRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -782,8 +805,8 @@ public final class GetRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -804,8 +827,8 @@ public final class GetRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -871,8 +894,8 @@ public final class GetRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -888,8 +911,8 @@ public final class GetRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -910,8 +933,8 @@ public final class GetRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

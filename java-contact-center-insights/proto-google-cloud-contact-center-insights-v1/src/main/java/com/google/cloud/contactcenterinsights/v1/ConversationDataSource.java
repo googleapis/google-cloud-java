@@ -443,6 +443,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
@@ -479,23 +480,29 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
     public com.google.cloud.contactcenterinsights.v1.ConversationDataSource buildPartial() {
       com.google.cloud.contactcenterinsights.v1.ConversationDataSource result =
           new com.google.cloud.contactcenterinsights.v1.ConversationDataSource(this);
-      if (sourceCase_ == 1) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 3) {
-        if (dialogflowSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = dialogflowSourceBuilder_.build();
-        }
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.ConversationDataSource result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.contactcenterinsights.v1.ConversationDataSource result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 3 && dialogflowSourceBuilder_ != null) {
+        result.source_ = dialogflowSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -631,6 +638,8 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.contactcenterinsights.v1.GcsSource,
@@ -839,7 +848,6 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -1055,7 +1063,6 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return dialogflowSourceBuilder_;
     }
 

@@ -477,7 +477,6 @@ public interface WorkerPoolOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 13;</code>
    */
-
   /* nullable */
   java.lang.String getMetadataOrDefault(
       java.lang.String key,

@@ -73,6 +73,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
   }
 
   public static final int FIREWALL_POLICYS_FIELD_NUMBER = 410985794;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.compute.v1
               .RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFirewallPolicy>
@@ -165,6 +167,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
   }
 
   public static final int FIREWALLS_FIELD_NUMBER = 272245619;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Firewall> firewalls_;
   /**
    *
@@ -473,6 +477,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (firewallPolicysBuilder_ == null) {
         firewallPolicys_ = java.util.Collections.emptyList();
       } else {
@@ -521,7 +526,17 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
           result =
               new com.google.cloud.compute.v1
                   .RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
+            result) {
       if (firewallPolicysBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           firewallPolicys_ = java.util.Collections.unmodifiableList(firewallPolicys_);
@@ -540,8 +555,12 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
       } else {
         result.firewalls_ = firewallsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
+            result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

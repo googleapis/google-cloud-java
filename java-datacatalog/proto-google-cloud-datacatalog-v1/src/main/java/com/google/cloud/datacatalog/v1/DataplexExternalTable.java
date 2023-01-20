@@ -77,7 +77,7 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SYSTEM_FIELD_NUMBER = 1;
-  private int system_;
+  private int system_ = 0;
   /**
    *
    *
@@ -106,14 +106,15 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.IntegratedSystem getSystem() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1.IntegratedSystem result =
-        com.google.cloud.datacatalog.v1.IntegratedSystem.valueOf(system_);
+        com.google.cloud.datacatalog.v1.IntegratedSystem.forNumber(system_);
     return result == null ? com.google.cloud.datacatalog.v1.IntegratedSystem.UNRECOGNIZED : result;
   }
 
   public static final int FULLY_QUALIFIED_NAME_FIELD_NUMBER = 28;
-  private volatile java.lang.Object fullyQualifiedName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fullyQualifiedName_ = "";
   /**
    *
    *
@@ -162,7 +163,9 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
   }
 
   public static final int GOOGLE_CLOUD_RESOURCE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object googleCloudResource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object googleCloudResource_ = "";
   /**
    *
    *
@@ -211,7 +214,9 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DATA_CATALOG_ENTRY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object dataCatalogEntry_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataCatalogEntry_ = "";
   /**
    *
    *
@@ -494,14 +499,11 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       system_ = 0;
-
       fullyQualifiedName_ = "";
-
       googleCloudResource_ = "";
-
       dataCatalogEntry_ = "";
-
       return this;
     }
 
@@ -529,12 +531,27 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
     public com.google.cloud.datacatalog.v1.DataplexExternalTable buildPartial() {
       com.google.cloud.datacatalog.v1.DataplexExternalTable result =
           new com.google.cloud.datacatalog.v1.DataplexExternalTable(this);
-      result.system_ = system_;
-      result.fullyQualifiedName_ = fullyQualifiedName_;
-      result.googleCloudResource_ = googleCloudResource_;
-      result.dataCatalogEntry_ = dataCatalogEntry_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.DataplexExternalTable result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.system_ = system_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fullyQualifiedName_ = fullyQualifiedName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.googleCloudResource_ = googleCloudResource_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dataCatalogEntry_ = dataCatalogEntry_;
+      }
     }
 
     @java.lang.Override
@@ -588,14 +605,17 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       }
       if (!other.getFullyQualifiedName().isEmpty()) {
         fullyQualifiedName_ = other.fullyQualifiedName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getGoogleCloudResource().isEmpty()) {
         googleCloudResource_ = other.googleCloudResource_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDataCatalogEntry().isEmpty()) {
         dataCatalogEntry_ = other.dataCatalogEntry_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -627,25 +647,25 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
             case 8:
               {
                 system_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 26:
               {
                 googleCloudResource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 dataCatalogEntry_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 226:
               {
                 fullyQualifiedName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 226
             default:
@@ -664,6 +684,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int system_ = 0;
     /**
@@ -694,8 +716,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setSystemValue(int value) {
-
       system_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -712,9 +734,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.IntegratedSystem getSystem() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1.IntegratedSystem result =
-          com.google.cloud.datacatalog.v1.IntegratedSystem.valueOf(system_);
+          com.google.cloud.datacatalog.v1.IntegratedSystem.forNumber(system_);
       return result == null
           ? com.google.cloud.datacatalog.v1.IntegratedSystem.UNRECOGNIZED
           : result;
@@ -735,7 +756,7 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       system_ = value.getNumber();
       onChanged();
       return this;
@@ -752,7 +773,7 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearSystem() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       system_ = 0;
       onChanged();
       return this;
@@ -819,8 +840,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       fullyQualifiedName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -836,8 +857,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearFullyQualifiedName() {
-
       fullyQualifiedName_ = getDefaultInstance().getFullyQualifiedName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -858,8 +879,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fullyQualifiedName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -925,8 +946,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       googleCloudResource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -942,8 +963,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearGoogleCloudResource() {
-
       googleCloudResource_ = getDefaultInstance().getGoogleCloudResource();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -964,8 +985,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       googleCloudResource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1031,8 +1052,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataCatalogEntry_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1048,8 +1069,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDataCatalogEntry() {
-
       dataCatalogEntry_ = getDefaultInstance().getDataCatalogEntry();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1070,8 +1091,8 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataCatalogEntry_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

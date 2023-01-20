@@ -92,6 +92,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -150,8 +151,10 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -180,6 +183,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
   }
 
   public static final int HEALTH_STATUS_FIELD_NUMBER = 380545845;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HealthStatus> healthStatus_;
   /**
    *
@@ -249,7 +254,9 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -563,6 +570,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableAnnotations().clear();
       if (healthStatusBuilder_ == null) {
         healthStatus_ = java.util.Collections.emptyList();
@@ -572,7 +580,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -600,10 +607,16 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.BackendServiceGroupHealth buildPartial() {
       com.google.cloud.compute.v1.BackendServiceGroupHealth result =
           new com.google.cloud.compute.v1.BackendServiceGroupHealth(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.BackendServiceGroupHealth result) {
       if (healthStatusBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           healthStatus_ = java.util.Collections.unmodifiableList(healthStatus_);
@@ -613,13 +626,20 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       } else {
         result.healthStatus_ = healthStatusBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BackendServiceGroupHealth result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000001;
       }
-      result.kind_ = kind_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -669,6 +689,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       if (other == com.google.cloud.compute.v1.BackendServiceGroupHealth.getDefaultInstance())
         return this;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000001;
       if (healthStatusBuilder_ == null) {
         if (!other.healthStatus_.isEmpty()) {
           if (healthStatus_.isEmpty()) {
@@ -697,8 +718,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         }
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000004;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -742,6 +763,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 896260386
             case -1250600534:
@@ -789,8 +811,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -798,6 +818,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return annotations_;
     }
 
@@ -849,8 +871,10 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -879,6 +903,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -901,6 +926,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -919,8 +945,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -934,6 +960,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -1363,8 +1390,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1380,8 +1407,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1402,8 +1429,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

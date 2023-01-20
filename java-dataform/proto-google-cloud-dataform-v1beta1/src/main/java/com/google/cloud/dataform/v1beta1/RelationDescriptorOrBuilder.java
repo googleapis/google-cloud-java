@@ -150,7 +150,6 @@ public interface RelationDescriptorOrBuilder
    *
    * <code>map&lt;string, string&gt; bigquery_labels = 3;</code>
    */
-
   /* nullable */
   java.lang.String getBigqueryLabelsOrDefault(
       java.lang.String key,

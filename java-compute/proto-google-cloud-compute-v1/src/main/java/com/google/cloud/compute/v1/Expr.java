@@ -71,7 +71,9 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPRESSION_FIELD_NUMBER = 352031384;
-  private volatile java.lang.Object expression_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object expression_ = "";
   /**
    *
    *
@@ -199,7 +203,9 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_FIELD_NUMBER = 290430901;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -263,7 +269,9 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TITLE_FIELD_NUMBER = 110371416;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -568,14 +576,11 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       expression_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       location_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       title_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -602,27 +607,33 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Expr buildPartial() {
       com.google.cloud.compute.v1.Expr result = new com.google.cloud.compute.v1.Expr(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Expr result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000001;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.expression_ = expression_;
         to_bitField0_ |= 0x00000002;
       }
-      result.expression_ = expression_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.location_ = location_;
         to_bitField0_ |= 0x00000004;
       }
-      result.location_ = location_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.title_ = title_;
         to_bitField0_ |= 0x00000008;
       }
-      result.title_ = title_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -671,23 +682,23 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Expr other) {
       if (other == com.google.cloud.compute.v1.Expr.getDefaultInstance()) return this;
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000001;
         description_ = other.description_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExpression()) {
-        bitField0_ |= 0x00000002;
         expression_ = other.expression_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasLocation()) {
-        bitField0_ |= 0x00000004;
         location_ = other.location_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasTitle()) {
-        bitField0_ |= 0x00000008;
         title_ = other.title_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -834,8 +845,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -851,8 +862,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -873,8 +884,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -954,8 +965,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       expression_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -971,8 +982,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExpression() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       expression_ = getDefaultInstance().getExpression();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -993,8 +1004,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       expression_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1074,8 +1085,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       location_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1091,8 +1102,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1113,8 +1124,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       location_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1194,8 +1205,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       title_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1211,8 +1222,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1233,8 +1244,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       title_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

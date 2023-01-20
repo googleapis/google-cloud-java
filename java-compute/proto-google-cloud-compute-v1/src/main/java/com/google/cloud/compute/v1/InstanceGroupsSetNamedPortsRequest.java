@@ -70,7 +70,9 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
 
   private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
-  private volatile java.lang.Object fingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fingerprint_ = "";
   /**
    *
    *
@@ -134,6 +136,8 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
   }
 
   public static final int NAMED_PORTS_FIELD_NUMBER = 427598732;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
   /**
    *
@@ -416,8 +420,8 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fingerprint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (namedPortsBuilder_ == null) {
         namedPorts_ = java.util.Collections.emptyList();
       } else {
@@ -453,12 +457,16 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
     public com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest result =
           new com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.fingerprint_ = fingerprint_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest result) {
       if (namedPortsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           namedPorts_ = java.util.Collections.unmodifiableList(namedPorts_);
@@ -468,9 +476,17 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       } else {
         result.namedPorts_ = namedPortsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fingerprint_ = fingerprint_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -521,8 +537,8 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
           == com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest.getDefaultInstance())
         return this;
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000001;
         fingerprint_ = other.fingerprint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (namedPortsBuilder_ == null) {
@@ -691,8 +707,8 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,8 +724,8 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       fingerprint_ = getDefaultInstance().getFingerprint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -730,8 +746,8 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

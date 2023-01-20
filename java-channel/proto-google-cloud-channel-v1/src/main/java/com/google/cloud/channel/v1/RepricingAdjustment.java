@@ -373,6 +373,7 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (percentageAdjustmentBuilder_ != null) {
         percentageAdjustmentBuilder_.clear();
       }
@@ -405,16 +406,24 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
     public com.google.cloud.channel.v1.RepricingAdjustment buildPartial() {
       com.google.cloud.channel.v1.RepricingAdjustment result =
           new com.google.cloud.channel.v1.RepricingAdjustment(this);
-      if (adjustmentCase_ == 2) {
-        if (percentageAdjustmentBuilder_ == null) {
-          result.adjustment_ = adjustment_;
-        } else {
-          result.adjustment_ = percentageAdjustmentBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.adjustmentCase_ = adjustmentCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.RepricingAdjustment result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.channel.v1.RepricingAdjustment result) {
+      result.adjustmentCase_ = adjustmentCase_;
+      result.adjustment_ = this.adjustment_;
+      if (adjustmentCase_ == 2 && percentageAdjustmentBuilder_ != null) {
+        result.adjustment_ = percentageAdjustmentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -537,6 +546,8 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.channel.v1.PercentageAdjustment,
@@ -748,7 +759,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
       }
       adjustmentCase_ = 2;
       onChanged();
-      ;
       return percentageAdjustmentBuilder_;
     }
 

@@ -295,7 +295,9 @@ public final class InterconnectDiagnosticsLinkOpticalPower
 
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -362,7 +364,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
   }
 
   public static final int VALUE_FIELD_NUMBER = 111972721;
-  private float value_;
+  private float value_ = 0F;
   /**
    *
    *
@@ -613,10 +615,9 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       value_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -646,19 +647,26 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower buildPartial() {
       com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower result =
           new com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x00000001;
       }
-      result.state_ = state_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.value_ = value_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -711,8 +719,8 @@ public final class InterconnectDiagnosticsLinkOpticalPower
           == com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower
               .getDefaultInstance()) return this;
       if (other.hasState()) {
-        bitField0_ |= 0x00000001;
         state_ = other.state_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasValue()) {
@@ -854,8 +862,8 @@ public final class InterconnectDiagnosticsLinkOpticalPower
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -872,8 +880,8 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -895,8 +903,8 @@ public final class InterconnectDiagnosticsLinkOpticalPower
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -945,8 +953,9 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * @return This builder for chaining.
      */
     public Builder setValue(float value) {
-      bitField0_ |= 0x00000002;
+
       value_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

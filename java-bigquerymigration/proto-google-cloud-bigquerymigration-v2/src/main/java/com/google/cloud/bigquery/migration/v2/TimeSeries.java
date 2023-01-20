@@ -71,7 +71,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METRIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object metric_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metric_ = "";
   /**
    *
    *
@@ -122,7 +124,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_TYPE_FIELD_NUMBER = 2;
-  private int valueType_;
+  private int valueType_ = 0;
   /**
    *
    *
@@ -155,14 +157,13 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.MetricDescriptor.ValueType getValueType() {
-    @SuppressWarnings("deprecation")
     com.google.api.MetricDescriptor.ValueType result =
-        com.google.api.MetricDescriptor.ValueType.valueOf(valueType_);
+        com.google.api.MetricDescriptor.ValueType.forNumber(valueType_);
     return result == null ? com.google.api.MetricDescriptor.ValueType.UNRECOGNIZED : result;
   }
 
   public static final int METRIC_KIND_FIELD_NUMBER = 3;
-  private int metricKind_;
+  private int metricKind_ = 0;
   /**
    *
    *
@@ -203,13 +204,14 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
-    @SuppressWarnings("deprecation")
     com.google.api.MetricDescriptor.MetricKind result =
-        com.google.api.MetricDescriptor.MetricKind.valueOf(metricKind_);
+        com.google.api.MetricDescriptor.MetricKind.forNumber(metricKind_);
     return result == null ? com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED : result;
   }
 
   public static final int POINTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2.Point> points_;
   /**
    *
@@ -548,19 +550,17 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       metric_ = "";
-
       valueType_ = 0;
-
       metricKind_ = 0;
-
       if (pointsBuilder_ == null) {
         points_ = java.util.Collections.emptyList();
       } else {
         points_ = null;
         pointsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -588,21 +588,38 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.TimeSeries buildPartial() {
       com.google.cloud.bigquery.migration.v2.TimeSeries result =
           new com.google.cloud.bigquery.migration.v2.TimeSeries(this);
-      int from_bitField0_ = bitField0_;
-      result.metric_ = metric_;
-      result.valueType_ = valueType_;
-      result.metricKind_ = metricKind_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.migration.v2.TimeSeries result) {
       if (pointsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           points_ = java.util.Collections.unmodifiableList(points_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.points_ = points_;
       } else {
         result.points_ = pointsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2.TimeSeries result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metric_ = metric_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.valueType_ = valueType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metricKind_ = metricKind_;
+      }
     }
 
     @java.lang.Override
@@ -653,6 +670,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getMetric().isEmpty()) {
         metric_ = other.metric_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.valueType_ != 0) {
@@ -665,7 +683,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         if (!other.points_.isEmpty()) {
           if (points_.isEmpty()) {
             points_ = other.points_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensurePointsIsMutable();
             points_.addAll(other.points_);
@@ -678,7 +696,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
             pointsBuilder_.dispose();
             pointsBuilder_ = null;
             points_ = other.points_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             pointsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPointsFieldBuilder()
@@ -717,19 +735,19 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 metric_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 valueType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 metricKind_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -828,8 +846,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       metric_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -846,8 +864,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMetric() {
-
       metric_ = getDefaultInstance().getMetric();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -869,8 +887,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       metric_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -908,8 +926,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setValueTypeValue(int value) {
-
       valueType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -928,9 +946,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.MetricDescriptor.ValueType getValueType() {
-      @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.ValueType result =
-          com.google.api.MetricDescriptor.ValueType.valueOf(valueType_);
+          com.google.api.MetricDescriptor.ValueType.forNumber(valueType_);
       return result == null ? com.google.api.MetricDescriptor.ValueType.UNRECOGNIZED : result;
     }
     /**
@@ -951,7 +968,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       valueType_ = value.getNumber();
       onChanged();
       return this;
@@ -970,7 +987,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValueType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       valueType_ = 0;
       onChanged();
       return this;
@@ -1017,8 +1034,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMetricKindValue(int value) {
-
       metricKind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1041,9 +1058,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
-      @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.MetricKind result =
-          com.google.api.MetricDescriptor.MetricKind.valueOf(metricKind_);
+          com.google.api.MetricDescriptor.MetricKind.forNumber(metricKind_);
       return result == null ? com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED : result;
     }
     /**
@@ -1068,7 +1084,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       metricKind_ = value.getNumber();
       onChanged();
       return this;
@@ -1091,7 +1107,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMetricKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       metricKind_ = 0;
       onChanged();
       return this;
@@ -1101,9 +1117,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePointsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         points_ = new java.util.ArrayList<com.google.cloud.bigquery.migration.v2.Point>(points_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1406,7 +1422,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPoints() {
       if (pointsBuilder_ == null) {
         points_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         pointsBuilder_.clear();
@@ -1584,7 +1600,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.migration.v2.Point,
                 com.google.cloud.bigquery.migration.v2.Point.Builder,
                 com.google.cloud.bigquery.migration.v2.PointOrBuilder>(
-                points_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                points_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         points_ = null;
       }
       return pointsBuilder_;

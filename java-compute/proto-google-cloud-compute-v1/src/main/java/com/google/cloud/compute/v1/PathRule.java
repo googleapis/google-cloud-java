@@ -70,6 +70,8 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int PATHS_FIELD_NUMBER = 106438894;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList paths_;
   /**
    *
@@ -181,7 +183,9 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 373540533;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -548,22 +552,20 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (routeActionBuilder_ == null) {
-        routeAction_ = null;
-      } else {
-        routeActionBuilder_.clear();
+      routeAction_ = null;
+      if (routeActionBuilder_ != null) {
+        routeActionBuilder_.dispose();
+        routeActionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       service_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (urlRedirectBuilder_ == null) {
-        urlRedirect_ = null;
-      } else {
-        urlRedirectBuilder_.clear();
+      urlRedirect_ = null;
+      if (urlRedirectBuilder_ != null) {
+        urlRedirectBuilder_.dispose();
+        urlRedirectBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -590,36 +592,40 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.PathRule buildPartial() {
       com.google.cloud.compute.v1.PathRule result = new com.google.cloud.compute.v1.PathRule(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.PathRule result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         paths_ = paths_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.paths_ = paths_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PathRule result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (routeActionBuilder_ == null) {
-          result.routeAction_ = routeAction_;
-        } else {
-          result.routeAction_ = routeActionBuilder_.build();
-        }
+        result.routeAction_ =
+            routeActionBuilder_ == null ? routeAction_ : routeActionBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.service_ = service_;
         to_bitField0_ |= 0x00000002;
       }
-      result.service_ = service_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (urlRedirectBuilder_ == null) {
-          result.urlRedirect_ = urlRedirect_;
-        } else {
-          result.urlRedirect_ = urlRedirectBuilder_.build();
-        }
+        result.urlRedirect_ =
+            urlRedirectBuilder_ == null ? urlRedirect_ : urlRedirectBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -681,8 +687,8 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         mergeRouteAction(other.getRouteAction());
       }
       if (other.hasService()) {
-        bitField0_ |= 0x00000004;
         service_ = other.service_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasUrlRedirect()) {
@@ -981,11 +987,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         routeAction_ = value;
-        onChanged();
       } else {
         routeActionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1001,11 +1007,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HttpRouteAction.Builder builderForValue) {
       if (routeActionBuilder_ == null) {
         routeAction_ = builderForValue.build();
-        onChanged();
       } else {
         routeActionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1022,18 +1028,15 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000002) != 0)
             && routeAction_ != null
             && routeAction_ != com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()) {
-          routeAction_ =
-              com.google.cloud.compute.v1.HttpRouteAction.newBuilder(routeAction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getRouteActionBuilder().mergeFrom(value);
         } else {
           routeAction_ = value;
         }
-        onChanged();
       } else {
         routeActionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1046,13 +1049,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public Builder clearRouteAction() {
-      if (routeActionBuilder_ == null) {
-        routeAction_ = null;
-        onChanged();
-      } else {
-        routeActionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      routeAction_ = null;
+      if (routeActionBuilder_ != null) {
+        routeActionBuilder_.dispose();
+        routeActionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1188,8 +1191,8 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       service_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1205,8 +1208,8 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1227,8 +1230,8 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       service_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1288,11 +1291,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         urlRedirect_ = value;
-        onChanged();
       } else {
         urlRedirectBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1308,11 +1311,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HttpRedirectAction.Builder builderForValue) {
       if (urlRedirectBuilder_ == null) {
         urlRedirect_ = builderForValue.build();
-        onChanged();
       } else {
         urlRedirectBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1330,18 +1333,15 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
             && urlRedirect_ != null
             && urlRedirect_
                 != com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()) {
-          urlRedirect_ =
-              com.google.cloud.compute.v1.HttpRedirectAction.newBuilder(urlRedirect_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getUrlRedirectBuilder().mergeFrom(value);
         } else {
           urlRedirect_ = value;
         }
-        onChanged();
       } else {
         urlRedirectBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1354,13 +1354,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public Builder clearUrlRedirect() {
-      if (urlRedirectBuilder_ == null) {
-        urlRedirect_ = null;
-        onChanged();
-      } else {
-        urlRedirectBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      urlRedirect_ = null;
+      if (urlRedirectBuilder_ != null) {
+        urlRedirectBuilder_.dispose();
+        urlRedirectBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

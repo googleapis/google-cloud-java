@@ -231,7 +231,9 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
 
   private int bitField0_;
   public static final int PREDICTIVE_METHOD_FIELD_NUMBER = 390220737;
-  private volatile java.lang.Object predictiveMethod_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object predictiveMethod_ = "";
   /**
    *
    *
@@ -298,7 +300,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
   }
 
   public static final int UTILIZATION_TARGET_FIELD_NUMBER = 215905870;
-  private double utilizationTarget_;
+  private double utilizationTarget_ = 0D;
   /**
    *
    *
@@ -553,10 +555,9 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       predictiveMethod_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       utilizationTarget_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -584,19 +585,25 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization buildPartial() {
       com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization result =
           new com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.predictiveMethod_ = predictiveMethod_;
         to_bitField0_ |= 0x00000001;
       }
-      result.predictiveMethod_ = predictiveMethod_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.utilizationTarget_ = utilizationTarget_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -646,8 +653,8 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
       if (other == com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.getDefaultInstance())
         return this;
       if (other.hasPredictiveMethod()) {
-        bitField0_ |= 0x00000001;
         predictiveMethod_ = other.predictiveMethod_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUtilizationTarget()) {
@@ -789,8 +796,8 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       predictiveMethod_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -807,8 +814,8 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearPredictiveMethod() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       predictiveMethod_ = getDefaultInstance().getPredictiveMethod();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -830,8 +837,8 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       predictiveMethod_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -880,8 +887,9 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder setUtilizationTarget(double value) {
-      bitField0_ |= 0x00000002;
+
       utilizationTarget_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

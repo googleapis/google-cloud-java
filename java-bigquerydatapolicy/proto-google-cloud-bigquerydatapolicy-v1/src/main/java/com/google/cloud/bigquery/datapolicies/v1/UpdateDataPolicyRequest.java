@@ -122,7 +122,9 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.bigquery.datapolicies.v1.DataPolicyOrBuilder getDataPolicyOrBuilder() {
-    return getDataPolicy();
+    return dataPolicy_ == null
+        ? com.google.cloud.bigquery.datapolicies.v1.DataPolicy.getDefaultInstance()
+        : dataPolicy_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -180,7 +182,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -402,16 +404,15 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dataPolicyBuilder_ == null) {
-        dataPolicy_ = null;
-      } else {
-        dataPolicy_ = null;
+      bitField0_ = 0;
+      dataPolicy_ = null;
+      if (dataPolicyBuilder_ != null) {
+        dataPolicyBuilder_.dispose();
         dataPolicyBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -442,18 +443,22 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
     public com.google.cloud.bigquery.datapolicies.v1.UpdateDataPolicyRequest buildPartial() {
       com.google.cloud.bigquery.datapolicies.v1.UpdateDataPolicyRequest result =
           new com.google.cloud.bigquery.datapolicies.v1.UpdateDataPolicyRequest(this);
-      if (dataPolicyBuilder_ == null) {
-        result.dataPolicy_ = dataPolicy_;
-      } else {
-        result.dataPolicy_ = dataPolicyBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.datapolicies.v1.UpdateDataPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataPolicy_ = dataPolicyBuilder_ == null ? dataPolicy_ : dataPolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -539,13 +544,13 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getDataPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -564,6 +569,8 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.bigquery.datapolicies.v1.DataPolicy dataPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -587,7 +594,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * @return Whether the dataPolicy field is set.
      */
     public boolean hasDataPolicy() {
-      return dataPolicyBuilder_ != null || dataPolicy_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -632,11 +639,11 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         dataPolicy_ = value;
-        onChanged();
       } else {
         dataPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -656,11 +663,11 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
         com.google.cloud.bigquery.datapolicies.v1.DataPolicy.Builder builderForValue) {
       if (dataPolicyBuilder_ == null) {
         dataPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         dataPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -678,19 +685,19 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      */
     public Builder mergeDataPolicy(com.google.cloud.bigquery.datapolicies.v1.DataPolicy value) {
       if (dataPolicyBuilder_ == null) {
-        if (dataPolicy_ != null) {
-          dataPolicy_ =
-              com.google.cloud.bigquery.datapolicies.v1.DataPolicy.newBuilder(dataPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && dataPolicy_ != null
+            && dataPolicy_
+                != com.google.cloud.bigquery.datapolicies.v1.DataPolicy.getDefaultInstance()) {
+          getDataPolicyBuilder().mergeFrom(value);
         } else {
           dataPolicy_ = value;
         }
-        onChanged();
       } else {
         dataPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -707,14 +714,13 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearDataPolicy() {
-      if (dataPolicyBuilder_ == null) {
-        dataPolicy_ = null;
-        onChanged();
-      } else {
-        dataPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dataPolicy_ = null;
+      if (dataPolicyBuilder_ != null) {
+        dataPolicyBuilder_.dispose();
         dataPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -731,7 +737,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.bigquery.datapolicies.v1.DataPolicy.Builder getDataPolicyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDataPolicyFieldBuilder().getBuilder();
     }
@@ -809,7 +815,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -854,11 +860,11 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -877,11 +883,11 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -899,17 +905,18 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -926,14 +933,13 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -950,7 +956,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

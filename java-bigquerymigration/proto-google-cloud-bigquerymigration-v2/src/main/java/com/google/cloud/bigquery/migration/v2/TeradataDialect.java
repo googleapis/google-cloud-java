@@ -227,7 +227,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MODE_FIELD_NUMBER = 1;
-  private int mode_;
+  private int mode_ = 0;
   /**
    *
    *
@@ -256,9 +256,8 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode getMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode result =
-        com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode.valueOf(mode_);
+        com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode.forNumber(mode_);
     return result == null
         ? com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode.UNRECOGNIZED
         : result;
@@ -466,8 +465,8 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       mode_ = 0;
-
       return this;
     }
 
@@ -495,9 +494,18 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.bigquery.migration.v2.TeradataDialect buildPartial() {
       com.google.cloud.bigquery.migration.v2.TeradataDialect result =
           new com.google.cloud.bigquery.migration.v2.TeradataDialect(this);
-      result.mode_ = mode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2.TeradataDialect result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mode_ = mode_;
+      }
     }
 
     @java.lang.Override
@@ -578,7 +586,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 mode_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -597,6 +605,8 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int mode_ = 0;
     /**
@@ -627,8 +637,8 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
-
       mode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -645,9 +655,8 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode getMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode result =
-          com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode.valueOf(mode_);
+          com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode.forNumber(mode_);
       return result == null
           ? com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode.UNRECOGNIZED
           : result;
@@ -668,7 +677,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       mode_ = value.getNumber();
       onChanged();
       return this;
@@ -685,7 +694,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       mode_ = 0;
       onChanged();
       return this;

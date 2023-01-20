@@ -75,7 +75,9 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
 
   private int bitField0_;
   public static final int FIREWALL_POLICY_FIELD_NUMBER = 498173265;
-  private volatile java.lang.Object firewallPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewallPolicy_ = "";
   /**
    *
    *
@@ -176,11 +178,15 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallPolicyAssociationOrBuilder
       getFirewallPolicyAssociationResourceOrBuilder() {
-    return getFirewallPolicyAssociationResource();
+    return firewallPolicyAssociationResource_ == null
+        ? com.google.cloud.compute.v1.FirewallPolicyAssociation.getDefaultInstance()
+        : firewallPolicyAssociationResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -233,7 +239,9 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -286,7 +294,7 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
   }
 
   public static final int REPLACE_EXISTING_ASSOCIATION_FIELD_NUMBER = 209541240;
-  private boolean replaceExistingAssociation_;
+  private boolean replaceExistingAssociation_ = false;
   /**
    *
    *
@@ -319,7 +327,9 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -656,22 +666,17 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firewallPolicy_ = "";
-
-      if (firewallPolicyAssociationResourceBuilder_ == null) {
-        firewallPolicyAssociationResource_ = null;
-      } else {
-        firewallPolicyAssociationResource_ = null;
+      firewallPolicyAssociationResource_ = null;
+      if (firewallPolicyAssociationResourceBuilder_ != null) {
+        firewallPolicyAssociationResourceBuilder_.dispose();
         firewallPolicyAssociationResourceBuilder_ = null;
       }
       project_ = "";
-
       region_ = "";
-
       replaceExistingAssociation_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -703,28 +708,41 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
         buildPartial() {
       com.google.cloud.compute.v1.AddAssociationRegionNetworkFirewallPolicyRequest result =
           new com.google.cloud.compute.v1.AddAssociationRegionNetworkFirewallPolicyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.firewallPolicy_ = firewallPolicy_;
-      if (firewallPolicyAssociationResourceBuilder_ == null) {
-        result.firewallPolicyAssociationResource_ = firewallPolicyAssociationResource_;
-      } else {
-        result.firewallPolicyAssociationResource_ =
-            firewallPolicyAssociationResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      result.region_ = region_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.AddAssociationRegionNetworkFirewallPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firewallPolicy_ = firewallPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.firewallPolicyAssociationResource_ =
+            firewallPolicyAssociationResourceBuilder_ == null
+                ? firewallPolicyAssociationResource_
+                : firewallPolicyAssociationResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.replaceExistingAssociation_ = replaceExistingAssociation_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.requestId_ = requestId_;
         to_bitField0_ |= 0x00000002;
       }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -779,6 +797,7 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
               .getDefaultInstance()) return this;
       if (!other.getFirewallPolicy().isEmpty()) {
         firewallPolicy_ = other.firewallPolicy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFirewallPolicyAssociationResource()) {
@@ -786,18 +805,20 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasReplaceExistingAssociation()) {
         setReplaceExistingAssociation(other.getReplaceExistingAssociation());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -829,25 +850,25 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 296879706
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1111570338
             case 1676329920:
               {
                 replaceExistingAssociation_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1676329920
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case 2076369362:
@@ -855,13 +876,13 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
                 input.readMessage(
                     getFirewallPolicyAssociationResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 2076369362
             case -309581174:
               {
                 firewallPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -309581174
             default:
@@ -944,8 +965,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -961,8 +982,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearFirewallPolicy() {
-
       firewallPolicy_ = getDefaultInstance().getFirewallPolicy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -983,8 +1004,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1010,8 +1031,7 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      * @return Whether the firewallPolicyAssociationResource field is set.
      */
     public boolean hasFirewallPolicyAssociationResource() {
-      return firewallPolicyAssociationResourceBuilder_ != null
-          || firewallPolicyAssociationResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1054,11 +1074,11 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
           throw new NullPointerException();
         }
         firewallPolicyAssociationResource_ = value;
-        onChanged();
       } else {
         firewallPolicyAssociationResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1076,11 +1096,11 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
         com.google.cloud.compute.v1.FirewallPolicyAssociation.Builder builderForValue) {
       if (firewallPolicyAssociationResourceBuilder_ == null) {
         firewallPolicyAssociationResource_ = builderForValue.build();
-        onChanged();
       } else {
         firewallPolicyAssociationResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1097,20 +1117,19 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
     public Builder mergeFirewallPolicyAssociationResource(
         com.google.cloud.compute.v1.FirewallPolicyAssociation value) {
       if (firewallPolicyAssociationResourceBuilder_ == null) {
-        if (firewallPolicyAssociationResource_ != null) {
-          firewallPolicyAssociationResource_ =
-              com.google.cloud.compute.v1.FirewallPolicyAssociation.newBuilder(
-                      firewallPolicyAssociationResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && firewallPolicyAssociationResource_ != null
+            && firewallPolicyAssociationResource_
+                != com.google.cloud.compute.v1.FirewallPolicyAssociation.getDefaultInstance()) {
+          getFirewallPolicyAssociationResourceBuilder().mergeFrom(value);
         } else {
           firewallPolicyAssociationResource_ = value;
         }
-        onChanged();
       } else {
         firewallPolicyAssociationResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1125,14 +1144,13 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      * </code>
      */
     public Builder clearFirewallPolicyAssociationResource() {
-      if (firewallPolicyAssociationResourceBuilder_ == null) {
-        firewallPolicyAssociationResource_ = null;
-        onChanged();
-      } else {
-        firewallPolicyAssociationResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      firewallPolicyAssociationResource_ = null;
+      if (firewallPolicyAssociationResourceBuilder_ != null) {
+        firewallPolicyAssociationResourceBuilder_.dispose();
         firewallPolicyAssociationResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1148,7 +1166,7 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      */
     public com.google.cloud.compute.v1.FirewallPolicyAssociation.Builder
         getFirewallPolicyAssociationResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFirewallPolicyAssociationResourceFieldBuilder().getBuilder();
     }
@@ -1268,8 +1286,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1287,8 +1305,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1311,8 +1329,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1384,8 +1402,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1403,8 +1421,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1427,8 +1445,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1447,7 +1465,7 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      */
     @java.lang.Override
     public boolean hasReplaceExistingAssociation() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1477,8 +1495,9 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder setReplaceExistingAssociation(boolean value) {
-      bitField0_ |= 0x00000001;
+
       replaceExistingAssociation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1494,7 +1513,7 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearReplaceExistingAssociation() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       replaceExistingAssociation_ = false;
       onChanged();
       return this;
@@ -1513,7 +1532,7 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1575,8 +1594,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1592,8 +1611,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1614,8 +1633,8 @@ public final class AddAssociationRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

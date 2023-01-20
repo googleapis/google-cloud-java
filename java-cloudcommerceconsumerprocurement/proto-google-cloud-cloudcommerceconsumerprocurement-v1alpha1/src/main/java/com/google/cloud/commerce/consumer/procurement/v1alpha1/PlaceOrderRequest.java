@@ -72,7 +72,9 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -178,6 +182,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LINE_ITEM_INFO_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo>
       lineItemInfo_;
   /**
@@ -262,7 +268,9 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -549,19 +557,17 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       displayName_ = "";
-
       if (lineItemInfoBuilder_ == null) {
         lineItemInfo_ = java.util.Collections.emptyList();
       } else {
         lineItemInfo_ = null;
         lineItemInfoBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       requestId_ = "";
-
       return this;
     }
 
@@ -593,21 +599,39 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         buildPartial() {
       com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest result =
           new com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      result.displayName_ = displayName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest result) {
       if (lineItemInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           lineItemInfo_ = java.util.Collections.unmodifiableList(lineItemInfo_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.lineItemInfo_ = lineItemInfo_;
       } else {
         result.lineItemInfo_ = lineItemInfoBuilder_.build();
       }
-      result.requestId_ = requestId_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -662,17 +686,19 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (lineItemInfoBuilder_ == null) {
         if (!other.lineItemInfo_.isEmpty()) {
           if (lineItemInfo_.isEmpty()) {
             lineItemInfo_ = other.lineItemInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLineItemInfoIsMutable();
             lineItemInfo_.addAll(other.lineItemInfo_);
@@ -685,7 +711,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
             lineItemInfoBuilder_.dispose();
             lineItemInfoBuilder_ = null;
             lineItemInfo_ = other.lineItemInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             lineItemInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLineItemInfoFieldBuilder()
@@ -697,6 +723,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -728,19 +755,19 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 50:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             case 58:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 58
             case 82:
@@ -847,8 +874,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -867,8 +894,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -892,8 +919,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -962,8 +989,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -980,8 +1007,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1003,8 +1030,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1013,12 +1040,12 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         lineItemInfo_ = java.util.Collections.emptyList();
 
     private void ensureLineItemInfoIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         lineItemInfo_ =
             new java.util.ArrayList<
                 com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo>(
                 lineItemInfo_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1268,7 +1295,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
     public Builder clearLineItemInfo() {
       if (lineItemInfoBuilder_ == null) {
         lineItemInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         lineItemInfoBuilder_.clear();
@@ -1415,7 +1442,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo,
                 com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo.Builder,
                 com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfoOrBuilder>(
-                lineItemInfo_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                lineItemInfo_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         lineItemInfo_ = null;
       }
       return lineItemInfoBuilder_;
@@ -1494,8 +1521,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1515,8 +1542,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1541,8 +1568,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

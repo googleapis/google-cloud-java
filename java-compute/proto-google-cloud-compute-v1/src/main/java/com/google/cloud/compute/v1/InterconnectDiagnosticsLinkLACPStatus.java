@@ -231,7 +231,9 @@ public final class InterconnectDiagnosticsLinkLACPStatus
 
   private int bitField0_;
   public static final int GOOGLE_SYSTEM_ID_FIELD_NUMBER = 91210405;
-  private volatile java.lang.Object googleSystemId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object googleSystemId_ = "";
   /**
    *
    *
@@ -295,7 +297,9 @@ public final class InterconnectDiagnosticsLinkLACPStatus
   }
 
   public static final int NEIGHBOR_SYSTEM_ID_FIELD_NUMBER = 343821342;
-  private volatile java.lang.Object neighborSystemId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object neighborSystemId_ = "";
   /**
    *
    *
@@ -359,7 +363,9 @@ public final class InterconnectDiagnosticsLinkLACPStatus
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -658,12 +664,10 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       googleSystemId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       neighborSystemId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -692,23 +696,30 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus buildPartial() {
       com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus result =
           new com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.googleSystemId_ = googleSystemId_;
         to_bitField0_ |= 0x00000001;
       }
-      result.googleSystemId_ = googleSystemId_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.neighborSystemId_ = neighborSystemId_;
         to_bitField0_ |= 0x00000002;
       }
-      result.neighborSystemId_ = neighborSystemId_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x00000004;
       }
-      result.state_ = state_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -760,18 +771,18 @@ public final class InterconnectDiagnosticsLinkLACPStatus
           == com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.getDefaultInstance())
         return this;
       if (other.hasGoogleSystemId()) {
-        bitField0_ |= 0x00000001;
         googleSystemId_ = other.googleSystemId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasNeighborSystemId()) {
-        bitField0_ |= 0x00000002;
         neighborSystemId_ = other.neighborSystemId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasState()) {
-        bitField0_ |= 0x00000004;
         state_ = other.state_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -912,8 +923,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       googleSystemId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -929,8 +940,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * @return This builder for chaining.
      */
     public Builder clearGoogleSystemId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       googleSystemId_ = getDefaultInstance().getGoogleSystemId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -951,8 +962,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       googleSystemId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1032,8 +1043,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       neighborSystemId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1049,8 +1060,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * @return This builder for chaining.
      */
     public Builder clearNeighborSystemId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       neighborSystemId_ = getDefaultInstance().getNeighborSystemId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1071,8 +1082,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       neighborSystemId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1156,8 +1167,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1174,8 +1185,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1197,8 +1208,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -66,7 +66,7 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
   }
 
   public static final int ACTIVE_JOBS_EXIST_FIELD_NUMBER = 1;
-  private boolean activeJobsExist_;
+  private boolean activeJobsExist_ = false;
   /**
    *
    *
@@ -280,8 +280,8 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       activeJobsExist_ = false;
-
       return this;
     }
 
@@ -309,9 +309,18 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
     public com.google.dataflow.v1beta3.CheckActiveJobsResponse buildPartial() {
       com.google.dataflow.v1beta3.CheckActiveJobsResponse result =
           new com.google.dataflow.v1beta3.CheckActiveJobsResponse(this);
-      result.activeJobsExist_ = activeJobsExist_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.CheckActiveJobsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.activeJobsExist_ = activeJobsExist_;
+      }
     }
 
     @java.lang.Override
@@ -392,7 +401,7 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
             case 8:
               {
                 activeJobsExist_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -411,6 +420,8 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean activeJobsExist_;
     /**
@@ -443,6 +454,7 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
     public Builder setActiveJobsExist(boolean value) {
 
       activeJobsExist_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -458,7 +470,7 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearActiveJobsExist() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       activeJobsExist_ = false;
       onChanged();
       return this;

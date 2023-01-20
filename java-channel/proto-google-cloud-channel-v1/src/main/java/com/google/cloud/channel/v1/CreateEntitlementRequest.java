@@ -70,7 +70,9 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -177,11 +179,15 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.EntitlementOrBuilder getEntitlementOrBuilder() {
-    return getEntitlement();
+    return entitlement_ == null
+        ? com.google.cloud.channel.v1.Entitlement.getDefaultInstance()
+        : entitlement_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -468,16 +474,14 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (entitlementBuilder_ == null) {
-        entitlement_ = null;
-      } else {
-        entitlement_ = null;
+      entitlement_ = null;
+      if (entitlementBuilder_ != null) {
+        entitlementBuilder_.dispose();
         entitlementBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -505,15 +509,25 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
     public com.google.cloud.channel.v1.CreateEntitlementRequest buildPartial() {
       com.google.cloud.channel.v1.CreateEntitlementRequest result =
           new com.google.cloud.channel.v1.CreateEntitlementRequest(this);
-      result.parent_ = parent_;
-      if (entitlementBuilder_ == null) {
-        result.entitlement_ = entitlement_;
-      } else {
-        result.entitlement_ = entitlementBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.CreateEntitlementRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entitlement_ =
+            entitlementBuilder_ == null ? entitlement_ : entitlementBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -564,6 +578,7 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEntitlement()) {
@@ -571,6 +586,7 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -602,19 +618,19 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEntitlementFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 42:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             default:
@@ -633,6 +649,8 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -707,8 +725,8 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -728,8 +746,8 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -754,8 +772,8 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -780,7 +798,7 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
      * @return Whether the entitlement field is set.
      */
     public boolean hasEntitlement() {
-      return entitlementBuilder_ != null || entitlement_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -821,11 +839,11 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         entitlement_ = value;
-        onChanged();
       } else {
         entitlementBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -842,11 +860,11 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
     public Builder setEntitlement(com.google.cloud.channel.v1.Entitlement.Builder builderForValue) {
       if (entitlementBuilder_ == null) {
         entitlement_ = builderForValue.build();
-        onChanged();
       } else {
         entitlementBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -862,19 +880,18 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
      */
     public Builder mergeEntitlement(com.google.cloud.channel.v1.Entitlement value) {
       if (entitlementBuilder_ == null) {
-        if (entitlement_ != null) {
-          entitlement_ =
-              com.google.cloud.channel.v1.Entitlement.newBuilder(entitlement_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && entitlement_ != null
+            && entitlement_ != com.google.cloud.channel.v1.Entitlement.getDefaultInstance()) {
+          getEntitlementBuilder().mergeFrom(value);
         } else {
           entitlement_ = value;
         }
-        onChanged();
       } else {
         entitlementBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -889,14 +906,13 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearEntitlement() {
-      if (entitlementBuilder_ == null) {
-        entitlement_ = null;
-        onChanged();
-      } else {
-        entitlement_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      entitlement_ = null;
+      if (entitlementBuilder_ != null) {
+        entitlementBuilder_.dispose();
         entitlementBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -911,7 +927,7 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.channel.v1.Entitlement.Builder getEntitlementBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEntitlementFieldBuilder().getBuilder();
     }
@@ -1051,8 +1067,8 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1077,8 +1093,8 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1108,8 +1124,8 @@ public final class CreateEntitlementRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

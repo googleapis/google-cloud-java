@@ -66,7 +66,7 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int HIGH_FIELD_NUMBER = 3202466;
-  private long high_;
+  private long high_ = 0L;
   /**
    * <code>optional uint64 high = 3202466;</code>
    *
@@ -87,7 +87,7 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOW_FIELD_NUMBER = 107348;
-  private long low_;
+  private long low_ = 0L;
   /**
    * <code>optional uint64 low = 107348;</code>
    *
@@ -320,10 +320,9 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       high_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       low_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -350,6 +349,14 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Uint128 buildPartial() {
       com.google.cloud.compute.v1.Uint128 result = new com.google.cloud.compute.v1.Uint128(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Uint128 result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -360,9 +367,7 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
         result.low_ = low_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -499,8 +504,9 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setHigh(long value) {
-      bitField0_ |= 0x00000001;
+
       high_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -542,8 +548,9 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLow(long value) {
-      bitField0_ |= 0x00000002;
+
       low_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

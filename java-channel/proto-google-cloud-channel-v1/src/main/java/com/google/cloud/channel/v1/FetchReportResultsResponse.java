@@ -118,10 +118,14 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ReportResultsMetadataOrBuilder getReportMetadataOrBuilder() {
-    return getReportMetadata();
+    return reportMetadata_ == null
+        ? com.google.cloud.channel.v1.ReportResultsMetadata.getDefaultInstance()
+        : reportMetadata_;
   }
 
   public static final int ROWS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.Row> rows_;
   /**
    *
@@ -195,7 +199,9 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -472,10 +478,10 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (reportMetadataBuilder_ == null) {
-        reportMetadata_ = null;
-      } else {
-        reportMetadata_ = null;
+      bitField0_ = 0;
+      reportMetadata_ = null;
+      if (reportMetadataBuilder_ != null) {
+        reportMetadataBuilder_.dispose();
         reportMetadataBuilder_ = null;
       }
       if (rowsBuilder_ == null) {
@@ -484,9 +490,8 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         rows_ = null;
         rowsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -514,24 +519,36 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
     public com.google.cloud.channel.v1.FetchReportResultsResponse buildPartial() {
       com.google.cloud.channel.v1.FetchReportResultsResponse result =
           new com.google.cloud.channel.v1.FetchReportResultsResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (reportMetadataBuilder_ == null) {
-        result.reportMetadata_ = reportMetadata_;
-      } else {
-        result.reportMetadata_ = reportMetadataBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.channel.v1.FetchReportResultsResponse result) {
       if (rowsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           rows_ = java.util.Collections.unmodifiableList(rows_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.rows_ = rows_;
       } else {
         result.rows_ = rowsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.FetchReportResultsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.reportMetadata_ =
+            reportMetadataBuilder_ == null ? reportMetadata_ : reportMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -587,7 +604,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         if (!other.rows_.isEmpty()) {
           if (rows_.isEmpty()) {
             rows_ = other.rows_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureRowsIsMutable();
             rows_.addAll(other.rows_);
@@ -600,7 +617,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
             rowsBuilder_.dispose();
             rowsBuilder_ = null;
             rows_ = other.rows_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             rowsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRowsFieldBuilder()
@@ -612,6 +629,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -643,7 +661,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getReportMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -661,7 +679,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
             case 26:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -702,7 +720,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
      * @return Whether the reportMetadata field is set.
      */
     public boolean hasReportMetadata() {
-      return reportMetadataBuilder_ != null || reportMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -741,11 +759,11 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         reportMetadata_ = value;
-        onChanged();
       } else {
         reportMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -762,11 +780,11 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         com.google.cloud.channel.v1.ReportResultsMetadata.Builder builderForValue) {
       if (reportMetadataBuilder_ == null) {
         reportMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         reportMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -781,19 +799,19 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
      */
     public Builder mergeReportMetadata(com.google.cloud.channel.v1.ReportResultsMetadata value) {
       if (reportMetadataBuilder_ == null) {
-        if (reportMetadata_ != null) {
-          reportMetadata_ =
-              com.google.cloud.channel.v1.ReportResultsMetadata.newBuilder(reportMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && reportMetadata_ != null
+            && reportMetadata_
+                != com.google.cloud.channel.v1.ReportResultsMetadata.getDefaultInstance()) {
+          getReportMetadataBuilder().mergeFrom(value);
         } else {
           reportMetadata_ = value;
         }
-        onChanged();
       } else {
         reportMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -807,14 +825,13 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
      * <code>.google.cloud.channel.v1.ReportResultsMetadata report_metadata = 1;</code>
      */
     public Builder clearReportMetadata() {
-      if (reportMetadataBuilder_ == null) {
-        reportMetadata_ = null;
-        onChanged();
-      } else {
-        reportMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      reportMetadata_ = null;
+      if (reportMetadataBuilder_ != null) {
+        reportMetadataBuilder_.dispose();
         reportMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -828,7 +845,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
      * <code>.google.cloud.channel.v1.ReportResultsMetadata report_metadata = 1;</code>
      */
     public com.google.cloud.channel.v1.ReportResultsMetadata.Builder getReportMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getReportMetadataFieldBuilder().getBuilder();
     }
@@ -882,9 +899,9 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         java.util.Collections.emptyList();
 
     private void ensureRowsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         rows_ = new java.util.ArrayList<com.google.cloud.channel.v1.Row>(rows_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1108,7 +1125,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
     public Builder clearRows() {
       if (rowsBuilder_ == null) {
         rows_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         rowsBuilder_.clear();
@@ -1235,7 +1252,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
                 com.google.cloud.channel.v1.Row,
                 com.google.cloud.channel.v1.Row.Builder,
                 com.google.cloud.channel.v1.RowOrBuilder>(
-                rows_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                rows_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         rows_ = null;
       }
       return rowsBuilder_;
@@ -1308,8 +1325,8 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1327,8 +1344,8 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1351,8 +1368,8 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

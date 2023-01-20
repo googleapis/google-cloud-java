@@ -70,7 +70,9 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TITLE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object content_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object content_ = "";
   /**
    *
    *
@@ -168,7 +172,7 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 3;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -197,9 +201,8 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.MediaType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.MediaType result =
-        com.google.cloud.channel.v1.MediaType.valueOf(type_);
+        com.google.cloud.channel.v1.MediaType.forNumber(type_);
     return result == null ? com.google.cloud.channel.v1.MediaType.UNRECOGNIZED : result;
   }
 
@@ -416,12 +419,10 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       title_ = "";
-
       content_ = "";
-
       type_ = 0;
-
       return this;
     }
 
@@ -448,11 +449,24 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.channel.v1.Media buildPartial() {
       com.google.cloud.channel.v1.Media result = new com.google.cloud.channel.v1.Media(this);
-      result.title_ = title_;
-      result.content_ = content_;
-      result.type_ = type_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.Media result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.content_ = content_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -502,10 +516,12 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.channel.v1.Media.getDefaultInstance()) return this;
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -540,19 +556,19 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 content_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -571,6 +587,8 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object title_ = "";
     /**
@@ -633,8 +651,8 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -650,8 +668,8 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -672,8 +690,8 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       content_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -756,8 +774,8 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-
       content_ = getDefaultInstance().getContent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -778,8 +796,8 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       content_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -813,8 +831,8 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -831,9 +849,8 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.MediaType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.MediaType result =
-          com.google.cloud.channel.v1.MediaType.valueOf(type_);
+          com.google.cloud.channel.v1.MediaType.forNumber(type_);
       return result == null ? com.google.cloud.channel.v1.MediaType.UNRECOGNIZED : result;
     }
     /**
@@ -852,7 +869,7 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -869,7 +886,7 @@ public final class Media extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       type_ = 0;
       onChanged();
       return this;

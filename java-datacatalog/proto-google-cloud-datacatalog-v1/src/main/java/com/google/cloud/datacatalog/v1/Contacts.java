@@ -175,7 +175,9 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DESIGNATION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object designation_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object designation_ = "";
     /**
      *
      *
@@ -224,7 +226,9 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int EMAIL_FIELD_NUMBER = 2;
-    private volatile java.lang.Object email_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object email_ = "";
     /**
      *
      *
@@ -482,10 +486,9 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         designation_ = "";
-
         email_ = "";
-
         return this;
       }
 
@@ -513,10 +516,21 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.datacatalog.v1.Contacts.Person buildPartial() {
         com.google.cloud.datacatalog.v1.Contacts.Person result =
             new com.google.cloud.datacatalog.v1.Contacts.Person(this);
-        result.designation_ = designation_;
-        result.email_ = email_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.datacatalog.v1.Contacts.Person result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.designation_ = designation_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.email_ = email_;
+        }
       }
 
       @java.lang.Override
@@ -569,10 +583,12 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getDesignation().isEmpty()) {
           designation_ = other.designation_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getEmail().isEmpty()) {
           email_ = other.email_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -604,13 +620,13 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   designation_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   email_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -629,6 +645,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object designation_ = "";
       /**
@@ -691,8 +709,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         designation_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -708,8 +726,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDesignation() {
-
         designation_ = getDefaultInstance().getDesignation();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -730,8 +748,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         designation_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -800,8 +818,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         email_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -818,8 +836,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEmail() {
-
         email_ = getDefaultInstance().getEmail();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -841,8 +859,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         email_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -912,6 +930,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PEOPLE_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.Contacts.Person> people_;
   /**
    *
@@ -1178,6 +1198,7 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (peopleBuilder_ == null) {
         people_ = java.util.Collections.emptyList();
       } else {
@@ -1212,7 +1233,15 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.Contacts buildPartial() {
       com.google.cloud.datacatalog.v1.Contacts result =
           new com.google.cloud.datacatalog.v1.Contacts(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datacatalog.v1.Contacts result) {
       if (peopleBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           people_ = java.util.Collections.unmodifiableList(people_);
@@ -1222,8 +1251,10 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.people_ = peopleBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.Contacts result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

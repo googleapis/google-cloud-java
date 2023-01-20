@@ -68,6 +68,8 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SOURCE_NAT_ACTIVE_IPS_FIELD_NUMBER = 210378229;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList sourceNatActiveIps_;
   /**
    *
@@ -129,6 +131,8 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SOURCE_NAT_DRAIN_IPS_FIELD_NUMBER = 340812451;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList sourceNatDrainIps_;
   /**
    *
@@ -410,6 +414,7 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceNatActiveIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       sourceNatDrainIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -441,7 +446,16 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.RouterNatRuleAction buildPartial() {
       com.google.cloud.compute.v1.RouterNatRuleAction result =
           new com.google.cloud.compute.v1.RouterNatRuleAction(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.RouterNatRuleAction result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         sourceNatActiveIps_ = sourceNatActiveIps_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -452,8 +466,10 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.sourceNatDrainIps_ = sourceNatDrainIps_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterNatRuleAction result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

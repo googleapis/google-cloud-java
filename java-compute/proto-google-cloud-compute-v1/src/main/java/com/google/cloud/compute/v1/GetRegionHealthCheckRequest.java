@@ -70,7 +70,9 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
   }
 
   public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
-  private volatile java.lang.Object healthCheck_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object healthCheck_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -432,12 +438,10 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       healthCheck_ = "";
-
       project_ = "";
-
       region_ = "";
-
       return this;
     }
 
@@ -465,11 +469,24 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.GetRegionHealthCheckRequest buildPartial() {
       com.google.cloud.compute.v1.GetRegionHealthCheckRequest result =
           new com.google.cloud.compute.v1.GetRegionHealthCheckRequest(this);
-      result.healthCheck_ = healthCheck_;
-      result.project_ = project_;
-      result.region_ = region_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetRegionHealthCheckRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.healthCheck_ = healthCheck_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
     }
 
     @java.lang.Override
@@ -520,14 +537,17 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getHealthCheck().isEmpty()) {
         healthCheck_ = other.healthCheck_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -559,19 +579,19 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1823954134:
               {
                 healthCheck_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1823954134
             default:
@@ -590,6 +610,8 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object healthCheck_ = "";
     /**
@@ -652,8 +674,8 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       healthCheck_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,8 +691,8 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearHealthCheck() {
-
       healthCheck_ = getDefaultInstance().getHealthCheck();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -691,8 +713,8 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       healthCheck_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -758,8 +780,8 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -775,8 +797,8 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -797,8 +819,8 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -864,8 +886,8 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -881,8 +903,8 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -903,8 +925,8 @@ public final class GetRegionHealthCheckRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

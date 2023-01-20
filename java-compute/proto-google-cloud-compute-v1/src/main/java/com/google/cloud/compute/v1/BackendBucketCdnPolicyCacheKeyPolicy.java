@@ -71,6 +71,8 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
   }
 
   public static final int INCLUDE_HTTP_HEADERS_FIELD_NUMBER = 2489606;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList includeHttpHeaders_;
   /**
    *
@@ -132,6 +134,8 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
   }
 
   public static final int QUERY_STRING_WHITELIST_FIELD_NUMBER = 52456496;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList queryStringWhitelist_;
   /**
    *
@@ -415,6 +419,7 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -447,7 +452,16 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
     public com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy buildPartial() {
       com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy result =
           new com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         includeHttpHeaders_ = includeHttpHeaders_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -458,8 +472,11 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.queryStringWhitelist_ = queryStringWhitelist_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

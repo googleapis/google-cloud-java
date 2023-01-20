@@ -86,7 +86,9 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
 
   private int bitField0_;
   public static final int CHAIN_NAME_FIELD_NUMBER = 68644169;
-  private volatile java.lang.Object chainName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object chainName_ = "";
   /**
    *
    *
@@ -150,7 +152,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   }
 
   public static final int GUEST_FLUSH_FIELD_NUMBER = 385550813;
-  private boolean guestFlush_;
+  private boolean guestFlush_ = false;
   /**
    *
    *
@@ -195,6 +197,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -252,7 +255,10 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -281,6 +287,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   }
 
   public static final int STORAGE_LOCATIONS_FIELD_NUMBER = 328005274;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList storageLocations_;
   /**
    *
@@ -625,10 +633,9 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       chainName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       guestFlush_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().clear();
       storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -665,26 +672,40 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties result =
           new com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties(
               this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.chainName_ = chainName_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.guestFlush_ = guestFlush_;
-        to_bitField0_ |= 0x00000002;
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties result) {
       if (((bitField0_ & 0x00000008) != 0)) {
         storageLocations_ = storageLocations_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.storageLocations_ = storageLocations_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.chainName_ = chainName_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.guestFlush_ = guestFlush_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -740,14 +761,15 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
           == com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
               .getDefaultInstance()) return this;
       if (other.hasChainName()) {
-        bitField0_ |= 0x00000001;
         chainName_ = other.chainName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasGuestFlush()) {
         setGuestFlush(other.getGuestFlush());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000004;
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
           storageLocations_ = other.storageLocations_;
@@ -812,6 +834,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case -293404678
             default:
@@ -908,8 +931,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       chainName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -925,8 +948,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * @return This builder for chaining.
      */
     public Builder clearChainName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       chainName_ = getDefaultInstance().getChainName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -947,8 +970,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       chainName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -997,8 +1020,9 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * @return This builder for chaining.
      */
     public Builder setGuestFlush(boolean value) {
-      bitField0_ |= 0x00000002;
+
       guestFlush_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1031,14 +1055,14 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return labels_;
     }
 
@@ -1090,8 +1114,10 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1120,6 +1146,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1142,6 +1169,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1160,8 +1188,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1175,6 +1203,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

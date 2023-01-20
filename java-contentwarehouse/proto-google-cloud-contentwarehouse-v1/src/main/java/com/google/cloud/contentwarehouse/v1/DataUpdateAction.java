@@ -89,6 +89,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> entries_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetEntries() {
@@ -158,7 +159,10 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; entries = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getEntriesOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getEntriesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -416,6 +420,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableEntries().clear();
       return this;
     }
@@ -444,11 +449,19 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.contentwarehouse.v1.DataUpdateAction buildPartial() {
       com.google.cloud.contentwarehouse.v1.DataUpdateAction result =
           new com.google.cloud.contentwarehouse.v1.DataUpdateAction(this);
-      int from_bitField0_ = bitField0_;
-      result.entries_ = internalGetEntries();
-      result.entries_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.DataUpdateAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entries_ = internalGetEntries();
+        result.entries_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -498,6 +511,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.contentwarehouse.v1.DataUpdateAction.getDefaultInstance())
         return this;
       internalGetMutableEntries().mergeFrom(other.internalGetEntries());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -533,6 +547,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
                 internalGetMutableEntries()
                     .getMutableMap()
                     .put(entries__.getKey(), entries__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -565,14 +580,14 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableEntries() {
-      onChanged();
-      ;
       if (entries_ == null) {
         entries_ = com.google.protobuf.MapField.newMapField(EntriesDefaultEntryHolder.defaultEntry);
       }
       if (!entries_.isMutable()) {
         entries_ = entries_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return entries_;
     }
 
@@ -636,8 +651,10 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; entries = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getEntriesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getEntriesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -670,6 +687,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearEntries() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableEntries().getMutableMap().clear();
       return this;
     }
@@ -696,6 +714,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEntries() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableEntries().getMutableMap();
     }
     /**
@@ -718,8 +737,8 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableEntries().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -737,6 +756,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllEntries(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEntries().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

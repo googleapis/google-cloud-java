@@ -126,7 +126,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -484,20 +486,18 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (encryptionKeyBuilder_ == null) {
-        encryptionKey_ = null;
-      } else {
-        encryptionKeyBuilder_.clear();
+      bitField0_ = 0;
+      encryptionKey_ = null;
+      if (encryptionKeyBuilder_ != null) {
+        encryptionKeyBuilder_.dispose();
+        encryptionKeyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (signingKeyBuilder_ == null) {
-        signingKey_ = null;
-      } else {
-        signingKeyBuilder_.clear();
+      signingKey_ = null;
+      if (signingKeyBuilder_ != null) {
+        signingKeyBuilder_.dispose();
+        signingKeyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -525,31 +525,30 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.ShieldedInstanceIdentity buildPartial() {
       com.google.cloud.compute.v1.ShieldedInstanceIdentity result =
           new com.google.cloud.compute.v1.ShieldedInstanceIdentity(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ShieldedInstanceIdentity result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (encryptionKeyBuilder_ == null) {
-          result.encryptionKey_ = encryptionKey_;
-        } else {
-          result.encryptionKey_ = encryptionKeyBuilder_.build();
-        }
+        result.encryptionKey_ =
+            encryptionKeyBuilder_ == null ? encryptionKey_ : encryptionKeyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000002;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (signingKeyBuilder_ == null) {
-          result.signingKey_ = signingKey_;
-        } else {
-          result.signingKey_ = signingKeyBuilder_.build();
-        }
+        result.signingKey_ = signingKeyBuilder_ == null ? signingKey_ : signingKeyBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -602,8 +601,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         mergeEncryptionKey(other.getEncryptionKey());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000002;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSigningKey()) {
@@ -734,11 +733,11 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         encryptionKey_ = value;
-        onChanged();
       } else {
         encryptionKeyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -756,11 +755,11 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder builderForValue) {
       if (encryptionKeyBuilder_ == null) {
         encryptionKey_ = builderForValue.build();
-        onChanged();
       } else {
         encryptionKeyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -781,18 +780,15 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
             && encryptionKey_ != null
             && encryptionKey_
                 != com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()) {
-          encryptionKey_ =
-              com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.newBuilder(encryptionKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getEncryptionKeyBuilder().mergeFrom(value);
         } else {
           encryptionKey_ = value;
         }
-        onChanged();
       } else {
         encryptionKeyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -807,13 +803,13 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearEncryptionKey() {
-      if (encryptionKeyBuilder_ == null) {
-        encryptionKey_ = null;
-        onChanged();
-      } else {
-        encryptionKeyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      encryptionKey_ = null;
+      if (encryptionKeyBuilder_ != null) {
+        encryptionKeyBuilder_.dispose();
+        encryptionKeyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -957,8 +953,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -974,8 +970,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -996,8 +992,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1063,11 +1059,11 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         signingKey_ = value;
-        onChanged();
       } else {
         signingKeyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1085,11 +1081,11 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder builderForValue) {
       if (signingKeyBuilder_ == null) {
         signingKey_ = builderForValue.build();
-        onChanged();
       } else {
         signingKeyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1110,18 +1106,15 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
             && signingKey_ != null
             && signingKey_
                 != com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()) {
-          signingKey_ =
-              com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.newBuilder(signingKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getSigningKeyBuilder().mergeFrom(value);
         } else {
           signingKey_ = value;
         }
-        onChanged();
       } else {
         signingKeyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1136,13 +1129,13 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearSigningKey() {
-      if (signingKeyBuilder_ == null) {
-        signingKey_ = null;
-        onChanged();
-      } else {
-        signingKeyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      signingKey_ = null;
+      if (signingKeyBuilder_ != null) {
+        signingKeyBuilder_.dispose();
+        signingKeyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

@@ -66,7 +66,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
   }
 
   public static final int CHANNEL_TAG_FIELD_NUMBER = 1;
-  private int channelTag_;
+  private int channelTag_ = 0;
   /**
    *
    *
@@ -129,7 +129,9 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder
       getSentimentDataOrBuilder() {
-    return getSentimentData();
+    return sentimentData_ == null
+        ? com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance()
+        : sentimentData_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -346,12 +348,11 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       channelTag_ = 0;
-
-      if (sentimentDataBuilder_ == null) {
-        sentimentData_ = null;
-      } else {
-        sentimentData_ = null;
+      sentimentData_ = null;
+      if (sentimentDataBuilder_ != null) {
+        sentimentDataBuilder_.dispose();
         sentimentDataBuilder_ = null;
       }
       return this;
@@ -383,14 +384,23 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
     public com.google.cloud.contactcenterinsights.v1.ConversationLevelSentiment buildPartial() {
       com.google.cloud.contactcenterinsights.v1.ConversationLevelSentiment result =
           new com.google.cloud.contactcenterinsights.v1.ConversationLevelSentiment(this);
-      result.channelTag_ = channelTag_;
-      if (sentimentDataBuilder_ == null) {
-        result.sentimentData_ = sentimentData_;
-      } else {
-        result.sentimentData_ = sentimentDataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.ConversationLevelSentiment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.channelTag_ = channelTag_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sentimentData_ =
+            sentimentDataBuilder_ == null ? sentimentData_ : sentimentDataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -477,13 +487,13 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
             case 8:
               {
                 channelTag_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getSentimentDataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -502,6 +512,8 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int channelTag_;
     /**
@@ -534,6 +546,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
     public Builder setChannelTag(int value) {
 
       channelTag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -549,7 +562,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearChannelTag() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       channelTag_ = 0;
       onChanged();
       return this;
@@ -573,7 +586,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
      * @return Whether the sentimentData field is set.
      */
     public boolean hasSentimentData() {
-      return sentimentDataBuilder_ != null || sentimentData_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -610,11 +623,11 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         sentimentData_ = value;
-        onChanged();
       } else {
         sentimentDataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -630,11 +643,11 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
         com.google.cloud.contactcenterinsights.v1.SentimentData.Builder builderForValue) {
       if (sentimentDataBuilder_ == null) {
         sentimentData_ = builderForValue.build();
-        onChanged();
       } else {
         sentimentDataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -649,19 +662,19 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
     public Builder mergeSentimentData(
         com.google.cloud.contactcenterinsights.v1.SentimentData value) {
       if (sentimentDataBuilder_ == null) {
-        if (sentimentData_ != null) {
-          sentimentData_ =
-              com.google.cloud.contactcenterinsights.v1.SentimentData.newBuilder(sentimentData_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sentimentData_ != null
+            && sentimentData_
+                != com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance()) {
+          getSentimentDataBuilder().mergeFrom(value);
         } else {
           sentimentData_ = value;
         }
-        onChanged();
       } else {
         sentimentDataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -674,14 +687,13 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
      * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment_data = 2;</code>
      */
     public Builder clearSentimentData() {
-      if (sentimentDataBuilder_ == null) {
-        sentimentData_ = null;
-        onChanged();
-      } else {
-        sentimentData_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sentimentData_ = null;
+      if (sentimentDataBuilder_ != null) {
+        sentimentDataBuilder_.dispose();
         sentimentDataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -695,7 +707,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
      */
     public com.google.cloud.contactcenterinsights.v1.SentimentData.Builder
         getSentimentDataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSentimentDataFieldBuilder().getBuilder();
     }

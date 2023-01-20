@@ -125,7 +125,9 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.billing.v1.BillingAccountOrBuilder getBillingAccountOrBuilder() {
-    return getBillingAccount();
+    return billingAccount_ == null
+        ? com.google.cloud.billing.v1.BillingAccount.getDefaultInstance()
+        : billingAccount_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -331,10 +333,10 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (billingAccountBuilder_ == null) {
-        billingAccount_ = null;
-      } else {
-        billingAccount_ = null;
+      bitField0_ = 0;
+      billingAccount_ = null;
+      if (billingAccountBuilder_ != null) {
+        billingAccountBuilder_.dispose();
         billingAccountBuilder_ = null;
       }
       return this;
@@ -364,13 +366,19 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
     public com.google.cloud.billing.v1.CreateBillingAccountRequest buildPartial() {
       com.google.cloud.billing.v1.CreateBillingAccountRequest result =
           new com.google.cloud.billing.v1.CreateBillingAccountRequest(this);
-      if (billingAccountBuilder_ == null) {
-        result.billingAccount_ = billingAccount_;
-      } else {
-        result.billingAccount_ = billingAccountBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.v1.CreateBillingAccountRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.billingAccount_ =
+            billingAccountBuilder_ == null ? billingAccount_ : billingAccountBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -451,7 +459,7 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getBillingAccountFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -470,6 +478,8 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.billing.v1.BillingAccount billingAccount_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -494,7 +504,7 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
      * @return Whether the billingAccount field is set.
      */
     public boolean hasBillingAccount() {
-      return billingAccountBuilder_ != null || billingAccount_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -541,11 +551,11 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         billingAccount_ = value;
-        onChanged();
       } else {
         billingAccountBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -566,11 +576,11 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
         com.google.cloud.billing.v1.BillingAccount.Builder builderForValue) {
       if (billingAccountBuilder_ == null) {
         billingAccount_ = builderForValue.build();
-        onChanged();
       } else {
         billingAccountBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -589,19 +599,18 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
      */
     public Builder mergeBillingAccount(com.google.cloud.billing.v1.BillingAccount value) {
       if (billingAccountBuilder_ == null) {
-        if (billingAccount_ != null) {
-          billingAccount_ =
-              com.google.cloud.billing.v1.BillingAccount.newBuilder(billingAccount_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && billingAccount_ != null
+            && billingAccount_ != com.google.cloud.billing.v1.BillingAccount.getDefaultInstance()) {
+          getBillingAccountBuilder().mergeFrom(value);
         } else {
           billingAccount_ = value;
         }
-        onChanged();
       } else {
         billingAccountBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -619,14 +628,13 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearBillingAccount() {
-      if (billingAccountBuilder_ == null) {
-        billingAccount_ = null;
-        onChanged();
-      } else {
-        billingAccount_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      billingAccount_ = null;
+      if (billingAccountBuilder_ != null) {
+        billingAccountBuilder_.dispose();
         billingAccountBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -644,7 +652,7 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.billing.v1.BillingAccount.Builder getBillingAccountBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBillingAccountFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
   }
 
   public static final int CERTIFICATE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object certificateId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object certificateId_ = "";
   /**
    *
    *
@@ -223,7 +227,9 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.certificatemanager.v1.CertificateOrBuilder getCertificateOrBuilder() {
-    return getCertificate();
+    return certificate_ == null
+        ? com.google.cloud.certificatemanager.v1.Certificate.getDefaultInstance()
+        : certificate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -447,14 +453,12 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       certificateId_ = "";
-
-      if (certificateBuilder_ == null) {
-        certificate_ = null;
-      } else {
-        certificate_ = null;
+      certificate_ = null;
+      if (certificateBuilder_ != null) {
+        certificateBuilder_.dispose();
         certificateBuilder_ = null;
       }
       return this;
@@ -485,15 +489,26 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
     public com.google.cloud.certificatemanager.v1.CreateCertificateRequest buildPartial() {
       com.google.cloud.certificatemanager.v1.CreateCertificateRequest result =
           new com.google.cloud.certificatemanager.v1.CreateCertificateRequest(this);
-      result.parent_ = parent_;
-      result.certificateId_ = certificateId_;
-      if (certificateBuilder_ == null) {
-        result.certificate_ = certificate_;
-      } else {
-        result.certificate_ = certificateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.certificatemanager.v1.CreateCertificateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.certificateId_ = certificateId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.certificate_ =
+            certificateBuilder_ == null ? certificate_ : certificateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -546,10 +561,12 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCertificateId().isEmpty()) {
         certificateId_ = other.certificateId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCertificate()) {
@@ -584,19 +601,19 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 certificateId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCertificateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -615,6 +632,8 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -686,8 +705,8 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,8 +725,8 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -731,8 +750,8 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,8 +817,8 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       certificateId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -815,8 +834,8 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearCertificateId() {
-
       certificateId_ = getDefaultInstance().getCertificateId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -837,8 +856,8 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       certificateId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,7 +882,7 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
      * @return Whether the certificate field is set.
      */
     public boolean hasCertificate() {
-      return certificateBuilder_ != null || certificate_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -904,11 +923,11 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         certificate_ = value;
-        onChanged();
       } else {
         certificateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -926,11 +945,11 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         com.google.cloud.certificatemanager.v1.Certificate.Builder builderForValue) {
       if (certificateBuilder_ == null) {
         certificate_ = builderForValue.build();
-        onChanged();
       } else {
         certificateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -946,19 +965,19 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
      */
     public Builder mergeCertificate(com.google.cloud.certificatemanager.v1.Certificate value) {
       if (certificateBuilder_ == null) {
-        if (certificate_ != null) {
-          certificate_ =
-              com.google.cloud.certificatemanager.v1.Certificate.newBuilder(certificate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && certificate_ != null
+            && certificate_
+                != com.google.cloud.certificatemanager.v1.Certificate.getDefaultInstance()) {
+          getCertificateBuilder().mergeFrom(value);
         } else {
           certificate_ = value;
         }
-        onChanged();
       } else {
         certificateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -973,14 +992,13 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearCertificate() {
-      if (certificateBuilder_ == null) {
-        certificate_ = null;
-        onChanged();
-      } else {
-        certificate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      certificate_ = null;
+      if (certificateBuilder_ != null) {
+        certificateBuilder_.dispose();
         certificateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -995,7 +1013,7 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.certificatemanager.v1.Certificate.Builder getCertificateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCertificateFieldBuilder().getBuilder();
     }

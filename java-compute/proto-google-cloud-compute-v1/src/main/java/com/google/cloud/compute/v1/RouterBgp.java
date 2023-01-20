@@ -331,7 +331,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ADVERTISE_MODE_FIELD_NUMBER = 312134331;
-  private volatile java.lang.Object advertiseMode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object advertiseMode_ = "";
   /**
    *
    *
@@ -398,6 +400,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADVERTISED_GROUPS_FIELD_NUMBER = 21065526;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList advertisedGroups_;
   /**
    *
@@ -463,6 +467,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADVERTISED_IP_RANGES_FIELD_NUMBER = 35449932;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.RouterAdvertisedIpRange> advertisedIpRanges_;
   /**
    *
@@ -544,7 +550,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASN_FIELD_NUMBER = 96892;
-  private int asn_;
+  private int asn_ = 0;
   /**
    *
    *
@@ -577,7 +583,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEEPALIVE_INTERVAL_FIELD_NUMBER = 276771516;
-  private int keepaliveInterval_;
+  private int keepaliveInterval_ = 0;
   /**
    *
    *
@@ -867,8 +873,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       advertiseMode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       if (advertisedIpRangesBuilder_ == null) {
@@ -879,9 +885,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000004);
       asn_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       keepaliveInterval_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -909,12 +913,15 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.RouterBgp buildPartial() {
       com.google.cloud.compute.v1.RouterBgp result =
           new com.google.cloud.compute.v1.RouterBgp(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.advertiseMode_ = advertiseMode_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.RouterBgp result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         advertisedGroups_ = advertisedGroups_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -929,6 +936,15 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.advertisedIpRanges_ = advertisedIpRangesBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterBgp result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.advertiseMode_ = advertiseMode_;
+        to_bitField0_ |= 0x00000001;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.asn_ = asn_;
         to_bitField0_ |= 0x00000002;
@@ -937,9 +953,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         result.keepaliveInterval_ = keepaliveInterval_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -988,8 +1002,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.RouterBgp other) {
       if (other == com.google.cloud.compute.v1.RouterBgp.getDefaultInstance()) return this;
       if (other.hasAdvertiseMode()) {
-        bitField0_ |= 0x00000001;
         advertiseMode_ = other.advertiseMode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.advertisedGroups_.isEmpty()) {
@@ -1198,8 +1212,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       advertiseMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1216,8 +1230,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdvertiseMode() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       advertiseMode_ = getDefaultInstance().getAdvertiseMode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1239,8 +1253,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       advertiseMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1866,8 +1880,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAsn(int value) {
-      bitField0_ |= 0x00000008;
+
       asn_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1933,8 +1948,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKeepaliveInterval(int value) {
-      bitField0_ |= 0x00000010;
+
       keepaliveInterval_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

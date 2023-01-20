@@ -74,6 +74,8 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int JOBS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.Job> jobs_;
   /**
    *
@@ -142,7 +144,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -191,6 +195,8 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FAILED_LOCATION_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.FailedLocation> failedLocation_;
   /**
    *
@@ -492,6 +498,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
       } else {
@@ -500,14 +507,13 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       if (failedLocationBuilder_ == null) {
         failedLocation_ = java.util.Collections.emptyList();
       } else {
         failedLocation_ = null;
         failedLocationBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -535,7 +541,15 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
     public com.google.dataflow.v1beta3.ListJobsResponse buildPartial() {
       com.google.dataflow.v1beta3.ListJobsResponse result =
           new com.google.dataflow.v1beta3.ListJobsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.ListJobsResponse result) {
       if (jobsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           jobs_ = java.util.Collections.unmodifiableList(jobs_);
@@ -545,18 +559,22 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
       } else {
         result.jobs_ = jobsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
       if (failedLocationBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           failedLocation_ = java.util.Collections.unmodifiableList(failedLocation_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.failedLocation_ = failedLocation_;
       } else {
         result.failedLocation_ = failedLocationBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.ListJobsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -633,13 +651,14 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (failedLocationBuilder_ == null) {
         if (!other.failedLocation_.isEmpty()) {
           if (failedLocation_.isEmpty()) {
             failedLocation_ = other.failedLocation_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureFailedLocationIsMutable();
             failedLocation_.addAll(other.failedLocation_);
@@ -652,7 +671,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
             failedLocationBuilder_.dispose();
             failedLocationBuilder_ = null;
             failedLocation_ = other.failedLocation_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             failedLocationBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFailedLocationFieldBuilder()
@@ -703,7 +722,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1144,8 +1163,8 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1161,8 +1180,8 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1183,8 +1202,8 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1193,10 +1212,10 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureFailedLocationIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         failedLocation_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.FailedLocation>(failedLocation_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1434,7 +1453,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
     public Builder clearFailedLocation() {
       if (failedLocationBuilder_ == null) {
         failedLocation_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         failedLocationBuilder_.clear();
@@ -1572,7 +1591,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
                 com.google.dataflow.v1beta3.FailedLocation.Builder,
                 com.google.dataflow.v1beta3.FailedLocationOrBuilder>(
                 failedLocation_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         failedLocation_ = null;

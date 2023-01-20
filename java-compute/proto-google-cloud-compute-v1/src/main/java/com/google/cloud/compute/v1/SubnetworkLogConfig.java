@@ -355,7 +355,9 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
   private int bitField0_;
   public static final int AGGREGATION_INTERVAL_FIELD_NUMBER = 174919042;
-  private volatile java.lang.Object aggregationInterval_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object aggregationInterval_ = "";
   /**
    *
    *
@@ -422,7 +424,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENABLE_FIELD_NUMBER = 311764355;
-  private boolean enable_;
+  private boolean enable_ = false;
   /**
    *
    *
@@ -455,7 +457,9 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FILTER_EXPR_FIELD_NUMBER = 183374428;
-  private volatile java.lang.Object filterExpr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filterExpr_ = "";
   /**
    *
    *
@@ -519,7 +523,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FLOW_SAMPLING_FIELD_NUMBER = 530150360;
-  private float flowSampling_;
+  private float flowSampling_ = 0F;
   /**
    *
    *
@@ -552,7 +556,9 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int METADATA_FIELD_NUMBER = 86866735;
-  private volatile java.lang.Object metadata_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metadata_ = "";
   /**
    *
    *
@@ -619,6 +625,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int METADATA_FIELDS_FIELD_NUMBER = 378461641;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList metadataFields_;
   /**
    *
@@ -956,16 +964,12 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       aggregationInterval_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       enable_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       filterExpr_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       flowSampling_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000008);
       metadata_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
       return this;
@@ -995,36 +999,47 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.SubnetworkLogConfig buildPartial() {
       com.google.cloud.compute.v1.SubnetworkLogConfig result =
           new com.google.cloud.compute.v1.SubnetworkLogConfig(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.aggregationInterval_ = aggregationInterval_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.enable_ = enable_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.filterExpr_ = filterExpr_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.flowSampling_ = flowSampling_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000010;
-      }
-      result.metadata_ = metadata_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.SubnetworkLogConfig result) {
       if (((bitField0_ & 0x00000020) != 0)) {
         metadataFields_ = metadataFields_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.metadataFields_ = metadataFields_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SubnetworkLogConfig result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.aggregationInterval_ = aggregationInterval_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enable_ = enable_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.filterExpr_ = filterExpr_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.flowSampling_ = flowSampling_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.metadata_ = metadata_;
+        to_bitField0_ |= 0x00000010;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1074,24 +1089,24 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.compute.v1.SubnetworkLogConfig.getDefaultInstance())
         return this;
       if (other.hasAggregationInterval()) {
-        bitField0_ |= 0x00000001;
         aggregationInterval_ = other.aggregationInterval_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEnable()) {
         setEnable(other.getEnable());
       }
       if (other.hasFilterExpr()) {
-        bitField0_ |= 0x00000004;
         filterExpr_ = other.filterExpr_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasFlowSampling()) {
         setFlowSampling(other.getFlowSampling());
       }
       if (other.hasMetadata()) {
-        bitField0_ |= 0x00000010;
         metadata_ = other.metadata_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.metadataFields_.isEmpty()) {
@@ -1265,8 +1280,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       aggregationInterval_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1283,8 +1298,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAggregationInterval() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       aggregationInterval_ = getDefaultInstance().getAggregationInterval();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1306,8 +1321,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       aggregationInterval_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1356,8 +1371,9 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setEnable(boolean value) {
-      bitField0_ |= 0x00000002;
+
       enable_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1454,8 +1470,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       filterExpr_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1471,8 +1487,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearFilterExpr() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       filterExpr_ = getDefaultInstance().getFilterExpr();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1493,8 +1509,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       filterExpr_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1543,8 +1559,9 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setFlowSampling(float value) {
-      bitField0_ |= 0x00000008;
+
       flowSampling_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1645,8 +1662,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       metadata_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1663,8 +1680,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       metadata_ = getDefaultInstance().getMetadata();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1686,8 +1703,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       metadata_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

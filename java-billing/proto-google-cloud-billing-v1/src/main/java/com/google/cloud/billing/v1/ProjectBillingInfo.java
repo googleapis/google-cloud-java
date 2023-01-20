@@ -72,7 +72,9 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -180,7 +184,9 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BILLING_ACCOUNT_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object billingAccountName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object billingAccountName_ = "";
   /**
    *
    *
@@ -231,7 +237,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BILLING_ENABLED_FIELD_NUMBER = 4;
-  private boolean billingEnabled_;
+  private boolean billingEnabled_ = false;
   /**
    *
    *
@@ -477,14 +483,11 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       projectId_ = "";
-
       billingAccountName_ = "";
-
       billingEnabled_ = false;
-
       return this;
     }
 
@@ -512,12 +515,27 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.billing.v1.ProjectBillingInfo buildPartial() {
       com.google.cloud.billing.v1.ProjectBillingInfo result =
           new com.google.cloud.billing.v1.ProjectBillingInfo(this);
-      result.name_ = name_;
-      result.projectId_ = projectId_;
-      result.billingAccountName_ = billingAccountName_;
-      result.billingEnabled_ = billingEnabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.v1.ProjectBillingInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.billingAccountName_ = billingAccountName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.billingEnabled_ = billingEnabled_;
+      }
     }
 
     @java.lang.Override
@@ -567,14 +585,17 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.billing.v1.ProjectBillingInfo.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getBillingAccountName().isEmpty()) {
         billingAccountName_ = other.billingAccountName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getBillingEnabled() != false) {
@@ -609,25 +630,25 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 billingAccountName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 billingEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -646,6 +667,8 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -717,8 +740,8 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -737,8 +760,8 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -762,8 +785,8 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -835,8 +858,8 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -854,8 +877,8 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -878,8 +901,8 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -948,8 +971,8 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       billingAccountName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -966,8 +989,8 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearBillingAccountName() {
-
       billingAccountName_ = getDefaultInstance().getBillingAccountName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -989,8 +1012,8 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       billingAccountName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1032,6 +1055,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
     public Builder setBillingEnabled(boolean value) {
 
       billingEnabled_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1050,7 +1074,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearBillingEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       billingEnabled_ = false;
       onChanged();
       return this;

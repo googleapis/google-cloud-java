@@ -69,7 +69,9 @@ public final class DialogflowIntent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -316,8 +318,8 @@ public final class DialogflowIntent extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       return this;
     }
 
@@ -345,9 +347,18 @@ public final class DialogflowIntent extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.contactcenterinsights.v1.DialogflowIntent buildPartial() {
       com.google.cloud.contactcenterinsights.v1.DialogflowIntent result =
           new com.google.cloud.contactcenterinsights.v1.DialogflowIntent(this);
-      result.displayName_ = displayName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.DialogflowIntent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
     }
 
     @java.lang.Override
@@ -398,6 +409,7 @@ public final class DialogflowIntent extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -429,7 +441,7 @@ public final class DialogflowIntent extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -448,6 +460,8 @@ public final class DialogflowIntent extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object displayName_ = "";
     /**
@@ -510,8 +524,8 @@ public final class DialogflowIntent extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -527,8 +541,8 @@ public final class DialogflowIntent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -549,8 +563,8 @@ public final class DialogflowIntent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

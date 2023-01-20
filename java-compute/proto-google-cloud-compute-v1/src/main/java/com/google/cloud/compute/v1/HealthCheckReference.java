@@ -69,7 +69,9 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
-  private volatile java.lang.Object healthCheck_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object healthCheck_ = "";
   /**
    * <code>optional string health_check = 308876645;</code>
    *
@@ -316,8 +318,8 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       healthCheck_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -345,15 +347,21 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.HealthCheckReference buildPartial() {
       com.google.cloud.compute.v1.HealthCheckReference result =
           new com.google.cloud.compute.v1.HealthCheckReference(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HealthCheckReference result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.healthCheck_ = healthCheck_;
         to_bitField0_ |= 0x00000001;
       }
-      result.healthCheck_ = healthCheck_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -403,8 +411,8 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.compute.v1.HealthCheckReference.getDefaultInstance())
         return this;
       if (other.hasHealthCheck()) {
-        bitField0_ |= 0x00000001;
         healthCheck_ = other.healthCheck_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -509,8 +517,8 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       healthCheck_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -520,8 +528,8 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearHealthCheck() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       healthCheck_ = getDefaultInstance().getHealthCheck();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -536,8 +544,8 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       healthCheck_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

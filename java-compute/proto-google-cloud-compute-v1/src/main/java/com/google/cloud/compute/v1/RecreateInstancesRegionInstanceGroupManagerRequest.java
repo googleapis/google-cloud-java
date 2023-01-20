@@ -75,7 +75,9 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
 
   private int bitField0_;
   public static final int INSTANCE_GROUP_MANAGER_FIELD_NUMBER = 249363395;
-  private volatile java.lang.Object instanceGroupManager_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceGroupManager_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -287,11 +293,16 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequestOrBuilder
       getRegionInstanceGroupManagersRecreateRequestResourceOrBuilder() {
-    return getRegionInstanceGroupManagersRecreateRequestResource();
+    return regionInstanceGroupManagersRecreateRequestResource_ == null
+        ? com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest
+            .getDefaultInstance()
+        : regionInstanceGroupManagersRecreateRequestResource_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -615,20 +626,16 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceGroupManager_ = "";
-
       project_ = "";
-
       region_ = "";
-
-      if (regionInstanceGroupManagersRecreateRequestResourceBuilder_ == null) {
-        regionInstanceGroupManagersRecreateRequestResource_ = null;
-      } else {
-        regionInstanceGroupManagersRecreateRequestResource_ = null;
+      regionInstanceGroupManagersRecreateRequestResource_ = null;
+      if (regionInstanceGroupManagersRecreateRequestResourceBuilder_ != null) {
+        regionInstanceGroupManagersRecreateRequestResourceBuilder_.dispose();
         regionInstanceGroupManagersRecreateRequestResourceBuilder_ = null;
       }
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -660,25 +667,37 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
         buildPartial() {
       com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerRequest result =
           new com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.instanceGroupManager_ = instanceGroupManager_;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (regionInstanceGroupManagersRecreateRequestResourceBuilder_ == null) {
-        result.regionInstanceGroupManagersRecreateRequestResource_ =
-            regionInstanceGroupManagersRecreateRequestResource_;
-      } else {
-        result.regionInstanceGroupManagersRecreateRequestResource_ =
-            regionInstanceGroupManagersRecreateRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceGroupManager_ = instanceGroupManager_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.regionInstanceGroupManagersRecreateRequestResource_ =
+            regionInstanceGroupManagersRecreateRequestResourceBuilder_ == null
+                ? regionInstanceGroupManagersRecreateRequestResource_
+                : regionInstanceGroupManagersRecreateRequestResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -734,14 +753,17 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
               .getDefaultInstance()) return this;
       if (!other.getInstanceGroupManager().isEmpty()) {
         instanceGroupManager_ = other.instanceGroupManager_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRegionInstanceGroupManagersRecreateRequestResource()) {
@@ -749,8 +771,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
             other.getRegionInstanceGroupManagersRecreateRequestResource());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -782,13 +804,13 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 296879706
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1367994530:
@@ -797,19 +819,19 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
                     getRegionInstanceGroupManagersRecreateRequestResourceFieldBuilder()
                         .getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1367994530
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case 1994907162:
               {
                 instanceGroupManager_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1994907162
             default:
@@ -895,8 +917,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceGroupManager_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -913,8 +935,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearInstanceGroupManager() {
-
       instanceGroupManager_ = getDefaultInstance().getInstanceGroupManager();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -936,8 +958,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceGroupManager_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1009,8 +1031,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1028,8 +1050,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1052,8 +1074,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1125,8 +1147,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1144,8 +1166,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1168,8 +1190,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1195,8 +1217,7 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
      * @return Whether the regionInstanceGroupManagersRecreateRequestResource field is set.
      */
     public boolean hasRegionInstanceGroupManagersRecreateRequestResource() {
-      return regionInstanceGroupManagersRecreateRequestResourceBuilder_ != null
-          || regionInstanceGroupManagersRecreateRequestResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1240,11 +1261,11 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
           throw new NullPointerException();
         }
         regionInstanceGroupManagersRecreateRequestResource_ = value;
-        onChanged();
       } else {
         regionInstanceGroupManagersRecreateRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1263,12 +1284,12 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
             builderForValue) {
       if (regionInstanceGroupManagersRecreateRequestResourceBuilder_ == null) {
         regionInstanceGroupManagersRecreateRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         regionInstanceGroupManagersRecreateRequestResourceBuilder_.setMessage(
             builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1285,20 +1306,20 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
     public Builder mergeRegionInstanceGroupManagersRecreateRequestResource(
         com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest value) {
       if (regionInstanceGroupManagersRecreateRequestResourceBuilder_ == null) {
-        if (regionInstanceGroupManagersRecreateRequestResource_ != null) {
-          regionInstanceGroupManagersRecreateRequestResource_ =
-              com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest.newBuilder(
-                      regionInstanceGroupManagersRecreateRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && regionInstanceGroupManagersRecreateRequestResource_ != null
+            && regionInstanceGroupManagersRecreateRequestResource_
+                != com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest
+                    .getDefaultInstance()) {
+          getRegionInstanceGroupManagersRecreateRequestResourceBuilder().mergeFrom(value);
         } else {
           regionInstanceGroupManagersRecreateRequestResource_ = value;
         }
-        onChanged();
       } else {
         regionInstanceGroupManagersRecreateRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1313,14 +1334,13 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
      * </code>
      */
     public Builder clearRegionInstanceGroupManagersRecreateRequestResource() {
-      if (regionInstanceGroupManagersRecreateRequestResourceBuilder_ == null) {
-        regionInstanceGroupManagersRecreateRequestResource_ = null;
-        onChanged();
-      } else {
-        regionInstanceGroupManagersRecreateRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      regionInstanceGroupManagersRecreateRequestResource_ = null;
+      if (regionInstanceGroupManagersRecreateRequestResourceBuilder_ != null) {
+        regionInstanceGroupManagersRecreateRequestResourceBuilder_.dispose();
         regionInstanceGroupManagersRecreateRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1336,7 +1356,7 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest.Builder
         getRegionInstanceGroupManagersRecreateRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRegionInstanceGroupManagersRecreateRequestResourceFieldBuilder().getBuilder();
     }
@@ -1405,7 +1425,7 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1467,8 +1487,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1484,8 +1504,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1506,8 +1526,8 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

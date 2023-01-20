@@ -294,7 +294,9 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
 
   private int bitField0_;
   public static final int PERMISSION_TYPE_FIELD_NUMBER = 525978538;
-  private volatile java.lang.Object permissionType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object permissionType_ = "";
   /**
    *
    *
@@ -563,8 +565,8 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       permissionType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -592,15 +594,21 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.AuthorizationLoggingOptions buildPartial() {
       com.google.cloud.compute.v1.AuthorizationLoggingOptions result =
           new com.google.cloud.compute.v1.AuthorizationLoggingOptions(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AuthorizationLoggingOptions result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.permissionType_ = permissionType_;
         to_bitField0_ |= 0x00000001;
       }
-      result.permissionType_ = permissionType_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -650,8 +658,8 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
       if (other == com.google.cloud.compute.v1.AuthorizationLoggingOptions.getDefaultInstance())
         return this;
       if (other.hasPermissionType()) {
-        bitField0_ |= 0x00000001;
         permissionType_ = other.permissionType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -784,8 +792,8 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       permissionType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -802,8 +810,8 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearPermissionType() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       permissionType_ = getDefaultInstance().getPermissionType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -825,8 +833,8 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       permissionType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

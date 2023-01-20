@@ -297,7 +297,9 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
 
   private int bitField0_;
   public static final int DETAILED_HEALTH_STATE_FIELD_NUMBER = 510470173;
-  private volatile java.lang.Object detailedHealthState_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object detailedHealthState_ = "";
   /**
    *
    *
@@ -364,7 +366,9 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
   }
 
   public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
-  private volatile java.lang.Object healthCheck_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object healthCheck_ = "";
   /**
    *
    *
@@ -644,10 +648,9 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       detailedHealthState_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       healthCheck_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -675,19 +678,25 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.ManagedInstanceInstanceHealth buildPartial() {
       com.google.cloud.compute.v1.ManagedInstanceInstanceHealth result =
           new com.google.cloud.compute.v1.ManagedInstanceInstanceHealth(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ManagedInstanceInstanceHealth result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.detailedHealthState_ = detailedHealthState_;
         to_bitField0_ |= 0x00000001;
       }
-      result.detailedHealthState_ = detailedHealthState_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.healthCheck_ = healthCheck_;
         to_bitField0_ |= 0x00000002;
       }
-      result.healthCheck_ = healthCheck_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -737,13 +746,13 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
       if (other == com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.getDefaultInstance())
         return this;
       if (other.hasDetailedHealthState()) {
-        bitField0_ |= 0x00000001;
         detailedHealthState_ = other.detailedHealthState_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHealthCheck()) {
-        bitField0_ |= 0x00000002;
         healthCheck_ = other.healthCheck_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -882,8 +891,8 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       detailedHealthState_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -900,8 +909,8 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearDetailedHealthState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       detailedHealthState_ = getDefaultInstance().getDetailedHealthState();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -923,8 +932,8 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       detailedHealthState_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1004,8 +1013,8 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       healthCheck_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1021,8 +1030,8 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearHealthCheck() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       healthCheck_ = getDefaultInstance().getHealthCheck();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1043,8 +1052,8 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       healthCheck_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

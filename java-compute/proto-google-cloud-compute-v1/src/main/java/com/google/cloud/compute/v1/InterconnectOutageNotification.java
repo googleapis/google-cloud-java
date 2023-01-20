@@ -662,6 +662,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
 
   private int bitField0_;
   public static final int AFFECTED_CIRCUITS_FIELD_NUMBER = 177717013;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList affectedCircuits_;
   /**
    *
@@ -723,7 +725,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -787,7 +791,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int END_TIME_FIELD_NUMBER = 114938801;
-  private long endTime_;
+  private long endTime_ = 0L;
   /**
    *
    *
@@ -820,7 +824,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int ISSUE_TYPE_FIELD_NUMBER = 369639136;
-  private volatile java.lang.Object issueType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object issueType_ = "";
   /**
    *
    *
@@ -887,7 +893,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -951,7 +959,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int SOURCE_FIELD_NUMBER = 177235995;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -1018,7 +1028,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
-  private long startTime_;
+  private long startTime_ = 0L;
   /**
    *
    *
@@ -1051,7 +1061,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -1421,22 +1433,16 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       affectedCircuits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       endTime_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000004);
       issueType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       source_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       startTime_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -1464,44 +1470,55 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.InterconnectOutageNotification buildPartial() {
       com.google.cloud.compute.v1.InterconnectOutageNotification result =
           new com.google.cloud.compute.v1.InterconnectOutageNotification(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InterconnectOutageNotification result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         affectedCircuits_ = affectedCircuits_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.affectedCircuits_ = affectedCircuits_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InterconnectOutageNotification result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000001;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.endTime_ = endTime_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.issueType_ = issueType_;
         to_bitField0_ |= 0x00000004;
       }
-      result.issueType_ = issueType_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000008;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.source_ = source_;
         to_bitField0_ |= 0x00000010;
       }
-      result.source_ = source_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.startTime_ = startTime_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x00000040;
       }
-      result.state_ = state_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1561,34 +1578,34 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000002;
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasEndTime()) {
         setEndTime(other.getEndTime());
       }
       if (other.hasIssueType()) {
-        bitField0_ |= 0x00000008;
         issueType_ = other.issueType_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000010;
         name_ = other.name_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasSource()) {
-        bitField0_ |= 0x00000020;
         source_ = other.source_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasStartTime()) {
         setStartTime(other.getStartTime());
       }
       if (other.hasState()) {
-        bitField0_ |= 0x00000080;
         state_ = other.state_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1928,8 +1945,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1945,8 +1962,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1967,8 +1984,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2017,8 +2034,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setEndTime(long value) {
-      bitField0_ |= 0x00000004;
+
       endTime_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2119,8 +2137,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       issueType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2137,8 +2155,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearIssueType() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       issueType_ = getDefaultInstance().getIssueType();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2160,8 +2178,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       issueType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2241,8 +2259,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       name_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2258,8 +2276,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2280,8 +2298,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       name_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2365,8 +2383,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       source_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2383,8 +2401,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2406,8 +2424,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       source_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2456,8 +2474,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setStartTime(long value) {
-      bitField0_ |= 0x00000040;
+
       startTime_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2558,8 +2577,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       state_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2576,8 +2595,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2599,8 +2618,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       state_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

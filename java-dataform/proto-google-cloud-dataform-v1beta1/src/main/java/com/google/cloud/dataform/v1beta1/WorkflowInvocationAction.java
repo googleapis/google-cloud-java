@@ -400,7 +400,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     }
 
     public static final int SQL_SCRIPT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object sqlScript_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sqlScript_ = "";
     /**
      *
      *
@@ -657,8 +659,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sqlScript_ = "";
-
         return this;
       }
 
@@ -690,9 +692,19 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           buildPartial() {
         com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction result =
             new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction(this);
-        result.sqlScript_ = sqlScript_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sqlScript_ = sqlScript_;
+        }
       }
 
       @java.lang.Override
@@ -749,6 +761,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
                 .getDefaultInstance()) return this;
         if (!other.getSqlScript().isEmpty()) {
           sqlScript_ = other.sqlScript_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -780,7 +793,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
               case 10:
                 {
                   sqlScript_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -799,6 +812,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object sqlScript_ = "";
       /**
@@ -861,8 +876,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         if (value == null) {
           throw new NullPointerException();
         }
-
         sqlScript_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -878,8 +893,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
        * @return This builder for chaining.
        */
       public Builder clearSqlScript() {
-
         sqlScript_ = getDefaultInstance().getSqlScript();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -900,8 +915,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         sqlScript_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1025,7 +1040,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.dataform.v1beta1.TargetOrBuilder getTargetOrBuilder() {
-    return getTarget();
+    return target_ == null
+        ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+        : target_;
   }
 
   public static final int CANONICAL_TARGET_FIELD_NUMBER = 2;
@@ -1082,11 +1099,13 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.dataform.v1beta1.TargetOrBuilder getCanonicalTargetOrBuilder() {
-    return getCanonicalTarget();
+    return canonicalTarget_ == null
+        ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+        : canonicalTarget_;
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1119,16 +1138,17 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.State result =
-        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.State.valueOf(state_);
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.State.forNumber(state_);
     return result == null
         ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.State.UNRECOGNIZED
         : result;
   }
 
   public static final int FAILURE_REASON_FIELD_NUMBER = 7;
-  private volatile java.lang.Object failureReason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object failureReason_ = "";
   /**
    *
    *
@@ -1236,7 +1256,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.type.IntervalOrBuilder getInvocationTimingOrBuilder() {
-    return getInvocationTiming();
+    return invocationTiming_ == null
+        ? com.google.type.Interval.getDefaultInstance()
+        : invocationTiming_;
   }
 
   public static final int BIGQUERY_ACTION_FIELD_NUMBER = 6;
@@ -1293,7 +1315,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder
       getBigqueryActionOrBuilder() {
-    return getBigqueryAction();
+    return bigqueryAction_ == null
+        ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+            .getDefaultInstance()
+        : bigqueryAction_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1561,32 +1586,27 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (targetBuilder_ == null) {
-        target_ = null;
-      } else {
-        target_ = null;
+      bitField0_ = 0;
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
         targetBuilder_ = null;
       }
-      if (canonicalTargetBuilder_ == null) {
-        canonicalTarget_ = null;
-      } else {
-        canonicalTarget_ = null;
+      canonicalTarget_ = null;
+      if (canonicalTargetBuilder_ != null) {
+        canonicalTargetBuilder_.dispose();
         canonicalTargetBuilder_ = null;
       }
       state_ = 0;
-
       failureReason_ = "";
-
-      if (invocationTimingBuilder_ == null) {
-        invocationTiming_ = null;
-      } else {
-        invocationTiming_ = null;
+      invocationTiming_ = null;
+      if (invocationTimingBuilder_ != null) {
+        invocationTimingBuilder_.dispose();
         invocationTimingBuilder_ = null;
       }
-      if (bigqueryActionBuilder_ == null) {
-        bigqueryAction_ = null;
-      } else {
-        bigqueryAction_ = null;
+      bigqueryAction_ = null;
+      if (bigqueryActionBuilder_ != null) {
+        bigqueryActionBuilder_.dispose();
         bigqueryActionBuilder_ = null;
       }
       return this;
@@ -1616,30 +1636,36 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction buildPartial() {
       com.google.cloud.dataform.v1beta1.WorkflowInvocationAction result =
           new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction(this);
-      if (targetBuilder_ == null) {
-        result.target_ = target_;
-      } else {
-        result.target_ = targetBuilder_.build();
-      }
-      if (canonicalTargetBuilder_ == null) {
-        result.canonicalTarget_ = canonicalTarget_;
-      } else {
-        result.canonicalTarget_ = canonicalTargetBuilder_.build();
-      }
-      result.state_ = state_;
-      result.failureReason_ = failureReason_;
-      if (invocationTimingBuilder_ == null) {
-        result.invocationTiming_ = invocationTiming_;
-      } else {
-        result.invocationTiming_ = invocationTimingBuilder_.build();
-      }
-      if (bigqueryActionBuilder_ == null) {
-        result.bigqueryAction_ = bigqueryAction_;
-      } else {
-        result.bigqueryAction_ = bigqueryActionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataform.v1beta1.WorkflowInvocationAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.canonicalTarget_ =
+            canonicalTargetBuilder_ == null ? canonicalTarget_ : canonicalTargetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.failureReason_ = failureReason_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.invocationTiming_ =
+            invocationTimingBuilder_ == null ? invocationTiming_ : invocationTimingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.bigqueryAction_ =
+            bigqueryActionBuilder_ == null ? bigqueryAction_ : bigqueryActionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1699,6 +1725,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       if (!other.getFailureReason().isEmpty()) {
         failureReason_ = other.failureReason_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasInvocationTiming()) {
@@ -1736,38 +1763,38 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getTargetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCanonicalTargetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(
                     getInvocationTimingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getBigqueryActionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 failureReason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 58
             default:
@@ -1786,6 +1813,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dataform.v1beta1.Target target_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1807,7 +1836,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return targetBuilder_ != null || target_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1848,11 +1877,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         target_ = value;
-        onChanged();
       } else {
         targetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1869,11 +1898,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public Builder setTarget(com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
       if (targetBuilder_ == null) {
         target_ = builderForValue.build();
-        onChanged();
       } else {
         targetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1889,19 +1918,18 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeTarget(com.google.cloud.dataform.v1beta1.Target value) {
       if (targetBuilder_ == null) {
-        if (target_ != null) {
-          target_ =
-              com.google.cloud.dataform.v1beta1.Target.newBuilder(target_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && target_ != null
+            && target_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
+          getTargetBuilder().mergeFrom(value);
         } else {
           target_ = value;
         }
-        onChanged();
       } else {
         targetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1916,14 +1944,13 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearTarget() {
-      if (targetBuilder_ == null) {
-        target_ = null;
-        onChanged();
-      } else {
-        target_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
         targetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1938,7 +1965,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.Target.Builder getTargetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }
@@ -2011,7 +2038,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the canonicalTarget field is set.
      */
     public boolean hasCanonicalTarget() {
-      return canonicalTargetBuilder_ != null || canonicalTarget_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2054,11 +2081,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         canonicalTarget_ = value;
-        onChanged();
       } else {
         canonicalTargetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2077,11 +2104,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
       if (canonicalTargetBuilder_ == null) {
         canonicalTarget_ = builderForValue.build();
-        onChanged();
       } else {
         canonicalTargetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2098,19 +2125,18 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeCanonicalTarget(com.google.cloud.dataform.v1beta1.Target value) {
       if (canonicalTargetBuilder_ == null) {
-        if (canonicalTarget_ != null) {
-          canonicalTarget_ =
-              com.google.cloud.dataform.v1beta1.Target.newBuilder(canonicalTarget_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && canonicalTarget_ != null
+            && canonicalTarget_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
+          getCanonicalTargetBuilder().mergeFrom(value);
         } else {
           canonicalTarget_ = value;
         }
-        onChanged();
       } else {
         canonicalTargetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2126,14 +2152,13 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearCanonicalTarget() {
-      if (canonicalTargetBuilder_ == null) {
-        canonicalTarget_ = null;
-        onChanged();
-      } else {
-        canonicalTarget_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      canonicalTarget_ = null;
+      if (canonicalTargetBuilder_ != null) {
+        canonicalTargetBuilder_.dispose();
         canonicalTargetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2149,7 +2174,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.Target.Builder getCanonicalTargetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCanonicalTargetFieldBuilder().getBuilder();
     }
@@ -2236,8 +2261,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2256,9 +2281,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     @java.lang.Override
     public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.State result =
-          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.State.valueOf(state_);
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.State.forNumber(state_);
       return result == null
           ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.State.UNRECOGNIZED
           : result;
@@ -2282,7 +2306,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2301,7 +2325,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
@@ -2368,8 +2392,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       failureReason_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2385,8 +2409,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearFailureReason() {
-
       failureReason_ = getDefaultInstance().getFailureReason();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2407,8 +2431,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       failureReason_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2437,7 +2461,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the invocationTiming field is set.
      */
     public boolean hasInvocationTiming() {
-      return invocationTimingBuilder_ != null || invocationTiming_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2486,11 +2510,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         invocationTiming_ = value;
-        onChanged();
       } else {
         invocationTimingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2511,11 +2535,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public Builder setInvocationTiming(com.google.type.Interval.Builder builderForValue) {
       if (invocationTimingBuilder_ == null) {
         invocationTiming_ = builderForValue.build();
-        onChanged();
       } else {
         invocationTimingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2535,19 +2559,18 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeInvocationTiming(com.google.type.Interval value) {
       if (invocationTimingBuilder_ == null) {
-        if (invocationTiming_ != null) {
-          invocationTiming_ =
-              com.google.type.Interval.newBuilder(invocationTiming_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && invocationTiming_ != null
+            && invocationTiming_ != com.google.type.Interval.getDefaultInstance()) {
+          getInvocationTimingBuilder().mergeFrom(value);
         } else {
           invocationTiming_ = value;
         }
-        onChanged();
       } else {
         invocationTimingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2566,14 +2589,13 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearInvocationTiming() {
-      if (invocationTimingBuilder_ == null) {
-        invocationTiming_ = null;
-        onChanged();
-      } else {
-        invocationTiming_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      invocationTiming_ = null;
+      if (invocationTimingBuilder_ != null) {
+        invocationTimingBuilder_.dispose();
         invocationTimingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2592,7 +2614,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.type.Interval.Builder getInvocationTimingBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getInvocationTimingFieldBuilder().getBuilder();
     }
@@ -2673,7 +2695,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the bigqueryAction field is set.
      */
     public boolean hasBigqueryAction() {
-      return bigqueryActionBuilder_ != null || bigqueryAction_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2717,11 +2739,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         bigqueryAction_ = value;
-        onChanged();
       } else {
         bigqueryActionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2740,11 +2762,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             builderForValue) {
       if (bigqueryActionBuilder_ == null) {
         bigqueryAction_ = builderForValue.build();
-        onChanged();
       } else {
         bigqueryActionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2761,20 +2783,20 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public Builder mergeBigqueryAction(
         com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction value) {
       if (bigqueryActionBuilder_ == null) {
-        if (bigqueryAction_ != null) {
-          bigqueryAction_ =
-              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.newBuilder(
-                      bigqueryAction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && bigqueryAction_ != null
+            && bigqueryAction_
+                != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+                    .getDefaultInstance()) {
+          getBigqueryActionBuilder().mergeFrom(value);
         } else {
           bigqueryAction_ = value;
         }
-        onChanged();
       } else {
         bigqueryActionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2789,14 +2811,13 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearBigqueryAction() {
-      if (bigqueryActionBuilder_ == null) {
-        bigqueryAction_ = null;
-        onChanged();
-      } else {
-        bigqueryAction_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      bigqueryAction_ = null;
+      if (bigqueryActionBuilder_ != null) {
+        bigqueryActionBuilder_.dispose();
         bigqueryActionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2812,7 +2833,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder
         getBigqueryActionBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getBigqueryActionFieldBuilder().getBuilder();
     }

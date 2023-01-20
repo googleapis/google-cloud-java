@@ -69,7 +69,9 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DATASET_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object datasetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object datasetId_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       datasetId_ = "";
-
       projectId_ = "";
-
       return this;
     }
 
@@ -409,10 +412,22 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.bigquery.migration.v2alpha.DatasetReference buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.DatasetReference result =
           new com.google.cloud.bigquery.migration.v2alpha.DatasetReference(this);
-      result.datasetId_ = datasetId_;
-      result.projectId_ = projectId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.migration.v2alpha.DatasetReference result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.datasetId_ = datasetId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectId_ = projectId_;
+      }
     }
 
     @java.lang.Override
@@ -464,10 +479,12 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getDatasetId().isEmpty()) {
         datasetId_ = other.datasetId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -499,13 +516,13 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 datasetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -524,6 +541,8 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object datasetId_ = "";
     /**
@@ -592,8 +611,8 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       datasetId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -611,8 +630,8 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDatasetId() {
-
       datasetId_ = getDefaultInstance().getDatasetId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -635,8 +654,8 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       datasetId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -702,8 +721,8 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -719,8 +738,8 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -741,8 +760,8 @@ public final class DatasetReference extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

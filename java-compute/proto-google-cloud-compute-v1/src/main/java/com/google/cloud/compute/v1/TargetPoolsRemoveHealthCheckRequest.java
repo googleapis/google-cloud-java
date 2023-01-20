@@ -69,6 +69,8 @@ public final class TargetPoolsRemoveHealthCheckRequest
   }
 
   public static final int HEALTH_CHECKS_FIELD_NUMBER = 448370606;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HealthCheckReference> healthChecks_;
   /**
    *
@@ -338,6 +340,7 @@ public final class TargetPoolsRemoveHealthCheckRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (healthChecksBuilder_ == null) {
         healthChecks_ = java.util.Collections.emptyList();
       } else {
@@ -373,7 +376,16 @@ public final class TargetPoolsRemoveHealthCheckRequest
     public com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest buildPartial() {
       com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest result =
           new com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest result) {
       if (healthChecksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           healthChecks_ = java.util.Collections.unmodifiableList(healthChecks_);
@@ -383,8 +395,11 @@ public final class TargetPoolsRemoveHealthCheckRequest
       } else {
         result.healthChecks_ = healthChecksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

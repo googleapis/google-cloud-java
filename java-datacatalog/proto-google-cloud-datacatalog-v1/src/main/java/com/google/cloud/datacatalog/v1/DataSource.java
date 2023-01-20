@@ -271,7 +271,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 1;
-  private int service_;
+  private int service_ = 0;
   /**
    *
    *
@@ -300,16 +300,17 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.DataSource.Service getService() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1.DataSource.Service result =
-        com.google.cloud.datacatalog.v1.DataSource.Service.valueOf(service_);
+        com.google.cloud.datacatalog.v1.DataSource.Service.forNumber(service_);
     return result == null
         ? com.google.cloud.datacatalog.v1.DataSource.Service.UNRECOGNIZED
         : result;
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -360,7 +361,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_ENTRY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sourceEntry_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceEntry_ = "";
   /**
    *
    *
@@ -701,12 +704,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = 0;
-
       resource_ = "";
-
       sourceEntry_ = "";
-
       if (storagePropertiesBuilder_ != null) {
         storagePropertiesBuilder_.clear();
       }
@@ -739,19 +740,33 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.DataSource buildPartial() {
       com.google.cloud.datacatalog.v1.DataSource result =
           new com.google.cloud.datacatalog.v1.DataSource(this);
-      result.service_ = service_;
-      result.resource_ = resource_;
-      result.sourceEntry_ = sourceEntry_;
-      if (propertiesCase_ == 4) {
-        if (storagePropertiesBuilder_ == null) {
-          result.properties_ = properties_;
-        } else {
-          result.properties_ = storagePropertiesBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.propertiesCase_ = propertiesCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.DataSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sourceEntry_ = sourceEntry_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datacatalog.v1.DataSource result) {
+      result.propertiesCase_ = propertiesCase_;
+      result.properties_ = this.properties_;
+      if (propertiesCase_ == 4 && storagePropertiesBuilder_ != null) {
+        result.properties_ = storagePropertiesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -804,10 +819,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSourceEntry().isEmpty()) {
         sourceEntry_ = other.sourceEntry_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getPropertiesCase()) {
@@ -850,19 +867,19 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 service_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 sourceEntry_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -903,6 +920,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int service_ = 0;
     /**
      *
@@ -932,8 +951,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setServiceValue(int value) {
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -950,9 +969,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.DataSource.Service getService() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1.DataSource.Service result =
-          com.google.cloud.datacatalog.v1.DataSource.Service.valueOf(service_);
+          com.google.cloud.datacatalog.v1.DataSource.Service.forNumber(service_);
       return result == null
           ? com.google.cloud.datacatalog.v1.DataSource.Service.UNRECOGNIZED
           : result;
@@ -973,7 +991,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       service_ = value.getNumber();
       onChanged();
       return this;
@@ -990,7 +1008,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       service_ = 0;
       onChanged();
       return this;
@@ -1060,8 +1078,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1078,8 +1096,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1101,8 +1119,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1168,8 +1186,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceEntry_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1185,8 +1203,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceEntry() {
-
       sourceEntry_ = getDefaultInstance().getSourceEntry();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1207,8 +1225,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceEntry_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1421,7 +1439,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       propertiesCase_ = 4;
       onChanged();
-      ;
       return storagePropertiesBuilder_;
     }
 

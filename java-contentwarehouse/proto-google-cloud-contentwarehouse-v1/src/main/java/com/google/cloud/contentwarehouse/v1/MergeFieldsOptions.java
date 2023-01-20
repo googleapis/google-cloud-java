@@ -67,7 +67,7 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int REPLACE_MESSAGE_FIELDS_FIELD_NUMBER = 1;
-  private boolean replaceMessageFields_;
+  private boolean replaceMessageFields_ = false;
   /**
    *
    *
@@ -110,7 +110,7 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REPLACE_REPEATED_FIELDS_FIELD_NUMBER = 2;
-  private boolean replaceRepeatedFields_;
+  private boolean replaceRepeatedFields_ = false;
   /**
    *
    *
@@ -373,10 +373,9 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       replaceMessageFields_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       replaceRepeatedFields_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -404,6 +403,14 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.contentwarehouse.v1.MergeFieldsOptions buildPartial() {
       com.google.cloud.contentwarehouse.v1.MergeFieldsOptions result =
           new com.google.cloud.contentwarehouse.v1.MergeFieldsOptions(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.MergeFieldsOptions result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -414,9 +421,7 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
         result.replaceRepeatedFields_ = replaceRepeatedFields_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -587,8 +592,9 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setReplaceMessageFields(boolean value) {
-      bitField0_ |= 0x00000001;
+
       replaceMessageFields_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -680,8 +686,9 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setReplaceRepeatedFields(boolean value) {
-      bitField0_ |= 0x00000002;
+
       replaceRepeatedFields_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

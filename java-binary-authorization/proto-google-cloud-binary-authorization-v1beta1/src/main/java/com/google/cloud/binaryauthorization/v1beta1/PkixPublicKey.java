@@ -519,7 +519,9 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBLIC_KEY_PEM_FIELD_NUMBER = 1;
-  private volatile java.lang.Object publicKeyPem_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicKeyPem_ = "";
   /**
    *
    *
@@ -570,7 +572,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIGNATURE_ALGORITHM_FIELD_NUMBER = 2;
-  private int signatureAlgorithm_;
+  private int signatureAlgorithm_ = 0;
   /**
    *
    *
@@ -612,9 +614,8 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm
       getSignatureAlgorithm() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm result =
-        com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm.valueOf(
+        com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm.forNumber(
             signatureAlgorithm_);
     return result == null
         ? com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm.UNRECOGNIZED
@@ -837,10 +838,9 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       publicKeyPem_ = "";
-
       signatureAlgorithm_ = 0;
-
       return this;
     }
 
@@ -868,10 +868,21 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey buildPartial() {
       com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey result =
           new com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey(this);
-      result.publicKeyPem_ = publicKeyPem_;
-      result.signatureAlgorithm_ = signatureAlgorithm_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.publicKeyPem_ = publicKeyPem_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.signatureAlgorithm_ = signatureAlgorithm_;
+      }
     }
 
     @java.lang.Override
@@ -922,6 +933,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getPublicKeyPem().isEmpty()) {
         publicKeyPem_ = other.publicKeyPem_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.signatureAlgorithm_ != 0) {
@@ -956,13 +968,13 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 publicKeyPem_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 signatureAlgorithm_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -981,6 +993,8 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object publicKeyPem_ = "";
     /**
@@ -1046,8 +1060,8 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicKeyPem_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1064,8 +1078,8 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPublicKeyPem() {
-
       publicKeyPem_ = getDefaultInstance().getPublicKeyPem();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1087,8 +1101,8 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publicKeyPem_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1134,8 +1148,8 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSignatureAlgorithmValue(int value) {
-
       signatureAlgorithm_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1159,9 +1173,8 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm
         getSignatureAlgorithm() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm result =
-          com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm.valueOf(
+          com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm.forNumber(
               signatureAlgorithm_);
       return result == null
           ? com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm
@@ -1191,7 +1204,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       signatureAlgorithm_ = value.getNumber();
       onChanged();
       return this;
@@ -1214,7 +1227,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSignatureAlgorithm() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       signatureAlgorithm_ = 0;
       onChanged();
       return this;

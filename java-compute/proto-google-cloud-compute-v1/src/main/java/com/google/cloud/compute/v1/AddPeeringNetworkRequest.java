@@ -71,7 +71,9 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int NETWORK_FIELD_NUMBER = 232872494;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -172,11 +174,15 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworksAddPeeringRequestOrBuilder
       getNetworksAddPeeringRequestResourceOrBuilder() {
-    return getNetworksAddPeeringRequestResource();
+    return networksAddPeeringRequestResource_ == null
+        ? com.google.cloud.compute.v1.NetworksAddPeeringRequest.getDefaultInstance()
+        : networksAddPeeringRequestResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -229,7 +235,9 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -530,18 +538,15 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       network_ = "";
-
-      if (networksAddPeeringRequestResourceBuilder_ == null) {
-        networksAddPeeringRequestResource_ = null;
-      } else {
-        networksAddPeeringRequestResource_ = null;
+      networksAddPeeringRequestResource_ = null;
+      if (networksAddPeeringRequestResourceBuilder_ != null) {
+        networksAddPeeringRequestResourceBuilder_.dispose();
         networksAddPeeringRequestResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -569,23 +574,33 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.AddPeeringNetworkRequest buildPartial() {
       com.google.cloud.compute.v1.AddPeeringNetworkRequest result =
           new com.google.cloud.compute.v1.AddPeeringNetworkRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.network_ = network_;
-      if (networksAddPeeringRequestResourceBuilder_ == null) {
-        result.networksAddPeeringRequestResource_ = networksAddPeeringRequestResource_;
-      } else {
-        result.networksAddPeeringRequestResource_ =
-            networksAddPeeringRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AddPeeringNetworkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.networksAddPeeringRequestResource_ =
+            networksAddPeeringRequestResourceBuilder_ == null
+                ? networksAddPeeringRequestResource_
+                : networksAddPeeringRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -636,6 +651,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasNetworksAddPeeringRequestResource()) {
@@ -643,11 +659,12 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -679,19 +696,19 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1862979954
             case -1184483926:
@@ -699,7 +716,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
                 input.readMessage(
                     getNetworksAddPeeringRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -1184483926
             default:
@@ -782,8 +799,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -799,8 +816,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -821,8 +838,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -848,8 +865,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * @return Whether the networksAddPeeringRequestResource field is set.
      */
     public boolean hasNetworksAddPeeringRequestResource() {
-      return networksAddPeeringRequestResourceBuilder_ != null
-          || networksAddPeeringRequestResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -892,11 +908,11 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         networksAddPeeringRequestResource_ = value;
-        onChanged();
       } else {
         networksAddPeeringRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -914,11 +930,11 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
         com.google.cloud.compute.v1.NetworksAddPeeringRequest.Builder builderForValue) {
       if (networksAddPeeringRequestResourceBuilder_ == null) {
         networksAddPeeringRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         networksAddPeeringRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -935,20 +951,19 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
     public Builder mergeNetworksAddPeeringRequestResource(
         com.google.cloud.compute.v1.NetworksAddPeeringRequest value) {
       if (networksAddPeeringRequestResourceBuilder_ == null) {
-        if (networksAddPeeringRequestResource_ != null) {
-          networksAddPeeringRequestResource_ =
-              com.google.cloud.compute.v1.NetworksAddPeeringRequest.newBuilder(
-                      networksAddPeeringRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && networksAddPeeringRequestResource_ != null
+            && networksAddPeeringRequestResource_
+                != com.google.cloud.compute.v1.NetworksAddPeeringRequest.getDefaultInstance()) {
+          getNetworksAddPeeringRequestResourceBuilder().mergeFrom(value);
         } else {
           networksAddPeeringRequestResource_ = value;
         }
-        onChanged();
       } else {
         networksAddPeeringRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -963,14 +978,13 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearNetworksAddPeeringRequestResource() {
-      if (networksAddPeeringRequestResourceBuilder_ == null) {
-        networksAddPeeringRequestResource_ = null;
-        onChanged();
-      } else {
-        networksAddPeeringRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      networksAddPeeringRequestResource_ = null;
+      if (networksAddPeeringRequestResourceBuilder_ != null) {
+        networksAddPeeringRequestResourceBuilder_.dispose();
         networksAddPeeringRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -986,7 +1000,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.compute.v1.NetworksAddPeeringRequest.Builder
         getNetworksAddPeeringRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNetworksAddPeeringRequestResourceFieldBuilder().getBuilder();
     }
@@ -1106,8 +1120,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1125,8 +1139,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1149,8 +1163,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1168,7 +1182,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1230,8 +1244,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1247,8 +1261,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1269,8 +1283,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

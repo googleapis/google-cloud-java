@@ -234,7 +234,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
   private int bitField0_;
   public static final int DAY_FIELD_NUMBER = 99228;
-  private volatile java.lang.Object day_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object day_ = "";
   /**
    *
    *
@@ -301,7 +303,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
   }
 
   public static final int DURATION_FIELD_NUMBER = 155471252;
-  private volatile java.lang.Object duration_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object duration_ = "";
   /**
    *
    *
@@ -365,7 +369,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
   }
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
-  private volatile java.lang.Object startTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object startTime_ = "";
   /**
    *
    *
@@ -658,12 +664,10 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       day_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       duration_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       startTime_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -692,23 +696,30 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek result =
           new com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.day_ = day_;
         to_bitField0_ |= 0x00000001;
       }
-      result.day_ = day_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.duration_ = duration_;
         to_bitField0_ |= 0x00000002;
       }
-      result.duration_ = duration_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.startTime_ = startTime_;
         to_bitField0_ |= 0x00000004;
       }
-      result.startTime_ = startTime_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -759,18 +770,18 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
           == com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.getDefaultInstance())
         return this;
       if (other.hasDay()) {
-        bitField0_ |= 0x00000001;
         day_ = other.day_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDuration()) {
-        bitField0_ |= 0x00000002;
         duration_ = other.duration_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasStartTime()) {
-        bitField0_ |= 0x00000004;
         startTime_ = other.startTime_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -915,8 +926,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       day_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -933,8 +944,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearDay() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       day_ = getDefaultInstance().getDay();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -956,8 +967,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       day_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1037,8 +1048,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       duration_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1054,8 +1065,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearDuration() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       duration_ = getDefaultInstance().getDuration();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1076,8 +1087,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       duration_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1157,8 +1168,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       startTime_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1174,8 +1185,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       startTime_ = getDefaultInstance().getStartTime();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1196,8 +1207,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       startTime_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

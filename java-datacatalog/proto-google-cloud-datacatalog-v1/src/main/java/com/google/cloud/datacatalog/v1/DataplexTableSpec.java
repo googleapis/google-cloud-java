@@ -68,6 +68,8 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int EXTERNAL_TABLES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.DataplexExternalTable> externalTables_;
   /**
    *
@@ -193,11 +195,13 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.DataplexSpecOrBuilder getDataplexSpecOrBuilder() {
-    return getDataplexSpec();
+    return dataplexSpec_ == null
+        ? com.google.cloud.datacatalog.v1.DataplexSpec.getDefaultInstance()
+        : dataplexSpec_;
   }
 
   public static final int USER_MANAGED_FIELD_NUMBER = 3;
-  private boolean userManaged_;
+  private boolean userManaged_ = false;
   /**
    *
    *
@@ -436,6 +440,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (externalTablesBuilder_ == null) {
         externalTables_ = java.util.Collections.emptyList();
       } else {
@@ -443,14 +448,12 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
         externalTablesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (dataplexSpecBuilder_ == null) {
-        dataplexSpec_ = null;
-      } else {
-        dataplexSpec_ = null;
+      dataplexSpec_ = null;
+      if (dataplexSpecBuilder_ != null) {
+        dataplexSpecBuilder_.dispose();
         dataplexSpecBuilder_ = null;
       }
       userManaged_ = false;
-
       return this;
     }
 
@@ -478,7 +481,16 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datacatalog.v1.DataplexTableSpec buildPartial() {
       com.google.cloud.datacatalog.v1.DataplexTableSpec result =
           new com.google.cloud.datacatalog.v1.DataplexTableSpec(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datacatalog.v1.DataplexTableSpec result) {
       if (externalTablesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           externalTables_ = java.util.Collections.unmodifiableList(externalTables_);
@@ -488,14 +500,17 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       } else {
         result.externalTables_ = externalTablesBuilder_.build();
       }
-      if (dataplexSpecBuilder_ == null) {
-        result.dataplexSpec_ = dataplexSpec_;
-      } else {
-        result.dataplexSpec_ = dataplexSpecBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.DataplexTableSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataplexSpec_ =
+            dataplexSpecBuilder_ == null ? dataplexSpec_ : dataplexSpecBuilder_.build();
       }
-      result.userManaged_ = userManaged_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.userManaged_ = userManaged_;
+      }
     }
 
     @java.lang.Override
@@ -620,13 +635,13 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
             case 18:
               {
                 input.readMessage(getDataplexSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 userManaged_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1066,7 +1081,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * @return Whether the dataplexSpec field is set.
      */
     public boolean hasDataplexSpec() {
-      return dataplexSpecBuilder_ != null || dataplexSpec_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1103,11 +1118,11 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         dataplexSpec_ = value;
-        onChanged();
       } else {
         dataplexSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1123,11 +1138,11 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
         com.google.cloud.datacatalog.v1.DataplexSpec.Builder builderForValue) {
       if (dataplexSpecBuilder_ == null) {
         dataplexSpec_ = builderForValue.build();
-        onChanged();
       } else {
         dataplexSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1141,19 +1156,18 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeDataplexSpec(com.google.cloud.datacatalog.v1.DataplexSpec value) {
       if (dataplexSpecBuilder_ == null) {
-        if (dataplexSpec_ != null) {
-          dataplexSpec_ =
-              com.google.cloud.datacatalog.v1.DataplexSpec.newBuilder(dataplexSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && dataplexSpec_ != null
+            && dataplexSpec_ != com.google.cloud.datacatalog.v1.DataplexSpec.getDefaultInstance()) {
+          getDataplexSpecBuilder().mergeFrom(value);
         } else {
           dataplexSpec_ = value;
         }
-        onChanged();
       } else {
         dataplexSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1166,14 +1180,13 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.datacatalog.v1.DataplexSpec dataplex_spec = 2;</code>
      */
     public Builder clearDataplexSpec() {
-      if (dataplexSpecBuilder_ == null) {
-        dataplexSpec_ = null;
-        onChanged();
-      } else {
-        dataplexSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataplexSpec_ = null;
+      if (dataplexSpecBuilder_ != null) {
+        dataplexSpecBuilder_.dispose();
         dataplexSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1186,7 +1199,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.datacatalog.v1.DataplexSpec dataplex_spec = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.DataplexSpec.Builder getDataplexSpecBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDataplexSpecFieldBuilder().getBuilder();
     }
@@ -1265,6 +1278,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
     public Builder setUserManaged(boolean value) {
 
       userManaged_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1280,7 +1294,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUserManaged() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       userManaged_ = false;
       onChanged();
       return this;

@@ -73,7 +73,9 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int ETAG_FIELD_NUMBER = 3123477;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -119,7 +121,9 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -183,6 +187,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ITEMS_FIELD_NUMBER = 100526016;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ResourcePolicy> items_;
   /**
    *
@@ -252,7 +258,9 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -316,7 +324,9 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 79797525;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -380,7 +390,9 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -781,10 +793,9 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       etag_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
       } else {
@@ -793,17 +804,13 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       nextPageToken_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
-      if (warningBuilder_ == null) {
-        warning_ = null;
-      } else {
-        warningBuilder_.clear();
+      warning_ = null;
+      if (warningBuilder_ != null) {
+        warningBuilder_.dispose();
+        warningBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -831,16 +838,15 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.ResourcePolicyList buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyList result =
           new com.google.cloud.compute.v1.ResourcePolicyList(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.etag_ = etag_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.id_ = id_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.ResourcePolicyList result) {
       if (itemsBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           items_ = java.util.Collections.unmodifiableList(items_);
@@ -850,29 +856,36 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
       } else {
         result.items_ = itemsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ResourcePolicyList result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.etag_ = etag_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000004;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
         to_bitField0_ |= 0x00000008;
       }
-      result.nextPageToken_ = nextPageToken_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000010;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        if (warningBuilder_ == null) {
-          result.warning_ = warning_;
-        } else {
-          result.warning_ = warningBuilder_.build();
-        }
+        result.warning_ = warningBuilder_ == null ? warning_ : warningBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -921,13 +934,13 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.compute.v1.ResourcePolicyList other) {
       if (other == com.google.cloud.compute.v1.ResourcePolicyList.getDefaultInstance()) return this;
       if (other.hasEtag()) {
-        bitField0_ |= 0x00000001;
         etag_ = other.etag_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasId()) {
-        bitField0_ |= 0x00000002;
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (itemsBuilder_ == null) {
@@ -958,18 +971,18 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
         }
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000008;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasNextPageToken()) {
-        bitField0_ |= 0x00000010;
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000020;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasWarning()) {
@@ -1120,8 +1133,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       etag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1131,8 +1144,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1147,8 +1160,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       etag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1228,8 +1241,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1245,8 +1258,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1267,8 +1280,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1697,8 +1710,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       kind_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1714,8 +1727,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1736,8 +1749,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       kind_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1817,8 +1830,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       nextPageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1834,8 +1847,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1856,8 +1869,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       nextPageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1937,8 +1950,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       selfLink_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1954,8 +1967,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1976,8 +1989,8 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       selfLink_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2037,11 +2050,11 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         warning_ = value;
-        onChanged();
       } else {
         warningBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2056,11 +2069,11 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
     public Builder setWarning(com.google.cloud.compute.v1.Warning.Builder builderForValue) {
       if (warningBuilder_ == null) {
         warning_ = builderForValue.build();
-        onChanged();
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2077,18 +2090,15 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
         if (((bitField0_ & 0x00000040) != 0)
             && warning_ != null
             && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
-          warning_ =
-              com.google.cloud.compute.v1.Warning.newBuilder(warning_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getWarningBuilder().mergeFrom(value);
         } else {
           warning_ = value;
         }
-        onChanged();
       } else {
         warningBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2101,13 +2111,13 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder clearWarning() {
-      if (warningBuilder_ == null) {
-        warning_ = null;
-        onChanged();
-      } else {
-        warningBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000040);
+      warning_ = null;
+      if (warningBuilder_ != null) {
+        warningBuilder_.dispose();
+        warningBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

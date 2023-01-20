@@ -111,7 +111,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.JobOrBuilder getJobOrBuilder() {
-    return getJob();
+    return job_ == null ? com.google.dataflow.v1beta3.Job.getDefaultInstance() : job_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -316,10 +316,10 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (jobBuilder_ == null) {
-        job_ = null;
-      } else {
-        job_ = null;
+      bitField0_ = 0;
+      job_ = null;
+      if (jobBuilder_ != null) {
+        jobBuilder_.dispose();
         jobBuilder_ = null;
       }
       return this;
@@ -349,13 +349,18 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
     public com.google.dataflow.v1beta3.LaunchTemplateResponse buildPartial() {
       com.google.dataflow.v1beta3.LaunchTemplateResponse result =
           new com.google.dataflow.v1beta3.LaunchTemplateResponse(this);
-      if (jobBuilder_ == null) {
-        result.job_ = job_;
-      } else {
-        result.job_ = jobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.LaunchTemplateResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.job_ = jobBuilder_ == null ? job_ : jobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -436,7 +441,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +460,8 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.dataflow.v1beta3.Job job_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -475,7 +482,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
      * @return Whether the job field is set.
      */
     public boolean hasJob() {
-      return jobBuilder_ != null || job_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -512,11 +519,11 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         job_ = value;
-        onChanged();
       } else {
         jobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -532,11 +539,11 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
     public Builder setJob(com.google.dataflow.v1beta3.Job.Builder builderForValue) {
       if (jobBuilder_ == null) {
         job_ = builderForValue.build();
-        onChanged();
       } else {
         jobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -551,16 +558,18 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeJob(com.google.dataflow.v1beta3.Job value) {
       if (jobBuilder_ == null) {
-        if (job_ != null) {
-          job_ = com.google.dataflow.v1beta3.Job.newBuilder(job_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && job_ != null
+            && job_ != com.google.dataflow.v1beta3.Job.getDefaultInstance()) {
+          getJobBuilder().mergeFrom(value);
         } else {
           job_ = value;
         }
-        onChanged();
       } else {
         jobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -574,14 +583,13 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
      * <code>.google.dataflow.v1beta3.Job job = 1;</code>
      */
     public Builder clearJob() {
-      if (jobBuilder_ == null) {
-        job_ = null;
-        onChanged();
-      } else {
-        job_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      job_ = null;
+      if (jobBuilder_ != null) {
+        jobBuilder_.dispose();
         jobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -595,7 +603,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
      * <code>.google.dataflow.v1beta3.Job job = 1;</code>
      */
     public com.google.dataflow.v1beta3.Job.Builder getJobBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }

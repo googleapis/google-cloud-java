@@ -119,7 +119,9 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.BudgetOrBuilder getBudgetOrBuilder() {
-    return getBudget();
+    return budget_ == null
+        ? com.google.cloud.billing.budgets.v1beta1.Budget.getDefaultInstance()
+        : budget_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -183,7 +185,7 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -403,16 +405,15 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (budgetBuilder_ == null) {
-        budget_ = null;
-      } else {
-        budget_ = null;
+      bitField0_ = 0;
+      budget_ = null;
+      if (budgetBuilder_ != null) {
+        budgetBuilder_.dispose();
         budgetBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -443,18 +444,22 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest buildPartial() {
       com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest result =
           new com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest(this);
-      if (budgetBuilder_ == null) {
-        result.budget_ = budget_;
-      } else {
-        result.budget_ = budgetBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.budget_ = budgetBuilder_ == null ? budget_ : budgetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -539,13 +544,13 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getBudgetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -564,6 +569,8 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.billing.budgets.v1beta1.Budget budget_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -586,7 +593,7 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the budget field is set.
      */
     public boolean hasBudget() {
-      return budgetBuilder_ != null || budget_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -629,11 +636,11 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         budget_ = value;
-        onChanged();
       } else {
         budgetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -652,11 +659,11 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.billing.budgets.v1beta1.Budget.Builder builderForValue) {
       if (budgetBuilder_ == null) {
         budget_ = builderForValue.build();
-        onChanged();
       } else {
         budgetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -673,19 +680,18 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeBudget(com.google.cloud.billing.budgets.v1beta1.Budget value) {
       if (budgetBuilder_ == null) {
-        if (budget_ != null) {
-          budget_ =
-              com.google.cloud.billing.budgets.v1beta1.Budget.newBuilder(budget_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && budget_ != null
+            && budget_ != com.google.cloud.billing.budgets.v1beta1.Budget.getDefaultInstance()) {
+          getBudgetBuilder().mergeFrom(value);
         } else {
           budget_ = value;
         }
-        onChanged();
       } else {
         budgetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -701,14 +707,13 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearBudget() {
-      if (budgetBuilder_ == null) {
-        budget_ = null;
-        onChanged();
-      } else {
-        budget_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      budget_ = null;
+      if (budgetBuilder_ != null) {
+        budgetBuilder_.dispose();
         budgetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -724,7 +729,7 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.billing.budgets.v1beta1.Budget.Builder getBudgetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBudgetFieldBuilder().getBuilder();
     }
@@ -802,7 +807,7 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -851,11 +856,11 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -876,11 +881,11 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -900,17 +905,18 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -929,14 +935,13 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -955,7 +960,7 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

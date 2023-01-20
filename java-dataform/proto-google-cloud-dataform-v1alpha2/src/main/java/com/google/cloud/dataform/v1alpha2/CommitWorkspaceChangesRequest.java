@@ -70,7 +70,9 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -173,11 +175,15 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.dataform.v1alpha2.CommitAuthorOrBuilder getAuthorOrBuilder() {
-    return getAuthor();
+    return author_ == null
+        ? com.google.cloud.dataform.v1alpha2.CommitAuthor.getDefaultInstance()
+        : author_;
   }
 
   public static final int COMMIT_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object commitMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object commitMessage_ = "";
   /**
    *
    *
@@ -226,6 +232,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
   }
 
   public static final int PATHS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList paths_;
   /**
    *
@@ -527,18 +535,16 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (authorBuilder_ == null) {
-        author_ = null;
-      } else {
-        author_ = null;
+      author_ = null;
+      if (authorBuilder_ != null) {
+        authorBuilder_.dispose();
         authorBuilder_ = null;
       }
       commitMessage_ = "";
-
       paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -567,21 +573,35 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     public com.google.cloud.dataform.v1alpha2.CommitWorkspaceChangesRequest buildPartial() {
       com.google.cloud.dataform.v1alpha2.CommitWorkspaceChangesRequest result =
           new com.google.cloud.dataform.v1alpha2.CommitWorkspaceChangesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (authorBuilder_ == null) {
-        result.author_ = author_;
-      } else {
-        result.author_ = authorBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.commitMessage_ = commitMessage_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        paths_ = paths_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.paths_ = paths_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dataform.v1alpha2.CommitWorkspaceChangesRequest result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        paths_ = paths_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.paths_ = paths_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataform.v1alpha2.CommitWorkspaceChangesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.author_ = authorBuilder_ == null ? author_ : authorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.commitMessage_ = commitMessage_;
+      }
     }
 
     @java.lang.Override
@@ -634,6 +654,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAuthor()) {
@@ -641,12 +662,13 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       }
       if (!other.getCommitMessage().isEmpty()) {
         commitMessage_ = other.commitMessage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.paths_.isEmpty()) {
         if (paths_.isEmpty()) {
           paths_ = other.paths_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensurePathsIsMutable();
           paths_.addAll(other.paths_);
@@ -682,13 +704,13 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 commitMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -701,7 +723,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
             case 34:
               {
                 input.readMessage(getAuthorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             default:
@@ -790,8 +812,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -809,8 +831,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -833,8 +855,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -859,7 +881,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      * @return Whether the author field is set.
      */
     public boolean hasAuthor() {
-      return authorBuilder_ != null || author_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -900,11 +922,11 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         author_ = value;
-        onChanged();
       } else {
         authorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -922,11 +944,11 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         com.google.cloud.dataform.v1alpha2.CommitAuthor.Builder builderForValue) {
       if (authorBuilder_ == null) {
         author_ = builderForValue.build();
-        onChanged();
       } else {
         authorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -942,19 +964,18 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      */
     public Builder mergeAuthor(com.google.cloud.dataform.v1alpha2.CommitAuthor value) {
       if (authorBuilder_ == null) {
-        if (author_ != null) {
-          author_ =
-              com.google.cloud.dataform.v1alpha2.CommitAuthor.newBuilder(author_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && author_ != null
+            && author_ != com.google.cloud.dataform.v1alpha2.CommitAuthor.getDefaultInstance()) {
+          getAuthorBuilder().mergeFrom(value);
         } else {
           author_ = value;
         }
-        onChanged();
       } else {
         authorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -969,14 +990,13 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearAuthor() {
-      if (authorBuilder_ == null) {
-        author_ = null;
-        onChanged();
-      } else {
-        author_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      author_ = null;
+      if (authorBuilder_ != null) {
+        authorBuilder_.dispose();
         authorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -991,7 +1011,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.dataform.v1alpha2.CommitAuthor.Builder getAuthorBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAuthorFieldBuilder().getBuilder();
     }
@@ -1104,8 +1124,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       commitMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1121,8 +1141,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearCommitMessage() {
-
       commitMessage_ = getDefaultInstance().getCommitMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1143,8 +1163,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       commitMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1153,9 +1173,9 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePathsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         paths_ = new com.google.protobuf.LazyStringArrayList(paths_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1298,7 +1318,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      */
     public Builder clearPaths() {
       paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

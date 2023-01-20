@@ -68,7 +68,9 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 3355;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -333,8 +335,8 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -362,15 +364,21 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.WafExpressionSetExpression buildPartial() {
       com.google.cloud.compute.v1.WafExpressionSetExpression result =
           new com.google.cloud.compute.v1.WafExpressionSetExpression(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.WafExpressionSetExpression result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000001;
       }
-      result.id_ = id_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -420,8 +428,8 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
       if (other == com.google.cloud.compute.v1.WafExpressionSetExpression.getDefaultInstance())
         return this;
       if (other.hasId()) {
-        bitField0_ |= 0x00000001;
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -550,8 +558,8 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -567,8 +575,8 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -589,8 +597,8 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

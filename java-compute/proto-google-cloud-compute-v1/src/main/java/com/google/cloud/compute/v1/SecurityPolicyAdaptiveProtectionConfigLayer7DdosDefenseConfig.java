@@ -203,7 +203,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 311764355;
-  private boolean enable_;
+  private boolean enable_ = false;
   /**
    *
    *
@@ -236,7 +236,9 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   }
 
   public static final int RULE_VISIBILITY_FIELD_NUMBER = 453258293;
-  private volatile java.lang.Object ruleVisibility_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ruleVisibility_ = "";
   /**
    *
    *
@@ -549,10 +551,9 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enable_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       ruleVisibility_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -587,6 +588,16 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
           result =
               new com.google.cloud.compute.v1
                   .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
+            result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -594,12 +605,10 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ruleVisibility_ = ruleVisibility_;
         to_bitField0_ |= 0x00000002;
       }
-      result.ruleVisibility_ = ruleVisibility_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -662,8 +671,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         setEnable(other.getEnable());
       }
       if (other.hasRuleVisibility()) {
-        bitField0_ |= 0x00000002;
         ruleVisibility_ = other.ruleVisibility_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -767,8 +776,9 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      * @return This builder for chaining.
      */
     public Builder setEnable(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -869,8 +879,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       ruleVisibility_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -887,8 +897,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      * @return This builder for chaining.
      */
     public Builder clearRuleVisibility() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       ruleVisibility_ = getDefaultInstance().getRuleVisibility();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -910,8 +920,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       ruleVisibility_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

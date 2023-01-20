@@ -72,7 +72,9 @@ public final class SetIamPolicyRegionBackendServiceRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class SetIamPolicyRegionBackendServiceRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -221,11 +225,15 @@ public final class SetIamPolicyRegionBackendServiceRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.RegionSetPolicyRequestOrBuilder
       getRegionSetPolicyRequestResourceOrBuilder() {
-    return getRegionSetPolicyRequestResource();
+    return regionSetPolicyRequestResource_ == null
+        ? com.google.cloud.compute.v1.RegionSetPolicyRequest.getDefaultInstance()
+        : regionSetPolicyRequestResource_;
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -509,18 +517,15 @@ public final class SetIamPolicyRegionBackendServiceRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
-      if (regionSetPolicyRequestResourceBuilder_ == null) {
-        regionSetPolicyRequestResource_ = null;
-      } else {
-        regionSetPolicyRequestResource_ = null;
+      regionSetPolicyRequestResource_ = null;
+      if (regionSetPolicyRequestResourceBuilder_ != null) {
+        regionSetPolicyRequestResourceBuilder_.dispose();
         regionSetPolicyRequestResourceBuilder_ = null;
       }
       resource_ = "";
-
       return this;
     }
 
@@ -550,16 +555,31 @@ public final class SetIamPolicyRegionBackendServiceRequest
     public com.google.cloud.compute.v1.SetIamPolicyRegionBackendServiceRequest buildPartial() {
       com.google.cloud.compute.v1.SetIamPolicyRegionBackendServiceRequest result =
           new com.google.cloud.compute.v1.SetIamPolicyRegionBackendServiceRequest(this);
-      result.project_ = project_;
-      result.region_ = region_;
-      if (regionSetPolicyRequestResourceBuilder_ == null) {
-        result.regionSetPolicyRequestResource_ = regionSetPolicyRequestResource_;
-      } else {
-        result.regionSetPolicyRequestResource_ = regionSetPolicyRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.resource_ = resource_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SetIamPolicyRegionBackendServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.regionSetPolicyRequestResource_ =
+            regionSetPolicyRequestResourceBuilder_ == null
+                ? regionSetPolicyRequestResource_
+                : regionSetPolicyRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resource_ = resource_;
+      }
     }
 
     @java.lang.Override
@@ -613,10 +633,12 @@ public final class SetIamPolicyRegionBackendServiceRequest
               .getDefaultInstance()) return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRegionSetPolicyRequestResource()) {
@@ -624,6 +646,7 @@ public final class SetIamPolicyRegionBackendServiceRequest
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -655,19 +678,19 @@ public final class SetIamPolicyRegionBackendServiceRequest
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1566449778:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1566449778
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -2083054566:
@@ -675,7 +698,7 @@ public final class SetIamPolicyRegionBackendServiceRequest
                 input.readMessage(
                     getRegionSetPolicyRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case -2083054566
             default:
@@ -694,6 +717,8 @@ public final class SetIamPolicyRegionBackendServiceRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -756,8 +781,8 @@ public final class SetIamPolicyRegionBackendServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -773,8 +798,8 @@ public final class SetIamPolicyRegionBackendServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -795,8 +820,8 @@ public final class SetIamPolicyRegionBackendServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -862,8 +887,8 @@ public final class SetIamPolicyRegionBackendServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -879,8 +904,8 @@ public final class SetIamPolicyRegionBackendServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -901,8 +926,8 @@ public final class SetIamPolicyRegionBackendServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -927,8 +952,7 @@ public final class SetIamPolicyRegionBackendServiceRequest
      * @return Whether the regionSetPolicyRequestResource field is set.
      */
     public boolean hasRegionSetPolicyRequestResource() {
-      return regionSetPolicyRequestResourceBuilder_ != null
-          || regionSetPolicyRequestResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -970,11 +994,11 @@ public final class SetIamPolicyRegionBackendServiceRequest
           throw new NullPointerException();
         }
         regionSetPolicyRequestResource_ = value;
-        onChanged();
       } else {
         regionSetPolicyRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -992,11 +1016,11 @@ public final class SetIamPolicyRegionBackendServiceRequest
         com.google.cloud.compute.v1.RegionSetPolicyRequest.Builder builderForValue) {
       if (regionSetPolicyRequestResourceBuilder_ == null) {
         regionSetPolicyRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         regionSetPolicyRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1013,20 +1037,19 @@ public final class SetIamPolicyRegionBackendServiceRequest
     public Builder mergeRegionSetPolicyRequestResource(
         com.google.cloud.compute.v1.RegionSetPolicyRequest value) {
       if (regionSetPolicyRequestResourceBuilder_ == null) {
-        if (regionSetPolicyRequestResource_ != null) {
-          regionSetPolicyRequestResource_ =
-              com.google.cloud.compute.v1.RegionSetPolicyRequest.newBuilder(
-                      regionSetPolicyRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && regionSetPolicyRequestResource_ != null
+            && regionSetPolicyRequestResource_
+                != com.google.cloud.compute.v1.RegionSetPolicyRequest.getDefaultInstance()) {
+          getRegionSetPolicyRequestResourceBuilder().mergeFrom(value);
         } else {
           regionSetPolicyRequestResource_ = value;
         }
-        onChanged();
       } else {
         regionSetPolicyRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1041,14 +1064,13 @@ public final class SetIamPolicyRegionBackendServiceRequest
      * </code>
      */
     public Builder clearRegionSetPolicyRequestResource() {
-      if (regionSetPolicyRequestResourceBuilder_ == null) {
-        regionSetPolicyRequestResource_ = null;
-        onChanged();
-      } else {
-        regionSetPolicyRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      regionSetPolicyRequestResource_ = null;
+      if (regionSetPolicyRequestResourceBuilder_ != null) {
+        regionSetPolicyRequestResourceBuilder_.dispose();
         regionSetPolicyRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1064,7 +1086,7 @@ public final class SetIamPolicyRegionBackendServiceRequest
      */
     public com.google.cloud.compute.v1.RegionSetPolicyRequest.Builder
         getRegionSetPolicyRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRegionSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
@@ -1178,8 +1200,8 @@ public final class SetIamPolicyRegionBackendServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1195,8 +1217,8 @@ public final class SetIamPolicyRegionBackendServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1217,8 +1239,8 @@ public final class SetIamPolicyRegionBackendServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -69,7 +69,7 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
-  private int resourceType_;
+  private int resourceType_ = 0;
   /**
    *
    *
@@ -98,9 +98,8 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ResourceType getResourceType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.ResourceType result =
-        com.google.cloud.channel.v1.ResourceType.valueOf(resourceType_);
+        com.google.cloud.channel.v1.ResourceType.forNumber(resourceType_);
     return result == null ? com.google.cloud.channel.v1.ResourceType.UNRECOGNIZED : result;
   }
 
@@ -147,10 +146,12 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PriceOrBuilder getPriceOrBuilder() {
-    return getPrice();
+    return price_ == null ? com.google.cloud.channel.v1.Price.getDefaultInstance() : price_;
   }
 
   public static final int PRICE_PHASES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.PricePhase> pricePhases_;
   /**
    *
@@ -443,12 +444,11 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceType_ = 0;
-
-      if (priceBuilder_ == null) {
-        price_ = null;
-      } else {
-        price_ = null;
+      price_ = null;
+      if (priceBuilder_ != null) {
+        priceBuilder_.dispose();
         priceBuilder_ = null;
       }
       if (pricePhasesBuilder_ == null) {
@@ -457,7 +457,7 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
         pricePhases_ = null;
         pricePhasesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -485,24 +485,34 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.channel.v1.PriceByResource buildPartial() {
       com.google.cloud.channel.v1.PriceByResource result =
           new com.google.cloud.channel.v1.PriceByResource(this);
-      int from_bitField0_ = bitField0_;
-      result.resourceType_ = resourceType_;
-      if (priceBuilder_ == null) {
-        result.price_ = price_;
-      } else {
-        result.price_ = priceBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.channel.v1.PriceByResource result) {
       if (pricePhasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           pricePhases_ = java.util.Collections.unmodifiableList(pricePhases_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.pricePhases_ = pricePhases_;
       } else {
         result.pricePhases_ = pricePhasesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.PriceByResource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.price_ = priceBuilder_ == null ? price_ : priceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -560,7 +570,7 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
         if (!other.pricePhases_.isEmpty()) {
           if (pricePhases_.isEmpty()) {
             pricePhases_ = other.pricePhases_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensurePricePhasesIsMutable();
             pricePhases_.addAll(other.pricePhases_);
@@ -573,7 +583,7 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
             pricePhasesBuilder_.dispose();
             pricePhasesBuilder_ = null;
             pricePhases_ = other.pricePhases_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             pricePhasesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPricePhasesFieldBuilder()
@@ -612,13 +622,13 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 resourceType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getPriceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -682,8 +692,8 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setResourceTypeValue(int value) {
-
       resourceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,9 +710,8 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.ResourceType getResourceType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.ResourceType result =
-          com.google.cloud.channel.v1.ResourceType.valueOf(resourceType_);
+          com.google.cloud.channel.v1.ResourceType.forNumber(resourceType_);
       return result == null ? com.google.cloud.channel.v1.ResourceType.UNRECOGNIZED : result;
     }
     /**
@@ -721,7 +730,7 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       resourceType_ = value.getNumber();
       onChanged();
       return this;
@@ -738,7 +747,7 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       resourceType_ = 0;
       onChanged();
       return this;
@@ -762,7 +771,7 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
      * @return Whether the price field is set.
      */
     public boolean hasPrice() {
-      return priceBuilder_ != null || price_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -797,11 +806,11 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         price_ = value;
-        onChanged();
       } else {
         priceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -816,11 +825,11 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
     public Builder setPrice(com.google.cloud.channel.v1.Price.Builder builderForValue) {
       if (priceBuilder_ == null) {
         price_ = builderForValue.build();
-        onChanged();
       } else {
         priceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -834,17 +843,18 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergePrice(com.google.cloud.channel.v1.Price value) {
       if (priceBuilder_ == null) {
-        if (price_ != null) {
-          price_ =
-              com.google.cloud.channel.v1.Price.newBuilder(price_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && price_ != null
+            && price_ != com.google.cloud.channel.v1.Price.getDefaultInstance()) {
+          getPriceBuilder().mergeFrom(value);
         } else {
           price_ = value;
         }
-        onChanged();
       } else {
         priceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -857,14 +867,13 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.channel.v1.Price price = 2;</code>
      */
     public Builder clearPrice() {
-      if (priceBuilder_ == null) {
-        price_ = null;
-        onChanged();
-      } else {
-        price_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      price_ = null;
+      if (priceBuilder_ != null) {
+        priceBuilder_.dispose();
         priceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -877,7 +886,7 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.channel.v1.Price price = 2;</code>
      */
     public com.google.cloud.channel.v1.Price.Builder getPriceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPriceFieldBuilder().getBuilder();
     }
@@ -927,10 +936,10 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensurePricePhasesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         pricePhases_ =
             new java.util.ArrayList<com.google.cloud.channel.v1.PricePhase>(pricePhases_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1145,7 +1154,7 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
     public Builder clearPricePhases() {
       if (pricePhasesBuilder_ == null) {
         pricePhases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         pricePhasesBuilder_.clear();
@@ -1267,7 +1276,7 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.channel.v1.PricePhase,
                 com.google.cloud.channel.v1.PricePhase.Builder,
                 com.google.cloud.channel.v1.PricePhaseOrBuilder>(
-                pricePhases_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                pricePhases_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         pricePhases_ = null;
       }
       return pricePhasesBuilder_;

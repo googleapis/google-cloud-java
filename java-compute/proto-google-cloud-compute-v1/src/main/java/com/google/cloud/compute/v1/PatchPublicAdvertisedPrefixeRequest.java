@@ -73,7 +73,9 @@ public final class PatchPublicAdvertisedPrefixeRequest
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class PatchPublicAdvertisedPrefixeRequest
   }
 
   public static final int PUBLIC_ADVERTISED_PREFIX_FIELD_NUMBER = 101874590;
-  private volatile java.lang.Object publicAdvertisedPrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicAdvertisedPrefix_ = "";
   /**
    *
    *
@@ -228,11 +232,15 @@ public final class PatchPublicAdvertisedPrefixeRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.PublicAdvertisedPrefixOrBuilder
       getPublicAdvertisedPrefixResourceOrBuilder() {
-    return getPublicAdvertisedPrefixResource();
+    return publicAdvertisedPrefixResource_ == null
+        ? com.google.cloud.compute.v1.PublicAdvertisedPrefix.getDefaultInstance()
+        : publicAdvertisedPrefixResource_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -537,18 +545,15 @@ public final class PatchPublicAdvertisedPrefixeRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       publicAdvertisedPrefix_ = "";
-
-      if (publicAdvertisedPrefixResourceBuilder_ == null) {
-        publicAdvertisedPrefixResource_ = null;
-      } else {
-        publicAdvertisedPrefixResource_ = null;
+      publicAdvertisedPrefixResource_ = null;
+      if (publicAdvertisedPrefixResourceBuilder_ != null) {
+        publicAdvertisedPrefixResourceBuilder_.dispose();
         publicAdvertisedPrefixResourceBuilder_ = null;
       }
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -577,22 +582,34 @@ public final class PatchPublicAdvertisedPrefixeRequest
     public com.google.cloud.compute.v1.PatchPublicAdvertisedPrefixeRequest buildPartial() {
       com.google.cloud.compute.v1.PatchPublicAdvertisedPrefixeRequest result =
           new com.google.cloud.compute.v1.PatchPublicAdvertisedPrefixeRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.publicAdvertisedPrefix_ = publicAdvertisedPrefix_;
-      if (publicAdvertisedPrefixResourceBuilder_ == null) {
-        result.publicAdvertisedPrefixResource_ = publicAdvertisedPrefixResource_;
-      } else {
-        result.publicAdvertisedPrefixResource_ = publicAdvertisedPrefixResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.PatchPublicAdvertisedPrefixeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.publicAdvertisedPrefix_ = publicAdvertisedPrefix_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.publicAdvertisedPrefixResource_ =
+            publicAdvertisedPrefixResourceBuilder_ == null
+                ? publicAdvertisedPrefixResource_
+                : publicAdvertisedPrefixResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -645,18 +662,20 @@ public final class PatchPublicAdvertisedPrefixeRequest
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPublicAdvertisedPrefix().isEmpty()) {
         publicAdvertisedPrefix_ = other.publicAdvertisedPrefix_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPublicAdvertisedPrefixResource()) {
         mergePublicAdvertisedPrefixResource(other.getPublicAdvertisedPrefixResource());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -688,19 +707,19 @@ public final class PatchPublicAdvertisedPrefixeRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 814996722:
               {
                 publicAdvertisedPrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 814996722
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case 1868913786:
@@ -708,7 +727,7 @@ public final class PatchPublicAdvertisedPrefixeRequest
                 input.readMessage(
                     getPublicAdvertisedPrefixResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1868913786
             default:
@@ -797,8 +816,8 @@ public final class PatchPublicAdvertisedPrefixeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -816,8 +835,8 @@ public final class PatchPublicAdvertisedPrefixeRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -840,8 +859,8 @@ public final class PatchPublicAdvertisedPrefixeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -910,8 +929,8 @@ public final class PatchPublicAdvertisedPrefixeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicAdvertisedPrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -928,8 +947,8 @@ public final class PatchPublicAdvertisedPrefixeRequest
      * @return This builder for chaining.
      */
     public Builder clearPublicAdvertisedPrefix() {
-
       publicAdvertisedPrefix_ = getDefaultInstance().getPublicAdvertisedPrefix();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -951,8 +970,8 @@ public final class PatchPublicAdvertisedPrefixeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publicAdvertisedPrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -977,8 +996,7 @@ public final class PatchPublicAdvertisedPrefixeRequest
      * @return Whether the publicAdvertisedPrefixResource field is set.
      */
     public boolean hasPublicAdvertisedPrefixResource() {
-      return publicAdvertisedPrefixResourceBuilder_ != null
-          || publicAdvertisedPrefixResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1020,11 +1038,11 @@ public final class PatchPublicAdvertisedPrefixeRequest
           throw new NullPointerException();
         }
         publicAdvertisedPrefixResource_ = value;
-        onChanged();
       } else {
         publicAdvertisedPrefixResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1042,11 +1060,11 @@ public final class PatchPublicAdvertisedPrefixeRequest
         com.google.cloud.compute.v1.PublicAdvertisedPrefix.Builder builderForValue) {
       if (publicAdvertisedPrefixResourceBuilder_ == null) {
         publicAdvertisedPrefixResource_ = builderForValue.build();
-        onChanged();
       } else {
         publicAdvertisedPrefixResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1063,20 +1081,19 @@ public final class PatchPublicAdvertisedPrefixeRequest
     public Builder mergePublicAdvertisedPrefixResource(
         com.google.cloud.compute.v1.PublicAdvertisedPrefix value) {
       if (publicAdvertisedPrefixResourceBuilder_ == null) {
-        if (publicAdvertisedPrefixResource_ != null) {
-          publicAdvertisedPrefixResource_ =
-              com.google.cloud.compute.v1.PublicAdvertisedPrefix.newBuilder(
-                      publicAdvertisedPrefixResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && publicAdvertisedPrefixResource_ != null
+            && publicAdvertisedPrefixResource_
+                != com.google.cloud.compute.v1.PublicAdvertisedPrefix.getDefaultInstance()) {
+          getPublicAdvertisedPrefixResourceBuilder().mergeFrom(value);
         } else {
           publicAdvertisedPrefixResource_ = value;
         }
-        onChanged();
       } else {
         publicAdvertisedPrefixResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1091,14 +1108,13 @@ public final class PatchPublicAdvertisedPrefixeRequest
      * </code>
      */
     public Builder clearPublicAdvertisedPrefixResource() {
-      if (publicAdvertisedPrefixResourceBuilder_ == null) {
-        publicAdvertisedPrefixResource_ = null;
-        onChanged();
-      } else {
-        publicAdvertisedPrefixResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      publicAdvertisedPrefixResource_ = null;
+      if (publicAdvertisedPrefixResourceBuilder_ != null) {
+        publicAdvertisedPrefixResourceBuilder_.dispose();
         publicAdvertisedPrefixResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1114,7 +1130,7 @@ public final class PatchPublicAdvertisedPrefixeRequest
      */
     public com.google.cloud.compute.v1.PublicAdvertisedPrefix.Builder
         getPublicAdvertisedPrefixResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPublicAdvertisedPrefixResourceFieldBuilder().getBuilder();
     }
@@ -1180,7 +1196,7 @@ public final class PatchPublicAdvertisedPrefixeRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1242,8 +1258,8 @@ public final class PatchPublicAdvertisedPrefixeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1259,8 +1275,8 @@ public final class PatchPublicAdvertisedPrefixeRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1281,8 +1297,8 @@ public final class PatchPublicAdvertisedPrefixeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

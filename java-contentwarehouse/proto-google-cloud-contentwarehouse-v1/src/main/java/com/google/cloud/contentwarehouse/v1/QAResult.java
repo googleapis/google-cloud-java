@@ -147,7 +147,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int START_INDEX_FIELD_NUMBER = 1;
-    private int startIndex_;
+    private int startIndex_ = 0;
     /**
      *
      *
@@ -165,7 +165,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int END_INDEX_FIELD_NUMBER = 2;
-    private int endIndex_;
+    private int endIndex_ = 0;
     /**
      *
      *
@@ -392,10 +392,9 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         startIndex_ = 0;
-
         endIndex_ = 0;
-
         return this;
       }
 
@@ -423,10 +422,21 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.contentwarehouse.v1.QAResult.Highlight buildPartial() {
         com.google.cloud.contentwarehouse.v1.QAResult.Highlight result =
             new com.google.cloud.contentwarehouse.v1.QAResult.Highlight(this);
-        result.startIndex_ = startIndex_;
-        result.endIndex_ = endIndex_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.contentwarehouse.v1.QAResult.Highlight result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.startIndex_ = startIndex_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endIndex_ = endIndex_;
+        }
       }
 
       @java.lang.Override
@@ -512,13 +522,13 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   startIndex_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   endIndex_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -537,6 +547,8 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int startIndex_;
       /**
@@ -569,6 +581,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       public Builder setStartIndex(int value) {
 
         startIndex_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -584,7 +597,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearStartIndex() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         startIndex_ = 0;
         onChanged();
         return this;
@@ -621,6 +634,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       public Builder setEndIndex(int value) {
 
         endIndex_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -636,7 +650,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEndIndex() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         endIndex_ = 0;
         onChanged();
         return this;
@@ -707,6 +721,8 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HIGHLIGHTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.QAResult.Highlight> highlights_;
   /**
    *
@@ -778,7 +794,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 2;
-  private float confidenceScore_;
+  private float confidenceScore_ = 0F;
   /**
    *
    *
@@ -1006,6 +1022,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (highlightsBuilder_ == null) {
         highlights_ = java.util.Collections.emptyList();
       } else {
@@ -1014,7 +1031,6 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       confidenceScore_ = 0F;
-
       return this;
     }
 
@@ -1042,7 +1058,15 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.QAResult buildPartial() {
       com.google.cloud.contentwarehouse.v1.QAResult result =
           new com.google.cloud.contentwarehouse.v1.QAResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.contentwarehouse.v1.QAResult result) {
       if (highlightsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           highlights_ = java.util.Collections.unmodifiableList(highlights_);
@@ -1052,9 +1076,13 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.highlights_ = highlightsBuilder_.build();
       }
-      result.confidenceScore_ = confidenceScore_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.QAResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidenceScore_ = confidenceScore_;
+      }
     }
 
     @java.lang.Override
@@ -1175,7 +1203,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
             case 21:
               {
                 confidenceScore_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -1595,6 +1623,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfidenceScore(float value) {
 
       confidenceScore_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1612,7 +1641,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidenceScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidenceScore_ = 0F;
       onChanged();
       return this;

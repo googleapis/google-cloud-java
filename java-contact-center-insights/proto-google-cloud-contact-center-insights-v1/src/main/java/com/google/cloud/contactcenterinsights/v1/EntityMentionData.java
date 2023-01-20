@@ -229,7 +229,9 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENTITY_UNIQUE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object entityUniqueId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entityUniqueId_ = "";
   /**
    *
    *
@@ -280,7 +282,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -309,9 +311,8 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType result =
-        com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType.valueOf(type_);
+        com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType.forNumber(type_);
     return result == null
         ? com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType.UNRECOGNIZED
         : result;
@@ -362,7 +363,9 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder getSentimentOrBuilder() {
-    return getSentiment();
+    return sentiment_ == null
+        ? com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance()
+        : sentiment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -593,14 +596,12 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       entityUniqueId_ = "";
-
       type_ = 0;
-
-      if (sentimentBuilder_ == null) {
-        sentiment_ = null;
-      } else {
-        sentiment_ = null;
+      sentiment_ = null;
+      if (sentimentBuilder_ != null) {
+        sentimentBuilder_.dispose();
         sentimentBuilder_ = null;
       }
       return this;
@@ -630,15 +631,24 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.contactcenterinsights.v1.EntityMentionData buildPartial() {
       com.google.cloud.contactcenterinsights.v1.EntityMentionData result =
           new com.google.cloud.contactcenterinsights.v1.EntityMentionData(this);
-      result.entityUniqueId_ = entityUniqueId_;
-      result.type_ = type_;
-      if (sentimentBuilder_ == null) {
-        result.sentiment_ = sentiment_;
-      } else {
-        result.sentiment_ = sentimentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.EntityMentionData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entityUniqueId_ = entityUniqueId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sentiment_ = sentimentBuilder_ == null ? sentiment_ : sentimentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -689,6 +699,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getEntityUniqueId().isEmpty()) {
         entityUniqueId_ = other.entityUniqueId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -726,19 +737,19 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 entityUniqueId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getSentimentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -757,6 +768,8 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object entityUniqueId_ = "";
     /**
@@ -822,8 +835,8 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       entityUniqueId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -840,8 +853,8 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEntityUniqueId() {
-
       entityUniqueId_ = getDefaultInstance().getEntityUniqueId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -863,8 +876,8 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entityUniqueId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -898,8 +911,8 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -916,9 +929,8 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType result =
-          com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType.valueOf(type_);
+          com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType.forNumber(type_);
       return result == null
           ? com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType.UNRECOGNIZED
           : result;
@@ -940,7 +952,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -957,7 +969,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;
@@ -981,7 +993,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
      * @return Whether the sentiment field is set.
      */
     public boolean hasSentiment() {
-      return sentimentBuilder_ != null || sentiment_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1018,11 +1030,11 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         sentiment_ = value;
-        onChanged();
       } else {
         sentimentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1038,11 +1050,11 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
         com.google.cloud.contactcenterinsights.v1.SentimentData.Builder builderForValue) {
       if (sentimentBuilder_ == null) {
         sentiment_ = builderForValue.build();
-        onChanged();
       } else {
         sentimentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1056,19 +1068,19 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeSentiment(com.google.cloud.contactcenterinsights.v1.SentimentData value) {
       if (sentimentBuilder_ == null) {
-        if (sentiment_ != null) {
-          sentiment_ =
-              com.google.cloud.contactcenterinsights.v1.SentimentData.newBuilder(sentiment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && sentiment_ != null
+            && sentiment_
+                != com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance()) {
+          getSentimentBuilder().mergeFrom(value);
         } else {
           sentiment_ = value;
         }
-        onChanged();
       } else {
         sentimentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1081,14 +1093,13 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 3;</code>
      */
     public Builder clearSentiment() {
-      if (sentimentBuilder_ == null) {
-        sentiment_ = null;
-        onChanged();
-      } else {
-        sentiment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sentiment_ = null;
+      if (sentimentBuilder_ != null) {
+        sentimentBuilder_.dispose();
         sentimentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1101,7 +1112,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 3;</code>
      */
     public com.google.cloud.contactcenterinsights.v1.SentimentData.Builder getSentimentBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSentimentFieldBuilder().getBuilder();
     }

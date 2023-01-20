@@ -255,7 +255,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int MAX_NODES_FIELD_NUMBER = 297762838;
-  private int maxNodes_;
+  private int maxNodes_ = 0;
   /**
    *
    *
@@ -288,7 +288,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
   }
 
   public static final int MIN_NODES_FIELD_NUMBER = 533370500;
-  private int minNodes_;
+  private int minNodes_ = 0;
   /**
    *
    *
@@ -321,7 +321,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
   }
 
   public static final int MODE_FIELD_NUMBER = 3357091;
-  private volatile java.lang.Object mode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mode_ = "";
   /**
    *
    *
@@ -617,12 +619,10 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maxNodes_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       minNodes_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       mode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -650,6 +650,14 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.NodeGroupAutoscalingPolicy buildPartial() {
       com.google.cloud.compute.v1.NodeGroupAutoscalingPolicy result =
           new com.google.cloud.compute.v1.NodeGroupAutoscalingPolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NodeGroupAutoscalingPolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -661,12 +669,10 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mode_ = mode_;
         to_bitField0_ |= 0x00000004;
       }
-      result.mode_ = mode_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -722,8 +728,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
         setMinNodes(other.getMinNodes());
       }
       if (other.hasMode()) {
-        bitField0_ |= 0x00000004;
         mode_ = other.mode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -833,8 +839,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setMaxNodes(int value) {
-      bitField0_ |= 0x00000001;
+
       maxNodes_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -900,8 +907,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setMinNodes(int value) {
-      bitField0_ |= 0x00000002;
+
       minNodes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1002,8 +1010,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       mode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1020,8 +1028,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       mode_ = getDefaultInstance().getMode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1043,8 +1051,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       mode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.dataform.v1beta1.WorkspaceOrBuilder getWorkspaceOrBuilder() {
-    return getWorkspace();
+    return workspace_ == null
+        ? com.google.cloud.dataform.v1beta1.Workspace.getDefaultInstance()
+        : workspace_;
   }
 
   public static final int WORKSPACE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object workspaceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workspaceId_ = "";
   /**
    *
    *
@@ -449,16 +455,14 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (workspaceBuilder_ == null) {
-        workspace_ = null;
-      } else {
-        workspace_ = null;
+      workspace_ = null;
+      if (workspaceBuilder_ != null) {
+        workspaceBuilder_.dispose();
         workspaceBuilder_ = null;
       }
       workspaceId_ = "";
-
       return this;
     }
 
@@ -486,15 +490,24 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest buildPartial() {
       com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest result =
           new com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest(this);
-      result.parent_ = parent_;
-      if (workspaceBuilder_ == null) {
-        result.workspace_ = workspace_;
-      } else {
-        result.workspace_ = workspaceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.workspaceId_ = workspaceId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.workspace_ = workspaceBuilder_ == null ? workspace_ : workspaceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.workspaceId_ = workspaceId_;
+      }
     }
 
     @java.lang.Override
@@ -545,6 +558,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasWorkspace()) {
@@ -552,6 +566,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getWorkspaceId().isEmpty()) {
         workspaceId_ = other.workspaceId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -583,19 +598,19 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getWorkspaceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 workspaceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -614,6 +629,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -685,8 +702,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,8 +722,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -730,8 +747,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -756,7 +773,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      * @return Whether the workspace field is set.
      */
     public boolean hasWorkspace() {
-      return workspaceBuilder_ != null || workspace_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -797,11 +814,11 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         workspace_ = value;
-        onChanged();
       } else {
         workspaceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,11 +836,11 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.dataform.v1beta1.Workspace.Builder builderForValue) {
       if (workspaceBuilder_ == null) {
         workspace_ = builderForValue.build();
-        onChanged();
       } else {
         workspaceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,19 +856,18 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeWorkspace(com.google.cloud.dataform.v1beta1.Workspace value) {
       if (workspaceBuilder_ == null) {
-        if (workspace_ != null) {
-          workspace_ =
-              com.google.cloud.dataform.v1beta1.Workspace.newBuilder(workspace_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && workspace_ != null
+            && workspace_ != com.google.cloud.dataform.v1beta1.Workspace.getDefaultInstance()) {
+          getWorkspaceBuilder().mergeFrom(value);
         } else {
           workspace_ = value;
         }
-        onChanged();
       } else {
         workspaceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -866,14 +882,13 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearWorkspace() {
-      if (workspaceBuilder_ == null) {
-        workspace_ = null;
-        onChanged();
-      } else {
-        workspace_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      workspace_ = null;
+      if (workspaceBuilder_ != null) {
+        workspaceBuilder_.dispose();
         workspaceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -888,7 +903,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.Workspace.Builder getWorkspaceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWorkspaceFieldBuilder().getBuilder();
     }
@@ -1004,8 +1019,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       workspaceId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1022,8 +1037,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearWorkspaceId() {
-
       workspaceId_ = getDefaultInstance().getWorkspaceId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1045,8 +1060,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workspaceId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

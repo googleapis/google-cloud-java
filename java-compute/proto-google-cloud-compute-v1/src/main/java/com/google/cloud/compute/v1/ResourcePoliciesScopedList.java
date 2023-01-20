@@ -68,6 +68,8 @@ public final class ResourcePoliciesScopedList extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int RESOURCE_POLICIES_FIELD_NUMBER = 22220385;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ResourcePolicy> resourcePolicies_;
   /**
    *
@@ -408,6 +410,7 @@ public final class ResourcePoliciesScopedList extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (resourcePoliciesBuilder_ == null) {
         resourcePolicies_ = java.util.Collections.emptyList();
       } else {
@@ -415,12 +418,11 @@ public final class ResourcePoliciesScopedList extends com.google.protobuf.Genera
         resourcePoliciesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (warningBuilder_ == null) {
-        warning_ = null;
-      } else {
-        warningBuilder_.clear();
+      warning_ = null;
+      if (warningBuilder_ != null) {
+        warningBuilder_.dispose();
+        warningBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -448,8 +450,16 @@ public final class ResourcePoliciesScopedList extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.ResourcePoliciesScopedList buildPartial() {
       com.google.cloud.compute.v1.ResourcePoliciesScopedList result =
           new com.google.cloud.compute.v1.ResourcePoliciesScopedList(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.ResourcePoliciesScopedList result) {
       if (resourcePoliciesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           resourcePolicies_ = java.util.Collections.unmodifiableList(resourcePolicies_);
@@ -459,17 +469,16 @@ public final class ResourcePoliciesScopedList extends com.google.protobuf.Genera
       } else {
         result.resourcePolicies_ = resourcePoliciesBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ResourcePoliciesScopedList result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (warningBuilder_ == null) {
-          result.warning_ = warning_;
-        } else {
-          result.warning_ = warningBuilder_.build();
-        }
+        result.warning_ = warningBuilder_ == null ? warning_ : warningBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1026,11 +1035,11 @@ public final class ResourcePoliciesScopedList extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         warning_ = value;
-        onChanged();
       } else {
         warningBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1045,11 +1054,11 @@ public final class ResourcePoliciesScopedList extends com.google.protobuf.Genera
     public Builder setWarning(com.google.cloud.compute.v1.Warning.Builder builderForValue) {
       if (warningBuilder_ == null) {
         warning_ = builderForValue.build();
-        onChanged();
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1066,18 +1075,15 @@ public final class ResourcePoliciesScopedList extends com.google.protobuf.Genera
         if (((bitField0_ & 0x00000002) != 0)
             && warning_ != null
             && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
-          warning_ =
-              com.google.cloud.compute.v1.Warning.newBuilder(warning_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getWarningBuilder().mergeFrom(value);
         } else {
           warning_ = value;
         }
-        onChanged();
       } else {
         warningBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1090,13 +1096,13 @@ public final class ResourcePoliciesScopedList extends com.google.protobuf.Genera
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder clearWarning() {
-      if (warningBuilder_ == null) {
-        warning_ = null;
-        onChanged();
-      } else {
-        warningBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      warning_ = null;
+      if (warningBuilder_ != null) {
+        warningBuilder_.dispose();
+        warningBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

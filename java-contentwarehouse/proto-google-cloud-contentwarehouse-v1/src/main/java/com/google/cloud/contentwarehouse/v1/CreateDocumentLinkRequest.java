@@ -68,7 +68,9 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -177,7 +179,9 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.DocumentLinkOrBuilder getDocumentLinkOrBuilder() {
-    return getDocumentLink();
+    return documentLink_ == null
+        ? com.google.cloud.contentwarehouse.v1.DocumentLink.getDefaultInstance()
+        : documentLink_;
   }
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 3;
@@ -229,7 +233,9 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder
       getRequestMetadataOrBuilder() {
-    return getRequestMetadata();
+    return requestMetadata_ == null
+        ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
+        : requestMetadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -458,18 +464,16 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (documentLinkBuilder_ == null) {
-        documentLink_ = null;
-      } else {
-        documentLink_ = null;
+      documentLink_ = null;
+      if (documentLinkBuilder_ != null) {
+        documentLinkBuilder_.dispose();
         documentLinkBuilder_ = null;
       }
-      if (requestMetadataBuilder_ == null) {
-        requestMetadata_ = null;
-      } else {
-        requestMetadata_ = null;
+      requestMetadata_ = null;
+      if (requestMetadataBuilder_ != null) {
+        requestMetadataBuilder_.dispose();
         requestMetadataBuilder_ = null;
       }
       return this;
@@ -500,19 +504,27 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
     public com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest buildPartial() {
       com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest result =
           new com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest(this);
-      result.parent_ = parent_;
-      if (documentLinkBuilder_ == null) {
-        result.documentLink_ = documentLink_;
-      } else {
-        result.documentLink_ = documentLinkBuilder_.build();
-      }
-      if (requestMetadataBuilder_ == null) {
-        result.requestMetadata_ = requestMetadata_;
-      } else {
-        result.requestMetadata_ = requestMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.documentLink_ =
+            documentLinkBuilder_ == null ? documentLink_ : documentLinkBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestMetadata_ =
+            requestMetadataBuilder_ == null ? requestMetadata_ : requestMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -564,6 +576,7 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDocumentLink()) {
@@ -601,19 +614,19 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDocumentLinkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getRequestMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -632,6 +645,8 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -709,8 +724,8 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -731,8 +746,8 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -758,8 +773,8 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -784,7 +799,7 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
      * @return Whether the documentLink field is set.
      */
     public boolean hasDocumentLink() {
-      return documentLinkBuilder_ != null || documentLink_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -825,11 +840,11 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         documentLink_ = value;
-        onChanged();
       } else {
         documentLinkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -847,11 +862,11 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
         com.google.cloud.contentwarehouse.v1.DocumentLink.Builder builderForValue) {
       if (documentLinkBuilder_ == null) {
         documentLink_ = builderForValue.build();
-        onChanged();
       } else {
         documentLinkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -867,19 +882,19 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
      */
     public Builder mergeDocumentLink(com.google.cloud.contentwarehouse.v1.DocumentLink value) {
       if (documentLinkBuilder_ == null) {
-        if (documentLink_ != null) {
-          documentLink_ =
-              com.google.cloud.contentwarehouse.v1.DocumentLink.newBuilder(documentLink_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && documentLink_ != null
+            && documentLink_
+                != com.google.cloud.contentwarehouse.v1.DocumentLink.getDefaultInstance()) {
+          getDocumentLinkBuilder().mergeFrom(value);
         } else {
           documentLink_ = value;
         }
-        onChanged();
       } else {
         documentLinkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -894,14 +909,13 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearDocumentLink() {
-      if (documentLinkBuilder_ == null) {
-        documentLink_ = null;
-        onChanged();
-      } else {
-        documentLink_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      documentLink_ = null;
+      if (documentLinkBuilder_ != null) {
+        documentLinkBuilder_.dispose();
         documentLinkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -916,7 +930,7 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.contentwarehouse.v1.DocumentLink.Builder getDocumentLinkBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDocumentLinkFieldBuilder().getBuilder();
     }
@@ -987,7 +1001,7 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
      * @return Whether the requestMetadata field is set.
      */
     public boolean hasRequestMetadata() {
-      return requestMetadataBuilder_ != null || requestMetadata_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1026,11 +1040,11 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         requestMetadata_ = value;
-        onChanged();
       } else {
         requestMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1047,11 +1061,11 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
         com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder builderForValue) {
       if (requestMetadataBuilder_ == null) {
         requestMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         requestMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1067,19 +1081,19 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
     public Builder mergeRequestMetadata(
         com.google.cloud.contentwarehouse.v1.RequestMetadata value) {
       if (requestMetadataBuilder_ == null) {
-        if (requestMetadata_ != null) {
-          requestMetadata_ =
-              com.google.cloud.contentwarehouse.v1.RequestMetadata.newBuilder(requestMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && requestMetadata_ != null
+            && requestMetadata_
+                != com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()) {
+          getRequestMetadataBuilder().mergeFrom(value);
         } else {
           requestMetadata_ = value;
         }
-        onChanged();
       } else {
         requestMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1093,14 +1107,13 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
      * <code>.google.cloud.contentwarehouse.v1.RequestMetadata request_metadata = 3;</code>
      */
     public Builder clearRequestMetadata() {
-      if (requestMetadataBuilder_ == null) {
-        requestMetadata_ = null;
-        onChanged();
-      } else {
-        requestMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      requestMetadata_ = null;
+      if (requestMetadataBuilder_ != null) {
+        requestMetadataBuilder_.dispose();
         requestMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1115,7 +1128,7 @@ public final class CreateDocumentLinkRequest extends com.google.protobuf.Generat
      */
     public com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder
         getRequestMetadataBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }

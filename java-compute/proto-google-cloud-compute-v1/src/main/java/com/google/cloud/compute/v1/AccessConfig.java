@@ -401,7 +401,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int EXTERNAL_IPV6_FIELD_NUMBER = 532703707;
-  private volatile java.lang.Object externalIpv6_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalIpv6_ = "";
   /**
    *
    *
@@ -465,7 +467,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXTERNAL_IPV6_PREFIX_LENGTH_FIELD_NUMBER = 425672143;
-  private int externalIpv6PrefixLength_;
+  private int externalIpv6PrefixLength_ = 0;
   /**
    *
    *
@@ -498,7 +500,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -562,7 +566,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -626,7 +632,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAT_I_P_FIELD_NUMBER = 117634556;
-  private volatile java.lang.Object natIP_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object natIP_ = "";
   /**
    *
    *
@@ -690,7 +698,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
-  private volatile java.lang.Object networkTier_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkTier_ = "";
   /**
    *
    *
@@ -757,7 +767,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBLIC_PTR_DOMAIN_NAME_FIELD_NUMBER = 316599167;
-  private volatile java.lang.Object publicPtrDomainName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicPtrDomainName_ = "";
   /**
    *
    *
@@ -821,7 +833,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SET_PUBLIC_PTR_FIELD_NUMBER = 523870229;
-  private boolean setPublicPtr_;
+  private boolean setPublicPtr_ = false;
   /**
    *
    *
@@ -854,7 +866,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -1236,24 +1250,16 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       externalIpv6_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       externalIpv6PrefixLength_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       natIP_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       networkTier_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       publicPtrDomainName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       setPublicPtr_ = false;
-      bitField0_ = (bitField0_ & ~0x00000080);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1281,47 +1287,53 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.AccessConfig buildPartial() {
       com.google.cloud.compute.v1.AccessConfig result =
           new com.google.cloud.compute.v1.AccessConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AccessConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.externalIpv6_ = externalIpv6_;
         to_bitField0_ |= 0x00000001;
       }
-      result.externalIpv6_ = externalIpv6_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.externalIpv6PrefixLength_ = externalIpv6PrefixLength_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000004;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000008;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.natIP_ = natIP_;
         to_bitField0_ |= 0x00000010;
       }
-      result.natIP_ = natIP_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.networkTier_ = networkTier_;
         to_bitField0_ |= 0x00000020;
       }
-      result.networkTier_ = networkTier_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.publicPtrDomainName_ = publicPtrDomainName_;
         to_bitField0_ |= 0x00000040;
       }
-      result.publicPtrDomainName_ = publicPtrDomainName_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.setPublicPtr_ = setPublicPtr_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00000100;
       }
-      result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1370,44 +1382,44 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.AccessConfig other) {
       if (other == com.google.cloud.compute.v1.AccessConfig.getDefaultInstance()) return this;
       if (other.hasExternalIpv6()) {
-        bitField0_ |= 0x00000001;
         externalIpv6_ = other.externalIpv6_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExternalIpv6PrefixLength()) {
         setExternalIpv6PrefixLength(other.getExternalIpv6PrefixLength());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000004;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000008;
         name_ = other.name_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasNatIP()) {
-        bitField0_ |= 0x00000010;
         natIP_ = other.natIP_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasNetworkTier()) {
-        bitField0_ |= 0x00000020;
         networkTier_ = other.networkTier_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasPublicPtrDomainName()) {
-        bitField0_ |= 0x00000040;
         publicPtrDomainName_ = other.publicPtrDomainName_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasSetPublicPtr()) {
         setSetPublicPtr(other.getSetPublicPtr());
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00000100;
         type_ = other.type_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1584,8 +1596,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       externalIpv6_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1601,8 +1613,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExternalIpv6() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       externalIpv6_ = getDefaultInstance().getExternalIpv6();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1623,8 +1635,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       externalIpv6_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1673,8 +1685,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExternalIpv6PrefixLength(int value) {
-      bitField0_ |= 0x00000002;
+
       externalIpv6PrefixLength_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1771,8 +1784,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1788,8 +1801,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1810,8 +1823,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1891,8 +1904,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1908,8 +1921,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1930,8 +1943,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2011,8 +2024,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       natIP_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2028,8 +2041,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNatIP() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       natIP_ = getDefaultInstance().getNatIP();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2050,8 +2063,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       natIP_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2135,8 +2148,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       networkTier_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2153,8 +2166,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetworkTier() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       networkTier_ = getDefaultInstance().getNetworkTier();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2176,8 +2189,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       networkTier_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2257,8 +2270,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       publicPtrDomainName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2274,8 +2287,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPublicPtrDomainName() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       publicPtrDomainName_ = getDefaultInstance().getPublicPtrDomainName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2296,8 +2309,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       publicPtrDomainName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2346,8 +2359,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSetPublicPtr(boolean value) {
-      bitField0_ |= 0x00000080;
+
       setPublicPtr_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2448,8 +2462,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       type_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2466,8 +2480,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2489,8 +2503,8 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       type_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

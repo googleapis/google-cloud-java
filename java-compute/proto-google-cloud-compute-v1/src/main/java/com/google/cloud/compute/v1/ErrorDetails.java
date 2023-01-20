@@ -439,30 +439,27 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (errorInfoBuilder_ == null) {
-        errorInfo_ = null;
-      } else {
-        errorInfoBuilder_.clear();
+      bitField0_ = 0;
+      errorInfo_ = null;
+      if (errorInfoBuilder_ != null) {
+        errorInfoBuilder_.dispose();
+        errorInfoBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (helpBuilder_ == null) {
-        help_ = null;
-      } else {
-        helpBuilder_.clear();
+      help_ = null;
+      if (helpBuilder_ != null) {
+        helpBuilder_.dispose();
+        helpBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (localizedMessageBuilder_ == null) {
-        localizedMessage_ = null;
-      } else {
-        localizedMessageBuilder_.clear();
+      localizedMessage_ = null;
+      if (localizedMessageBuilder_ != null) {
+        localizedMessageBuilder_.dispose();
+        localizedMessageBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (quotaInfoBuilder_ == null) {
-        quotaInfo_ = null;
-      } else {
-        quotaInfoBuilder_.clear();
+      quotaInfo_ = null;
+      if (quotaInfoBuilder_ != null) {
+        quotaInfoBuilder_.dispose();
+        quotaInfoBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -490,43 +487,34 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.ErrorDetails buildPartial() {
       com.google.cloud.compute.v1.ErrorDetails result =
           new com.google.cloud.compute.v1.ErrorDetails(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ErrorDetails result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (errorInfoBuilder_ == null) {
-          result.errorInfo_ = errorInfo_;
-        } else {
-          result.errorInfo_ = errorInfoBuilder_.build();
-        }
+        result.errorInfo_ = errorInfoBuilder_ == null ? errorInfo_ : errorInfoBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (helpBuilder_ == null) {
-          result.help_ = help_;
-        } else {
-          result.help_ = helpBuilder_.build();
-        }
+        result.help_ = helpBuilder_ == null ? help_ : helpBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (localizedMessageBuilder_ == null) {
-          result.localizedMessage_ = localizedMessage_;
-        } else {
-          result.localizedMessage_ = localizedMessageBuilder_.build();
-        }
+        result.localizedMessage_ =
+            localizedMessageBuilder_ == null ? localizedMessage_ : localizedMessageBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (quotaInfoBuilder_ == null) {
-          result.quotaInfo_ = quotaInfo_;
-        } else {
-          result.quotaInfo_ = quotaInfoBuilder_.build();
-        }
+        result.quotaInfo_ = quotaInfoBuilder_ == null ? quotaInfo_ : quotaInfoBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -691,22 +679,22 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         errorInfo_ = value;
-        onChanged();
       } else {
         errorInfoBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
     public Builder setErrorInfo(com.google.cloud.compute.v1.ErrorInfo.Builder builderForValue) {
       if (errorInfoBuilder_ == null) {
         errorInfo_ = builderForValue.build();
-        onChanged();
       } else {
         errorInfoBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
@@ -715,29 +703,26 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)
             && errorInfo_ != null
             && errorInfo_ != com.google.cloud.compute.v1.ErrorInfo.getDefaultInstance()) {
-          errorInfo_ =
-              com.google.cloud.compute.v1.ErrorInfo.newBuilder(errorInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getErrorInfoBuilder().mergeFrom(value);
         } else {
           errorInfo_ = value;
         }
-        onChanged();
       } else {
         errorInfoBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
     public Builder clearErrorInfo() {
-      if (errorInfoBuilder_ == null) {
-        errorInfo_ = null;
-        onChanged();
-      } else {
-        errorInfoBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      errorInfo_ = null;
+      if (errorInfoBuilder_ != null) {
+        errorInfoBuilder_.dispose();
+        errorInfoBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
@@ -807,22 +792,22 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         help_ = value;
-        onChanged();
       } else {
         helpBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
     public Builder setHelp(com.google.cloud.compute.v1.Help.Builder builderForValue) {
       if (helpBuilder_ == null) {
         help_ = builderForValue.build();
-        onChanged();
       } else {
         helpBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
@@ -831,27 +816,26 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000002) != 0)
             && help_ != null
             && help_ != com.google.cloud.compute.v1.Help.getDefaultInstance()) {
-          help_ =
-              com.google.cloud.compute.v1.Help.newBuilder(help_).mergeFrom(value).buildPartial();
+          getHelpBuilder().mergeFrom(value);
         } else {
           help_ = value;
         }
-        onChanged();
       } else {
         helpBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
     public Builder clearHelp() {
-      if (helpBuilder_ == null) {
-        help_ = null;
-        onChanged();
-      } else {
-        helpBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      help_ = null;
+      if (helpBuilder_ != null) {
+        helpBuilder_.dispose();
+        helpBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
@@ -926,11 +910,11 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         localizedMessage_ = value;
-        onChanged();
       } else {
         localizedMessageBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -941,11 +925,11 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.LocalizedMessage.Builder builderForValue) {
       if (localizedMessageBuilder_ == null) {
         localizedMessage_ = builderForValue.build();
-        onChanged();
       } else {
         localizedMessageBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -958,18 +942,15 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
             && localizedMessage_ != null
             && localizedMessage_
                 != com.google.cloud.compute.v1.LocalizedMessage.getDefaultInstance()) {
-          localizedMessage_ =
-              com.google.cloud.compute.v1.LocalizedMessage.newBuilder(localizedMessage_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getLocalizedMessageBuilder().mergeFrom(value);
         } else {
           localizedMessage_ = value;
         }
-        onChanged();
       } else {
         localizedMessageBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -977,13 +958,13 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLocalizedMessage() {
-      if (localizedMessageBuilder_ == null) {
-        localizedMessage_ = null;
-        onChanged();
-      } else {
-        localizedMessageBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      localizedMessage_ = null;
+      if (localizedMessageBuilder_ != null) {
+        localizedMessageBuilder_.dispose();
+        localizedMessageBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1064,11 +1045,11 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         quotaInfo_ = value;
-        onChanged();
       } else {
         quotaInfoBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
@@ -1076,11 +1057,11 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.QuotaExceededInfo.Builder builderForValue) {
       if (quotaInfoBuilder_ == null) {
         quotaInfo_ = builderForValue.build();
-        onChanged();
       } else {
         quotaInfoBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
@@ -1089,29 +1070,26 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000008) != 0)
             && quotaInfo_ != null
             && quotaInfo_ != com.google.cloud.compute.v1.QuotaExceededInfo.getDefaultInstance()) {
-          quotaInfo_ =
-              com.google.cloud.compute.v1.QuotaExceededInfo.newBuilder(quotaInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getQuotaInfoBuilder().mergeFrom(value);
         } else {
           quotaInfo_ = value;
         }
-        onChanged();
       } else {
         quotaInfoBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
     public Builder clearQuotaInfo() {
-      if (quotaInfoBuilder_ == null) {
-        quotaInfo_ = null;
-        onChanged();
-      } else {
-        quotaInfoBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      quotaInfo_ = null;
+      if (quotaInfoBuilder_ != null) {
+        quotaInfoBuilder_.dispose();
+        quotaInfoBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */

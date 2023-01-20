@@ -68,6 +68,8 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
   }
 
   public static final int DAY_OF_WEEKS_FIELD_NUMBER = 257871834;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek>
       dayOfWeeks_;
   /**
@@ -351,6 +353,7 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dayOfWeeksBuilder_ == null) {
         dayOfWeeks_ = java.util.Collections.emptyList();
       } else {
@@ -385,7 +388,16 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle result =
           new com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle result) {
       if (dayOfWeeksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dayOfWeeks_ = java.util.Collections.unmodifiableList(dayOfWeeks_);
@@ -395,8 +407,10 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       } else {
         result.dayOfWeeks_ = dayOfWeeksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

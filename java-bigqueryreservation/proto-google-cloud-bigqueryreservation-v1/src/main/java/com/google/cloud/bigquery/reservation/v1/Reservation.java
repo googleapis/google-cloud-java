@@ -68,7 +68,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SLOT_CAPACITY_FIELD_NUMBER = 2;
-  private long slotCapacity_;
+  private long slotCapacity_ = 0L;
   /**
    *
    *
@@ -153,7 +155,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IGNORE_IDLE_SLOTS_FIELD_NUMBER = 4;
-  private boolean ignoreIdleSlots_;
+  private boolean ignoreIdleSlots_ = false;
   /**
    *
    *
@@ -174,7 +176,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONCURRENCY_FIELD_NUMBER = 16;
-  private long concurrency_;
+  private long concurrency_ = 0L;
   /**
    *
    *
@@ -246,7 +248,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreationTimeOrBuilder() {
-    return getCreationTime();
+    return creationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : creationTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 9;
@@ -295,11 +299,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int MULTI_REGION_AUXILIARY_FIELD_NUMBER = 14;
-  private boolean multiRegionAuxiliary_;
+  private boolean multiRegionAuxiliary_ = false;
   /**
    *
    *
@@ -581,28 +585,22 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       slotCapacity_ = 0L;
-
       ignoreIdleSlots_ = false;
-
       concurrency_ = 0L;
-
-      if (creationTimeBuilder_ == null) {
-        creationTime_ = null;
-      } else {
-        creationTime_ = null;
+      creationTime_ = null;
+      if (creationTimeBuilder_ != null) {
+        creationTimeBuilder_.dispose();
         creationTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       multiRegionAuxiliary_ = false;
-
       return this;
     }
 
@@ -630,23 +628,37 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.reservation.v1.Reservation buildPartial() {
       com.google.cloud.bigquery.reservation.v1.Reservation result =
           new com.google.cloud.bigquery.reservation.v1.Reservation(this);
-      result.name_ = name_;
-      result.slotCapacity_ = slotCapacity_;
-      result.ignoreIdleSlots_ = ignoreIdleSlots_;
-      result.concurrency_ = concurrency_;
-      if (creationTimeBuilder_ == null) {
-        result.creationTime_ = creationTime_;
-      } else {
-        result.creationTime_ = creationTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.multiRegionAuxiliary_ = multiRegionAuxiliary_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.reservation.v1.Reservation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.slotCapacity_ = slotCapacity_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ignoreIdleSlots_ = ignoreIdleSlots_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.concurrency_ = concurrency_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.creationTime_ =
+            creationTimeBuilder_ == null ? creationTime_ : creationTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.multiRegionAuxiliary_ = multiRegionAuxiliary_;
+      }
     }
 
     @java.lang.Override
@@ -697,6 +709,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSlotCapacity() != 0L) {
@@ -746,43 +759,43 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 slotCapacity_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 32:
               {
                 ignoreIdleSlots_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 66:
               {
                 input.readMessage(getCreationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 74
             case 112:
               {
                 multiRegionAuxiliary_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 112
             case 128:
               {
                 concurrency_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 128
             default:
@@ -801,6 +814,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -875,8 +890,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -896,8 +911,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -922,8 +937,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -979,6 +994,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setSlotCapacity(long value) {
 
       slotCapacity_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1004,7 +1020,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSlotCapacity() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       slotCapacity_ = 0L;
       onChanged();
       return this;
@@ -1047,6 +1063,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setIgnoreIdleSlots(boolean value) {
 
       ignoreIdleSlots_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1065,7 +1082,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIgnoreIdleSlots() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       ignoreIdleSlots_ = false;
       onChanged();
       return this;
@@ -1110,6 +1127,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setConcurrency(long value) {
 
       concurrency_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1129,7 +1147,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConcurrency() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       concurrency_ = 0L;
       onChanged();
       return this;
@@ -1155,7 +1173,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the creationTime field is set.
      */
     public boolean hasCreationTime() {
-      return creationTimeBuilder_ != null || creationTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1196,11 +1214,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         creationTime_ = value;
-        onChanged();
       } else {
         creationTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1217,11 +1235,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (creationTimeBuilder_ == null) {
         creationTime_ = builderForValue.build();
-        onChanged();
       } else {
         creationTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1237,19 +1255,18 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreationTime(com.google.protobuf.Timestamp value) {
       if (creationTimeBuilder_ == null) {
-        if (creationTime_ != null) {
-          creationTime_ =
-              com.google.protobuf.Timestamp.newBuilder(creationTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && creationTime_ != null
+            && creationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreationTimeBuilder().mergeFrom(value);
         } else {
           creationTime_ = value;
         }
-        onChanged();
       } else {
         creationTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1264,14 +1281,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreationTime() {
-      if (creationTimeBuilder_ == null) {
-        creationTime_ = null;
-        onChanged();
-      } else {
-        creationTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      creationTime_ = null;
+      if (creationTimeBuilder_ != null) {
+        creationTimeBuilder_.dispose();
         creationTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1286,7 +1302,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreationTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreationTimeFieldBuilder().getBuilder();
     }
@@ -1358,7 +1374,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1399,11 +1415,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1420,11 +1436,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1440,17 +1456,18 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1465,14 +1482,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1487,7 +1503,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1578,6 +1594,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setMultiRegionAuxiliary(boolean value) {
 
       multiRegionAuxiliary_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1597,7 +1614,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMultiRegionAuxiliary() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       multiRegionAuxiliary_ = false;
       onChanged();
       return this;

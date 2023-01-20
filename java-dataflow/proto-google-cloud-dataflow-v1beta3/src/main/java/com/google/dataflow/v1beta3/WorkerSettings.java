@@ -72,7 +72,9 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BASE_URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object baseUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseUrl_ = "";
   /**
    *
    *
@@ -133,7 +135,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPORTING_ENABLED_FIELD_NUMBER = 2;
-  private boolean reportingEnabled_;
+  private boolean reportingEnabled_ = false;
   /**
    *
    *
@@ -151,7 +153,9 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object servicePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object servicePath_ = "";
   /**
    *
    *
@@ -202,7 +206,9 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHUFFLE_SERVICE_PATH_FIELD_NUMBER = 4;
-  private volatile java.lang.Object shuffleServicePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object shuffleServicePath_ = "";
   /**
    *
    *
@@ -253,7 +259,9 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKER_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object workerId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerId_ = "";
   /**
    *
    *
@@ -302,7 +310,9 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEMP_STORAGE_PREFIX_FIELD_NUMBER = 6;
-  private volatile java.lang.Object tempStoragePrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tempStoragePrefix_ = "";
   /**
    *
    *
@@ -602,18 +612,13 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       baseUrl_ = "";
-
       reportingEnabled_ = false;
-
       servicePath_ = "";
-
       shuffleServicePath_ = "";
-
       workerId_ = "";
-
       tempStoragePrefix_ = "";
-
       return this;
     }
 
@@ -641,14 +646,33 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.WorkerSettings buildPartial() {
       com.google.dataflow.v1beta3.WorkerSettings result =
           new com.google.dataflow.v1beta3.WorkerSettings(this);
-      result.baseUrl_ = baseUrl_;
-      result.reportingEnabled_ = reportingEnabled_;
-      result.servicePath_ = servicePath_;
-      result.shuffleServicePath_ = shuffleServicePath_;
-      result.workerId_ = workerId_;
-      result.tempStoragePrefix_ = tempStoragePrefix_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.WorkerSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.baseUrl_ = baseUrl_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reportingEnabled_ = reportingEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.servicePath_ = servicePath_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.shuffleServicePath_ = shuffleServicePath_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.workerId_ = workerId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.tempStoragePrefix_ = tempStoragePrefix_;
+      }
     }
 
     @java.lang.Override
@@ -698,6 +722,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.dataflow.v1beta3.WorkerSettings.getDefaultInstance()) return this;
       if (!other.getBaseUrl().isEmpty()) {
         baseUrl_ = other.baseUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getReportingEnabled() != false) {
@@ -705,18 +730,22 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServicePath().isEmpty()) {
         servicePath_ = other.servicePath_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getShuffleServicePath().isEmpty()) {
         shuffleServicePath_ = other.shuffleServicePath_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getWorkerId().isEmpty()) {
         workerId_ = other.workerId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getTempStoragePrefix().isEmpty()) {
         tempStoragePrefix_ = other.tempStoragePrefix_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -748,37 +777,37 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 baseUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 reportingEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 servicePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 shuffleServicePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 workerId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 tempStoragePrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -797,6 +826,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object baseUrl_ = "";
     /**
@@ -877,8 +908,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -900,8 +931,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBaseUrl() {
-
       baseUrl_ = getDefaultInstance().getBaseUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -928,8 +959,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -965,6 +996,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     public Builder setReportingEnabled(boolean value) {
 
       reportingEnabled_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -980,7 +1012,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReportingEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       reportingEnabled_ = false;
       onChanged();
       return this;
@@ -1050,8 +1082,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       servicePath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1068,8 +1100,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServicePath() {
-
       servicePath_ = getDefaultInstance().getServicePath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1091,8 +1123,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       servicePath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1161,8 +1193,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       shuffleServicePath_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1179,8 +1211,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearShuffleServicePath() {
-
       shuffleServicePath_ = getDefaultInstance().getShuffleServicePath();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1202,8 +1234,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       shuffleServicePath_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1269,8 +1301,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1286,8 +1318,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkerId() {
-
       workerId_ = getDefaultInstance().getWorkerId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1308,8 +1340,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1390,8 +1422,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       tempStoragePrefix_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1412,8 +1444,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTempStoragePrefix() {
-
       tempStoragePrefix_ = getDefaultInstance().getTempStoragePrefix();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1439,8 +1471,8 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tempStoragePrefix_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -73,7 +73,9 @@ public final class ForwardingRuleServiceDirectoryRegistration
 
   private int bitField0_;
   public static final int NAMESPACE_FIELD_NUMBER = 178476379;
-  private volatile java.lang.Object namespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namespace_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class ForwardingRuleServiceDirectoryRegistration
   }
 
   public static final int SERVICE_FIELD_NUMBER = 373540533;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -201,7 +205,9 @@ public final class ForwardingRuleServiceDirectoryRegistration
   }
 
   public static final int SERVICE_DIRECTORY_REGION_FIELD_NUMBER = 74030416;
-  private volatile java.lang.Object serviceDirectoryRegion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceDirectoryRegion_ = "";
   /**
    *
    *
@@ -499,12 +505,10 @@ public final class ForwardingRuleServiceDirectoryRegistration
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       namespace_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       service_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       serviceDirectoryRegion_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -535,23 +539,30 @@ public final class ForwardingRuleServiceDirectoryRegistration
     public com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration buildPartial() {
       com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration result =
           new com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.namespace_ = namespace_;
         to_bitField0_ |= 0x00000001;
       }
-      result.namespace_ = namespace_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.service_ = service_;
         to_bitField0_ |= 0x00000002;
       }
-      result.service_ = service_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceDirectoryRegion_ = serviceDirectoryRegion_;
         to_bitField0_ |= 0x00000004;
       }
-      result.serviceDirectoryRegion_ = serviceDirectoryRegion_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -604,18 +615,18 @@ public final class ForwardingRuleServiceDirectoryRegistration
           == com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration
               .getDefaultInstance()) return this;
       if (other.hasNamespace()) {
-        bitField0_ |= 0x00000001;
         namespace_ = other.namespace_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasService()) {
-        bitField0_ |= 0x00000002;
         service_ = other.service_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasServiceDirectoryRegion()) {
-        bitField0_ |= 0x00000004;
         serviceDirectoryRegion_ = other.serviceDirectoryRegion_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -756,8 +767,8 @@ public final class ForwardingRuleServiceDirectoryRegistration
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       namespace_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -773,8 +784,8 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * @return This builder for chaining.
      */
     public Builder clearNamespace() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       namespace_ = getDefaultInstance().getNamespace();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -795,8 +806,8 @@ public final class ForwardingRuleServiceDirectoryRegistration
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       namespace_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -876,8 +887,8 @@ public final class ForwardingRuleServiceDirectoryRegistration
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       service_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -893,8 +904,8 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -915,8 +926,8 @@ public final class ForwardingRuleServiceDirectoryRegistration
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       service_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -996,8 +1007,8 @@ public final class ForwardingRuleServiceDirectoryRegistration
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       serviceDirectoryRegion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1013,8 +1024,8 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * @return This builder for chaining.
      */
     public Builder clearServiceDirectoryRegion() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       serviceDirectoryRegion_ = getDefaultInstance().getServiceDirectoryRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1035,8 +1046,8 @@ public final class ForwardingRuleServiceDirectoryRegistration
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       serviceDirectoryRegion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

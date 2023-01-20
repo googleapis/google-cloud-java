@@ -73,7 +73,9 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -168,7 +170,9 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.MarketingInfoOrBuilder getMarketingInfoOrBuilder() {
-    return getMarketingInfo();
+    return marketingInfo_ == null
+        ? com.google.cloud.channel.v1.MarketingInfo.getDefaultInstance()
+        : marketingInfo_;
   }
 
   public static final int SKU_FIELD_NUMBER = 3;
@@ -214,7 +218,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.SkuOrBuilder getSkuOrBuilder() {
-    return getSku();
+    return sku_ == null ? com.google.cloud.channel.v1.Sku.getDefaultInstance() : sku_;
   }
 
   public static final int PLAN_FIELD_NUMBER = 4;
@@ -260,7 +264,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PlanOrBuilder getPlanOrBuilder() {
-    return getPlan();
+    return plan_ == null ? com.google.cloud.channel.v1.Plan.getDefaultInstance() : plan_;
   }
 
   public static final int CONSTRAINTS_FIELD_NUMBER = 5;
@@ -308,10 +312,14 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ConstraintsOrBuilder getConstraintsOrBuilder() {
-    return getConstraints();
+    return constraints_ == null
+        ? com.google.cloud.channel.v1.Constraints.getDefaultInstance()
+        : constraints_;
   }
 
   public static final int PRICE_BY_RESOURCES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.PriceByResource> priceByResources_;
   /**
    *
@@ -424,7 +432,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 8;
@@ -473,10 +481,12 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int PARAMETER_DEFINITIONS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.ParameterDefinition> parameterDefinitions_;
   /**
    *
@@ -548,7 +558,9 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEAL_CODE_FIELD_NUMBER = 12;
-  private volatile java.lang.Object dealCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dealCode_ = "";
   /**
    *
    *
@@ -909,30 +921,26 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (marketingInfoBuilder_ == null) {
-        marketingInfo_ = null;
-      } else {
-        marketingInfo_ = null;
+      marketingInfo_ = null;
+      if (marketingInfoBuilder_ != null) {
+        marketingInfoBuilder_.dispose();
         marketingInfoBuilder_ = null;
       }
-      if (skuBuilder_ == null) {
-        sku_ = null;
-      } else {
-        sku_ = null;
+      sku_ = null;
+      if (skuBuilder_ != null) {
+        skuBuilder_.dispose();
         skuBuilder_ = null;
       }
-      if (planBuilder_ == null) {
-        plan_ = null;
-      } else {
-        plan_ = null;
+      plan_ = null;
+      if (planBuilder_ != null) {
+        planBuilder_.dispose();
         planBuilder_ = null;
       }
-      if (constraintsBuilder_ == null) {
-        constraints_ = null;
-      } else {
-        constraints_ = null;
+      constraints_ = null;
+      if (constraintsBuilder_ != null) {
+        constraintsBuilder_.dispose();
         constraintsBuilder_ = null;
       }
       if (priceByResourcesBuilder_ == null) {
@@ -941,17 +949,15 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         priceByResources_ = null;
         priceByResourcesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       if (parameterDefinitionsBuilder_ == null) {
@@ -960,9 +966,8 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         parameterDefinitions_ = null;
         parameterDefinitionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000100);
       dealCode_ = "";
-
       return this;
     }
 
@@ -989,59 +994,63 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.channel.v1.Offer buildPartial() {
       com.google.cloud.channel.v1.Offer result = new com.google.cloud.channel.v1.Offer(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (marketingInfoBuilder_ == null) {
-        result.marketingInfo_ = marketingInfo_;
-      } else {
-        result.marketingInfo_ = marketingInfoBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (skuBuilder_ == null) {
-        result.sku_ = sku_;
-      } else {
-        result.sku_ = skuBuilder_.build();
-      }
-      if (planBuilder_ == null) {
-        result.plan_ = plan_;
-      } else {
-        result.plan_ = planBuilder_.build();
-      }
-      if (constraintsBuilder_ == null) {
-        result.constraints_ = constraints_;
-      } else {
-        result.constraints_ = constraintsBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.channel.v1.Offer result) {
       if (priceByResourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           priceByResources_ = java.util.Collections.unmodifiableList(priceByResources_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.priceByResources_ = priceByResources_;
       } else {
         result.priceByResources_ = priceByResourcesBuilder_.build();
       }
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
       if (parameterDefinitionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           parameterDefinitions_ = java.util.Collections.unmodifiableList(parameterDefinitions_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.parameterDefinitions_ = parameterDefinitions_;
       } else {
         result.parameterDefinitions_ = parameterDefinitionsBuilder_.build();
       }
-      result.dealCode_ = dealCode_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.Offer result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.marketingInfo_ =
+            marketingInfoBuilder_ == null ? marketingInfo_ : marketingInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sku_ = skuBuilder_ == null ? sku_ : skuBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.plan_ = planBuilder_ == null ? plan_ : planBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.constraints_ =
+            constraintsBuilder_ == null ? constraints_ : constraintsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.dealCode_ = dealCode_;
+      }
     }
 
     @java.lang.Override
@@ -1091,6 +1100,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.channel.v1.Offer.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMarketingInfo()) {
@@ -1109,7 +1119,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         if (!other.priceByResources_.isEmpty()) {
           if (priceByResources_.isEmpty()) {
             priceByResources_ = other.priceByResources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensurePriceByResourcesIsMutable();
             priceByResources_.addAll(other.priceByResources_);
@@ -1122,7 +1132,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
             priceByResourcesBuilder_.dispose();
             priceByResourcesBuilder_ = null;
             priceByResources_ = other.priceByResources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             priceByResourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPriceByResourcesFieldBuilder()
@@ -1142,7 +1152,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         if (!other.parameterDefinitions_.isEmpty()) {
           if (parameterDefinitions_.isEmpty()) {
             parameterDefinitions_ = other.parameterDefinitions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureParameterDefinitionsIsMutable();
             parameterDefinitions_.addAll(other.parameterDefinitions_);
@@ -1155,7 +1165,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
             parameterDefinitionsBuilder_.dispose();
             parameterDefinitionsBuilder_ = null;
             parameterDefinitions_ = other.parameterDefinitions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000100);
             parameterDefinitionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParameterDefinitionsFieldBuilder()
@@ -1167,6 +1177,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDealCode().isEmpty()) {
         dealCode_ = other.dealCode_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1198,31 +1209,31 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMarketingInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSkuFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getPlanFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getConstraintsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -1241,13 +1252,13 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -1267,7 +1278,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
             case 98:
               {
                 dealCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
             default:
@@ -1353,8 +1364,8 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1371,8 +1382,8 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1394,8 +1405,8 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1418,7 +1429,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the marketingInfo field is set.
      */
     public boolean hasMarketingInfo() {
-      return marketingInfoBuilder_ != null || marketingInfo_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1455,11 +1466,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         marketingInfo_ = value;
-        onChanged();
       } else {
         marketingInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1475,11 +1486,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.channel.v1.MarketingInfo.Builder builderForValue) {
       if (marketingInfoBuilder_ == null) {
         marketingInfo_ = builderForValue.build();
-        onChanged();
       } else {
         marketingInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1493,19 +1504,18 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMarketingInfo(com.google.cloud.channel.v1.MarketingInfo value) {
       if (marketingInfoBuilder_ == null) {
-        if (marketingInfo_ != null) {
-          marketingInfo_ =
-              com.google.cloud.channel.v1.MarketingInfo.newBuilder(marketingInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && marketingInfo_ != null
+            && marketingInfo_ != com.google.cloud.channel.v1.MarketingInfo.getDefaultInstance()) {
+          getMarketingInfoBuilder().mergeFrom(value);
         } else {
           marketingInfo_ = value;
         }
-        onChanged();
       } else {
         marketingInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1518,14 +1528,13 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.MarketingInfo marketing_info = 2;</code>
      */
     public Builder clearMarketingInfo() {
-      if (marketingInfoBuilder_ == null) {
-        marketingInfo_ = null;
-        onChanged();
-      } else {
-        marketingInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      marketingInfo_ = null;
+      if (marketingInfoBuilder_ != null) {
+        marketingInfoBuilder_.dispose();
         marketingInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1538,7 +1547,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.MarketingInfo marketing_info = 2;</code>
      */
     public com.google.cloud.channel.v1.MarketingInfo.Builder getMarketingInfoBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMarketingInfoFieldBuilder().getBuilder();
     }
@@ -1604,7 +1613,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sku field is set.
      */
     public boolean hasSku() {
-      return skuBuilder_ != null || sku_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1639,11 +1648,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sku_ = value;
-        onChanged();
       } else {
         skuBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1658,11 +1667,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     public Builder setSku(com.google.cloud.channel.v1.Sku.Builder builderForValue) {
       if (skuBuilder_ == null) {
         sku_ = builderForValue.build();
-        onChanged();
       } else {
         skuBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1676,16 +1685,18 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSku(com.google.cloud.channel.v1.Sku value) {
       if (skuBuilder_ == null) {
-        if (sku_ != null) {
-          sku_ = com.google.cloud.channel.v1.Sku.newBuilder(sku_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && sku_ != null
+            && sku_ != com.google.cloud.channel.v1.Sku.getDefaultInstance()) {
+          getSkuBuilder().mergeFrom(value);
         } else {
           sku_ = value;
         }
-        onChanged();
       } else {
         skuBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1698,14 +1709,13 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Sku sku = 3;</code>
      */
     public Builder clearSku() {
-      if (skuBuilder_ == null) {
-        sku_ = null;
-        onChanged();
-      } else {
-        sku_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sku_ = null;
+      if (skuBuilder_ != null) {
+        skuBuilder_.dispose();
         skuBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1718,7 +1728,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Sku sku = 3;</code>
      */
     public com.google.cloud.channel.v1.Sku.Builder getSkuBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSkuFieldBuilder().getBuilder();
     }
@@ -1782,7 +1792,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the plan field is set.
      */
     public boolean hasPlan() {
-      return planBuilder_ != null || plan_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1817,11 +1827,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         plan_ = value;
-        onChanged();
       } else {
         planBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1836,11 +1846,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     public Builder setPlan(com.google.cloud.channel.v1.Plan.Builder builderForValue) {
       if (planBuilder_ == null) {
         plan_ = builderForValue.build();
-        onChanged();
       } else {
         planBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1854,17 +1864,18 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePlan(com.google.cloud.channel.v1.Plan value) {
       if (planBuilder_ == null) {
-        if (plan_ != null) {
-          plan_ =
-              com.google.cloud.channel.v1.Plan.newBuilder(plan_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && plan_ != null
+            && plan_ != com.google.cloud.channel.v1.Plan.getDefaultInstance()) {
+          getPlanBuilder().mergeFrom(value);
         } else {
           plan_ = value;
         }
-        onChanged();
       } else {
         planBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1877,14 +1888,13 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Plan plan = 4;</code>
      */
     public Builder clearPlan() {
-      if (planBuilder_ == null) {
-        plan_ = null;
-        onChanged();
-      } else {
-        plan_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      plan_ = null;
+      if (planBuilder_ != null) {
+        planBuilder_.dispose();
         planBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1897,7 +1907,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Plan plan = 4;</code>
      */
     public com.google.cloud.channel.v1.Plan.Builder getPlanBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPlanFieldBuilder().getBuilder();
     }
@@ -1961,7 +1971,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the constraints field is set.
      */
     public boolean hasConstraints() {
-      return constraintsBuilder_ != null || constraints_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1998,11 +2008,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         constraints_ = value;
-        onChanged();
       } else {
         constraintsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2017,11 +2027,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     public Builder setConstraints(com.google.cloud.channel.v1.Constraints.Builder builderForValue) {
       if (constraintsBuilder_ == null) {
         constraints_ = builderForValue.build();
-        onChanged();
       } else {
         constraintsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2035,19 +2045,18 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeConstraints(com.google.cloud.channel.v1.Constraints value) {
       if (constraintsBuilder_ == null) {
-        if (constraints_ != null) {
-          constraints_ =
-              com.google.cloud.channel.v1.Constraints.newBuilder(constraints_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && constraints_ != null
+            && constraints_ != com.google.cloud.channel.v1.Constraints.getDefaultInstance()) {
+          getConstraintsBuilder().mergeFrom(value);
         } else {
           constraints_ = value;
         }
-        onChanged();
       } else {
         constraintsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2060,14 +2069,13 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Constraints constraints = 5;</code>
      */
     public Builder clearConstraints() {
-      if (constraintsBuilder_ == null) {
-        constraints_ = null;
-        onChanged();
-      } else {
-        constraints_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      constraints_ = null;
+      if (constraintsBuilder_ != null) {
+        constraintsBuilder_.dispose();
         constraintsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2080,7 +2088,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Constraints constraints = 5;</code>
      */
     public com.google.cloud.channel.v1.Constraints.Builder getConstraintsBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getConstraintsFieldBuilder().getBuilder();
     }
@@ -2132,10 +2140,10 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePriceByResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         priceByResources_ =
             new java.util.ArrayList<com.google.cloud.channel.v1.PriceByResource>(priceByResources_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2353,7 +2361,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPriceByResources() {
       if (priceByResourcesBuilder_ == null) {
         priceByResources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         priceByResourcesBuilder_.clear();
@@ -2479,7 +2487,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.channel.v1.PriceByResource.Builder,
                 com.google.cloud.channel.v1.PriceByResourceOrBuilder>(
                 priceByResources_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         priceByResources_ = null;
@@ -2505,7 +2513,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2540,11 +2548,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2559,11 +2567,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2577,17 +2585,18 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2600,14 +2609,13 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 7;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2620,7 +2628,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -2685,7 +2693,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2722,11 +2730,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2742,11 +2750,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2761,17 +2769,18 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2785,14 +2794,13 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2806,7 +2814,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -2858,11 +2866,11 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureParameterDefinitionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         parameterDefinitions_ =
             new java.util.ArrayList<com.google.cloud.channel.v1.ParameterDefinition>(
                 parameterDefinitions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -3081,7 +3089,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     public Builder clearParameterDefinitions() {
       if (parameterDefinitionsBuilder_ == null) {
         parameterDefinitions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         parameterDefinitionsBuilder_.clear();
@@ -3208,7 +3216,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.channel.v1.ParameterDefinition.Builder,
                 com.google.cloud.channel.v1.ParameterDefinitionOrBuilder>(
                 parameterDefinitions_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         parameterDefinitions_ = null;
@@ -3277,8 +3285,8 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dealCode_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3294,8 +3302,8 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDealCode() {
-
       dealCode_ = getDefaultInstance().getDealCode();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3316,8 +3324,8 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dealCode_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

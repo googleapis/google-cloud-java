@@ -545,7 +545,7 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHANNEL_TAG_FIELD_NUMBER = 1;
-  private int channelTag_;
+  private int channelTag_ = 0;
   /**
    *
    *
@@ -612,7 +612,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnnotationBoundaryOrBuilder
       getAnnotationStartBoundaryOrBuilder() {
-    return getAnnotationStartBoundary();
+    return annotationStartBoundary_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.getDefaultInstance()
+        : annotationStartBoundary_;
   }
 
   public static final int ANNOTATION_END_BOUNDARY_FIELD_NUMBER = 5;
@@ -664,7 +666,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnnotationBoundaryOrBuilder
       getAnnotationEndBoundaryOrBuilder() {
-    return getAnnotationEndBoundary();
+    return annotationEndBoundary_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.getDefaultInstance()
+        : annotationEndBoundary_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1024,6 +1028,7 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (interruptionDataBuilder_ != null) {
         interruptionDataBuilder_.clear();
       }
@@ -1049,17 +1054,14 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         issueMatchDataBuilder_.clear();
       }
       channelTag_ = 0;
-
-      if (annotationStartBoundaryBuilder_ == null) {
-        annotationStartBoundary_ = null;
-      } else {
-        annotationStartBoundary_ = null;
+      annotationStartBoundary_ = null;
+      if (annotationStartBoundaryBuilder_ != null) {
+        annotationStartBoundaryBuilder_.dispose();
         annotationStartBoundaryBuilder_ = null;
       }
-      if (annotationEndBoundaryBuilder_ == null) {
-        annotationEndBoundary_ = null;
-      } else {
-        annotationEndBoundary_ = null;
+      annotationEndBoundary_ = null;
+      if (annotationEndBoundaryBuilder_ != null) {
+        annotationEndBoundaryBuilder_.dispose();
         annotationEndBoundaryBuilder_ = null;
       }
       dataCase_ = 0;
@@ -1091,76 +1093,61 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.CallAnnotation buildPartial() {
       com.google.cloud.contactcenterinsights.v1.CallAnnotation result =
           new com.google.cloud.contactcenterinsights.v1.CallAnnotation(this);
-      if (dataCase_ == 10) {
-        if (interruptionDataBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = interruptionDataBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (dataCase_ == 11) {
-        if (sentimentDataBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = sentimentDataBuilder_.build();
-        }
-      }
-      if (dataCase_ == 12) {
-        if (silenceDataBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = silenceDataBuilder_.build();
-        }
-      }
-      if (dataCase_ == 13) {
-        if (holdDataBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = holdDataBuilder_.build();
-        }
-      }
-      if (dataCase_ == 15) {
-        if (entityMentionDataBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = entityMentionDataBuilder_.build();
-        }
-      }
-      if (dataCase_ == 16) {
-        if (intentMatchDataBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = intentMatchDataBuilder_.build();
-        }
-      }
-      if (dataCase_ == 17) {
-        if (phraseMatchDataBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = phraseMatchDataBuilder_.build();
-        }
-      }
-      if (dataCase_ == 18) {
-        if (issueMatchDataBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = issueMatchDataBuilder_.build();
-        }
-      }
-      result.channelTag_ = channelTag_;
-      if (annotationStartBoundaryBuilder_ == null) {
-        result.annotationStartBoundary_ = annotationStartBoundary_;
-      } else {
-        result.annotationStartBoundary_ = annotationStartBoundaryBuilder_.build();
-      }
-      if (annotationEndBoundaryBuilder_ == null) {
-        result.annotationEndBoundary_ = annotationEndBoundary_;
-      } else {
-        result.annotationEndBoundary_ = annotationEndBoundaryBuilder_.build();
-      }
-      result.dataCase_ = dataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.CallAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.channelTag_ = channelTag_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.annotationStartBoundary_ =
+            annotationStartBoundaryBuilder_ == null
+                ? annotationStartBoundary_
+                : annotationStartBoundaryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.annotationEndBoundary_ =
+            annotationEndBoundaryBuilder_ == null
+                ? annotationEndBoundary_
+                : annotationEndBoundaryBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.contactcenterinsights.v1.CallAnnotation result) {
+      result.dataCase_ = dataCase_;
+      result.data_ = this.data_;
+      if (dataCase_ == 10 && interruptionDataBuilder_ != null) {
+        result.data_ = interruptionDataBuilder_.build();
+      }
+      if (dataCase_ == 11 && sentimentDataBuilder_ != null) {
+        result.data_ = sentimentDataBuilder_.build();
+      }
+      if (dataCase_ == 12 && silenceDataBuilder_ != null) {
+        result.data_ = silenceDataBuilder_.build();
+      }
+      if (dataCase_ == 13 && holdDataBuilder_ != null) {
+        result.data_ = holdDataBuilder_.build();
+      }
+      if (dataCase_ == 15 && entityMentionDataBuilder_ != null) {
+        result.data_ = entityMentionDataBuilder_.build();
+      }
+      if (dataCase_ == 16 && intentMatchDataBuilder_ != null) {
+        result.data_ = intentMatchDataBuilder_.build();
+      }
+      if (dataCase_ == 17 && phraseMatchDataBuilder_ != null) {
+        result.data_ = phraseMatchDataBuilder_.build();
+      }
+      if (dataCase_ == 18 && issueMatchDataBuilder_ != null) {
+        result.data_ = issueMatchDataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1293,21 +1280,21 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 channelTag_ = input.readInt32();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 8
             case 34:
               {
                 input.readMessage(
                     getAnnotationStartBoundaryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getAnnotationEndBoundaryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 42
             case 82:
@@ -1390,6 +1377,8 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.contactcenterinsights.v1.InterruptionData,
@@ -1603,7 +1592,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       dataCase_ = 10;
       onChanged();
-      ;
       return interruptionDataBuilder_;
     }
 
@@ -1817,7 +1805,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       dataCase_ = 11;
       onChanged();
-      ;
       return sentimentDataBuilder_;
     }
 
@@ -2029,7 +2016,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       dataCase_ = 12;
       onChanged();
-      ;
       return silenceDataBuilder_;
     }
 
@@ -2239,7 +2225,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       dataCase_ = 13;
       onChanged();
-      ;
       return holdDataBuilder_;
     }
 
@@ -2464,7 +2449,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       dataCase_ = 15;
       onChanged();
-      ;
       return entityMentionDataBuilder_;
     }
 
@@ -2679,7 +2663,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       dataCase_ = 16;
       onChanged();
-      ;
       return intentMatchDataBuilder_;
     }
 
@@ -2894,7 +2877,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       dataCase_ = 17;
       onChanged();
-      ;
       return phraseMatchDataBuilder_;
     }
 
@@ -3109,7 +3091,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       dataCase_ = 18;
       onChanged();
-      ;
       return issueMatchDataBuilder_;
     }
 
@@ -3146,6 +3127,7 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setChannelTag(int value) {
 
       channelTag_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3162,7 +3144,7 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearChannelTag() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       channelTag_ = 0;
       onChanged();
       return this;
@@ -3188,7 +3170,7 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the annotationStartBoundary field is set.
      */
     public boolean hasAnnotationStartBoundary() {
-      return annotationStartBoundaryBuilder_ != null || annotationStartBoundary_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3231,11 +3213,11 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         annotationStartBoundary_ = value;
-        onChanged();
       } else {
         annotationStartBoundaryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3253,11 +3235,11 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder builderForValue) {
       if (annotationStartBoundaryBuilder_ == null) {
         annotationStartBoundary_ = builderForValue.build();
-        onChanged();
       } else {
         annotationStartBoundaryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3274,20 +3256,20 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAnnotationStartBoundary(
         com.google.cloud.contactcenterinsights.v1.AnnotationBoundary value) {
       if (annotationStartBoundaryBuilder_ == null) {
-        if (annotationStartBoundary_ != null) {
-          annotationStartBoundary_ =
-              com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.newBuilder(
-                      annotationStartBoundary_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && annotationStartBoundary_ != null
+            && annotationStartBoundary_
+                != com.google.cloud.contactcenterinsights.v1.AnnotationBoundary
+                    .getDefaultInstance()) {
+          getAnnotationStartBoundaryBuilder().mergeFrom(value);
         } else {
           annotationStartBoundary_ = value;
         }
-        onChanged();
       } else {
         annotationStartBoundaryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3302,14 +3284,13 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAnnotationStartBoundary() {
-      if (annotationStartBoundaryBuilder_ == null) {
-        annotationStartBoundary_ = null;
-        onChanged();
-      } else {
-        annotationStartBoundary_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      annotationStartBoundary_ = null;
+      if (annotationStartBoundaryBuilder_ != null) {
+        annotationStartBoundaryBuilder_.dispose();
         annotationStartBoundaryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3325,7 +3306,7 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder
         getAnnotationStartBoundaryBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getAnnotationStartBoundaryFieldBuilder().getBuilder();
     }
@@ -3397,7 +3378,7 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the annotationEndBoundary field is set.
      */
     public boolean hasAnnotationEndBoundary() {
-      return annotationEndBoundaryBuilder_ != null || annotationEndBoundary_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3437,11 +3418,11 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         annotationEndBoundary_ = value;
-        onChanged();
       } else {
         annotationEndBoundaryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3458,11 +3439,11 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder builderForValue) {
       if (annotationEndBoundaryBuilder_ == null) {
         annotationEndBoundary_ = builderForValue.build();
-        onChanged();
       } else {
         annotationEndBoundaryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3478,20 +3459,20 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAnnotationEndBoundary(
         com.google.cloud.contactcenterinsights.v1.AnnotationBoundary value) {
       if (annotationEndBoundaryBuilder_ == null) {
-        if (annotationEndBoundary_ != null) {
-          annotationEndBoundary_ =
-              com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.newBuilder(
-                      annotationEndBoundary_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && annotationEndBoundary_ != null
+            && annotationEndBoundary_
+                != com.google.cloud.contactcenterinsights.v1.AnnotationBoundary
+                    .getDefaultInstance()) {
+          getAnnotationEndBoundaryBuilder().mergeFrom(value);
         } else {
           annotationEndBoundary_ = value;
         }
-        onChanged();
       } else {
         annotationEndBoundaryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3505,14 +3486,13 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAnnotationEndBoundary() {
-      if (annotationEndBoundaryBuilder_ == null) {
-        annotationEndBoundary_ = null;
-        onChanged();
-      } else {
-        annotationEndBoundary_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      annotationEndBoundary_ = null;
+      if (annotationEndBoundaryBuilder_ != null) {
+        annotationEndBoundaryBuilder_.dispose();
         annotationEndBoundaryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3527,7 +3507,7 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder
         getAnnotationEndBoundaryBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getAnnotationEndBoundaryFieldBuilder().getBuilder();
     }

@@ -110,11 +110,11 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.MoneyOrBuilder getBasePriceOrBuilder() {
-    return getBasePrice();
+    return basePrice_ == null ? com.google.type.Money.getDefaultInstance() : basePrice_;
   }
 
   public static final int DISCOUNT_FIELD_NUMBER = 2;
-  private double discount_;
+  private double discount_ = 0D;
   /**
    *
    *
@@ -175,11 +175,13 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.MoneyOrBuilder getEffectivePriceOrBuilder() {
-    return getEffectivePrice();
+    return effectivePrice_ == null ? com.google.type.Money.getDefaultInstance() : effectivePrice_;
   }
 
   public static final int EXTERNAL_PRICE_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object externalPriceUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalPriceUri_ = "";
   /**
    *
    *
@@ -463,22 +465,19 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (basePriceBuilder_ == null) {
-        basePrice_ = null;
-      } else {
-        basePrice_ = null;
+      bitField0_ = 0;
+      basePrice_ = null;
+      if (basePriceBuilder_ != null) {
+        basePriceBuilder_.dispose();
         basePriceBuilder_ = null;
       }
       discount_ = 0D;
-
-      if (effectivePriceBuilder_ == null) {
-        effectivePrice_ = null;
-      } else {
-        effectivePrice_ = null;
+      effectivePrice_ = null;
+      if (effectivePriceBuilder_ != null) {
+        effectivePriceBuilder_.dispose();
         effectivePriceBuilder_ = null;
       }
       externalPriceUri_ = "";
-
       return this;
     }
 
@@ -505,20 +504,28 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.channel.v1.Price buildPartial() {
       com.google.cloud.channel.v1.Price result = new com.google.cloud.channel.v1.Price(this);
-      if (basePriceBuilder_ == null) {
-        result.basePrice_ = basePrice_;
-      } else {
-        result.basePrice_ = basePriceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.discount_ = discount_;
-      if (effectivePriceBuilder_ == null) {
-        result.effectivePrice_ = effectivePrice_;
-      } else {
-        result.effectivePrice_ = effectivePriceBuilder_.build();
-      }
-      result.externalPriceUri_ = externalPriceUri_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.Price result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.basePrice_ = basePriceBuilder_ == null ? basePrice_ : basePriceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.discount_ = discount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.effectivePrice_ =
+            effectivePriceBuilder_ == null ? effectivePrice_ : effectivePriceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.externalPriceUri_ = externalPriceUri_;
+      }
     }
 
     @java.lang.Override
@@ -577,6 +584,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getExternalPriceUri().isEmpty()) {
         externalPriceUri_ = other.externalPriceUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -608,25 +616,25 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getBasePriceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 17:
               {
                 discount_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 26:
               {
                 input.readMessage(getEffectivePriceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 externalPriceUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -646,6 +654,8 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.type.Money basePrice_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
@@ -662,7 +672,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the basePrice field is set.
      */
     public boolean hasBasePrice() {
-      return basePriceBuilder_ != null || basePrice_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -697,11 +707,11 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         basePrice_ = value;
-        onChanged();
       } else {
         basePriceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -716,11 +726,11 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     public Builder setBasePrice(com.google.type.Money.Builder builderForValue) {
       if (basePriceBuilder_ == null) {
         basePrice_ = builderForValue.build();
-        onChanged();
       } else {
         basePriceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -734,16 +744,18 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBasePrice(com.google.type.Money value) {
       if (basePriceBuilder_ == null) {
-        if (basePrice_ != null) {
-          basePrice_ = com.google.type.Money.newBuilder(basePrice_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && basePrice_ != null
+            && basePrice_ != com.google.type.Money.getDefaultInstance()) {
+          getBasePriceBuilder().mergeFrom(value);
         } else {
           basePrice_ = value;
         }
-        onChanged();
       } else {
         basePriceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -756,14 +768,13 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Money base_price = 1;</code>
      */
     public Builder clearBasePrice() {
-      if (basePriceBuilder_ == null) {
-        basePrice_ = null;
-        onChanged();
-      } else {
-        basePrice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      basePrice_ = null;
+      if (basePriceBuilder_ != null) {
+        basePriceBuilder_.dispose();
         basePriceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -776,7 +787,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Money base_price = 1;</code>
      */
     public com.google.type.Money.Builder getBasePriceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBasePriceFieldBuilder().getBuilder();
     }
@@ -852,6 +863,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     public Builder setDiscount(double value) {
 
       discount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -868,7 +880,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiscount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       discount_ = 0D;
       onChanged();
       return this;
@@ -890,7 +902,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the effectivePrice field is set.
      */
     public boolean hasEffectivePrice() {
-      return effectivePriceBuilder_ != null || effectivePrice_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -927,11 +939,11 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         effectivePrice_ = value;
-        onChanged();
       } else {
         effectivePriceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -946,11 +958,11 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     public Builder setEffectivePrice(com.google.type.Money.Builder builderForValue) {
       if (effectivePriceBuilder_ == null) {
         effectivePrice_ = builderForValue.build();
-        onChanged();
       } else {
         effectivePriceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -964,17 +976,18 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEffectivePrice(com.google.type.Money value) {
       if (effectivePriceBuilder_ == null) {
-        if (effectivePrice_ != null) {
-          effectivePrice_ =
-              com.google.type.Money.newBuilder(effectivePrice_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && effectivePrice_ != null
+            && effectivePrice_ != com.google.type.Money.getDefaultInstance()) {
+          getEffectivePriceBuilder().mergeFrom(value);
         } else {
           effectivePrice_ = value;
         }
-        onChanged();
       } else {
         effectivePriceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -987,14 +1000,13 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Money effective_price = 3;</code>
      */
     public Builder clearEffectivePrice() {
-      if (effectivePriceBuilder_ == null) {
-        effectivePrice_ = null;
-        onChanged();
-      } else {
-        effectivePrice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      effectivePrice_ = null;
+      if (effectivePriceBuilder_ != null) {
+        effectivePriceBuilder_.dispose();
         effectivePriceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1007,7 +1019,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Money effective_price = 3;</code>
      */
     public com.google.type.Money.Builder getEffectivePriceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEffectivePriceFieldBuilder().getBuilder();
     }
@@ -1114,8 +1126,8 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       externalPriceUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1131,8 +1143,8 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExternalPriceUri() {
-
       externalPriceUri_ = getDefaultInstance().getExternalPriceUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1153,8 +1165,8 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       externalPriceUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

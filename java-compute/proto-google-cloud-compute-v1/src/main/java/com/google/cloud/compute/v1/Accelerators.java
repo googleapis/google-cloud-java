@@ -68,7 +68,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int GUEST_ACCELERATOR_COUNT_FIELD_NUMBER = 479079316;
-  private int guestAcceleratorCount_;
+  private int guestAcceleratorCount_ = 0;
   /**
    *
    *
@@ -101,7 +101,9 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GUEST_ACCELERATOR_TYPE_FIELD_NUMBER = 293064725;
-  private volatile java.lang.Object guestAcceleratorType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object guestAcceleratorType_ = "";
   /**
    *
    *
@@ -381,10 +383,9 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       guestAcceleratorCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       guestAcceleratorType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -412,6 +413,14 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Accelerators buildPartial() {
       com.google.cloud.compute.v1.Accelerators result =
           new com.google.cloud.compute.v1.Accelerators(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Accelerators result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -419,12 +428,10 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.guestAcceleratorType_ = guestAcceleratorType_;
         to_bitField0_ |= 0x00000002;
       }
-      result.guestAcceleratorType_ = guestAcceleratorType_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -476,8 +483,8 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
         setGuestAcceleratorCount(other.getGuestAcceleratorCount());
       }
       if (other.hasGuestAcceleratorType()) {
-        bitField0_ |= 0x00000002;
         guestAcceleratorType_ = other.guestAcceleratorType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -581,8 +588,9 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setGuestAcceleratorCount(int value) {
-      bitField0_ |= 0x00000001;
+
       guestAcceleratorCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -679,8 +687,8 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       guestAcceleratorType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -696,8 +704,8 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGuestAcceleratorType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       guestAcceleratorType_ = getDefaultInstance().getGuestAcceleratorType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -718,8 +726,8 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       guestAcceleratorType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

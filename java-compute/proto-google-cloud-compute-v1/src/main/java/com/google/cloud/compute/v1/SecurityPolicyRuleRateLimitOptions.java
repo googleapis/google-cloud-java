@@ -235,7 +235,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
 
   private int bitField0_;
   public static final int BAN_DURATION_SEC_FIELD_NUMBER = 42896726;
-  private int banDurationSec_;
+  private int banDurationSec_ = 0;
   /**
    *
    *
@@ -327,7 +327,9 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   }
 
   public static final int CONFORM_ACTION_FIELD_NUMBER = 517612367;
-  private volatile java.lang.Object conformAction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conformAction_ = "";
   /**
    *
    *
@@ -391,7 +393,9 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   }
 
   public static final int ENFORCE_ON_KEY_FIELD_NUMBER = 416648956;
-  private volatile java.lang.Object enforceOnKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object enforceOnKey_ = "";
   /**
    *
    *
@@ -458,7 +462,9 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   }
 
   public static final int ENFORCE_ON_KEY_NAME_FIELD_NUMBER = 132555246;
-  private volatile java.lang.Object enforceOnKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object enforceOnKeyName_ = "";
   /**
    *
    *
@@ -522,7 +528,9 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   }
 
   public static final int EXCEED_ACTION_FIELD_NUMBER = 167159073;
-  private volatile java.lang.Object exceedAction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object exceedAction_ = "";
   /**
    *
    *
@@ -1020,34 +1028,27 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       banDurationSec_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (banThresholdBuilder_ == null) {
-        banThreshold_ = null;
-      } else {
-        banThresholdBuilder_.clear();
+      banThreshold_ = null;
+      if (banThresholdBuilder_ != null) {
+        banThresholdBuilder_.dispose();
+        banThresholdBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       conformAction_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       enforceOnKey_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       enforceOnKeyName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       exceedAction_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
-      if (exceedRedirectOptionsBuilder_ == null) {
-        exceedRedirectOptions_ = null;
-      } else {
-        exceedRedirectOptionsBuilder_.clear();
+      exceedRedirectOptions_ = null;
+      if (exceedRedirectOptionsBuilder_ != null) {
+        exceedRedirectOptionsBuilder_.dispose();
+        exceedRedirectOptionsBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
-      if (rateLimitThresholdBuilder_ == null) {
-        rateLimitThreshold_ = null;
-      } else {
-        rateLimitThresholdBuilder_.clear();
+      rateLimitThreshold_ = null;
+      if (rateLimitThresholdBuilder_ != null) {
+        rateLimitThresholdBuilder_.dispose();
+        rateLimitThresholdBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -1076,6 +1077,15 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions result =
           new com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -1083,48 +1093,41 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (banThresholdBuilder_ == null) {
-          result.banThreshold_ = banThreshold_;
-        } else {
-          result.banThreshold_ = banThresholdBuilder_.build();
-        }
+        result.banThreshold_ =
+            banThresholdBuilder_ == null ? banThreshold_ : banThresholdBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.conformAction_ = conformAction_;
         to_bitField0_ |= 0x00000004;
       }
-      result.conformAction_ = conformAction_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enforceOnKey_ = enforceOnKey_;
         to_bitField0_ |= 0x00000008;
       }
-      result.enforceOnKey_ = enforceOnKey_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enforceOnKeyName_ = enforceOnKeyName_;
         to_bitField0_ |= 0x00000010;
       }
-      result.enforceOnKeyName_ = enforceOnKeyName_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.exceedAction_ = exceedAction_;
         to_bitField0_ |= 0x00000020;
       }
-      result.exceedAction_ = exceedAction_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        if (exceedRedirectOptionsBuilder_ == null) {
-          result.exceedRedirectOptions_ = exceedRedirectOptions_;
-        } else {
-          result.exceedRedirectOptions_ = exceedRedirectOptionsBuilder_.build();
-        }
+        result.exceedRedirectOptions_ =
+            exceedRedirectOptionsBuilder_ == null
+                ? exceedRedirectOptions_
+                : exceedRedirectOptionsBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        if (rateLimitThresholdBuilder_ == null) {
-          result.rateLimitThreshold_ = rateLimitThreshold_;
-        } else {
-          result.rateLimitThreshold_ = rateLimitThresholdBuilder_.build();
-        }
+        result.rateLimitThreshold_ =
+            rateLimitThresholdBuilder_ == null
+                ? rateLimitThreshold_
+                : rateLimitThresholdBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1181,23 +1184,23 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         mergeBanThreshold(other.getBanThreshold());
       }
       if (other.hasConformAction()) {
-        bitField0_ |= 0x00000004;
         conformAction_ = other.conformAction_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasEnforceOnKey()) {
-        bitField0_ |= 0x00000008;
         enforceOnKey_ = other.enforceOnKey_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasEnforceOnKeyName()) {
-        bitField0_ |= 0x00000010;
         enforceOnKeyName_ = other.enforceOnKeyName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasExceedAction()) {
-        bitField0_ |= 0x00000020;
         exceedAction_ = other.exceedAction_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasExceedRedirectOptions()) {
@@ -1345,8 +1348,9 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setBanDurationSec(int value) {
-      bitField0_ |= 0x00000001;
+
       banDurationSec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1432,11 +1436,11 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
           throw new NullPointerException();
         }
         banThreshold_ = value;
-        onChanged();
       } else {
         banThresholdBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1455,11 +1459,11 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             builderForValue) {
       if (banThresholdBuilder_ == null) {
         banThreshold_ = builderForValue.build();
-        onChanged();
       } else {
         banThresholdBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1481,19 +1485,15 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             && banThreshold_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold
                     .getDefaultInstance()) {
-          banThreshold_ =
-              com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold.newBuilder(
-                      banThreshold_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getBanThresholdBuilder().mergeFrom(value);
         } else {
           banThreshold_ = value;
         }
-        onChanged();
       } else {
         banThresholdBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1508,13 +1508,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * </code>
      */
     public Builder clearBanThreshold() {
-      if (banThresholdBuilder_ == null) {
-        banThreshold_ = null;
-        onChanged();
-      } else {
-        banThresholdBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      banThreshold_ = null;
+      if (banThresholdBuilder_ != null) {
+        banThresholdBuilder_.dispose();
+        banThresholdBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1659,8 +1659,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       conformAction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1676,8 +1676,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearConformAction() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       conformAction_ = getDefaultInstance().getConformAction();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1698,8 +1698,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       conformAction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1783,8 +1783,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       enforceOnKey_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1801,8 +1801,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearEnforceOnKey() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       enforceOnKey_ = getDefaultInstance().getEnforceOnKey();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1824,8 +1824,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       enforceOnKey_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1905,8 +1905,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       enforceOnKeyName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1922,8 +1922,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearEnforceOnKeyName() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       enforceOnKeyName_ = getDefaultInstance().getEnforceOnKeyName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1944,8 +1944,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       enforceOnKeyName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2025,8 +2025,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       exceedAction_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2042,8 +2042,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearExceedAction() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       exceedAction_ = getDefaultInstance().getExceedAction();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2064,8 +2064,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       exceedAction_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2133,11 +2133,11 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
           throw new NullPointerException();
         }
         exceedRedirectOptions_ = value;
-        onChanged();
       } else {
         exceedRedirectOptionsBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2155,11 +2155,11 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder builderForValue) {
       if (exceedRedirectOptionsBuilder_ == null) {
         exceedRedirectOptions_ = builderForValue.build();
-        onChanged();
       } else {
         exceedRedirectOptionsBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2181,19 +2181,15 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             && exceedRedirectOptions_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions
                     .getDefaultInstance()) {
-          exceedRedirectOptions_ =
-              com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.newBuilder(
-                      exceedRedirectOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getExceedRedirectOptionsBuilder().mergeFrom(value);
         } else {
           exceedRedirectOptions_ = value;
         }
-        onChanged();
       } else {
         exceedRedirectOptionsBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2208,13 +2204,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * </code>
      */
     public Builder clearExceedRedirectOptions() {
-      if (exceedRedirectOptionsBuilder_ == null) {
-        exceedRedirectOptions_ = null;
-        onChanged();
-      } else {
-        exceedRedirectOptionsBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000040);
+      exceedRedirectOptions_ = null;
+      if (exceedRedirectOptionsBuilder_ != null) {
+        exceedRedirectOptionsBuilder_.dispose();
+        exceedRedirectOptionsBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2348,11 +2344,11 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
           throw new NullPointerException();
         }
         rateLimitThreshold_ = value;
-        onChanged();
       } else {
         rateLimitThresholdBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2371,11 +2367,11 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             builderForValue) {
       if (rateLimitThresholdBuilder_ == null) {
         rateLimitThreshold_ = builderForValue.build();
-        onChanged();
       } else {
         rateLimitThresholdBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2397,19 +2393,15 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             && rateLimitThreshold_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold
                     .getDefaultInstance()) {
-          rateLimitThreshold_ =
-              com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold.newBuilder(
-                      rateLimitThreshold_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getRateLimitThresholdBuilder().mergeFrom(value);
         } else {
           rateLimitThreshold_ = value;
         }
-        onChanged();
       } else {
         rateLimitThresholdBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2424,13 +2416,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * </code>
      */
     public Builder clearRateLimitThreshold() {
-      if (rateLimitThresholdBuilder_ == null) {
-        rateLimitThreshold_ = null;
-        onChanged();
-      } else {
-        rateLimitThresholdBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000080);
+      rateLimitThreshold_ = null;
+      if (rateLimitThresholdBuilder_ != null) {
+        rateLimitThresholdBuilder_.dispose();
+        rateLimitThresholdBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

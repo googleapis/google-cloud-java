@@ -70,6 +70,8 @@ public final class InstanceGroupManagersCreateInstancesRequest
   }
 
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> instances_;
   /**
    *
@@ -341,6 +343,7 @@ public final class InstanceGroupManagersCreateInstancesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (instancesBuilder_ == null) {
         instances_ = java.util.Collections.emptyList();
       } else {
@@ -378,7 +381,16 @@ public final class InstanceGroupManagersCreateInstancesRequest
     public com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest result =
           new com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest result) {
       if (instancesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           instances_ = java.util.Collections.unmodifiableList(instances_);
@@ -388,8 +400,11 @@ public final class InstanceGroupManagersCreateInstancesRequest
       } else {
         result.instances_ = instancesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

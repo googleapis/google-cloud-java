@@ -65,7 +65,6 @@ public interface MapPropertyOrBuilder
    *
    * <code>map&lt;string, .google.cloud.contentwarehouse.v1.Value&gt; fields = 1;</code>
    */
-
   /* nullable */
   com.google.cloud.contentwarehouse.v1.Value getFieldsOrDefault(
       java.lang.String key,

@@ -352,6 +352,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ACCELERATORS_FIELD_NUMBER = 269577064;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> accelerators_;
   /**
    *
@@ -476,7 +478,9 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CPU_OVERCOMMIT_TYPE_FIELD_NUMBER = 247727959;
-  private volatile java.lang.Object cpuOvercommitType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cpuOvercommitType_ = "";
   /**
    *
    *
@@ -543,6 +547,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISKS_FIELD_NUMBER = 95594102;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.LocalDisk> disks_;
   /**
    *
@@ -612,6 +618,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_CONSUMPTION_DATA_FIELD_NUMBER = 84715576;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceConsumptionData>
       instanceConsumptionData_;
   /**
@@ -694,6 +702,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList instances_;
   /**
    *
@@ -755,7 +765,9 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -819,7 +831,9 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NODE_TYPE_FIELD_NUMBER = 465832791;
-  private volatile java.lang.Object nodeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeType_ = "";
   /**
    *
    *
@@ -883,7 +897,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 480964267;
-  private boolean satisfiesPzs_;
+  private boolean satisfiesPzs_ = false;
   /**
    *
    *
@@ -966,7 +980,9 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVER_ID_FIELD_NUMBER = 339433367;
-  private volatile java.lang.Object serverId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serverId_ = "";
   /**
    *
    *
@@ -1030,7 +1046,9 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -1534,6 +1552,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
       } else {
@@ -1541,14 +1560,12 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         acceleratorsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (consumedResourcesBuilder_ == null) {
-        consumedResources_ = null;
-      } else {
-        consumedResourcesBuilder_.clear();
+      consumedResources_ = null;
+      if (consumedResourcesBuilder_ != null) {
+        consumedResourcesBuilder_.dispose();
+        consumedResourcesBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       cpuOvercommitType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       if (disksBuilder_ == null) {
         disks_ = java.util.Collections.emptyList();
       } else {
@@ -1566,27 +1583,20 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       nodeType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       satisfiesPzs_ = false;
-      bitField0_ = (bitField0_ & ~0x00000100);
-      if (serverBindingBuilder_ == null) {
-        serverBinding_ = null;
-      } else {
-        serverBindingBuilder_.clear();
+      serverBinding_ = null;
+      if (serverBindingBuilder_ != null) {
+        serverBindingBuilder_.dispose();
+        serverBindingBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
       serverId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
-      if (totalResourcesBuilder_ == null) {
-        totalResources_ = null;
-      } else {
-        totalResourcesBuilder_.clear();
+      totalResources_ = null;
+      if (totalResourcesBuilder_ != null) {
+        totalResourcesBuilder_.dispose();
+        totalResourcesBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -1614,8 +1624,15 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.NodeGroupNode buildPartial() {
       com.google.cloud.compute.v1.NodeGroupNode result =
           new com.google.cloud.compute.v1.NodeGroupNode(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.NodeGroupNode result) {
       if (acceleratorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
@@ -1625,18 +1642,6 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.accelerators_ = acceleratorsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (consumedResourcesBuilder_ == null) {
-          result.consumedResources_ = consumedResources_;
-        } else {
-          result.consumedResources_ = consumedResourcesBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.cpuOvercommitType_ = cpuOvercommitType_;
       if (disksBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           disks_ = java.util.Collections.unmodifiableList(disks_);
@@ -1661,45 +1666,53 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.instances_ = instances_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NodeGroupNode result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.consumedResources_ =
+            consumedResourcesBuilder_ == null
+                ? consumedResources_
+                : consumedResourcesBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cpuOvercommitType_ = cpuOvercommitType_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000004;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.nodeType_ = nodeType_;
         to_bitField0_ |= 0x00000008;
       }
-      result.nodeType_ = nodeType_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        if (serverBindingBuilder_ == null) {
-          result.serverBinding_ = serverBinding_;
-        } else {
-          result.serverBinding_ = serverBindingBuilder_.build();
-        }
+        result.serverBinding_ =
+            serverBindingBuilder_ == null ? serverBinding_ : serverBindingBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.serverId_ = serverId_;
         to_bitField0_ |= 0x00000040;
       }
-      result.serverId_ = serverId_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.status_ = status_;
         to_bitField0_ |= 0x00000080;
       }
-      result.status_ = status_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        if (totalResourcesBuilder_ == null) {
-          result.totalResources_ = totalResources_;
-        } else {
-          result.totalResources_ = totalResourcesBuilder_.build();
-        }
+        result.totalResources_ =
+            totalResourcesBuilder_ == null ? totalResources_ : totalResourcesBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1778,8 +1791,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         mergeConsumedResources(other.getConsumedResources());
       }
       if (other.hasCpuOvercommitType()) {
-        bitField0_ |= 0x00000004;
         cpuOvercommitType_ = other.cpuOvercommitType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (disksBuilder_ == null) {
@@ -1847,13 +1860,13 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000040;
         name_ = other.name_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasNodeType()) {
-        bitField0_ |= 0x00000080;
         nodeType_ = other.nodeType_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasSatisfiesPzs()) {
@@ -1863,13 +1876,13 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         mergeServerBinding(other.getServerBinding());
       }
       if (other.hasServerId()) {
-        bitField0_ |= 0x00000400;
         serverId_ = other.serverId_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00000800;
         status_ = other.status_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasTotalResources()) {
@@ -2435,11 +2448,11 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         consumedResources_ = value;
-        onChanged();
       } else {
         consumedResourcesBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2457,11 +2470,11 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.InstanceConsumptionInfo.Builder builderForValue) {
       if (consumedResourcesBuilder_ == null) {
         consumedResources_ = builderForValue.build();
-        onChanged();
       } else {
         consumedResourcesBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2482,18 +2495,15 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
             && consumedResources_ != null
             && consumedResources_
                 != com.google.cloud.compute.v1.InstanceConsumptionInfo.getDefaultInstance()) {
-          consumedResources_ =
-              com.google.cloud.compute.v1.InstanceConsumptionInfo.newBuilder(consumedResources_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getConsumedResourcesBuilder().mergeFrom(value);
         } else {
           consumedResources_ = value;
         }
-        onChanged();
       } else {
         consumedResourcesBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2508,13 +2518,13 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearConsumedResources() {
-      if (consumedResourcesBuilder_ == null) {
-        consumedResources_ = null;
-        onChanged();
-      } else {
-        consumedResourcesBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      consumedResources_ = null;
+      if (consumedResourcesBuilder_ != null) {
+        consumedResourcesBuilder_.dispose();
+        consumedResourcesBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2662,8 +2672,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       cpuOvercommitType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2680,8 +2690,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCpuOvercommitType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       cpuOvercommitType_ = getDefaultInstance().getCpuOvercommitType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2703,8 +2713,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       cpuOvercommitType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3701,8 +3711,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       name_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3718,8 +3728,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3740,8 +3750,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       name_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3821,8 +3831,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       nodeType_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3838,8 +3848,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNodeType() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       nodeType_ = getDefaultInstance().getNodeType();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3860,8 +3870,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       nodeType_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3910,8 +3920,9 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSatisfiesPzs(boolean value) {
-      bitField0_ |= 0x00000100;
+
       satisfiesPzs_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3988,11 +3999,11 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         serverBinding_ = value;
-        onChanged();
       } else {
         serverBindingBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4008,11 +4019,11 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.ServerBinding.Builder builderForValue) {
       if (serverBindingBuilder_ == null) {
         serverBinding_ = builderForValue.build();
-        onChanged();
       } else {
         serverBindingBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4029,18 +4040,15 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000200) != 0)
             && serverBinding_ != null
             && serverBinding_ != com.google.cloud.compute.v1.ServerBinding.getDefaultInstance()) {
-          serverBinding_ =
-              com.google.cloud.compute.v1.ServerBinding.newBuilder(serverBinding_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getServerBindingBuilder().mergeFrom(value);
         } else {
           serverBinding_ = value;
         }
-        onChanged();
       } else {
         serverBindingBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4053,13 +4061,13 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      */
     public Builder clearServerBinding() {
-      if (serverBindingBuilder_ == null) {
-        serverBinding_ = null;
-        onChanged();
-      } else {
-        serverBindingBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000200);
+      serverBinding_ = null;
+      if (serverBindingBuilder_ != null) {
+        serverBindingBuilder_.dispose();
+        serverBindingBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -4195,8 +4203,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       serverId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4212,8 +4220,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServerId() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       serverId_ = getDefaultInstance().getServerId();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4234,8 +4242,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       serverId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4319,8 +4327,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       status_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4337,8 +4345,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4360,8 +4368,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       status_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4424,11 +4432,11 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         totalResources_ = value;
-        onChanged();
       } else {
         totalResourcesBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4445,11 +4453,11 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.InstanceConsumptionInfo.Builder builderForValue) {
       if (totalResourcesBuilder_ == null) {
         totalResources_ = builderForValue.build();
-        onChanged();
       } else {
         totalResourcesBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4468,18 +4476,15 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
             && totalResources_ != null
             && totalResources_
                 != com.google.cloud.compute.v1.InstanceConsumptionInfo.getDefaultInstance()) {
-          totalResources_ =
-              com.google.cloud.compute.v1.InstanceConsumptionInfo.newBuilder(totalResources_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getTotalResourcesBuilder().mergeFrom(value);
         } else {
           totalResources_ = value;
         }
-        onChanged();
       } else {
         totalResourcesBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4493,13 +4498,13 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTotalResources() {
-      if (totalResourcesBuilder_ == null) {
-        totalResources_ = null;
-        onChanged();
-      } else {
-        totalResourcesBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00001000);
+      totalResources_ = null;
+      if (totalResourcesBuilder_ != null) {
+        totalResourcesBuilder_.dispose();
+        totalResourcesBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

@@ -68,7 +68,9 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -168,7 +170,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
-    return getReadMask();
+    return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,12 +387,11 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (readMaskBuilder_ == null) {
-        readMask_ = null;
-      } else {
-        readMask_ = null;
+      readMask_ = null;
+      if (readMaskBuilder_ != null) {
+        readMaskBuilder_.dispose();
         readMaskBuilder_ = null;
       }
       return this;
@@ -423,14 +424,22 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
     public com.google.cloud.bigquery.migration.v2alpha.GetMigrationSubtaskRequest buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.GetMigrationSubtaskRequest result =
           new com.google.cloud.bigquery.migration.v2alpha.GetMigrationSubtaskRequest(this);
-      result.name_ = name_;
-      if (readMaskBuilder_ == null) {
-        result.readMask_ = readMask_;
-      } else {
-        result.readMask_ = readMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.migration.v2alpha.GetMigrationSubtaskRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.readMask_ = readMaskBuilder_ == null ? readMask_ : readMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -484,6 +493,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasReadMask()) {
@@ -518,13 +528,13 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getReadMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +553,8 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -614,8 +626,8 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,8 +646,8 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -659,8 +671,8 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,7 +696,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
      * @return Whether the readMask field is set.
      */
     public boolean hasReadMask() {
-      return readMaskBuilder_ != null || readMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -721,11 +733,11 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         readMask_ = value;
-        onChanged();
       } else {
         readMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -741,11 +753,11 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
     public Builder setReadMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (readMaskBuilder_ == null) {
         readMask_ = builderForValue.build();
-        onChanged();
       } else {
         readMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -760,17 +772,18 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
      */
     public Builder mergeReadMask(com.google.protobuf.FieldMask value) {
       if (readMaskBuilder_ == null) {
-        if (readMask_ != null) {
-          readMask_ =
-              com.google.protobuf.FieldMask.newBuilder(readMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && readMask_ != null
+            && readMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getReadMaskBuilder().mergeFrom(value);
         } else {
           readMask_ = value;
         }
-        onChanged();
       } else {
         readMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -784,14 +797,13 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearReadMask() {
-      if (readMaskBuilder_ == null) {
-        readMask_ = null;
-        onChanged();
-      } else {
-        readMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      readMask_ = null;
+      if (readMaskBuilder_ != null) {
+        readMaskBuilder_.dispose();
         readMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -805,7 +817,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getReadMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getReadMaskFieldBuilder().getBuilder();
     }

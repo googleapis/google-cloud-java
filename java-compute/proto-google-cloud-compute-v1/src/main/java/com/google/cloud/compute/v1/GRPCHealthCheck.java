@@ -252,7 +252,9 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int GRPC_SERVICE_NAME_FIELD_NUMBER = 136533078;
-  private volatile java.lang.Object grpcServiceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object grpcServiceName_ = "";
   /**
    *
    *
@@ -316,7 +318,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PORT_FIELD_NUMBER = 3446913;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -349,7 +351,9 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PORT_NAME_FIELD_NUMBER = 41534345;
-  private volatile java.lang.Object portName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object portName_ = "";
   /**
    *
    *
@@ -413,7 +417,9 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PORT_SPECIFICATION_FIELD_NUMBER = 51590597;
-  private volatile java.lang.Object portSpecification_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object portSpecification_ = "";
   /**
    *
    *
@@ -723,14 +729,11 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       grpcServiceName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       port_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       portName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       portSpecification_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -758,27 +761,33 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.GRPCHealthCheck buildPartial() {
       com.google.cloud.compute.v1.GRPCHealthCheck result =
           new com.google.cloud.compute.v1.GRPCHealthCheck(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GRPCHealthCheck result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.grpcServiceName_ = grpcServiceName_;
         to_bitField0_ |= 0x00000001;
       }
-      result.grpcServiceName_ = grpcServiceName_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.port_ = port_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.portName_ = portName_;
         to_bitField0_ |= 0x00000004;
       }
-      result.portName_ = portName_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.portSpecification_ = portSpecification_;
         to_bitField0_ |= 0x00000008;
       }
-      result.portSpecification_ = portSpecification_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -827,21 +836,21 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.compute.v1.GRPCHealthCheck other) {
       if (other == com.google.cloud.compute.v1.GRPCHealthCheck.getDefaultInstance()) return this;
       if (other.hasGrpcServiceName()) {
-        bitField0_ |= 0x00000001;
         grpcServiceName_ = other.grpcServiceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPort()) {
         setPort(other.getPort());
       }
       if (other.hasPortName()) {
-        bitField0_ |= 0x00000004;
         portName_ = other.portName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasPortSpecification()) {
-        bitField0_ |= 0x00000008;
         portSpecification_ = other.portSpecification_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -988,8 +997,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       grpcServiceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1005,8 +1014,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearGrpcServiceName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       grpcServiceName_ = getDefaultInstance().getGrpcServiceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1027,8 +1036,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       grpcServiceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1077,8 +1086,9 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-      bitField0_ |= 0x00000002;
+
       port_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1175,8 +1185,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       portName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1192,8 +1202,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPortName() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       portName_ = getDefaultInstance().getPortName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1214,8 +1224,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       portName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1299,8 +1309,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       portSpecification_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1317,8 +1327,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPortSpecification() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       portSpecification_ = getDefaultInstance().getPortSpecification();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1340,8 +1350,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       portSpecification_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

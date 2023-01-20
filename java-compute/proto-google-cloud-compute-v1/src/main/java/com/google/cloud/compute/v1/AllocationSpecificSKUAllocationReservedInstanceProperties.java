@@ -78,6 +78,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
 
   private int bitField0_;
   public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 463595119;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_;
   /**
    *
@@ -153,6 +155,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   }
 
   public static final int LOCAL_SSDS_FIELD_NUMBER = 229951299;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.compute.v1
               .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk>
@@ -245,7 +249,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   }
 
   public static final int LOCATION_HINT_FIELD_NUMBER = 350519505;
-  private volatile java.lang.Object locationHint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locationHint_ = "";
   /**
    *
    *
@@ -309,7 +315,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 227711026;
-  private volatile java.lang.Object machineType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
   /**
    *
    *
@@ -373,7 +381,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   }
 
   public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 242912759;
-  private volatile java.lang.Object minCpuPlatform_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object minCpuPlatform_ = "";
   /**
    *
    *
@@ -718,6 +728,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (guestAcceleratorsBuilder_ == null) {
         guestAccelerators_ = java.util.Collections.emptyList();
       } else {
@@ -733,11 +744,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       locationHint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       machineType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       minCpuPlatform_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -771,8 +779,17 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties result =
           new com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties(
               this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties
+            result) {
       if (guestAcceleratorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           guestAccelerators_ = java.util.Collections.unmodifiableList(guestAccelerators_);
@@ -791,21 +808,26 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       } else {
         result.localSsds_ = localSsdsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties
+            result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.locationHint_ = locationHint_;
         to_bitField0_ |= 0x00000001;
       }
-      result.locationHint_ = locationHint_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.machineType_ = machineType_;
         to_bitField0_ |= 0x00000002;
       }
-      result.machineType_ = machineType_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.minCpuPlatform_ = minCpuPlatform_;
         to_bitField0_ |= 0x00000004;
       }
-      result.minCpuPlatform_ = minCpuPlatform_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -916,18 +938,18 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         }
       }
       if (other.hasLocationHint()) {
-        bitField0_ |= 0x00000004;
         locationHint_ = other.locationHint_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasMachineType()) {
-        bitField0_ |= 0x00000008;
         machineType_ = other.machineType_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasMinCpuPlatform()) {
-        bitField0_ |= 0x00000010;
         minCpuPlatform_ = other.minCpuPlatform_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1927,8 +1949,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       locationHint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1944,8 +1966,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * @return This builder for chaining.
      */
     public Builder clearLocationHint() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       locationHint_ = getDefaultInstance().getLocationHint();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1966,8 +1988,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       locationHint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2047,8 +2069,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       machineType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2064,8 +2086,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2086,8 +2108,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       machineType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2167,8 +2189,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       minCpuPlatform_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2184,8 +2206,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * @return This builder for chaining.
      */
     public Builder clearMinCpuPlatform() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2206,8 +2228,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       minCpuPlatform_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

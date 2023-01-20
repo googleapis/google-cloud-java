@@ -70,7 +70,9 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PROVISIONING_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object provisioningId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object provisioningId_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PRODUCT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object productId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object productId_ = "";
   /**
    *
    *
@@ -174,7 +178,9 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SKU_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object skuId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object skuId_ = "";
   /**
    *
    *
@@ -439,12 +445,10 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       provisioningId_ = "";
-
       productId_ = "";
-
       skuId_ = "";
-
       return this;
     }
 
@@ -472,11 +476,24 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.channel.v1.ProvisionedService buildPartial() {
       com.google.cloud.channel.v1.ProvisionedService result =
           new com.google.cloud.channel.v1.ProvisionedService(this);
-      result.provisioningId_ = provisioningId_;
-      result.productId_ = productId_;
-      result.skuId_ = skuId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ProvisionedService result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.provisioningId_ = provisioningId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.productId_ = productId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.skuId_ = skuId_;
+      }
     }
 
     @java.lang.Override
@@ -526,14 +543,17 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.channel.v1.ProvisionedService.getDefaultInstance()) return this;
       if (!other.getProvisioningId().isEmpty()) {
         provisioningId_ = other.provisioningId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProductId().isEmpty()) {
         productId_ = other.productId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSkuId().isEmpty()) {
         skuId_ = other.skuId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -565,19 +585,19 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 provisioningId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 productId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 skuId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -596,6 +616,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object provisioningId_ = "";
     /**
@@ -664,8 +686,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       provisioningId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,8 +705,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProvisioningId() {
-
       provisioningId_ = getDefaultInstance().getProvisioningId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -707,8 +729,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       provisioningId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,8 +799,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       productId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -795,8 +817,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProductId() {
-
       productId_ = getDefaultInstance().getProductId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -818,8 +840,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       productId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -888,8 +910,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       skuId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -906,8 +928,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSkuId() {
-
       skuId_ = getDefaultInstance().getSkuId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -929,8 +951,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       skuId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
   }
 
   public static final int SERVICE_ACCOUNT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceAccountId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountId_ = "";
   /**
    *
    *
@@ -330,8 +332,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceAccountId_ = "";
-
       return this;
     }
 
@@ -360,9 +362,19 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
     public com.google.cloud.bigquery.connection.v1.CloudResourceProperties buildPartial() {
       com.google.cloud.bigquery.connection.v1.CloudResourceProperties result =
           new com.google.cloud.bigquery.connection.v1.CloudResourceProperties(this);
-      result.serviceAccountId_ = serviceAccountId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.connection.v1.CloudResourceProperties result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceAccountId_ = serviceAccountId_;
+      }
     }
 
     @java.lang.Override
@@ -415,6 +427,7 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
         return this;
       if (!other.getServiceAccountId().isEmpty()) {
         serviceAccountId_ = other.serviceAccountId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -446,7 +459,7 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
             case 10:
               {
                 serviceAccountId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -465,6 +478,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceAccountId_ = "";
     /**
@@ -548,8 +563,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -572,8 +587,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountId() {
-
       serviceAccountId_ = getDefaultInstance().getServiceAccountId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -601,8 +616,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

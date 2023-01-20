@@ -121,11 +121,15 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ForwardingRuleOrBuilder getForwardingRuleResourceOrBuilder() {
-    return getForwardingRuleResource();
+    return forwardingRuleResource_ == null
+        ? com.google.cloud.compute.v1.ForwardingRule.getDefaultInstance()
+        : forwardingRuleResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -469,16 +475,14 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (forwardingRuleResourceBuilder_ == null) {
-        forwardingRuleResource_ = null;
-      } else {
-        forwardingRuleResource_ = null;
+      bitField0_ = 0;
+      forwardingRuleResource_ = null;
+      if (forwardingRuleResourceBuilder_ != null) {
+        forwardingRuleResourceBuilder_.dispose();
         forwardingRuleResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -507,21 +511,31 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.InsertGlobalForwardingRuleRequest buildPartial() {
       com.google.cloud.compute.v1.InsertGlobalForwardingRuleRequest result =
           new com.google.cloud.compute.v1.InsertGlobalForwardingRuleRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (forwardingRuleResourceBuilder_ == null) {
-        result.forwardingRuleResource_ = forwardingRuleResource_;
-      } else {
-        result.forwardingRuleResource_ = forwardingRuleResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InsertGlobalForwardingRuleRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.forwardingRuleResource_ =
+            forwardingRuleResourceBuilder_ == null
+                ? forwardingRuleResource_
+                : forwardingRuleResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -576,11 +590,12 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -612,20 +627,20 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1885273734:
               {
                 input.readMessage(
                     getForwardingRuleResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1885273734
             default:
@@ -667,7 +682,7 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
      * @return Whether the forwardingRuleResource field is set.
      */
     public boolean hasForwardingRuleResource() {
-      return forwardingRuleResourceBuilder_ != null || forwardingRuleResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -708,11 +723,11 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         forwardingRuleResource_ = value;
-        onChanged();
       } else {
         forwardingRuleResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -730,11 +745,11 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
         com.google.cloud.compute.v1.ForwardingRule.Builder builderForValue) {
       if (forwardingRuleResourceBuilder_ == null) {
         forwardingRuleResource_ = builderForValue.build();
-        onChanged();
       } else {
         forwardingRuleResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -750,19 +765,19 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
      */
     public Builder mergeForwardingRuleResource(com.google.cloud.compute.v1.ForwardingRule value) {
       if (forwardingRuleResourceBuilder_ == null) {
-        if (forwardingRuleResource_ != null) {
-          forwardingRuleResource_ =
-              com.google.cloud.compute.v1.ForwardingRule.newBuilder(forwardingRuleResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && forwardingRuleResource_ != null
+            && forwardingRuleResource_
+                != com.google.cloud.compute.v1.ForwardingRule.getDefaultInstance()) {
+          getForwardingRuleResourceBuilder().mergeFrom(value);
         } else {
           forwardingRuleResource_ = value;
         }
-        onChanged();
       } else {
         forwardingRuleResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -777,14 +792,13 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearForwardingRuleResource() {
-      if (forwardingRuleResourceBuilder_ == null) {
-        forwardingRuleResource_ = null;
-        onChanged();
-      } else {
-        forwardingRuleResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      forwardingRuleResource_ = null;
+      if (forwardingRuleResourceBuilder_ != null) {
+        forwardingRuleResourceBuilder_.dispose();
         forwardingRuleResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -799,7 +813,7 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
      * </code>
      */
     public com.google.cloud.compute.v1.ForwardingRule.Builder getForwardingRuleResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getForwardingRuleResourceFieldBuilder().getBuilder();
     }
@@ -919,8 +933,8 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -938,8 +952,8 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -962,8 +976,8 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -981,7 +995,7 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1043,8 +1057,8 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1060,8 +1074,8 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1082,8 +1096,8 @@ public final class InsertGlobalForwardingRuleRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -67,7 +67,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int CALCULATED_FIELD_NUMBER = 472082878;
-  private int calculated_;
+  private int calculated_ = 0;
   /**
    *
    *
@@ -100,7 +100,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIXED_FIELD_NUMBER = 97445748;
-  private int fixed_;
+  private int fixed_ = 0;
   /**
    *
    *
@@ -133,7 +133,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERCENT_FIELD_NUMBER = 394814533;
-  private int percent_;
+  private int percent_ = 0;
   /**
    *
    *
@@ -395,12 +395,10 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       calculated_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       fixed_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       percent_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -428,6 +426,14 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.FixedOrPercent buildPartial() {
       com.google.cloud.compute.v1.FixedOrPercent result =
           new com.google.cloud.compute.v1.FixedOrPercent(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.FixedOrPercent result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -442,9 +448,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
         result.percent_ = percent_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -608,8 +612,9 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCalculated(int value) {
-      bitField0_ |= 0x00000001;
+
       calculated_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -675,8 +680,9 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFixed(int value) {
-      bitField0_ |= 0x00000002;
+
       fixed_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -742,8 +748,9 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPercent(int value) {
-      bitField0_ |= 0x00000004;
+
       percent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

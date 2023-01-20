@@ -69,7 +69,9 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -124,7 +126,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
   }
 
   public static final int FORCE_FIELD_NUMBER = 3;
-  private boolean force_;
+  private boolean force_ = false;
   /**
    *
    *
@@ -354,10 +356,9 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       force_ = false;
-
       return this;
     }
 
@@ -388,10 +389,22 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
     public com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest buildPartial() {
       com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest result =
           new com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest(this);
-      result.name_ = name_;
-      result.force_ = force_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.force_ = force_;
+      }
     }
 
     @java.lang.Override
@@ -446,6 +459,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getForce() != false) {
@@ -480,13 +494,13 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 force_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -505,6 +519,8 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -576,8 +592,8 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -596,8 +612,8 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -621,8 +637,8 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -662,6 +678,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
     public Builder setForce(boolean value) {
 
       force_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -679,7 +696,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       force_ = false;
       onChanged();
       return this;

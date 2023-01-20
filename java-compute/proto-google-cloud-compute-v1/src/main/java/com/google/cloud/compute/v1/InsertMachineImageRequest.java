@@ -121,11 +121,15 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MachineImageOrBuilder getMachineImageResourceOrBuilder() {
-    return getMachineImageResource();
+    return machineImageResource_ == null
+        ? com.google.cloud.compute.v1.MachineImage.getDefaultInstance()
+        : machineImageResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -242,7 +248,9 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_INSTANCE_FIELD_NUMBER = 396315705;
-  private volatile java.lang.Object sourceInstance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceInstance_ = "";
   /**
    *
    *
@@ -547,18 +555,15 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (machineImageResourceBuilder_ == null) {
-        machineImageResource_ = null;
-      } else {
-        machineImageResource_ = null;
+      bitField0_ = 0;
+      machineImageResource_ = null;
+      if (machineImageResourceBuilder_ != null) {
+        machineImageResourceBuilder_.dispose();
         machineImageResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       sourceInstance_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -586,25 +591,34 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.InsertMachineImageRequest buildPartial() {
       com.google.cloud.compute.v1.InsertMachineImageRequest result =
           new com.google.cloud.compute.v1.InsertMachineImageRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (machineImageResourceBuilder_ == null) {
-        result.machineImageResource_ = machineImageResource_;
-      } else {
-        result.machineImageResource_ = machineImageResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.sourceInstance_ = sourceInstance_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertMachineImageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.machineImageResource_ =
+            machineImageResourceBuilder_ == null
+                ? machineImageResource_
+                : machineImageResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sourceInstance_ = sourceInstance_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -658,16 +672,17 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasSourceInstance()) {
-        bitField0_ |= 0x00000002;
         sourceInstance_ = other.sourceInstance_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -699,26 +714,26 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 485927762:
               {
                 input.readMessage(
                     getMachineImageResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 485927762
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1124441654:
               {
                 sourceInstance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1124441654
             default:
@@ -760,7 +775,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
      * @return Whether the machineImageResource field is set.
      */
     public boolean hasMachineImageResource() {
-      return machineImageResourceBuilder_ != null || machineImageResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -801,11 +816,11 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         machineImageResource_ = value;
-        onChanged();
       } else {
         machineImageResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -823,11 +838,11 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         com.google.cloud.compute.v1.MachineImage.Builder builderForValue) {
       if (machineImageResourceBuilder_ == null) {
         machineImageResource_ = builderForValue.build();
-        onChanged();
       } else {
         machineImageResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -843,19 +858,19 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
      */
     public Builder mergeMachineImageResource(com.google.cloud.compute.v1.MachineImage value) {
       if (machineImageResourceBuilder_ == null) {
-        if (machineImageResource_ != null) {
-          machineImageResource_ =
-              com.google.cloud.compute.v1.MachineImage.newBuilder(machineImageResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && machineImageResource_ != null
+            && machineImageResource_
+                != com.google.cloud.compute.v1.MachineImage.getDefaultInstance()) {
+          getMachineImageResourceBuilder().mergeFrom(value);
         } else {
           machineImageResource_ = value;
         }
-        onChanged();
       } else {
         machineImageResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -870,14 +885,13 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearMachineImageResource() {
-      if (machineImageResourceBuilder_ == null) {
-        machineImageResource_ = null;
-        onChanged();
-      } else {
-        machineImageResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      machineImageResource_ = null;
+      if (machineImageResourceBuilder_ != null) {
+        machineImageResourceBuilder_.dispose();
         machineImageResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -892,7 +906,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.compute.v1.MachineImage.Builder getMachineImageResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMachineImageResourceFieldBuilder().getBuilder();
     }
@@ -1011,8 +1025,8 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1030,8 +1044,8 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1054,8 +1068,8 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1073,7 +1087,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1135,8 +1149,8 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1152,8 +1166,8 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1174,8 +1188,8 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1193,7 +1207,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
      * @return Whether the sourceInstance field is set.
      */
     public boolean hasSourceInstance() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1255,8 +1269,8 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       sourceInstance_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1272,8 +1286,8 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearSourceInstance() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       sourceInstance_ = getDefaultInstance().getSourceInstance();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1294,8 +1308,8 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       sourceInstance_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

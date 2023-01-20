@@ -110,7 +110,9 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.AssignmentOrBuilder getAssignmentOrBuilder() {
-    return getAssignment();
+    return assignment_ == null
+        ? com.google.cloud.bigquery.reservation.v1.Assignment.getDefaultInstance()
+        : assignment_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -156,7 +158,7 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -376,16 +378,15 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (assignmentBuilder_ == null) {
-        assignment_ = null;
-      } else {
-        assignment_ = null;
+      bitField0_ = 0;
+      assignment_ = null;
+      if (assignmentBuilder_ != null) {
+        assignmentBuilder_.dispose();
         assignmentBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -416,18 +417,22 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
     public com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest buildPartial() {
       com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest result =
           new com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest(this);
-      if (assignmentBuilder_ == null) {
-        result.assignment_ = assignment_;
-      } else {
-        result.assignment_ = assignmentBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.assignment_ = assignmentBuilder_ == null ? assignment_ : assignmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -513,13 +518,13 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getAssignmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -539,6 +544,8 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.bigquery.reservation.v1.Assignment assignment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.reservation.v1.Assignment,
@@ -557,7 +564,7 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
      * @return Whether the assignment field is set.
      */
     public boolean hasAssignment() {
-      return assignmentBuilder_ != null || assignment_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -594,11 +601,11 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         assignment_ = value;
-        onChanged();
       } else {
         assignmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -614,11 +621,11 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
         com.google.cloud.bigquery.reservation.v1.Assignment.Builder builderForValue) {
       if (assignmentBuilder_ == null) {
         assignment_ = builderForValue.build();
-        onChanged();
       } else {
         assignmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -632,19 +639,19 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
      */
     public Builder mergeAssignment(com.google.cloud.bigquery.reservation.v1.Assignment value) {
       if (assignmentBuilder_ == null) {
-        if (assignment_ != null) {
-          assignment_ =
-              com.google.cloud.bigquery.reservation.v1.Assignment.newBuilder(assignment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && assignment_ != null
+            && assignment_
+                != com.google.cloud.bigquery.reservation.v1.Assignment.getDefaultInstance()) {
+          getAssignmentBuilder().mergeFrom(value);
         } else {
           assignment_ = value;
         }
-        onChanged();
       } else {
         assignmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -657,14 +664,13 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
      * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      */
     public Builder clearAssignment() {
-      if (assignmentBuilder_ == null) {
-        assignment_ = null;
-        onChanged();
-      } else {
-        assignment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      assignment_ = null;
+      if (assignmentBuilder_ != null) {
+        assignmentBuilder_.dispose();
         assignmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -677,7 +683,7 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
      * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      */
     public com.google.cloud.bigquery.reservation.v1.Assignment.Builder getAssignmentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAssignmentFieldBuilder().getBuilder();
     }
@@ -743,7 +749,7 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -780,11 +786,11 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,11 +805,11 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -817,17 +823,18 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -840,14 +847,13 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -860,7 +866,7 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

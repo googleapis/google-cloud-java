@@ -71,7 +71,9 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int CONTENTS_FIELD_NUMBER = 506419994;
-  private volatile java.lang.Object contents_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object contents_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -199,7 +203,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NEXT_FIELD_NUMBER = 3377907;
-  private long next_;
+  private long next_ = 0L;
   /**
    *
    *
@@ -232,7 +236,9 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -296,7 +302,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int START_FIELD_NUMBER = 109757538;
-  private long start_;
+  private long start_ = 0L;
   /**
    *
    *
@@ -586,16 +592,12 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       contents_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       next_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000004);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       start_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -623,31 +625,37 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.SerialPortOutput buildPartial() {
       com.google.cloud.compute.v1.SerialPortOutput result =
           new com.google.cloud.compute.v1.SerialPortOutput(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SerialPortOutput result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.contents_ = contents_;
         to_bitField0_ |= 0x00000001;
       }
-      result.contents_ = contents_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000002;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.next_ = next_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000008;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.start_ = start_;
         to_bitField0_ |= 0x00000010;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -696,21 +704,21 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public Builder mergeFrom(com.google.cloud.compute.v1.SerialPortOutput other) {
       if (other == com.google.cloud.compute.v1.SerialPortOutput.getDefaultInstance()) return this;
       if (other.hasContents()) {
-        bitField0_ |= 0x00000001;
         contents_ = other.contents_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000002;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasNext()) {
         setNext(other.getNext());
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000008;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasStart()) {
@@ -866,8 +874,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       contents_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -883,8 +891,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearContents() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       contents_ = getDefaultInstance().getContents();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -905,8 +913,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       contents_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -986,8 +994,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1003,8 +1011,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1025,8 +1033,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1075,8 +1083,9 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setNext(long value) {
-      bitField0_ |= 0x00000004;
+
       next_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1173,8 +1182,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       selfLink_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1190,8 +1199,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1212,8 +1221,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       selfLink_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1262,8 +1271,9 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setStart(long value) {
-      bitField0_ |= 0x00000010;
+
       start_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

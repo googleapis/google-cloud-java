@@ -70,7 +70,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
   }
 
   public static final int TAG_TEMPLATE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object tagTemplateId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tagTemplateId_ = "";
   /**
    *
    *
@@ -228,7 +232,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagTemplateOrBuilder getTagTemplateOrBuilder() {
-    return getTagTemplate();
+    return tagTemplate_ == null
+        ? com.google.cloud.datacatalog.v1beta1.TagTemplate.getDefaultInstance()
+        : tagTemplate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -453,14 +459,12 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       tagTemplateId_ = "";
-
-      if (tagTemplateBuilder_ == null) {
-        tagTemplate_ = null;
-      } else {
-        tagTemplate_ = null;
+      tagTemplate_ = null;
+      if (tagTemplateBuilder_ != null) {
+        tagTemplateBuilder_.dispose();
         tagTemplateBuilder_ = null;
       }
       return this;
@@ -491,15 +495,26 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
     public com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest buildPartial() {
       com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest result =
           new com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest(this);
-      result.parent_ = parent_;
-      result.tagTemplateId_ = tagTemplateId_;
-      if (tagTemplateBuilder_ == null) {
-        result.tagTemplate_ = tagTemplate_;
-      } else {
-        result.tagTemplate_ = tagTemplateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tagTemplateId_ = tagTemplateId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.tagTemplate_ =
+            tagTemplateBuilder_ == null ? tagTemplate_ : tagTemplateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -551,10 +566,12 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTagTemplateId().isEmpty()) {
         tagTemplateId_ = other.tagTemplateId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTagTemplate()) {
@@ -589,19 +606,19 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTagTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 tagTemplateId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -620,6 +637,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -697,8 +716,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -719,8 +738,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -746,8 +765,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,8 +832,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       tagTemplateId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -830,8 +849,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearTagTemplateId() {
-
       tagTemplateId_ = getDefaultInstance().getTagTemplateId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -852,8 +871,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tagTemplateId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,7 +897,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * @return Whether the tagTemplate field is set.
      */
     public boolean hasTagTemplate() {
-      return tagTemplateBuilder_ != null || tagTemplate_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -919,11 +938,11 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         tagTemplate_ = value;
-        onChanged();
       } else {
         tagTemplateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -941,11 +960,11 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
         com.google.cloud.datacatalog.v1beta1.TagTemplate.Builder builderForValue) {
       if (tagTemplateBuilder_ == null) {
         tagTemplate_ = builderForValue.build();
-        onChanged();
       } else {
         tagTemplateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -961,19 +980,19 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      */
     public Builder mergeTagTemplate(com.google.cloud.datacatalog.v1beta1.TagTemplate value) {
       if (tagTemplateBuilder_ == null) {
-        if (tagTemplate_ != null) {
-          tagTemplate_ =
-              com.google.cloud.datacatalog.v1beta1.TagTemplate.newBuilder(tagTemplate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && tagTemplate_ != null
+            && tagTemplate_
+                != com.google.cloud.datacatalog.v1beta1.TagTemplate.getDefaultInstance()) {
+          getTagTemplateBuilder().mergeFrom(value);
         } else {
           tagTemplate_ = value;
         }
-        onChanged();
       } else {
         tagTemplateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -988,14 +1007,13 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearTagTemplate() {
-      if (tagTemplateBuilder_ == null) {
-        tagTemplate_ = null;
-        onChanged();
-      } else {
-        tagTemplate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      tagTemplate_ = null;
+      if (tagTemplateBuilder_ != null) {
+        tagTemplateBuilder_.dispose();
         tagTemplateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1010,7 +1028,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.datacatalog.v1beta1.TagTemplate.Builder getTagTemplateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTagTemplateFieldBuilder().getBuilder();
     }

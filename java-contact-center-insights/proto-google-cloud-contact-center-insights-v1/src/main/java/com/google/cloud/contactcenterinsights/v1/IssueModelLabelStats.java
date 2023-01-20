@@ -200,7 +200,9 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
     }
 
     public static final int ISSUE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object issue_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object issue_ = "";
     /**
      *
      *
@@ -253,7 +255,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
     }
 
     public static final int LABELED_CONVERSATIONS_COUNT_FIELD_NUMBER = 2;
-    private long labeledConversationsCount_;
+    private long labeledConversationsCount_ = 0L;
     /**
      *
      *
@@ -271,7 +273,9 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -547,12 +551,10 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         issue_ = "";
-
         labeledConversationsCount_ = 0L;
-
         displayName_ = "";
-
         return this;
       }
 
@@ -584,11 +586,25 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
           buildPartial() {
         com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats result =
             new com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats(this);
-        result.issue_ = issue_;
-        result.labeledConversationsCount_ = labeledConversationsCount_;
-        result.displayName_ = displayName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.issue_ = issue_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.labeledConversationsCount_ = labeledConversationsCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.displayName_ = displayName_;
+        }
       }
 
       @java.lang.Override
@@ -645,6 +661,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
                 .getDefaultInstance()) return this;
         if (!other.getIssue().isEmpty()) {
           issue_ = other.issue_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getLabeledConversationsCount() != 0L) {
@@ -652,6 +669,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
         }
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -683,19 +701,19 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
               case 10:
                 {
                   issue_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   labeledConversationsCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -714,6 +732,8 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object issue_ = "";
       /**
@@ -782,8 +802,8 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         issue_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -801,8 +821,8 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearIssue() {
-
         issue_ = getDefaultInstance().getIssue();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -825,8 +845,8 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         issue_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -862,6 +882,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
       public Builder setLabeledConversationsCount(long value) {
 
         labeledConversationsCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -877,7 +898,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearLabeledConversationsCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         labeledConversationsCount_ = 0L;
         onChanged();
         return this;
@@ -944,8 +965,8 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -961,8 +982,8 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -983,8 +1004,8 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1058,7 +1079,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ANALYZED_CONVERSATIONS_COUNT_FIELD_NUMBER = 1;
-  private long analyzedConversationsCount_;
+  private long analyzedConversationsCount_ = 0L;
   /**
    *
    *
@@ -1076,7 +1097,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
   }
 
   public static final int UNCLASSIFIED_CONVERSATIONS_COUNT_FIELD_NUMBER = 2;
-  private long unclassifiedConversationsCount_;
+  private long unclassifiedConversationsCount_ = 0L;
   /**
    *
    *
@@ -1114,6 +1135,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String,
           com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
@@ -1189,9 +1211,10 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
+  public /* nullable */ com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
       getIssueStatsOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -1482,10 +1505,9 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       analyzedConversationsCount_ = 0L;
-
       unclassifiedConversationsCount_ = 0L;
-
       internalGetMutableIssueStats().clear();
       return this;
     }
@@ -1515,13 +1537,26 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
     public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats buildPartial() {
       com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats result =
           new com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats(this);
-      int from_bitField0_ = bitField0_;
-      result.analyzedConversationsCount_ = analyzedConversationsCount_;
-      result.unclassifiedConversationsCount_ = unclassifiedConversationsCount_;
-      result.issueStats_ = internalGetIssueStats();
-      result.issueStats_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.analyzedConversationsCount_ = analyzedConversationsCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.unclassifiedConversationsCount_ = unclassifiedConversationsCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.issueStats_ = internalGetIssueStats();
+        result.issueStats_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1578,6 +1613,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
         setUnclassifiedConversationsCount(other.getUnclassifiedConversationsCount());
       }
       internalGetMutableIssueStats().mergeFrom(other.internalGetIssueStats());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1607,13 +1643,13 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 analyzedConversationsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 unclassifiedConversationsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -1628,6 +1664,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
                 internalGetMutableIssueStats()
                     .getMutableMap()
                     .put(issueStats__.getKey(), issueStats__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1680,6 +1717,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
     public Builder setAnalyzedConversationsCount(long value) {
 
       analyzedConversationsCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1695,7 +1733,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAnalyzedConversationsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       analyzedConversationsCount_ = 0L;
       onChanged();
       return this;
@@ -1734,6 +1772,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
     public Builder setUnclassifiedConversationsCount(long value) {
 
       unclassifiedConversationsCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1750,7 +1789,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearUnclassifiedConversationsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       unclassifiedConversationsCount_ = 0L;
       onChanged();
       return this;
@@ -1776,8 +1815,6 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
             java.lang.String,
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
         internalGetMutableIssueStats() {
-      onChanged();
-      ;
       if (issueStats_ == null) {
         issueStats_ =
             com.google.protobuf.MapField.newMapField(IssueStatsDefaultEntryHolder.defaultEntry);
@@ -1785,6 +1822,8 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
       if (!issueStats_.isMutable()) {
         issueStats_ = issueStats_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return issueStats_;
     }
 
@@ -1848,9 +1887,10 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
+    public /* nullable */ com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
         getIssueStatsOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
                 defaultValue) {
       if (key == null) {
@@ -1890,6 +1930,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearIssueStats() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableIssueStats().getMutableMap().clear();
       return this;
     }
@@ -1917,6 +1958,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
             java.lang.String,
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
         getMutableIssueStats() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableIssueStats().getMutableMap();
     }
     /**
@@ -1939,8 +1981,8 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableIssueStats().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1960,6 +2002,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
                 com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
             values) {
       internalGetMutableIssueStats().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

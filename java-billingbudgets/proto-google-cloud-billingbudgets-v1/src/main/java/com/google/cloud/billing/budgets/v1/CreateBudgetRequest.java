@@ -68,7 +68,9 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.billing.budgets.v1.BudgetOrBuilder getBudgetOrBuilder() {
-    return getBudget();
+    return budget_ == null
+        ? com.google.cloud.billing.budgets.v1.Budget.getDefaultInstance()
+        : budget_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (budgetBuilder_ == null) {
-        budget_ = null;
-      } else {
-        budget_ = null;
+      budget_ = null;
+      if (budgetBuilder_ != null) {
+        budgetBuilder_.dispose();
         budgetBuilder_ = null;
       }
       return this;
@@ -423,14 +426,21 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.billing.budgets.v1.CreateBudgetRequest buildPartial() {
       com.google.cloud.billing.budgets.v1.CreateBudgetRequest result =
           new com.google.cloud.billing.budgets.v1.CreateBudgetRequest(this);
-      result.parent_ = parent_;
-      if (budgetBuilder_ == null) {
-        result.budget_ = budget_;
-      } else {
-        result.budget_ = budgetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.budgets.v1.CreateBudgetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.budget_ = budgetBuilder_ == null ? budget_ : budgetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +491,7 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasBudget()) {
@@ -515,13 +526,13 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getBudgetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +551,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -611,8 +624,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +644,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +669,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,7 +695,7 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the budget field is set.
      */
     public boolean hasBudget() {
-      return budgetBuilder_ != null || budget_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -723,11 +736,11 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         budget_ = value;
-        onChanged();
       } else {
         budgetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -744,11 +757,11 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
     public Builder setBudget(com.google.cloud.billing.budgets.v1.Budget.Builder builderForValue) {
       if (budgetBuilder_ == null) {
         budget_ = builderForValue.build();
-        onChanged();
       } else {
         budgetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -764,19 +777,18 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeBudget(com.google.cloud.billing.budgets.v1.Budget value) {
       if (budgetBuilder_ == null) {
-        if (budget_ != null) {
-          budget_ =
-              com.google.cloud.billing.budgets.v1.Budget.newBuilder(budget_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && budget_ != null
+            && budget_ != com.google.cloud.billing.budgets.v1.Budget.getDefaultInstance()) {
+          getBudgetBuilder().mergeFrom(value);
         } else {
           budget_ = value;
         }
-        onChanged();
       } else {
         budgetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -791,14 +803,13 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearBudget() {
-      if (budgetBuilder_ == null) {
-        budget_ = null;
-        onChanged();
-      } else {
-        budget_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      budget_ = null;
+      if (budgetBuilder_ != null) {
+        budgetBuilder_.dispose();
         budgetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -813,7 +824,7 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.billing.budgets.v1.Budget.Builder getBudgetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBudgetFieldBuilder().getBuilder();
     }

@@ -72,7 +72,9 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -347,8 +349,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -380,15 +382,22 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
         buildPartial() {
       com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties result =
           new com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000001;
       }
-      result.name_ = name_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -442,8 +451,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
           == com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
               .getDefaultInstance()) return this;
       if (other.hasName()) {
-        bitField0_ |= 0x00000001;
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -572,8 +581,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -589,8 +598,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -611,8 +620,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

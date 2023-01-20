@@ -69,7 +69,9 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int KEY_FIELD_NUMBER = 106079;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -412,10 +416,9 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -443,19 +446,25 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.RouterMd5AuthenticationKey buildPartial() {
       com.google.cloud.compute.v1.RouterMd5AuthenticationKey result =
           new com.google.cloud.compute.v1.RouterMd5AuthenticationKey(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterMd5AuthenticationKey result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
         to_bitField0_ |= 0x00000001;
       }
-      result.key_ = key_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000002;
       }
-      result.name_ = name_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -505,13 +514,13 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
       if (other == com.google.cloud.compute.v1.RouterMd5AuthenticationKey.getDefaultInstance())
         return this;
       if (other.hasKey()) {
-        bitField0_ |= 0x00000001;
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000002;
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -646,8 +655,8 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,8 +672,8 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -685,8 +694,8 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +775,8 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -783,8 +792,8 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -805,8 +814,8 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

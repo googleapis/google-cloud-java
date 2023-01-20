@@ -73,7 +73,9 @@ public final class InterconnectAttachmentPartnerMetadata
 
   private int bitField0_;
   public static final int INTERCONNECT_NAME_FIELD_NUMBER = 514963356;
-  private volatile java.lang.Object interconnectName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object interconnectName_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class InterconnectAttachmentPartnerMetadata
   }
 
   public static final int PARTNER_NAME_FIELD_NUMBER = 161747874;
-  private volatile java.lang.Object partnerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object partnerName_ = "";
   /**
    *
    *
@@ -201,7 +205,9 @@ public final class InterconnectAttachmentPartnerMetadata
   }
 
   public static final int PORTAL_URL_FIELD_NUMBER = 269182748;
-  private volatile java.lang.Object portalUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object portalUrl_ = "";
   /**
    *
    *
@@ -498,12 +504,10 @@ public final class InterconnectAttachmentPartnerMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       interconnectName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       partnerName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       portalUrl_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -532,23 +536,30 @@ public final class InterconnectAttachmentPartnerMetadata
     public com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata buildPartial() {
       com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata result =
           new com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.interconnectName_ = interconnectName_;
         to_bitField0_ |= 0x00000001;
       }
-      result.interconnectName_ = interconnectName_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.partnerName_ = partnerName_;
         to_bitField0_ |= 0x00000002;
       }
-      result.partnerName_ = partnerName_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.portalUrl_ = portalUrl_;
         to_bitField0_ |= 0x00000004;
       }
-      result.portalUrl_ = portalUrl_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -600,18 +611,18 @@ public final class InterconnectAttachmentPartnerMetadata
           == com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.getDefaultInstance())
         return this;
       if (other.hasInterconnectName()) {
-        bitField0_ |= 0x00000001;
         interconnectName_ = other.interconnectName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPartnerName()) {
-        bitField0_ |= 0x00000002;
         partnerName_ = other.partnerName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPortalUrl()) {
-        bitField0_ |= 0x00000004;
         portalUrl_ = other.portalUrl_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -752,8 +763,8 @@ public final class InterconnectAttachmentPartnerMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       interconnectName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,8 +780,8 @@ public final class InterconnectAttachmentPartnerMetadata
      * @return This builder for chaining.
      */
     public Builder clearInterconnectName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       interconnectName_ = getDefaultInstance().getInterconnectName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -791,8 +802,8 @@ public final class InterconnectAttachmentPartnerMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       interconnectName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -872,8 +883,8 @@ public final class InterconnectAttachmentPartnerMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       partnerName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -889,8 +900,8 @@ public final class InterconnectAttachmentPartnerMetadata
      * @return This builder for chaining.
      */
     public Builder clearPartnerName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       partnerName_ = getDefaultInstance().getPartnerName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -911,8 +922,8 @@ public final class InterconnectAttachmentPartnerMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       partnerName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -992,8 +1003,8 @@ public final class InterconnectAttachmentPartnerMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       portalUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1009,8 +1020,8 @@ public final class InterconnectAttachmentPartnerMetadata
      * @return This builder for chaining.
      */
     public Builder clearPortalUrl() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       portalUrl_ = getDefaultInstance().getPortalUrl();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1031,8 +1042,8 @@ public final class InterconnectAttachmentPartnerMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       portalUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

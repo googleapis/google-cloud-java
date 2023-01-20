@@ -301,7 +301,6 @@ public interface NodeTemplateOrBuilder
    *
    * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
    */
-
   /* nullable */
   java.lang.String getNodeAffinityLabelsOrDefault(
       java.lang.String key,

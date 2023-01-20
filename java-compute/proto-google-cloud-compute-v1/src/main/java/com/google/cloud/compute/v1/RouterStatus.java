@@ -72,6 +72,8 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int BEST_ROUTES_FIELD_NUMBER = 395826693;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Route> bestRoutes_;
   /**
    *
@@ -141,6 +143,8 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BEST_ROUTES_FOR_ROUTER_FIELD_NUMBER = 119389689;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Route> bestRoutesForRouter_;
   /**
    *
@@ -210,6 +214,8 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BGP_PEER_STATUS_FIELD_NUMBER = 218459131;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.RouterStatusBgpPeerStatus> bgpPeerStatus_;
   /**
    * <code>repeated .google.cloud.compute.v1.RouterStatusBgpPeerStatus bgp_peer_status = 218459131;
@@ -256,6 +262,8 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAT_STATUS_FIELD_NUMBER = 63098064;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatus> natStatus_;
   /** <code>repeated .google.cloud.compute.v1.RouterStatusNatStatus nat_status = 63098064;</code> */
   @java.lang.Override
@@ -286,7 +294,9 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 232872494;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -598,6 +608,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bestRoutesBuilder_ == null) {
         bestRoutes_ = java.util.Collections.emptyList();
       } else {
@@ -627,7 +638,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000008);
       network_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -655,8 +665,15 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.RouterStatus buildPartial() {
       com.google.cloud.compute.v1.RouterStatus result =
           new com.google.cloud.compute.v1.RouterStatus(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.RouterStatus result) {
       if (bestRoutesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           bestRoutes_ = java.util.Collections.unmodifiableList(bestRoutes_);
@@ -693,13 +710,16 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.natStatus_ = natStatusBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterStatus result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.network_ = network_;
         to_bitField0_ |= 0x00000001;
       }
-      result.network_ = network_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -856,8 +876,8 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasNetwork()) {
-        bitField0_ |= 0x00000010;
         network_ = other.network_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2282,8 +2302,8 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       network_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2299,8 +2319,8 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2321,8 +2341,8 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       network_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

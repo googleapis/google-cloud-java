@@ -82,7 +82,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TASK_USER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object taskUser_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object taskUser_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TASK_GROUP_FIELD_NUMBER = 2;
-  private volatile java.lang.Object taskGroup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object taskGroup_ = "";
   /**
    *
    *
@@ -184,6 +188,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int OAUTH_SCOPES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList oauthScopes_;
   /**
    *
@@ -249,7 +255,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BASE_URL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object baseUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseUrl_ = "";
   /**
    *
    *
@@ -310,7 +318,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DATAFLOW_API_VERSION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object dataflowApiVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataflowApiVersion_ = "";
   /**
    *
    *
@@ -403,11 +413,15 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.WorkerSettingsOrBuilder getParallelWorkerSettingsOrBuilder() {
-    return getParallelWorkerSettings();
+    return parallelWorkerSettings_ == null
+        ? com.google.dataflow.v1beta3.WorkerSettings.getDefaultInstance()
+        : parallelWorkerSettings_;
   }
 
   public static final int BASE_TASK_DIR_FIELD_NUMBER = 7;
-  private volatile java.lang.Object baseTaskDir_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseTaskDir_ = "";
   /**
    *
    *
@@ -456,7 +470,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CONTINUE_ON_EXCEPTION_FIELD_NUMBER = 8;
-  private boolean continueOnException_;
+  private boolean continueOnException_ = false;
   /**
    *
    *
@@ -474,7 +488,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LOG_TO_SERIALCONSOLE_FIELD_NUMBER = 9;
-  private boolean logToSerialconsole_;
+  private boolean logToSerialconsole_ = false;
   /**
    *
    *
@@ -493,7 +507,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ALSOLOGTOSTDERR_FIELD_NUMBER = 10;
-  private boolean alsologtostderr_;
+  private boolean alsologtostderr_ = false;
   /**
    *
    *
@@ -511,7 +525,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LOG_UPLOAD_LOCATION_FIELD_NUMBER = 11;
-  private volatile java.lang.Object logUploadLocation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logUploadLocation_ = "";
   /**
    *
    *
@@ -570,7 +586,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LOG_DIR_FIELD_NUMBER = 12;
-  private volatile java.lang.Object logDir_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logDir_ = "";
   /**
    *
    *
@@ -619,7 +637,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TEMP_STORAGE_PREFIX_FIELD_NUMBER = 13;
-  private volatile java.lang.Object tempStoragePrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tempStoragePrefix_ = "";
   /**
    *
    *
@@ -678,7 +698,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int HARNESS_COMMAND_FIELD_NUMBER = 14;
-  private volatile java.lang.Object harnessCommand_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object harnessCommand_ = "";
   /**
    *
    *
@@ -727,7 +749,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int WORKFLOW_FILE_NAME_FIELD_NUMBER = 15;
-  private volatile java.lang.Object workflowFileName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workflowFileName_ = "";
   /**
    *
    *
@@ -776,7 +800,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int COMMANDLINES_FILE_NAME_FIELD_NUMBER = 16;
-  private volatile java.lang.Object commandlinesFileName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object commandlinesFileName_ = "";
   /**
    *
    *
@@ -825,7 +851,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int VM_ID_FIELD_NUMBER = 17;
-  private volatile java.lang.Object vmId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmId_ = "";
   /**
    *
    *
@@ -874,7 +902,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LANGUAGE_HINT_FIELD_NUMBER = 18;
-  private volatile java.lang.Object languageHint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageHint_ = "";
   /**
    *
    *
@@ -923,7 +953,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int STREAMING_WORKER_MAIN_CLASS_FIELD_NUMBER = 19;
-  private volatile java.lang.Object streamingWorkerMainClass_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object streamingWorkerMainClass_ = "";
   /**
    *
    *
@@ -1344,48 +1376,31 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       taskUser_ = "";
-
       taskGroup_ = "";
-
       oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       baseUrl_ = "";
-
       dataflowApiVersion_ = "";
-
-      if (parallelWorkerSettingsBuilder_ == null) {
-        parallelWorkerSettings_ = null;
-      } else {
-        parallelWorkerSettings_ = null;
+      parallelWorkerSettings_ = null;
+      if (parallelWorkerSettingsBuilder_ != null) {
+        parallelWorkerSettingsBuilder_.dispose();
         parallelWorkerSettingsBuilder_ = null;
       }
       baseTaskDir_ = "";
-
       continueOnException_ = false;
-
       logToSerialconsole_ = false;
-
       alsologtostderr_ = false;
-
       logUploadLocation_ = "";
-
       logDir_ = "";
-
       tempStoragePrefix_ = "";
-
       harnessCommand_ = "";
-
       workflowFileName_ = "";
-
       commandlinesFileName_ = "";
-
       vmId_ = "";
-
       languageHint_ = "";
-
       streamingWorkerMainClass_ = "";
-
       return this;
     }
 
@@ -1413,36 +1428,81 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public com.google.dataflow.v1beta3.TaskRunnerSettings buildPartial() {
       com.google.dataflow.v1beta3.TaskRunnerSettings result =
           new com.google.dataflow.v1beta3.TaskRunnerSettings(this);
-      int from_bitField0_ = bitField0_;
-      result.taskUser_ = taskUser_;
-      result.taskGroup_ = taskGroup_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        oauthScopes_ = oauthScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.oauthScopes_ = oauthScopes_;
-      result.baseUrl_ = baseUrl_;
-      result.dataflowApiVersion_ = dataflowApiVersion_;
-      if (parallelWorkerSettingsBuilder_ == null) {
-        result.parallelWorkerSettings_ = parallelWorkerSettings_;
-      } else {
-        result.parallelWorkerSettings_ = parallelWorkerSettingsBuilder_.build();
-      }
-      result.baseTaskDir_ = baseTaskDir_;
-      result.continueOnException_ = continueOnException_;
-      result.logToSerialconsole_ = logToSerialconsole_;
-      result.alsologtostderr_ = alsologtostderr_;
-      result.logUploadLocation_ = logUploadLocation_;
-      result.logDir_ = logDir_;
-      result.tempStoragePrefix_ = tempStoragePrefix_;
-      result.harnessCommand_ = harnessCommand_;
-      result.workflowFileName_ = workflowFileName_;
-      result.commandlinesFileName_ = commandlinesFileName_;
-      result.vmId_ = vmId_;
-      result.languageHint_ = languageHint_;
-      result.streamingWorkerMainClass_ = streamingWorkerMainClass_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.TaskRunnerSettings result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        oauthScopes_ = oauthScopes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.oauthScopes_ = oauthScopes_;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.TaskRunnerSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.taskUser_ = taskUser_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.taskGroup_ = taskGroup_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.baseUrl_ = baseUrl_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dataflowApiVersion_ = dataflowApiVersion_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.parallelWorkerSettings_ =
+            parallelWorkerSettingsBuilder_ == null
+                ? parallelWorkerSettings_
+                : parallelWorkerSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.baseTaskDir_ = baseTaskDir_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.continueOnException_ = continueOnException_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.logToSerialconsole_ = logToSerialconsole_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.alsologtostderr_ = alsologtostderr_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.logUploadLocation_ = logUploadLocation_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.logDir_ = logDir_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.tempStoragePrefix_ = tempStoragePrefix_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.harnessCommand_ = harnessCommand_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.workflowFileName_ = workflowFileName_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.commandlinesFileName_ = commandlinesFileName_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.vmId_ = vmId_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.languageHint_ = languageHint_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.streamingWorkerMainClass_ = streamingWorkerMainClass_;
+      }
     }
 
     @java.lang.Override
@@ -1492,16 +1552,18 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (other == com.google.dataflow.v1beta3.TaskRunnerSettings.getDefaultInstance()) return this;
       if (!other.getTaskUser().isEmpty()) {
         taskUser_ = other.taskUser_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTaskGroup().isEmpty()) {
         taskGroup_ = other.taskGroup_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.oauthScopes_.isEmpty()) {
         if (oauthScopes_.isEmpty()) {
           oauthScopes_ = other.oauthScopes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureOauthScopesIsMutable();
           oauthScopes_.addAll(other.oauthScopes_);
@@ -1510,10 +1572,12 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getBaseUrl().isEmpty()) {
         baseUrl_ = other.baseUrl_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDataflowApiVersion().isEmpty()) {
         dataflowApiVersion_ = other.dataflowApiVersion_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasParallelWorkerSettings()) {
@@ -1521,6 +1585,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getBaseTaskDir().isEmpty()) {
         baseTaskDir_ = other.baseTaskDir_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getContinueOnException() != false) {
@@ -1534,38 +1599,47 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getLogUploadLocation().isEmpty()) {
         logUploadLocation_ = other.logUploadLocation_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getLogDir().isEmpty()) {
         logDir_ = other.logDir_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getTempStoragePrefix().isEmpty()) {
         tempStoragePrefix_ = other.tempStoragePrefix_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getHarnessCommand().isEmpty()) {
         harnessCommand_ = other.harnessCommand_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getWorkflowFileName().isEmpty()) {
         workflowFileName_ = other.workflowFileName_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getCommandlinesFileName().isEmpty()) {
         commandlinesFileName_ = other.commandlinesFileName_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (!other.getVmId().isEmpty()) {
         vmId_ = other.vmId_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.getLanguageHint().isEmpty()) {
         languageHint_ = other.languageHint_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.getStreamingWorkerMainClass().isEmpty()) {
         streamingWorkerMainClass_ = other.streamingWorkerMainClass_;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1597,13 +1671,13 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 taskUser_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 taskGroup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1616,98 +1690,98 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
             case 34:
               {
                 baseUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 dataflowApiVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getParallelWorkerSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 baseTaskDir_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 64:
               {
                 continueOnException_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 72:
               {
                 logToSerialconsole_ = input.readBool();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 80:
               {
                 alsologtostderr_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 90:
               {
                 logUploadLocation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 logDir_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 tempStoragePrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 harnessCommand_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 122:
               {
                 workflowFileName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             case 130:
               {
                 commandlinesFileName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 138:
               {
                 vmId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 138
             case 146:
               {
                 languageHint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 146
             case 154:
               {
                 streamingWorkerMainClass_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00040000;
                 break;
               } // case 154
             default:
@@ -1793,8 +1867,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       taskUser_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1811,8 +1885,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTaskUser() {
-
       taskUser_ = getDefaultInstance().getTaskUser();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1834,8 +1908,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       taskUser_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1904,8 +1978,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       taskGroup_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1922,8 +1996,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTaskGroup() {
-
       taskGroup_ = getDefaultInstance().getTaskGroup();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1945,8 +2019,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       taskGroup_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1955,9 +2029,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureOauthScopesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         oauthScopes_ = new com.google.protobuf.LazyStringArrayList(oauthScopes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2100,7 +2174,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearOauthScopes() {
       oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2207,8 +2281,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2230,8 +2304,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearBaseUrl() {
-
       baseUrl_ = getDefaultInstance().getBaseUrl();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2258,8 +2332,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2325,8 +2399,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataflowApiVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2342,8 +2416,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDataflowApiVersion() {
-
       dataflowApiVersion_ = getDefaultInstance().getDataflowApiVersion();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2364,8 +2438,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataflowApiVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2388,7 +2462,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return Whether the parallelWorkerSettings field is set.
      */
     public boolean hasParallelWorkerSettings() {
-      return parallelWorkerSettingsBuilder_ != null || parallelWorkerSettings_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2425,11 +2499,11 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         parallelWorkerSettings_ = value;
-        onChanged();
       } else {
         parallelWorkerSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2445,11 +2519,11 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         com.google.dataflow.v1beta3.WorkerSettings.Builder builderForValue) {
       if (parallelWorkerSettingsBuilder_ == null) {
         parallelWorkerSettings_ = builderForValue.build();
-        onChanged();
       } else {
         parallelWorkerSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2463,19 +2537,19 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeParallelWorkerSettings(com.google.dataflow.v1beta3.WorkerSettings value) {
       if (parallelWorkerSettingsBuilder_ == null) {
-        if (parallelWorkerSettings_ != null) {
-          parallelWorkerSettings_ =
-              com.google.dataflow.v1beta3.WorkerSettings.newBuilder(parallelWorkerSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && parallelWorkerSettings_ != null
+            && parallelWorkerSettings_
+                != com.google.dataflow.v1beta3.WorkerSettings.getDefaultInstance()) {
+          getParallelWorkerSettingsBuilder().mergeFrom(value);
         } else {
           parallelWorkerSettings_ = value;
         }
-        onChanged();
       } else {
         parallelWorkerSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2488,14 +2562,13 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <code>.google.dataflow.v1beta3.WorkerSettings parallel_worker_settings = 6;</code>
      */
     public Builder clearParallelWorkerSettings() {
-      if (parallelWorkerSettingsBuilder_ == null) {
-        parallelWorkerSettings_ = null;
-        onChanged();
-      } else {
-        parallelWorkerSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      parallelWorkerSettings_ = null;
+      if (parallelWorkerSettingsBuilder_ != null) {
+        parallelWorkerSettingsBuilder_.dispose();
         parallelWorkerSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2508,7 +2581,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <code>.google.dataflow.v1beta3.WorkerSettings parallel_worker_settings = 6;</code>
      */
     public com.google.dataflow.v1beta3.WorkerSettings.Builder getParallelWorkerSettingsBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getParallelWorkerSettingsFieldBuilder().getBuilder();
     }
@@ -2618,8 +2691,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseTaskDir_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2635,8 +2708,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearBaseTaskDir() {
-
       baseTaskDir_ = getDefaultInstance().getBaseTaskDir();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2657,8 +2730,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseTaskDir_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2694,6 +2767,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public Builder setContinueOnException(boolean value) {
 
       continueOnException_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2709,7 +2783,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearContinueOnException() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       continueOnException_ = false;
       onChanged();
       return this;
@@ -2748,6 +2822,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public Builder setLogToSerialconsole(boolean value) {
 
       logToSerialconsole_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2764,7 +2839,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearLogToSerialconsole() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       logToSerialconsole_ = false;
       onChanged();
       return this;
@@ -2801,6 +2876,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public Builder setAlsologtostderr(boolean value) {
 
       alsologtostderr_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2816,7 +2892,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAlsologtostderr() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       alsologtostderr_ = false;
       onChanged();
       return this;
@@ -2898,8 +2974,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       logUploadLocation_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2920,8 +2996,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearLogUploadLocation() {
-
       logUploadLocation_ = getDefaultInstance().getLogUploadLocation();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2947,8 +3023,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       logUploadLocation_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3014,8 +3090,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       logDir_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3031,8 +3107,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearLogDir() {
-
       logDir_ = getDefaultInstance().getLogDir();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3053,8 +3129,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       logDir_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3135,8 +3211,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       tempStoragePrefix_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3157,8 +3233,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTempStoragePrefix() {
-
       tempStoragePrefix_ = getDefaultInstance().getTempStoragePrefix();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3184,8 +3260,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tempStoragePrefix_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3251,8 +3327,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       harnessCommand_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3268,8 +3344,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearHarnessCommand() {
-
       harnessCommand_ = getDefaultInstance().getHarnessCommand();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3290,8 +3366,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       harnessCommand_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3357,8 +3433,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       workflowFileName_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3374,8 +3450,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearWorkflowFileName() {
-
       workflowFileName_ = getDefaultInstance().getWorkflowFileName();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -3396,8 +3472,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workflowFileName_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3463,8 +3539,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       commandlinesFileName_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3480,8 +3556,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCommandlinesFileName() {
-
       commandlinesFileName_ = getDefaultInstance().getCommandlinesFileName();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -3502,8 +3578,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       commandlinesFileName_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3569,8 +3645,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmId_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -3586,8 +3662,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearVmId() {
-
       vmId_ = getDefaultInstance().getVmId();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -3608,8 +3684,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmId_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -3675,8 +3751,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageHint_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -3692,8 +3768,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearLanguageHint() {
-
       languageHint_ = getDefaultInstance().getLanguageHint();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -3714,8 +3790,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageHint_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -3781,8 +3857,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       streamingWorkerMainClass_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -3798,8 +3874,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearStreamingWorkerMainClass() {
-
       streamingWorkerMainClass_ = getDefaultInstance().getStreamingWorkerMainClass();
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -3820,8 +3896,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       streamingWorkerMainClass_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

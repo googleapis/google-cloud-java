@@ -70,7 +70,6 @@ public interface InstancesSetLabelsRequestOrBuilder
   /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

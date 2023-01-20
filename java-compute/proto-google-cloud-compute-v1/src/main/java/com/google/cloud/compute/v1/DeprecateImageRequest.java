@@ -122,11 +122,15 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.compute.v1.DeprecationStatusOrBuilder
       getDeprecationStatusResourceOrBuilder() {
-    return getDeprecationStatusResource();
+    return deprecationStatusResource_ == null
+        ? com.google.cloud.compute.v1.DeprecationStatus.getDefaultInstance()
+        : deprecationStatusResource_;
   }
 
   public static final int IMAGE_FIELD_NUMBER = 100313435;
-  private volatile java.lang.Object image_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object image_ = "";
   /**
    *
    *
@@ -175,7 +179,9 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -228,7 +234,9 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -528,18 +536,15 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (deprecationStatusResourceBuilder_ == null) {
-        deprecationStatusResource_ = null;
-      } else {
-        deprecationStatusResource_ = null;
+      bitField0_ = 0;
+      deprecationStatusResource_ = null;
+      if (deprecationStatusResourceBuilder_ != null) {
+        deprecationStatusResourceBuilder_.dispose();
         deprecationStatusResourceBuilder_ = null;
       }
       image_ = "";
-
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -567,22 +572,33 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.DeprecateImageRequest buildPartial() {
       com.google.cloud.compute.v1.DeprecateImageRequest result =
           new com.google.cloud.compute.v1.DeprecateImageRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (deprecationStatusResourceBuilder_ == null) {
-        result.deprecationStatusResource_ = deprecationStatusResource_;
-      } else {
-        result.deprecationStatusResource_ = deprecationStatusResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.image_ = image_;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.DeprecateImageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deprecationStatusResource_ =
+            deprecationStatusResourceBuilder_ == null
+                ? deprecationStatusResource_
+                : deprecationStatusResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.image_ = image_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -636,15 +652,17 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getImage().isEmpty()) {
         image_ = other.image_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -676,26 +694,26 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 802507482:
               {
                 image_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 802507482
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -1630918782:
               {
                 input.readMessage(
                     getDeprecationStatusResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1630918782
             default:
@@ -737,7 +755,7 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the deprecationStatusResource field is set.
      */
     public boolean hasDeprecationStatusResource() {
-      return deprecationStatusResourceBuilder_ != null || deprecationStatusResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -779,11 +797,11 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         deprecationStatusResource_ = value;
-        onChanged();
       } else {
         deprecationStatusResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -801,11 +819,11 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.compute.v1.DeprecationStatus.Builder builderForValue) {
       if (deprecationStatusResourceBuilder_ == null) {
         deprecationStatusResource_ = builderForValue.build();
-        onChanged();
       } else {
         deprecationStatusResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -822,19 +840,19 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeDeprecationStatusResource(
         com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecationStatusResourceBuilder_ == null) {
-        if (deprecationStatusResource_ != null) {
-          deprecationStatusResource_ =
-              com.google.cloud.compute.v1.DeprecationStatus.newBuilder(deprecationStatusResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && deprecationStatusResource_ != null
+            && deprecationStatusResource_
+                != com.google.cloud.compute.v1.DeprecationStatus.getDefaultInstance()) {
+          getDeprecationStatusResourceBuilder().mergeFrom(value);
         } else {
           deprecationStatusResource_ = value;
         }
-        onChanged();
       } else {
         deprecationStatusResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -849,14 +867,13 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearDeprecationStatusResource() {
-      if (deprecationStatusResourceBuilder_ == null) {
-        deprecationStatusResource_ = null;
-        onChanged();
-      } else {
-        deprecationStatusResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      deprecationStatusResource_ = null;
+      if (deprecationStatusResourceBuilder_ != null) {
+        deprecationStatusResourceBuilder_.dispose();
         deprecationStatusResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -872,7 +889,7 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.compute.v1.DeprecationStatus.Builder
         getDeprecationStatusResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDeprecationStatusResourceFieldBuilder().getBuilder();
     }
@@ -986,8 +1003,8 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       image_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1003,8 +1020,8 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearImage() {
-
       image_ = getDefaultInstance().getImage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1025,8 +1042,8 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       image_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1098,8 +1115,8 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1117,8 +1134,8 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1141,8 +1158,8 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1160,7 +1177,7 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1222,8 +1239,8 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1239,8 +1256,8 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1261,8 +1278,8 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

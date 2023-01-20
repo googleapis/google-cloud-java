@@ -83,7 +83,9 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -132,7 +134,9 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LABEL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object label_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object label_ = "";
   /**
    *
    *
@@ -181,7 +185,9 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int HELP_TEXT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object helpText_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object helpText_ = "";
   /**
    *
    *
@@ -230,7 +236,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int IS_OPTIONAL_FIELD_NUMBER = 4;
-  private boolean isOptional_;
+  private boolean isOptional_ = false;
   /**
    *
    *
@@ -248,6 +254,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int REGEXES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList regexes_;
   /**
    *
@@ -309,7 +317,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARAM_TYPE_FIELD_NUMBER = 6;
-  private int paramType_;
+  private int paramType_ = 0;
   /**
    *
    *
@@ -340,9 +348,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.ParameterType getParamType() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.ParameterType result =
-        com.google.dataflow.v1beta3.ParameterType.valueOf(paramType_);
+        com.google.dataflow.v1beta3.ParameterType.forNumber(paramType_);
     return result == null ? com.google.dataflow.v1beta3.ParameterType.UNRECOGNIZED : result;
   }
 
@@ -359,6 +366,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> customMetadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -418,8 +426,10 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
    * <code>map&lt;string, string&gt; custom_metadata = 7;</code>
    */
   @java.lang.Override
-  public java.lang.String getCustomMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getCustomMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -733,18 +743,14 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       label_ = "";
-
       helpText_ = "";
-
       isOptional_ = false;
-
       regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       paramType_ = 0;
-
       internalGetMutableCustomMetadata().clear();
       return this;
     }
@@ -773,21 +779,43 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.dataflow.v1beta3.ParameterMetadata buildPartial() {
       com.google.dataflow.v1beta3.ParameterMetadata result =
           new com.google.dataflow.v1beta3.ParameterMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.label_ = label_;
-      result.helpText_ = helpText_;
-      result.isOptional_ = isOptional_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        regexes_ = regexes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.regexes_ = regexes_;
-      result.paramType_ = paramType_;
-      result.customMetadata_ = internalGetCustomMetadata();
-      result.customMetadata_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.ParameterMetadata result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        regexes_ = regexes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.regexes_ = regexes_;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.ParameterMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.label_ = label_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.helpText_ = helpText_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.isOptional_ = isOptional_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.paramType_ = paramType_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.customMetadata_ = internalGetCustomMetadata();
+        result.customMetadata_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -837,14 +865,17 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       if (other == com.google.dataflow.v1beta3.ParameterMetadata.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLabel().isEmpty()) {
         label_ = other.label_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getHelpText().isEmpty()) {
         helpText_ = other.helpText_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getIsOptional() != false) {
@@ -853,7 +884,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       if (!other.regexes_.isEmpty()) {
         if (regexes_.isEmpty()) {
           regexes_ = other.regexes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureRegexesIsMutable();
           regexes_.addAll(other.regexes_);
@@ -864,6 +895,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         setParamTypeValue(other.getParamTypeValue());
       }
       internalGetMutableCustomMetadata().mergeFrom(other.internalGetCustomMetadata());
+      bitField0_ |= 0x00000040;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -893,25 +925,25 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 label_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 helpText_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 isOptional_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
@@ -924,7 +956,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
             case 48:
               {
                 paramType_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
@@ -936,6 +968,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
                 internalGetMutableCustomMetadata()
                     .getMutableMap()
                     .put(customMetadata__.getKey(), customMetadata__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1018,8 +1051,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1035,8 +1068,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1057,8 +1090,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1124,8 +1157,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       label_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1141,8 +1174,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLabel() {
-
       label_ = getDefaultInstance().getLabel();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1163,8 +1196,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       label_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1230,8 +1263,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       helpText_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1247,8 +1280,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearHelpText() {
-
       helpText_ = getDefaultInstance().getHelpText();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1269,8 +1302,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       helpText_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1306,6 +1339,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public Builder setIsOptional(boolean value) {
 
       isOptional_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1321,7 +1355,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearIsOptional() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       isOptional_ = false;
       onChanged();
       return this;
@@ -1331,9 +1365,9 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRegexesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         regexes_ = new com.google.protobuf.LazyStringArrayList(regexes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1468,7 +1502,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearRegexes() {
       regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1526,8 +1560,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setParamTypeValue(int value) {
-
       paramType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1545,9 +1579,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.ParameterType getParamType() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.ParameterType result =
-          com.google.dataflow.v1beta3.ParameterType.valueOf(paramType_);
+          com.google.dataflow.v1beta3.ParameterType.forNumber(paramType_);
       return result == null ? com.google.dataflow.v1beta3.ParameterType.UNRECOGNIZED : result;
     }
     /**
@@ -1567,7 +1600,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       paramType_ = value.getNumber();
       onChanged();
       return this;
@@ -1585,7 +1618,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParamType() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       paramType_ = 0;
       onChanged();
       return this;
@@ -1604,8 +1637,6 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableCustomMetadata() {
-      onChanged();
-      ;
       if (customMetadata_ == null) {
         customMetadata_ =
             com.google.protobuf.MapField.newMapField(CustomMetadataDefaultEntryHolder.defaultEntry);
@@ -1613,6 +1644,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       if (!customMetadata_.isMutable()) {
         customMetadata_ = customMetadata_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return customMetadata_;
     }
 
@@ -1664,8 +1697,10 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; custom_metadata = 7;</code>
      */
     @java.lang.Override
-    public java.lang.String getCustomMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getCustomMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1694,6 +1729,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearCustomMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableCustomMetadata().getMutableMap().clear();
       return this;
     }
@@ -1716,6 +1752,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableCustomMetadata() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableCustomMetadata().getMutableMap();
     }
     /**
@@ -1734,8 +1771,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableCustomMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -1749,6 +1786,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder putAllCustomMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableCustomMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 

@@ -69,7 +69,9 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ROUTE_FIELD_NUMBER = 108704329;
-  private volatile java.lang.Object route_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object route_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       route_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.GetRouteRequest buildPartial() {
       com.google.cloud.compute.v1.GetRouteRequest result =
           new com.google.cloud.compute.v1.GetRouteRequest(this);
-      result.project_ = project_;
-      result.route_ = route_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetRouteRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.route_ = route_;
+      }
     }
 
     @java.lang.Override
@@ -456,10 +470,12 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.compute.v1.GetRouteRequest.getDefaultInstance()) return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRoute().isEmpty()) {
         route_ = other.route_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -491,13 +507,13 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
             case 869634634:
               {
                 route_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 869634634
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -516,6 +532,8 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -578,8 +596,8 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -595,8 +613,8 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -617,8 +635,8 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +702,8 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       route_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -701,8 +719,8 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRoute() {
-
       route_ = getDefaultInstance().getRoute();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -723,8 +741,8 @@ public final class GetRouteRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       route_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class InstanceGroupManagerAutoHealingPolicy
 
   private int bitField0_;
   public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
-  private volatile java.lang.Object healthCheck_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object healthCheck_ = "";
   /**
    *
    *
@@ -134,7 +136,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
   }
 
   public static final int INITIAL_DELAY_SEC_FIELD_NUMBER = 263207002;
-  private int initialDelaySec_;
+  private int initialDelaySec_ = 0;
   /**
    *
    *
@@ -384,10 +386,9 @@ public final class InstanceGroupManagerAutoHealingPolicy
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       healthCheck_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       initialDelaySec_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -416,19 +417,26 @@ public final class InstanceGroupManagerAutoHealingPolicy
     public com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy result =
           new com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.healthCheck_ = healthCheck_;
         to_bitField0_ |= 0x00000001;
       }
-      result.healthCheck_ = healthCheck_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.initialDelaySec_ = initialDelaySec_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -480,8 +488,8 @@ public final class InstanceGroupManagerAutoHealingPolicy
           == com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy.getDefaultInstance())
         return this;
       if (other.hasHealthCheck()) {
-        bitField0_ |= 0x00000001;
         healthCheck_ = other.healthCheck_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInitialDelaySec()) {
@@ -619,8 +627,8 @@ public final class InstanceGroupManagerAutoHealingPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       healthCheck_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,8 +644,8 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * @return This builder for chaining.
      */
     public Builder clearHealthCheck() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       healthCheck_ = getDefaultInstance().getHealthCheck();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +666,8 @@ public final class InstanceGroupManagerAutoHealingPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       healthCheck_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,8 +716,9 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * @return This builder for chaining.
      */
     public Builder setInitialDelaySec(int value) {
-      bitField0_ |= 0x00000002;
+
       initialDelaySec_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

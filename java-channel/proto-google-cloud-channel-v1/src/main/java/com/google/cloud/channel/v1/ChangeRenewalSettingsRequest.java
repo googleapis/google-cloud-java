@@ -70,7 +70,9 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -173,11 +175,15 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.RenewalSettingsOrBuilder getRenewalSettingsOrBuilder() {
-    return getRenewalSettings();
+    return renewalSettings_ == null
+        ? com.google.cloud.channel.v1.RenewalSettings.getDefaultInstance()
+        : renewalSettings_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -465,16 +471,14 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (renewalSettingsBuilder_ == null) {
-        renewalSettings_ = null;
-      } else {
-        renewalSettings_ = null;
+      renewalSettings_ = null;
+      if (renewalSettingsBuilder_ != null) {
+        renewalSettingsBuilder_.dispose();
         renewalSettingsBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -502,15 +506,25 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
     public com.google.cloud.channel.v1.ChangeRenewalSettingsRequest buildPartial() {
       com.google.cloud.channel.v1.ChangeRenewalSettingsRequest result =
           new com.google.cloud.channel.v1.ChangeRenewalSettingsRequest(this);
-      result.name_ = name_;
-      if (renewalSettingsBuilder_ == null) {
-        result.renewalSettings_ = renewalSettings_;
-      } else {
-        result.renewalSettings_ = renewalSettingsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ChangeRenewalSettingsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.renewalSettings_ =
+            renewalSettingsBuilder_ == null ? renewalSettings_ : renewalSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -561,6 +575,7 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRenewalSettings()) {
@@ -568,6 +583,7 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -599,19 +615,19 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 34:
               {
                 input.readMessage(getRenewalSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 42:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             default:
@@ -630,6 +646,8 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -698,8 +716,8 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -741,8 +759,8 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -767,7 +785,7 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
      * @return Whether the renewalSettings field is set.
      */
     public boolean hasRenewalSettings() {
-      return renewalSettingsBuilder_ != null || renewalSettings_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -808,11 +826,11 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         renewalSettings_ = value;
-        onChanged();
       } else {
         renewalSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -830,11 +848,11 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
         com.google.cloud.channel.v1.RenewalSettings.Builder builderForValue) {
       if (renewalSettingsBuilder_ == null) {
         renewalSettings_ = builderForValue.build();
-        onChanged();
       } else {
         renewalSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -850,19 +868,19 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
      */
     public Builder mergeRenewalSettings(com.google.cloud.channel.v1.RenewalSettings value) {
       if (renewalSettingsBuilder_ == null) {
-        if (renewalSettings_ != null) {
-          renewalSettings_ =
-              com.google.cloud.channel.v1.RenewalSettings.newBuilder(renewalSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && renewalSettings_ != null
+            && renewalSettings_
+                != com.google.cloud.channel.v1.RenewalSettings.getDefaultInstance()) {
+          getRenewalSettingsBuilder().mergeFrom(value);
         } else {
           renewalSettings_ = value;
         }
-        onChanged();
       } else {
         renewalSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -877,14 +895,13 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearRenewalSettings() {
-      if (renewalSettingsBuilder_ == null) {
-        renewalSettings_ = null;
-        onChanged();
-      } else {
-        renewalSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      renewalSettings_ = null;
+      if (renewalSettingsBuilder_ != null) {
+        renewalSettingsBuilder_.dispose();
         renewalSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -899,7 +916,7 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.channel.v1.RenewalSettings.Builder getRenewalSettingsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRenewalSettingsFieldBuilder().getBuilder();
     }
@@ -1039,8 +1056,8 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1065,8 +1082,8 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1096,8 +1113,8 @@ public final class ChangeRenewalSettingsRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

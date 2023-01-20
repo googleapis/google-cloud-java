@@ -69,7 +69,9 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IMAGE_FIELD_NUMBER = 100313435;
-  private volatile java.lang.Object image_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object image_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       image_ = "";
-
       project_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.GetImageRequest buildPartial() {
       com.google.cloud.compute.v1.GetImageRequest result =
           new com.google.cloud.compute.v1.GetImageRequest(this);
-      result.image_ = image_;
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetImageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.image_ = image_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -456,10 +470,12 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.compute.v1.GetImageRequest.getDefaultInstance()) return this;
       if (!other.getImage().isEmpty()) {
         image_ = other.image_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -491,13 +507,13 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
             case 802507482:
               {
                 image_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 802507482
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             default:
@@ -516,6 +532,8 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object image_ = "";
     /**
@@ -578,8 +596,8 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       image_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -595,8 +613,8 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearImage() {
-
       image_ = getDefaultInstance().getImage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -617,8 +635,8 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       image_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +702,8 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -701,8 +719,8 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -723,8 +741,8 @@ public final class GetImageRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

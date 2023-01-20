@@ -71,7 +71,9 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -169,7 +173,9 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
   }
 
   public static final int TARGET_HTTP_PROXY_FIELD_NUMBER = 206872421;
-  private volatile java.lang.Object targetHttpProxy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetHttpProxy_ = "";
   /**
    *
    *
@@ -433,12 +439,10 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       targetHttpProxy_ = "";
-
       return this;
     }
 
@@ -466,11 +470,24 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
     public com.google.cloud.compute.v1.GetRegionTargetHttpProxyRequest buildPartial() {
       com.google.cloud.compute.v1.GetRegionTargetHttpProxyRequest result =
           new com.google.cloud.compute.v1.GetRegionTargetHttpProxyRequest(this);
-      result.project_ = project_;
-      result.region_ = region_;
-      result.targetHttpProxy_ = targetHttpProxy_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetRegionTargetHttpProxyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetHttpProxy_ = targetHttpProxy_;
+      }
     }
 
     @java.lang.Override
@@ -521,14 +538,17 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTargetHttpProxy().isEmpty()) {
         targetHttpProxy_ = other.targetHttpProxy_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -560,19 +580,19 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1654979370:
               {
                 targetHttpProxy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1654979370
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -591,6 +611,8 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -653,8 +675,8 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -670,8 +692,8 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -692,8 +714,8 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,8 +781,8 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -776,8 +798,8 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -798,8 +820,8 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,8 +887,8 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetHttpProxy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -882,8 +904,8 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearTargetHttpProxy() {
-
       targetHttpProxy_ = getDefaultInstance().getTargetHttpProxy();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -904,8 +926,8 @@ public final class GetRegionTargetHttpProxyRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetHttpProxy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

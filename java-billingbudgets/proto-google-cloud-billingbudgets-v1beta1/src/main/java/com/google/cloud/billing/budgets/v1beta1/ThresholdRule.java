@@ -252,7 +252,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int THRESHOLD_PERCENT_FIELD_NUMBER = 1;
-  private double thresholdPercent_;
+  private double thresholdPercent_ = 0D;
   /**
    *
    *
@@ -272,7 +272,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPEND_BASIS_FIELD_NUMBER = 2;
-  private int spendBasis_;
+  private int spendBasis_ = 0;
   /**
    *
    *
@@ -307,9 +307,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis getSpendBasis() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis result =
-        com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis.valueOf(spendBasis_);
+        com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis.forNumber(spendBasis_);
     return result == null
         ? com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis.UNRECOGNIZED
         : result;
@@ -547,10 +546,9 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       thresholdPercent_ = 0D;
-
       spendBasis_ = 0;
-
       return this;
     }
 
@@ -578,10 +576,21 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.budgets.v1beta1.ThresholdRule buildPartial() {
       com.google.cloud.billing.budgets.v1beta1.ThresholdRule result =
           new com.google.cloud.billing.budgets.v1beta1.ThresholdRule(this);
-      result.thresholdPercent_ = thresholdPercent_;
-      result.spendBasis_ = spendBasis_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.budgets.v1beta1.ThresholdRule result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.thresholdPercent_ = thresholdPercent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.spendBasis_ = spendBasis_;
+      }
     }
 
     @java.lang.Override
@@ -665,13 +674,13 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
             case 9:
               {
                 thresholdPercent_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 16:
               {
                 spendBasis_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -690,6 +699,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double thresholdPercent_;
     /**
@@ -726,6 +737,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
     public Builder setThresholdPercent(double value) {
 
       thresholdPercent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -743,7 +755,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearThresholdPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       thresholdPercent_ = 0D;
       onChanged();
       return this;
@@ -784,8 +796,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSpendBasisValue(int value) {
-
       spendBasis_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -805,9 +817,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis getSpendBasis() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis result =
-          com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis.valueOf(spendBasis_);
+          com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis.forNumber(spendBasis_);
       return result == null
           ? com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis.UNRECOGNIZED
           : result;
@@ -832,7 +843,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       spendBasis_ = value.getNumber();
       onChanged();
       return this;
@@ -852,7 +863,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpendBasis() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       spendBasis_ = 0;
       onChanged();
       return this;

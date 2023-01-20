@@ -275,6 +275,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
                         com.google.cloud.compute.v1.LocationPolicyLocation.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation>
       locations_;
@@ -341,8 +342,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.LocationPolicyLocation defaultValue) {
+  public /* nullable */ com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.LocationPolicyLocation defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -375,7 +378,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_SHAPE_FIELD_NUMBER = 338621299;
-  private volatile java.lang.Object targetShape_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetShape_ = "";
   /**
    *
    *
@@ -682,9 +687,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableLocations().clear();
       targetShape_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -712,17 +717,25 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.LocationPolicy buildPartial() {
       com.google.cloud.compute.v1.LocationPolicy result =
           new com.google.cloud.compute.v1.LocationPolicy(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.locations_ = internalGetLocations();
-      result.locations_.makeImmutable();
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.targetShape_ = targetShape_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.LocationPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.locations_ = internalGetLocations();
+        result.locations_.makeImmutable();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetShape_ = targetShape_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -771,9 +784,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.LocationPolicy other) {
       if (other == com.google.cloud.compute.v1.LocationPolicy.getDefaultInstance()) return this;
       internalGetMutableLocations().mergeFrom(other.internalGetLocations());
+      bitField0_ |= 0x00000001;
       if (other.hasTargetShape()) {
-        bitField0_ |= 0x00000002;
         targetShape_ = other.targetShape_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -819,6 +833,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLocations()
                     .getMutableMap()
                     .put(locations__.getKey(), locations__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case -987579662
             default:
@@ -856,8 +871,6 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation>
         internalGetMutableLocations() {
-      onChanged();
-      ;
       if (locations_ == null) {
         locations_ =
             com.google.protobuf.MapField.newMapField(LocationsDefaultEntryHolder.defaultEntry);
@@ -865,6 +878,8 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!locations_.isMutable()) {
         locations_ = locations_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return locations_;
     }
 
@@ -924,8 +939,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrDefault(
-        java.lang.String key, com.google.cloud.compute.v1.LocationPolicyLocation defaultValue) {
+    public /* nullable */ com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.compute.v1.LocationPolicyLocation defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -959,6 +976,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLocations() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLocations().getMutableMap().clear();
       return this;
     }
@@ -984,6 +1002,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation>
         getMutableLocations() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableLocations().getMutableMap();
     }
     /**
@@ -1005,8 +1024,8 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLocations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1024,6 +1043,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation>
             values) {
       internalGetMutableLocations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -1106,8 +1126,8 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       targetShape_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1124,8 +1144,8 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetShape() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       targetShape_ = getDefaultInstance().getTargetShape();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1147,8 +1167,8 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       targetShape_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

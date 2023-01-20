@@ -466,6 +466,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (specifiedAmountBuilder_ != null) {
         specifiedAmountBuilder_.clear();
       }
@@ -501,23 +502,27 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.budgets.v1.BudgetAmount buildPartial() {
       com.google.cloud.billing.budgets.v1.BudgetAmount result =
           new com.google.cloud.billing.budgets.v1.BudgetAmount(this);
-      if (budgetAmountCase_ == 1) {
-        if (specifiedAmountBuilder_ == null) {
-          result.budgetAmount_ = budgetAmount_;
-        } else {
-          result.budgetAmount_ = specifiedAmountBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (budgetAmountCase_ == 2) {
-        if (lastPeriodAmountBuilder_ == null) {
-          result.budgetAmount_ = budgetAmount_;
-        } else {
-          result.budgetAmount_ = lastPeriodAmountBuilder_.build();
-        }
-      }
-      result.budgetAmountCase_ = budgetAmountCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.budgets.v1.BudgetAmount result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.billing.budgets.v1.BudgetAmount result) {
+      result.budgetAmountCase_ = budgetAmountCase_;
+      result.budgetAmount_ = this.budgetAmount_;
+      if (budgetAmountCase_ == 1 && specifiedAmountBuilder_ != null) {
+        result.budgetAmount_ = specifiedAmountBuilder_.build();
+      }
+      if (budgetAmountCase_ == 2 && lastPeriodAmountBuilder_ != null) {
+        result.budgetAmount_ = lastPeriodAmountBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -651,6 +656,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
@@ -885,7 +892,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       }
       budgetAmountCase_ = 1;
       onChanged();
-      ;
       return specifiedAmountBuilder_;
     }
 
@@ -1135,7 +1141,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       }
       budgetAmountCase_ = 2;
       onChanged();
-      ;
       return lastPeriodAmountBuilder_;
     }
 

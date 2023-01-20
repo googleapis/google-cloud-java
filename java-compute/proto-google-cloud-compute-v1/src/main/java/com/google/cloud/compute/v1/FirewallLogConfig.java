@@ -194,7 +194,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 311764355;
-  private boolean enable_;
+  private boolean enable_ = false;
   /**
    *
    *
@@ -227,7 +227,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int METADATA_FIELD_NUMBER = 86866735;
-  private volatile java.lang.Object metadata_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metadata_ = "";
   /**
    *
    *
@@ -509,10 +511,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enable_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       metadata_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -540,6 +541,14 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.FirewallLogConfig buildPartial() {
       com.google.cloud.compute.v1.FirewallLogConfig result =
           new com.google.cloud.compute.v1.FirewallLogConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.FirewallLogConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -547,12 +556,10 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadata_ = metadata_;
         to_bitField0_ |= 0x00000002;
       }
-      result.metadata_ = metadata_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -604,8 +611,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
         setEnable(other.getEnable());
       }
       if (other.hasMetadata()) {
-        bitField0_ |= 0x00000002;
         metadata_ = other.metadata_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -709,8 +716,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setEnable(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -811,8 +819,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       metadata_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -829,8 +837,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       metadata_ = getDefaultInstance().getMetadata();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -852,8 +860,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       metadata_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -68,7 +68,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
   }
 
   public static final int DATABASE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object database_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object database_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
   }
 
   public static final int USE_PARALLELISM_FIELD_NUMBER = 2;
-  private boolean useParallelism_;
+  private boolean useParallelism_ = false;
   /**
    *
    *
@@ -341,10 +343,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       database_ = "";
-
       useParallelism_ = false;
-
       return this;
     }
 
@@ -373,10 +374,22 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     public com.google.cloud.bigquery.connection.v1.CloudSpannerProperties buildPartial() {
       com.google.cloud.bigquery.connection.v1.CloudSpannerProperties result =
           new com.google.cloud.bigquery.connection.v1.CloudSpannerProperties(this);
-      result.database_ = database_;
-      result.useParallelism_ = useParallelism_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.connection.v1.CloudSpannerProperties result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.database_ = database_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.useParallelism_ = useParallelism_;
+      }
     }
 
     @java.lang.Override
@@ -428,6 +441,7 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getDatabase().isEmpty()) {
         database_ = other.database_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getUseParallelism() != false) {
@@ -462,13 +476,13 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
             case 10:
               {
                 database_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 useParallelism_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -487,6 +501,8 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object database_ = "";
     /**
@@ -549,8 +565,8 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       database_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -566,8 +582,8 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDatabase() {
-
       database_ = getDefaultInstance().getDatabase();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -588,8 +604,8 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       database_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,6 +641,7 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     public Builder setUseParallelism(boolean value) {
 
       useParallelism_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -640,7 +657,7 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearUseParallelism() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       useParallelism_ = false;
       onChanged();
       return this;

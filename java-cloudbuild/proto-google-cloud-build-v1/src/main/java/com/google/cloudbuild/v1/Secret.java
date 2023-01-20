@@ -82,7 +82,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object kmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
   /**
    *
    *
@@ -145,6 +147,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
                     com.google.protobuf.ByteString.EMPTY);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString> secretEnv_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
@@ -215,8 +218,10 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getSecretEnvOrDefault(
-      java.lang.String key, com.google.protobuf.ByteString defaultValue) {
+  public /* nullable */ com.google.protobuf.ByteString getSecretEnvOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.ByteString defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -485,8 +490,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kmsKeyName_ = "";
-
       internalGetMutableSecretEnv().clear();
       return this;
     }
@@ -514,12 +519,22 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloudbuild.v1.Secret buildPartial() {
       com.google.cloudbuild.v1.Secret result = new com.google.cloudbuild.v1.Secret(this);
-      int from_bitField0_ = bitField0_;
-      result.kmsKeyName_ = kmsKeyName_;
-      result.secretEnv_ = internalGetSecretEnv();
-      result.secretEnv_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.Secret result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.secretEnv_ = internalGetSecretEnv();
+        result.secretEnv_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -569,9 +584,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloudbuild.v1.Secret.getDefaultInstance()) return this;
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableSecretEnv().mergeFrom(other.internalGetSecretEnv());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -601,7 +618,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -614,6 +631,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableSecretEnv()
                     .getMutableMap()
                     .put(secretEnv__.getKey(), secretEnv__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -696,8 +714,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -713,8 +731,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
-
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -735,8 +753,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -754,8 +772,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
         internalGetMutableSecretEnv() {
-      onChanged();
-      ;
       if (secretEnv_ == null) {
         secretEnv_ =
             com.google.protobuf.MapField.newMapField(SecretEnvDefaultEntryHolder.defaultEntry);
@@ -763,6 +779,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       if (!secretEnv_.isMutable()) {
         secretEnv_ = secretEnv_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return secretEnv_;
     }
 
@@ -826,8 +844,10 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getSecretEnvOrDefault(
-        java.lang.String key, com.google.protobuf.ByteString defaultValue) {
+    public /* nullable */ com.google.protobuf.ByteString getSecretEnvOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.ByteString defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -862,6 +882,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearSecretEnv() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableSecretEnv().getMutableMap().clear();
       return this;
     }
@@ -888,6 +909,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getMutableSecretEnv() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableSecretEnv().getMutableMap();
     }
     /**
@@ -910,8 +932,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableSecretEnv().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -930,6 +952,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllSecretEnv(
         java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
       internalGetMutableSecretEnv().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

@@ -117,7 +117,9 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2alpha.ErrorLocationOrBuilder getLocationOrBuilder() {
-    return getLocation();
+    return location_ == null
+        ? com.google.cloud.bigquery.migration.v2alpha.ErrorLocation.getDefaultInstance()
+        : location_;
   }
 
   public static final int ERROR_INFO_FIELD_NUMBER = 2;
@@ -163,7 +165,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.ErrorInfoOrBuilder getErrorInfoOrBuilder() {
-    return getErrorInfo();
+    return errorInfo_ == null ? com.google.rpc.ErrorInfo.getDefaultInstance() : errorInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -384,16 +386,15 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (locationBuilder_ == null) {
-        location_ = null;
-      } else {
-        location_ = null;
+      bitField0_ = 0;
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-      if (errorInfoBuilder_ == null) {
-        errorInfo_ = null;
-      } else {
-        errorInfo_ = null;
+      errorInfo_ = null;
+      if (errorInfoBuilder_ != null) {
+        errorInfoBuilder_.dispose();
         errorInfoBuilder_ = null;
       }
       return this;
@@ -423,18 +424,21 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2alpha.ErrorDetail buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.ErrorDetail result =
           new com.google.cloud.bigquery.migration.v2alpha.ErrorDetail(this);
-      if (locationBuilder_ == null) {
-        result.location_ = location_;
-      } else {
-        result.location_ = locationBuilder_.build();
-      }
-      if (errorInfoBuilder_ == null) {
-        result.errorInfo_ = errorInfo_;
-      } else {
-        result.errorInfo_ = errorInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2alpha.ErrorDetail result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorInfo_ = errorInfoBuilder_ == null ? errorInfo_ : errorInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -518,13 +522,13 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getErrorInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +547,8 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.bigquery.migration.v2alpha.ErrorLocation location_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -564,7 +570,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return locationBuilder_ != null || location_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -605,11 +611,11 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         location_ = value;
-        onChanged();
       } else {
         locationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -627,11 +633,11 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.bigquery.migration.v2alpha.ErrorLocation.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
-        onChanged();
       } else {
         locationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -647,19 +653,19 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLocation(com.google.cloud.bigquery.migration.v2alpha.ErrorLocation value) {
       if (locationBuilder_ == null) {
-        if (location_ != null) {
-          location_ =
-              com.google.cloud.bigquery.migration.v2alpha.ErrorLocation.newBuilder(location_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && location_ != null
+            && location_
+                != com.google.cloud.bigquery.migration.v2alpha.ErrorLocation.getDefaultInstance()) {
+          getLocationBuilder().mergeFrom(value);
         } else {
           location_ = value;
         }
-        onChanged();
       } else {
         locationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -674,14 +680,13 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLocation() {
-      if (locationBuilder_ == null) {
-        location_ = null;
-        onChanged();
-      } else {
-        location_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -696,7 +701,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.bigquery.migration.v2alpha.ErrorLocation.Builder getLocationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
@@ -767,7 +772,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the errorInfo field is set.
      */
     public boolean hasErrorInfo() {
-      return errorInfoBuilder_ != null || errorInfo_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -802,11 +807,11 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         errorInfo_ = value;
-        onChanged();
       } else {
         errorInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -821,11 +826,11 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
     public Builder setErrorInfo(com.google.rpc.ErrorInfo.Builder builderForValue) {
       if (errorInfoBuilder_ == null) {
         errorInfo_ = builderForValue.build();
-        onChanged();
       } else {
         errorInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,17 +844,18 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeErrorInfo(com.google.rpc.ErrorInfo value) {
       if (errorInfoBuilder_ == null) {
-        if (errorInfo_ != null) {
-          errorInfo_ =
-              com.google.rpc.ErrorInfo.newBuilder(errorInfo_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && errorInfo_ != null
+            && errorInfo_ != com.google.rpc.ErrorInfo.getDefaultInstance()) {
+          getErrorInfoBuilder().mergeFrom(value);
         } else {
           errorInfo_ = value;
         }
-        onChanged();
       } else {
         errorInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -862,14 +868,13 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.ErrorInfo error_info = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearErrorInfo() {
-      if (errorInfoBuilder_ == null) {
-        errorInfo_ = null;
-        onChanged();
-      } else {
-        errorInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      errorInfo_ = null;
+      if (errorInfoBuilder_ != null) {
+        errorInfoBuilder_.dispose();
         errorInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -882,7 +887,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.ErrorInfo error_info = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.rpc.ErrorInfo.Builder getErrorInfoBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getErrorInfoFieldBuilder().getBuilder();
     }

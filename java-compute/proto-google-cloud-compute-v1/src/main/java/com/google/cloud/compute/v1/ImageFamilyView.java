@@ -321,12 +321,12 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (imageBuilder_ == null) {
-        image_ = null;
-      } else {
-        imageBuilder_.clear();
+      bitField0_ = 0;
+      image_ = null;
+      if (imageBuilder_ != null) {
+        imageBuilder_.dispose();
+        imageBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -354,19 +354,21 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.ImageFamilyView buildPartial() {
       com.google.cloud.compute.v1.ImageFamilyView result =
           new com.google.cloud.compute.v1.ImageFamilyView(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ImageFamilyView result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (imageBuilder_ == null) {
-          result.image_ = image_;
-        } else {
-          result.image_ = imageBuilder_.build();
-        }
+        result.image_ = imageBuilder_ == null ? image_ : imageBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -521,11 +523,11 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         image_ = value;
-        onChanged();
       } else {
         imageBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -540,11 +542,11 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
     public Builder setImage(com.google.cloud.compute.v1.Image.Builder builderForValue) {
       if (imageBuilder_ == null) {
         image_ = builderForValue.build();
-        onChanged();
       } else {
         imageBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -561,16 +563,15 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
         if (((bitField0_ & 0x00000001) != 0)
             && image_ != null
             && image_ != com.google.cloud.compute.v1.Image.getDefaultInstance()) {
-          image_ =
-              com.google.cloud.compute.v1.Image.newBuilder(image_).mergeFrom(value).buildPartial();
+          getImageBuilder().mergeFrom(value);
         } else {
           image_ = value;
         }
-        onChanged();
       } else {
         imageBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -583,13 +584,13 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.Image image = 100313435;</code>
      */
     public Builder clearImage() {
-      if (imageBuilder_ == null) {
-        image_ = null;
-        onChanged();
-      } else {
-        imageBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      image_ = null;
+      if (imageBuilder_ != null) {
+        imageBuilder_.dispose();
+        imageBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

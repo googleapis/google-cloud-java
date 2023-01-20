@@ -71,7 +71,9 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
 
   private int bitField0_;
   public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 309248228;
-  private volatile java.lang.Object instanceTemplate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceTemplate_ = "";
   /**
    *
    *
@@ -341,8 +343,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceTemplate_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -374,15 +376,22 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
         buildPartial() {
       com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest result =
           new com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceTemplate_ = instanceTemplate_;
         to_bitField0_ |= 0x00000001;
       }
-      result.instanceTemplate_ = instanceTemplate_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -436,8 +445,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
           == com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest
               .getDefaultInstance()) return this;
       if (other.hasInstanceTemplate()) {
-        bitField0_ |= 0x00000001;
         instanceTemplate_ = other.instanceTemplate_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -566,8 +575,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -583,8 +592,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      * @return This builder for chaining.
      */
     public Builder clearInstanceTemplate() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       instanceTemplate_ = getDefaultInstance().getInstanceTemplate();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -605,8 +614,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

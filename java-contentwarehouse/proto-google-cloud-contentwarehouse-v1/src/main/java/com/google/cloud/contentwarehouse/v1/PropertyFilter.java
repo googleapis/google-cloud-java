@@ -61,7 +61,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENT_SCHEMA_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object documentSchemaName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object documentSchemaName_ = "";
   /**
    *
    *
@@ -114,7 +116,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONDITION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object condition_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object condition_ = "";
   /**
    *
    *
@@ -422,10 +426,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       documentSchemaName_ = "";
-
       condition_ = "";
-
       return this;
     }
 
@@ -453,10 +456,21 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.PropertyFilter buildPartial() {
       com.google.cloud.contentwarehouse.v1.PropertyFilter result =
           new com.google.cloud.contentwarehouse.v1.PropertyFilter(this);
-      result.documentSchemaName_ = documentSchemaName_;
-      result.condition_ = condition_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.PropertyFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.documentSchemaName_ = documentSchemaName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.condition_ = condition_;
+      }
     }
 
     @java.lang.Override
@@ -507,10 +521,12 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getDocumentSchemaName().isEmpty()) {
         documentSchemaName_ = other.documentSchemaName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCondition().isEmpty()) {
         condition_ = other.condition_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -542,13 +558,13 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 documentSchemaName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 condition_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -567,6 +583,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object documentSchemaName_ = "";
     /**
@@ -635,8 +653,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       documentSchemaName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -654,8 +672,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDocumentSchemaName() {
-
       documentSchemaName_ = getDefaultInstance().getDocumentSchemaName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -678,8 +696,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       documentSchemaName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -838,8 +856,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       condition_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -886,8 +904,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCondition() {
-
       condition_ = getDefaultInstance().getCondition();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -939,8 +957,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       condition_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

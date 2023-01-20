@@ -115,10 +115,12 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getMetricTimeOrBuilder() {
-    return getMetricTime();
+    return metricTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : metricTime_;
   }
 
   public static final int METRICS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.MetricUpdate> metrics_;
   /**
    *
@@ -404,10 +406,10 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (metricTimeBuilder_ == null) {
-        metricTime_ = null;
-      } else {
-        metricTime_ = null;
+      bitField0_ = 0;
+      metricTime_ = null;
+      if (metricTimeBuilder_ != null) {
+        metricTimeBuilder_.dispose();
         metricTimeBuilder_ = null;
       }
       if (metricsBuilder_ == null) {
@@ -416,7 +418,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
         metrics_ = null;
         metricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -444,23 +446,31 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.JobMetrics buildPartial() {
       com.google.dataflow.v1beta3.JobMetrics result =
           new com.google.dataflow.v1beta3.JobMetrics(this);
-      int from_bitField0_ = bitField0_;
-      if (metricTimeBuilder_ == null) {
-        result.metricTime_ = metricTime_;
-      } else {
-        result.metricTime_ = metricTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.JobMetrics result) {
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.metrics_ = metrics_;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.JobMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metricTime_ = metricTimeBuilder_ == null ? metricTime_ : metricTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -515,7 +525,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
         if (!other.metrics_.isEmpty()) {
           if (metrics_.isEmpty()) {
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureMetricsIsMutable();
             metrics_.addAll(other.metrics_);
@@ -528,7 +538,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
             metricsBuilder_.dispose();
             metricsBuilder_ = null;
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             metricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetricsFieldBuilder()
@@ -567,7 +577,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getMetricTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -620,7 +630,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metricTime field is set.
      */
     public boolean hasMetricTime() {
-      return metricTimeBuilder_ != null || metricTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -657,11 +667,11 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         metricTime_ = value;
-        onChanged();
       } else {
         metricTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -676,11 +686,11 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
     public Builder setMetricTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (metricTimeBuilder_ == null) {
         metricTime_ = builderForValue.build();
-        onChanged();
       } else {
         metricTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -694,17 +704,18 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMetricTime(com.google.protobuf.Timestamp value) {
       if (metricTimeBuilder_ == null) {
-        if (metricTime_ != null) {
-          metricTime_ =
-              com.google.protobuf.Timestamp.newBuilder(metricTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && metricTime_ != null
+            && metricTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getMetricTimeBuilder().mergeFrom(value);
         } else {
           metricTime_ = value;
         }
-        onChanged();
       } else {
         metricTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -717,14 +728,13 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp metric_time = 1;</code>
      */
     public Builder clearMetricTime() {
-      if (metricTimeBuilder_ == null) {
-        metricTime_ = null;
-        onChanged();
-      } else {
-        metricTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      metricTime_ = null;
+      if (metricTimeBuilder_ != null) {
+        metricTimeBuilder_.dispose();
         metricTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -737,7 +747,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp metric_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getMetricTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMetricTimeFieldBuilder().getBuilder();
     }
@@ -789,9 +799,9 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         metrics_ = new java.util.ArrayList<com.google.dataflow.v1beta3.MetricUpdate>(metrics_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1006,7 +1016,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         metricsBuilder_.clear();
@@ -1128,7 +1138,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
                 com.google.dataflow.v1beta3.MetricUpdate,
                 com.google.dataflow.v1beta3.MetricUpdate.Builder,
                 com.google.dataflow.v1beta3.MetricUpdateOrBuilder>(
-                metrics_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                metrics_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         metrics_ = null;
       }
       return metricsBuilder_;

@@ -68,7 +68,9 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object image_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object image_ = "";
   /**
    *
    *
@@ -161,7 +163,9 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.TemplateMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.dataflow.v1beta3.TemplateMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   public static final int SDK_INFO_FIELD_NUMBER = 3;
@@ -207,7 +211,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.SDKInfoOrBuilder getSdkInfoOrBuilder() {
-    return getSdkInfo();
+    return sdkInfo_ == null ? com.google.dataflow.v1beta3.SDKInfo.getDefaultInstance() : sdkInfo_;
   }
 
   public static final int DEFAULT_ENVIRONMENT_FIELD_NUMBER = 4;
@@ -256,7 +260,9 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironmentOrBuilder
       getDefaultEnvironmentOrBuilder() {
-    return getDefaultEnvironment();
+    return defaultEnvironment_ == null
+        ? com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.getDefaultInstance()
+        : defaultEnvironment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -498,24 +504,21 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       image_ = "";
-
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-      if (sdkInfoBuilder_ == null) {
-        sdkInfo_ = null;
-      } else {
-        sdkInfo_ = null;
+      sdkInfo_ = null;
+      if (sdkInfoBuilder_ != null) {
+        sdkInfoBuilder_.dispose();
         sdkInfoBuilder_ = null;
       }
-      if (defaultEnvironmentBuilder_ == null) {
-        defaultEnvironment_ = null;
-      } else {
-        defaultEnvironment_ = null;
+      defaultEnvironment_ = null;
+      if (defaultEnvironmentBuilder_ != null) {
+        defaultEnvironmentBuilder_.dispose();
         defaultEnvironmentBuilder_ = null;
       }
       return this;
@@ -545,24 +548,30 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.ContainerSpec buildPartial() {
       com.google.dataflow.v1beta3.ContainerSpec result =
           new com.google.dataflow.v1beta3.ContainerSpec(this);
-      result.image_ = image_;
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
-      }
-      if (sdkInfoBuilder_ == null) {
-        result.sdkInfo_ = sdkInfo_;
-      } else {
-        result.sdkInfo_ = sdkInfoBuilder_.build();
-      }
-      if (defaultEnvironmentBuilder_ == null) {
-        result.defaultEnvironment_ = defaultEnvironment_;
-      } else {
-        result.defaultEnvironment_ = defaultEnvironmentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.ContainerSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.image_ = image_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sdkInfo_ = sdkInfoBuilder_ == null ? sdkInfo_ : sdkInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.defaultEnvironment_ =
+            defaultEnvironmentBuilder_ == null
+                ? defaultEnvironment_
+                : defaultEnvironmentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -612,6 +621,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.dataflow.v1beta3.ContainerSpec.getDefaultInstance()) return this;
       if (!other.getImage().isEmpty()) {
         image_ = other.image_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMetadata()) {
@@ -652,26 +662,26 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 image_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSdkInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getDefaultEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -690,6 +700,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object image_ = "";
     /**
@@ -752,8 +764,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       image_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,8 +781,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImage() {
-
       image_ = getDefaultInstance().getImage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -791,8 +803,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       image_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -815,7 +827,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -852,11 +864,11 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,11 +884,11 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.dataflow.v1beta3.TemplateMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -890,19 +902,18 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMetadata(com.google.dataflow.v1beta3.TemplateMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.dataflow.v1beta3.TemplateMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.dataflow.v1beta3.TemplateMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -915,14 +926,13 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.TemplateMetadata metadata = 2;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -935,7 +945,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.TemplateMetadata metadata = 2;</code>
      */
     public com.google.dataflow.v1beta3.TemplateMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -1001,7 +1011,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sdkInfo field is set.
      */
     public boolean hasSdkInfo() {
-      return sdkInfoBuilder_ != null || sdkInfo_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1038,11 +1048,11 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sdkInfo_ = value;
-        onChanged();
       } else {
         sdkInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1057,11 +1067,11 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setSdkInfo(com.google.dataflow.v1beta3.SDKInfo.Builder builderForValue) {
       if (sdkInfoBuilder_ == null) {
         sdkInfo_ = builderForValue.build();
-        onChanged();
       } else {
         sdkInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1075,19 +1085,18 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSdkInfo(com.google.dataflow.v1beta3.SDKInfo value) {
       if (sdkInfoBuilder_ == null) {
-        if (sdkInfo_ != null) {
-          sdkInfo_ =
-              com.google.dataflow.v1beta3.SDKInfo.newBuilder(sdkInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && sdkInfo_ != null
+            && sdkInfo_ != com.google.dataflow.v1beta3.SDKInfo.getDefaultInstance()) {
+          getSdkInfoBuilder().mergeFrom(value);
         } else {
           sdkInfo_ = value;
         }
-        onChanged();
       } else {
         sdkInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1100,14 +1109,13 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.SDKInfo sdk_info = 3;</code>
      */
     public Builder clearSdkInfo() {
-      if (sdkInfoBuilder_ == null) {
-        sdkInfo_ = null;
-        onChanged();
-      } else {
-        sdkInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sdkInfo_ = null;
+      if (sdkInfoBuilder_ != null) {
+        sdkInfoBuilder_.dispose();
         sdkInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1120,7 +1128,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.SDKInfo sdk_info = 3;</code>
      */
     public com.google.dataflow.v1beta3.SDKInfo.Builder getSdkInfoBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSdkInfoFieldBuilder().getBuilder();
     }
@@ -1186,7 +1194,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the defaultEnvironment field is set.
      */
     public boolean hasDefaultEnvironment() {
-      return defaultEnvironmentBuilder_ != null || defaultEnvironment_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1224,11 +1232,11 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         defaultEnvironment_ = value;
-        onChanged();
       } else {
         defaultEnvironmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1244,11 +1252,11 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.Builder builderForValue) {
       if (defaultEnvironmentBuilder_ == null) {
         defaultEnvironment_ = builderForValue.build();
-        onChanged();
       } else {
         defaultEnvironmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1263,20 +1271,20 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDefaultEnvironment(
         com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment value) {
       if (defaultEnvironmentBuilder_ == null) {
-        if (defaultEnvironment_ != null) {
-          defaultEnvironment_ =
-              com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.newBuilder(
-                      defaultEnvironment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && defaultEnvironment_ != null
+            && defaultEnvironment_
+                != com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment
+                    .getDefaultInstance()) {
+          getDefaultEnvironmentBuilder().mergeFrom(value);
         } else {
           defaultEnvironment_ = value;
         }
-        onChanged();
       } else {
         defaultEnvironmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1289,14 +1297,13 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment default_environment = 4;</code>
      */
     public Builder clearDefaultEnvironment() {
-      if (defaultEnvironmentBuilder_ == null) {
-        defaultEnvironment_ = null;
-        onChanged();
-      } else {
-        defaultEnvironment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      defaultEnvironment_ = null;
+      if (defaultEnvironmentBuilder_ != null) {
+        defaultEnvironmentBuilder_.dispose();
         defaultEnvironmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1310,7 +1317,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.Builder
         getDefaultEnvironmentBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDefaultEnvironmentFieldBuilder().getBuilder();
     }

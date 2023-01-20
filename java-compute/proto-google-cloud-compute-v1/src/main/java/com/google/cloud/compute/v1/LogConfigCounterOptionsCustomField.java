@@ -71,7 +71,9 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
   }
 
   public static final int VALUE_FIELD_NUMBER = 111972721;
-  private volatile java.lang.Object value_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object value_ = "";
   /**
    *
    *
@@ -415,10 +419,9 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       value_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -447,19 +450,26 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
     public com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField buildPartial() {
       com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField result =
           new com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000001;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.value_ = value_;
         to_bitField0_ |= 0x00000002;
       }
-      result.value_ = value_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -510,13 +520,13 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
           == com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField.getDefaultInstance())
         return this;
       if (other.hasName()) {
-        bitField0_ |= 0x00000001;
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasValue()) {
-        bitField0_ |= 0x00000002;
         value_ = other.value_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -651,8 +661,8 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +678,8 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -690,8 +700,8 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -771,8 +781,8 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       value_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -788,8 +798,8 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       value_ = getDefaultInstance().getValue();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -810,8 +820,8 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       value_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -66,7 +66,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int SIZE_GB_FIELD_NUMBER = 494929369;
-  private long sizeGb_;
+  private long sizeGb_ = 0L;
   /**
    *
    *
@@ -299,8 +299,8 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sizeGb_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -328,15 +328,21 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.RegionDisksResizeRequest buildPartial() {
       com.google.cloud.compute.v1.RegionDisksResizeRequest result =
           new com.google.cloud.compute.v1.RegionDisksResizeRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RegionDisksResizeRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.sizeGb_ = sizeGb_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -483,8 +489,9 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setSizeGb(long value) {
-      bitField0_ |= 0x00000001;
+
       sizeGb_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

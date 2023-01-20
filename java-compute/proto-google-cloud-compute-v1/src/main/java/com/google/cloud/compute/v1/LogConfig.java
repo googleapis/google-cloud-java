@@ -461,24 +461,22 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (cloudAuditBuilder_ == null) {
-        cloudAudit_ = null;
-      } else {
-        cloudAuditBuilder_.clear();
+      bitField0_ = 0;
+      cloudAudit_ = null;
+      if (cloudAuditBuilder_ != null) {
+        cloudAuditBuilder_.dispose();
+        cloudAuditBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (counterBuilder_ == null) {
-        counter_ = null;
-      } else {
-        counterBuilder_.clear();
+      counter_ = null;
+      if (counterBuilder_ != null) {
+        counterBuilder_.dispose();
+        counterBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (dataAccessBuilder_ == null) {
-        dataAccess_ = null;
-      } else {
-        dataAccessBuilder_.clear();
+      dataAccess_ = null;
+      if (dataAccessBuilder_ != null) {
+        dataAccessBuilder_.dispose();
+        dataAccessBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -506,35 +504,29 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.LogConfig buildPartial() {
       com.google.cloud.compute.v1.LogConfig result =
           new com.google.cloud.compute.v1.LogConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.LogConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (cloudAuditBuilder_ == null) {
-          result.cloudAudit_ = cloudAudit_;
-        } else {
-          result.cloudAudit_ = cloudAuditBuilder_.build();
-        }
+        result.cloudAudit_ = cloudAuditBuilder_ == null ? cloudAudit_ : cloudAuditBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (counterBuilder_ == null) {
-          result.counter_ = counter_;
-        } else {
-          result.counter_ = counterBuilder_.build();
-        }
+        result.counter_ = counterBuilder_ == null ? counter_ : counterBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (dataAccessBuilder_ == null) {
-          result.dataAccess_ = dataAccess_;
-        } else {
-          result.dataAccess_ = dataAccessBuilder_.build();
-        }
+        result.dataAccess_ = dataAccessBuilder_ == null ? dataAccess_ : dataAccessBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -712,11 +704,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         cloudAudit_ = value;
-        onChanged();
       } else {
         cloudAuditBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -733,11 +725,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.LogConfigCloudAuditOptions.Builder builderForValue) {
       if (cloudAuditBuilder_ == null) {
         cloudAudit_ = builderForValue.build();
-        onChanged();
       } else {
         cloudAuditBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -756,18 +748,15 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
             && cloudAudit_ != null
             && cloudAudit_
                 != com.google.cloud.compute.v1.LogConfigCloudAuditOptions.getDefaultInstance()) {
-          cloudAudit_ =
-              com.google.cloud.compute.v1.LogConfigCloudAuditOptions.newBuilder(cloudAudit_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getCloudAuditBuilder().mergeFrom(value);
         } else {
           cloudAudit_ = value;
         }
-        onChanged();
       } else {
         cloudAuditBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -781,13 +770,13 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCloudAudit() {
-      if (cloudAuditBuilder_ == null) {
-        cloudAudit_ = null;
-        onChanged();
-      } else {
-        cloudAuditBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      cloudAudit_ = null;
+      if (cloudAuditBuilder_ != null) {
+        cloudAuditBuilder_.dispose();
+        cloudAuditBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -907,11 +896,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         counter_ = value;
-        onChanged();
       } else {
         counterBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -927,11 +916,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.LogConfigCounterOptions.Builder builderForValue) {
       if (counterBuilder_ == null) {
         counter_ = builderForValue.build();
-        onChanged();
       } else {
         counterBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -949,18 +938,15 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
             && counter_ != null
             && counter_
                 != com.google.cloud.compute.v1.LogConfigCounterOptions.getDefaultInstance()) {
-          counter_ =
-              com.google.cloud.compute.v1.LogConfigCounterOptions.newBuilder(counter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getCounterBuilder().mergeFrom(value);
         } else {
           counter_ = value;
         }
-        onChanged();
       } else {
         counterBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -973,13 +959,13 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
      */
     public Builder clearCounter() {
-      if (counterBuilder_ == null) {
-        counter_ = null;
-        onChanged();
-      } else {
-        counterBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      counter_ = null;
+      if (counterBuilder_ != null) {
+        counterBuilder_.dispose();
+        counterBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1098,11 +1084,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dataAccess_ = value;
-        onChanged();
       } else {
         dataAccessBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1119,11 +1105,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.LogConfigDataAccessOptions.Builder builderForValue) {
       if (dataAccessBuilder_ == null) {
         dataAccess_ = builderForValue.build();
-        onChanged();
       } else {
         dataAccessBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1142,18 +1128,15 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
             && dataAccess_ != null
             && dataAccess_
                 != com.google.cloud.compute.v1.LogConfigDataAccessOptions.getDefaultInstance()) {
-          dataAccess_ =
-              com.google.cloud.compute.v1.LogConfigDataAccessOptions.newBuilder(dataAccess_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getDataAccessBuilder().mergeFrom(value);
         } else {
           dataAccess_ = value;
         }
-        onChanged();
       } else {
         dataAccessBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1167,13 +1150,13 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDataAccess() {
-      if (dataAccessBuilder_ == null) {
-        dataAccess_ = null;
-        onChanged();
-      } else {
-        dataAccessBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      dataAccess_ = null;
+      if (dataAccessBuilder_ != null) {
+        dataAccessBuilder_.dispose();
+        dataAccessBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

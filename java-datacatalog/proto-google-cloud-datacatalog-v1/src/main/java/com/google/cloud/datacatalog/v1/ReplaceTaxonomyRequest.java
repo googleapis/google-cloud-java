@@ -69,7 +69,9 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.SerializedTaxonomyOrBuilder
       getSerializedTaxonomyOrBuilder() {
-    return getSerializedTaxonomy();
+    return serializedTaxonomy_ == null
+        ? com.google.cloud.datacatalog.v1.SerializedTaxonomy.getDefaultInstance()
+        : serializedTaxonomy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -389,12 +393,11 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (serializedTaxonomyBuilder_ == null) {
-        serializedTaxonomy_ = null;
-      } else {
-        serializedTaxonomy_ = null;
+      serializedTaxonomy_ = null;
+      if (serializedTaxonomyBuilder_ != null) {
+        serializedTaxonomyBuilder_.dispose();
         serializedTaxonomyBuilder_ = null;
       }
       return this;
@@ -424,14 +427,24 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest buildPartial() {
       com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest result =
           new com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest(this);
-      result.name_ = name_;
-      if (serializedTaxonomyBuilder_ == null) {
-        result.serializedTaxonomy_ = serializedTaxonomy_;
-      } else {
-        result.serializedTaxonomy_ = serializedTaxonomyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.serializedTaxonomy_ =
+            serializedTaxonomyBuilder_ == null
+                ? serializedTaxonomy_
+                : serializedTaxonomyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -482,6 +495,7 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSerializedTaxonomy()) {
@@ -516,14 +530,14 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getSerializedTaxonomyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +556,8 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -610,8 +626,8 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -629,8 +645,8 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -653,8 +669,8 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -679,7 +695,7 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
      * @return Whether the serializedTaxonomy field is set.
      */
     public boolean hasSerializedTaxonomy() {
-      return serializedTaxonomyBuilder_ != null || serializedTaxonomy_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -720,11 +736,11 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         serializedTaxonomy_ = value;
-        onChanged();
       } else {
         serializedTaxonomyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -742,11 +758,11 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.datacatalog.v1.SerializedTaxonomy.Builder builderForValue) {
       if (serializedTaxonomyBuilder_ == null) {
         serializedTaxonomy_ = builderForValue.build();
-        onChanged();
       } else {
         serializedTaxonomyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -763,19 +779,19 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
     public Builder mergeSerializedTaxonomy(
         com.google.cloud.datacatalog.v1.SerializedTaxonomy value) {
       if (serializedTaxonomyBuilder_ == null) {
-        if (serializedTaxonomy_ != null) {
-          serializedTaxonomy_ =
-              com.google.cloud.datacatalog.v1.SerializedTaxonomy.newBuilder(serializedTaxonomy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && serializedTaxonomy_ != null
+            && serializedTaxonomy_
+                != com.google.cloud.datacatalog.v1.SerializedTaxonomy.getDefaultInstance()) {
+          getSerializedTaxonomyBuilder().mergeFrom(value);
         } else {
           serializedTaxonomy_ = value;
         }
-        onChanged();
       } else {
         serializedTaxonomyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -790,14 +806,13 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearSerializedTaxonomy() {
-      if (serializedTaxonomyBuilder_ == null) {
-        serializedTaxonomy_ = null;
-        onChanged();
-      } else {
-        serializedTaxonomy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      serializedTaxonomy_ = null;
+      if (serializedTaxonomyBuilder_ != null) {
+        serializedTaxonomyBuilder_.dispose();
         serializedTaxonomyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -813,7 +828,7 @@ public final class ReplaceTaxonomyRequest extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.datacatalog.v1.SerializedTaxonomy.Builder
         getSerializedTaxonomyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSerializedTaxonomyFieldBuilder().getBuilder();
     }

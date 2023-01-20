@@ -72,7 +72,9 @@ public final class CreateCertificateIssuanceConfigRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class CreateCertificateIssuanceConfigRequest
   }
 
   public static final int CERTIFICATE_ISSUANCE_CONFIG_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object certificateIssuanceConfigId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object certificateIssuanceConfigId_ = "";
   /**
    *
    *
@@ -231,7 +235,9 @@ public final class CreateCertificateIssuanceConfigRequest
   @java.lang.Override
   public com.google.cloud.certificatemanager.v1.CertificateIssuanceConfigOrBuilder
       getCertificateIssuanceConfigOrBuilder() {
-    return getCertificateIssuanceConfig();
+    return certificateIssuanceConfig_ == null
+        ? com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig.getDefaultInstance()
+        : certificateIssuanceConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -469,14 +475,12 @@ public final class CreateCertificateIssuanceConfigRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       certificateIssuanceConfigId_ = "";
-
-      if (certificateIssuanceConfigBuilder_ == null) {
-        certificateIssuanceConfig_ = null;
-      } else {
-        certificateIssuanceConfig_ = null;
+      certificateIssuanceConfig_ = null;
+      if (certificateIssuanceConfigBuilder_ != null) {
+        certificateIssuanceConfigBuilder_.dispose();
         certificateIssuanceConfigBuilder_ = null;
       }
       return this;
@@ -510,15 +514,28 @@ public final class CreateCertificateIssuanceConfigRequest
         buildPartial() {
       com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest result =
           new com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest(this);
-      result.parent_ = parent_;
-      result.certificateIssuanceConfigId_ = certificateIssuanceConfigId_;
-      if (certificateIssuanceConfigBuilder_ == null) {
-        result.certificateIssuanceConfig_ = certificateIssuanceConfig_;
-      } else {
-        result.certificateIssuanceConfig_ = certificateIssuanceConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.certificateIssuanceConfigId_ = certificateIssuanceConfigId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.certificateIssuanceConfig_ =
+            certificateIssuanceConfigBuilder_ == null
+                ? certificateIssuanceConfig_
+                : certificateIssuanceConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -574,10 +591,12 @@ public final class CreateCertificateIssuanceConfigRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCertificateIssuanceConfigId().isEmpty()) {
         certificateIssuanceConfigId_ = other.certificateIssuanceConfigId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCertificateIssuanceConfig()) {
@@ -612,20 +631,20 @@ public final class CreateCertificateIssuanceConfigRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 certificateIssuanceConfigId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getCertificateIssuanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -644,6 +663,8 @@ public final class CreateCertificateIssuanceConfigRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -715,8 +736,8 @@ public final class CreateCertificateIssuanceConfigRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -735,8 +756,8 @@ public final class CreateCertificateIssuanceConfigRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -760,8 +781,8 @@ public final class CreateCertificateIssuanceConfigRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -830,8 +851,8 @@ public final class CreateCertificateIssuanceConfigRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       certificateIssuanceConfigId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -848,8 +869,8 @@ public final class CreateCertificateIssuanceConfigRequest
      * @return This builder for chaining.
      */
     public Builder clearCertificateIssuanceConfigId() {
-
       certificateIssuanceConfigId_ = getDefaultInstance().getCertificateIssuanceConfigId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -871,8 +892,8 @@ public final class CreateCertificateIssuanceConfigRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       certificateIssuanceConfigId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -898,7 +919,7 @@ public final class CreateCertificateIssuanceConfigRequest
      * @return Whether the certificateIssuanceConfig field is set.
      */
     public boolean hasCertificateIssuanceConfig() {
-      return certificateIssuanceConfigBuilder_ != null || certificateIssuanceConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -941,11 +962,11 @@ public final class CreateCertificateIssuanceConfigRequest
           throw new NullPointerException();
         }
         certificateIssuanceConfig_ = value;
-        onChanged();
       } else {
         certificateIssuanceConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -963,11 +984,11 @@ public final class CreateCertificateIssuanceConfigRequest
         com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig.Builder builderForValue) {
       if (certificateIssuanceConfigBuilder_ == null) {
         certificateIssuanceConfig_ = builderForValue.build();
-        onChanged();
       } else {
         certificateIssuanceConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -984,20 +1005,20 @@ public final class CreateCertificateIssuanceConfigRequest
     public Builder mergeCertificateIssuanceConfig(
         com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig value) {
       if (certificateIssuanceConfigBuilder_ == null) {
-        if (certificateIssuanceConfig_ != null) {
-          certificateIssuanceConfig_ =
-              com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig.newBuilder(
-                      certificateIssuanceConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && certificateIssuanceConfig_ != null
+            && certificateIssuanceConfig_
+                != com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig
+                    .getDefaultInstance()) {
+          getCertificateIssuanceConfigBuilder().mergeFrom(value);
         } else {
           certificateIssuanceConfig_ = value;
         }
-        onChanged();
       } else {
         certificateIssuanceConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1012,14 +1033,13 @@ public final class CreateCertificateIssuanceConfigRequest
      * </code>
      */
     public Builder clearCertificateIssuanceConfig() {
-      if (certificateIssuanceConfigBuilder_ == null) {
-        certificateIssuanceConfig_ = null;
-        onChanged();
-      } else {
-        certificateIssuanceConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      certificateIssuanceConfig_ = null;
+      if (certificateIssuanceConfigBuilder_ != null) {
+        certificateIssuanceConfigBuilder_.dispose();
         certificateIssuanceConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1035,7 +1055,7 @@ public final class CreateCertificateIssuanceConfigRequest
      */
     public com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig.Builder
         getCertificateIssuanceConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCertificateIssuanceConfigFieldBuilder().getBuilder();
     }

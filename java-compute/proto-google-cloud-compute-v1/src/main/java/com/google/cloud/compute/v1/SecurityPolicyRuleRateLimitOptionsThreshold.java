@@ -68,7 +68,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
 
   private int bitField0_;
   public static final int COUNT_FIELD_NUMBER = 94851343;
-  private int count_;
+  private int count_ = 0;
   /**
    *
    *
@@ -101,7 +101,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
   }
 
   public static final int INTERVAL_SEC_FIELD_NUMBER = 41084375;
-  private int intervalSec_;
+  private int intervalSec_ = 0;
   /**
    *
    *
@@ -352,10 +352,9 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       count_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       intervalSec_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -386,6 +385,15 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
     public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold result =
           new com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -396,9 +404,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
         result.intervalSec_ = intervalSec_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -558,8 +564,9 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
      * @return This builder for chaining.
      */
     public Builder setCount(int value) {
-      bitField0_ |= 0x00000001;
+
       count_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,8 +632,9 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
      * @return This builder for chaining.
      */
     public Builder setIntervalSec(int value) {
-      bitField0_ |= 0x00000002;
+
       intervalSec_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

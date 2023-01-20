@@ -70,7 +70,9 @@ public final class TargetTcpProxiesSetBackendServiceRequest
 
   private int bitField0_;
   public static final int SERVICE_FIELD_NUMBER = 373540533;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -337,8 +339,8 @@ public final class TargetTcpProxiesSetBackendServiceRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -368,15 +370,22 @@ public final class TargetTcpProxiesSetBackendServiceRequest
     public com.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest buildPartial() {
       com.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest result =
           new com.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
         to_bitField0_ |= 0x00000001;
       }
-      result.service_ = service_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -429,8 +438,8 @@ public final class TargetTcpProxiesSetBackendServiceRequest
           == com.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest
               .getDefaultInstance()) return this;
       if (other.hasService()) {
-        bitField0_ |= 0x00000001;
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -559,8 +568,8 @@ public final class TargetTcpProxiesSetBackendServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -576,8 +585,8 @@ public final class TargetTcpProxiesSetBackendServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -598,8 +607,8 @@ public final class TargetTcpProxiesSetBackendServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

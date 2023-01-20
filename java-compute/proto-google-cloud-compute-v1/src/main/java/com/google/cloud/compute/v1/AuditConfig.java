@@ -71,6 +71,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int AUDIT_LOG_CONFIGS_FIELD_NUMBER = 488420626;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AuditLogConfig> auditLogConfigs_;
   /**
    *
@@ -141,6 +143,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXEMPTED_MEMBERS_FIELD_NUMBER = 232615576;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList exemptedMembers_;
   /**
    *
@@ -202,7 +206,9 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 373540533;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -496,6 +502,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (auditLogConfigsBuilder_ == null) {
         auditLogConfigs_ = java.util.Collections.emptyList();
       } else {
@@ -506,7 +513,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       exemptedMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       service_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -534,8 +540,15 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.AuditConfig buildPartial() {
       com.google.cloud.compute.v1.AuditConfig result =
           new com.google.cloud.compute.v1.AuditConfig(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.AuditConfig result) {
       if (auditLogConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           auditLogConfigs_ = java.util.Collections.unmodifiableList(auditLogConfigs_);
@@ -550,13 +563,16 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.exemptedMembers_ = exemptedMembers_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AuditConfig result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.service_ = service_;
         to_bitField0_ |= 0x00000001;
       }
-      result.service_ = service_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -642,8 +658,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasService()) {
-        bitField0_ |= 0x00000004;
         service_ = other.service_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1315,8 +1331,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       service_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1332,8 +1348,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1354,8 +1370,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       service_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

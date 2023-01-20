@@ -70,7 +70,9 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -179,7 +181,9 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ChannelPartnerLinkOrBuilder getChannelPartnerLinkOrBuilder() {
-    return getChannelPartnerLink();
+    return channelPartnerLink_ == null
+        ? com.google.cloud.channel.v1.ChannelPartnerLink.getDefaultInstance()
+        : channelPartnerLink_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -395,12 +399,11 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (channelPartnerLinkBuilder_ == null) {
-        channelPartnerLink_ = null;
-      } else {
-        channelPartnerLink_ = null;
+      channelPartnerLink_ = null;
+      if (channelPartnerLinkBuilder_ != null) {
+        channelPartnerLinkBuilder_.dispose();
         channelPartnerLinkBuilder_ = null;
       }
       return this;
@@ -430,14 +433,24 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
     public com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest buildPartial() {
       com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest result =
           new com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest(this);
-      result.parent_ = parent_;
-      if (channelPartnerLinkBuilder_ == null) {
-        result.channelPartnerLink_ = channelPartnerLink_;
-      } else {
-        result.channelPartnerLink_ = channelPartnerLinkBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.channelPartnerLink_ =
+            channelPartnerLinkBuilder_ == null
+                ? channelPartnerLink_
+                : channelPartnerLinkBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -488,6 +501,7 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasChannelPartnerLink()) {
@@ -522,14 +536,14 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getChannelPartnerLinkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +562,8 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -616,8 +632,8 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -635,8 +651,8 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -659,8 +675,8 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,7 +703,7 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
      * @return Whether the channelPartnerLink field is set.
      */
     public boolean hasChannelPartnerLink() {
-      return channelPartnerLinkBuilder_ != null || channelPartnerLink_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -732,11 +748,11 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         channelPartnerLink_ = value;
-        onChanged();
       } else {
         channelPartnerLinkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -756,11 +772,11 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
         com.google.cloud.channel.v1.ChannelPartnerLink.Builder builderForValue) {
       if (channelPartnerLinkBuilder_ == null) {
         channelPartnerLink_ = builderForValue.build();
-        onChanged();
       } else {
         channelPartnerLinkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -778,19 +794,19 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
      */
     public Builder mergeChannelPartnerLink(com.google.cloud.channel.v1.ChannelPartnerLink value) {
       if (channelPartnerLinkBuilder_ == null) {
-        if (channelPartnerLink_ != null) {
-          channelPartnerLink_ =
-              com.google.cloud.channel.v1.ChannelPartnerLink.newBuilder(channelPartnerLink_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && channelPartnerLink_ != null
+            && channelPartnerLink_
+                != com.google.cloud.channel.v1.ChannelPartnerLink.getDefaultInstance()) {
+          getChannelPartnerLinkBuilder().mergeFrom(value);
         } else {
           channelPartnerLink_ = value;
         }
-        onChanged();
       } else {
         channelPartnerLinkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -807,14 +823,13 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearChannelPartnerLink() {
-      if (channelPartnerLinkBuilder_ == null) {
-        channelPartnerLink_ = null;
-        onChanged();
-      } else {
-        channelPartnerLink_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      channelPartnerLink_ = null;
+      if (channelPartnerLinkBuilder_ != null) {
+        channelPartnerLinkBuilder_.dispose();
         channelPartnerLinkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -831,7 +846,7 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
      * </code>
      */
     public com.google.cloud.channel.v1.ChannelPartnerLink.Builder getChannelPartnerLinkBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getChannelPartnerLinkFieldBuilder().getBuilder();
     }

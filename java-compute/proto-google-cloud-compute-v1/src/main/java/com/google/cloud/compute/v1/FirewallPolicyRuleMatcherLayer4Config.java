@@ -71,7 +71,9 @@ public final class FirewallPolicyRuleMatcherLayer4Config
 
   private int bitField0_;
   public static final int IP_PROTOCOL_FIELD_NUMBER = 475958960;
-  private volatile java.lang.Object ipProtocol_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipProtocol_ = "";
   /**
    *
    *
@@ -135,6 +137,8 @@ public final class FirewallPolicyRuleMatcherLayer4Config
   }
 
   public static final int PORTS_FIELD_NUMBER = 106854418;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ports_;
   /**
    *
@@ -415,8 +419,8 @@ public final class FirewallPolicyRuleMatcherLayer4Config
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipProtocol_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
@@ -447,20 +451,32 @@ public final class FirewallPolicyRuleMatcherLayer4Config
     public com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config buildPartial() {
       com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config result =
           new com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.ipProtocol_ = ipProtocol_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         ports_ = ports_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.ports_ = ports_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ipProtocol_ = ipProtocol_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -512,8 +528,8 @@ public final class FirewallPolicyRuleMatcherLayer4Config
           == com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config.getDefaultInstance())
         return this;
       if (other.hasIpProtocol()) {
-        bitField0_ |= 0x00000001;
         ipProtocol_ = other.ipProtocol_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.ports_.isEmpty()) {
@@ -659,8 +675,8 @@ public final class FirewallPolicyRuleMatcherLayer4Config
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       ipProtocol_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,8 +692,8 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      * @return This builder for chaining.
      */
     public Builder clearIpProtocol() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       ipProtocol_ = getDefaultInstance().getIpProtocol();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -698,8 +714,8 @@ public final class FirewallPolicyRuleMatcherLayer4Config
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       ipProtocol_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

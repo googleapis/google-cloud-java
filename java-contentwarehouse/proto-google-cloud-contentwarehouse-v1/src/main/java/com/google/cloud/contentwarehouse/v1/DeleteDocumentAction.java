@@ -66,7 +66,7 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENABLE_HARD_DELETE_FIELD_NUMBER = 1;
-  private boolean enableHardDelete_;
+  private boolean enableHardDelete_ = false;
   /**
    *
    *
@@ -282,8 +282,8 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableHardDelete_ = false;
-
       return this;
     }
 
@@ -311,9 +311,18 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
     public com.google.cloud.contentwarehouse.v1.DeleteDocumentAction buildPartial() {
       com.google.cloud.contentwarehouse.v1.DeleteDocumentAction result =
           new com.google.cloud.contentwarehouse.v1.DeleteDocumentAction(this);
-      result.enableHardDelete_ = enableHardDelete_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.DeleteDocumentAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableHardDelete_ = enableHardDelete_;
+      }
     }
 
     @java.lang.Override
@@ -394,7 +403,7 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 enableHardDelete_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -413,6 +422,8 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableHardDelete_;
     /**
@@ -447,6 +458,7 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
     public Builder setEnableHardDelete(boolean value) {
 
       enableHardDelete_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -463,7 +475,7 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEnableHardDelete() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableHardDelete_ = false;
       onChanged();
       return this;

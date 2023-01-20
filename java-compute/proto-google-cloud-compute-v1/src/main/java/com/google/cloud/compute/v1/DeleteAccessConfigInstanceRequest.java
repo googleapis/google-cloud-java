@@ -75,7 +75,9 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
 
   private int bitField0_;
   public static final int ACCESS_CONFIG_FIELD_NUMBER = 72856189;
-  private volatile java.lang.Object accessConfig_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object accessConfig_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -173,7 +177,9 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
   }
 
   public static final int NETWORK_INTERFACE_FIELD_NUMBER = 365387880;
-  private volatile java.lang.Object networkInterface_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkInterface_ = "";
   /**
    *
    *
@@ -222,7 +228,9 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -275,7 +283,9 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -339,7 +349,9 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -640,18 +652,13 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       accessConfig_ = "";
-
       instance_ = "";
-
       networkInterface_ = "";
-
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = "";
-
       return this;
     }
 
@@ -680,20 +687,37 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest result =
           new com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.accessConfig_ = accessConfig_;
-      result.instance_ = instance_;
-      result.networkInterface_ = networkInterface_;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.accessConfig_ = accessConfig_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.networkInterface_ = networkInterface_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -745,27 +769,32 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
         return this;
       if (!other.getAccessConfig().isEmpty()) {
         accessConfig_ = other.accessConfig_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getNetworkInterface().isEmpty()) {
         networkInterface_ = other.networkInterface_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -797,37 +826,37 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 29957474
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 146056362
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 296879706
             case 582849514:
               {
                 accessConfig_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 582849514
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1820481738
             case -1371864254:
               {
                 networkInterface_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1371864254
             default:
@@ -910,8 +939,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       accessConfig_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -927,8 +956,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearAccessConfig() {
-
       accessConfig_ = getDefaultInstance().getAccessConfig();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -949,8 +978,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       accessConfig_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1016,8 +1045,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1033,8 +1062,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1055,8 +1084,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1122,8 +1151,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkInterface_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1139,8 +1168,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearNetworkInterface() {
-
       networkInterface_ = getDefaultInstance().getNetworkInterface();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1161,8 +1190,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkInterface_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1234,8 +1263,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1253,8 +1282,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1277,8 +1306,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1296,7 +1325,7 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1358,8 +1387,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1375,8 +1404,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1397,8 +1426,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1470,8 +1499,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1489,8 +1518,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1513,8 +1542,8 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

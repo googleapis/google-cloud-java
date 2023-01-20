@@ -259,7 +259,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
 
   private int bitField0_;
   public static final int CONSUME_RESERVATION_TYPE_FIELD_NUMBER = 300736944;
-  private volatile java.lang.Object consumeReservationType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object consumeReservationType_ = "";
   /**
    *
    *
@@ -326,7 +328,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
   }
 
   public static final int KEY_FIELD_NUMBER = 106079;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -390,6 +394,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VALUES_FIELD_NUMBER = 249928994;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList values_;
   /**
    *
@@ -685,10 +691,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       consumeReservationType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       key_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
@@ -718,24 +723,35 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.ReservationAffinity buildPartial() {
       com.google.cloud.compute.v1.ReservationAffinity result =
           new com.google.cloud.compute.v1.ReservationAffinity(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.consumeReservationType_ = consumeReservationType_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.key_ = key_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.ReservationAffinity result) {
       if (((bitField0_ & 0x00000004) != 0)) {
         values_ = values_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.values_ = values_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ReservationAffinity result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.consumeReservationType_ = consumeReservationType_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.key_ = key_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -785,13 +801,13 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.compute.v1.ReservationAffinity.getDefaultInstance())
         return this;
       if (other.hasConsumeReservationType()) {
-        bitField0_ |= 0x00000001;
         consumeReservationType_ = other.consumeReservationType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasKey()) {
-        bitField0_ |= 0x00000002;
         key_ = other.key_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.values_.isEmpty()) {
@@ -947,8 +963,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       consumeReservationType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -965,8 +981,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearConsumeReservationType() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       consumeReservationType_ = getDefaultInstance().getConsumeReservationType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -988,8 +1004,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       consumeReservationType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1069,8 +1085,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       key_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1086,8 +1102,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1108,8 +1124,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       key_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

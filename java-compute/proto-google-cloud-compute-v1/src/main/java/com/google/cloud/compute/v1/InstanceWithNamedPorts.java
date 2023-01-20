@@ -405,7 +405,9 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -469,6 +471,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAMED_PORTS_FIELD_NUMBER = 427598732;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
   /**
    *
@@ -538,7 +542,9 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -831,8 +837,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instance_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (namedPortsBuilder_ == null) {
         namedPorts_ = java.util.Collections.emptyList();
       } else {
@@ -841,7 +847,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -869,12 +874,16 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.InstanceWithNamedPorts buildPartial() {
       com.google.cloud.compute.v1.InstanceWithNamedPorts result =
           new com.google.cloud.compute.v1.InstanceWithNamedPorts(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.instance_ = instance_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstanceWithNamedPorts result) {
       if (namedPortsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           namedPorts_ = java.util.Collections.unmodifiableList(namedPorts_);
@@ -884,13 +893,20 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       } else {
         result.namedPorts_ = namedPortsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InstanceWithNamedPorts result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instance_ = instance_;
+        to_bitField0_ |= 0x00000001;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = status_;
         to_bitField0_ |= 0x00000002;
       }
-      result.status_ = status_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -940,8 +956,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.compute.v1.InstanceWithNamedPorts.getDefaultInstance())
         return this;
       if (other.hasInstance()) {
-        bitField0_ |= 0x00000001;
         instance_ = other.instance_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (namedPortsBuilder_ == null) {
@@ -972,8 +988,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         }
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00000004;
         status_ = other.status_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1121,8 +1137,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1138,8 +1154,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1160,8 +1176,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1594,8 +1610,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       status_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1612,8 +1628,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1635,8 +1651,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       status_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

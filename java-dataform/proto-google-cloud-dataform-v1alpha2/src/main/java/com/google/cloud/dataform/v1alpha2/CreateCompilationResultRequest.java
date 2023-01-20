@@ -69,7 +69,9 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,7 +177,9 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.dataform.v1alpha2.CompilationResultOrBuilder
       getCompilationResultOrBuilder() {
-    return getCompilationResult();
+    return compilationResult_ == null
+        ? com.google.cloud.dataform.v1alpha2.CompilationResult.getDefaultInstance()
+        : compilationResult_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,12 +396,11 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (compilationResultBuilder_ == null) {
-        compilationResult_ = null;
-      } else {
-        compilationResult_ = null;
+      compilationResult_ = null;
+      if (compilationResultBuilder_ != null) {
+        compilationResultBuilder_.dispose();
         compilationResultBuilder_ = null;
       }
       return this;
@@ -428,14 +431,25 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
     public com.google.cloud.dataform.v1alpha2.CreateCompilationResultRequest buildPartial() {
       com.google.cloud.dataform.v1alpha2.CreateCompilationResultRequest result =
           new com.google.cloud.dataform.v1alpha2.CreateCompilationResultRequest(this);
-      result.parent_ = parent_;
-      if (compilationResultBuilder_ == null) {
-        result.compilationResult_ = compilationResult_;
-      } else {
-        result.compilationResult_ = compilationResultBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataform.v1alpha2.CreateCompilationResultRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.compilationResult_ =
+            compilationResultBuilder_ == null
+                ? compilationResult_
+                : compilationResultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -488,6 +502,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCompilationResult()) {
@@ -522,14 +537,14 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getCompilationResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +563,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -619,8 +636,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +656,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -664,8 +681,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -690,7 +707,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
      * @return Whether the compilationResult field is set.
      */
     public boolean hasCompilationResult() {
-      return compilationResultBuilder_ != null || compilationResult_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -732,11 +749,11 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         compilationResult_ = value;
-        onChanged();
       } else {
         compilationResultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -754,11 +771,11 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
         com.google.cloud.dataform.v1alpha2.CompilationResult.Builder builderForValue) {
       if (compilationResultBuilder_ == null) {
         compilationResult_ = builderForValue.build();
-        onChanged();
       } else {
         compilationResultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -775,19 +792,19 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
     public Builder mergeCompilationResult(
         com.google.cloud.dataform.v1alpha2.CompilationResult value) {
       if (compilationResultBuilder_ == null) {
-        if (compilationResult_ != null) {
-          compilationResult_ =
-              com.google.cloud.dataform.v1alpha2.CompilationResult.newBuilder(compilationResult_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && compilationResult_ != null
+            && compilationResult_
+                != com.google.cloud.dataform.v1alpha2.CompilationResult.getDefaultInstance()) {
+          getCompilationResultBuilder().mergeFrom(value);
         } else {
           compilationResult_ = value;
         }
-        onChanged();
       } else {
         compilationResultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -802,14 +819,13 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearCompilationResult() {
-      if (compilationResultBuilder_ == null) {
-        compilationResult_ = null;
-        onChanged();
-      } else {
-        compilationResult_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      compilationResult_ = null;
+      if (compilationResultBuilder_ != null) {
+        compilationResultBuilder_.dispose();
         compilationResultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -825,7 +841,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.dataform.v1alpha2.CompilationResult.Builder
         getCompilationResultBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCompilationResultFieldBuilder().getBuilder();
     }

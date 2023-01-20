@@ -74,7 +74,9 @@ public final class ListGlobalOrganizationOperationsRequest
 
   private int bitField0_;
   public static final int FILTER_FIELD_NUMBER = 336120696;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -138,7 +140,7 @@ public final class ListGlobalOrganizationOperationsRequest
   }
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
-  private int maxResults_;
+  private int maxResults_ = 0;
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class ListGlobalOrganizationOperationsRequest
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 160562920;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -235,7 +239,9 @@ public final class ListGlobalOrganizationOperationsRequest
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 19994697;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -299,7 +305,9 @@ public final class ListGlobalOrganizationOperationsRequest
   }
 
   public static final int PARENT_ID_FIELD_NUMBER = 459714768;
-  private volatile java.lang.Object parentId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentId_ = "";
   /**
    *
    *
@@ -363,7 +371,7 @@ public final class ListGlobalOrganizationOperationsRequest
   }
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
-  private boolean returnPartialSuccess_;
+  private boolean returnPartialSuccess_ = false;
   /**
    *
    *
@@ -671,18 +679,13 @@ public final class ListGlobalOrganizationOperationsRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filter_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       maxResults_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       orderBy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       pageToken_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       parentId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       returnPartialSuccess_ = false;
-      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -712,35 +715,42 @@ public final class ListGlobalOrganizationOperationsRequest
     public com.google.cloud.compute.v1.ListGlobalOrganizationOperationsRequest buildPartial() {
       com.google.cloud.compute.v1.ListGlobalOrganizationOperationsRequest result =
           new com.google.cloud.compute.v1.ListGlobalOrganizationOperationsRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ListGlobalOrganizationOperationsRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.filter_ = filter_;
         to_bitField0_ |= 0x00000001;
       }
-      result.filter_ = filter_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.maxResults_ = maxResults_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.orderBy_ = orderBy_;
         to_bitField0_ |= 0x00000004;
       }
-      result.orderBy_ = orderBy_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageToken_ = pageToken_;
         to_bitField0_ |= 0x00000008;
       }
-      result.pageToken_ = pageToken_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.parentId_ = parentId_;
         to_bitField0_ |= 0x00000010;
       }
-      result.parentId_ = parentId_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.returnPartialSuccess_ = returnPartialSuccess_;
         to_bitField0_ |= 0x00000020;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -793,26 +803,26 @@ public final class ListGlobalOrganizationOperationsRequest
           == com.google.cloud.compute.v1.ListGlobalOrganizationOperationsRequest
               .getDefaultInstance()) return this;
       if (other.hasFilter()) {
-        bitField0_ |= 0x00000001;
         filter_ = other.filter_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMaxResults()) {
         setMaxResults(other.getMaxResults());
       }
       if (other.hasOrderBy()) {
-        bitField0_ |= 0x00000004;
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasPageToken()) {
-        bitField0_ |= 0x00000008;
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasParentId()) {
-        bitField0_ |= 0x00000010;
         parentId_ = other.parentId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasReturnPartialSuccess()) {
@@ -974,8 +984,8 @@ public final class ListGlobalOrganizationOperationsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -991,8 +1001,8 @@ public final class ListGlobalOrganizationOperationsRequest
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1013,8 +1023,8 @@ public final class ListGlobalOrganizationOperationsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1063,8 +1073,9 @@ public final class ListGlobalOrganizationOperationsRequest
      * @return This builder for chaining.
      */
     public Builder setMaxResults(int value) {
-      bitField0_ |= 0x00000002;
+
       maxResults_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1161,8 +1172,8 @@ public final class ListGlobalOrganizationOperationsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       orderBy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1178,8 +1189,8 @@ public final class ListGlobalOrganizationOperationsRequest
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1200,8 +1211,8 @@ public final class ListGlobalOrganizationOperationsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       orderBy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1281,8 +1292,8 @@ public final class ListGlobalOrganizationOperationsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1298,8 +1309,8 @@ public final class ListGlobalOrganizationOperationsRequest
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1320,8 +1331,8 @@ public final class ListGlobalOrganizationOperationsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1401,8 +1412,8 @@ public final class ListGlobalOrganizationOperationsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       parentId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1418,8 +1429,8 @@ public final class ListGlobalOrganizationOperationsRequest
      * @return This builder for chaining.
      */
     public Builder clearParentId() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       parentId_ = getDefaultInstance().getParentId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1440,8 +1451,8 @@ public final class ListGlobalOrganizationOperationsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       parentId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1490,8 +1501,9 @@ public final class ListGlobalOrganizationOperationsRequest
      * @return This builder for chaining.
      */
     public Builder setReturnPartialSuccess(boolean value) {
-      bitField0_ |= 0x00000020;
+
       returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

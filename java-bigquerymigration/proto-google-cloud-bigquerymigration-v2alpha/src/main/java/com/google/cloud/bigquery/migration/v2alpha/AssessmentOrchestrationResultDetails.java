@@ -72,7 +72,9 @@ public final class AssessmentOrchestrationResultDetails
   }
 
   public static final int OUTPUT_TABLES_SCHEMA_VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object outputTablesSchemaVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputTablesSchemaVersion_ = "";
   /**
    *
    *
@@ -331,8 +333,8 @@ public final class AssessmentOrchestrationResultDetails
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       outputTablesSchemaVersion_ = "";
-
       return this;
     }
 
@@ -366,9 +368,19 @@ public final class AssessmentOrchestrationResultDetails
       com.google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetails result =
           new com.google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetails(
               this);
-      result.outputTablesSchemaVersion_ = outputTablesSchemaVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.outputTablesSchemaVersion_ = outputTablesSchemaVersion_;
+      }
     }
 
     @java.lang.Override
@@ -425,6 +437,7 @@ public final class AssessmentOrchestrationResultDetails
               .getDefaultInstance()) return this;
       if (!other.getOutputTablesSchemaVersion().isEmpty()) {
         outputTablesSchemaVersion_ = other.outputTablesSchemaVersion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -456,7 +469,7 @@ public final class AssessmentOrchestrationResultDetails
             case 10:
               {
                 outputTablesSchemaVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -475,6 +488,8 @@ public final class AssessmentOrchestrationResultDetails
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object outputTablesSchemaVersion_ = "";
     /**
@@ -540,8 +555,8 @@ public final class AssessmentOrchestrationResultDetails
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputTablesSchemaVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -558,8 +573,8 @@ public final class AssessmentOrchestrationResultDetails
      * @return This builder for chaining.
      */
     public Builder clearOutputTablesSchemaVersion() {
-
       outputTablesSchemaVersion_ = getDefaultInstance().getOutputTablesSchemaVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -581,8 +596,8 @@ public final class AssessmentOrchestrationResultDetails
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputTablesSchemaVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

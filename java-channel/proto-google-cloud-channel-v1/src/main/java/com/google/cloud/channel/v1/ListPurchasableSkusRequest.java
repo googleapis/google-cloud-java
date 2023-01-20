@@ -157,7 +157,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
     }
 
     public static final int PRODUCT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object product_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object product_ = "";
     /**
      *
      *
@@ -423,8 +425,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         product_ = "";
-
         return this;
       }
 
@@ -458,9 +460,19 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         com.google.cloud.channel.v1.ListPurchasableSkusRequest.CreateEntitlementPurchase result =
             new com.google.cloud.channel.v1.ListPurchasableSkusRequest.CreateEntitlementPurchase(
                 this);
-        result.product_ = product_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.channel.v1.ListPurchasableSkusRequest.CreateEntitlementPurchase result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.product_ = product_;
+        }
       }
 
       @java.lang.Override
@@ -519,6 +531,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
                 .getDefaultInstance()) return this;
         if (!other.getProduct().isEmpty()) {
           product_ = other.product_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -550,7 +563,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
               case 10:
                 {
                   product_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -569,6 +582,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object product_ = "";
       /**
@@ -637,8 +652,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
         product_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -656,8 +671,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearProduct() {
-
         product_ = getDefaultInstance().getProduct();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -680,8 +695,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         product_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1034,7 +1049,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
     }
 
     public static final int ENTITLEMENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object entitlement_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entitlement_ = "";
     /**
      *
      *
@@ -1087,7 +1104,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
     }
 
     public static final int CHANGE_TYPE_FIELD_NUMBER = 2;
-    private int changeType_;
+    private int changeType_ = 0;
     /**
      *
      *
@@ -1121,10 +1138,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase.ChangeType
         getChangeType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase.ChangeType result =
           com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase.ChangeType
-              .valueOf(changeType_);
+              .forNumber(changeType_);
       return result == null
           ? com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase.ChangeType
               .UNRECOGNIZED
@@ -1357,10 +1373,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entitlement_ = "";
-
         changeType_ = 0;
-
         return this;
       }
 
@@ -1392,10 +1407,22 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
           buildPartial() {
         com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase result =
             new com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase(this);
-        result.entitlement_ = entitlement_;
-        result.changeType_ = changeType_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entitlement_ = entitlement_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.changeType_ = changeType_;
+        }
       }
 
       @java.lang.Override
@@ -1452,6 +1479,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
                 .getDefaultInstance()) return this;
         if (!other.getEntitlement().isEmpty()) {
           entitlement_ = other.entitlement_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.changeType_ != 0) {
@@ -1486,13 +1514,13 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
               case 10:
                 {
                   entitlement_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   changeType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -1511,6 +1539,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object entitlement_ = "";
       /**
@@ -1579,8 +1609,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
         entitlement_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1598,8 +1628,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearEntitlement() {
-
         entitlement_ = getDefaultInstance().getEntitlement();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1622,8 +1652,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entitlement_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1661,8 +1691,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder setChangeTypeValue(int value) {
-
         changeType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1682,11 +1712,10 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       @java.lang.Override
       public com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase.ChangeType
           getChangeType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase.ChangeType
             result =
                 com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase
-                    .ChangeType.valueOf(changeType_);
+                    .ChangeType.forNumber(changeType_);
         return result == null
             ? com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase.ChangeType
                 .UNRECOGNIZED
@@ -1712,7 +1741,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         changeType_ = value.getNumber();
         onChanged();
         return this;
@@ -1731,7 +1760,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearChangeType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         changeType_ = 0;
         onChanged();
         return this;
@@ -1979,7 +2008,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
   }
 
   public static final int CUSTOMER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object customer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customer_ = "";
   /**
    *
    *
@@ -2034,7 +2065,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -2054,7 +2085,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 5;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -2103,7 +2136,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -2430,6 +2465,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (createEntitlementPurchaseBuilder_ != null) {
         createEntitlementPurchaseBuilder_.clear();
       }
@@ -2437,13 +2473,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         changeOfferPurchaseBuilder_.clear();
       }
       customer_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       languageCode_ = "";
-
       purchaseOptionCase_ = 0;
       purchaseOption_ = null;
       return this;
@@ -2473,27 +2505,39 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
     public com.google.cloud.channel.v1.ListPurchasableSkusRequest buildPartial() {
       com.google.cloud.channel.v1.ListPurchasableSkusRequest result =
           new com.google.cloud.channel.v1.ListPurchasableSkusRequest(this);
-      if (purchaseOptionCase_ == 2) {
-        if (createEntitlementPurchaseBuilder_ == null) {
-          result.purchaseOption_ = purchaseOption_;
-        } else {
-          result.purchaseOption_ = createEntitlementPurchaseBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (purchaseOptionCase_ == 3) {
-        if (changeOfferPurchaseBuilder_ == null) {
-          result.purchaseOption_ = purchaseOption_;
-        } else {
-          result.purchaseOption_ = changeOfferPurchaseBuilder_.build();
-        }
-      }
-      result.customer_ = customer_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.languageCode_ = languageCode_;
-      result.purchaseOptionCase_ = purchaseOptionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ListPurchasableSkusRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.customer_ = customer_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.channel.v1.ListPurchasableSkusRequest result) {
+      result.purchaseOptionCase_ = purchaseOptionCase_;
+      result.purchaseOption_ = this.purchaseOption_;
+      if (purchaseOptionCase_ == 2 && createEntitlementPurchaseBuilder_ != null) {
+        result.purchaseOption_ = createEntitlementPurchaseBuilder_.build();
+      }
+      if (purchaseOptionCase_ == 3 && changeOfferPurchaseBuilder_ != null) {
+        result.purchaseOption_ = changeOfferPurchaseBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2544,6 +2588,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getCustomer().isEmpty()) {
         customer_ = other.customer_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -2551,10 +2596,12 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       switch (other.getPurchaseOptionCase()) {
@@ -2602,7 +2649,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
             case 10:
               {
                 customer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -2622,19 +2669,19 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
             case 32:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -2667,6 +2714,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.channel.v1.ListPurchasableSkusRequest.CreateEntitlementPurchase,
@@ -2917,7 +2966,6 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       }
       purchaseOptionCase_ = 2;
       onChanged();
-      ;
       return createEntitlementPurchaseBuilder_;
     }
 
@@ -3163,7 +3211,6 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       }
       purchaseOptionCase_ = 3;
       onChanged();
-      ;
       return changeOfferPurchaseBuilder_;
     }
 
@@ -3237,8 +3284,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       customer_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3257,8 +3304,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearCustomer() {
-
       customer_ = getDefaultInstance().getCustomer();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3282,8 +3329,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       customer_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3323,6 +3370,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3340,7 +3388,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -3407,8 +3455,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3424,8 +3472,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3446,8 +3494,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3519,8 +3567,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3538,8 +3586,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3562,8 +3610,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -109,7 +109,7 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.SkuOrBuilder getSkuOrBuilder() {
-    return getSku();
+    return sku_ == null ? com.google.cloud.channel.v1.Sku.getDefaultInstance() : sku_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +315,10 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (skuBuilder_ == null) {
-        sku_ = null;
-      } else {
-        sku_ = null;
+      bitField0_ = 0;
+      sku_ = null;
+      if (skuBuilder_ != null) {
+        skuBuilder_.dispose();
         skuBuilder_ = null;
       }
       return this;
@@ -348,13 +348,18 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.PurchasableSku buildPartial() {
       com.google.cloud.channel.v1.PurchasableSku result =
           new com.google.cloud.channel.v1.PurchasableSku(this);
-      if (skuBuilder_ == null) {
-        result.sku_ = sku_;
-      } else {
-        result.sku_ = skuBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.PurchasableSku result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sku_ = skuBuilder_ == null ? sku_ : skuBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -434,7 +439,7 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getSkuFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -454,6 +459,8 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.channel.v1.Sku sku_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.channel.v1.Sku,
@@ -472,7 +479,7 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sku field is set.
      */
     public boolean hasSku() {
-      return skuBuilder_ != null || sku_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -507,11 +514,11 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sku_ = value;
-        onChanged();
       } else {
         skuBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -526,11 +533,11 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
     public Builder setSku(com.google.cloud.channel.v1.Sku.Builder builderForValue) {
       if (skuBuilder_ == null) {
         sku_ = builderForValue.build();
-        onChanged();
       } else {
         skuBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -544,16 +551,18 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSku(com.google.cloud.channel.v1.Sku value) {
       if (skuBuilder_ == null) {
-        if (sku_ != null) {
-          sku_ = com.google.cloud.channel.v1.Sku.newBuilder(sku_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && sku_ != null
+            && sku_ != com.google.cloud.channel.v1.Sku.getDefaultInstance()) {
+          getSkuBuilder().mergeFrom(value);
         } else {
           sku_ = value;
         }
-        onChanged();
       } else {
         skuBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -566,14 +575,13 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Sku sku = 1;</code>
      */
     public Builder clearSku() {
-      if (skuBuilder_ == null) {
-        sku_ = null;
-        onChanged();
-      } else {
-        sku_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      sku_ = null;
+      if (skuBuilder_ != null) {
+        skuBuilder_.dispose();
         skuBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -586,7 +594,7 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Sku sku = 1;</code>
      */
     public com.google.cloud.channel.v1.Sku.Builder getSkuBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSkuFieldBuilder().getBuilder();
     }

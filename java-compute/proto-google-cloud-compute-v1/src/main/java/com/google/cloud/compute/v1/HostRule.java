@@ -71,7 +71,9 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -135,6 +137,8 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HOSTS_FIELD_NUMBER = 99467211;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList hosts_;
   /**
    *
@@ -196,7 +200,9 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_MATCHER_FIELD_NUMBER = 337813272;
-  private volatile java.lang.Object pathMatcher_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pathMatcher_ = "";
   /**
    *
    *
@@ -489,12 +495,11 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       pathMatcher_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -521,24 +526,34 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.HostRule buildPartial() {
       com.google.cloud.compute.v1.HostRule result = new com.google.cloud.compute.v1.HostRule(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.description_ = description_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HostRule result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         hosts_ = hosts_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.hosts_ = hosts_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HostRule result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000001;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pathMatcher_ = pathMatcher_;
         to_bitField0_ |= 0x00000002;
       }
-      result.pathMatcher_ = pathMatcher_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -587,8 +602,8 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.HostRule other) {
       if (other == com.google.cloud.compute.v1.HostRule.getDefaultInstance()) return this;
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000001;
         description_ = other.description_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.hosts_.isEmpty()) {
@@ -602,8 +617,8 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasPathMatcher()) {
-        bitField0_ |= 0x00000004;
         pathMatcher_ = other.pathMatcher_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -745,8 +760,8 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -762,8 +777,8 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -784,8 +799,8 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1033,8 +1048,8 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       pathMatcher_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1050,8 +1065,8 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPathMatcher() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       pathMatcher_ = getDefaultInstance().getPathMatcher();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1072,8 +1087,8 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       pathMatcher_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

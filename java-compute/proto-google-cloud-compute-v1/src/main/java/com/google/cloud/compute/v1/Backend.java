@@ -250,7 +250,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int BALANCING_MODE_FIELD_NUMBER = 430286217;
-  private volatile java.lang.Object balancingMode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object balancingMode_ = "";
   /**
    *
    *
@@ -317,7 +319,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CAPACITY_SCALER_FIELD_NUMBER = 315958157;
-  private float capacityScaler_;
+  private float capacityScaler_ = 0F;
   /**
    *
    *
@@ -350,7 +352,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -414,7 +418,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAILOVER_FIELD_NUMBER = 138892530;
-  private boolean failover_;
+  private boolean failover_ = false;
   /**
    *
    *
@@ -447,7 +451,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GROUP_FIELD_NUMBER = 98629247;
-  private volatile java.lang.Object group_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object group_ = "";
   /**
    *
    *
@@ -511,7 +517,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_CONNECTIONS_FIELD_NUMBER = 110652154;
-  private int maxConnections_;
+  private int maxConnections_ = 0;
   /**
    *
    *
@@ -544,7 +550,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_CONNECTIONS_PER_ENDPOINT_FIELD_NUMBER = 216904604;
-  private int maxConnectionsPerEndpoint_;
+  private int maxConnectionsPerEndpoint_ = 0;
   /**
    *
    *
@@ -577,7 +583,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_CONNECTIONS_PER_INSTANCE_FIELD_NUMBER = 104671900;
-  private int maxConnectionsPerInstance_;
+  private int maxConnectionsPerInstance_ = 0;
   /**
    *
    *
@@ -610,7 +616,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_RATE_FIELD_NUMBER = 408035035;
-  private int maxRate_;
+  private int maxRate_ = 0;
   /**
    *
    *
@@ -643,7 +649,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_RATE_PER_ENDPOINT_FIELD_NUMBER = 129832283;
-  private float maxRatePerEndpoint_;
+  private float maxRatePerEndpoint_ = 0F;
   /**
    *
    *
@@ -676,7 +682,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_RATE_PER_INSTANCE_FIELD_NUMBER = 17599579;
-  private float maxRatePerInstance_;
+  private float maxRatePerInstance_ = 0F;
   /**
    *
    *
@@ -709,7 +715,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_UTILIZATION_FIELD_NUMBER = 148192199;
-  private float maxUtilization_;
+  private float maxUtilization_ = 0F;
   /**
    *
    *
@@ -1104,30 +1110,19 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       balancingMode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       capacityScaler_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       failover_ = false;
-      bitField0_ = (bitField0_ & ~0x00000008);
       group_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       maxConnections_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
       maxConnectionsPerEndpoint_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
       maxConnectionsPerInstance_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000080);
       maxRate_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000100);
       maxRatePerEndpoint_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000200);
       maxRatePerInstance_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000400);
       maxUtilization_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1154,28 +1149,36 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Backend buildPartial() {
       com.google.cloud.compute.v1.Backend result = new com.google.cloud.compute.v1.Backend(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Backend result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.balancingMode_ = balancingMode_;
         to_bitField0_ |= 0x00000001;
       }
-      result.balancingMode_ = balancingMode_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.capacityScaler_ = capacityScaler_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000004;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.failover_ = failover_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.group_ = group_;
         to_bitField0_ |= 0x00000010;
       }
-      result.group_ = group_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.maxConnections_ = maxConnections_;
         to_bitField0_ |= 0x00000020;
@@ -1204,9 +1207,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
         result.maxUtilization_ = maxUtilization_;
         to_bitField0_ |= 0x00000800;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1255,24 +1256,24 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Backend other) {
       if (other == com.google.cloud.compute.v1.Backend.getDefaultInstance()) return this;
       if (other.hasBalancingMode()) {
-        bitField0_ |= 0x00000001;
         balancingMode_ = other.balancingMode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCapacityScaler()) {
         setCapacityScaler(other.getCapacityScaler());
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000004;
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasFailover()) {
         setFailover(other.getFailover());
       }
       if (other.hasGroup()) {
-        bitField0_ |= 0x00000010;
         group_ = other.group_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasMaxConnections()) {
@@ -1492,8 +1493,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       balancingMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1510,8 +1511,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBalancingMode() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       balancingMode_ = getDefaultInstance().getBalancingMode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1533,8 +1534,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       balancingMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1583,8 +1584,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCapacityScaler(float value) {
-      bitField0_ |= 0x00000002;
+
       capacityScaler_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1681,8 +1683,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1698,8 +1700,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1720,8 +1722,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1770,8 +1772,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFailover(boolean value) {
-      bitField0_ |= 0x00000008;
+
       failover_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1868,8 +1871,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       group_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1885,8 +1888,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGroup() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       group_ = getDefaultInstance().getGroup();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1907,8 +1910,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       group_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1957,8 +1960,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxConnections(int value) {
-      bitField0_ |= 0x00000020;
+
       maxConnections_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2024,8 +2028,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxConnectionsPerEndpoint(int value) {
-      bitField0_ |= 0x00000040;
+
       maxConnectionsPerEndpoint_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2091,8 +2096,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxConnectionsPerInstance(int value) {
-      bitField0_ |= 0x00000080;
+
       maxConnectionsPerInstance_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2158,8 +2164,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxRate(int value) {
-      bitField0_ |= 0x00000100;
+
       maxRate_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2225,8 +2232,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxRatePerEndpoint(float value) {
-      bitField0_ |= 0x00000200;
+
       maxRatePerEndpoint_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2292,8 +2300,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxRatePerInstance(float value) {
-      bitField0_ |= 0x00000400;
+
       maxRatePerInstance_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2359,8 +2368,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxUtilization(float value) {
-      bitField0_ |= 0x00000800;
+
       maxUtilization_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

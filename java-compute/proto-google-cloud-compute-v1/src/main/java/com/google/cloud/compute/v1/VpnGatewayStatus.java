@@ -67,6 +67,8 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VPN_CONNECTIONS_FIELD_NUMBER = 439334538;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection> vpnConnections_;
   /**
    *
@@ -348,6 +350,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (vpnConnectionsBuilder_ == null) {
         vpnConnections_ = java.util.Collections.emptyList();
       } else {
@@ -382,7 +385,15 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.VpnGatewayStatus buildPartial() {
       com.google.cloud.compute.v1.VpnGatewayStatus result =
           new com.google.cloud.compute.v1.VpnGatewayStatus(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.VpnGatewayStatus result) {
       if (vpnConnectionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           vpnConnections_ = java.util.Collections.unmodifiableList(vpnConnections_);
@@ -392,8 +403,10 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       } else {
         result.vpnConnections_ = vpnConnectionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.VpnGatewayStatus result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

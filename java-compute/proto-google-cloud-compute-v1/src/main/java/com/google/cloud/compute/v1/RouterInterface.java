@@ -232,7 +232,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int IP_RANGE_FIELD_NUMBER = 145092645;
-  private volatile java.lang.Object ipRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipRange_ = "";
   /**
    *
    *
@@ -296,7 +298,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LINKED_INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 501085518;
-  private volatile java.lang.Object linkedInterconnectAttachment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object linkedInterconnectAttachment_ = "";
   /**
    *
    *
@@ -360,7 +364,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LINKED_VPN_TUNNEL_FIELD_NUMBER = 352296953;
-  private volatile java.lang.Object linkedVpnTunnel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object linkedVpnTunnel_ = "";
   /**
    *
    *
@@ -424,7 +430,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MANAGEMENT_TYPE_FIELD_NUMBER = 173703606;
-  private volatile java.lang.Object managementType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object managementType_ = "";
   /**
    *
    *
@@ -491,7 +499,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -555,7 +565,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PRIVATE_IP_ADDRESS_FIELD_NUMBER = 100854040;
-  private volatile java.lang.Object privateIpAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object privateIpAddress_ = "";
   /**
    *
    *
@@ -619,7 +631,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int REDUNDANT_INTERFACE_FIELD_NUMBER = 523187303;
-  private volatile java.lang.Object redundantInterface_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redundantInterface_ = "";
   /**
    *
    *
@@ -683,7 +697,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -1051,22 +1067,15 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipRange_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       linkedInterconnectAttachment_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       linkedVpnTunnel_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       managementType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       privateIpAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       redundantInterface_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       subnetwork_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -1094,43 +1103,49 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.RouterInterface buildPartial() {
       com.google.cloud.compute.v1.RouterInterface result =
           new com.google.cloud.compute.v1.RouterInterface(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterInterface result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ipRange_ = ipRange_;
         to_bitField0_ |= 0x00000001;
       }
-      result.ipRange_ = ipRange_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.linkedInterconnectAttachment_ = linkedInterconnectAttachment_;
         to_bitField0_ |= 0x00000002;
       }
-      result.linkedInterconnectAttachment_ = linkedInterconnectAttachment_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.linkedVpnTunnel_ = linkedVpnTunnel_;
         to_bitField0_ |= 0x00000004;
       }
-      result.linkedVpnTunnel_ = linkedVpnTunnel_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.managementType_ = managementType_;
         to_bitField0_ |= 0x00000008;
       }
-      result.managementType_ = managementType_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000010;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.privateIpAddress_ = privateIpAddress_;
         to_bitField0_ |= 0x00000020;
       }
-      result.privateIpAddress_ = privateIpAddress_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.redundantInterface_ = redundantInterface_;
         to_bitField0_ |= 0x00000040;
       }
-      result.redundantInterface_ = redundantInterface_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.subnetwork_ = subnetwork_;
         to_bitField0_ |= 0x00000080;
       }
-      result.subnetwork_ = subnetwork_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1179,43 +1194,43 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.compute.v1.RouterInterface other) {
       if (other == com.google.cloud.compute.v1.RouterInterface.getDefaultInstance()) return this;
       if (other.hasIpRange()) {
-        bitField0_ |= 0x00000001;
         ipRange_ = other.ipRange_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasLinkedInterconnectAttachment()) {
-        bitField0_ |= 0x00000002;
         linkedInterconnectAttachment_ = other.linkedInterconnectAttachment_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasLinkedVpnTunnel()) {
-        bitField0_ |= 0x00000004;
         linkedVpnTunnel_ = other.linkedVpnTunnel_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasManagementType()) {
-        bitField0_ |= 0x00000008;
         managementType_ = other.managementType_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000010;
         name_ = other.name_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasPrivateIpAddress()) {
-        bitField0_ |= 0x00000020;
         privateIpAddress_ = other.privateIpAddress_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasRedundantInterface()) {
-        bitField0_ |= 0x00000040;
         redundantInterface_ = other.redundantInterface_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasSubnetwork()) {
-        bitField0_ |= 0x00000080;
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1386,8 +1401,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       ipRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1403,8 +1418,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIpRange() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       ipRange_ = getDefaultInstance().getIpRange();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1425,8 +1440,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       ipRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1506,8 +1521,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       linkedInterconnectAttachment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1523,8 +1538,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearLinkedInterconnectAttachment() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       linkedInterconnectAttachment_ = getDefaultInstance().getLinkedInterconnectAttachment();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1545,8 +1560,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       linkedInterconnectAttachment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1626,8 +1641,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       linkedVpnTunnel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1643,8 +1658,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearLinkedVpnTunnel() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       linkedVpnTunnel_ = getDefaultInstance().getLinkedVpnTunnel();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1665,8 +1680,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       linkedVpnTunnel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1750,8 +1765,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       managementType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1768,8 +1783,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearManagementType() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       managementType_ = getDefaultInstance().getManagementType();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1791,8 +1806,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       managementType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1872,8 +1887,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       name_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1889,8 +1904,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1911,8 +1926,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       name_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1992,8 +2007,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       privateIpAddress_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2009,8 +2024,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPrivateIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       privateIpAddress_ = getDefaultInstance().getPrivateIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2031,8 +2046,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       privateIpAddress_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2112,8 +2127,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       redundantInterface_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2129,8 +2144,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRedundantInterface() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       redundantInterface_ = getDefaultInstance().getRedundantInterface();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2151,8 +2166,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       redundantInterface_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2232,8 +2247,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       subnetwork_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2249,8 +2264,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2271,8 +2286,8 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       subnetwork_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

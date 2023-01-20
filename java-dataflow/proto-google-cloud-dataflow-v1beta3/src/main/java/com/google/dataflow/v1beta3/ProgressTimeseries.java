@@ -210,11 +210,11 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
-      return getTime();
+      return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
     }
 
     public static final int VALUE_FIELD_NUMBER = 2;
-    private double value_;
+    private double value_ = 0D;
     /**
      *
      *
@@ -449,14 +449,13 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (timeBuilder_ == null) {
-          time_ = null;
-        } else {
-          time_ = null;
+        bitField0_ = 0;
+        time_ = null;
+        if (timeBuilder_ != null) {
+          timeBuilder_.dispose();
           timeBuilder_ = null;
         }
         value_ = 0D;
-
         return this;
       }
 
@@ -484,14 +483,21 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       public com.google.dataflow.v1beta3.ProgressTimeseries.Point buildPartial() {
         com.google.dataflow.v1beta3.ProgressTimeseries.Point result =
             new com.google.dataflow.v1beta3.ProgressTimeseries.Point(this);
-        if (timeBuilder_ == null) {
-          result.time_ = time_;
-        } else {
-          result.time_ = timeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.value_ = value_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.dataflow.v1beta3.ProgressTimeseries.Point result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.time_ = timeBuilder_ == null ? time_ : timeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -577,13 +583,13 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   input.readMessage(getTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 17:
                 {
                   value_ = input.readDouble();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 17
               default:
@@ -603,6 +609,8 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.protobuf.Timestamp time_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -621,7 +629,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
        * @return Whether the time field is set.
        */
       public boolean hasTime() {
-        return timeBuilder_ != null || time_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -656,11 +664,11 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           time_ = value;
-          onChanged();
         } else {
           timeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -675,11 +683,11 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       public Builder setTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (timeBuilder_ == null) {
           time_ = builderForValue.build();
-          onChanged();
         } else {
           timeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -693,16 +701,18 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
-          if (time_ != null) {
-            time_ = com.google.protobuf.Timestamp.newBuilder(time_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && time_ != null
+              && time_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getTimeBuilder().mergeFrom(value);
           } else {
             time_ = value;
           }
-          onChanged();
         } else {
           timeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -715,14 +725,13 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Timestamp time = 1;</code>
        */
       public Builder clearTime() {
-        if (timeBuilder_ == null) {
-          time_ = null;
-          onChanged();
-        } else {
-          time_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        time_ = null;
+        if (timeBuilder_ != null) {
+          timeBuilder_.dispose();
           timeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -735,7 +744,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Timestamp time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTimeFieldBuilder().getBuilder();
       }
@@ -812,6 +821,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       public Builder setValue(double value) {
 
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -827,7 +837,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         value_ = 0D;
         onChanged();
         return this;
@@ -898,7 +908,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CURRENT_PROGRESS_FIELD_NUMBER = 1;
-  private double currentProgress_;
+  private double currentProgress_ = 0D;
   /**
    *
    *
@@ -916,6 +926,8 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DATA_POINTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ProgressTimeseries.Point> dataPoints_;
   /**
    *
@@ -1202,15 +1214,15 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       currentProgress_ = 0D;
-
       if (dataPointsBuilder_ == null) {
         dataPoints_ = java.util.Collections.emptyList();
       } else {
         dataPoints_ = null;
         dataPointsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1238,19 +1250,31 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     public com.google.dataflow.v1beta3.ProgressTimeseries buildPartial() {
       com.google.dataflow.v1beta3.ProgressTimeseries result =
           new com.google.dataflow.v1beta3.ProgressTimeseries(this);
-      int from_bitField0_ = bitField0_;
-      result.currentProgress_ = currentProgress_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.ProgressTimeseries result) {
       if (dataPointsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           dataPoints_ = java.util.Collections.unmodifiableList(dataPoints_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.dataPoints_ = dataPoints_;
       } else {
         result.dataPoints_ = dataPointsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.ProgressTimeseries result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.currentProgress_ = currentProgress_;
+      }
     }
 
     @java.lang.Override
@@ -1305,7 +1329,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         if (!other.dataPoints_.isEmpty()) {
           if (dataPoints_.isEmpty()) {
             dataPoints_ = other.dataPoints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureDataPointsIsMutable();
             dataPoints_.addAll(other.dataPoints_);
@@ -1318,7 +1342,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
             dataPointsBuilder_.dispose();
             dataPointsBuilder_ = null;
             dataPoints_ = other.dataPoints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             dataPointsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDataPointsFieldBuilder()
@@ -1357,7 +1381,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
             case 9:
               {
                 currentProgress_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 18:
@@ -1424,6 +1448,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     public Builder setCurrentProgress(double value) {
 
       currentProgress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1439,7 +1464,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCurrentProgress() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       currentProgress_ = 0D;
       onChanged();
       return this;
@@ -1449,11 +1474,11 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureDataPointsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         dataPoints_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.ProgressTimeseries.Point>(
                 dataPoints_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1683,7 +1708,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     public Builder clearDataPoints() {
       if (dataPointsBuilder_ == null) {
         dataPoints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         dataPointsBuilder_.clear();
@@ -1816,7 +1841,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
                 com.google.dataflow.v1beta3.ProgressTimeseries.Point,
                 com.google.dataflow.v1beta3.ProgressTimeseries.Point.Builder,
                 com.google.dataflow.v1beta3.ProgressTimeseries.PointOrBuilder>(
-                dataPoints_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                dataPoints_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         dataPoints_ = null;
       }
       return dataPointsBuilder_;

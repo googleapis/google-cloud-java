@@ -424,7 +424,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OPERATION_TYPE_FIELD_NUMBER = 1;
-  private int operationType_;
+  private int operationType_ = 0;
   /**
    *
    *
@@ -453,9 +453,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.OperationMetadata.OperationType getOperationType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.OperationMetadata.OperationType result =
-        com.google.cloud.channel.v1.OperationMetadata.OperationType.valueOf(operationType_);
+        com.google.cloud.channel.v1.OperationMetadata.OperationType.forNumber(operationType_);
     return result == null
         ? com.google.cloud.channel.v1.OperationMetadata.OperationType.UNRECOGNIZED
         : result;
@@ -663,8 +662,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       operationType_ = 0;
-
       return this;
     }
 
@@ -692,9 +691,18 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.channel.v1.OperationMetadata buildPartial() {
       com.google.cloud.channel.v1.OperationMetadata result =
           new com.google.cloud.channel.v1.OperationMetadata(this);
-      result.operationType_ = operationType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.OperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operationType_ = operationType_;
+      }
     }
 
     @java.lang.Override
@@ -774,7 +782,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 operationType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -793,6 +801,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int operationType_ = 0;
     /**
@@ -823,8 +833,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setOperationTypeValue(int value) {
-
       operationType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -841,9 +851,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.OperationMetadata.OperationType getOperationType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.OperationMetadata.OperationType result =
-          com.google.cloud.channel.v1.OperationMetadata.OperationType.valueOf(operationType_);
+          com.google.cloud.channel.v1.OperationMetadata.OperationType.forNumber(operationType_);
       return result == null
           ? com.google.cloud.channel.v1.OperationMetadata.OperationType.UNRECOGNIZED
           : result;
@@ -865,7 +874,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       operationType_ = value.getNumber();
       onChanged();
       return this;
@@ -882,7 +891,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearOperationType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       operationType_ = 0;
       onChanged();
       return this;

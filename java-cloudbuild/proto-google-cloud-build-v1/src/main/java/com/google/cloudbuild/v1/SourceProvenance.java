@@ -125,7 +125,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.StorageSourceOrBuilder getResolvedStorageSourceOrBuilder() {
-    return getResolvedStorageSource();
+    return resolvedStorageSource_ == null
+        ? com.google.cloudbuild.v1.StorageSource.getDefaultInstance()
+        : resolvedStorageSource_;
   }
 
   public static final int RESOLVED_REPO_SOURCE_FIELD_NUMBER = 6;
@@ -176,7 +178,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.RepoSourceOrBuilder getResolvedRepoSourceOrBuilder() {
-    return getResolvedRepoSource();
+    return resolvedRepoSource_ == null
+        ? com.google.cloudbuild.v1.RepoSource.getDefaultInstance()
+        : resolvedRepoSource_;
   }
 
   public static final int RESOLVED_STORAGE_SOURCE_MANIFEST_FIELD_NUMBER = 9;
@@ -237,7 +241,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloudbuild.v1.StorageSourceManifestOrBuilder
       getResolvedStorageSourceManifestOrBuilder() {
-    return getResolvedStorageSourceManifest();
+    return resolvedStorageSourceManifest_ == null
+        ? com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance()
+        : resolvedStorageSourceManifest_;
   }
 
   public static final int FILE_HASHES_FIELD_NUMBER = 4;
@@ -255,6 +261,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
                     com.google.cloudbuild.v1.FileHashes.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.cloudbuild.v1.FileHashes>
       fileHashes_;
 
@@ -341,8 +348,10 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * </code>
    */
   @java.lang.Override
-  public com.google.cloudbuild.v1.FileHashes getFileHashesOrDefault(
-      java.lang.String key, com.google.cloudbuild.v1.FileHashes defaultValue) {
+  public /* nullable */ com.google.cloudbuild.v1.FileHashes getFileHashesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloudbuild.v1.FileHashes defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -655,22 +664,20 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (resolvedStorageSourceBuilder_ == null) {
-        resolvedStorageSource_ = null;
-      } else {
-        resolvedStorageSource_ = null;
+      bitField0_ = 0;
+      resolvedStorageSource_ = null;
+      if (resolvedStorageSourceBuilder_ != null) {
+        resolvedStorageSourceBuilder_.dispose();
         resolvedStorageSourceBuilder_ = null;
       }
-      if (resolvedRepoSourceBuilder_ == null) {
-        resolvedRepoSource_ = null;
-      } else {
-        resolvedRepoSource_ = null;
+      resolvedRepoSource_ = null;
+      if (resolvedRepoSourceBuilder_ != null) {
+        resolvedRepoSourceBuilder_.dispose();
         resolvedRepoSourceBuilder_ = null;
       }
-      if (resolvedStorageSourceManifestBuilder_ == null) {
-        resolvedStorageSourceManifest_ = null;
-      } else {
-        resolvedStorageSourceManifest_ = null;
+      resolvedStorageSourceManifest_ = null;
+      if (resolvedStorageSourceManifestBuilder_ != null) {
+        resolvedStorageSourceManifestBuilder_.dispose();
         resolvedStorageSourceManifestBuilder_ = null;
       }
       internalGetMutableFileHashes().clear();
@@ -701,26 +708,37 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     public com.google.cloudbuild.v1.SourceProvenance buildPartial() {
       com.google.cloudbuild.v1.SourceProvenance result =
           new com.google.cloudbuild.v1.SourceProvenance(this);
-      int from_bitField0_ = bitField0_;
-      if (resolvedStorageSourceBuilder_ == null) {
-        result.resolvedStorageSource_ = resolvedStorageSource_;
-      } else {
-        result.resolvedStorageSource_ = resolvedStorageSourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (resolvedRepoSourceBuilder_ == null) {
-        result.resolvedRepoSource_ = resolvedRepoSource_;
-      } else {
-        result.resolvedRepoSource_ = resolvedRepoSourceBuilder_.build();
-      }
-      if (resolvedStorageSourceManifestBuilder_ == null) {
-        result.resolvedStorageSourceManifest_ = resolvedStorageSourceManifest_;
-      } else {
-        result.resolvedStorageSourceManifest_ = resolvedStorageSourceManifestBuilder_.build();
-      }
-      result.fileHashes_ = internalGetFileHashes();
-      result.fileHashes_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.SourceProvenance result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resolvedStorageSource_ =
+            resolvedStorageSourceBuilder_ == null
+                ? resolvedStorageSource_
+                : resolvedStorageSourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resolvedRepoSource_ =
+            resolvedRepoSourceBuilder_ == null
+                ? resolvedRepoSource_
+                : resolvedRepoSourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resolvedStorageSourceManifest_ =
+            resolvedStorageSourceManifestBuilder_ == null
+                ? resolvedStorageSourceManifest_
+                : resolvedStorageSourceManifestBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.fileHashes_ = internalGetFileHashes();
+        result.fileHashes_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -778,6 +796,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         mergeResolvedStorageSourceManifest(other.getResolvedStorageSourceManifest());
       }
       internalGetMutableFileHashes().mergeFrom(other.internalGetFileHashes());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -808,7 +827,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getResolvedStorageSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             case 34:
@@ -821,20 +840,21 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
                 internalGetMutableFileHashes()
                     .getMutableMap()
                     .put(fileHashes__.getKey(), fileHashes__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
               {
                 input.readMessage(
                     getResolvedRepoSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             case 74:
               {
                 input.readMessage(
                     getResolvedStorageSourceManifestFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 74
             default:
@@ -875,7 +895,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * @return Whether the resolvedStorageSource field is set.
      */
     public boolean hasResolvedStorageSource() {
-      return resolvedStorageSourceBuilder_ != null || resolvedStorageSource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -914,11 +934,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         resolvedStorageSource_ = value;
-        onChanged();
       } else {
         resolvedStorageSourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -935,11 +955,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         com.google.cloudbuild.v1.StorageSource.Builder builderForValue) {
       if (resolvedStorageSourceBuilder_ == null) {
         resolvedStorageSource_ = builderForValue.build();
-        onChanged();
       } else {
         resolvedStorageSourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -954,19 +974,19 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeResolvedStorageSource(com.google.cloudbuild.v1.StorageSource value) {
       if (resolvedStorageSourceBuilder_ == null) {
-        if (resolvedStorageSource_ != null) {
-          resolvedStorageSource_ =
-              com.google.cloudbuild.v1.StorageSource.newBuilder(resolvedStorageSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && resolvedStorageSource_ != null
+            && resolvedStorageSource_
+                != com.google.cloudbuild.v1.StorageSource.getDefaultInstance()) {
+          getResolvedStorageSourceBuilder().mergeFrom(value);
         } else {
           resolvedStorageSource_ = value;
         }
-        onChanged();
       } else {
         resolvedStorageSourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -980,14 +1000,13 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.google.devtools.cloudbuild.v1.StorageSource resolved_storage_source = 3;</code>
      */
     public Builder clearResolvedStorageSource() {
-      if (resolvedStorageSourceBuilder_ == null) {
-        resolvedStorageSource_ = null;
-        onChanged();
-      } else {
-        resolvedStorageSource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      resolvedStorageSource_ = null;
+      if (resolvedStorageSourceBuilder_ != null) {
+        resolvedStorageSourceBuilder_.dispose();
         resolvedStorageSourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1001,7 +1020,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.google.devtools.cloudbuild.v1.StorageSource resolved_storage_source = 3;</code>
      */
     public com.google.cloudbuild.v1.StorageSource.Builder getResolvedStorageSourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getResolvedStorageSourceFieldBuilder().getBuilder();
     }
@@ -1070,7 +1089,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * @return Whether the resolvedRepoSource field is set.
      */
     public boolean hasResolvedRepoSource() {
-      return resolvedRepoSourceBuilder_ != null || resolvedRepoSource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1109,11 +1128,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         resolvedRepoSource_ = value;
-        onChanged();
       } else {
         resolvedRepoSourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1130,11 +1149,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         com.google.cloudbuild.v1.RepoSource.Builder builderForValue) {
       if (resolvedRepoSourceBuilder_ == null) {
         resolvedRepoSource_ = builderForValue.build();
-        onChanged();
       } else {
         resolvedRepoSourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1149,19 +1168,18 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeResolvedRepoSource(com.google.cloudbuild.v1.RepoSource value) {
       if (resolvedRepoSourceBuilder_ == null) {
-        if (resolvedRepoSource_ != null) {
-          resolvedRepoSource_ =
-              com.google.cloudbuild.v1.RepoSource.newBuilder(resolvedRepoSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && resolvedRepoSource_ != null
+            && resolvedRepoSource_ != com.google.cloudbuild.v1.RepoSource.getDefaultInstance()) {
+          getResolvedRepoSourceBuilder().mergeFrom(value);
         } else {
           resolvedRepoSource_ = value;
         }
-        onChanged();
       } else {
         resolvedRepoSourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1175,14 +1193,13 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.google.devtools.cloudbuild.v1.RepoSource resolved_repo_source = 6;</code>
      */
     public Builder clearResolvedRepoSource() {
-      if (resolvedRepoSourceBuilder_ == null) {
-        resolvedRepoSource_ = null;
-        onChanged();
-      } else {
-        resolvedRepoSource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      resolvedRepoSource_ = null;
+      if (resolvedRepoSourceBuilder_ != null) {
+        resolvedRepoSourceBuilder_.dispose();
         resolvedRepoSourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1196,7 +1213,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.google.devtools.cloudbuild.v1.RepoSource resolved_repo_source = 6;</code>
      */
     public com.google.cloudbuild.v1.RepoSource.Builder getResolvedRepoSourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResolvedRepoSourceFieldBuilder().getBuilder();
     }
@@ -1268,8 +1285,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * @return Whether the resolvedStorageSourceManifest field is set.
      */
     public boolean hasResolvedStorageSourceManifest() {
-      return resolvedStorageSourceManifestBuilder_ != null
-          || resolvedStorageSourceManifest_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1315,11 +1331,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         resolvedStorageSourceManifest_ = value;
-        onChanged();
       } else {
         resolvedStorageSourceManifestBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1339,11 +1355,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         com.google.cloudbuild.v1.StorageSourceManifest.Builder builderForValue) {
       if (resolvedStorageSourceManifestBuilder_ == null) {
         resolvedStorageSourceManifest_ = builderForValue.build();
-        onChanged();
       } else {
         resolvedStorageSourceManifestBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1362,20 +1378,19 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     public Builder mergeResolvedStorageSourceManifest(
         com.google.cloudbuild.v1.StorageSourceManifest value) {
       if (resolvedStorageSourceManifestBuilder_ == null) {
-        if (resolvedStorageSourceManifest_ != null) {
-          resolvedStorageSourceManifest_ =
-              com.google.cloudbuild.v1.StorageSourceManifest.newBuilder(
-                      resolvedStorageSourceManifest_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && resolvedStorageSourceManifest_ != null
+            && resolvedStorageSourceManifest_
+                != com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance()) {
+          getResolvedStorageSourceManifestBuilder().mergeFrom(value);
         } else {
           resolvedStorageSourceManifest_ = value;
         }
-        onChanged();
       } else {
         resolvedStorageSourceManifestBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1392,14 +1407,13 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearResolvedStorageSourceManifest() {
-      if (resolvedStorageSourceManifestBuilder_ == null) {
-        resolvedStorageSourceManifest_ = null;
-        onChanged();
-      } else {
-        resolvedStorageSourceManifest_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      resolvedStorageSourceManifest_ = null;
+      if (resolvedStorageSourceManifestBuilder_ != null) {
+        resolvedStorageSourceManifestBuilder_.dispose();
         resolvedStorageSourceManifestBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1417,7 +1431,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloudbuild.v1.StorageSourceManifest.Builder
         getResolvedStorageSourceManifestBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getResolvedStorageSourceManifestFieldBuilder().getBuilder();
     }
@@ -1488,8 +1502,6 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, com.google.cloudbuild.v1.FileHashes>
         internalGetMutableFileHashes() {
-      onChanged();
-      ;
       if (fileHashes_ == null) {
         fileHashes_ =
             com.google.protobuf.MapField.newMapField(FileHashesDefaultEntryHolder.defaultEntry);
@@ -1497,6 +1509,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       if (!fileHashes_.isMutable()) {
         fileHashes_ = fileHashes_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return fileHashes_;
     }
 
@@ -1575,8 +1589,10 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     @java.lang.Override
-    public com.google.cloudbuild.v1.FileHashes getFileHashesOrDefault(
-        java.lang.String key, com.google.cloudbuild.v1.FileHashes defaultValue) {
+    public /* nullable */ com.google.cloudbuild.v1.FileHashes getFileHashesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloudbuild.v1.FileHashes defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1616,6 +1632,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearFileHashes() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableFileHashes().getMutableMap().clear();
       return this;
     }
@@ -1648,6 +1665,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes>
         getMutableFileHashes() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableFileHashes().getMutableMap();
     }
     /**
@@ -1675,8 +1693,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableFileHashes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1700,6 +1718,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     public Builder putAllFileHashes(
         java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> values) {
       internalGetMutableFileHashes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 

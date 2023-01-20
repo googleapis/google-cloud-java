@@ -183,7 +183,9 @@ public final class ConnectionProto {
     }
 
     public static final int PARENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object parent_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parent_ = "";
     /**
      *
      *
@@ -238,7 +240,9 @@ public final class ConnectionProto {
     }
 
     public static final int CONNECTION_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object connectionId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object connectionId_ = "";
     /**
      *
      *
@@ -339,7 +343,10 @@ public final class ConnectionProto {
     @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder
         getConnectionOrBuilder() {
-      return getConnection();
+      return connection_ == null
+          ? com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection
+              .getDefaultInstance()
+          : connection_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -591,14 +598,12 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parent_ = "";
-
         connectionId_ = "";
-
-        if (connectionBuilder_ == null) {
-          connection_ = null;
-        } else {
-          connection_ = null;
+        connection_ = null;
+        if (connectionBuilder_ != null) {
+          connectionBuilder_.dispose();
           connectionBuilder_ = null;
         }
         return this;
@@ -635,15 +640,27 @@ public final class ConnectionProto {
             result =
                 new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                     .CreateConnectionRequest(this);
-        result.parent_ = parent_;
-        result.connectionId_ = connectionId_;
-        if (connectionBuilder_ == null) {
-          result.connection_ = connection_;
-        } else {
-          result.connection_ = connectionBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CreateConnectionRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parent_ = parent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.connectionId_ = connectionId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.connection_ =
+              connectionBuilder_ == null ? connection_ : connectionBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -703,10 +720,12 @@ public final class ConnectionProto {
                 .getDefaultInstance()) return this;
         if (!other.getParent().isEmpty()) {
           parent_ = other.parent_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getConnectionId().isEmpty()) {
           connectionId_ = other.connectionId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasConnection()) {
@@ -741,19 +760,19 @@ public final class ConnectionProto {
               case 10:
                 {
                   parent_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   connectionId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getConnectionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -772,6 +791,8 @@ public final class ConnectionProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object parent_ = "";
       /**
@@ -843,8 +864,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -863,8 +884,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearParent() {
-
         parent_ = getDefaultInstance().getParent();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -888,8 +909,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -955,8 +976,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         connectionId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -972,8 +993,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearConnectionId() {
-
         connectionId_ = getDefaultInstance().getConnectionId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -994,8 +1015,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         connectionId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1020,7 +1041,7 @@ public final class ConnectionProto {
        * @return Whether the connection field is set.
        */
       public boolean hasConnection() {
-        return connectionBuilder_ != null || connection_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1064,11 +1085,11 @@ public final class ConnectionProto {
             throw new NullPointerException();
           }
           connection_ = value;
-          onChanged();
         } else {
           connectionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1087,11 +1108,11 @@ public final class ConnectionProto {
               builderForValue) {
         if (connectionBuilder_ == null) {
           connection_ = builderForValue.build();
-          onChanged();
         } else {
           connectionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1108,20 +1129,20 @@ public final class ConnectionProto {
       public Builder mergeConnection(
           com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection value) {
         if (connectionBuilder_ == null) {
-          if (connection_ != null) {
-            connection_ =
-                com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection.newBuilder(
-                        connection_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && connection_ != null
+              && connection_
+                  != com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection
+                      .getDefaultInstance()) {
+            getConnectionBuilder().mergeFrom(value);
           } else {
             connection_ = value;
           }
-          onChanged();
         } else {
           connectionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1136,14 +1157,13 @@ public final class ConnectionProto {
        * </code>
        */
       public Builder clearConnection() {
-        if (connectionBuilder_ == null) {
-          connection_ = null;
-          onChanged();
-        } else {
-          connection_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        connection_ = null;
+        if (connectionBuilder_ != null) {
+          connectionBuilder_.dispose();
           connectionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1159,7 +1179,7 @@ public final class ConnectionProto {
        */
       public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection.Builder
           getConnectionBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getConnectionFieldBuilder().getBuilder();
       }
@@ -1372,7 +1392,9 @@ public final class ConnectionProto {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -1638,8 +1660,8 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -1673,9 +1695,20 @@ public final class ConnectionProto {
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.GetConnectionRequest result =
             new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.GetConnectionRequest(
                 this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.GetConnectionRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -1734,6 +1767,7 @@ public final class ConnectionProto {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1765,7 +1799,7 @@ public final class ConnectionProto {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1784,6 +1818,8 @@ public final class ConnectionProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -1855,8 +1891,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1875,8 +1911,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1900,8 +1936,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2127,7 +2163,9 @@ public final class ConnectionProto {
     }
 
     public static final int PARENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object parent_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parent_ = "";
     /**
      *
      *
@@ -2229,11 +2267,15 @@ public final class ConnectionProto {
      */
     @java.lang.Override
     public com.google.protobuf.UInt32ValueOrBuilder getMaxResultsOrBuilder() {
-      return getMaxResults();
+      return maxResults_ == null
+          ? com.google.protobuf.UInt32Value.getDefaultInstance()
+          : maxResults_;
     }
 
     public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-    private volatile java.lang.Object pageToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pageToken_ = "";
     /**
      *
      *
@@ -2529,16 +2571,14 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parent_ = "";
-
-        if (maxResultsBuilder_ == null) {
-          maxResults_ = null;
-        } else {
-          maxResults_ = null;
+        maxResults_ = null;
+        if (maxResultsBuilder_ != null) {
+          maxResultsBuilder_.dispose();
           maxResultsBuilder_ = null;
         }
         pageToken_ = "";
-
         return this;
       }
 
@@ -2572,15 +2612,27 @@ public final class ConnectionProto {
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsRequest result =
             new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsRequest(
                 this);
-        result.parent_ = parent_;
-        if (maxResultsBuilder_ == null) {
-          result.maxResults_ = maxResults_;
-        } else {
-          result.maxResults_ = maxResultsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.pageToken_ = pageToken_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parent_ = parent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxResults_ =
+              maxResultsBuilder_ == null ? maxResults_ : maxResultsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pageToken_ = pageToken_;
+        }
       }
 
       @java.lang.Override
@@ -2640,6 +2692,7 @@ public final class ConnectionProto {
                 .getDefaultInstance()) return this;
         if (!other.getParent().isEmpty()) {
           parent_ = other.parent_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasMaxResults()) {
@@ -2647,6 +2700,7 @@ public final class ConnectionProto {
         }
         if (!other.getPageToken().isEmpty()) {
           pageToken_ = other.pageToken_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2678,19 +2732,19 @@ public final class ConnectionProto {
               case 10:
                 {
                   parent_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getMaxResultsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   pageToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -2709,6 +2763,8 @@ public final class ConnectionProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object parent_ = "";
       /**
@@ -2780,8 +2836,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2800,8 +2856,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearParent() {
-
         parent_ = getDefaultInstance().getParent();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2825,8 +2881,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2851,7 +2907,7 @@ public final class ConnectionProto {
        * @return Whether the maxResults field is set.
        */
       public boolean hasMaxResults() {
-        return maxResultsBuilder_ != null || maxResults_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -2892,11 +2948,11 @@ public final class ConnectionProto {
             throw new NullPointerException();
           }
           maxResults_ = value;
-          onChanged();
         } else {
           maxResultsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2913,11 +2969,11 @@ public final class ConnectionProto {
       public Builder setMaxResults(com.google.protobuf.UInt32Value.Builder builderForValue) {
         if (maxResultsBuilder_ == null) {
           maxResults_ = builderForValue.build();
-          onChanged();
         } else {
           maxResultsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2933,19 +2989,18 @@ public final class ConnectionProto {
        */
       public Builder mergeMaxResults(com.google.protobuf.UInt32Value value) {
         if (maxResultsBuilder_ == null) {
-          if (maxResults_ != null) {
-            maxResults_ =
-                com.google.protobuf.UInt32Value.newBuilder(maxResults_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && maxResults_ != null
+              && maxResults_ != com.google.protobuf.UInt32Value.getDefaultInstance()) {
+            getMaxResultsBuilder().mergeFrom(value);
           } else {
             maxResults_ = value;
           }
-          onChanged();
         } else {
           maxResultsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2960,14 +3015,13 @@ public final class ConnectionProto {
        * </code>
        */
       public Builder clearMaxResults() {
-        if (maxResultsBuilder_ == null) {
-          maxResults_ = null;
-          onChanged();
-        } else {
-          maxResults_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxResults_ = null;
+        if (maxResultsBuilder_ != null) {
+          maxResultsBuilder_.dispose();
           maxResultsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2982,7 +3036,7 @@ public final class ConnectionProto {
        * </code>
        */
       public com.google.protobuf.UInt32Value.Builder getMaxResultsBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMaxResultsFieldBuilder().getBuilder();
       }
@@ -3095,8 +3149,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         pageToken_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3112,8 +3166,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearPageToken() {
-
         pageToken_ = getDefaultInstance().getPageToken();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -3134,8 +3188,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         pageToken_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3350,7 +3404,9 @@ public final class ConnectionProto {
     }
 
     public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object nextPageToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nextPageToken_ = "";
     /**
      *
      *
@@ -3399,6 +3455,8 @@ public final class ConnectionProto {
     }
 
     public static final int CONNECTIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>
         connections_;
     /**
@@ -3710,15 +3768,15 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         nextPageToken_ = "";
-
         if (connectionsBuilder_ == null) {
           connections_ = java.util.Collections.emptyList();
         } else {
           connections_ = null;
           connectionsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -3753,19 +3811,35 @@ public final class ConnectionProto {
             result =
                 new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                     .ListConnectionsResponse(this);
-        int from_bitField0_ = bitField0_;
-        result.nextPageToken_ = nextPageToken_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsResponse
+              result) {
         if (connectionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             connections_ = java.util.Collections.unmodifiableList(connections_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.connections_ = connections_;
         } else {
           result.connections_ = connectionsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsResponse
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.nextPageToken_ = nextPageToken_;
+        }
       }
 
       @java.lang.Override
@@ -3825,13 +3899,14 @@ public final class ConnectionProto {
                 .getDefaultInstance()) return this;
         if (!other.getNextPageToken().isEmpty()) {
           nextPageToken_ = other.nextPageToken_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (connectionsBuilder_ == null) {
           if (!other.connections_.isEmpty()) {
             if (connections_.isEmpty()) {
               connections_ = other.connections_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureConnectionsIsMutable();
               connections_.addAll(other.connections_);
@@ -3844,7 +3919,7 @@ public final class ConnectionProto {
               connectionsBuilder_.dispose();
               connectionsBuilder_ = null;
               connections_ = other.connections_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               connectionsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getConnectionsFieldBuilder()
@@ -3883,7 +3958,7 @@ public final class ConnectionProto {
               case 10:
                 {
                   nextPageToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -3981,8 +4056,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         nextPageToken_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3998,8 +4073,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearNextPageToken() {
-
         nextPageToken_ = getDefaultInstance().getNextPageToken();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4020,8 +4095,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         nextPageToken_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4031,12 +4106,12 @@ public final class ConnectionProto {
           connections_ = java.util.Collections.emptyList();
 
       private void ensureConnectionsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           connections_ =
               new java.util.ArrayList<
                   com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>(
                   connections_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -4266,7 +4341,7 @@ public final class ConnectionProto {
       public Builder clearConnections() {
         if (connectionsBuilder_ == null) {
           connections_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           connectionsBuilder_.clear();
@@ -4401,7 +4476,7 @@ public final class ConnectionProto {
                   com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection.Builder,
                   com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder>(
                   connections_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           connections_ = null;
@@ -4648,7 +4723,9 @@ public final class ConnectionProto {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -4755,7 +4832,10 @@ public final class ConnectionProto {
     @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder
         getConnectionOrBuilder() {
-      return getConnection();
+      return connection_ == null
+          ? com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection
+              .getDefaultInstance()
+          : connection_;
     }
 
     public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -4804,7 +4884,7 @@ public final class ConnectionProto {
      */
     @java.lang.Override
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-      return getUpdateMask();
+      return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5061,18 +5141,16 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
-        if (connectionBuilder_ == null) {
-          connection_ = null;
-        } else {
-          connection_ = null;
+        connection_ = null;
+        if (connectionBuilder_ != null) {
+          connectionBuilder_.dispose();
           connectionBuilder_ = null;
         }
-        if (updateMaskBuilder_ == null) {
-          updateMask_ = null;
-        } else {
-          updateMask_ = null;
+        updateMask_ = null;
+        if (updateMaskBuilder_ != null) {
+          updateMaskBuilder_.dispose();
           updateMaskBuilder_ = null;
         }
         return this;
@@ -5109,19 +5187,28 @@ public final class ConnectionProto {
             result =
                 new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                     .UpdateConnectionRequest(this);
-        result.name_ = name_;
-        if (connectionBuilder_ == null) {
-          result.connection_ = connection_;
-        } else {
-          result.connection_ = connectionBuilder_.build();
-        }
-        if (updateMaskBuilder_ == null) {
-          result.updateMask_ = updateMask_;
-        } else {
-          result.updateMask_ = updateMaskBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.UpdateConnectionRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.connection_ =
+              connectionBuilder_ == null ? connection_ : connectionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.updateMask_ =
+              updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -5181,6 +5268,7 @@ public final class ConnectionProto {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasConnection()) {
@@ -5218,19 +5306,19 @@ public final class ConnectionProto {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getConnectionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -5249,6 +5337,8 @@ public final class ConnectionProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -5320,8 +5410,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5340,8 +5430,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -5365,8 +5455,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5391,7 +5481,7 @@ public final class ConnectionProto {
        * @return Whether the connection field is set.
        */
       public boolean hasConnection() {
-        return connectionBuilder_ != null || connection_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -5435,11 +5525,11 @@ public final class ConnectionProto {
             throw new NullPointerException();
           }
           connection_ = value;
-          onChanged();
         } else {
           connectionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -5458,11 +5548,11 @@ public final class ConnectionProto {
               builderForValue) {
         if (connectionBuilder_ == null) {
           connection_ = builderForValue.build();
-          onChanged();
         } else {
           connectionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -5479,20 +5569,20 @@ public final class ConnectionProto {
       public Builder mergeConnection(
           com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection value) {
         if (connectionBuilder_ == null) {
-          if (connection_ != null) {
-            connection_ =
-                com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection.newBuilder(
-                        connection_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && connection_ != null
+              && connection_
+                  != com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection
+                      .getDefaultInstance()) {
+            getConnectionBuilder().mergeFrom(value);
           } else {
             connection_ = value;
           }
-          onChanged();
         } else {
           connectionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -5507,14 +5597,13 @@ public final class ConnectionProto {
        * </code>
        */
       public Builder clearConnection() {
-        if (connectionBuilder_ == null) {
-          connection_ = null;
-          onChanged();
-        } else {
-          connection_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        connection_ = null;
+        if (connectionBuilder_ != null) {
+          connectionBuilder_.dispose();
           connectionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5530,7 +5619,7 @@ public final class ConnectionProto {
        */
       public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection.Builder
           getConnectionBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getConnectionFieldBuilder().getBuilder();
       }
@@ -5603,7 +5692,7 @@ public final class ConnectionProto {
        * @return Whether the updateMask field is set.
        */
       public boolean hasUpdateMask() {
-        return updateMaskBuilder_ != null || updateMask_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -5642,11 +5731,11 @@ public final class ConnectionProto {
             throw new NullPointerException();
           }
           updateMask_ = value;
-          onChanged();
         } else {
           updateMaskBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -5662,11 +5751,11 @@ public final class ConnectionProto {
       public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
         if (updateMaskBuilder_ == null) {
           updateMask_ = builderForValue.build();
-          onChanged();
         } else {
           updateMaskBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -5681,19 +5770,18 @@ public final class ConnectionProto {
        */
       public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
         if (updateMaskBuilder_ == null) {
-          if (updateMask_ != null) {
-            updateMask_ =
-                com.google.protobuf.FieldMask.newBuilder(updateMask_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && updateMask_ != null
+              && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+            getUpdateMaskBuilder().mergeFrom(value);
           } else {
             updateMask_ = value;
           }
-          onChanged();
         } else {
           updateMaskBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -5707,14 +5795,13 @@ public final class ConnectionProto {
        * </code>
        */
       public Builder clearUpdateMask() {
-        if (updateMaskBuilder_ == null) {
-          updateMask_ = null;
-          onChanged();
-        } else {
-          updateMask_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        updateMask_ = null;
+        if (updateMaskBuilder_ != null) {
+          updateMaskBuilder_.dispose();
           updateMaskBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5728,7 +5815,7 @@ public final class ConnectionProto {
        * </code>
        */
       public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getUpdateMaskFieldBuilder().getBuilder();
       }
@@ -5979,7 +6066,9 @@ public final class ConnectionProto {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -6085,7 +6174,10 @@ public final class ConnectionProto {
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
             .ConnectionCredentialOrBuilder
         getCredentialOrBuilder() {
-      return getCredential();
+      return credential_ == null
+          ? com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential
+              .getDefaultInstance()
+          : credential_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6333,12 +6425,11 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
-        if (credentialBuilder_ == null) {
-          credential_ = null;
-        } else {
-          credential_ = null;
+        credential_ = null;
+        if (credentialBuilder_ != null) {
+          credentialBuilder_.dispose();
           credentialBuilder_ = null;
         }
         return this;
@@ -6380,14 +6471,25 @@ public final class ConnectionProto {
             result =
                 new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                     .UpdateConnectionCredentialRequest(this);
-        result.name_ = name_;
-        if (credentialBuilder_ == null) {
-          result.credential_ = credential_;
-        } else {
-          result.credential_ = credentialBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
+                  .UpdateConnectionCredentialRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.credential_ =
+              credentialBuilder_ == null ? credential_ : credentialBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -6450,6 +6552,7 @@ public final class ConnectionProto {
                 .UpdateConnectionCredentialRequest.getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasCredential()) {
@@ -6484,13 +6587,13 @@ public final class ConnectionProto {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getCredentialFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -6509,6 +6612,8 @@ public final class ConnectionProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -6574,8 +6679,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6592,8 +6697,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -6615,8 +6720,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6644,7 +6749,7 @@ public final class ConnectionProto {
        * @return Whether the credential field is set.
        */
       public boolean hasCredential() {
-        return credentialBuilder_ != null || credential_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -6688,11 +6793,11 @@ public final class ConnectionProto {
             throw new NullPointerException();
           }
           credential_ = value;
-          onChanged();
         } else {
           credentialBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -6711,11 +6816,11 @@ public final class ConnectionProto {
               builderForValue) {
         if (credentialBuilder_ == null) {
           credential_ = builderForValue.build();
-          onChanged();
         } else {
           credentialBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -6732,20 +6837,20 @@ public final class ConnectionProto {
       public Builder mergeCredential(
           com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential value) {
         if (credentialBuilder_ == null) {
-          if (credential_ != null) {
-            credential_ =
-                com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential
-                    .newBuilder(credential_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && credential_ != null
+              && credential_
+                  != com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
+                      .ConnectionCredential.getDefaultInstance()) {
+            getCredentialBuilder().mergeFrom(value);
           } else {
             credential_ = value;
           }
-          onChanged();
         } else {
           credentialBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -6760,14 +6865,13 @@ public final class ConnectionProto {
        * </code>
        */
       public Builder clearCredential() {
-        if (credentialBuilder_ == null) {
-          credential_ = null;
-          onChanged();
-        } else {
-          credential_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        credential_ = null;
+        if (credentialBuilder_ != null) {
+          credentialBuilder_.dispose();
           credentialBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -6784,7 +6888,7 @@ public final class ConnectionProto {
       public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential
               .Builder
           getCredentialBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getCredentialFieldBuilder().getBuilder();
       }
@@ -7003,7 +7107,9 @@ public final class ConnectionProto {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -7283,8 +7389,8 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -7319,9 +7425,20 @@ public final class ConnectionProto {
             result =
                 new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                     .DeleteConnectionRequest(this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.DeleteConnectionRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -7381,6 +7498,7 @@ public final class ConnectionProto {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -7412,7 +7530,7 @@ public final class ConnectionProto {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -7431,6 +7549,8 @@ public final class ConnectionProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -7502,8 +7622,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7522,8 +7642,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -7547,8 +7667,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7882,7 +8002,9 @@ public final class ConnectionProto {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -7933,7 +8055,9 @@ public final class ConnectionProto {
     }
 
     public static final int FRIENDLY_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object friendlyName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object friendlyName_ = "";
     /**
      *
      *
@@ -7982,7 +8106,9 @@ public final class ConnectionProto {
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -8088,7 +8214,7 @@ public final class ConnectionProto {
     }
 
     public static final int CREATION_TIME_FIELD_NUMBER = 5;
-    private long creationTime_;
+    private long creationTime_ = 0L;
     /**
      *
      *
@@ -8106,7 +8232,7 @@ public final class ConnectionProto {
     }
 
     public static final int LAST_MODIFIED_TIME_FIELD_NUMBER = 6;
-    private long lastModifiedTime_;
+    private long lastModifiedTime_ = 0L;
     /**
      *
      *
@@ -8124,7 +8250,7 @@ public final class ConnectionProto {
     }
 
     public static final int HAS_CREDENTIAL_FIELD_NUMBER = 7;
-    private boolean hasCredential_;
+    private boolean hasCredential_ = false;
     /**
      *
      *
@@ -8420,21 +8546,16 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         friendlyName_ = "";
-
         description_ = "";
-
         if (cloudSqlBuilder_ != null) {
           cloudSqlBuilder_.clear();
         }
         creationTime_ = 0L;
-
         lastModifiedTime_ = 0L;
-
         hasCredential_ = false;
-
         propertiesCase_ = 0;
         properties_ = null;
         return this;
@@ -8468,22 +8589,44 @@ public final class ConnectionProto {
           buildPartial() {
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection result =
             new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection(this);
-        result.name_ = name_;
-        result.friendlyName_ = friendlyName_;
-        result.description_ = description_;
-        if (propertiesCase_ == 4) {
-          if (cloudSqlBuilder_ == null) {
-            result.properties_ = properties_;
-          } else {
-            result.properties_ = cloudSqlBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.creationTime_ = creationTime_;
-        result.lastModifiedTime_ = lastModifiedTime_;
-        result.hasCredential_ = hasCredential_;
-        result.propertiesCase_ = propertiesCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.friendlyName_ = friendlyName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.creationTime_ = creationTime_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.lastModifiedTime_ = lastModifiedTime_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.hasCredential_ = hasCredential_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection result) {
+        result.propertiesCase_ = propertiesCase_;
+        result.properties_ = this.properties_;
+        if (propertiesCase_ == 4 && cloudSqlBuilder_ != null) {
+          result.properties_ = cloudSqlBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -8540,14 +8683,17 @@ public final class ConnectionProto {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getFriendlyName().isEmpty()) {
           friendlyName_ = other.friendlyName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getCreationTime() != 0L) {
@@ -8599,19 +8745,19 @@ public final class ConnectionProto {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   friendlyName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -8623,19 +8769,19 @@ public final class ConnectionProto {
               case 40:
                 {
                   creationTime_ = input.readInt64();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 48:
                 {
                   lastModifiedTime_ = input.readInt64();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               case 56:
                 {
                   hasCredential_ = input.readBool();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 56
               default:
@@ -8668,6 +8814,8 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -8733,8 +8881,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8751,8 +8899,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -8774,8 +8922,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8841,8 +8989,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         friendlyName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8858,8 +9006,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearFriendlyName() {
-
         friendlyName_ = getDefaultInstance().getFriendlyName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -8880,8 +9028,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         friendlyName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8947,8 +9095,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8964,8 +9112,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -8986,8 +9134,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9224,7 +9372,6 @@ public final class ConnectionProto {
         }
         propertiesCase_ = 4;
         onChanged();
-        ;
         return cloudSqlBuilder_;
       }
 
@@ -9259,6 +9406,7 @@ public final class ConnectionProto {
       public Builder setCreationTime(long value) {
 
         creationTime_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -9274,7 +9422,7 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearCreationTime() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         creationTime_ = 0L;
         onChanged();
         return this;
@@ -9311,6 +9459,7 @@ public final class ConnectionProto {
       public Builder setLastModifiedTime(long value) {
 
         lastModifiedTime_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -9326,7 +9475,7 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearLastModifiedTime() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         lastModifiedTime_ = 0L;
         onChanged();
         return this;
@@ -9363,6 +9512,7 @@ public final class ConnectionProto {
       public Builder setHasCredential(boolean value) {
 
         hasCredential_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -9378,7 +9528,7 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearHasCredential() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         hasCredential_ = false;
         onChanged();
         return this;
@@ -9879,6 +10029,7 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (cloudSqlBuilder_ != null) {
           cloudSqlBuilder_.clear();
         }
@@ -9917,16 +10068,28 @@ public final class ConnectionProto {
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential result =
             new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential(
                 this);
-        if (credentialCase_ == 1) {
-          if (cloudSqlBuilder_ == null) {
-            result.credential_ = credential_;
-          } else {
-            result.credential_ = cloudSqlBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.credentialCase_ = credentialCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential
+              result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential
+              result) {
+        result.credentialCase_ = credentialCase_;
+        result.credential_ = this.credential_;
+        if (credentialCase_ == 1 && cloudSqlBuilder_ != null) {
+          result.credential_ = cloudSqlBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -10056,6 +10219,8 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential,
@@ -10289,7 +10454,6 @@ public final class ConnectionProto {
         }
         credentialCase_ = 1;
         onChanged();
-        ;
         return cloudSqlBuilder_;
       }
 
@@ -10733,7 +10897,9 @@ public final class ConnectionProto {
     }
 
     public static final int INSTANCE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object instanceId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object instanceId_ = "";
     /**
      *
      *
@@ -10782,7 +10948,9 @@ public final class ConnectionProto {
     }
 
     public static final int DATABASE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object database_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object database_ = "";
     /**
      *
      *
@@ -10831,7 +10999,7 @@ public final class ConnectionProto {
     }
 
     public static final int TYPE_FIELD_NUMBER = 3;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -10864,11 +11032,10 @@ public final class ConnectionProto {
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
             .DatabaseType
         getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties.DatabaseType
           result =
               com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
-                  .DatabaseType.valueOf(type_);
+                  .DatabaseType.forNumber(type_);
       return result == null
           ? com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
               .DatabaseType.UNRECOGNIZED
@@ -10930,11 +11097,16 @@ public final class ConnectionProto {
     @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredentialOrBuilder
         getCredentialOrBuilder() {
-      return getCredential();
+      return credential_ == null
+          ? com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential
+              .getDefaultInstance()
+          : credential_;
     }
 
     public static final int SERVICE_ACCOUNT_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object serviceAccountId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceAccountId_ = "";
     /**
      *
      *
@@ -11246,20 +11418,16 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         instanceId_ = "";
-
         database_ = "";
-
         type_ = 0;
-
-        if (credentialBuilder_ == null) {
-          credential_ = null;
-        } else {
-          credential_ = null;
+        credential_ = null;
+        if (credentialBuilder_ != null) {
+          credentialBuilder_.dispose();
           credentialBuilder_ = null;
         }
         serviceAccountId_ = "";
-
         return this;
       }
 
@@ -11293,17 +11461,32 @@ public final class ConnectionProto {
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties result =
             new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties(
                 this);
-        result.instanceId_ = instanceId_;
-        result.database_ = database_;
-        result.type_ = type_;
-        if (credentialBuilder_ == null) {
-          result.credential_ = credential_;
-        } else {
-          result.credential_ = credentialBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.serviceAccountId_ = serviceAccountId_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.instanceId_ = instanceId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.database_ = database_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.credential_ =
+              credentialBuilder_ == null ? credential_ : credentialBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.serviceAccountId_ = serviceAccountId_;
+        }
       }
 
       @java.lang.Override
@@ -11362,10 +11545,12 @@ public final class ConnectionProto {
                 .getDefaultInstance()) return this;
         if (!other.getInstanceId().isEmpty()) {
           instanceId_ = other.instanceId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDatabase().isEmpty()) {
           database_ = other.database_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.type_ != 0) {
@@ -11376,6 +11561,7 @@ public final class ConnectionProto {
         }
         if (!other.getServiceAccountId().isEmpty()) {
           serviceAccountId_ = other.serviceAccountId_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -11407,31 +11593,31 @@ public final class ConnectionProto {
               case 10:
                 {
                   instanceId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   database_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   input.readMessage(getCredentialFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   serviceAccountId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -11450,6 +11636,8 @@ public final class ConnectionProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object instanceId_ = "";
       /**
@@ -11512,8 +11700,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         instanceId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -11529,8 +11717,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearInstanceId() {
-
         instanceId_ = getDefaultInstance().getInstanceId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -11551,8 +11739,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         instanceId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -11618,8 +11806,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         database_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -11635,8 +11823,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearDatabase() {
-
         database_ = getDefaultInstance().getDatabase();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -11657,8 +11845,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         database_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -11694,8 +11882,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -11715,11 +11903,10 @@ public final class ConnectionProto {
       public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
               .DatabaseType
           getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties.DatabaseType
             result =
                 com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
-                    .DatabaseType.valueOf(type_);
+                    .DatabaseType.forNumber(type_);
         return result == null
             ? com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
                 .DatabaseType.UNRECOGNIZED
@@ -11745,7 +11932,7 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -11763,7 +11950,7 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         type_ = 0;
         onChanged();
         return this;
@@ -11792,7 +11979,7 @@ public final class ConnectionProto {
        * @return Whether the credential field is set.
        */
       public boolean hasCredential() {
-        return credentialBuilder_ != null || credential_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -11836,11 +12023,11 @@ public final class ConnectionProto {
             throw new NullPointerException();
           }
           credential_ = value;
-          onChanged();
         } else {
           credentialBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -11859,11 +12046,11 @@ public final class ConnectionProto {
               builderForValue) {
         if (credentialBuilder_ == null) {
           credential_ = builderForValue.build();
-          onChanged();
         } else {
           credentialBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -11880,20 +12067,20 @@ public final class ConnectionProto {
       public Builder mergeCredential(
           com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential value) {
         if (credentialBuilder_ == null) {
-          if (credential_ != null) {
-            credential_ =
-                com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential
-                    .newBuilder(credential_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && credential_ != null
+              && credential_
+                  != com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential
+                      .getDefaultInstance()) {
+            getCredentialBuilder().mergeFrom(value);
           } else {
             credential_ = value;
           }
-          onChanged();
         } else {
           credentialBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -11908,14 +12095,13 @@ public final class ConnectionProto {
        * </code>
        */
       public Builder clearCredential() {
-        if (credentialBuilder_ == null) {
-          credential_ = null;
-          onChanged();
-        } else {
-          credential_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        credential_ = null;
+        if (credentialBuilder_ != null) {
+          credentialBuilder_.dispose();
           credentialBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -11931,7 +12117,7 @@ public final class ConnectionProto {
        */
       public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential.Builder
           getCredentialBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getCredentialFieldBuilder().getBuilder();
       }
@@ -12060,8 +12246,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         serviceAccountId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -12080,8 +12266,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearServiceAccountId() {
-
         serviceAccountId_ = getDefaultInstance().getServiceAccountId();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -12105,8 +12291,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         serviceAccountId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -12287,7 +12473,9 @@ public final class ConnectionProto {
     }
 
     public static final int USERNAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object username_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object username_ = "";
     /**
      *
      *
@@ -12336,7 +12524,9 @@ public final class ConnectionProto {
     }
 
     public static final int PASSWORD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object password_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object password_ = "";
     /**
      *
      *
@@ -12604,10 +12794,9 @@ public final class ConnectionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         username_ = "";
-
         password_ = "";
-
         return this;
       }
 
@@ -12641,10 +12830,22 @@ public final class ConnectionProto {
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential result =
             new com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential(
                 this);
-        result.username_ = username_;
-        result.password_ = password_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.username_ = username_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.password_ = password_;
+        }
       }
 
       @java.lang.Override
@@ -12703,10 +12904,12 @@ public final class ConnectionProto {
                 .getDefaultInstance()) return this;
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -12738,13 +12941,13 @@ public final class ConnectionProto {
               case 10:
                 {
                   username_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   password_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -12763,6 +12966,8 @@ public final class ConnectionProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object username_ = "";
       /**
@@ -12825,8 +13030,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         username_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -12842,8 +13047,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearUsername() {
-
         username_ = getDefaultInstance().getUsername();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -12864,8 +13069,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         username_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -12931,8 +13136,8 @@ public final class ConnectionProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         password_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -12948,8 +13153,8 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
-
         password_ = getDefaultInstance().getPassword();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -12970,8 +13175,8 @@ public final class ConnectionProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         password_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

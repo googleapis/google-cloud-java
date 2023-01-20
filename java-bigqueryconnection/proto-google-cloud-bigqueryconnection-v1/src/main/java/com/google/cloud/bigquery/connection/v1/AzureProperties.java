@@ -74,7 +74,9 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int APPLICATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object application_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object application_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CLIENT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object clientId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientId_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int OBJECT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object objectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object objectId_ = "";
   /**
    *
    *
@@ -221,7 +227,9 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CUSTOMER_TENANT_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object customerTenantId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customerTenantId_ = "";
   /**
    *
    *
@@ -270,7 +278,9 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int REDIRECT_URI_FIELD_NUMBER = 5;
-  private volatile java.lang.Object redirectUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redirectUri_ = "";
   /**
    *
    *
@@ -321,7 +331,9 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int FEDERATED_APPLICATION_CLIENT_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object federatedApplicationClientId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object federatedApplicationClientId_ = "";
   /**
    *
    *
@@ -372,7 +384,9 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IDENTITY_FIELD_NUMBER = 7;
-  private volatile java.lang.Object identity_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identity_ = "";
   /**
    *
    *
@@ -679,20 +693,14 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       application_ = "";
-
       clientId_ = "";
-
       objectId_ = "";
-
       customerTenantId_ = "";
-
       redirectUri_ = "";
-
       federatedApplicationClientId_ = "";
-
       identity_ = "";
-
       return this;
     }
 
@@ -720,15 +728,36 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.bigquery.connection.v1.AzureProperties buildPartial() {
       com.google.cloud.bigquery.connection.v1.AzureProperties result =
           new com.google.cloud.bigquery.connection.v1.AzureProperties(this);
-      result.application_ = application_;
-      result.clientId_ = clientId_;
-      result.objectId_ = objectId_;
-      result.customerTenantId_ = customerTenantId_;
-      result.redirectUri_ = redirectUri_;
-      result.federatedApplicationClientId_ = federatedApplicationClientId_;
-      result.identity_ = identity_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.connection.v1.AzureProperties result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.application_ = application_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clientId_ = clientId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.objectId_ = objectId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.customerTenantId_ = customerTenantId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.redirectUri_ = redirectUri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.federatedApplicationClientId_ = federatedApplicationClientId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.identity_ = identity_;
+      }
     }
 
     @java.lang.Override
@@ -779,30 +808,37 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getApplication().isEmpty()) {
         application_ = other.application_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getClientId().isEmpty()) {
         clientId_ = other.clientId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getObjectId().isEmpty()) {
         objectId_ = other.objectId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getCustomerTenantId().isEmpty()) {
         customerTenantId_ = other.customerTenantId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getRedirectUri().isEmpty()) {
         redirectUri_ = other.redirectUri_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getFederatedApplicationClientId().isEmpty()) {
         federatedApplicationClientId_ = other.federatedApplicationClientId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getIdentity().isEmpty()) {
         identity_ = other.identity_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -834,43 +870,43 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 application_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 clientId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 objectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 customerTenantId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 redirectUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 federatedApplicationClientId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 identity_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -889,6 +925,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object application_ = "";
     /**
@@ -951,8 +989,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       application_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -968,8 +1006,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearApplication() {
-
       application_ = getDefaultInstance().getApplication();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -990,8 +1028,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       application_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1057,8 +1095,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1074,8 +1112,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearClientId() {
-
       clientId_ = getDefaultInstance().getClientId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1096,8 +1134,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1163,8 +1201,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       objectId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1180,8 +1218,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearObjectId() {
-
       objectId_ = getDefaultInstance().getObjectId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1202,8 +1240,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       objectId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1269,8 +1307,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       customerTenantId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1286,8 +1324,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCustomerTenantId() {
-
       customerTenantId_ = getDefaultInstance().getCustomerTenantId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1308,8 +1346,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       customerTenantId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1378,8 +1416,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       redirectUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1396,8 +1434,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRedirectUri() {
-
       redirectUri_ = getDefaultInstance().getRedirectUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1419,8 +1457,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       redirectUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1489,8 +1527,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       federatedApplicationClientId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1507,8 +1545,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearFederatedApplicationClientId() {
-
       federatedApplicationClientId_ = getDefaultInstance().getFederatedApplicationClientId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1530,8 +1568,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       federatedApplicationClientId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1603,8 +1641,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       identity_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1622,8 +1660,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIdentity() {
-
       identity_ = getDefaultInstance().getIdentity();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1646,8 +1684,8 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       identity_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

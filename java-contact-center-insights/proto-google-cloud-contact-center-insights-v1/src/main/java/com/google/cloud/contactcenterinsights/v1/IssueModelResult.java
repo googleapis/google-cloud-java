@@ -69,7 +69,9 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ISSUE_MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object issueModel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object issueModel_ = "";
   /**
    *
    *
@@ -120,6 +122,8 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ISSUES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.IssueAssignment> issues_;
   /**
    *
@@ -399,15 +403,15 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       issueModel_ = "";
-
       if (issuesBuilder_ == null) {
         issues_ = java.util.Collections.emptyList();
       } else {
         issues_ = null;
         issuesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -435,19 +439,32 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.contactcenterinsights.v1.IssueModelResult buildPartial() {
       com.google.cloud.contactcenterinsights.v1.IssueModelResult result =
           new com.google.cloud.contactcenterinsights.v1.IssueModelResult(this);
-      int from_bitField0_ = bitField0_;
-      result.issueModel_ = issueModel_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contactcenterinsights.v1.IssueModelResult result) {
       if (issuesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           issues_ = java.util.Collections.unmodifiableList(issues_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.issues_ = issues_;
       } else {
         result.issues_ = issuesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.IssueModelResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.issueModel_ = issueModel_;
+      }
     }
 
     @java.lang.Override
@@ -498,13 +515,14 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getIssueModel().isEmpty()) {
         issueModel_ = other.issueModel_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (issuesBuilder_ == null) {
         if (!other.issues_.isEmpty()) {
           if (issues_.isEmpty()) {
             issues_ = other.issues_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureIssuesIsMutable();
             issues_.addAll(other.issues_);
@@ -517,7 +535,7 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
             issuesBuilder_.dispose();
             issuesBuilder_ = null;
             issues_ = other.issues_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             issuesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getIssuesFieldBuilder()
@@ -556,7 +574,7 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 issueModel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -656,8 +674,8 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       issueModel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -674,8 +692,8 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIssueModel() {
-
       issueModel_ = getDefaultInstance().getIssueModel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -697,8 +715,8 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       issueModel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -707,11 +725,11 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureIssuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         issues_ =
             new java.util.ArrayList<com.google.cloud.contactcenterinsights.v1.IssueAssignment>(
                 issues_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -933,7 +951,7 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
     public Builder clearIssues() {
       if (issuesBuilder_ == null) {
         issues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         issuesBuilder_.clear();
@@ -1062,7 +1080,7 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.contactcenterinsights.v1.IssueAssignment,
                 com.google.cloud.contactcenterinsights.v1.IssueAssignment.Builder,
                 com.google.cloud.contactcenterinsights.v1.IssueAssignmentOrBuilder>(
-                issues_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                issues_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         issues_ = null;
       }
       return issuesBuilder_;

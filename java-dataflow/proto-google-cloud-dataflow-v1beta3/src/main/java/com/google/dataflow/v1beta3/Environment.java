@@ -79,7 +79,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEMP_STORAGE_PREFIX_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tempStoragePrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tempStoragePrefix_ = "";
   /**
    *
    *
@@ -148,7 +150,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_MANAGER_API_SERVICE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object clusterManagerApiService_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterManagerApiService_ = "";
   /**
    *
    *
@@ -203,6 +207,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPERIMENTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList experiments_;
   /**
    *
@@ -272,6 +278,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_OPTIONS_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList serviceOptions_;
   /**
    *
@@ -341,7 +349,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_KMS_KEY_NAME_FIELD_NUMBER = 12;
-  private volatile java.lang.Object serviceKmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceKmsKeyName_ = "";
   /**
    *
    *
@@ -396,6 +406,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKER_POOLS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.WorkerPool> workerPools_;
   /**
    *
@@ -512,7 +524,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getUserAgentOrBuilder() {
-    return getUserAgent();
+    return userAgent_ == null ? com.google.protobuf.Struct.getDefaultInstance() : userAgent_;
   }
 
   public static final int VERSION_FIELD_NUMBER = 6;
@@ -561,11 +573,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null ? com.google.protobuf.Struct.getDefaultInstance() : version_;
   }
 
   public static final int DATASET_FIELD_NUMBER = 7;
-  private volatile java.lang.Object dataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataset_ = "";
   /**
    *
    *
@@ -675,7 +689,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getSdkPipelineOptionsOrBuilder() {
-    return getSdkPipelineOptions();
+    return sdkPipelineOptions_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : sdkPipelineOptions_;
   }
 
   public static final int INTERNAL_EXPERIMENTS_FIELD_NUMBER = 9;
@@ -723,11 +739,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.AnyOrBuilder getInternalExperimentsOrBuilder() {
-    return getInternalExperiments();
+    return internalExperiments_ == null
+        ? com.google.protobuf.Any.getDefaultInstance()
+        : internalExperiments_;
   }
 
   public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 10;
-  private volatile java.lang.Object serviceAccountEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountEmail_ = "";
   /**
    *
    *
@@ -776,7 +796,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FLEX_RESOURCE_SCHEDULING_GOAL_FIELD_NUMBER = 11;
-  private int flexResourceSchedulingGoal_;
+  private int flexResourceSchedulingGoal_ = 0;
   /**
    *
    *
@@ -807,16 +827,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.FlexResourceSchedulingGoal getFlexResourceSchedulingGoal() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.FlexResourceSchedulingGoal result =
-        com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.valueOf(flexResourceSchedulingGoal_);
+        com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.forNumber(
+            flexResourceSchedulingGoal_);
     return result == null
         ? com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.UNRECOGNIZED
         : result;
   }
 
   public static final int WORKER_REGION_FIELD_NUMBER = 13;
-  private volatile java.lang.Object workerRegion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerRegion_ = "";
   /**
    *
    *
@@ -873,7 +895,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKER_ZONE_FIELD_NUMBER = 14;
-  private volatile java.lang.Object workerZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerZone_ = "";
   /**
    *
    *
@@ -930,7 +954,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHUFFLE_MODE_FIELD_NUMBER = 15;
-  private int shuffleMode_;
+  private int shuffleMode_ = 0;
   /**
    *
    *
@@ -963,9 +987,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.ShuffleMode getShuffleMode() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.ShuffleMode result =
-        com.google.dataflow.v1beta3.ShuffleMode.valueOf(shuffleMode_);
+        com.google.dataflow.v1beta3.ShuffleMode.forNumber(shuffleMode_);
     return result == null ? com.google.dataflow.v1beta3.ShuffleMode.UNRECOGNIZED : result;
   }
 
@@ -1014,7 +1037,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.DebugOptionsOrBuilder getDebugOptionsOrBuilder() {
-    return getDebugOptions();
+    return debugOptions_ == null
+        ? com.google.dataflow.v1beta3.DebugOptions.getDefaultInstance()
+        : debugOptions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1404,63 +1429,50 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tempStoragePrefix_ = "";
-
       clusterManagerApiService_ = "";
-
       experiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       serviceOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       serviceKmsKeyName_ = "";
-
       if (workerPoolsBuilder_ == null) {
         workerPools_ = java.util.Collections.emptyList();
       } else {
         workerPools_ = null;
         workerPoolsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (userAgentBuilder_ == null) {
-        userAgent_ = null;
-      } else {
-        userAgent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      userAgent_ = null;
+      if (userAgentBuilder_ != null) {
+        userAgentBuilder_.dispose();
         userAgentBuilder_ = null;
       }
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
       dataset_ = "";
-
-      if (sdkPipelineOptionsBuilder_ == null) {
-        sdkPipelineOptions_ = null;
-      } else {
-        sdkPipelineOptions_ = null;
+      sdkPipelineOptions_ = null;
+      if (sdkPipelineOptionsBuilder_ != null) {
+        sdkPipelineOptionsBuilder_.dispose();
         sdkPipelineOptionsBuilder_ = null;
       }
-      if (internalExperimentsBuilder_ == null) {
-        internalExperiments_ = null;
-      } else {
-        internalExperiments_ = null;
+      internalExperiments_ = null;
+      if (internalExperimentsBuilder_ != null) {
+        internalExperimentsBuilder_.dispose();
         internalExperimentsBuilder_ = null;
       }
       serviceAccountEmail_ = "";
-
       flexResourceSchedulingGoal_ = 0;
-
       workerRegion_ = "";
-
       workerZone_ = "";
-
       shuffleMode_ = 0;
-
-      if (debugOptionsBuilder_ == null) {
-        debugOptions_ = null;
-      } else {
-        debugOptions_ = null;
+      debugOptions_ = null;
+      if (debugOptionsBuilder_ != null) {
+        debugOptionsBuilder_.dispose();
         debugOptionsBuilder_ = null;
       }
       return this;
@@ -1490,62 +1502,87 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.Environment buildPartial() {
       com.google.dataflow.v1beta3.Environment result =
           new com.google.dataflow.v1beta3.Environment(this);
-      int from_bitField0_ = bitField0_;
-      result.tempStoragePrefix_ = tempStoragePrefix_;
-      result.clusterManagerApiService_ = clusterManagerApiService_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.Environment result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         experiments_ = experiments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.experiments_ = experiments_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         serviceOptions_ = serviceOptions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.serviceOptions_ = serviceOptions_;
-      result.serviceKmsKeyName_ = serviceKmsKeyName_;
       if (workerPoolsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           workerPools_ = java.util.Collections.unmodifiableList(workerPools_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.workerPools_ = workerPools_;
       } else {
         result.workerPools_ = workerPoolsBuilder_.build();
       }
-      if (userAgentBuilder_ == null) {
-        result.userAgent_ = userAgent_;
-      } else {
-        result.userAgent_ = userAgentBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.Environment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tempStoragePrefix_ = tempStoragePrefix_;
       }
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clusterManagerApiService_ = clusterManagerApiService_;
       }
-      result.dataset_ = dataset_;
-      if (sdkPipelineOptionsBuilder_ == null) {
-        result.sdkPipelineOptions_ = sdkPipelineOptions_;
-      } else {
-        result.sdkPipelineOptions_ = sdkPipelineOptionsBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceKmsKeyName_ = serviceKmsKeyName_;
       }
-      if (internalExperimentsBuilder_ == null) {
-        result.internalExperiments_ = internalExperiments_;
-      } else {
-        result.internalExperiments_ = internalExperimentsBuilder_.build();
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.userAgent_ = userAgentBuilder_ == null ? userAgent_ : userAgentBuilder_.build();
       }
-      result.serviceAccountEmail_ = serviceAccountEmail_;
-      result.flexResourceSchedulingGoal_ = flexResourceSchedulingGoal_;
-      result.workerRegion_ = workerRegion_;
-      result.workerZone_ = workerZone_;
-      result.shuffleMode_ = shuffleMode_;
-      if (debugOptionsBuilder_ == null) {
-        result.debugOptions_ = debugOptions_;
-      } else {
-        result.debugOptions_ = debugOptionsBuilder_.build();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.dataset_ = dataset_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.sdkPipelineOptions_ =
+            sdkPipelineOptionsBuilder_ == null
+                ? sdkPipelineOptions_
+                : sdkPipelineOptionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.internalExperiments_ =
+            internalExperimentsBuilder_ == null
+                ? internalExperiments_
+                : internalExperimentsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.serviceAccountEmail_ = serviceAccountEmail_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.flexResourceSchedulingGoal_ = flexResourceSchedulingGoal_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.workerRegion_ = workerRegion_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.workerZone_ = workerZone_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.shuffleMode_ = shuffleMode_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.debugOptions_ =
+            debugOptionsBuilder_ == null ? debugOptions_ : debugOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1595,16 +1632,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.dataflow.v1beta3.Environment.getDefaultInstance()) return this;
       if (!other.getTempStoragePrefix().isEmpty()) {
         tempStoragePrefix_ = other.tempStoragePrefix_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getClusterManagerApiService().isEmpty()) {
         clusterManagerApiService_ = other.clusterManagerApiService_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.experiments_.isEmpty()) {
         if (experiments_.isEmpty()) {
           experiments_ = other.experiments_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureExperimentsIsMutable();
           experiments_.addAll(other.experiments_);
@@ -1614,7 +1653,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (!other.serviceOptions_.isEmpty()) {
         if (serviceOptions_.isEmpty()) {
           serviceOptions_ = other.serviceOptions_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureServiceOptionsIsMutable();
           serviceOptions_.addAll(other.serviceOptions_);
@@ -1623,13 +1662,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceKmsKeyName().isEmpty()) {
         serviceKmsKeyName_ = other.serviceKmsKeyName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (workerPoolsBuilder_ == null) {
         if (!other.workerPools_.isEmpty()) {
           if (workerPools_.isEmpty()) {
             workerPools_ = other.workerPools_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureWorkerPoolsIsMutable();
             workerPools_.addAll(other.workerPools_);
@@ -1642,7 +1682,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             workerPoolsBuilder_.dispose();
             workerPoolsBuilder_ = null;
             workerPools_ = other.workerPools_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
             workerPoolsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWorkerPoolsFieldBuilder()
@@ -1660,6 +1700,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDataset().isEmpty()) {
         dataset_ = other.dataset_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasSdkPipelineOptions()) {
@@ -1670,6 +1711,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceAccountEmail().isEmpty()) {
         serviceAccountEmail_ = other.serviceAccountEmail_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.flexResourceSchedulingGoal_ != 0) {
@@ -1677,10 +1719,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWorkerRegion().isEmpty()) {
         workerRegion_ = other.workerRegion_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getWorkerZone().isEmpty()) {
         workerZone_ = other.workerZone_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.shuffleMode_ != 0) {
@@ -1718,13 +1762,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 tempStoragePrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 clusterManagerApiService_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1750,69 +1794,69 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getUserAgentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 dataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     getSdkPipelineOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(
                     getInternalExperimentsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
               {
                 serviceAccountEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 88:
               {
                 flexResourceSchedulingGoal_ = input.readEnum();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 88
             case 98:
               {
                 serviceKmsKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 98
             case 106:
               {
                 workerRegion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
               {
                 workerZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 120:
               {
                 shuffleMode_ = input.readEnum();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 120
             case 130:
@@ -1825,7 +1869,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             case 138:
               {
                 input.readMessage(getDebugOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 138
             default:
@@ -1938,8 +1982,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       tempStoragePrefix_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1965,8 +2009,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTempStoragePrefix() {
-
       tempStoragePrefix_ = getDefaultInstance().getTempStoragePrefix();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1997,8 +2041,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tempStoragePrefix_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2073,8 +2117,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterManagerApiService_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2093,8 +2137,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterManagerApiService() {
-
       clusterManagerApiService_ = getDefaultInstance().getClusterManagerApiService();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2118,8 +2162,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterManagerApiService_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2128,9 +2172,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExperimentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         experiments_ = new com.google.protobuf.LazyStringArrayList(experiments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2281,7 +2325,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExperiments() {
       experiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2314,9 +2358,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureServiceOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         serviceOptions_ = new com.google.protobuf.LazyStringArrayList(serviceOptions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -2467,7 +2511,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceOptions() {
       serviceOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2566,8 +2610,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceKmsKeyName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2586,8 +2630,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceKmsKeyName() {
-
       serviceKmsKeyName_ = getDefaultInstance().getServiceKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2611,8 +2655,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceKmsKeyName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2621,10 +2665,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWorkerPoolsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         workerPools_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.WorkerPool>(workerPools_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2850,7 +2894,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWorkerPools() {
       if (workerPoolsBuilder_ == null) {
         workerPools_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         workerPoolsBuilder_.clear();
@@ -2979,7 +3023,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
                 com.google.dataflow.v1beta3.WorkerPool,
                 com.google.dataflow.v1beta3.WorkerPool.Builder,
                 com.google.dataflow.v1beta3.WorkerPoolOrBuilder>(
-                workerPools_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                workerPools_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         workerPools_ = null;
       }
       return workerPoolsBuilder_;
@@ -3003,7 +3047,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the userAgent field is set.
      */
     public boolean hasUserAgent() {
-      return userAgentBuilder_ != null || userAgent_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3038,11 +3082,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         userAgent_ = value;
-        onChanged();
       } else {
         userAgentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3057,11 +3101,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder setUserAgent(com.google.protobuf.Struct.Builder builderForValue) {
       if (userAgentBuilder_ == null) {
         userAgent_ = builderForValue.build();
-        onChanged();
       } else {
         userAgentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3075,17 +3119,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUserAgent(com.google.protobuf.Struct value) {
       if (userAgentBuilder_ == null) {
-        if (userAgent_ != null) {
-          userAgent_ =
-              com.google.protobuf.Struct.newBuilder(userAgent_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && userAgent_ != null
+            && userAgent_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getUserAgentBuilder().mergeFrom(value);
         } else {
           userAgent_ = value;
         }
-        onChanged();
       } else {
         userAgentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3098,14 +3143,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct user_agent = 5;</code>
      */
     public Builder clearUserAgent() {
-      if (userAgentBuilder_ == null) {
-        userAgent_ = null;
-        onChanged();
-      } else {
-        userAgent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      userAgent_ = null;
+      if (userAgentBuilder_ != null) {
+        userAgentBuilder_.dispose();
         userAgentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3118,7 +3162,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct user_agent = 5;</code>
      */
     public com.google.protobuf.Struct.Builder getUserAgentBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUserAgentFieldBuilder().getBuilder();
     }
@@ -3183,7 +3227,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3220,11 +3264,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3240,11 +3284,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder setVersion(com.google.protobuf.Struct.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3259,17 +3303,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVersion(com.google.protobuf.Struct value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ =
-              com.google.protobuf.Struct.newBuilder(version_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && version_ != null
+            && version_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3283,14 +3328,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct version = 6;</code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3304,7 +3348,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct version = 6;</code>
      */
     public com.google.protobuf.Struct.Builder getVersionBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
@@ -3425,8 +3469,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataset_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3446,8 +3490,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataset() {
-
       dataset_ = getDefaultInstance().getDataset();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3472,8 +3516,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataset_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3499,7 +3543,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sdkPipelineOptions field is set.
      */
     public boolean hasSdkPipelineOptions() {
-      return sdkPipelineOptionsBuilder_ != null || sdkPipelineOptions_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3542,11 +3586,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sdkPipelineOptions_ = value;
-        onChanged();
       } else {
         sdkPipelineOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3564,11 +3608,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder setSdkPipelineOptions(com.google.protobuf.Struct.Builder builderForValue) {
       if (sdkPipelineOptionsBuilder_ == null) {
         sdkPipelineOptions_ = builderForValue.build();
-        onChanged();
       } else {
         sdkPipelineOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3585,19 +3629,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSdkPipelineOptions(com.google.protobuf.Struct value) {
       if (sdkPipelineOptionsBuilder_ == null) {
-        if (sdkPipelineOptions_ != null) {
-          sdkPipelineOptions_ =
-              com.google.protobuf.Struct.newBuilder(sdkPipelineOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && sdkPipelineOptions_ != null
+            && sdkPipelineOptions_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getSdkPipelineOptionsBuilder().mergeFrom(value);
         } else {
           sdkPipelineOptions_ = value;
         }
-        onChanged();
       } else {
         sdkPipelineOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3613,14 +3656,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct sdk_pipeline_options = 8;</code>
      */
     public Builder clearSdkPipelineOptions() {
-      if (sdkPipelineOptionsBuilder_ == null) {
-        sdkPipelineOptions_ = null;
-        onChanged();
-      } else {
-        sdkPipelineOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      sdkPipelineOptions_ = null;
+      if (sdkPipelineOptionsBuilder_ != null) {
+        sdkPipelineOptionsBuilder_.dispose();
         sdkPipelineOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3636,7 +3678,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct sdk_pipeline_options = 8;</code>
      */
     public com.google.protobuf.Struct.Builder getSdkPipelineOptionsBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getSdkPipelineOptionsFieldBuilder().getBuilder();
     }
@@ -3708,7 +3750,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the internalExperiments field is set.
      */
     public boolean hasInternalExperiments() {
-      return internalExperimentsBuilder_ != null || internalExperiments_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3745,11 +3787,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         internalExperiments_ = value;
-        onChanged();
       } else {
         internalExperimentsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3764,11 +3806,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder setInternalExperiments(com.google.protobuf.Any.Builder builderForValue) {
       if (internalExperimentsBuilder_ == null) {
         internalExperiments_ = builderForValue.build();
-        onChanged();
       } else {
         internalExperimentsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3782,19 +3824,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInternalExperiments(com.google.protobuf.Any value) {
       if (internalExperimentsBuilder_ == null) {
-        if (internalExperiments_ != null) {
-          internalExperiments_ =
-              com.google.protobuf.Any.newBuilder(internalExperiments_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && internalExperiments_ != null
+            && internalExperiments_ != com.google.protobuf.Any.getDefaultInstance()) {
+          getInternalExperimentsBuilder().mergeFrom(value);
         } else {
           internalExperiments_ = value;
         }
-        onChanged();
       } else {
         internalExperimentsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3807,14 +3848,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Any internal_experiments = 9;</code>
      */
     public Builder clearInternalExperiments() {
-      if (internalExperimentsBuilder_ == null) {
-        internalExperiments_ = null;
-        onChanged();
-      } else {
-        internalExperiments_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      internalExperiments_ = null;
+      if (internalExperimentsBuilder_ != null) {
+        internalExperimentsBuilder_.dispose();
         internalExperimentsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3827,7 +3867,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Any internal_experiments = 9;</code>
      */
     public com.google.protobuf.Any.Builder getInternalExperimentsBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getInternalExperimentsFieldBuilder().getBuilder();
     }
@@ -3936,8 +3976,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3953,8 +3993,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountEmail() {
-
       serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3975,8 +4015,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4012,8 +4052,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFlexResourceSchedulingGoalValue(int value) {
-
       flexResourceSchedulingGoal_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4031,9 +4071,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.FlexResourceSchedulingGoal getFlexResourceSchedulingGoal() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.FlexResourceSchedulingGoal result =
-          com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.valueOf(
+          com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.forNumber(
               flexResourceSchedulingGoal_);
       return result == null
           ? com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.UNRECOGNIZED
@@ -4057,7 +4096,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       flexResourceSchedulingGoal_ = value.getNumber();
       onChanged();
       return this;
@@ -4075,7 +4114,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFlexResourceSchedulingGoal() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       flexResourceSchedulingGoal_ = 0;
       onChanged();
       return this;
@@ -4154,8 +4193,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerRegion_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4175,8 +4214,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkerRegion() {
-
       workerRegion_ = getDefaultInstance().getWorkerRegion();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4201,8 +4240,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerRegion_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4280,8 +4319,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerZone_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4301,8 +4340,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkerZone() {
-
       workerZone_ = getDefaultInstance().getWorkerZone();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4327,8 +4366,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerZone_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4366,8 +4405,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setShuffleModeValue(int value) {
-
       shuffleMode_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4386,9 +4425,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.ShuffleMode getShuffleMode() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.ShuffleMode result =
-          com.google.dataflow.v1beta3.ShuffleMode.valueOf(shuffleMode_);
+          com.google.dataflow.v1beta3.ShuffleMode.forNumber(shuffleMode_);
       return result == null ? com.google.dataflow.v1beta3.ShuffleMode.UNRECOGNIZED : result;
     }
     /**
@@ -4409,7 +4447,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00008000;
       shuffleMode_ = value.getNumber();
       onChanged();
       return this;
@@ -4428,7 +4466,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearShuffleMode() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       shuffleMode_ = 0;
       onChanged();
       return this;
@@ -4452,7 +4490,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the debugOptions field is set.
      */
     public boolean hasDebugOptions() {
-      return debugOptionsBuilder_ != null || debugOptions_ != null;
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4489,11 +4527,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         debugOptions_ = value;
-        onChanged();
       } else {
         debugOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4509,11 +4547,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         com.google.dataflow.v1beta3.DebugOptions.Builder builderForValue) {
       if (debugOptionsBuilder_ == null) {
         debugOptions_ = builderForValue.build();
-        onChanged();
       } else {
         debugOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4527,19 +4565,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDebugOptions(com.google.dataflow.v1beta3.DebugOptions value) {
       if (debugOptionsBuilder_ == null) {
-        if (debugOptions_ != null) {
-          debugOptions_ =
-              com.google.dataflow.v1beta3.DebugOptions.newBuilder(debugOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00010000) != 0)
+            && debugOptions_ != null
+            && debugOptions_ != com.google.dataflow.v1beta3.DebugOptions.getDefaultInstance()) {
+          getDebugOptionsBuilder().mergeFrom(value);
         } else {
           debugOptions_ = value;
         }
-        onChanged();
       } else {
         debugOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4552,14 +4589,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
      */
     public Builder clearDebugOptions() {
-      if (debugOptionsBuilder_ == null) {
-        debugOptions_ = null;
-        onChanged();
-      } else {
-        debugOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00010000);
+      debugOptions_ = null;
+      if (debugOptionsBuilder_ != null) {
+        debugOptionsBuilder_.dispose();
         debugOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4572,7 +4608,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
      */
     public com.google.dataflow.v1beta3.DebugOptions.Builder getDebugOptionsBuilder() {
-
+      bitField0_ |= 0x00010000;
       onChanged();
       return getDebugOptionsFieldBuilder().getBuilder();
     }

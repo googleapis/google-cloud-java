@@ -268,7 +268,9 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -319,7 +321,7 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -340,7 +342,9 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -399,7 +403,9 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
   }
 
   public static final int AUTH_TOKEN_FIELD_NUMBER = 5;
-  private volatile java.lang.Object authToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authToken_ = "";
   /**
    *
    *
@@ -454,7 +460,9 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -781,16 +789,12 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       authToken_ = "";
-
       languageCode_ = "";
-
       transferredCustomerIdentityCase_ = 0;
       transferredCustomerIdentity_ = null;
       return this;
@@ -820,20 +824,37 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
     public com.google.cloud.channel.v1.ListTransferableSkusRequest buildPartial() {
       com.google.cloud.channel.v1.ListTransferableSkusRequest result =
           new com.google.cloud.channel.v1.ListTransferableSkusRequest(this);
-      if (transferredCustomerIdentityCase_ == 4) {
-        result.transferredCustomerIdentity_ = transferredCustomerIdentity_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (transferredCustomerIdentityCase_ == 7) {
-        result.transferredCustomerIdentity_ = transferredCustomerIdentity_;
-      }
-      result.parent_ = parent_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.authToken_ = authToken_;
-      result.languageCode_ = languageCode_;
-      result.transferredCustomerIdentityCase_ = transferredCustomerIdentityCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ListTransferableSkusRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.authToken_ = authToken_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.channel.v1.ListTransferableSkusRequest result) {
+      result.transferredCustomerIdentityCase_ = transferredCustomerIdentityCase_;
+      result.transferredCustomerIdentity_ = this.transferredCustomerIdentity_;
     }
 
     @java.lang.Override
@@ -884,6 +905,7 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -891,14 +913,17 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getAuthToken().isEmpty()) {
         authToken_ = other.authToken_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getTransferredCustomerIdentityCase()) {
@@ -950,19 +975,19 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 16:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
@@ -975,13 +1000,13 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
             case 42:
               {
                 authToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
@@ -1021,6 +1046,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1372,8 +1399,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1390,8 +1417,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1413,8 +1440,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1456,6 +1483,7 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1474,7 +1502,7 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1556,8 +1584,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1578,8 +1606,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1605,8 +1633,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1681,8 +1709,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       authToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1701,8 +1729,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAuthToken() {
-
       authToken_ = getDefaultInstance().getAuthToken();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1726,8 +1754,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       authToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1802,8 +1830,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1822,8 +1850,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1847,8 +1875,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

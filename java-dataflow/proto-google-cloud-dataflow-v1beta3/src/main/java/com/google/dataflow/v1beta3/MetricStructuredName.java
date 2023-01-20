@@ -81,7 +81,9 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ORIGIN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object origin_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object origin_ = "";
   /**
    *
    *
@@ -132,7 +134,9 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -193,6 +197,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> context_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetContext() {
@@ -262,7 +267,10 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; context = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getContextOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getContextOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -538,10 +546,9 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       origin_ = "";
-
       name_ = "";
-
       internalGetMutableContext().clear();
       return this;
     }
@@ -570,13 +577,25 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
     public com.google.dataflow.v1beta3.MetricStructuredName buildPartial() {
       com.google.dataflow.v1beta3.MetricStructuredName result =
           new com.google.dataflow.v1beta3.MetricStructuredName(this);
-      int from_bitField0_ = bitField0_;
-      result.origin_ = origin_;
-      result.name_ = name_;
-      result.context_ = internalGetContext();
-      result.context_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.MetricStructuredName result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.origin_ = origin_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.context_ = internalGetContext();
+        result.context_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -627,13 +646,16 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getOrigin().isEmpty()) {
         origin_ = other.origin_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableContext().mergeFrom(other.internalGetContext());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -663,13 +685,13 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 origin_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -681,6 +703,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
                 internalGetMutableContext()
                     .getMutableMap()
                     .put(context__.getKey(), context__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -766,8 +789,8 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       origin_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -784,8 +807,8 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearOrigin() {
-
       origin_ = getDefaultInstance().getOrigin();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -807,8 +830,8 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       origin_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -874,8 +897,8 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -891,8 +914,8 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -913,8 +936,8 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -930,14 +953,14 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableContext() {
-      onChanged();
-      ;
       if (context_ == null) {
         context_ = com.google.protobuf.MapField.newMapField(ContextDefaultEntryHolder.defaultEntry);
       }
       if (!context_.isMutable()) {
         context_ = context_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return context_;
     }
 
@@ -1001,8 +1024,10 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, string&gt; context = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getContextOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getContextOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1035,6 +1060,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearContext() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableContext().getMutableMap().clear();
       return this;
     }
@@ -1061,6 +1087,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableContext() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableContext().getMutableMap();
     }
     /**
@@ -1083,8 +1110,8 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableContext().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1102,6 +1129,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllContext(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableContext().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

@@ -72,7 +72,9 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -242,7 +248,9 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
   }
 
   public static final int TARGET_POOL_FIELD_NUMBER = 62796298;
-  private volatile java.lang.Object targetPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetPool_ = "";
   /**
    *
    *
@@ -344,7 +352,9 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetPoolsAddInstanceRequestOrBuilder
       getTargetPoolsAddInstanceRequestResourceOrBuilder() {
-    return getTargetPoolsAddInstanceRequestResource();
+    return targetPoolsAddInstanceRequestResource_ == null
+        ? com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest.getDefaultInstance()
+        : targetPoolsAddInstanceRequestResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -595,18 +605,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       targetPool_ = "";
-
-      if (targetPoolsAddInstanceRequestResourceBuilder_ == null) {
-        targetPoolsAddInstanceRequestResource_ = null;
-      } else {
-        targetPoolsAddInstanceRequestResource_ = null;
+      targetPoolsAddInstanceRequestResource_ = null;
+      if (targetPoolsAddInstanceRequestResourceBuilder_ != null) {
+        targetPoolsAddInstanceRequestResourceBuilder_.dispose();
         targetPoolsAddInstanceRequestResourceBuilder_ = null;
       }
       return this;
@@ -636,24 +642,36 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.AddInstanceTargetPoolRequest buildPartial() {
       com.google.cloud.compute.v1.AddInstanceTargetPoolRequest result =
           new com.google.cloud.compute.v1.AddInstanceTargetPoolRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.targetPool_ = targetPool_;
-      if (targetPoolsAddInstanceRequestResourceBuilder_ == null) {
-        result.targetPoolsAddInstanceRequestResource_ = targetPoolsAddInstanceRequestResource_;
-      } else {
-        result.targetPoolsAddInstanceRequestResource_ =
-            targetPoolsAddInstanceRequestResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AddInstanceTargetPoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetPool_ = targetPool_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.targetPoolsAddInstanceRequestResource_ =
+            targetPoolsAddInstanceRequestResourceBuilder_ == null
+                ? targetPoolsAddInstanceRequestResource_
+                : targetPoolsAddInstanceRequestResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -704,19 +722,22 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTargetPool().isEmpty()) {
         targetPool_ = other.targetPool_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasTargetPoolsAddInstanceRequestResource()) {
@@ -752,25 +773,25 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 502370386:
               {
                 targetPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 502370386
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -864596062:
@@ -778,7 +799,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
                 input.readMessage(
                     getTargetPoolsAddInstanceRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case -864596062
             default:
@@ -867,8 +888,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -886,8 +907,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -910,8 +931,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -983,8 +1004,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1002,8 +1023,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1026,8 +1047,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1045,7 +1066,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1107,8 +1128,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1124,8 +1145,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1146,8 +1167,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1213,8 +1234,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetPool_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1230,8 +1251,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearTargetPool() {
-
       targetPool_ = getDefaultInstance().getTargetPool();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1252,8 +1273,8 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetPool_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1279,8 +1300,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
      * @return Whether the targetPoolsAddInstanceRequestResource field is set.
      */
     public boolean hasTargetPoolsAddInstanceRequestResource() {
-      return targetPoolsAddInstanceRequestResourceBuilder_ != null
-          || targetPoolsAddInstanceRequestResource_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1323,11 +1343,11 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         targetPoolsAddInstanceRequestResource_ = value;
-        onChanged();
       } else {
         targetPoolsAddInstanceRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1345,11 +1365,11 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest.Builder builderForValue) {
       if (targetPoolsAddInstanceRequestResourceBuilder_ == null) {
         targetPoolsAddInstanceRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         targetPoolsAddInstanceRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1366,20 +1386,19 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     public Builder mergeTargetPoolsAddInstanceRequestResource(
         com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest value) {
       if (targetPoolsAddInstanceRequestResourceBuilder_ == null) {
-        if (targetPoolsAddInstanceRequestResource_ != null) {
-          targetPoolsAddInstanceRequestResource_ =
-              com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest.newBuilder(
-                      targetPoolsAddInstanceRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && targetPoolsAddInstanceRequestResource_ != null
+            && targetPoolsAddInstanceRequestResource_
+                != com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest.getDefaultInstance()) {
+          getTargetPoolsAddInstanceRequestResourceBuilder().mergeFrom(value);
         } else {
           targetPoolsAddInstanceRequestResource_ = value;
         }
-        onChanged();
       } else {
         targetPoolsAddInstanceRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1394,14 +1413,13 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearTargetPoolsAddInstanceRequestResource() {
-      if (targetPoolsAddInstanceRequestResourceBuilder_ == null) {
-        targetPoolsAddInstanceRequestResource_ = null;
-        onChanged();
-      } else {
-        targetPoolsAddInstanceRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      targetPoolsAddInstanceRequestResource_ = null;
+      if (targetPoolsAddInstanceRequestResourceBuilder_ != null) {
+        targetPoolsAddInstanceRequestResourceBuilder_.dispose();
         targetPoolsAddInstanceRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1417,7 +1435,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
      */
     public com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest.Builder
         getTargetPoolsAddInstanceRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTargetPoolsAddInstanceRequestResourceFieldBuilder().getBuilder();
     }

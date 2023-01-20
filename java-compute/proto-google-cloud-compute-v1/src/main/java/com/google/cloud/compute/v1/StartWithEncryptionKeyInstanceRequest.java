@@ -74,7 +74,9 @@ public final class StartWithEncryptionKeyInstanceRequest
 
   private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -177,11 +179,15 @@ public final class StartWithEncryptionKeyInstanceRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequestOrBuilder
       getInstancesStartWithEncryptionKeyRequestResourceOrBuilder() {
-    return getInstancesStartWithEncryptionKeyRequestResource();
+    return instancesStartWithEncryptionKeyRequestResource_ == null
+        ? com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest.getDefaultInstance()
+        : instancesStartWithEncryptionKeyRequestResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -234,7 +240,9 @@ public final class StartWithEncryptionKeyInstanceRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -298,7 +306,9 @@ public final class StartWithEncryptionKeyInstanceRequest
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -600,20 +610,16 @@ public final class StartWithEncryptionKeyInstanceRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instance_ = "";
-
-      if (instancesStartWithEncryptionKeyRequestResourceBuilder_ == null) {
-        instancesStartWithEncryptionKeyRequestResource_ = null;
-      } else {
-        instancesStartWithEncryptionKeyRequestResource_ = null;
+      instancesStartWithEncryptionKeyRequestResource_ = null;
+      if (instancesStartWithEncryptionKeyRequestResourceBuilder_ != null) {
+        instancesStartWithEncryptionKeyRequestResourceBuilder_.dispose();
         instancesStartWithEncryptionKeyRequestResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = "";
-
       return this;
     }
 
@@ -642,25 +648,37 @@ public final class StartWithEncryptionKeyInstanceRequest
     public com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceRequest result =
           new com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.instance_ = instance_;
-      if (instancesStartWithEncryptionKeyRequestResourceBuilder_ == null) {
-        result.instancesStartWithEncryptionKeyRequestResource_ =
-            instancesStartWithEncryptionKeyRequestResource_;
-      } else {
-        result.instancesStartWithEncryptionKeyRequestResource_ =
-            instancesStartWithEncryptionKeyRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instancesStartWithEncryptionKeyRequestResource_ =
+            instancesStartWithEncryptionKeyRequestResourceBuilder_ == null
+                ? instancesStartWithEncryptionKeyRequestResource_
+                : instancesStartWithEncryptionKeyRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -713,6 +731,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         return this;
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInstancesStartWithEncryptionKeyRequestResource()) {
@@ -721,15 +740,17 @@ public final class StartWithEncryptionKeyInstanceRequest
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -761,25 +782,25 @@ public final class StartWithEncryptionKeyInstanceRequest
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 29957474
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 146056362
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -761267206:
@@ -787,7 +808,7 @@ public final class StartWithEncryptionKeyInstanceRequest
                 input.readMessage(
                     getInstancesStartWithEncryptionKeyRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -761267206
             default:
@@ -870,8 +891,8 @@ public final class StartWithEncryptionKeyInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -887,8 +908,8 @@ public final class StartWithEncryptionKeyInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -909,8 +930,8 @@ public final class StartWithEncryptionKeyInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -936,8 +957,7 @@ public final class StartWithEncryptionKeyInstanceRequest
      * @return Whether the instancesStartWithEncryptionKeyRequestResource field is set.
      */
     public boolean hasInstancesStartWithEncryptionKeyRequestResource() {
-      return instancesStartWithEncryptionKeyRequestResourceBuilder_ != null
-          || instancesStartWithEncryptionKeyRequestResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -981,11 +1001,11 @@ public final class StartWithEncryptionKeyInstanceRequest
           throw new NullPointerException();
         }
         instancesStartWithEncryptionKeyRequestResource_ = value;
-        onChanged();
       } else {
         instancesStartWithEncryptionKeyRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1004,11 +1024,11 @@ public final class StartWithEncryptionKeyInstanceRequest
             builderForValue) {
       if (instancesStartWithEncryptionKeyRequestResourceBuilder_ == null) {
         instancesStartWithEncryptionKeyRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         instancesStartWithEncryptionKeyRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1025,20 +1045,20 @@ public final class StartWithEncryptionKeyInstanceRequest
     public Builder mergeInstancesStartWithEncryptionKeyRequestResource(
         com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest value) {
       if (instancesStartWithEncryptionKeyRequestResourceBuilder_ == null) {
-        if (instancesStartWithEncryptionKeyRequestResource_ != null) {
-          instancesStartWithEncryptionKeyRequestResource_ =
-              com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest.newBuilder(
-                      instancesStartWithEncryptionKeyRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && instancesStartWithEncryptionKeyRequestResource_ != null
+            && instancesStartWithEncryptionKeyRequestResource_
+                != com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest
+                    .getDefaultInstance()) {
+          getInstancesStartWithEncryptionKeyRequestResourceBuilder().mergeFrom(value);
         } else {
           instancesStartWithEncryptionKeyRequestResource_ = value;
         }
-        onChanged();
       } else {
         instancesStartWithEncryptionKeyRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1053,14 +1073,13 @@ public final class StartWithEncryptionKeyInstanceRequest
      * </code>
      */
     public Builder clearInstancesStartWithEncryptionKeyRequestResource() {
-      if (instancesStartWithEncryptionKeyRequestResourceBuilder_ == null) {
-        instancesStartWithEncryptionKeyRequestResource_ = null;
-        onChanged();
-      } else {
-        instancesStartWithEncryptionKeyRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      instancesStartWithEncryptionKeyRequestResource_ = null;
+      if (instancesStartWithEncryptionKeyRequestResourceBuilder_ != null) {
+        instancesStartWithEncryptionKeyRequestResourceBuilder_.dispose();
         instancesStartWithEncryptionKeyRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1076,7 +1095,7 @@ public final class StartWithEncryptionKeyInstanceRequest
      */
     public com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest.Builder
         getInstancesStartWithEncryptionKeyRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInstancesStartWithEncryptionKeyRequestResourceFieldBuilder().getBuilder();
     }
@@ -1199,8 +1218,8 @@ public final class StartWithEncryptionKeyInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1218,8 +1237,8 @@ public final class StartWithEncryptionKeyInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1242,8 +1261,8 @@ public final class StartWithEncryptionKeyInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1261,7 +1280,7 @@ public final class StartWithEncryptionKeyInstanceRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1323,8 +1342,8 @@ public final class StartWithEncryptionKeyInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1340,8 +1359,8 @@ public final class StartWithEncryptionKeyInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1362,8 +1381,8 @@ public final class StartWithEncryptionKeyInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1435,8 +1454,8 @@ public final class StartWithEncryptionKeyInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1454,8 +1473,8 @@ public final class StartWithEncryptionKeyInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1478,8 +1497,8 @@ public final class StartWithEncryptionKeyInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

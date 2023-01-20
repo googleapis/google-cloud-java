@@ -403,6 +403,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (assessmentDetailsBuilder_ != null) {
         assessmentDetailsBuilder_.clear();
       }
@@ -439,16 +440,26 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
         buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult result =
           new com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult(this);
-      if (detailsCase_ == 1) {
-        if (assessmentDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = assessmentDetailsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.detailsCase_ = detailsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult result) {
+      result.detailsCase_ = detailsCase_;
+      result.details_ = this.details_;
+      if (detailsCase_ == 1 && assessmentDetailsBuilder_ != null) {
+        result.details_ = assessmentDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -575,6 +586,8 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetails,
@@ -825,7 +838,6 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
       }
       detailsCase_ = 1;
       onChanged();
-      ;
       return assessmentDetailsBuilder_;
     }
 

@@ -426,6 +426,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ACCELERATORS_FIELD_NUMBER = 269577064;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> accelerators_;
   /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   @java.lang.Override
@@ -456,7 +458,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CPU_OVERCOMMIT_TYPE_FIELD_NUMBER = 247727959;
-  private volatile java.lang.Object cpuOvercommitType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cpuOvercommitType_ = "";
   /**
    *
    *
@@ -523,7 +527,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -587,7 +593,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -651,6 +659,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISKS_FIELD_NUMBER = 95594102;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.LocalDisk> disks_;
   /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
   @java.lang.Override
@@ -680,7 +690,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -713,7 +723,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -777,7 +789,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -853,6 +867,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> nodeAffinityLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -912,8 +927,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
    */
   @java.lang.Override
-  public java.lang.String getNodeAffinityLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getNodeAffinityLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -944,7 +961,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NODE_TYPE_FIELD_NUMBER = 465832791;
-  private volatile java.lang.Object nodeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeType_ = "";
   /**
    *
    *
@@ -1065,7 +1084,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -1129,7 +1150,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -1243,7 +1266,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -1310,7 +1335,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 297428154;
-  private volatile java.lang.Object statusMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statusMessage_ = "";
   /**
    *
    *
@@ -1824,6 +1851,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
       } else {
@@ -1832,11 +1860,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       cpuOvercommitType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       if (disksBuilder_ == null) {
         disks_ = java.util.Collections.emptyList();
       } else {
@@ -1845,34 +1870,24 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000010);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableNodeAffinityLabels().clear();
       nodeType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
-      if (nodeTypeFlexibilityBuilder_ == null) {
-        nodeTypeFlexibility_ = null;
-      } else {
-        nodeTypeFlexibilityBuilder_.clear();
+      nodeTypeFlexibility_ = null;
+      if (nodeTypeFlexibilityBuilder_ != null) {
+        nodeTypeFlexibilityBuilder_.dispose();
+        nodeTypeFlexibilityBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
-      if (serverBindingBuilder_ == null) {
-        serverBinding_ = null;
-      } else {
-        serverBindingBuilder_.clear();
+      serverBinding_ = null;
+      if (serverBindingBuilder_ != null) {
+        serverBindingBuilder_.dispose();
+        serverBindingBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00004000);
       statusMessage_ = "";
-      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1900,8 +1915,15 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.NodeTemplate buildPartial() {
       com.google.cloud.compute.v1.NodeTemplate result =
           new com.google.cloud.compute.v1.NodeTemplate(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.NodeTemplate result) {
       if (acceleratorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
@@ -1911,18 +1933,6 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.accelerators_ = acceleratorsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.cpuOvercommitType_ = cpuOvercommitType_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.creationTimestamp_ = creationTimestamp_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.description_ = description_;
       if (disksBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
           disks_ = java.util.Collections.unmodifiableList(disks_);
@@ -1932,59 +1942,72 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.disks_ = disksBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NodeTemplate result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cpuOvercommitType_ = cpuOvercommitType_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000004;
+      }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.id_ = id_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000010;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000020;
       }
-      result.name_ = name_;
-      result.nodeAffinityLabels_ = internalGetNodeAffinityLabels();
-      result.nodeAffinityLabels_.makeImmutable();
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.nodeAffinityLabels_ = internalGetNodeAffinityLabels();
+        result.nodeAffinityLabels_.makeImmutable();
+      }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.nodeType_ = nodeType_;
         to_bitField0_ |= 0x00000040;
       }
-      result.nodeType_ = nodeType_;
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        if (nodeTypeFlexibilityBuilder_ == null) {
-          result.nodeTypeFlexibility_ = nodeTypeFlexibility_;
-        } else {
-          result.nodeTypeFlexibility_ = nodeTypeFlexibilityBuilder_.build();
-        }
+        result.nodeTypeFlexibility_ =
+            nodeTypeFlexibilityBuilder_ == null
+                ? nodeTypeFlexibility_
+                : nodeTypeFlexibilityBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.region_ = region_;
         to_bitField0_ |= 0x00000100;
       }
-      result.region_ = region_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000200;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        if (serverBindingBuilder_ == null) {
-          result.serverBinding_ = serverBinding_;
-        } else {
-          result.serverBinding_ = serverBindingBuilder_.build();
-        }
+        result.serverBinding_ =
+            serverBindingBuilder_ == null ? serverBinding_ : serverBindingBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.status_ = status_;
         to_bitField0_ |= 0x00000800;
       }
-      result.status_ = status_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.statusMessage_ = statusMessage_;
         to_bitField0_ |= 0x00001000;
       }
-      result.statusMessage_ = statusMessage_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2060,18 +2083,18 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasCpuOvercommitType()) {
-        bitField0_ |= 0x00000002;
         cpuOvercommitType_ = other.cpuOvercommitType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000004;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000008;
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (disksBuilder_ == null) {
@@ -2105,45 +2128,46 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000040;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000080;
         name_ = other.name_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       internalGetMutableNodeAffinityLabels().mergeFrom(other.internalGetNodeAffinityLabels());
+      bitField0_ |= 0x00000100;
       if (other.hasNodeType()) {
-        bitField0_ |= 0x00000200;
         nodeType_ = other.nodeType_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasNodeTypeFlexibility()) {
         mergeNodeTypeFlexibility(other.getNodeTypeFlexibility());
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00000800;
         region_ = other.region_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00001000;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasServerBinding()) {
         mergeServerBinding(other.getServerBinding());
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00004000;
         status_ = other.status_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasStatusMessage()) {
-        bitField0_ |= 0x00008000;
         statusMessage_ = other.statusMessage_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2269,6 +2293,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableNodeAffinityLabels()
                     .getMutableMap()
                     .put(nodeAffinityLabels__.getKey(), nodeAffinityLabels__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case -1582910006
             case -911466526:
@@ -2631,8 +2656,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       cpuOvercommitType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2649,8 +2674,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCpuOvercommitType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       cpuOvercommitType_ = getDefaultInstance().getCpuOvercommitType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2672,8 +2697,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       cpuOvercommitType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2753,8 +2778,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2770,8 +2795,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2792,8 +2817,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2873,8 +2898,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2890,8 +2915,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2912,8 +2937,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3166,8 +3191,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000020;
+
       id_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3264,8 +3290,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       kind_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3281,8 +3307,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3303,8 +3329,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       kind_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3384,8 +3410,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       name_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3401,8 +3427,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3423,8 +3449,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       name_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3442,8 +3468,6 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableNodeAffinityLabels() {
-      onChanged();
-      ;
       if (nodeAffinityLabels_ == null) {
         nodeAffinityLabels_ =
             com.google.protobuf.MapField.newMapField(
@@ -3452,6 +3476,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (!nodeAffinityLabels_.isMutable()) {
         nodeAffinityLabels_ = nodeAffinityLabels_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return nodeAffinityLabels_;
     }
 
@@ -3503,8 +3529,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
      */
     @java.lang.Override
-    public java.lang.String getNodeAffinityLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getNodeAffinityLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3535,6 +3563,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearNodeAffinityLabels() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableNodeAffinityLabels().getMutableMap().clear();
       return this;
     }
@@ -3557,6 +3586,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableNodeAffinityLabels() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableNodeAffinityLabels().getMutableMap();
     }
     /**
@@ -3575,8 +3605,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableNodeAffinityLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -3591,6 +3621,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllNodeAffinityLabels(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableNodeAffinityLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -3669,8 +3700,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       nodeType_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3686,8 +3717,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNodeType() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       nodeType_ = getDefaultInstance().getNodeType();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3708,8 +3739,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       nodeType_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3776,11 +3807,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         nodeTypeFlexibility_ = value;
-        onChanged();
       } else {
         nodeTypeFlexibilityBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3798,11 +3829,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility.Builder builderForValue) {
       if (nodeTypeFlexibilityBuilder_ == null) {
         nodeTypeFlexibility_ = builderForValue.build();
-        onChanged();
       } else {
         nodeTypeFlexibilityBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3824,19 +3855,15 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
             && nodeTypeFlexibility_
                 != com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility
                     .getDefaultInstance()) {
-          nodeTypeFlexibility_ =
-              com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility.newBuilder(
-                      nodeTypeFlexibility_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getNodeTypeFlexibilityBuilder().mergeFrom(value);
         } else {
           nodeTypeFlexibility_ = value;
         }
-        onChanged();
       } else {
         nodeTypeFlexibilityBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3851,13 +3878,13 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNodeTypeFlexibility() {
-      if (nodeTypeFlexibilityBuilder_ == null) {
-        nodeTypeFlexibility_ = null;
-        onChanged();
-      } else {
-        nodeTypeFlexibilityBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000400);
+      nodeTypeFlexibility_ = null;
+      if (nodeTypeFlexibilityBuilder_ != null) {
+        nodeTypeFlexibilityBuilder_.dispose();
+        nodeTypeFlexibilityBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -4001,8 +4028,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       region_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4018,8 +4045,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4040,8 +4067,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       region_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4121,8 +4148,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
       selfLink_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4138,8 +4165,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4160,8 +4187,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
       selfLink_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4221,11 +4248,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         serverBinding_ = value;
-        onChanged();
       } else {
         serverBindingBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -4241,11 +4268,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.ServerBinding.Builder builderForValue) {
       if (serverBindingBuilder_ == null) {
         serverBinding_ = builderForValue.build();
-        onChanged();
       } else {
         serverBindingBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -4262,18 +4289,15 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00002000) != 0)
             && serverBinding_ != null
             && serverBinding_ != com.google.cloud.compute.v1.ServerBinding.getDefaultInstance()) {
-          serverBinding_ =
-              com.google.cloud.compute.v1.ServerBinding.newBuilder(serverBinding_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getServerBindingBuilder().mergeFrom(value);
         } else {
           serverBinding_ = value;
         }
-        onChanged();
       } else {
         serverBindingBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -4286,13 +4310,13 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      */
     public Builder clearServerBinding() {
-      if (serverBindingBuilder_ == null) {
-        serverBinding_ = null;
-        onChanged();
-      } else {
-        serverBindingBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00002000);
+      serverBinding_ = null;
+      if (serverBindingBuilder_ != null) {
+        serverBindingBuilder_.dispose();
+        serverBindingBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -4432,8 +4456,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
       status_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4450,8 +4474,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4473,8 +4497,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
       status_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4554,8 +4578,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
       statusMessage_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4571,8 +4595,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatusMessage() {
-      bitField0_ = (bitField0_ & ~0x00008000);
       statusMessage_ = getDefaultInstance().getStatusMessage();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4593,8 +4617,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
       statusMessage_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

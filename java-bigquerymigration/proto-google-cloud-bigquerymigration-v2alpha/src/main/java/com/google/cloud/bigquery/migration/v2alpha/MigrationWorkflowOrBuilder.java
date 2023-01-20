@@ -139,7 +139,6 @@ public interface MigrationWorkflowOrBuilder
    * <code>map&lt;string, .google.cloud.bigquery.migration.v2alpha.MigrationTask&gt; tasks = 2;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.bigquery.migration.v2alpha.MigrationTask getTasksOrDefault(
       java.lang.String key,

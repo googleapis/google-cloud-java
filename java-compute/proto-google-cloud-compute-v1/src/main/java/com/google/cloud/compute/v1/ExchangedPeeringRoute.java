@@ -251,7 +251,9 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   public static final int DEST_RANGE_FIELD_NUMBER = 381327712;
-  private volatile java.lang.Object destRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destRange_ = "";
   /**
    *
    *
@@ -315,7 +317,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
   }
 
   public static final int IMPORTED_FIELD_NUMBER = 114502404;
-  private boolean imported_;
+  private boolean imported_ = false;
   /**
    *
    *
@@ -348,7 +350,9 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NEXT_HOP_REGION_FIELD_NUMBER = 122577014;
-  private volatile java.lang.Object nextHopRegion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextHopRegion_ = "";
   /**
    *
    *
@@ -412,7 +416,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
-  private int priority_;
+  private int priority_ = 0;
   /**
    *
    *
@@ -445,7 +449,9 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -768,16 +774,12 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       destRange_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       imported_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       nextHopRegion_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       priority_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -805,31 +807,37 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.ExchangedPeeringRoute buildPartial() {
       com.google.cloud.compute.v1.ExchangedPeeringRoute result =
           new com.google.cloud.compute.v1.ExchangedPeeringRoute(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ExchangedPeeringRoute result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.destRange_ = destRange_;
         to_bitField0_ |= 0x00000001;
       }
-      result.destRange_ = destRange_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.imported_ = imported_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nextHopRegion_ = nextHopRegion_;
         to_bitField0_ |= 0x00000004;
       }
-      result.nextHopRegion_ = nextHopRegion_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.priority_ = priority_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00000010;
       }
-      result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -879,24 +887,24 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       if (other == com.google.cloud.compute.v1.ExchangedPeeringRoute.getDefaultInstance())
         return this;
       if (other.hasDestRange()) {
-        bitField0_ |= 0x00000001;
         destRange_ = other.destRange_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasImported()) {
         setImported(other.getImported());
       }
       if (other.hasNextHopRegion()) {
-        bitField0_ |= 0x00000004;
         nextHopRegion_ = other.nextHopRegion_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasPriority()) {
         setPriority(other.getPriority());
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00000010;
         type_ = other.type_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1049,8 +1057,8 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       destRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1066,8 +1074,8 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDestRange() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       destRange_ = getDefaultInstance().getDestRange();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1088,8 +1096,8 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       destRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1138,8 +1146,9 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setImported(boolean value) {
-      bitField0_ |= 0x00000002;
+
       imported_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1236,8 +1245,8 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       nextHopRegion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1253,8 +1262,8 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearNextHopRegion() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       nextHopRegion_ = getDefaultInstance().getNextHopRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1275,8 +1284,8 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       nextHopRegion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1325,8 +1334,9 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-      bitField0_ |= 0x00000008;
+
       priority_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1427,8 +1437,8 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       type_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1445,8 +1455,8 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1468,8 +1478,8 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       type_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

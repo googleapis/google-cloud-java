@@ -71,7 +71,9 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
 
   private int bitField0_;
   public static final int SERVICE_FIELD_NUMBER = 373540533;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
   }
 
   public static final int TAG_FIELD_NUMBER = 114586;
-  private volatile java.lang.Object tag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tag_ = "";
   /**
    *
    *
@@ -199,7 +203,9 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
   }
 
   public static final int URL_MASK_FIELD_NUMBER = 103352252;
-  private volatile java.lang.Object urlMask_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object urlMask_ = "";
   /**
    *
    *
@@ -493,12 +499,10 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       tag_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       urlMask_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -526,23 +530,29 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun buildPartial() {
       com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun result =
           new com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
         to_bitField0_ |= 0x00000001;
       }
-      result.service_ = service_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tag_ = tag_;
         to_bitField0_ |= 0x00000002;
       }
-      result.tag_ = tag_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.urlMask_ = urlMask_;
         to_bitField0_ |= 0x00000004;
       }
-      result.urlMask_ = urlMask_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -592,18 +602,18 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
       if (other == com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.getDefaultInstance())
         return this;
       if (other.hasService()) {
-        bitField0_ |= 0x00000001;
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTag()) {
-        bitField0_ |= 0x00000002;
         tag_ = other.tag_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasUrlMask()) {
-        bitField0_ |= 0x00000004;
         urlMask_ = other.urlMask_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -744,8 +754,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -761,8 +771,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -783,8 +793,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -864,8 +874,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       tag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -881,8 +891,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearTag() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       tag_ = getDefaultInstance().getTag();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -903,8 +913,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       tag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -984,8 +994,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       urlMask_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1001,8 +1011,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearUrlMask() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       urlMask_ = getDefaultInstance().getUrlMask();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1023,8 +1033,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       urlMask_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

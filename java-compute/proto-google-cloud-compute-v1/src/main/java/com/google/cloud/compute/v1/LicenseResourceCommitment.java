@@ -70,7 +70,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
 
   private int bitField0_;
   public static final int AMOUNT_FIELD_NUMBER = 196759640;
-  private long amount_;
+  private long amount_ = 0L;
   /**
    *
    *
@@ -103,7 +103,9 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
   }
 
   public static final int CORES_PER_LICENSE_FIELD_NUMBER = 32482324;
-  private volatile java.lang.Object coresPerLicense_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object coresPerLicense_ = "";
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
   }
 
   public static final int LICENSE_FIELD_NUMBER = 166757441;
-  private volatile java.lang.Object license_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object license_ = "";
   /**
    *
    *
@@ -461,12 +465,10 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       amount_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       coresPerLicense_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       license_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -494,6 +496,14 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.LicenseResourceCommitment buildPartial() {
       com.google.cloud.compute.v1.LicenseResourceCommitment result =
           new com.google.cloud.compute.v1.LicenseResourceCommitment(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.LicenseResourceCommitment result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -501,16 +511,14 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.coresPerLicense_ = coresPerLicense_;
         to_bitField0_ |= 0x00000002;
       }
-      result.coresPerLicense_ = coresPerLicense_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.license_ = license_;
         to_bitField0_ |= 0x00000004;
       }
-      result.license_ = license_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -563,13 +571,13 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
         setAmount(other.getAmount());
       }
       if (other.hasCoresPerLicense()) {
-        bitField0_ |= 0x00000002;
         coresPerLicense_ = other.coresPerLicense_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasLicense()) {
-        bitField0_ |= 0x00000004;
         license_ = other.license_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -679,8 +687,9 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setAmount(long value) {
-      bitField0_ |= 0x00000001;
+
       amount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,8 +786,8 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       coresPerLicense_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -794,8 +803,8 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearCoresPerLicense() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       coresPerLicense_ = getDefaultInstance().getCoresPerLicense();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -816,8 +825,8 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       coresPerLicense_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -897,8 +906,8 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       license_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -914,8 +923,8 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLicense() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       license_ = getDefaultInstance().getLicense();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -936,8 +945,8 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       license_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

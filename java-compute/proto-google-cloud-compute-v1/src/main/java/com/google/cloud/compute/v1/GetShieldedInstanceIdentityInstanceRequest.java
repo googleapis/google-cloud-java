@@ -72,7 +72,9 @@ public final class GetShieldedInstanceIdentityInstanceRequest
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class GetShieldedInstanceIdentityInstanceRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -170,7 +174,9 @@ public final class GetShieldedInstanceIdentityInstanceRequest
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -436,12 +442,10 @@ public final class GetShieldedInstanceIdentityInstanceRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instance_ = "";
-
       project_ = "";
-
       zone_ = "";
-
       return this;
     }
 
@@ -472,11 +476,25 @@ public final class GetShieldedInstanceIdentityInstanceRequest
     public com.google.cloud.compute.v1.GetShieldedInstanceIdentityInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.GetShieldedInstanceIdentityInstanceRequest result =
           new com.google.cloud.compute.v1.GetShieldedInstanceIdentityInstanceRequest(this);
-      result.instance_ = instance_;
-      result.project_ = project_;
-      result.zone_ = zone_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.GetShieldedInstanceIdentityInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.zone_ = zone_;
+      }
     }
 
     @java.lang.Override
@@ -530,14 +548,17 @@ public final class GetShieldedInstanceIdentityInstanceRequest
               .getDefaultInstance()) return this;
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -569,19 +590,19 @@ public final class GetShieldedInstanceIdentityInstanceRequest
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29957474
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 146056362
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             default:
@@ -600,6 +621,8 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instance_ = "";
     /**
@@ -662,8 +685,8 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -679,8 +702,8 @@ public final class GetShieldedInstanceIdentityInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -701,8 +724,8 @@ public final class GetShieldedInstanceIdentityInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -768,8 +791,8 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -785,8 +808,8 @@ public final class GetShieldedInstanceIdentityInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -807,8 +830,8 @@ public final class GetShieldedInstanceIdentityInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -874,8 +897,8 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -891,8 +914,8 @@ public final class GetShieldedInstanceIdentityInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -913,8 +936,8 @@ public final class GetShieldedInstanceIdentityInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

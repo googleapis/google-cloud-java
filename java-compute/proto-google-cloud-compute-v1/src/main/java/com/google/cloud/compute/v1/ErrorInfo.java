@@ -81,7 +81,9 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int DOMAIN_FIELD_NUMBER = 284415172;
-  private volatile java.lang.Object domain_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domain_ = "";
   /**
    *
    *
@@ -157,6 +159,7 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadatas_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadatas() {
@@ -214,8 +217,10 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadatasOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadatasOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -244,7 +249,9 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REASON_FIELD_NUMBER = 138777156;
-  private volatile java.lang.Object reason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reason_ = "";
   /**
    *
    *
@@ -558,11 +565,10 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       domain_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableMetadatas().clear();
       reason_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -590,21 +596,29 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.ErrorInfo buildPartial() {
       com.google.cloud.compute.v1.ErrorInfo result =
           new com.google.cloud.compute.v1.ErrorInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ErrorInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.domain_ = domain_;
         to_bitField0_ |= 0x00000001;
       }
-      result.domain_ = domain_;
-      result.metadatas_ = internalGetMetadatas();
-      result.metadatas_.makeImmutable();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadatas_ = internalGetMetadatas();
+        result.metadatas_.makeImmutable();
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.reason_ = reason_;
         to_bitField0_ |= 0x00000002;
       }
-      result.reason_ = reason_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -653,14 +667,15 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.ErrorInfo other) {
       if (other == com.google.cloud.compute.v1.ErrorInfo.getDefaultInstance()) return this;
       if (other.hasDomain()) {
-        bitField0_ |= 0x00000001;
         domain_ = other.domain_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableMetadatas().mergeFrom(other.internalGetMetadatas());
+      bitField0_ |= 0x00000002;
       if (other.hasReason()) {
-        bitField0_ |= 0x00000004;
         reason_ = other.reason_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -698,6 +713,7 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadatas()
                     .getMutableMap()
                     .put(metadatas__.getKey(), metadatas__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 68114722
             case 1110217250:
@@ -806,8 +822,8 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       domain_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -823,8 +839,8 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDomain() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       domain_ = getDefaultInstance().getDomain();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -845,8 +861,8 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       domain_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -863,8 +879,6 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadatas() {
-      onChanged();
-      ;
       if (metadatas_ == null) {
         metadatas_ =
             com.google.protobuf.MapField.newMapField(MetadatasDefaultEntryHolder.defaultEntry);
@@ -872,6 +886,8 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
       if (!metadatas_.isMutable()) {
         metadatas_ = metadatas_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return metadatas_;
     }
 
@@ -923,8 +939,10 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadatasOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadatasOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -953,6 +971,7 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadatas() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableMetadatas().getMutableMap().clear();
       return this;
     }
@@ -975,6 +994,7 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadatas() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableMetadatas().getMutableMap();
     }
     /**
@@ -993,8 +1013,8 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadatas().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1008,6 +1028,7 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadatas(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadatas().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1086,8 +1107,8 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       reason_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1103,8 +1124,8 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReason() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       reason_ = getDefaultInstance().getReason();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1125,8 +1146,8 @@ public final class ErrorInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       reason_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

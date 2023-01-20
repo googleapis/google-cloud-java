@@ -70,7 +70,9 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int KEY_NAME_FIELD_NUMBER = 500938859;
-  private volatile java.lang.Object keyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyName_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_VALUE_FIELD_NUMBER = 504106897;
-  private volatile java.lang.Object keyValue_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyValue_ = "";
   /**
    *
    *
@@ -412,10 +416,9 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       keyName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       keyValue_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -443,19 +446,25 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.SignedUrlKey buildPartial() {
       com.google.cloud.compute.v1.SignedUrlKey result =
           new com.google.cloud.compute.v1.SignedUrlKey(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SignedUrlKey result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keyName_ = keyName_;
         to_bitField0_ |= 0x00000001;
       }
-      result.keyName_ = keyName_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.keyValue_ = keyValue_;
         to_bitField0_ |= 0x00000002;
       }
-      result.keyValue_ = keyValue_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -504,13 +513,13 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.SignedUrlKey other) {
       if (other == com.google.cloud.compute.v1.SignedUrlKey.getDefaultInstance()) return this;
       if (other.hasKeyName()) {
-        bitField0_ |= 0x00000001;
         keyName_ = other.keyName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasKeyValue()) {
-        bitField0_ |= 0x00000002;
         keyValue_ = other.keyValue_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -645,8 +654,8 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       keyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -662,8 +671,8 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKeyName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       keyName_ = getDefaultInstance().getKeyName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -684,8 +693,8 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       keyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -765,8 +774,8 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       keyValue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -782,8 +791,8 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKeyValue() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       keyValue_ = getDefaultInstance().getKeyValue();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -804,8 +813,8 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       keyValue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

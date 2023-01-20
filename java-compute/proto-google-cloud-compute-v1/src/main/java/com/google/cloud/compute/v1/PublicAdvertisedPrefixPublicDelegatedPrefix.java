@@ -75,7 +75,9 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
 
   private int bitField0_;
   public static final int IP_RANGE_FIELD_NUMBER = 145092645;
-  private volatile java.lang.Object ipRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipRange_ = "";
   /**
    *
    *
@@ -139,7 +141,9 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -203,7 +207,9 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -267,7 +273,9 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -331,7 +339,9 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -656,16 +666,12 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipRange_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       project_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -696,31 +702,38 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     public com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix buildPartial() {
       com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix result =
           new com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ipRange_ = ipRange_;
         to_bitField0_ |= 0x00000001;
       }
-      result.ipRange_ = ipRange_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000002;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
         to_bitField0_ |= 0x00000004;
       }
-      result.project_ = project_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.region_ = region_;
         to_bitField0_ |= 0x00000008;
       }
-      result.region_ = region_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.status_ = status_;
         to_bitField0_ |= 0x00000010;
       }
-      result.status_ = status_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -774,28 +787,28 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
           == com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix
               .getDefaultInstance()) return this;
       if (other.hasIpRange()) {
-        bitField0_ |= 0x00000001;
         ipRange_ = other.ipRange_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000002;
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasProject()) {
-        bitField0_ |= 0x00000004;
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00000008;
         region_ = other.region_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00000010;
         status_ = other.status_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -948,8 +961,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       ipRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -965,8 +978,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * @return This builder for chaining.
      */
     public Builder clearIpRange() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       ipRange_ = getDefaultInstance().getIpRange();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -987,8 +1000,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       ipRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1068,8 +1081,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1085,8 +1098,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1107,8 +1120,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1188,8 +1201,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1205,8 +1218,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1227,8 +1240,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1308,8 +1321,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       region_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1325,8 +1338,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1347,8 +1360,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       region_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1428,8 +1441,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       status_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1445,8 +1458,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1467,8 +1480,8 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       status_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -519,7 +519,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DATASET_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dataset_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataset_ = "";
     /**
      *
      *
@@ -786,8 +788,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dataset_ = "";
-
         return this;
       }
 
@@ -819,9 +821,19 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource result =
             new com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource(this);
-        result.dataset_ = dataset_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dataset_ = dataset_;
+        }
       }
 
       @java.lang.Override
@@ -879,6 +891,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getDataset().isEmpty()) {
           dataset_ = other.dataset_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -910,7 +923,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   dataset_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -929,6 +942,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object dataset_ = "";
       /**
@@ -994,8 +1009,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         dataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1012,8 +1027,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDataset() {
-
         dataset_ = getDefaultInstance().getDataset();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1035,8 +1050,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         dataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1216,7 +1231,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1267,7 +1284,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1324,7 +1343,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1381,7 +1402,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRIMARY_CONTACT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object primaryContact_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object primaryContact_ = "";
   /**
    *
    *
@@ -1432,7 +1455,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENTATION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object documentation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object documentation_ = "";
   /**
    *
    *
@@ -1481,7 +1506,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 7;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1514,16 +1539,15 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.dataexchange.v1beta1.Listing.State result =
-        com.google.cloud.bigquery.dataexchange.v1beta1.Listing.State.valueOf(state_);
+        com.google.cloud.bigquery.dataexchange.v1beta1.Listing.State.forNumber(state_);
     return result == null
         ? com.google.cloud.bigquery.dataexchange.v1beta1.Listing.State.UNRECOGNIZED
         : result;
   }
 
   public static final int ICON_FIELD_NUMBER = 8;
-  private com.google.protobuf.ByteString icon_;
+  private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -1596,11 +1620,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.bigquery.dataexchange.v1beta1.DataProviderOrBuilder
       getDataProviderOrBuilder() {
-    return getDataProvider();
+    return dataProvider_ == null
+        ? com.google.cloud.bigquery.dataexchange.v1beta1.DataProvider.getDefaultInstance()
+        : dataProvider_;
   }
 
   public static final int CATEGORIES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> categories_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category>
       categories_converter_ =
@@ -1609,9 +1638,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category>() {
             public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category result =
-                  com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category.valueOf(from);
+                  com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category.forNumber(from);
               return result == null
                   ? com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category.UNRECOGNIZED
                   : result;
@@ -1764,11 +1792,15 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.dataexchange.v1beta1.PublisherOrBuilder getPublisherOrBuilder() {
-    return getPublisher();
+    return publisher_ == null
+        ? com.google.cloud.bigquery.dataexchange.v1beta1.Publisher.getDefaultInstance()
+        : publisher_;
   }
 
   public static final int REQUEST_ACCESS_FIELD_NUMBER = 12;
-  private volatile java.lang.Object requestAccess_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestAccess_ = "";
   /**
    *
    *
@@ -2169,39 +2201,30 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bigqueryDatasetBuilder_ != null) {
         bigqueryDatasetBuilder_.clear();
       }
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       primaryContact_ = "";
-
       documentation_ = "";
-
       state_ = 0;
-
       icon_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (dataProviderBuilder_ == null) {
-        dataProvider_ = null;
-      } else {
-        dataProvider_ = null;
+      dataProvider_ = null;
+      if (dataProviderBuilder_ != null) {
+        dataProviderBuilder_.dispose();
         dataProviderBuilder_ = null;
       }
       categories_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (publisherBuilder_ == null) {
-        publisher_ = null;
-      } else {
-        publisher_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      publisher_ = null;
+      if (publisherBuilder_ != null) {
+        publisherBuilder_.dispose();
         publisherBuilder_ = null;
       }
       requestAccess_ = "";
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -2231,40 +2254,65 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.dataexchange.v1beta1.Listing buildPartial() {
       com.google.cloud.bigquery.dataexchange.v1beta1.Listing result =
           new com.google.cloud.bigquery.dataexchange.v1beta1.Listing(this);
-      int from_bitField0_ = bitField0_;
-      if (sourceCase_ == 6) {
-        if (bigqueryDatasetBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = bigqueryDatasetBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.primaryContact_ = primaryContact_;
-      result.documentation_ = documentation_;
-      result.state_ = state_;
-      result.icon_ = icon_;
-      if (dataProviderBuilder_ == null) {
-        result.dataProvider_ = dataProvider_;
-      } else {
-        result.dataProvider_ = dataProviderBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        categories_ = java.util.Collections.unmodifiableList(categories_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.categories_ = categories_;
-      if (publisherBuilder_ == null) {
-        result.publisher_ = publisher_;
-      } else {
-        result.publisher_ = publisherBuilder_.build();
-      }
-      result.requestAccess_ = requestAccess_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.dataexchange.v1beta1.Listing result) {
+      if (((bitField0_ & 0x00000200) != 0)) {
+        categories_ = java.util.Collections.unmodifiableList(categories_);
+        bitField0_ = (bitField0_ & ~0x00000200);
+      }
+      result.categories_ = categories_;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.dataexchange.v1beta1.Listing result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.primaryContact_ = primaryContact_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.documentation_ = documentation_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.icon_ = icon_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.dataProvider_ =
+            dataProviderBuilder_ == null ? dataProvider_ : dataProviderBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.publisher_ = publisherBuilder_ == null ? publisher_ : publisherBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.requestAccess_ = requestAccess_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.bigquery.dataexchange.v1beta1.Listing result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 6 && bigqueryDatasetBuilder_ != null) {
+        result.source_ = bigqueryDatasetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2315,22 +2363,27 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getPrimaryContact().isEmpty()) {
         primaryContact_ = other.primaryContact_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDocumentation().isEmpty()) {
         documentation_ = other.documentation_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -2345,7 +2398,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (!other.categories_.isEmpty()) {
         if (categories_.isEmpty()) {
           categories_ = other.categories_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           ensureCategoriesIsMutable();
           categories_.addAll(other.categories_);
@@ -2357,6 +2410,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRequestAccess().isEmpty()) {
         requestAccess_ = other.requestAccess_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -2399,31 +2453,31 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 primaryContact_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 documentation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
@@ -2435,19 +2489,19 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             case 56:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 icon_ = input.readBytes();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getDataProviderFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 80:
@@ -2472,13 +2526,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 input.readMessage(getPublisherFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 requestAccess_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             default:
@@ -2758,7 +2812,6 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 6;
       onChanged();
-      ;
       return bigqueryDatasetBuilder_;
     }
 
@@ -2826,8 +2879,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2844,8 +2897,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2867,8 +2920,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2946,8 +2999,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2967,8 +3020,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2993,8 +3046,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3072,8 +3125,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3093,8 +3146,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3119,8 +3172,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3189,8 +3242,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       primaryContact_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3207,8 +3260,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrimaryContact() {
-
       primaryContact_ = getDefaultInstance().getPrimaryContact();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3230,8 +3283,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       primaryContact_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3297,8 +3350,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       documentation_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3314,8 +3367,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDocumentation() {
-
       documentation_ = getDefaultInstance().getDocumentation();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3336,8 +3389,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       documentation_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3375,8 +3428,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3395,9 +3448,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.dataexchange.v1beta1.Listing.State result =
-          com.google.cloud.bigquery.dataexchange.v1beta1.Listing.State.valueOf(state_);
+          com.google.cloud.bigquery.dataexchange.v1beta1.Listing.State.forNumber(state_);
       return result == null
           ? com.google.cloud.bigquery.dataexchange.v1beta1.Listing.State.UNRECOGNIZED
           : result;
@@ -3420,7 +3472,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3439,7 +3491,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;
@@ -3485,8 +3537,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       icon_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3506,7 +3558,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIcon() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       icon_ = getDefaultInstance().getIcon();
       onChanged();
       return this;
@@ -3532,7 +3584,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dataProvider field is set.
      */
     public boolean hasDataProvider() {
-      return dataProviderBuilder_ != null || dataProvider_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3574,11 +3626,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dataProvider_ = value;
-        onChanged();
       } else {
         dataProviderBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3596,11 +3648,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.bigquery.dataexchange.v1beta1.DataProvider.Builder builderForValue) {
       if (dataProviderBuilder_ == null) {
         dataProvider_ = builderForValue.build();
-        onChanged();
       } else {
         dataProviderBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3617,19 +3669,20 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDataProvider(
         com.google.cloud.bigquery.dataexchange.v1beta1.DataProvider value) {
       if (dataProviderBuilder_ == null) {
-        if (dataProvider_ != null) {
-          dataProvider_ =
-              com.google.cloud.bigquery.dataexchange.v1beta1.DataProvider.newBuilder(dataProvider_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && dataProvider_ != null
+            && dataProvider_
+                != com.google.cloud.bigquery.dataexchange.v1beta1.DataProvider
+                    .getDefaultInstance()) {
+          getDataProviderBuilder().mergeFrom(value);
         } else {
           dataProvider_ = value;
         }
-        onChanged();
       } else {
         dataProviderBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3644,14 +3697,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDataProvider() {
-      if (dataProviderBuilder_ == null) {
-        dataProvider_ = null;
-        onChanged();
-      } else {
-        dataProvider_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      dataProvider_ = null;
+      if (dataProviderBuilder_ != null) {
+        dataProviderBuilder_.dispose();
         dataProviderBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3667,7 +3719,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.DataProvider.Builder
         getDataProviderBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDataProviderFieldBuilder().getBuilder();
     }
@@ -3723,9 +3775,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> categories_ = java.util.Collections.emptyList();
 
     private void ensureCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         categories_ = new java.util.ArrayList<java.lang.Integer>(categories_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000200;
       }
     }
     /**
@@ -3870,7 +3922,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCategories() {
       categories_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3992,7 +4044,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the publisher field is set.
      */
     public boolean hasPublisher() {
-      return publisherBuilder_ != null || publisher_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -4035,11 +4087,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         publisher_ = value;
-        onChanged();
       } else {
         publisherBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4058,11 +4110,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.bigquery.dataexchange.v1beta1.Publisher.Builder builderForValue) {
       if (publisherBuilder_ == null) {
         publisher_ = builderForValue.build();
-        onChanged();
       } else {
         publisherBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4079,19 +4131,19 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePublisher(com.google.cloud.bigquery.dataexchange.v1beta1.Publisher value) {
       if (publisherBuilder_ == null) {
-        if (publisher_ != null) {
-          publisher_ =
-              com.google.cloud.bigquery.dataexchange.v1beta1.Publisher.newBuilder(publisher_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && publisher_ != null
+            && publisher_
+                != com.google.cloud.bigquery.dataexchange.v1beta1.Publisher.getDefaultInstance()) {
+          getPublisherBuilder().mergeFrom(value);
         } else {
           publisher_ = value;
         }
-        onChanged();
       } else {
         publisherBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4107,14 +4159,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPublisher() {
-      if (publisherBuilder_ == null) {
-        publisher_ = null;
-        onChanged();
-      } else {
-        publisher_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      publisher_ = null;
+      if (publisherBuilder_ != null) {
+        publisherBuilder_.dispose();
         publisherBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4130,7 +4181,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.Publisher.Builder getPublisherBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getPublisherFieldBuilder().getBuilder();
     }
@@ -4252,8 +4303,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestAccess_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4271,8 +4322,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequestAccess() {
-
       requestAccess_ = getDefaultInstance().getRequestAccess();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4295,8 +4346,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestAccess_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

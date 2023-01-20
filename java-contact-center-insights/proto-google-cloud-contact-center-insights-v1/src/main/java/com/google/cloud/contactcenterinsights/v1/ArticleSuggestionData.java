@@ -82,7 +82,9 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TITLE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
   }
 
   public static final int URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -180,7 +184,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 3;
-  private float confidenceScore_;
+  private float confidenceScore_ = 0F;
   /**
    *
    *
@@ -212,6 +216,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -272,8 +277,10 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -303,7 +310,9 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
   }
 
   public static final int QUERY_RECORD_FIELD_NUMBER = 5;
-  private volatile java.lang.Object queryRecord_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object queryRecord_ = "";
   /**
    *
    *
@@ -356,7 +365,9 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SOURCE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -680,17 +691,13 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       title_ = "";
-
       uri_ = "";
-
       confidenceScore_ = 0F;
-
       internalGetMutableMetadata().clear();
       queryRecord_ = "";
-
       source_ = "";
-
       return this;
     }
 
@@ -719,16 +726,35 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     public com.google.cloud.contactcenterinsights.v1.ArticleSuggestionData buildPartial() {
       com.google.cloud.contactcenterinsights.v1.ArticleSuggestionData result =
           new com.google.cloud.contactcenterinsights.v1.ArticleSuggestionData(this);
-      int from_bitField0_ = bitField0_;
-      result.title_ = title_;
-      result.uri_ = uri_;
-      result.confidenceScore_ = confidenceScore_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      result.queryRecord_ = queryRecord_;
-      result.source_ = source_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.ArticleSuggestionData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.confidenceScore_ = confidenceScore_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.queryRecord_ = queryRecord_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.source_ = source_;
+      }
     }
 
     @java.lang.Override
@@ -781,22 +807,27 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getConfidenceScore() != 0F) {
         setConfidenceScore(other.getConfidenceScore());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000008;
       if (!other.getQueryRecord().isEmpty()) {
         queryRecord_ = other.queryRecord_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getSource().isEmpty()) {
         source_ = other.source_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -828,19 +859,19 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 29:
               {
                 confidenceScore_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             case 34:
@@ -852,18 +883,19 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 queryRecord_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 source_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -946,8 +978,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -963,8 +995,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -985,8 +1017,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1052,8 +1084,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1069,8 +1101,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1091,8 +1123,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1132,6 +1164,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     public Builder setConfidenceScore(float value) {
 
       confidenceScore_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1149,7 +1182,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearConfidenceScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       confidenceScore_ = 0F;
       onChanged();
       return this;
@@ -1166,8 +1199,6 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -1175,6 +1206,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return metadata_;
     }
 
@@ -1229,8 +1262,10 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, string&gt; metadata = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1260,6 +1295,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1283,6 +1319,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1302,8 +1339,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1318,6 +1355,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1388,8 +1426,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       queryRecord_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1407,8 +1445,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearQueryRecord() {
-
       queryRecord_ = getDefaultInstance().getQueryRecord();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1431,8 +1469,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       queryRecord_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1504,8 +1542,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       source_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1523,8 +1561,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1547,8 +1585,8 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       source_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

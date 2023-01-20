@@ -72,7 +72,9 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 484373913;
-  private volatile java.lang.Object kmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   }
 
   public static final int KMS_KEY_SERVICE_ACCOUNT_FIELD_NUMBER = 209986261;
-  private volatile java.lang.Object kmsKeyServiceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyServiceAccount_ = "";
   /**
    *
    *
@@ -200,7 +204,9 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RAW_KEY_FIELD_NUMBER = 449196488;
-  private volatile java.lang.Object rawKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rawKey_ = "";
   /**
    *
    *
@@ -264,7 +270,9 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RSA_ENCRYPTED_KEY_FIELD_NUMBER = 335487397;
-  private volatile java.lang.Object rsaEncryptedKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rsaEncryptedKey_ = "";
   /**
    *
    *
@@ -328,7 +336,9 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SHA256_FIELD_NUMBER = 170112551;
-  private volatile java.lang.Object sha256_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sha256_ = "";
   /**
    *
    *
@@ -650,16 +660,12 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kmsKeyName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       kmsKeyServiceAccount_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       rawKey_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       rsaEncryptedKey_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       sha256_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -687,31 +693,37 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.CustomerEncryptionKey buildPartial() {
       com.google.cloud.compute.v1.CustomerEncryptionKey result =
           new com.google.cloud.compute.v1.CustomerEncryptionKey(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.CustomerEncryptionKey result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
         to_bitField0_ |= 0x00000001;
       }
-      result.kmsKeyName_ = kmsKeyName_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kmsKeyServiceAccount_ = kmsKeyServiceAccount_;
         to_bitField0_ |= 0x00000002;
       }
-      result.kmsKeyServiceAccount_ = kmsKeyServiceAccount_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.rawKey_ = rawKey_;
         to_bitField0_ |= 0x00000004;
       }
-      result.rawKey_ = rawKey_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rsaEncryptedKey_ = rsaEncryptedKey_;
         to_bitField0_ |= 0x00000008;
       }
-      result.rsaEncryptedKey_ = rsaEncryptedKey_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sha256_ = sha256_;
         to_bitField0_ |= 0x00000010;
       }
-      result.sha256_ = sha256_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -761,28 +773,28 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       if (other == com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance())
         return this;
       if (other.hasKmsKeyName()) {
-        bitField0_ |= 0x00000001;
         kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasKmsKeyServiceAccount()) {
-        bitField0_ |= 0x00000002;
         kmsKeyServiceAccount_ = other.kmsKeyServiceAccount_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRawKey()) {
-        bitField0_ |= 0x00000004;
         rawKey_ = other.rawKey_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRsaEncryptedKey()) {
-        bitField0_ |= 0x00000008;
         rsaEncryptedKey_ = other.rsaEncryptedKey_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSha256()) {
-        bitField0_ |= 0x00000010;
         sha256_ = other.sha256_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -935,8 +947,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -952,8 +964,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -974,8 +986,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1055,8 +1067,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       kmsKeyServiceAccount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1072,8 +1084,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyServiceAccount() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       kmsKeyServiceAccount_ = getDefaultInstance().getKmsKeyServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1094,8 +1106,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       kmsKeyServiceAccount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1175,8 +1187,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       rawKey_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1192,8 +1204,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRawKey() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       rawKey_ = getDefaultInstance().getRawKey();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1214,8 +1226,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       rawKey_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1295,8 +1307,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       rsaEncryptedKey_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1312,8 +1324,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRsaEncryptedKey() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       rsaEncryptedKey_ = getDefaultInstance().getRsaEncryptedKey();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1334,8 +1346,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       rsaEncryptedKey_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1415,8 +1427,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       sha256_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1432,8 +1444,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearSha256() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       sha256_ = getDefaultInstance().getSha256();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1454,8 +1466,8 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       sha256_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

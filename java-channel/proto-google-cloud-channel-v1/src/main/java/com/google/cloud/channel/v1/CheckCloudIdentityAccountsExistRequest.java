@@ -72,7 +72,9 @@ public final class CheckCloudIdentityAccountsExistRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CheckCloudIdentityAccountsExistRequest
   }
 
   public static final int DOMAIN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object domain_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domain_ = "";
   /**
    *
    *
@@ -381,10 +385,9 @@ public final class CheckCloudIdentityAccountsExistRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       domain_ = "";
-
       return this;
     }
 
@@ -414,10 +417,22 @@ public final class CheckCloudIdentityAccountsExistRequest
     public com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest buildPartial() {
       com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest result =
           new com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest(this);
-      result.parent_ = parent_;
-      result.domain_ = domain_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.domain_ = domain_;
+      }
     }
 
     @java.lang.Override
@@ -471,10 +486,12 @@ public final class CheckCloudIdentityAccountsExistRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDomain().isEmpty()) {
         domain_ = other.domain_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -506,13 +523,13 @@ public final class CheckCloudIdentityAccountsExistRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 domain_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -531,6 +548,8 @@ public final class CheckCloudIdentityAccountsExistRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -596,8 +615,8 @@ public final class CheckCloudIdentityAccountsExistRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -614,8 +633,8 @@ public final class CheckCloudIdentityAccountsExistRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -637,8 +656,8 @@ public final class CheckCloudIdentityAccountsExistRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -704,8 +723,8 @@ public final class CheckCloudIdentityAccountsExistRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       domain_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -721,8 +740,8 @@ public final class CheckCloudIdentityAccountsExistRequest
      * @return This builder for chaining.
      */
     public Builder clearDomain() {
-
       domain_ = getDefaultInstance().getDomain();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -743,8 +762,8 @@ public final class CheckCloudIdentityAccountsExistRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       domain_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

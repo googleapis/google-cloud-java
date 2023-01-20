@@ -70,7 +70,9 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
 
   private int bitField0_;
   public static final int BUCKET_NAME_FIELD_NUMBER = 283610048;
-  private volatile java.lang.Object bucketName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bucketName_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REPORT_NAME_PREFIX_FIELD_NUMBER = 320198715;
-  private volatile java.lang.Object reportNamePrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reportNamePrefix_ = "";
   /**
    *
    *
@@ -414,10 +418,9 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bucketName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       reportNamePrefix_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -445,19 +448,25 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.UsageExportLocation buildPartial() {
       com.google.cloud.compute.v1.UsageExportLocation result =
           new com.google.cloud.compute.v1.UsageExportLocation(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.UsageExportLocation result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bucketName_ = bucketName_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bucketName_ = bucketName_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reportNamePrefix_ = reportNamePrefix_;
         to_bitField0_ |= 0x00000002;
       }
-      result.reportNamePrefix_ = reportNamePrefix_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -507,13 +516,13 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.compute.v1.UsageExportLocation.getDefaultInstance())
         return this;
       if (other.hasBucketName()) {
-        bitField0_ |= 0x00000001;
         bucketName_ = other.bucketName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasReportNamePrefix()) {
-        bitField0_ |= 0x00000002;
         reportNamePrefix_ = other.reportNamePrefix_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -648,8 +657,8 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       bucketName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,8 +674,8 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearBucketName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       bucketName_ = getDefaultInstance().getBucketName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -687,8 +696,8 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       bucketName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -768,8 +777,8 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       reportNamePrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -785,8 +794,8 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearReportNamePrefix() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       reportNamePrefix_ = getDefaultInstance().getReportNamePrefix();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -807,8 +816,8 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       reportNamePrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -72,7 +72,9 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
 
   private int bitField0_;
   public static final int HEADER_NAME_FIELD_NUMBER = 110223613;
-  private volatile java.lang.Object headerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object headerName_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
   }
 
   public static final int HEADER_VALUE_FIELD_NUMBER = 203094335;
-  private volatile java.lang.Object headerValue_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object headerValue_ = "";
   /**
    *
    *
@@ -426,10 +430,9 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       headerName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       headerValue_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -461,19 +464,26 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
         buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption result =
           new com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.headerName_ = headerName_;
         to_bitField0_ |= 0x00000001;
       }
-      result.headerName_ = headerName_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.headerValue_ = headerValue_;
         to_bitField0_ |= 0x00000002;
       }
-      result.headerValue_ = headerValue_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -528,13 +538,13 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
           == com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
               .getDefaultInstance()) return this;
       if (other.hasHeaderName()) {
-        bitField0_ |= 0x00000001;
         headerName_ = other.headerName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHeaderValue()) {
-        bitField0_ |= 0x00000002;
         headerValue_ = other.headerValue_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -669,8 +679,8 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       headerName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,8 +696,8 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
      * @return This builder for chaining.
      */
     public Builder clearHeaderName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       headerName_ = getDefaultInstance().getHeaderName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -708,8 +718,8 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       headerName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +799,8 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       headerValue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -806,8 +816,8 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
      * @return This builder for chaining.
      */
     public Builder clearHeaderValue() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       headerValue_ = getDefaultInstance().getHeaderValue();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -828,8 +838,8 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       headerValue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

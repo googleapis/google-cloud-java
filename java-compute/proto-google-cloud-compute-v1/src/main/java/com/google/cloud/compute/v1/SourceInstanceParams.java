@@ -68,6 +68,8 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DISK_CONFIGS_FIELD_NUMBER = 235580623;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.DiskInstantiationConfig> diskConfigs_;
   /**
    *
@@ -342,6 +344,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (diskConfigsBuilder_ == null) {
         diskConfigs_ = java.util.Collections.emptyList();
       } else {
@@ -376,7 +379,16 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.SourceInstanceParams buildPartial() {
       com.google.cloud.compute.v1.SourceInstanceParams result =
           new com.google.cloud.compute.v1.SourceInstanceParams(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.SourceInstanceParams result) {
       if (diskConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           diskConfigs_ = java.util.Collections.unmodifiableList(diskConfigs_);
@@ -386,8 +398,10 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       } else {
         result.diskConfigs_ = diskConfigsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SourceInstanceParams result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

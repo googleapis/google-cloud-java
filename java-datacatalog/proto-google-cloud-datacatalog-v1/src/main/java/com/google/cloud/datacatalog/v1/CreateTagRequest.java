@@ -69,7 +69,9 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,7 +177,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.TagOrBuilder getTagOrBuilder() {
-    return getTag();
+    return tag_ == null ? com.google.cloud.datacatalog.v1.Tag.getDefaultInstance() : tag_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,12 +392,11 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (tagBuilder_ == null) {
-        tag_ = null;
-      } else {
-        tag_ = null;
+      tag_ = null;
+      if (tagBuilder_ != null) {
+        tagBuilder_.dispose();
         tagBuilder_ = null;
       }
       return this;
@@ -425,14 +426,21 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datacatalog.v1.CreateTagRequest buildPartial() {
       com.google.cloud.datacatalog.v1.CreateTagRequest result =
           new com.google.cloud.datacatalog.v1.CreateTagRequest(this);
-      result.parent_ = parent_;
-      if (tagBuilder_ == null) {
-        result.tag_ = tag_;
-      } else {
-        result.tag_ = tagBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.CreateTagRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tag_ = tagBuilder_ == null ? tag_ : tagBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -483,6 +491,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTag()) {
@@ -517,13 +526,13 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTagFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +551,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -622,8 +633,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -645,8 +656,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -673,8 +684,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,7 +709,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the tag field is set.
      */
     public boolean hasTag() {
-      return tagBuilder_ != null || tag_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -735,11 +746,11 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         tag_ = value;
-        onChanged();
       } else {
         tagBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -755,11 +766,11 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
     public Builder setTag(com.google.cloud.datacatalog.v1.Tag.Builder builderForValue) {
       if (tagBuilder_ == null) {
         tag_ = builderForValue.build();
-        onChanged();
       } else {
         tagBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -774,17 +785,18 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTag(com.google.cloud.datacatalog.v1.Tag value) {
       if (tagBuilder_ == null) {
-        if (tag_ != null) {
-          tag_ =
-              com.google.cloud.datacatalog.v1.Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && tag_ != null
+            && tag_ != com.google.cloud.datacatalog.v1.Tag.getDefaultInstance()) {
+          getTagBuilder().mergeFrom(value);
         } else {
           tag_ = value;
         }
-        onChanged();
       } else {
         tagBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -798,14 +810,13 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTag() {
-      if (tagBuilder_ == null) {
-        tag_ = null;
-        onChanged();
-      } else {
-        tag_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      tag_ = null;
+      if (tagBuilder_ != null) {
+        tagBuilder_.dispose();
         tagBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -819,7 +830,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.datacatalog.v1.Tag.Builder getTagBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTagFieldBuilder().getBuilder();
     }

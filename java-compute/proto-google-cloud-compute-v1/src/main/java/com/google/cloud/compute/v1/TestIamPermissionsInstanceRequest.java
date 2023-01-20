@@ -71,7 +71,9 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -220,11 +224,15 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
   @java.lang.Override
   public com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder
       getTestPermissionsRequestResourceOrBuilder() {
-    return getTestPermissionsRequestResource();
+    return testPermissionsRequestResource_ == null
+        ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
+        : testPermissionsRequestResource_;
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -506,18 +514,15 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       resource_ = "";
-
-      if (testPermissionsRequestResourceBuilder_ == null) {
-        testPermissionsRequestResource_ = null;
-      } else {
-        testPermissionsRequestResource_ = null;
+      testPermissionsRequestResource_ = null;
+      if (testPermissionsRequestResourceBuilder_ != null) {
+        testPermissionsRequestResourceBuilder_.dispose();
         testPermissionsRequestResourceBuilder_ = null;
       }
       zone_ = "";
-
       return this;
     }
 
@@ -546,16 +551,31 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.TestIamPermissionsInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.TestIamPermissionsInstanceRequest result =
           new com.google.cloud.compute.v1.TestIamPermissionsInstanceRequest(this);
-      result.project_ = project_;
-      result.resource_ = resource_;
-      if (testPermissionsRequestResourceBuilder_ == null) {
-        result.testPermissionsRequestResource_ = testPermissionsRequestResource_;
-      } else {
-        result.testPermissionsRequestResource_ = testPermissionsRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.zone_ = zone_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.TestIamPermissionsInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.testPermissionsRequestResource_ =
+            testPermissionsRequestResourceBuilder_ == null
+                ? testPermissionsRequestResource_
+                : testPermissionsRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.zone_ = zone_;
+      }
     }
 
     @java.lang.Override
@@ -607,10 +627,12 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTestPermissionsRequestResource()) {
@@ -618,6 +640,7 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -649,19 +672,19 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 29957474
             case 1566449778:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1566449778
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -781249230:
@@ -669,7 +692,7 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
                 input.readMessage(
                     getTestPermissionsRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case -781249230
             default:
@@ -688,6 +711,8 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -750,8 +775,8 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -767,8 +792,8 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -789,8 +814,8 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -856,8 +881,8 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -873,8 +898,8 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -895,8 +920,8 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -921,8 +946,7 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
      * @return Whether the testPermissionsRequestResource field is set.
      */
     public boolean hasTestPermissionsRequestResource() {
-      return testPermissionsRequestResourceBuilder_ != null
-          || testPermissionsRequestResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -964,11 +988,11 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         testPermissionsRequestResource_ = value;
-        onChanged();
       } else {
         testPermissionsRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -986,11 +1010,11 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
         com.google.cloud.compute.v1.TestPermissionsRequest.Builder builderForValue) {
       if (testPermissionsRequestResourceBuilder_ == null) {
         testPermissionsRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         testPermissionsRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1007,20 +1031,19 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
     public Builder mergeTestPermissionsRequestResource(
         com.google.cloud.compute.v1.TestPermissionsRequest value) {
       if (testPermissionsRequestResourceBuilder_ == null) {
-        if (testPermissionsRequestResource_ != null) {
-          testPermissionsRequestResource_ =
-              com.google.cloud.compute.v1.TestPermissionsRequest.newBuilder(
-                      testPermissionsRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && testPermissionsRequestResource_ != null
+            && testPermissionsRequestResource_
+                != com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()) {
+          getTestPermissionsRequestResourceBuilder().mergeFrom(value);
         } else {
           testPermissionsRequestResource_ = value;
         }
-        onChanged();
       } else {
         testPermissionsRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1035,14 +1058,13 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearTestPermissionsRequestResource() {
-      if (testPermissionsRequestResourceBuilder_ == null) {
-        testPermissionsRequestResource_ = null;
-        onChanged();
-      } else {
-        testPermissionsRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      testPermissionsRequestResource_ = null;
+      if (testPermissionsRequestResourceBuilder_ != null) {
+        testPermissionsRequestResourceBuilder_.dispose();
         testPermissionsRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1058,7 +1080,7 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
      */
     public com.google.cloud.compute.v1.TestPermissionsRequest.Builder
         getTestPermissionsRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
@@ -1172,8 +1194,8 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1189,8 +1211,8 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1211,8 +1233,8 @@ public final class TestIamPermissionsInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

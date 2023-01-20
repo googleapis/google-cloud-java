@@ -413,7 +413,7 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int OUTPUT_IDENTIFIER_CASE_FIELD_NUMBER = 1;
-  private int outputIdentifierCase_;
+  private int outputIdentifierCase_ = 0;
   /**
    *
    *
@@ -447,9 +447,8 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierCase
       getOutputIdentifierCase() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierCase result =
-        com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierCase.valueOf(
+        com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierCase.forNumber(
             outputIdentifierCase_);
     return result == null
         ? com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierCase.UNRECOGNIZED
@@ -457,7 +456,7 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IDENTIFIER_REWRITE_MODE_FIELD_NUMBER = 2;
-  private int identifierRewriteMode_;
+  private int identifierRewriteMode_ = 0;
   /**
    *
    *
@@ -491,10 +490,9 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierRewriteMode
       getIdentifierRewriteMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierRewriteMode result =
         com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierRewriteMode
-            .valueOf(identifierRewriteMode_);
+            .forNumber(identifierRewriteMode_);
     return result == null
         ? com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierRewriteMode
             .UNRECOGNIZED
@@ -720,10 +718,9 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       outputIdentifierCase_ = 0;
-
       identifierRewriteMode_ = 0;
-
       return this;
     }
 
@@ -752,10 +749,22 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings result =
           new com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings(this);
-      result.outputIdentifierCase_ = outputIdentifierCase_;
-      result.identifierRewriteMode_ = identifierRewriteMode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.outputIdentifierCase_ = outputIdentifierCase_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.identifierRewriteMode_ = identifierRewriteMode_;
+      }
     }
 
     @java.lang.Override
@@ -840,13 +849,13 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 outputIdentifierCase_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 identifierRewriteMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -865,6 +874,8 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int outputIdentifierCase_ = 0;
     /**
@@ -899,8 +910,8 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setOutputIdentifierCaseValue(int value) {
-
       outputIdentifierCase_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -920,9 +931,8 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierCase
         getOutputIdentifierCase() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierCase result =
-          com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierCase.valueOf(
+          com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierCase.forNumber(
               outputIdentifierCase_);
       return result == null
           ? com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierCase
@@ -948,7 +958,7 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       outputIdentifierCase_ = value.getNumber();
       onChanged();
       return this;
@@ -967,7 +977,7 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearOutputIdentifierCase() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       outputIdentifierCase_ = 0;
       onChanged();
       return this;
@@ -1006,8 +1016,8 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setIdentifierRewriteModeValue(int value) {
-
       identifierRewriteMode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1027,10 +1037,9 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierRewriteMode
         getIdentifierRewriteMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierRewriteMode result =
           com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierRewriteMode
-              .valueOf(identifierRewriteMode_);
+              .forNumber(identifierRewriteMode_);
       return result == null
           ? com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.IdentifierRewriteMode
               .UNRECOGNIZED
@@ -1056,7 +1065,7 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       identifierRewriteMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1075,7 +1084,7 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIdentifierRewriteMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       identifierRewriteMode_ = 0;
       onChanged();
       return this;

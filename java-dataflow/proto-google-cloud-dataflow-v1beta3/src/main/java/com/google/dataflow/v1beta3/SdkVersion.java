@@ -275,7 +275,9 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -324,7 +326,9 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object versionDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object versionDisplayName_ = "";
   /**
    *
    *
@@ -373,7 +377,7 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SDK_SUPPORT_STATUS_FIELD_NUMBER = 3;
-  private int sdkSupportStatus_;
+  private int sdkSupportStatus_ = 0;
   /**
    *
    *
@@ -402,9 +406,8 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus getSdkSupportStatus() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus result =
-        com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.valueOf(sdkSupportStatus_);
+        com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.forNumber(sdkSupportStatus_);
     return result == null
         ? com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.UNRECOGNIZED
         : result;
@@ -626,12 +629,10 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = "";
-
       versionDisplayName_ = "";
-
       sdkSupportStatus_ = 0;
-
       return this;
     }
 
@@ -659,11 +660,24 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.SdkVersion buildPartial() {
       com.google.dataflow.v1beta3.SdkVersion result =
           new com.google.dataflow.v1beta3.SdkVersion(this);
-      result.version_ = version_;
-      result.versionDisplayName_ = versionDisplayName_;
-      result.sdkSupportStatus_ = sdkSupportStatus_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.SdkVersion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.versionDisplayName_ = versionDisplayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sdkSupportStatus_ = sdkSupportStatus_;
+      }
     }
 
     @java.lang.Override
@@ -713,10 +727,12 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.dataflow.v1beta3.SdkVersion.getDefaultInstance()) return this;
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVersionDisplayName().isEmpty()) {
         versionDisplayName_ = other.versionDisplayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.sdkSupportStatus_ != 0) {
@@ -751,19 +767,19 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 versionDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 sdkSupportStatus_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -782,6 +798,8 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object version_ = "";
     /**
@@ -844,8 +862,8 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -861,8 +879,8 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -883,8 +901,8 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -950,8 +968,8 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       versionDisplayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -967,8 +985,8 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersionDisplayName() {
-
       versionDisplayName_ = getDefaultInstance().getVersionDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -989,8 +1007,8 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       versionDisplayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1024,8 +1042,8 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSdkSupportStatusValue(int value) {
-
       sdkSupportStatus_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1042,9 +1060,8 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus getSdkSupportStatus() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus result =
-          com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.valueOf(sdkSupportStatus_);
+          com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.forNumber(sdkSupportStatus_);
       return result == null
           ? com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.UNRECOGNIZED
           : result;
@@ -1066,7 +1083,7 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       sdkSupportStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -1083,7 +1100,7 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSdkSupportStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       sdkSupportStatus_ = 0;
       onChanged();
       return this;

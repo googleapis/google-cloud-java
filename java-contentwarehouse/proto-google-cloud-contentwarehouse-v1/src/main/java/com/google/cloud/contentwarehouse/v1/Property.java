@@ -133,7 +133,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -922,8 +924,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (integerValuesBuilder_ != null) {
         integerValuesBuilder_.clear();
       }
@@ -977,66 +979,48 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.Property buildPartial() {
       com.google.cloud.contentwarehouse.v1.Property result =
           new com.google.cloud.contentwarehouse.v1.Property(this);
-      result.name_ = name_;
-      if (valuesCase_ == 2) {
-        if (integerValuesBuilder_ == null) {
-          result.values_ = values_;
-        } else {
-          result.values_ = integerValuesBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valuesCase_ == 3) {
-        if (floatValuesBuilder_ == null) {
-          result.values_ = values_;
-        } else {
-          result.values_ = floatValuesBuilder_.build();
-        }
-      }
-      if (valuesCase_ == 4) {
-        if (textValuesBuilder_ == null) {
-          result.values_ = values_;
-        } else {
-          result.values_ = textValuesBuilder_.build();
-        }
-      }
-      if (valuesCase_ == 5) {
-        if (enumValuesBuilder_ == null) {
-          result.values_ = values_;
-        } else {
-          result.values_ = enumValuesBuilder_.build();
-        }
-      }
-      if (valuesCase_ == 6) {
-        if (propertyValuesBuilder_ == null) {
-          result.values_ = values_;
-        } else {
-          result.values_ = propertyValuesBuilder_.build();
-        }
-      }
-      if (valuesCase_ == 7) {
-        if (dateTimeValuesBuilder_ == null) {
-          result.values_ = values_;
-        } else {
-          result.values_ = dateTimeValuesBuilder_.build();
-        }
-      }
-      if (valuesCase_ == 8) {
-        if (mapPropertyBuilder_ == null) {
-          result.values_ = values_;
-        } else {
-          result.values_ = mapPropertyBuilder_.build();
-        }
-      }
-      if (valuesCase_ == 9) {
-        if (timestampValuesBuilder_ == null) {
-          result.values_ = values_;
-        } else {
-          result.values_ = timestampValuesBuilder_.build();
-        }
-      }
-      result.valuesCase_ = valuesCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.Property result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.contentwarehouse.v1.Property result) {
+      result.valuesCase_ = valuesCase_;
+      result.values_ = this.values_;
+      if (valuesCase_ == 2 && integerValuesBuilder_ != null) {
+        result.values_ = integerValuesBuilder_.build();
+      }
+      if (valuesCase_ == 3 && floatValuesBuilder_ != null) {
+        result.values_ = floatValuesBuilder_.build();
+      }
+      if (valuesCase_ == 4 && textValuesBuilder_ != null) {
+        result.values_ = textValuesBuilder_.build();
+      }
+      if (valuesCase_ == 5 && enumValuesBuilder_ != null) {
+        result.values_ = enumValuesBuilder_.build();
+      }
+      if (valuesCase_ == 6 && propertyValuesBuilder_ != null) {
+        result.values_ = propertyValuesBuilder_.build();
+      }
+      if (valuesCase_ == 7 && dateTimeValuesBuilder_ != null) {
+        result.values_ = dateTimeValuesBuilder_.build();
+      }
+      if (valuesCase_ == 8 && mapPropertyBuilder_ != null) {
+        result.values_ = mapPropertyBuilder_.build();
+      }
+      if (valuesCase_ == 9 && timestampValuesBuilder_ != null) {
+        result.values_ = timestampValuesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1086,6 +1070,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.contentwarehouse.v1.Property.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getValuesCase()) {
@@ -1163,7 +1148,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1245,6 +1230,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -1306,8 +1293,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1323,8 +1310,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1345,8 +1332,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1557,7 +1544,6 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       valuesCase_ = 2;
       onChanged();
-      ;
       return integerValuesBuilder_;
     }
 
@@ -1767,7 +1753,6 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       valuesCase_ = 3;
       onChanged();
-      ;
       return floatValuesBuilder_;
     }
 
@@ -1977,7 +1962,6 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       valuesCase_ = 4;
       onChanged();
-      ;
       return textValuesBuilder_;
     }
 
@@ -2187,7 +2171,6 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       valuesCase_ = 5;
       onChanged();
-      ;
       return enumValuesBuilder_;
     }
 
@@ -2398,7 +2381,6 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       valuesCase_ = 6;
       onChanged();
-      ;
       return propertyValuesBuilder_;
     }
 
@@ -2618,7 +2600,6 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       valuesCase_ = 7;
       onChanged();
-      ;
       return dateTimeValuesBuilder_;
     }
 
@@ -2828,7 +2809,6 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       valuesCase_ = 8;
       onChanged();
-      ;
       return mapPropertyBuilder_;
     }
 
@@ -3049,7 +3029,6 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       valuesCase_ = 9;
       onChanged();
-      ;
       return timestampValuesBuilder_;
     }
 

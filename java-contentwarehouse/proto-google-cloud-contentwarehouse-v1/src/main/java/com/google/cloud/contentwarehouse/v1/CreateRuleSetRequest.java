@@ -68,7 +68,9 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.RuleSetOrBuilder getRuleSetOrBuilder() {
-    return getRuleSet();
+    return ruleSet_ == null
+        ? com.google.cloud.contentwarehouse.v1.RuleSet.getDefaultInstance()
+        : ruleSet_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (ruleSetBuilder_ == null) {
-        ruleSet_ = null;
-      } else {
-        ruleSet_ = null;
+      ruleSet_ = null;
+      if (ruleSetBuilder_ != null) {
+        ruleSetBuilder_.dispose();
         ruleSetBuilder_ = null;
       }
       return this;
@@ -423,14 +426,21 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest buildPartial() {
       com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest result =
           new com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest(this);
-      result.parent_ = parent_;
-      if (ruleSetBuilder_ == null) {
-        result.ruleSet_ = ruleSet_;
-      } else {
-        result.ruleSet_ = ruleSetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ruleSet_ = ruleSetBuilder_ == null ? ruleSet_ : ruleSetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +491,7 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRuleSet()) {
@@ -515,13 +526,13 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRuleSetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +551,8 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -611,8 +624,8 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +644,8 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +669,8 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,7 +695,7 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the ruleSet field is set.
      */
     public boolean hasRuleSet() {
-      return ruleSetBuilder_ != null || ruleSet_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -723,11 +736,11 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         ruleSet_ = value;
-        onChanged();
       } else {
         ruleSetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -745,11 +758,11 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.contentwarehouse.v1.RuleSet.Builder builderForValue) {
       if (ruleSetBuilder_ == null) {
         ruleSet_ = builderForValue.build();
-        onChanged();
       } else {
         ruleSetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -765,19 +778,18 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeRuleSet(com.google.cloud.contentwarehouse.v1.RuleSet value) {
       if (ruleSetBuilder_ == null) {
-        if (ruleSet_ != null) {
-          ruleSet_ =
-              com.google.cloud.contentwarehouse.v1.RuleSet.newBuilder(ruleSet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && ruleSet_ != null
+            && ruleSet_ != com.google.cloud.contentwarehouse.v1.RuleSet.getDefaultInstance()) {
+          getRuleSetBuilder().mergeFrom(value);
         } else {
           ruleSet_ = value;
         }
-        onChanged();
       } else {
         ruleSetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -792,14 +804,13 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRuleSet() {
-      if (ruleSetBuilder_ == null) {
-        ruleSet_ = null;
-        onChanged();
-      } else {
-        ruleSet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ruleSet_ = null;
+      if (ruleSetBuilder_ != null) {
+        ruleSetBuilder_.dispose();
         ruleSetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -814,7 +825,7 @@ public final class CreateRuleSetRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.contentwarehouse.v1.RuleSet.Builder getRuleSetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRuleSetFieldBuilder().getBuilder();
     }

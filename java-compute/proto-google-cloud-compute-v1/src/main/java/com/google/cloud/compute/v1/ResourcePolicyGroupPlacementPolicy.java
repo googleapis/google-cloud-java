@@ -197,7 +197,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
 
   private int bitField0_;
   public static final int AVAILABILITY_DOMAIN_COUNT_FIELD_NUMBER = 12453432;
-  private int availabilityDomainCount_;
+  private int availabilityDomainCount_ = 0;
   /**
    *
    *
@@ -230,7 +230,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
   }
 
   public static final int COLLOCATION_FIELD_NUMBER = 511156533;
-  private volatile java.lang.Object collocation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object collocation_ = "";
   /**
    *
    *
@@ -297,7 +299,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
   }
 
   public static final int VM_COUNT_FIELD_NUMBER = 261463431;
-  private int vmCount_;
+  private int vmCount_ = 0;
   /**
    *
    *
@@ -562,12 +564,10 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       availabilityDomainCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       collocation_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       vmCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -596,6 +596,15 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     public com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy result =
           new com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -603,16 +612,14 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.collocation_ = collocation_;
         to_bitField0_ |= 0x00000002;
       }
-      result.collocation_ = collocation_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.vmCount_ = vmCount_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -666,8 +673,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
         setAvailabilityDomainCount(other.getAvailabilityDomainCount());
       }
       if (other.hasCollocation()) {
-        bitField0_ |= 0x00000002;
         collocation_ = other.collocation_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasVmCount()) {
@@ -780,8 +787,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setAvailabilityDomainCount(int value) {
-      bitField0_ |= 0x00000001;
+
       availabilityDomainCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -882,8 +890,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       collocation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -900,8 +908,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearCollocation() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       collocation_ = getDefaultInstance().getCollocation();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -923,8 +931,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       collocation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -973,8 +981,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setVmCount(int value) {
-      bitField0_ |= 0x00000004;
+
       vmCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

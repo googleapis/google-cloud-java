@@ -69,7 +69,9 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAMESPACE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object namespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namespace_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       namespace_ = "";
-
       projectId_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
     public com.google.dataflow.v1beta3.DatastoreIODetails buildPartial() {
       com.google.dataflow.v1beta3.DatastoreIODetails result =
           new com.google.dataflow.v1beta3.DatastoreIODetails(this);
-      result.namespace_ = namespace_;
-      result.projectId_ = projectId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.DatastoreIODetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.namespace_ = namespace_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectId_ = projectId_;
+      }
     }
 
     @java.lang.Override
@@ -456,10 +470,12 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
       if (other == com.google.dataflow.v1beta3.DatastoreIODetails.getDefaultInstance()) return this;
       if (!other.getNamespace().isEmpty()) {
         namespace_ = other.namespace_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -491,13 +507,13 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 namespace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -516,6 +532,8 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object namespace_ = "";
     /**
@@ -578,8 +596,8 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       namespace_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -595,8 +613,8 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNamespace() {
-
       namespace_ = getDefaultInstance().getNamespace();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -617,8 +635,8 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       namespace_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +702,8 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -701,8 +719,8 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -723,8 +741,8 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -69,7 +69,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int NUM_RETRIES_FIELD_NUMBER = 251680141;
-  private int numRetries_;
+  private int numRetries_ = 0;
   /**
    *
    *
@@ -152,6 +152,8 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RETRY_CONDITIONS_FIELD_NUMBER = 28815535;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList retryConditions_;
   /**
    *
@@ -455,14 +457,13 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       numRetries_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (perTryTimeoutBuilder_ == null) {
-        perTryTimeout_ = null;
-      } else {
-        perTryTimeoutBuilder_.clear();
+      perTryTimeout_ = null;
+      if (perTryTimeoutBuilder_ != null) {
+        perTryTimeoutBuilder_.dispose();
+        perTryTimeoutBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       retryConditions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
@@ -492,6 +493,23 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.HttpRetryPolicy buildPartial() {
       com.google.cloud.compute.v1.HttpRetryPolicy result =
           new com.google.cloud.compute.v1.HttpRetryPolicy(this);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HttpRetryPolicy result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        retryConditions_ = retryConditions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.retryConditions_ = retryConditions_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpRetryPolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -499,21 +517,11 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (perTryTimeoutBuilder_ == null) {
-          result.perTryTimeout_ = perTryTimeout_;
-        } else {
-          result.perTryTimeout_ = perTryTimeoutBuilder_.build();
-        }
+        result.perTryTimeout_ =
+            perTryTimeoutBuilder_ == null ? perTryTimeout_ : perTryTimeoutBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        retryConditions_ = retryConditions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.retryConditions_ = retryConditions_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -685,8 +693,9 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setNumRetries(int value) {
-      bitField0_ |= 0x00000001;
+
       numRetries_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -763,11 +772,11 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         perTryTimeout_ = value;
-        onChanged();
       } else {
         perTryTimeoutBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -782,11 +791,11 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     public Builder setPerTryTimeout(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (perTryTimeoutBuilder_ == null) {
         perTryTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         perTryTimeoutBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -803,18 +812,15 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
         if (((bitField0_ & 0x00000002) != 0)
             && perTryTimeout_ != null
             && perTryTimeout_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
-          perTryTimeout_ =
-              com.google.cloud.compute.v1.Duration.newBuilder(perTryTimeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPerTryTimeoutBuilder().mergeFrom(value);
         } else {
           perTryTimeout_ = value;
         }
-        onChanged();
       } else {
         perTryTimeoutBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,13 +833,13 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
      */
     public Builder clearPerTryTimeout() {
-      if (perTryTimeoutBuilder_ == null) {
-        perTryTimeout_ = null;
-        onChanged();
-      } else {
-        perTryTimeoutBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      perTryTimeout_ = null;
+      if (perTryTimeoutBuilder_ != null) {
+        perTryTimeoutBuilder_.dispose();
+        perTryTimeoutBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

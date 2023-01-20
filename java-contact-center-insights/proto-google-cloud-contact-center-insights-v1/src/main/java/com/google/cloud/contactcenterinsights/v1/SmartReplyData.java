@@ -80,7 +80,9 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPLY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object reply_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reply_ = "";
   /**
    *
    *
@@ -129,7 +131,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 2;
-  private double confidenceScore_;
+  private double confidenceScore_ = 0D;
   /**
    *
    *
@@ -161,6 +163,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -221,8 +224,10 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -252,7 +257,9 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_RECORD_FIELD_NUMBER = 4;
-  private volatile java.lang.Object queryRecord_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object queryRecord_ = "";
   /**
    *
    *
@@ -561,13 +568,11 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       reply_ = "";
-
       confidenceScore_ = 0D;
-
       internalGetMutableMetadata().clear();
       queryRecord_ = "";
-
       return this;
     }
 
@@ -595,14 +600,28 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.SmartReplyData buildPartial() {
       com.google.cloud.contactcenterinsights.v1.SmartReplyData result =
           new com.google.cloud.contactcenterinsights.v1.SmartReplyData(this);
-      int from_bitField0_ = bitField0_;
-      result.reply_ = reply_;
-      result.confidenceScore_ = confidenceScore_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      result.queryRecord_ = queryRecord_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.SmartReplyData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.reply_ = reply_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidenceScore_ = confidenceScore_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.queryRecord_ = queryRecord_;
+      }
     }
 
     @java.lang.Override
@@ -653,14 +672,17 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getReply().isEmpty()) {
         reply_ = other.reply_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getConfidenceScore() != 0D) {
         setConfidenceScore(other.getConfidenceScore());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000004;
       if (!other.getQueryRecord().isEmpty()) {
         queryRecord_ = other.queryRecord_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -692,13 +714,13 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 reply_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 17:
               {
                 confidenceScore_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 26:
@@ -710,12 +732,13 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 queryRecord_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -798,8 +821,8 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       reply_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -815,8 +838,8 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReply() {
-
       reply_ = getDefaultInstance().getReply();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -837,8 +860,8 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reply_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -878,6 +901,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfidenceScore(double value) {
 
       confidenceScore_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -895,7 +919,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidenceScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidenceScore_ = 0D;
       onChanged();
       return this;
@@ -912,8 +936,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -921,6 +943,8 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return metadata_;
     }
 
@@ -975,8 +999,10 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1006,6 +1032,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1029,6 +1056,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1048,8 +1076,8 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1064,6 +1092,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1134,8 +1163,8 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       queryRecord_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1153,8 +1182,8 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQueryRecord() {
-
       queryRecord_ = getDefaultInstance().getQueryRecord();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1177,8 +1206,8 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       queryRecord_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

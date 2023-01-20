@@ -230,7 +230,9 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INSTANCE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instanceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceId_ = "";
   /**
    *
    *
@@ -279,7 +281,9 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DATABASE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object database_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object database_ = "";
   /**
    *
    *
@@ -328,7 +332,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TYPE_FIELD_NUMBER = 3;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -357,9 +361,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType result =
-        com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType.valueOf(type_);
+        com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType.forNumber(type_);
     return result == null
         ? com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType.UNRECOGNIZED
         : result;
@@ -417,11 +420,15 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.bigquery.connection.v1.CloudSqlCredentialOrBuilder
       getCredentialOrBuilder() {
-    return getCredential();
+    return credential_ == null
+        ? com.google.cloud.bigquery.connection.v1.CloudSqlCredential.getDefaultInstance()
+        : credential_;
   }
 
   public static final int SERVICE_ACCOUNT_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object serviceAccountId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountId_ = "";
   /**
    *
    *
@@ -720,20 +727,16 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceId_ = "";
-
       database_ = "";
-
       type_ = 0;
-
-      if (credentialBuilder_ == null) {
-        credential_ = null;
-      } else {
-        credential_ = null;
+      credential_ = null;
+      if (credentialBuilder_ != null) {
+        credentialBuilder_.dispose();
         credentialBuilder_ = null;
       }
       serviceAccountId_ = "";
-
       return this;
     }
 
@@ -761,17 +764,30 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.bigquery.connection.v1.CloudSqlProperties buildPartial() {
       com.google.cloud.bigquery.connection.v1.CloudSqlProperties result =
           new com.google.cloud.bigquery.connection.v1.CloudSqlProperties(this);
-      result.instanceId_ = instanceId_;
-      result.database_ = database_;
-      result.type_ = type_;
-      if (credentialBuilder_ == null) {
-        result.credential_ = credential_;
-      } else {
-        result.credential_ = credentialBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.serviceAccountId_ = serviceAccountId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.connection.v1.CloudSqlProperties result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceId_ = instanceId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.database_ = database_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.credential_ = credentialBuilder_ == null ? credential_ : credentialBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceAccountId_ = serviceAccountId_;
+      }
     }
 
     @java.lang.Override
@@ -822,10 +838,12 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDatabase().isEmpty()) {
         database_ = other.database_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -836,6 +854,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getServiceAccountId().isEmpty()) {
         serviceAccountId_ = other.serviceAccountId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -867,31 +886,31 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 instanceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 database_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getCredentialFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 serviceAccountId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -910,6 +929,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instanceId_ = "";
     /**
@@ -972,8 +993,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -989,8 +1010,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
-
       instanceId_ = getDefaultInstance().getInstanceId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1011,8 +1032,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1078,8 +1099,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       database_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1095,8 +1116,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDatabase() {
-
       database_ = getDefaultInstance().getDatabase();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1117,8 +1138,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       database_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1152,8 +1173,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1170,9 +1191,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType result =
-          com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType.valueOf(type_);
+          com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType.forNumber(type_);
       return result == null
           ? com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType.UNRECOGNIZED
           : result;
@@ -1194,7 +1214,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1211,7 +1231,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       type_ = 0;
       onChanged();
       return this;
@@ -1237,7 +1257,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * @return Whether the credential field is set.
      */
     public boolean hasCredential() {
-      return credentialBuilder_ != null || credential_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1278,11 +1298,11 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         credential_ = value;
-        onChanged();
       } else {
         credentialBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1300,11 +1320,11 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         com.google.cloud.bigquery.connection.v1.CloudSqlCredential.Builder builderForValue) {
       if (credentialBuilder_ == null) {
         credential_ = builderForValue.build();
-        onChanged();
       } else {
         credentialBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1321,19 +1341,20 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     public Builder mergeCredential(
         com.google.cloud.bigquery.connection.v1.CloudSqlCredential value) {
       if (credentialBuilder_ == null) {
-        if (credential_ != null) {
-          credential_ =
-              com.google.cloud.bigquery.connection.v1.CloudSqlCredential.newBuilder(credential_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && credential_ != null
+            && credential_
+                != com.google.cloud.bigquery.connection.v1.CloudSqlCredential
+                    .getDefaultInstance()) {
+          getCredentialBuilder().mergeFrom(value);
         } else {
           credential_ = value;
         }
-        onChanged();
       } else {
         credentialBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1348,14 +1369,13 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearCredential() {
-      if (credentialBuilder_ == null) {
-        credential_ = null;
-        onChanged();
-      } else {
-        credential_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      credential_ = null;
+      if (credentialBuilder_ != null) {
+        credentialBuilder_.dispose();
         credentialBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1371,7 +1391,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.bigquery.connection.v1.CloudSqlCredential.Builder
         getCredentialBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCredentialFieldBuilder().getBuilder();
     }
@@ -1494,8 +1514,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1514,8 +1534,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountId() {
-
       serviceAccountId_ = getDefaultInstance().getServiceAccountId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1539,8 +1559,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

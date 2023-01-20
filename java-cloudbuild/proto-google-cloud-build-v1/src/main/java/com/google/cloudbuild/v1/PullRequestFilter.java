@@ -350,7 +350,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int COMMENT_CONTROL_FIELD_NUMBER = 5;
-  private int commentControl_;
+  private int commentControl_ = 0;
   /**
    *
    *
@@ -383,16 +383,15 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.PullRequestFilter.CommentControl getCommentControl() {
-    @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.PullRequestFilter.CommentControl result =
-        com.google.cloudbuild.v1.PullRequestFilter.CommentControl.valueOf(commentControl_);
+        com.google.cloudbuild.v1.PullRequestFilter.CommentControl.forNumber(commentControl_);
     return result == null
         ? com.google.cloudbuild.v1.PullRequestFilter.CommentControl.UNRECOGNIZED
         : result;
   }
 
   public static final int INVERT_REGEX_FIELD_NUMBER = 6;
-  private boolean invertRegex_;
+  private boolean invertRegex_ = false;
   /**
    *
    *
@@ -642,10 +641,9 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       commentControl_ = 0;
-
       invertRegex_ = false;
-
       gitRefCase_ = 0;
       gitRef_ = null;
       return this;
@@ -675,14 +673,27 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     public com.google.cloudbuild.v1.PullRequestFilter buildPartial() {
       com.google.cloudbuild.v1.PullRequestFilter result =
           new com.google.cloudbuild.v1.PullRequestFilter(this);
-      if (gitRefCase_ == 2) {
-        result.gitRef_ = gitRef_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.commentControl_ = commentControl_;
-      result.invertRegex_ = invertRegex_;
-      result.gitRefCase_ = gitRefCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.PullRequestFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.commentControl_ = commentControl_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.invertRegex_ = invertRegex_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloudbuild.v1.PullRequestFilter result) {
+      result.gitRefCase_ = gitRefCase_;
+      result.gitRef_ = this.gitRef_;
     }
 
     @java.lang.Override
@@ -785,13 +796,13 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
             case 40:
               {
                 commentControl_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 40
             case 48:
               {
                 invertRegex_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 48
             default:
@@ -824,6 +835,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1004,8 +1017,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setCommentControlValue(int value) {
-
       commentControl_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1024,9 +1037,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.PullRequestFilter.CommentControl getCommentControl() {
-      @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.PullRequestFilter.CommentControl result =
-          com.google.cloudbuild.v1.PullRequestFilter.CommentControl.valueOf(commentControl_);
+          com.google.cloudbuild.v1.PullRequestFilter.CommentControl.forNumber(commentControl_);
       return result == null
           ? com.google.cloudbuild.v1.PullRequestFilter.CommentControl.UNRECOGNIZED
           : result;
@@ -1050,7 +1062,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       commentControl_ = value.getNumber();
       onChanged();
       return this;
@@ -1069,7 +1081,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCommentControl() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       commentControl_ = 0;
       onChanged();
       return this;
@@ -1106,6 +1118,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     public Builder setInvertRegex(boolean value) {
 
       invertRegex_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1121,7 +1134,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearInvertRegex() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       invertRegex_ = false;
       onChanged();
       return this;

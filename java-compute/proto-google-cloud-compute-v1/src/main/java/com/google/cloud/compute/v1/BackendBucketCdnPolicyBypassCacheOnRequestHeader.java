@@ -72,7 +72,9 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
 
   private int bitField0_;
   public static final int HEADER_NAME_FIELD_NUMBER = 110223613;
-  private volatile java.lang.Object headerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object headerName_ = "";
   /**
    *
    *
@@ -347,8 +349,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       headerName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -380,15 +382,22 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
         buildPartial() {
       com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader result =
           new com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.headerName_ = headerName_;
         to_bitField0_ |= 0x00000001;
       }
-      result.headerName_ = headerName_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -442,8 +451,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
           == com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader
               .getDefaultInstance()) return this;
       if (other.hasHeaderName()) {
-        bitField0_ |= 0x00000001;
         headerName_ = other.headerName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -572,8 +581,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       headerName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -589,8 +598,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
      * @return This builder for chaining.
      */
     public Builder clearHeaderName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       headerName_ = getDefaultInstance().getHeaderName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -611,8 +620,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       headerName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

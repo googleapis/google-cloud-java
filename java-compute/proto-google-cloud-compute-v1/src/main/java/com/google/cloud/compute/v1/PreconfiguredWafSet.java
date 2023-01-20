@@ -67,6 +67,8 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
   }
 
   public static final int EXPRESSION_SETS_FIELD_NUMBER = 474011032;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.WafExpressionSet> expressionSets_;
   /**
    *
@@ -336,6 +338,7 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (expressionSetsBuilder_ == null) {
         expressionSets_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,16 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.PreconfiguredWafSet buildPartial() {
       com.google.cloud.compute.v1.PreconfiguredWafSet result =
           new com.google.cloud.compute.v1.PreconfiguredWafSet(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.PreconfiguredWafSet result) {
       if (expressionSetsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           expressionSets_ = java.util.Collections.unmodifiableList(expressionSets_);
@@ -380,8 +392,10 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       } else {
         result.expressionSets_ = expressionSetsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PreconfiguredWafSet result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

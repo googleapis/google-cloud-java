@@ -464,6 +464,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (timestampValueBuilder_ != null) {
         timestampValueBuilder_.clear();
       }
@@ -496,19 +497,24 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.TimestampValue buildPartial() {
       com.google.cloud.contentwarehouse.v1.TimestampValue result =
           new com.google.cloud.contentwarehouse.v1.TimestampValue(this);
-      if (valueCase_ == 1) {
-        if (timestampValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = timestampValueBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valueCase_ == 2) {
-        result.value_ = value_;
-      }
-      result.valueCase_ = valueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.TimestampValue result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.contentwarehouse.v1.TimestampValue result) {
+      result.valueCase_ = valueCase_;
+      result.value_ = this.value_;
+      if (valueCase_ == 1 && timestampValueBuilder_ != null) {
+        result.value_ = timestampValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -644,6 +650,8 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -846,7 +854,6 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 1;
       onChanged();
-      ;
       return timestampValueBuilder_;
     }
 

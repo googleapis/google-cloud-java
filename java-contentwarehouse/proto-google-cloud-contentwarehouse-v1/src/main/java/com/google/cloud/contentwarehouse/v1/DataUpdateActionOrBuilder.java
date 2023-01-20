@@ -81,7 +81,6 @@ public interface DataUpdateActionOrBuilder
    *
    * <code>map&lt;string, string&gt; entries = 1;</code>
    */
-
   /* nullable */
   java.lang.String getEntriesOrDefault(
       java.lang.String key,

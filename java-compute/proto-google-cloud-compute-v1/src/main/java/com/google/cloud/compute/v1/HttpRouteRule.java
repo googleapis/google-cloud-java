@@ -71,7 +71,9 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -185,6 +187,8 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MATCH_RULES_FIELD_NUMBER = 376200701;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HttpRouteRuleMatch> matchRules_;
   /**
    *
@@ -254,7 +258,7 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
-  private int priority_;
+  private int priority_ = 0;
   /**
    *
    *
@@ -337,7 +341,9 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 373540533;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -747,14 +753,13 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (headerActionBuilder_ == null) {
-        headerAction_ = null;
-      } else {
-        headerActionBuilder_.clear();
+      headerAction_ = null;
+      if (headerActionBuilder_ != null) {
+        headerActionBuilder_.dispose();
+        headerActionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       if (matchRulesBuilder_ == null) {
         matchRules_ = java.util.Collections.emptyList();
       } else {
@@ -763,21 +768,17 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000004);
       priority_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      if (routeActionBuilder_ == null) {
-        routeAction_ = null;
-      } else {
-        routeActionBuilder_.clear();
+      routeAction_ = null;
+      if (routeActionBuilder_ != null) {
+        routeActionBuilder_.dispose();
+        routeActionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
       service_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
-      if (urlRedirectBuilder_ == null) {
-        urlRedirect_ = null;
-      } else {
-        urlRedirectBuilder_.clear();
+      urlRedirect_ = null;
+      if (urlRedirectBuilder_ != null) {
+        urlRedirectBuilder_.dispose();
+        urlRedirectBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -805,20 +806,15 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.HttpRouteRule buildPartial() {
       com.google.cloud.compute.v1.HttpRouteRule result =
           new com.google.cloud.compute.v1.HttpRouteRule(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (headerActionBuilder_ == null) {
-          result.headerAction_ = headerAction_;
-        } else {
-          result.headerAction_ = headerActionBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000002;
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HttpRouteRule result) {
       if (matchRulesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           matchRules_ = java.util.Collections.unmodifiableList(matchRules_);
@@ -828,33 +824,39 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.matchRules_ = matchRulesBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpRouteRule result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.headerAction_ =
+            headerActionBuilder_ == null ? headerAction_ : headerActionBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.priority_ = priority_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        if (routeActionBuilder_ == null) {
-          result.routeAction_ = routeAction_;
-        } else {
-          result.routeAction_ = routeActionBuilder_.build();
-        }
+        result.routeAction_ =
+            routeActionBuilder_ == null ? routeAction_ : routeActionBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.service_ = service_;
         to_bitField0_ |= 0x00000010;
       }
-      result.service_ = service_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        if (urlRedirectBuilder_ == null) {
-          result.urlRedirect_ = urlRedirect_;
-        } else {
-          result.urlRedirect_ = urlRedirectBuilder_.build();
-        }
+        result.urlRedirect_ =
+            urlRedirectBuilder_ == null ? urlRedirect_ : urlRedirectBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -903,8 +905,8 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.HttpRouteRule other) {
       if (other == com.google.cloud.compute.v1.HttpRouteRule.getDefaultInstance()) return this;
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000001;
         description_ = other.description_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHeaderAction()) {
@@ -944,8 +946,8 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
         mergeRouteAction(other.getRouteAction());
       }
       if (other.hasService()) {
-        bitField0_ |= 0x00000020;
         service_ = other.service_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasUrlRedirect()) {
@@ -1120,8 +1122,8 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1137,8 +1139,8 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1159,8 +1161,8 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1220,11 +1222,11 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         headerAction_ = value;
-        onChanged();
       } else {
         headerActionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1240,11 +1242,11 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HttpHeaderAction.Builder builderForValue) {
       if (headerActionBuilder_ == null) {
         headerAction_ = builderForValue.build();
-        onChanged();
       } else {
         headerActionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1261,18 +1263,15 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000002) != 0)
             && headerAction_ != null
             && headerAction_ != com.google.cloud.compute.v1.HttpHeaderAction.getDefaultInstance()) {
-          headerAction_ =
-              com.google.cloud.compute.v1.HttpHeaderAction.newBuilder(headerAction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getHeaderActionBuilder().mergeFrom(value);
         } else {
           headerAction_ = value;
         }
-        onChanged();
       } else {
         headerActionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1285,13 +1284,13 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder clearHeaderAction() {
-      if (headerActionBuilder_ == null) {
-        headerAction_ = null;
-        onChanged();
-      } else {
-        headerActionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      headerAction_ = null;
+      if (headerActionBuilder_ != null) {
+        headerActionBuilder_.dispose();
+        headerActionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1748,8 +1747,9 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-      bitField0_ |= 0x00000008;
+
       priority_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1826,11 +1826,11 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         routeAction_ = value;
-        onChanged();
       } else {
         routeActionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1846,11 +1846,11 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HttpRouteAction.Builder builderForValue) {
       if (routeActionBuilder_ == null) {
         routeAction_ = builderForValue.build();
-        onChanged();
       } else {
         routeActionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1867,18 +1867,15 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000010) != 0)
             && routeAction_ != null
             && routeAction_ != com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()) {
-          routeAction_ =
-              com.google.cloud.compute.v1.HttpRouteAction.newBuilder(routeAction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getRouteActionBuilder().mergeFrom(value);
         } else {
           routeAction_ = value;
         }
-        onChanged();
       } else {
         routeActionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1891,13 +1888,13 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public Builder clearRouteAction() {
-      if (routeActionBuilder_ == null) {
-        routeAction_ = null;
-        onChanged();
-      } else {
-        routeActionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000010);
+      routeAction_ = null;
+      if (routeActionBuilder_ != null) {
+        routeActionBuilder_.dispose();
+        routeActionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2033,8 +2030,8 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       service_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2050,8 +2047,8 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2072,8 +2069,8 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       service_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2133,11 +2130,11 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         urlRedirect_ = value;
-        onChanged();
       } else {
         urlRedirectBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2153,11 +2150,11 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HttpRedirectAction.Builder builderForValue) {
       if (urlRedirectBuilder_ == null) {
         urlRedirect_ = builderForValue.build();
-        onChanged();
       } else {
         urlRedirectBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2175,18 +2172,15 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
             && urlRedirect_ != null
             && urlRedirect_
                 != com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()) {
-          urlRedirect_ =
-              com.google.cloud.compute.v1.HttpRedirectAction.newBuilder(urlRedirect_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getUrlRedirectBuilder().mergeFrom(value);
         } else {
           urlRedirect_ = value;
         }
-        onChanged();
       } else {
         urlRedirectBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2199,13 +2193,13 @@ public final class HttpRouteRule extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public Builder clearUrlRedirect() {
-      if (urlRedirectBuilder_ == null) {
-        urlRedirect_ = null;
-        onChanged();
-      } else {
-        urlRedirectBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000040);
+      urlRedirect_ = null;
+      if (urlRedirectBuilder_ != null) {
+        urlRedirectBuilder_.dispose();
+        urlRedirectBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

@@ -68,7 +68,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
 
   private int bitField0_;
   public static final int UPDATE_AUTO_LEARN_POLICY_FIELD_NUMBER = 245490215;
-  private boolean updateAutoLearnPolicy_;
+  private boolean updateAutoLearnPolicy_ = false;
   /**
    *
    *
@@ -304,8 +304,8 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       updateAutoLearnPolicy_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -333,15 +333,21 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     public com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy buildPartial() {
       com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy result =
           new com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.updateAutoLearnPolicy_ = updateAutoLearnPolicy_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -488,8 +494,9 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder setUpdateAutoLearnPolicy(boolean value) {
-      bitField0_ |= 0x00000001;
+
       updateAutoLearnPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -74,7 +74,9 @@ public final class RemoveInstancesInstanceGroupRequest
 
   private int bitField0_;
   public static final int INSTANCE_GROUP_FIELD_NUMBER = 81095253;
-  private volatile java.lang.Object instanceGroup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceGroup_ = "";
   /**
    *
    *
@@ -177,11 +179,15 @@ public final class RemoveInstancesInstanceGroupRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequestOrBuilder
       getInstanceGroupsRemoveInstancesRequestResourceOrBuilder() {
-    return getInstanceGroupsRemoveInstancesRequestResource();
+    return instanceGroupsRemoveInstancesRequestResource_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest.getDefaultInstance()
+        : instanceGroupsRemoveInstancesRequestResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -234,7 +240,9 @@ public final class RemoveInstancesInstanceGroupRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -298,7 +306,9 @@ public final class RemoveInstancesInstanceGroupRequest
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -598,20 +608,16 @@ public final class RemoveInstancesInstanceGroupRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceGroup_ = "";
-
-      if (instanceGroupsRemoveInstancesRequestResourceBuilder_ == null) {
-        instanceGroupsRemoveInstancesRequestResource_ = null;
-      } else {
-        instanceGroupsRemoveInstancesRequestResource_ = null;
+      instanceGroupsRemoveInstancesRequestResource_ = null;
+      if (instanceGroupsRemoveInstancesRequestResourceBuilder_ != null) {
+        instanceGroupsRemoveInstancesRequestResourceBuilder_.dispose();
         instanceGroupsRemoveInstancesRequestResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = "";
-
       return this;
     }
 
@@ -640,25 +646,37 @@ public final class RemoveInstancesInstanceGroupRequest
     public com.google.cloud.compute.v1.RemoveInstancesInstanceGroupRequest buildPartial() {
       com.google.cloud.compute.v1.RemoveInstancesInstanceGroupRequest result =
           new com.google.cloud.compute.v1.RemoveInstancesInstanceGroupRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.instanceGroup_ = instanceGroup_;
-      if (instanceGroupsRemoveInstancesRequestResourceBuilder_ == null) {
-        result.instanceGroupsRemoveInstancesRequestResource_ =
-            instanceGroupsRemoveInstancesRequestResource_;
-      } else {
-        result.instanceGroupsRemoveInstancesRequestResource_ =
-            instanceGroupsRemoveInstancesRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RemoveInstancesInstanceGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceGroup_ = instanceGroup_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instanceGroupsRemoveInstancesRequestResource_ =
+            instanceGroupsRemoveInstancesRequestResourceBuilder_ == null
+                ? instanceGroupsRemoveInstancesRequestResource_
+                : instanceGroupsRemoveInstancesRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -711,6 +729,7 @@ public final class RemoveInstancesInstanceGroupRequest
         return this;
       if (!other.getInstanceGroup().isEmpty()) {
         instanceGroup_ = other.instanceGroup_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInstanceGroupsRemoveInstancesRequestResource()) {
@@ -719,15 +738,17 @@ public final class RemoveInstancesInstanceGroupRequest
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -759,25 +780,25 @@ public final class RemoveInstancesInstanceGroupRequest
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 29957474
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 648762026:
               {
                 instanceGroup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 648762026
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -1167112758:
@@ -785,7 +806,7 @@ public final class RemoveInstancesInstanceGroupRequest
                 input.readMessage(
                     getInstanceGroupsRemoveInstancesRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -1167112758
             default:
@@ -868,8 +889,8 @@ public final class RemoveInstancesInstanceGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceGroup_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -885,8 +906,8 @@ public final class RemoveInstancesInstanceGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearInstanceGroup() {
-
       instanceGroup_ = getDefaultInstance().getInstanceGroup();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -907,8 +928,8 @@ public final class RemoveInstancesInstanceGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceGroup_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -934,8 +955,7 @@ public final class RemoveInstancesInstanceGroupRequest
      * @return Whether the instanceGroupsRemoveInstancesRequestResource field is set.
      */
     public boolean hasInstanceGroupsRemoveInstancesRequestResource() {
-      return instanceGroupsRemoveInstancesRequestResourceBuilder_ != null
-          || instanceGroupsRemoveInstancesRequestResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -978,11 +998,11 @@ public final class RemoveInstancesInstanceGroupRequest
           throw new NullPointerException();
         }
         instanceGroupsRemoveInstancesRequestResource_ = value;
-        onChanged();
       } else {
         instanceGroupsRemoveInstancesRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1000,11 +1020,11 @@ public final class RemoveInstancesInstanceGroupRequest
         com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest.Builder builderForValue) {
       if (instanceGroupsRemoveInstancesRequestResourceBuilder_ == null) {
         instanceGroupsRemoveInstancesRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         instanceGroupsRemoveInstancesRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1021,20 +1041,20 @@ public final class RemoveInstancesInstanceGroupRequest
     public Builder mergeInstanceGroupsRemoveInstancesRequestResource(
         com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest value) {
       if (instanceGroupsRemoveInstancesRequestResourceBuilder_ == null) {
-        if (instanceGroupsRemoveInstancesRequestResource_ != null) {
-          instanceGroupsRemoveInstancesRequestResource_ =
-              com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest.newBuilder(
-                      instanceGroupsRemoveInstancesRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && instanceGroupsRemoveInstancesRequestResource_ != null
+            && instanceGroupsRemoveInstancesRequestResource_
+                != com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest
+                    .getDefaultInstance()) {
+          getInstanceGroupsRemoveInstancesRequestResourceBuilder().mergeFrom(value);
         } else {
           instanceGroupsRemoveInstancesRequestResource_ = value;
         }
-        onChanged();
       } else {
         instanceGroupsRemoveInstancesRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1049,14 +1069,13 @@ public final class RemoveInstancesInstanceGroupRequest
      * </code>
      */
     public Builder clearInstanceGroupsRemoveInstancesRequestResource() {
-      if (instanceGroupsRemoveInstancesRequestResourceBuilder_ == null) {
-        instanceGroupsRemoveInstancesRequestResource_ = null;
-        onChanged();
-      } else {
-        instanceGroupsRemoveInstancesRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      instanceGroupsRemoveInstancesRequestResource_ = null;
+      if (instanceGroupsRemoveInstancesRequestResourceBuilder_ != null) {
+        instanceGroupsRemoveInstancesRequestResourceBuilder_.dispose();
         instanceGroupsRemoveInstancesRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1072,7 +1091,7 @@ public final class RemoveInstancesInstanceGroupRequest
      */
     public com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest.Builder
         getInstanceGroupsRemoveInstancesRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInstanceGroupsRemoveInstancesRequestResourceFieldBuilder().getBuilder();
     }
@@ -1194,8 +1213,8 @@ public final class RemoveInstancesInstanceGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1213,8 +1232,8 @@ public final class RemoveInstancesInstanceGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1237,8 +1256,8 @@ public final class RemoveInstancesInstanceGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1256,7 +1275,7 @@ public final class RemoveInstancesInstanceGroupRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1318,8 +1337,8 @@ public final class RemoveInstancesInstanceGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1335,8 +1354,8 @@ public final class RemoveInstancesInstanceGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1357,8 +1376,8 @@ public final class RemoveInstancesInstanceGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1430,8 +1449,8 @@ public final class RemoveInstancesInstanceGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1449,8 +1468,8 @@ public final class RemoveInstancesInstanceGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1473,8 +1492,8 @@ public final class RemoveInstancesInstanceGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

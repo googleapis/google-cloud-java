@@ -75,7 +75,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -235,7 +239,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.billing.budgets.v1.FilterOrBuilder getBudgetFilterOrBuilder() {
-    return getBudgetFilter();
+    return budgetFilter_ == null
+        ? com.google.cloud.billing.budgets.v1.Filter.getDefaultInstance()
+        : budgetFilter_;
   }
 
   public static final int AMOUNT_FIELD_NUMBER = 4;
@@ -289,10 +295,14 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.billing.budgets.v1.BudgetAmountOrBuilder getAmountOrBuilder() {
-    return getAmount();
+    return amount_ == null
+        ? com.google.cloud.billing.budgets.v1.BudgetAmount.getDefaultInstance()
+        : amount_;
   }
 
   public static final int THRESHOLD_RULES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.billing.budgets.v1.ThresholdRule> thresholdRules_;
   /**
    *
@@ -432,11 +442,15 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.billing.budgets.v1.NotificationsRuleOrBuilder
       getNotificationsRuleOrBuilder() {
-    return getNotificationsRule();
+    return notificationsRule_ == null
+        ? com.google.cloud.billing.budgets.v1.NotificationsRule.getDefaultInstance()
+        : notificationsRule_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 7;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -760,20 +774,17 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
-      if (budgetFilterBuilder_ == null) {
-        budgetFilter_ = null;
-      } else {
-        budgetFilter_ = null;
+      budgetFilter_ = null;
+      if (budgetFilterBuilder_ != null) {
+        budgetFilterBuilder_.dispose();
         budgetFilterBuilder_ = null;
       }
-      if (amountBuilder_ == null) {
-        amount_ = null;
-      } else {
-        amount_ = null;
+      amount_ = null;
+      if (amountBuilder_ != null) {
+        amountBuilder_.dispose();
         amountBuilder_ = null;
       }
       if (thresholdRulesBuilder_ == null) {
@@ -782,15 +793,13 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         thresholdRules_ = null;
         thresholdRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (notificationsRuleBuilder_ == null) {
-        notificationsRule_ = null;
-      } else {
-        notificationsRule_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      notificationsRule_ = null;
+      if (notificationsRuleBuilder_ != null) {
+        notificationsRuleBuilder_.dispose();
         notificationsRuleBuilder_ = null;
       }
       etag_ = "";
-
       return this;
     }
 
@@ -818,36 +827,50 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.budgets.v1.Budget buildPartial() {
       com.google.cloud.billing.budgets.v1.Budget result =
           new com.google.cloud.billing.budgets.v1.Budget(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (budgetFilterBuilder_ == null) {
-        result.budgetFilter_ = budgetFilter_;
-      } else {
-        result.budgetFilter_ = budgetFilterBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (amountBuilder_ == null) {
-        result.amount_ = amount_;
-      } else {
-        result.amount_ = amountBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.billing.budgets.v1.Budget result) {
       if (thresholdRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           thresholdRules_ = java.util.Collections.unmodifiableList(thresholdRules_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.thresholdRules_ = thresholdRules_;
       } else {
         result.thresholdRules_ = thresholdRulesBuilder_.build();
       }
-      if (notificationsRuleBuilder_ == null) {
-        result.notificationsRule_ = notificationsRule_;
-      } else {
-        result.notificationsRule_ = notificationsRuleBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.billing.budgets.v1.Budget result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      result.etag_ = etag_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.budgetFilter_ =
+            budgetFilterBuilder_ == null ? budgetFilter_ : budgetFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.amount_ = amountBuilder_ == null ? amount_ : amountBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.notificationsRule_ =
+            notificationsRuleBuilder_ == null
+                ? notificationsRule_
+                : notificationsRuleBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -897,10 +920,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.billing.budgets.v1.Budget.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasBudgetFilter()) {
@@ -913,7 +938,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         if (!other.thresholdRules_.isEmpty()) {
           if (thresholdRules_.isEmpty()) {
             thresholdRules_ = other.thresholdRules_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureThresholdRulesIsMutable();
             thresholdRules_.addAll(other.thresholdRules_);
@@ -926,7 +951,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
             thresholdRulesBuilder_.dispose();
             thresholdRulesBuilder_ = null;
             thresholdRules_ = other.thresholdRules_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             thresholdRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getThresholdRulesFieldBuilder()
@@ -941,6 +966,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -972,25 +998,25 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getBudgetFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getAmountFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1011,13 +1037,13 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getNotificationsRuleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1106,8 +1132,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1125,8 +1151,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1149,8 +1175,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1219,8 +1245,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1237,8 +1263,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1260,8 +1286,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1288,7 +1314,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the budgetFilter field is set.
      */
     public boolean hasBudgetFilter() {
-      return budgetFilterBuilder_ != null || budgetFilter_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1333,11 +1359,11 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         budgetFilter_ = value;
-        onChanged();
       } else {
         budgetFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1357,11 +1383,11 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.billing.budgets.v1.Filter.Builder builderForValue) {
       if (budgetFilterBuilder_ == null) {
         budgetFilter_ = builderForValue.build();
-        onChanged();
       } else {
         budgetFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1379,19 +1405,18 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBudgetFilter(com.google.cloud.billing.budgets.v1.Filter value) {
       if (budgetFilterBuilder_ == null) {
-        if (budgetFilter_ != null) {
-          budgetFilter_ =
-              com.google.cloud.billing.budgets.v1.Filter.newBuilder(budgetFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && budgetFilter_ != null
+            && budgetFilter_ != com.google.cloud.billing.budgets.v1.Filter.getDefaultInstance()) {
+          getBudgetFilterBuilder().mergeFrom(value);
         } else {
           budgetFilter_ = value;
         }
-        onChanged();
       } else {
         budgetFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1408,14 +1433,13 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearBudgetFilter() {
-      if (budgetFilterBuilder_ == null) {
-        budgetFilter_ = null;
-        onChanged();
-      } else {
-        budgetFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      budgetFilter_ = null;
+      if (budgetFilterBuilder_ != null) {
+        budgetFilterBuilder_.dispose();
         budgetFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1432,7 +1456,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.billing.budgets.v1.Filter.Builder getBudgetFilterBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBudgetFilterFieldBuilder().getBuilder();
     }
@@ -1508,7 +1532,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the amount field is set.
      */
     public boolean hasAmount() {
-      return amountBuilder_ != null || amount_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1549,11 +1573,11 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         amount_ = value;
-        onChanged();
       } else {
         amountBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1571,11 +1595,11 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.billing.budgets.v1.BudgetAmount.Builder builderForValue) {
       if (amountBuilder_ == null) {
         amount_ = builderForValue.build();
-        onChanged();
       } else {
         amountBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1591,19 +1615,18 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAmount(com.google.cloud.billing.budgets.v1.BudgetAmount value) {
       if (amountBuilder_ == null) {
-        if (amount_ != null) {
-          amount_ =
-              com.google.cloud.billing.budgets.v1.BudgetAmount.newBuilder(amount_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && amount_ != null
+            && amount_ != com.google.cloud.billing.budgets.v1.BudgetAmount.getDefaultInstance()) {
+          getAmountBuilder().mergeFrom(value);
         } else {
           amount_ = value;
         }
-        onChanged();
       } else {
         amountBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1618,14 +1641,13 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAmount() {
-      if (amountBuilder_ == null) {
-        amount_ = null;
-        onChanged();
-      } else {
-        amount_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      amount_ = null;
+      if (amountBuilder_ != null) {
+        amountBuilder_.dispose();
         amountBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1640,7 +1662,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.billing.budgets.v1.BudgetAmount.Builder getAmountBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAmountFieldBuilder().getBuilder();
     }
@@ -1696,11 +1718,11 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureThresholdRulesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         thresholdRules_ =
             new java.util.ArrayList<com.google.cloud.billing.budgets.v1.ThresholdRule>(
                 thresholdRules_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1952,7 +1974,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
     public Builder clearThresholdRules() {
       if (thresholdRulesBuilder_ == null) {
         thresholdRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         thresholdRulesBuilder_.clear();
@@ -2100,7 +2122,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.billing.budgets.v1.ThresholdRule.Builder,
                 com.google.cloud.billing.budgets.v1.ThresholdRuleOrBuilder>(
                 thresholdRules_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         thresholdRules_ = null;
@@ -2129,7 +2151,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the notificationsRule field is set.
      */
     public boolean hasNotificationsRule() {
-      return notificationsRuleBuilder_ != null || notificationsRule_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2173,11 +2195,11 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         notificationsRule_ = value;
-        onChanged();
       } else {
         notificationsRuleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2196,11 +2218,11 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.billing.budgets.v1.NotificationsRule.Builder builderForValue) {
       if (notificationsRuleBuilder_ == null) {
         notificationsRule_ = builderForValue.build();
-        onChanged();
       } else {
         notificationsRuleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2218,19 +2240,19 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeNotificationsRule(
         com.google.cloud.billing.budgets.v1.NotificationsRule value) {
       if (notificationsRuleBuilder_ == null) {
-        if (notificationsRule_ != null) {
-          notificationsRule_ =
-              com.google.cloud.billing.budgets.v1.NotificationsRule.newBuilder(notificationsRule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && notificationsRule_ != null
+            && notificationsRule_
+                != com.google.cloud.billing.budgets.v1.NotificationsRule.getDefaultInstance()) {
+          getNotificationsRuleBuilder().mergeFrom(value);
         } else {
           notificationsRule_ = value;
         }
-        onChanged();
       } else {
         notificationsRuleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2246,14 +2268,13 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNotificationsRule() {
-      if (notificationsRuleBuilder_ == null) {
-        notificationsRule_ = null;
-        onChanged();
-      } else {
-        notificationsRule_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      notificationsRule_ = null;
+      if (notificationsRuleBuilder_ != null) {
+        notificationsRuleBuilder_.dispose();
         notificationsRuleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2270,7 +2291,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.billing.budgets.v1.NotificationsRule.Builder
         getNotificationsRuleBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getNotificationsRuleFieldBuilder().getBuilder();
     }
@@ -2392,8 +2413,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2411,8 +2432,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2435,8 +2456,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

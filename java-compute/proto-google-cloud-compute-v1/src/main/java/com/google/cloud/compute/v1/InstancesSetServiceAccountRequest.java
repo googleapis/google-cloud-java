@@ -70,7 +70,9 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
 
   private int bitField0_;
   public static final int EMAIL_FIELD_NUMBER = 96619420;
-  private volatile java.lang.Object email_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
   /**
    *
    *
@@ -134,6 +136,8 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
   }
 
   public static final int SCOPES_FIELD_NUMBER = 165973151;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList scopes_;
   /**
    *
@@ -412,8 +416,8 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       email_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
@@ -444,20 +448,32 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.InstancesSetServiceAccountRequest buildPartial() {
       com.google.cloud.compute.v1.InstancesSetServiceAccountRequest result =
           new com.google.cloud.compute.v1.InstancesSetServiceAccountRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.email_ = email_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstancesSetServiceAccountRequest result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         scopes_ = scopes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.scopes_ = scopes_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstancesSetServiceAccountRequest result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.email_ = email_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -508,8 +524,8 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
           == com.google.cloud.compute.v1.InstancesSetServiceAccountRequest.getDefaultInstance())
         return this;
       if (other.hasEmail()) {
-        bitField0_ |= 0x00000001;
         email_ = other.email_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.scopes_.isEmpty()) {
@@ -655,8 +671,8 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -672,8 +688,8 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -694,8 +710,8 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

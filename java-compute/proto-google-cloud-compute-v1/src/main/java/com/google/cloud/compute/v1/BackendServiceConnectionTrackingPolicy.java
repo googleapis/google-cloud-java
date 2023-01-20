@@ -346,7 +346,9 @@ public final class BackendServiceConnectionTrackingPolicy
 
   private int bitField0_;
   public static final int CONNECTION_PERSISTENCE_ON_UNHEALTHY_BACKENDS_FIELD_NUMBER = 152439033;
-  private volatile java.lang.Object connectionPersistenceOnUnhealthyBackends_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectionPersistenceOnUnhealthyBackends_ = "";
   /**
    *
    *
@@ -413,7 +415,7 @@ public final class BackendServiceConnectionTrackingPolicy
   }
 
   public static final int ENABLE_STRONG_AFFINITY_FIELD_NUMBER = 24539924;
-  private boolean enableStrongAffinity_;
+  private boolean enableStrongAffinity_ = false;
   /**
    *
    *
@@ -446,7 +448,7 @@ public final class BackendServiceConnectionTrackingPolicy
   }
 
   public static final int IDLE_TIMEOUT_SEC_FIELD_NUMBER = 24977544;
-  private int idleTimeoutSec_;
+  private int idleTimeoutSec_ = 0;
   /**
    *
    *
@@ -479,7 +481,9 @@ public final class BackendServiceConnectionTrackingPolicy
   }
 
   public static final int TRACKING_MODE_FIELD_NUMBER = 127757867;
-  private volatile java.lang.Object trackingMode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trackingMode_ = "";
   /**
    *
    *
@@ -798,14 +802,11 @@ public final class BackendServiceConnectionTrackingPolicy
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       connectionPersistenceOnUnhealthyBackends_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       enableStrongAffinity_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       idleTimeoutSec_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       trackingMode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -835,12 +836,22 @@ public final class BackendServiceConnectionTrackingPolicy
     public com.google.cloud.compute.v1.BackendServiceConnectionTrackingPolicy buildPartial() {
       com.google.cloud.compute.v1.BackendServiceConnectionTrackingPolicy result =
           new com.google.cloud.compute.v1.BackendServiceConnectionTrackingPolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.BackendServiceConnectionTrackingPolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.connectionPersistenceOnUnhealthyBackends_ =
+            connectionPersistenceOnUnhealthyBackends_;
         to_bitField0_ |= 0x00000001;
       }
-      result.connectionPersistenceOnUnhealthyBackends_ = connectionPersistenceOnUnhealthyBackends_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.enableStrongAffinity_ = enableStrongAffinity_;
         to_bitField0_ |= 0x00000002;
@@ -850,12 +861,10 @@ public final class BackendServiceConnectionTrackingPolicy
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.trackingMode_ = trackingMode_;
         to_bitField0_ |= 0x00000008;
       }
-      result.trackingMode_ = trackingMode_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -908,8 +917,8 @@ public final class BackendServiceConnectionTrackingPolicy
           == com.google.cloud.compute.v1.BackendServiceConnectionTrackingPolicy
               .getDefaultInstance()) return this;
       if (other.hasConnectionPersistenceOnUnhealthyBackends()) {
-        bitField0_ |= 0x00000001;
         connectionPersistenceOnUnhealthyBackends_ = other.connectionPersistenceOnUnhealthyBackends_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEnableStrongAffinity()) {
@@ -919,8 +928,8 @@ public final class BackendServiceConnectionTrackingPolicy
         setIdleTimeoutSec(other.getIdleTimeoutSec());
       }
       if (other.hasTrackingMode()) {
-        bitField0_ |= 0x00000008;
         trackingMode_ = other.trackingMode_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1071,8 +1080,8 @@ public final class BackendServiceConnectionTrackingPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       connectionPersistenceOnUnhealthyBackends_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1089,9 +1098,9 @@ public final class BackendServiceConnectionTrackingPolicy
      * @return This builder for chaining.
      */
     public Builder clearConnectionPersistenceOnUnhealthyBackends() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       connectionPersistenceOnUnhealthyBackends_ =
           getDefaultInstance().getConnectionPersistenceOnUnhealthyBackends();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1114,8 +1123,8 @@ public final class BackendServiceConnectionTrackingPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       connectionPersistenceOnUnhealthyBackends_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1164,8 +1173,9 @@ public final class BackendServiceConnectionTrackingPolicy
      * @return This builder for chaining.
      */
     public Builder setEnableStrongAffinity(boolean value) {
-      bitField0_ |= 0x00000002;
+
       enableStrongAffinity_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1231,8 +1241,9 @@ public final class BackendServiceConnectionTrackingPolicy
      * @return This builder for chaining.
      */
     public Builder setIdleTimeoutSec(int value) {
-      bitField0_ |= 0x00000004;
+
       idleTimeoutSec_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1333,8 +1344,8 @@ public final class BackendServiceConnectionTrackingPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       trackingMode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1351,8 +1362,8 @@ public final class BackendServiceConnectionTrackingPolicy
      * @return This builder for chaining.
      */
     public Builder clearTrackingMode() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       trackingMode_ = getDefaultInstance().getTrackingMode();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1374,8 +1385,8 @@ public final class BackendServiceConnectionTrackingPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       trackingMode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

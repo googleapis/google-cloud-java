@@ -117,7 +117,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CONSECUTIVE_ERRORS_FIELD_NUMBER = 387193248;
-  private int consecutiveErrors_;
+  private int consecutiveErrors_ = 0;
   /**
    *
    *
@@ -150,7 +150,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER = 417504250;
-  private int consecutiveGatewayFailure_;
+  private int consecutiveGatewayFailure_ = 0;
   /**
    *
    *
@@ -183,7 +183,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ENFORCING_CONSECUTIVE_ERRORS_FIELD_NUMBER = 213133760;
-  private int enforcingConsecutiveErrors_;
+  private int enforcingConsecutiveErrors_ = 0;
   /**
    *
    *
@@ -216,7 +216,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ENFORCING_CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER = 394440666;
-  private int enforcingConsecutiveGatewayFailure_;
+  private int enforcingConsecutiveGatewayFailure_ = 0;
   /**
    *
    *
@@ -249,7 +249,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ENFORCING_SUCCESS_RATE_FIELD_NUMBER = 194508732;
-  private int enforcingSuccessRate_;
+  private int enforcingSuccessRate_ = 0;
   /**
    *
    *
@@ -332,7 +332,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MAX_EJECTION_PERCENT_FIELD_NUMBER = 18436888;
-  private int maxEjectionPercent_;
+  private int maxEjectionPercent_ = 0;
   /**
    *
    *
@@ -365,7 +365,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUCCESS_RATE_MINIMUM_HOSTS_FIELD_NUMBER = 525766903;
-  private int successRateMinimumHosts_;
+  private int successRateMinimumHosts_ = 0;
   /**
    *
    *
@@ -398,7 +398,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUCCESS_RATE_REQUEST_VOLUME_FIELD_NUMBER = 281425357;
-  private int successRateRequestVolume_;
+  private int successRateRequestVolume_ = 0;
   /**
    *
    *
@@ -431,7 +431,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUCCESS_RATE_STDEV_FACTOR_FIELD_NUMBER = 174735773;
-  private int successRateStdevFactor_;
+  private int successRateStdevFactor_ = 0;
   /**
    *
    *
@@ -831,36 +831,26 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseEjectionTimeBuilder_ == null) {
-        baseEjectionTime_ = null;
-      } else {
-        baseEjectionTimeBuilder_.clear();
+      bitField0_ = 0;
+      baseEjectionTime_ = null;
+      if (baseEjectionTimeBuilder_ != null) {
+        baseEjectionTimeBuilder_.dispose();
+        baseEjectionTimeBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       consecutiveErrors_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       consecutiveGatewayFailure_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       enforcingConsecutiveErrors_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       enforcingConsecutiveGatewayFailure_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       enforcingSuccessRate_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-      } else {
-        intervalBuilder_.clear();
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
+        intervalBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
       maxEjectionPercent_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000080);
       successRateMinimumHosts_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000100);
       successRateRequestVolume_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000200);
       successRateStdevFactor_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -888,14 +878,19 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.OutlierDetection buildPartial() {
       com.google.cloud.compute.v1.OutlierDetection result =
           new com.google.cloud.compute.v1.OutlierDetection(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.OutlierDetection result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (baseEjectionTimeBuilder_ == null) {
-          result.baseEjectionTime_ = baseEjectionTime_;
-        } else {
-          result.baseEjectionTime_ = baseEjectionTimeBuilder_.build();
-        }
+        result.baseEjectionTime_ =
+            baseEjectionTimeBuilder_ == null ? baseEjectionTime_ : baseEjectionTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -919,11 +914,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        if (intervalBuilder_ == null) {
-          result.interval_ = interval_;
-        } else {
-          result.interval_ = intervalBuilder_.build();
-        }
+        result.interval_ = intervalBuilder_ == null ? interval_ : intervalBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
@@ -942,9 +933,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
         result.successRateStdevFactor_ = successRateStdevFactor_;
         to_bitField0_ |= 0x00000400;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1192,11 +1181,11 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         baseEjectionTime_ = value;
-        onChanged();
       } else {
         baseEjectionTimeBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1212,11 +1201,11 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
         com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (baseEjectionTimeBuilder_ == null) {
         baseEjectionTime_ = builderForValue.build();
-        onChanged();
       } else {
         baseEjectionTimeBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1233,18 +1222,15 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
         if (((bitField0_ & 0x00000001) != 0)
             && baseEjectionTime_ != null
             && baseEjectionTime_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
-          baseEjectionTime_ =
-              com.google.cloud.compute.v1.Duration.newBuilder(baseEjectionTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getBaseEjectionTimeBuilder().mergeFrom(value);
         } else {
           baseEjectionTime_ = value;
         }
-        onChanged();
       } else {
         baseEjectionTimeBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1257,13 +1243,13 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Duration base_ejection_time = 80997255;</code>
      */
     public Builder clearBaseEjectionTime() {
-      if (baseEjectionTimeBuilder_ == null) {
-        baseEjectionTime_ = null;
-        onChanged();
-      } else {
-        baseEjectionTimeBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      baseEjectionTime_ = null;
+      if (baseEjectionTimeBuilder_ != null) {
+        baseEjectionTimeBuilder_.dispose();
+        baseEjectionTimeBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1368,8 +1354,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setConsecutiveErrors(int value) {
-      bitField0_ |= 0x00000002;
+
       consecutiveErrors_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1435,8 +1422,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setConsecutiveGatewayFailure(int value) {
-      bitField0_ |= 0x00000004;
+
       consecutiveGatewayFailure_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1502,8 +1490,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setEnforcingConsecutiveErrors(int value) {
-      bitField0_ |= 0x00000008;
+
       enforcingConsecutiveErrors_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1569,8 +1558,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setEnforcingConsecutiveGatewayFailure(int value) {
-      bitField0_ |= 0x00000010;
+
       enforcingConsecutiveGatewayFailure_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1636,8 +1626,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setEnforcingSuccessRate(int value) {
-      bitField0_ |= 0x00000020;
+
       enforcingSuccessRate_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1714,11 +1705,11 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         interval_ = value;
-        onChanged();
       } else {
         intervalBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1733,11 +1724,11 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     public Builder setInterval(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (intervalBuilder_ == null) {
         interval_ = builderForValue.build();
-        onChanged();
       } else {
         intervalBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1754,18 +1745,15 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
         if (((bitField0_ & 0x00000040) != 0)
             && interval_ != null
             && interval_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
-          interval_ =
-              com.google.cloud.compute.v1.Duration.newBuilder(interval_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getIntervalBuilder().mergeFrom(value);
         } else {
           interval_ = value;
         }
-        onChanged();
       } else {
         intervalBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1778,13 +1766,13 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Duration interval = 33547461;</code>
      */
     public Builder clearInterval() {
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-        onChanged();
-      } else {
-        intervalBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000040);
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
+        intervalBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1889,8 +1877,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setMaxEjectionPercent(int value) {
-      bitField0_ |= 0x00000080;
+
       maxEjectionPercent_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1956,8 +1945,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setSuccessRateMinimumHosts(int value) {
-      bitField0_ |= 0x00000100;
+
       successRateMinimumHosts_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2023,8 +2013,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setSuccessRateRequestVolume(int value) {
-      bitField0_ |= 0x00000200;
+
       successRateRequestVolume_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2090,8 +2081,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setSuccessRateStdevFactor(int value) {
-      bitField0_ |= 0x00000400;
+
       successRateStdevFactor_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

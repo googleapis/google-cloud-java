@@ -70,7 +70,9 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -238,7 +242,9 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetHttpProxyOrBuilder
       getTargetHttpProxyResourceOrBuilder() {
-    return getTargetHttpProxyResource();
+    return targetHttpProxyResource_ == null
+        ? com.google.cloud.compute.v1.TargetHttpProxy.getDefaultInstance()
+        : targetHttpProxyResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -469,14 +475,12 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (targetHttpProxyResourceBuilder_ == null) {
-        targetHttpProxyResource_ = null;
-      } else {
-        targetHttpProxyResource_ = null;
+      targetHttpProxyResource_ = null;
+      if (targetHttpProxyResourceBuilder_ != null) {
+        targetHttpProxyResourceBuilder_.dispose();
         targetHttpProxyResourceBuilder_ = null;
       }
       return this;
@@ -506,21 +510,30 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.InsertTargetHttpProxyRequest buildPartial() {
       com.google.cloud.compute.v1.InsertTargetHttpProxyRequest result =
           new com.google.cloud.compute.v1.InsertTargetHttpProxyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      if (targetHttpProxyResourceBuilder_ == null) {
-        result.targetHttpProxyResource_ = targetHttpProxyResource_;
-      } else {
-        result.targetHttpProxyResource_ = targetHttpProxyResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertTargetHttpProxyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetHttpProxyResource_ =
+            targetHttpProxyResourceBuilder_ == null
+                ? targetHttpProxyResource_
+                : targetHttpProxyResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -571,11 +584,12 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTargetHttpProxyResource()) {
@@ -611,19 +625,19 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
               {
                 input.readMessage(
                     getTargetHttpProxyResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 197573954
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -712,8 +726,8 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -731,8 +745,8 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -755,8 +769,8 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -774,7 +788,7 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -836,8 +850,8 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -853,8 +867,8 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -875,8 +889,8 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -901,7 +915,7 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
      * @return Whether the targetHttpProxyResource field is set.
      */
     public boolean hasTargetHttpProxyResource() {
-      return targetHttpProxyResourceBuilder_ != null || targetHttpProxyResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -942,11 +956,11 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         targetHttpProxyResource_ = value;
-        onChanged();
       } else {
         targetHttpProxyResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -964,11 +978,11 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
         com.google.cloud.compute.v1.TargetHttpProxy.Builder builderForValue) {
       if (targetHttpProxyResourceBuilder_ == null) {
         targetHttpProxyResource_ = builderForValue.build();
-        onChanged();
       } else {
         targetHttpProxyResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -984,19 +998,19 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
      */
     public Builder mergeTargetHttpProxyResource(com.google.cloud.compute.v1.TargetHttpProxy value) {
       if (targetHttpProxyResourceBuilder_ == null) {
-        if (targetHttpProxyResource_ != null) {
-          targetHttpProxyResource_ =
-              com.google.cloud.compute.v1.TargetHttpProxy.newBuilder(targetHttpProxyResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && targetHttpProxyResource_ != null
+            && targetHttpProxyResource_
+                != com.google.cloud.compute.v1.TargetHttpProxy.getDefaultInstance()) {
+          getTargetHttpProxyResourceBuilder().mergeFrom(value);
         } else {
           targetHttpProxyResource_ = value;
         }
-        onChanged();
       } else {
         targetHttpProxyResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1011,14 +1025,13 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearTargetHttpProxyResource() {
-      if (targetHttpProxyResourceBuilder_ == null) {
-        targetHttpProxyResource_ = null;
-        onChanged();
-      } else {
-        targetHttpProxyResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      targetHttpProxyResource_ = null;
+      if (targetHttpProxyResourceBuilder_ != null) {
+        targetHttpProxyResourceBuilder_.dispose();
         targetHttpProxyResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1033,7 +1046,7 @@ public final class InsertTargetHttpProxyRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpProxy.Builder getTargetHttpProxyResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTargetHttpProxyResourceFieldBuilder().getBuilder();
     }

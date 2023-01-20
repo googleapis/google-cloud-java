@@ -70,7 +70,9 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IAM_ROLE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object iamRoleId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object iamRoleId_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IDENTITY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object identity_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identity_ = "";
   /**
    *
    *
@@ -379,10 +383,9 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       iamRoleId_ = "";
-
       identity_ = "";
-
       return this;
     }
 
@@ -410,10 +413,21 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.connection.v1.AwsAccessRole buildPartial() {
       com.google.cloud.bigquery.connection.v1.AwsAccessRole result =
           new com.google.cloud.bigquery.connection.v1.AwsAccessRole(this);
-      result.iamRoleId_ = iamRoleId_;
-      result.identity_ = identity_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.connection.v1.AwsAccessRole result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.iamRoleId_ = iamRoleId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.identity_ = identity_;
+      }
     }
 
     @java.lang.Override
@@ -464,10 +478,12 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getIamRoleId().isEmpty()) {
         iamRoleId_ = other.iamRoleId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getIdentity().isEmpty()) {
         identity_ = other.identity_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -499,13 +515,13 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 iamRoleId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 identity_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -524,6 +540,8 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object iamRoleId_ = "";
     /**
@@ -589,8 +607,8 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       iamRoleId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -607,8 +625,8 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIamRoleId() {
-
       iamRoleId_ = getDefaultInstance().getIamRoleId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -630,8 +648,8 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       iamRoleId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,8 +718,8 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       identity_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -718,8 +736,8 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIdentity() {
-
       identity_ = getDefaultInstance().getIdentity();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -741,8 +759,8 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       identity_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

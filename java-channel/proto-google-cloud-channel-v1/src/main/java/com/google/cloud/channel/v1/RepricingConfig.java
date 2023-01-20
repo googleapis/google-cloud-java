@@ -152,7 +152,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int ENTITLEMENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object entitlement_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entitlement_ = "";
     /**
      *
      *
@@ -406,8 +408,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entitlement_ = "";
-
         return this;
       }
 
@@ -437,9 +439,19 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity buildPartial() {
         com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity result =
             new com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity(this);
-        result.entitlement_ = entitlement_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entitlement_ = entitlement_;
+        }
       }
 
       @java.lang.Override
@@ -495,6 +507,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
                 .getDefaultInstance()) return this;
         if (!other.getEntitlement().isEmpty()) {
           entitlement_ = other.entitlement_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -526,7 +539,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   entitlement_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -545,6 +558,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object entitlement_ = "";
       /**
@@ -613,8 +628,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         entitlement_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -632,8 +647,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearEntitlement() {
-
         entitlement_ = getDefaultInstance().getEntitlement();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -656,8 +671,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entitlement_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1399,7 +1414,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.type.DateOrBuilder getEffectiveInvoiceMonthOrBuilder() {
-    return getEffectiveInvoiceMonth();
+    return effectiveInvoiceMonth_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : effectiveInvoiceMonth_;
   }
 
   public static final int ADJUSTMENT_FIELD_NUMBER = 2;
@@ -1453,11 +1470,13 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.RepricingAdjustmentOrBuilder getAdjustmentOrBuilder() {
-    return getAdjustment();
+    return adjustment_ == null
+        ? com.google.cloud.channel.v1.RepricingAdjustment.getDefaultInstance()
+        : adjustment_;
   }
 
   public static final int REBILLING_BASIS_FIELD_NUMBER = 3;
-  private int rebillingBasis_;
+  private int rebillingBasis_ = 0;
   /**
    *
    *
@@ -1494,13 +1513,14 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.RebillingBasis getRebillingBasis() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.RebillingBasis result =
-        com.google.cloud.channel.v1.RebillingBasis.valueOf(rebillingBasis_);
+        com.google.cloud.channel.v1.RebillingBasis.forNumber(rebillingBasis_);
     return result == null ? com.google.cloud.channel.v1.RebillingBasis.UNRECOGNIZED : result;
   }
 
   public static final int CONDITIONAL_OVERRIDES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.ConditionalOverride> conditionalOverrides_;
   /**
    *
@@ -1864,33 +1884,31 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (entitlementGranularityBuilder_ != null) {
         entitlementGranularityBuilder_.clear();
       }
       if (channelPartnerGranularityBuilder_ != null) {
         channelPartnerGranularityBuilder_.clear();
       }
-      if (effectiveInvoiceMonthBuilder_ == null) {
-        effectiveInvoiceMonth_ = null;
-      } else {
-        effectiveInvoiceMonth_ = null;
+      effectiveInvoiceMonth_ = null;
+      if (effectiveInvoiceMonthBuilder_ != null) {
+        effectiveInvoiceMonthBuilder_.dispose();
         effectiveInvoiceMonthBuilder_ = null;
       }
-      if (adjustmentBuilder_ == null) {
-        adjustment_ = null;
-      } else {
-        adjustment_ = null;
+      adjustment_ = null;
+      if (adjustmentBuilder_ != null) {
+        adjustmentBuilder_.dispose();
         adjustmentBuilder_ = null;
       }
       rebillingBasis_ = 0;
-
       if (conditionalOverridesBuilder_ == null) {
         conditionalOverrides_ = java.util.Collections.emptyList();
       } else {
         conditionalOverrides_ = null;
         conditionalOverridesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       granularityCase_ = 0;
       granularity_ = null;
       return this;
@@ -1920,44 +1938,52 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.channel.v1.RepricingConfig buildPartial() {
       com.google.cloud.channel.v1.RepricingConfig result =
           new com.google.cloud.channel.v1.RepricingConfig(this);
-      int from_bitField0_ = bitField0_;
-      if (granularityCase_ == 4) {
-        if (entitlementGranularityBuilder_ == null) {
-          result.granularity_ = granularity_;
-        } else {
-          result.granularity_ = entitlementGranularityBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (granularityCase_ == 5) {
-        if (channelPartnerGranularityBuilder_ == null) {
-          result.granularity_ = granularity_;
-        } else {
-          result.granularity_ = channelPartnerGranularityBuilder_.build();
-        }
-      }
-      if (effectiveInvoiceMonthBuilder_ == null) {
-        result.effectiveInvoiceMonth_ = effectiveInvoiceMonth_;
-      } else {
-        result.effectiveInvoiceMonth_ = effectiveInvoiceMonthBuilder_.build();
-      }
-      if (adjustmentBuilder_ == null) {
-        result.adjustment_ = adjustment_;
-      } else {
-        result.adjustment_ = adjustmentBuilder_.build();
-      }
-      result.rebillingBasis_ = rebillingBasis_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.channel.v1.RepricingConfig result) {
       if (conditionalOverridesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           conditionalOverrides_ = java.util.Collections.unmodifiableList(conditionalOverrides_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.conditionalOverrides_ = conditionalOverrides_;
       } else {
         result.conditionalOverrides_ = conditionalOverridesBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.RepricingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.effectiveInvoiceMonth_ =
+            effectiveInvoiceMonthBuilder_ == null
+                ? effectiveInvoiceMonth_
+                : effectiveInvoiceMonthBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.adjustment_ = adjustmentBuilder_ == null ? adjustment_ : adjustmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.rebillingBasis_ = rebillingBasis_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.channel.v1.RepricingConfig result) {
       result.granularityCase_ = granularityCase_;
-      onBuilt();
-      return result;
+      result.granularity_ = this.granularity_;
+      if (granularityCase_ == 4 && entitlementGranularityBuilder_ != null) {
+        result.granularity_ = entitlementGranularityBuilder_.build();
+      }
+      if (granularityCase_ == 5 && channelPartnerGranularityBuilder_ != null) {
+        result.granularity_ = channelPartnerGranularityBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2018,7 +2044,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         if (!other.conditionalOverrides_.isEmpty()) {
           if (conditionalOverrides_.isEmpty()) {
             conditionalOverrides_ = other.conditionalOverrides_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureConditionalOverridesIsMutable();
             conditionalOverrides_.addAll(other.conditionalOverrides_);
@@ -2031,7 +2057,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             conditionalOverridesBuilder_.dispose();
             conditionalOverridesBuilder_ = null;
             conditionalOverrides_ = other.conditionalOverrides_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             conditionalOverridesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionalOverridesFieldBuilder()
@@ -2087,19 +2113,19 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
               {
                 input.readMessage(
                     getEffectiveInvoiceMonthFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAdjustmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 24:
               {
                 rebillingBasis_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
             case 34:
@@ -2410,7 +2436,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       granularityCase_ = 4;
       onChanged();
-      ;
       return entitlementGranularityBuilder_;
     }
 
@@ -2664,7 +2689,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       granularityCase_ = 5;
       onChanged();
-      ;
       return channelPartnerGranularityBuilder_;
     }
 
@@ -2687,7 +2711,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the effectiveInvoiceMonth field is set.
      */
     public boolean hasEffectiveInvoiceMonth() {
-      return effectiveInvoiceMonthBuilder_ != null || effectiveInvoiceMonth_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2730,11 +2754,11 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         effectiveInvoiceMonth_ = value;
-        onChanged();
       } else {
         effectiveInvoiceMonthBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2752,11 +2776,11 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     public Builder setEffectiveInvoiceMonth(com.google.type.Date.Builder builderForValue) {
       if (effectiveInvoiceMonthBuilder_ == null) {
         effectiveInvoiceMonth_ = builderForValue.build();
-        onChanged();
       } else {
         effectiveInvoiceMonthBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2773,19 +2797,18 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeEffectiveInvoiceMonth(com.google.type.Date value) {
       if (effectiveInvoiceMonthBuilder_ == null) {
-        if (effectiveInvoiceMonth_ != null) {
-          effectiveInvoiceMonth_ =
-              com.google.type.Date.newBuilder(effectiveInvoiceMonth_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && effectiveInvoiceMonth_ != null
+            && effectiveInvoiceMonth_ != com.google.type.Date.getDefaultInstance()) {
+          getEffectiveInvoiceMonthBuilder().mergeFrom(value);
         } else {
           effectiveInvoiceMonth_ = value;
         }
-        onChanged();
       } else {
         effectiveInvoiceMonthBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2801,14 +2824,13 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearEffectiveInvoiceMonth() {
-      if (effectiveInvoiceMonthBuilder_ == null) {
-        effectiveInvoiceMonth_ = null;
-        onChanged();
-      } else {
-        effectiveInvoiceMonth_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      effectiveInvoiceMonth_ = null;
+      if (effectiveInvoiceMonthBuilder_ != null) {
+        effectiveInvoiceMonthBuilder_.dispose();
         effectiveInvoiceMonthBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2824,7 +2846,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.type.Date.Builder getEffectiveInvoiceMonthBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEffectiveInvoiceMonthFieldBuilder().getBuilder();
     }
@@ -2894,7 +2916,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the adjustment field is set.
      */
     public boolean hasAdjustment() {
-      return adjustmentBuilder_ != null || adjustment_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2935,11 +2957,11 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         adjustment_ = value;
-        onChanged();
       } else {
         adjustmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2957,11 +2979,11 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.channel.v1.RepricingAdjustment.Builder builderForValue) {
       if (adjustmentBuilder_ == null) {
         adjustment_ = builderForValue.build();
-        onChanged();
       } else {
         adjustmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2977,19 +2999,19 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeAdjustment(com.google.cloud.channel.v1.RepricingAdjustment value) {
       if (adjustmentBuilder_ == null) {
-        if (adjustment_ != null) {
-          adjustment_ =
-              com.google.cloud.channel.v1.RepricingAdjustment.newBuilder(adjustment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && adjustment_ != null
+            && adjustment_
+                != com.google.cloud.channel.v1.RepricingAdjustment.getDefaultInstance()) {
+          getAdjustmentBuilder().mergeFrom(value);
         } else {
           adjustment_ = value;
         }
-        onChanged();
       } else {
         adjustmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3004,14 +3026,13 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearAdjustment() {
-      if (adjustmentBuilder_ == null) {
-        adjustment_ = null;
-        onChanged();
-      } else {
-        adjustment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      adjustment_ = null;
+      if (adjustmentBuilder_ != null) {
+        adjustmentBuilder_.dispose();
         adjustmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3026,7 +3047,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.channel.v1.RepricingAdjustment.Builder getAdjustmentBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAdjustmentFieldBuilder().getBuilder();
     }
@@ -3115,8 +3136,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setRebillingBasisValue(int value) {
-
       rebillingBasis_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3137,9 +3158,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.RebillingBasis getRebillingBasis() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.RebillingBasis result =
-          com.google.cloud.channel.v1.RebillingBasis.valueOf(rebillingBasis_);
+          com.google.cloud.channel.v1.RebillingBasis.forNumber(rebillingBasis_);
       return result == null ? com.google.cloud.channel.v1.RebillingBasis.UNRECOGNIZED : result;
     }
     /**
@@ -3162,7 +3182,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       rebillingBasis_ = value.getNumber();
       onChanged();
       return this;
@@ -3183,7 +3203,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRebillingBasis() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       rebillingBasis_ = 0;
       onChanged();
       return this;
@@ -3193,11 +3213,11 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureConditionalOverridesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         conditionalOverrides_ =
             new java.util.ArrayList<com.google.cloud.channel.v1.ConditionalOverride>(
                 conditionalOverrides_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -3438,7 +3458,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     public Builder clearConditionalOverrides() {
       if (conditionalOverridesBuilder_ == null) {
         conditionalOverrides_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         conditionalOverridesBuilder_.clear();
@@ -3579,7 +3599,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.channel.v1.ConditionalOverride.Builder,
                 com.google.cloud.channel.v1.ConditionalOverrideOrBuilder>(
                 conditionalOverrides_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         conditionalOverrides_ = null;

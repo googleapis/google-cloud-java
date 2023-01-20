@@ -114,7 +114,9 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TaxonomyOrBuilder getTaxonomyOrBuilder() {
-    return getTaxonomy();
+    return taxonomy_ == null
+        ? com.google.cloud.datacatalog.v1beta1.Taxonomy.getDefaultInstance()
+        : taxonomy_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -169,7 +171,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,16 +392,15 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (taxonomyBuilder_ == null) {
-        taxonomy_ = null;
-      } else {
-        taxonomy_ = null;
+      bitField0_ = 0;
+      taxonomy_ = null;
+      if (taxonomyBuilder_ != null) {
+        taxonomyBuilder_.dispose();
         taxonomyBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -429,18 +430,21 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.datacatalog.v1beta1.UpdateTaxonomyRequest buildPartial() {
       com.google.cloud.datacatalog.v1beta1.UpdateTaxonomyRequest result =
           new com.google.cloud.datacatalog.v1beta1.UpdateTaxonomyRequest(this);
-      if (taxonomyBuilder_ == null) {
-        result.taxonomy_ = taxonomy_;
-      } else {
-        result.taxonomy_ = taxonomyBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.UpdateTaxonomyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.taxonomy_ = taxonomyBuilder_ == null ? taxonomy_ : taxonomyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -524,13 +528,13 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getTaxonomyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -549,6 +553,8 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -569,7 +575,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the taxonomy field is set.
      */
     public boolean hasTaxonomy() {
-      return taxonomyBuilder_ != null || taxonomy_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -608,11 +614,11 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         taxonomy_ = value;
-        onChanged();
       } else {
         taxonomyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -629,11 +635,11 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.datacatalog.v1beta1.Taxonomy.Builder builderForValue) {
       if (taxonomyBuilder_ == null) {
         taxonomy_ = builderForValue.build();
-        onChanged();
       } else {
         taxonomyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,19 +654,18 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeTaxonomy(com.google.cloud.datacatalog.v1beta1.Taxonomy value) {
       if (taxonomyBuilder_ == null) {
-        if (taxonomy_ != null) {
-          taxonomy_ =
-              com.google.cloud.datacatalog.v1beta1.Taxonomy.newBuilder(taxonomy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && taxonomy_ != null
+            && taxonomy_ != com.google.cloud.datacatalog.v1beta1.Taxonomy.getDefaultInstance()) {
+          getTaxonomyBuilder().mergeFrom(value);
         } else {
           taxonomy_ = value;
         }
-        onChanged();
       } else {
         taxonomyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -674,14 +679,13 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 1;</code>
      */
     public Builder clearTaxonomy() {
-      if (taxonomyBuilder_ == null) {
-        taxonomy_ = null;
-        onChanged();
-      } else {
-        taxonomy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      taxonomy_ = null;
+      if (taxonomyBuilder_ != null) {
+        taxonomyBuilder_.dispose();
         taxonomyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -695,7 +699,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 1;</code>
      */
     public com.google.cloud.datacatalog.v1beta1.Taxonomy.Builder getTaxonomyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTaxonomyFieldBuilder().getBuilder();
     }
@@ -766,7 +770,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -809,11 +813,11 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -831,11 +835,11 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -852,17 +856,18 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -878,14 +883,13 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -901,7 +905,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

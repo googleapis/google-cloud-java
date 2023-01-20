@@ -72,7 +72,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int FAILOVER_RATIO_FIELD_NUMBER = 212667006;
-  private float failoverRatio_;
+  private float failoverRatio_ = 0F;
   /**
    *
    *
@@ -105,7 +105,9 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -158,7 +160,9 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -211,7 +215,9 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -275,7 +281,9 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
   }
 
   public static final int TARGET_POOL_FIELD_NUMBER = 62796298;
-  private volatile java.lang.Object targetPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetPool_ = "";
   /**
    *
    *
@@ -375,7 +383,9 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetReferenceOrBuilder
       getTargetReferenceResourceOrBuilder() {
-    return getTargetReferenceResource();
+    return targetReferenceResource_ == null
+        ? com.google.cloud.compute.v1.TargetReference.getDefaultInstance()
+        : targetReferenceResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -639,20 +649,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       failoverRatio_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       targetPool_ = "";
-
-      if (targetReferenceResourceBuilder_ == null) {
-        targetReferenceResource_ = null;
-      } else {
-        targetReferenceResource_ = null;
+      targetReferenceResource_ = null;
+      if (targetReferenceResourceBuilder_ != null) {
+        targetReferenceResourceBuilder_.dispose();
         targetReferenceResourceBuilder_ = null;
       }
       return this;
@@ -682,27 +687,40 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.SetBackupTargetPoolRequest buildPartial() {
       com.google.cloud.compute.v1.SetBackupTargetPoolRequest result =
           new com.google.cloud.compute.v1.SetBackupTargetPoolRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SetBackupTargetPoolRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.failoverRatio_ = failoverRatio_;
         to_bitField0_ |= 0x00000001;
       }
-      result.project_ = project_;
-      result.region_ = region_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
         to_bitField0_ |= 0x00000002;
       }
-      result.requestId_ = requestId_;
-      result.targetPool_ = targetPool_;
-      if (targetReferenceResourceBuilder_ == null) {
-        result.targetReferenceResource_ = targetReferenceResource_;
-      } else {
-        result.targetReferenceResource_ = targetReferenceResourceBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.targetPool_ = targetPool_;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.targetReferenceResource_ =
+            targetReferenceResourceBuilder_ == null
+                ? targetReferenceResource_
+                : targetReferenceResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -756,19 +774,22 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getTargetPool().isEmpty()) {
         targetPool_ = other.targetPool_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasTargetReferenceResource()) {
@@ -803,19 +824,19 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 502370386:
               {
                 targetPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 502370386
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1701336053:
@@ -827,14 +848,14 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -105193598:
               {
                 input.readMessage(
                     getTargetReferenceResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case -105193598
             default:
@@ -900,8 +921,9 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setFailoverRatio(float value) {
-      bitField0_ |= 0x00000001;
+
       failoverRatio_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -990,8 +1012,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1009,8 +1031,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1033,8 +1055,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1106,8 +1128,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1125,8 +1147,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1149,8 +1171,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1168,7 +1190,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1230,8 +1252,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1247,8 +1269,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1269,8 +1291,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1336,8 +1358,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetPool_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1353,8 +1375,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearTargetPool() {
-
       targetPool_ = getDefaultInstance().getTargetPool();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1375,8 +1397,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetPool_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1401,7 +1423,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * @return Whether the targetReferenceResource field is set.
      */
     public boolean hasTargetReferenceResource() {
-      return targetReferenceResourceBuilder_ != null || targetReferenceResource_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1442,11 +1464,11 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         targetReferenceResource_ = value;
-        onChanged();
       } else {
         targetReferenceResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1464,11 +1486,11 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         com.google.cloud.compute.v1.TargetReference.Builder builderForValue) {
       if (targetReferenceResourceBuilder_ == null) {
         targetReferenceResource_ = builderForValue.build();
-        onChanged();
       } else {
         targetReferenceResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1484,19 +1506,19 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      */
     public Builder mergeTargetReferenceResource(com.google.cloud.compute.v1.TargetReference value) {
       if (targetReferenceResourceBuilder_ == null) {
-        if (targetReferenceResource_ != null) {
-          targetReferenceResource_ =
-              com.google.cloud.compute.v1.TargetReference.newBuilder(targetReferenceResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && targetReferenceResource_ != null
+            && targetReferenceResource_
+                != com.google.cloud.compute.v1.TargetReference.getDefaultInstance()) {
+          getTargetReferenceResourceBuilder().mergeFrom(value);
         } else {
           targetReferenceResource_ = value;
         }
-        onChanged();
       } else {
         targetReferenceResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1511,14 +1533,13 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearTargetReferenceResource() {
-      if (targetReferenceResourceBuilder_ == null) {
-        targetReferenceResource_ = null;
-        onChanged();
-      } else {
-        targetReferenceResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      targetReferenceResource_ = null;
+      if (targetReferenceResourceBuilder_ != null) {
+        targetReferenceResourceBuilder_.dispose();
         targetReferenceResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1533,7 +1554,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.compute.v1.TargetReference.Builder getTargetReferenceResourceBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTargetReferenceResourceFieldBuilder().getBuilder();
     }

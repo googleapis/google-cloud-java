@@ -412,7 +412,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int ADDRESS_FIELD_NUMBER = 462920692;
-  private volatile java.lang.Object address_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object address_ = "";
   /**
    *
    *
@@ -476,7 +478,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int AVAILABILITY_ZONE_FIELD_NUMBER = 158459920;
-  private volatile java.lang.Object availabilityZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object availabilityZone_ = "";
   /**
    *
    *
@@ -540,7 +544,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CITY_FIELD_NUMBER = 3053931;
-  private volatile java.lang.Object city_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object city_ = "";
   /**
    *
    *
@@ -604,7 +610,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CONTINENT_FIELD_NUMBER = 133442996;
-  private volatile java.lang.Object continent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object continent_ = "";
   /**
    *
    *
@@ -671,7 +679,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -735,7 +745,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -799,7 +811,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int FACILITY_PROVIDER_FIELD_NUMBER = 533303309;
-  private volatile java.lang.Object facilityProvider_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object facilityProvider_ = "";
   /**
    *
    *
@@ -863,7 +877,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int FACILITY_PROVIDER_FACILITY_ID_FIELD_NUMBER = 87269125;
-  private volatile java.lang.Object facilityProviderFacilityId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object facilityProviderFacilityId_ = "";
   /**
    *
    *
@@ -927,7 +943,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -960,7 +976,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -1024,7 +1042,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1088,7 +1108,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PEERINGDB_FACILITY_ID_FIELD_NUMBER = 536567094;
-  private volatile java.lang.Object peeringdbFacilityId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object peeringdbFacilityId_ = "";
   /**
    *
    *
@@ -1152,6 +1174,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int REGION_INFOS_FIELD_NUMBER = 312194170;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectLocationRegionInfo> regionInfos_;
   /**
    *
@@ -1234,7 +1258,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -1298,7 +1324,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -1365,7 +1393,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SUPPORTS_PZS_FIELD_NUMBER = 83983214;
-  private boolean supportsPzs_;
+  private boolean supportsPzs_ = false;
   /**
    *
    *
@@ -1815,30 +1843,19 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       address_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       availabilityZone_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       city_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       continent_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       facilityProvider_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       facilityProviderFacilityId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
       peeringdbFacilityId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
       if (regionInfosBuilder_ == null) {
         regionInfos_ = java.util.Collections.emptyList();
       } else {
@@ -1847,11 +1864,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00004000);
       supportsPzs_ = false;
-      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1879,56 +1893,16 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.InterconnectLocation buildPartial() {
       com.google.cloud.compute.v1.InterconnectLocation result =
           new com.google.cloud.compute.v1.InterconnectLocation(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.address_ = address_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.availabilityZone_ = availabilityZone_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.city_ = city_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.continent_ = continent_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000010;
-      }
-      result.creationTimestamp_ = creationTimestamp_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        to_bitField0_ |= 0x00000020;
-      }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        to_bitField0_ |= 0x00000040;
-      }
-      result.facilityProvider_ = facilityProvider_;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        to_bitField0_ |= 0x00000080;
-      }
-      result.facilityProviderFacilityId_ = facilityProviderFacilityId_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000100;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        to_bitField0_ |= 0x00000200;
-      }
-      result.kind_ = kind_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        to_bitField0_ |= 0x00000400;
-      }
-      result.name_ = name_;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        to_bitField0_ |= 0x00000800;
-      }
-      result.peeringdbFacilityId_ = peeringdbFacilityId_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InterconnectLocation result) {
       if (regionInfosBuilder_ == null) {
         if (((bitField0_ & 0x00001000) != 0)) {
           regionInfos_ = java.util.Collections.unmodifiableList(regionInfos_);
@@ -1938,21 +1912,72 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       } else {
         result.regionInfos_ = regionInfosBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InterconnectLocation result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.address_ = address_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.availabilityZone_ = availabilityZone_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.city_ = city_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.continent_ = continent_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.facilityProvider_ = facilityProvider_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.facilityProviderFacilityId_ = facilityProviderFacilityId_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.peeringdbFacilityId_ = peeringdbFacilityId_;
+        to_bitField0_ |= 0x00000800;
+      }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00001000;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.status_ = status_;
         to_bitField0_ |= 0x00002000;
       }
-      result.status_ = status_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.supportsPzs_ = supportsPzs_;
         to_bitField0_ |= 0x00004000;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2002,61 +2027,61 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.compute.v1.InterconnectLocation.getDefaultInstance())
         return this;
       if (other.hasAddress()) {
-        bitField0_ |= 0x00000001;
         address_ = other.address_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAvailabilityZone()) {
-        bitField0_ |= 0x00000002;
         availabilityZone_ = other.availabilityZone_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCity()) {
-        bitField0_ |= 0x00000004;
         city_ = other.city_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasContinent()) {
-        bitField0_ |= 0x00000008;
         continent_ = other.continent_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000010;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000020;
         description_ = other.description_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasFacilityProvider()) {
-        bitField0_ |= 0x00000040;
         facilityProvider_ = other.facilityProvider_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasFacilityProviderFacilityId()) {
-        bitField0_ |= 0x00000080;
         facilityProviderFacilityId_ = other.facilityProviderFacilityId_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000200;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000400;
         name_ = other.name_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasPeeringdbFacilityId()) {
-        bitField0_ |= 0x00000800;
         peeringdbFacilityId_ = other.peeringdbFacilityId_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (regionInfosBuilder_ == null) {
@@ -2087,13 +2112,13 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         }
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00002000;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00004000;
         status_ = other.status_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasSupportsPzs()) {
@@ -2323,8 +2348,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       address_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2340,8 +2365,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAddress() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       address_ = getDefaultInstance().getAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2362,8 +2387,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       address_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2443,8 +2468,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       availabilityZone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2460,8 +2485,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAvailabilityZone() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       availabilityZone_ = getDefaultInstance().getAvailabilityZone();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2482,8 +2507,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       availabilityZone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2563,8 +2588,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       city_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2580,8 +2605,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCity() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       city_ = getDefaultInstance().getCity();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2602,8 +2627,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       city_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2687,8 +2712,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       continent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2705,8 +2730,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearContinent() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       continent_ = getDefaultInstance().getContinent();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2728,8 +2753,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       continent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2809,8 +2834,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2826,8 +2851,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2848,8 +2873,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2929,8 +2954,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2946,8 +2971,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2968,8 +2993,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3049,8 +3074,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       facilityProvider_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3066,8 +3091,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearFacilityProvider() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       facilityProvider_ = getDefaultInstance().getFacilityProvider();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3088,8 +3113,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       facilityProvider_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3169,8 +3194,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       facilityProviderFacilityId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3186,8 +3211,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearFacilityProviderFacilityId() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       facilityProviderFacilityId_ = getDefaultInstance().getFacilityProviderFacilityId();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3208,8 +3233,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       facilityProviderFacilityId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3258,8 +3283,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000100;
+
       id_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3356,8 +3382,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       kind_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3373,8 +3399,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3395,8 +3421,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       kind_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3476,8 +3502,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       name_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3493,8 +3519,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3515,8 +3541,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       name_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3596,8 +3622,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       peeringdbFacilityId_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3613,8 +3639,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPeeringdbFacilityId() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       peeringdbFacilityId_ = getDefaultInstance().getPeeringdbFacilityId();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3635,8 +3661,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       peeringdbFacilityId_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4119,8 +4145,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
       selfLink_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4136,8 +4162,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4158,8 +4184,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
       selfLink_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4243,8 +4269,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
       status_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4261,8 +4287,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4284,8 +4310,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
       status_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4334,8 +4360,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSupportsPzs(boolean value) {
-      bitField0_ |= 0x00008000;
+
       supportsPzs_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

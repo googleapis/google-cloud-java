@@ -69,6 +69,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int HEALTH_STATUS_FIELD_NUMBER = 380545845;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HealthStatus> healthStatus_;
   /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   @java.lang.Override
@@ -98,7 +100,9 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -374,6 +378,7 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (healthStatusBuilder_ == null) {
         healthStatus_ = java.util.Collections.emptyList();
       } else {
@@ -382,7 +387,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -410,8 +414,16 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.TargetPoolInstanceHealth buildPartial() {
       com.google.cloud.compute.v1.TargetPoolInstanceHealth result =
           new com.google.cloud.compute.v1.TargetPoolInstanceHealth(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.TargetPoolInstanceHealth result) {
       if (healthStatusBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           healthStatus_ = java.util.Collections.unmodifiableList(healthStatus_);
@@ -421,13 +433,16 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       } else {
         result.healthStatus_ = healthStatusBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.TargetPoolInstanceHealth result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000001;
       }
-      result.kind_ = kind_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -504,8 +519,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
         }
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000002;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -854,8 +869,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -871,8 +886,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -893,8 +908,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

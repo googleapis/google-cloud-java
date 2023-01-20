@@ -1035,7 +1035,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -1291,8 +1293,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -1320,9 +1322,18 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloudbuild.v1.BuildOptions.PoolOption buildPartial() {
         com.google.cloudbuild.v1.BuildOptions.PoolOption result =
             new com.google.cloudbuild.v1.BuildOptions.PoolOption(this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloudbuild.v1.BuildOptions.PoolOption result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -1375,6 +1386,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1406,7 +1418,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1425,6 +1437,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -1496,8 +1510,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1516,8 +1530,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1541,8 +1555,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1612,16 +1626,18 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_PROVENANCE_HASH_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> sourceProvenanceHash_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloudbuild.v1.Hash.HashType>
       sourceProvenanceHash_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloudbuild.v1.Hash.HashType>() {
             public com.google.cloudbuild.v1.Hash.HashType convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloudbuild.v1.Hash.HashType result =
-                  com.google.cloudbuild.v1.Hash.HashType.valueOf(from);
+                  com.google.cloudbuild.v1.Hash.HashType.forNumber(from);
               return result == null ? com.google.cloudbuild.v1.Hash.HashType.UNRECOGNIZED : result;
             }
           };
@@ -1708,7 +1724,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
   private int sourceProvenanceHashMemoizedSerializedSize;
 
   public static final int REQUESTED_VERIFY_OPTION_FIELD_NUMBER = 2;
-  private int requestedVerifyOption_;
+  private int requestedVerifyOption_ = 0;
   /**
    *
    *
@@ -1739,16 +1755,15 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.VerifyOption getRequestedVerifyOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildOptions.VerifyOption result =
-        com.google.cloudbuild.v1.BuildOptions.VerifyOption.valueOf(requestedVerifyOption_);
+        com.google.cloudbuild.v1.BuildOptions.VerifyOption.forNumber(requestedVerifyOption_);
     return result == null
         ? com.google.cloudbuild.v1.BuildOptions.VerifyOption.UNRECOGNIZED
         : result;
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 3;
-  private int machineType_;
+  private int machineType_ = 0;
   /**
    *
    *
@@ -1777,14 +1792,13 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.MachineType getMachineType() {
-    @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildOptions.MachineType result =
-        com.google.cloudbuild.v1.BuildOptions.MachineType.valueOf(machineType_);
+        com.google.cloudbuild.v1.BuildOptions.MachineType.forNumber(machineType_);
     return result == null ? com.google.cloudbuild.v1.BuildOptions.MachineType.UNRECOGNIZED : result;
   }
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 6;
-  private long diskSizeGb_;
+  private long diskSizeGb_ = 0L;
   /**
    *
    *
@@ -1807,7 +1821,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBSTITUTION_OPTION_FIELD_NUMBER = 4;
-  private int substitutionOption_;
+  private int substitutionOption_ = 0;
   /**
    *
    *
@@ -1844,16 +1858,15 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.SubstitutionOption getSubstitutionOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildOptions.SubstitutionOption result =
-        com.google.cloudbuild.v1.BuildOptions.SubstitutionOption.valueOf(substitutionOption_);
+        com.google.cloudbuild.v1.BuildOptions.SubstitutionOption.forNumber(substitutionOption_);
     return result == null
         ? com.google.cloudbuild.v1.BuildOptions.SubstitutionOption.UNRECOGNIZED
         : result;
   }
 
   public static final int DYNAMIC_SUBSTITUTIONS_FIELD_NUMBER = 17;
-  private boolean dynamicSubstitutions_;
+  private boolean dynamicSubstitutions_ = false;
   /**
    *
    *
@@ -1874,7 +1887,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOG_STREAMING_OPTION_FIELD_NUMBER = 5;
-  private int logStreamingOption_;
+  private int logStreamingOption_ = 0;
   /**
    *
    *
@@ -1907,16 +1920,17 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.LogStreamingOption getLogStreamingOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildOptions.LogStreamingOption result =
-        com.google.cloudbuild.v1.BuildOptions.LogStreamingOption.valueOf(logStreamingOption_);
+        com.google.cloudbuild.v1.BuildOptions.LogStreamingOption.forNumber(logStreamingOption_);
     return result == null
         ? com.google.cloudbuild.v1.BuildOptions.LogStreamingOption.UNRECOGNIZED
         : result;
   }
 
   public static final int WORKER_POOL_FIELD_NUMBER = 7;
-  private volatile java.lang.Object workerPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerPool_ = "";
   /**
    *
    *
@@ -2030,11 +2044,13 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.PoolOptionOrBuilder getPoolOrBuilder() {
-    return getPool();
+    return pool_ == null
+        ? com.google.cloudbuild.v1.BuildOptions.PoolOption.getDefaultInstance()
+        : pool_;
   }
 
   public static final int LOGGING_FIELD_NUMBER = 11;
-  private int logging_;
+  private int logging_ = 0;
   /**
    *
    *
@@ -2065,13 +2081,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.LoggingMode getLogging() {
-    @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildOptions.LoggingMode result =
-        com.google.cloudbuild.v1.BuildOptions.LoggingMode.valueOf(logging_);
+        com.google.cloudbuild.v1.BuildOptions.LoggingMode.forNumber(logging_);
     return result == null ? com.google.cloudbuild.v1.BuildOptions.LoggingMode.UNRECOGNIZED : result;
   }
 
   public static final int ENV_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList env_;
   /**
    *
@@ -2149,6 +2166,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_ENV_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList secretEnv_;
   /**
    *
@@ -2222,6 +2241,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VOLUMES_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.Volume> volumes_;
   /**
    *
@@ -2670,41 +2691,33 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceProvenanceHash_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       requestedVerifyOption_ = 0;
-
       machineType_ = 0;
-
       diskSizeGb_ = 0L;
-
       substitutionOption_ = 0;
-
       dynamicSubstitutions_ = false;
-
       logStreamingOption_ = 0;
-
       workerPool_ = "";
-
-      if (poolBuilder_ == null) {
-        pool_ = null;
-      } else {
-        pool_ = null;
+      pool_ = null;
+      if (poolBuilder_ != null) {
+        poolBuilder_.dispose();
         poolBuilder_ = null;
       }
       logging_ = 0;
-
       env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
       } else {
         volumes_ = null;
         volumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -2732,46 +2745,70 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.BuildOptions buildPartial() {
       com.google.cloudbuild.v1.BuildOptions result =
           new com.google.cloudbuild.v1.BuildOptions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloudbuild.v1.BuildOptions result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         sourceProvenanceHash_ = java.util.Collections.unmodifiableList(sourceProvenanceHash_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.sourceProvenanceHash_ = sourceProvenanceHash_;
-      result.requestedVerifyOption_ = requestedVerifyOption_;
-      result.machineType_ = machineType_;
-      result.diskSizeGb_ = diskSizeGb_;
-      result.substitutionOption_ = substitutionOption_;
-      result.dynamicSubstitutions_ = dynamicSubstitutions_;
-      result.logStreamingOption_ = logStreamingOption_;
-      result.workerPool_ = workerPool_;
-      if (poolBuilder_ == null) {
-        result.pool_ = pool_;
-      } else {
-        result.pool_ = poolBuilder_.build();
-      }
-      result.logging_ = logging_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         env_ = env_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.env_ = env_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         secretEnv_ = secretEnv_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000800);
       }
       result.secretEnv_ = secretEnv_;
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.volumes_ = volumes_;
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.BuildOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestedVerifyOption_ = requestedVerifyOption_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.substitutionOption_ = substitutionOption_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.dynamicSubstitutions_ = dynamicSubstitutions_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.logStreamingOption_ = logStreamingOption_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.workerPool_ = workerPool_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.pool_ = poolBuilder_ == null ? pool_ : poolBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.logging_ = logging_;
+      }
     }
 
     @java.lang.Override
@@ -2849,6 +2886,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWorkerPool().isEmpty()) {
         workerPool_ = other.workerPool_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasPool()) {
@@ -2860,7 +2898,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!other.env_.isEmpty()) {
         if (env_.isEmpty()) {
           env_ = other.env_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureEnvIsMutable();
           env_.addAll(other.env_);
@@ -2870,7 +2908,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!other.secretEnv_.isEmpty()) {
         if (secretEnv_.isEmpty()) {
           secretEnv_ = other.secretEnv_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           ensureSecretEnvIsMutable();
           secretEnv_.addAll(other.secretEnv_);
@@ -2881,7 +2919,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -2894,7 +2932,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00001000);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVolumesFieldBuilder()
@@ -2952,43 +2990,43 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 requestedVerifyOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 machineType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 substitutionOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 40:
               {
                 logStreamingOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 48:
               {
                 diskSizeGb_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 48
             case 58:
               {
                 workerPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 88:
               {
                 logging_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 88
             case 98:
@@ -3020,13 +3058,13 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             case 136:
               {
                 dynamicSubstitutions_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 136
             case 154:
               {
                 input.readMessage(getPoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 154
             default:
@@ -3314,8 +3352,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRequestedVerifyOptionValue(int value) {
-
       requestedVerifyOption_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3333,9 +3371,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.BuildOptions.VerifyOption getRequestedVerifyOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildOptions.VerifyOption result =
-          com.google.cloudbuild.v1.BuildOptions.VerifyOption.valueOf(requestedVerifyOption_);
+          com.google.cloudbuild.v1.BuildOptions.VerifyOption.forNumber(requestedVerifyOption_);
       return result == null
           ? com.google.cloudbuild.v1.BuildOptions.VerifyOption.UNRECOGNIZED
           : result;
@@ -3358,7 +3395,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       requestedVerifyOption_ = value.getNumber();
       onChanged();
       return this;
@@ -3376,7 +3413,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequestedVerifyOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       requestedVerifyOption_ = 0;
       onChanged();
       return this;
@@ -3411,8 +3448,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMachineTypeValue(int value) {
-
       machineType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3429,9 +3466,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.BuildOptions.MachineType getMachineType() {
-      @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildOptions.MachineType result =
-          com.google.cloudbuild.v1.BuildOptions.MachineType.valueOf(machineType_);
+          com.google.cloudbuild.v1.BuildOptions.MachineType.forNumber(machineType_);
       return result == null
           ? com.google.cloudbuild.v1.BuildOptions.MachineType.UNRECOGNIZED
           : result;
@@ -3452,7 +3488,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       machineType_ = value.getNumber();
       onChanged();
       return this;
@@ -3469,7 +3505,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       machineType_ = 0;
       onChanged();
       return this;
@@ -3516,6 +3552,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder setDiskSizeGb(long value) {
 
       diskSizeGb_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3536,7 +3573,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       diskSizeGb_ = 0L;
       onChanged();
       return this;
@@ -3579,8 +3616,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSubstitutionOptionValue(int value) {
-
       substitutionOption_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3601,9 +3638,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.BuildOptions.SubstitutionOption getSubstitutionOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildOptions.SubstitutionOption result =
-          com.google.cloudbuild.v1.BuildOptions.SubstitutionOption.valueOf(substitutionOption_);
+          com.google.cloudbuild.v1.BuildOptions.SubstitutionOption.forNumber(substitutionOption_);
       return result == null
           ? com.google.cloudbuild.v1.BuildOptions.SubstitutionOption.UNRECOGNIZED
           : result;
@@ -3629,7 +3665,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       substitutionOption_ = value.getNumber();
       onChanged();
       return this;
@@ -3650,7 +3686,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubstitutionOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       substitutionOption_ = 0;
       onChanged();
       return this;
@@ -3693,6 +3729,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder setDynamicSubstitutions(boolean value) {
 
       dynamicSubstitutions_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3711,7 +3748,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDynamicSubstitutions() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       dynamicSubstitutions_ = false;
       onChanged();
       return this;
@@ -3752,8 +3789,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLogStreamingOptionValue(int value) {
-
       logStreamingOption_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3773,9 +3810,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.BuildOptions.LogStreamingOption getLogStreamingOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildOptions.LogStreamingOption result =
-          com.google.cloudbuild.v1.BuildOptions.LogStreamingOption.valueOf(logStreamingOption_);
+          com.google.cloudbuild.v1.BuildOptions.LogStreamingOption.forNumber(logStreamingOption_);
       return result == null
           ? com.google.cloudbuild.v1.BuildOptions.LogStreamingOption.UNRECOGNIZED
           : result;
@@ -3800,7 +3836,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       logStreamingOption_ = value.getNumber();
       onChanged();
       return this;
@@ -3820,7 +3856,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogStreamingOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       logStreamingOption_ = 0;
       onChanged();
       return this;
@@ -3896,8 +3932,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerPool_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3916,8 +3952,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearWorkerPool() {
-
       workerPool_ = getDefaultInstance().getWorkerPool();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3941,8 +3977,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerPool_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3970,7 +4006,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pool field is set.
      */
     public boolean hasPool() {
-      return poolBuilder_ != null || pool_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -4017,11 +4053,11 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         pool_ = value;
-        onChanged();
       } else {
         poolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4042,11 +4078,11 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder builderForValue) {
       if (poolBuilder_ == null) {
         pool_ = builderForValue.build();
-        onChanged();
       } else {
         poolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4065,19 +4101,18 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePool(com.google.cloudbuild.v1.BuildOptions.PoolOption value) {
       if (poolBuilder_ == null) {
-        if (pool_ != null) {
-          pool_ =
-              com.google.cloudbuild.v1.BuildOptions.PoolOption.newBuilder(pool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && pool_ != null
+            && pool_ != com.google.cloudbuild.v1.BuildOptions.PoolOption.getDefaultInstance()) {
+          getPoolBuilder().mergeFrom(value);
         } else {
           pool_ = value;
         }
-        onChanged();
       } else {
         poolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4095,14 +4130,13 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPool() {
-      if (poolBuilder_ == null) {
-        pool_ = null;
-        onChanged();
-      } else {
-        pool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      pool_ = null;
+      if (poolBuilder_ != null) {
+        poolBuilder_.dispose();
         poolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4120,7 +4154,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder getPoolBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getPoolFieldBuilder().getBuilder();
     }
@@ -4209,8 +4243,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLoggingValue(int value) {
-
       logging_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4228,9 +4262,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.BuildOptions.LoggingMode getLogging() {
-      @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildOptions.LoggingMode result =
-          com.google.cloudbuild.v1.BuildOptions.LoggingMode.valueOf(logging_);
+          com.google.cloudbuild.v1.BuildOptions.LoggingMode.forNumber(logging_);
       return result == null
           ? com.google.cloudbuild.v1.BuildOptions.LoggingMode.UNRECOGNIZED
           : result;
@@ -4252,7 +4285,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       logging_ = value.getNumber();
       onChanged();
       return this;
@@ -4270,7 +4303,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogging() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       logging_ = 0;
       onChanged();
       return this;
@@ -4279,9 +4312,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.LazyStringList env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEnvIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         env_ = new com.google.protobuf.LazyStringArrayList(env_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -4448,7 +4481,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEnv() {
       env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4483,9 +4516,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSecretEnvIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         secretEnv_ = new com.google.protobuf.LazyStringArrayList(secretEnv_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000800;
       }
     }
     /**
@@ -4644,7 +4677,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSecretEnv() {
       secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4678,9 +4711,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.cloudbuild.v1.Volume>(volumes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -4959,7 +4992,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -5122,7 +5155,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.Volume,
                 com.google.cloudbuild.v1.Volume.Builder,
                 com.google.cloudbuild.v1.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;

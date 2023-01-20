@@ -70,7 +70,9 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STAGE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object stageId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stageId_ = "";
   /**
    *
    *
@@ -119,7 +121,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -148,9 +150,8 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.ExecutionState getState() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.ExecutionState result =
-        com.google.dataflow.v1beta3.ExecutionState.valueOf(state_);
+        com.google.dataflow.v1beta3.ExecutionState.forNumber(state_);
     return result == null ? com.google.dataflow.v1beta3.ExecutionState.UNRECOGNIZED : result;
   }
 
@@ -197,7 +198,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 4;
@@ -249,7 +250,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int PROGRESS_FIELD_NUMBER = 5;
@@ -300,10 +301,14 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.ProgressTimeseriesOrBuilder getProgressOrBuilder() {
-    return getProgress();
+    return progress_ == null
+        ? com.google.dataflow.v1beta3.ProgressTimeseries.getDefaultInstance()
+        : progress_;
   }
 
   public static final int METRICS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.MetricUpdate> metrics_;
   /**
    *
@@ -630,26 +635,22 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       stageId_ = "";
-
       state_ = 0;
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-      if (progressBuilder_ == null) {
-        progress_ = null;
-      } else {
-        progress_ = null;
+      progress_ = null;
+      if (progressBuilder_ != null) {
+        progressBuilder_.dispose();
         progressBuilder_ = null;
       }
       if (metricsBuilder_ == null) {
@@ -658,7 +659,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         metrics_ = null;
         metricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -686,35 +687,43 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.StageSummary buildPartial() {
       com.google.dataflow.v1beta3.StageSummary result =
           new com.google.dataflow.v1beta3.StageSummary(this);
-      int from_bitField0_ = bitField0_;
-      result.stageId_ = stageId_;
-      result.state_ = state_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      if (progressBuilder_ == null) {
-        result.progress_ = progress_;
-      } else {
-        result.progress_ = progressBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.StageSummary result) {
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.metrics_ = metrics_;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.StageSummary result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.stageId_ = stageId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.progress_ = progressBuilder_ == null ? progress_ : progressBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -764,6 +773,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.dataflow.v1beta3.StageSummary.getDefaultInstance()) return this;
       if (!other.getStageId().isEmpty()) {
         stageId_ = other.stageId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -782,7 +792,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         if (!other.metrics_.isEmpty()) {
           if (metrics_.isEmpty()) {
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureMetricsIsMutable();
             metrics_.addAll(other.metrics_);
@@ -795,7 +805,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
             metricsBuilder_.dispose();
             metricsBuilder_ = null;
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             metricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetricsFieldBuilder()
@@ -834,31 +844,31 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 stageId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getProgressFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -954,8 +964,8 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       stageId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -971,8 +981,8 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStageId() {
-
       stageId_ = getDefaultInstance().getStageId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -993,8 +1003,8 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stageId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1028,8 +1038,8 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1046,9 +1056,8 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.ExecutionState getState() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.ExecutionState result =
-          com.google.dataflow.v1beta3.ExecutionState.valueOf(state_);
+          com.google.dataflow.v1beta3.ExecutionState.forNumber(state_);
       return result == null ? com.google.dataflow.v1beta3.ExecutionState.UNRECOGNIZED : result;
     }
     /**
@@ -1067,7 +1076,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1084,7 +1093,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -1108,7 +1117,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1143,11 +1152,11 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1162,11 +1171,11 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1180,17 +1189,18 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1203,14 +1213,13 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1223,7 +1232,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -1289,7 +1298,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1328,11 +1337,11 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1349,11 +1358,11 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1369,17 +1378,18 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1394,14 +1404,13 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 4;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1416,7 +1425,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1485,7 +1494,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the progress field is set.
      */
     public boolean hasProgress() {
-      return progressBuilder_ != null || progress_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1524,11 +1533,11 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         progress_ = value;
-        onChanged();
       } else {
         progressBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1545,11 +1554,11 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         com.google.dataflow.v1beta3.ProgressTimeseries.Builder builderForValue) {
       if (progressBuilder_ == null) {
         progress_ = builderForValue.build();
-        onChanged();
       } else {
         progressBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1564,19 +1573,18 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeProgress(com.google.dataflow.v1beta3.ProgressTimeseries value) {
       if (progressBuilder_ == null) {
-        if (progress_ != null) {
-          progress_ =
-              com.google.dataflow.v1beta3.ProgressTimeseries.newBuilder(progress_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && progress_ != null
+            && progress_ != com.google.dataflow.v1beta3.ProgressTimeseries.getDefaultInstance()) {
+          getProgressBuilder().mergeFrom(value);
         } else {
           progress_ = value;
         }
-        onChanged();
       } else {
         progressBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1590,14 +1598,13 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.ProgressTimeseries progress = 5;</code>
      */
     public Builder clearProgress() {
-      if (progressBuilder_ == null) {
-        progress_ = null;
-        onChanged();
-      } else {
-        progress_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      progress_ = null;
+      if (progressBuilder_ != null) {
+        progressBuilder_.dispose();
         progressBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1611,7 +1618,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.ProgressTimeseries progress = 5;</code>
      */
     public com.google.dataflow.v1beta3.ProgressTimeseries.Builder getProgressBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getProgressFieldBuilder().getBuilder();
     }
@@ -1665,9 +1672,9 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         metrics_ = new java.util.ArrayList<com.google.dataflow.v1beta3.MetricUpdate>(metrics_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -1882,7 +1889,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         metricsBuilder_.clear();
@@ -2004,7 +2011,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.dataflow.v1beta3.MetricUpdate,
                 com.google.dataflow.v1beta3.MetricUpdate.Builder,
                 com.google.dataflow.v1beta3.MetricUpdateOrBuilder>(
-                metrics_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                metrics_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         metrics_ = null;
       }
       return metricsBuilder_;

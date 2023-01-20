@@ -68,7 +68,9 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnalysisOrBuilder getAnalysisOrBuilder() {
-    return getAnalysis();
+    return analysis_ == null
+        ? com.google.cloud.contactcenterinsights.v1.Analysis.getDefaultInstance()
+        : analysis_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -386,12 +390,11 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (analysisBuilder_ == null) {
-        analysis_ = null;
-      } else {
-        analysis_ = null;
+      analysis_ = null;
+      if (analysisBuilder_ != null) {
+        analysisBuilder_.dispose();
         analysisBuilder_ = null;
       }
       return this;
@@ -422,14 +425,22 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest buildPartial() {
       com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest result =
           new com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest(this);
-      result.parent_ = parent_;
-      if (analysisBuilder_ == null) {
-        result.analysis_ = analysis_;
-      } else {
-        result.analysis_ = analysisBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.analysis_ = analysisBuilder_ == null ? analysis_ : analysisBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -482,6 +493,7 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAnalysis()) {
@@ -516,13 +528,13 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAnalysisFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -541,6 +553,8 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -609,8 +623,8 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -628,8 +642,8 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -652,8 +666,8 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -678,7 +692,7 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the analysis field is set.
      */
     public boolean hasAnalysis() {
-      return analysisBuilder_ != null || analysis_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -719,11 +733,11 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         analysis_ = value;
-        onChanged();
       } else {
         analysisBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -741,11 +755,11 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.contactcenterinsights.v1.Analysis.Builder builderForValue) {
       if (analysisBuilder_ == null) {
         analysis_ = builderForValue.build();
-        onChanged();
       } else {
         analysisBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -761,19 +775,19 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeAnalysis(com.google.cloud.contactcenterinsights.v1.Analysis value) {
       if (analysisBuilder_ == null) {
-        if (analysis_ != null) {
-          analysis_ =
-              com.google.cloud.contactcenterinsights.v1.Analysis.newBuilder(analysis_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && analysis_ != null
+            && analysis_
+                != com.google.cloud.contactcenterinsights.v1.Analysis.getDefaultInstance()) {
+          getAnalysisBuilder().mergeFrom(value);
         } else {
           analysis_ = value;
         }
-        onChanged();
       } else {
         analysisBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -788,14 +802,13 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearAnalysis() {
-      if (analysisBuilder_ == null) {
-        analysis_ = null;
-        onChanged();
-      } else {
-        analysis_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      analysis_ = null;
+      if (analysisBuilder_ != null) {
+        analysisBuilder_.dispose();
         analysisBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -810,7 +823,7 @@ public final class CreateAnalysisRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.contactcenterinsights.v1.Analysis.Builder getAnalysisBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAnalysisFieldBuilder().getBuilder();
     }

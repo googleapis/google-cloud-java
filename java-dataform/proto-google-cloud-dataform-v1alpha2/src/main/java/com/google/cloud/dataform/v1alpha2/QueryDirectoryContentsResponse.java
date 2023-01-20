@@ -628,6 +628,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entryCase_ = 0;
         entry_ = null;
         return this;
@@ -663,15 +664,23 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry result =
             new com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry(
                 this);
-        if (entryCase_ == 1) {
-          result.entry_ = entry_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (entryCase_ == 2) {
-          result.entry_ = entry_;
-        }
-        result.entryCase_ = entryCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry result) {
+        result.entryCase_ = entryCase_;
+        result.entry_ = this.entry_;
       }
 
       @java.lang.Override
@@ -818,6 +827,8 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       /**
        *
@@ -1157,6 +1168,8 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
   }
 
   public static final int DIRECTORY_ENTRIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry>
       directoryEntries_;
@@ -1245,7 +1258,9 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -1506,6 +1521,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (directoryEntriesBuilder_ == null) {
         directoryEntries_ = java.util.Collections.emptyList();
       } else {
@@ -1514,7 +1530,6 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -1543,7 +1558,16 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     public com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse buildPartial() {
       com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse result =
           new com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse result) {
       if (directoryEntriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           directoryEntries_ = java.util.Collections.unmodifiableList(directoryEntries_);
@@ -1553,9 +1577,14 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       } else {
         result.directoryEntries_ = directoryEntriesBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -1635,6 +1664,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1681,7 +1711,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -2197,8 +2227,8 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2215,8 +2245,8 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2238,8 +2268,8 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

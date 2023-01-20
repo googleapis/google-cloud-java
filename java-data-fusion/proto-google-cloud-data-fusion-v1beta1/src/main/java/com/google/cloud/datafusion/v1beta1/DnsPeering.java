@@ -73,7 +73,9 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ZONE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOMAIN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object domain_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domain_ = "";
   /**
    *
    *
@@ -171,7 +175,9 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -220,7 +226,9 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_PROJECT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object targetProject_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetProject_ = "";
   /**
    *
    *
@@ -269,7 +277,9 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_NETWORK_FIELD_NUMBER = 5;
-  private volatile java.lang.Object targetNetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetNetwork_ = "";
   /**
    *
    *
@@ -551,16 +561,12 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       zone_ = "";
-
       domain_ = "";
-
       description_ = "";
-
       targetProject_ = "";
-
       targetNetwork_ = "";
-
       return this;
     }
 
@@ -588,13 +594,30 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datafusion.v1beta1.DnsPeering buildPartial() {
       com.google.cloud.datafusion.v1beta1.DnsPeering result =
           new com.google.cloud.datafusion.v1beta1.DnsPeering(this);
-      result.zone_ = zone_;
-      result.domain_ = domain_;
-      result.description_ = description_;
-      result.targetProject_ = targetProject_;
-      result.targetNetwork_ = targetNetwork_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datafusion.v1beta1.DnsPeering result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.domain_ = domain_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetProject_ = targetProject_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.targetNetwork_ = targetNetwork_;
+      }
     }
 
     @java.lang.Override
@@ -644,22 +667,27 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datafusion.v1beta1.DnsPeering.getDefaultInstance()) return this;
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDomain().isEmpty()) {
         domain_ = other.domain_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTargetProject().isEmpty()) {
         targetProject_ = other.targetProject_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getTargetNetwork().isEmpty()) {
         targetNetwork_ = other.targetNetwork_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -691,31 +719,31 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 domain_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 targetProject_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 targetNetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -734,6 +762,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object zone_ = "";
     /**
@@ -796,8 +826,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,8 +843,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -835,8 +865,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -902,8 +932,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       domain_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -919,8 +949,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDomain() {
-
       domain_ = getDefaultInstance().getDomain();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -941,8 +971,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       domain_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1008,8 +1038,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1025,8 +1055,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1047,8 +1077,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1114,8 +1144,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetProject_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1131,8 +1161,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetProject() {
-
       targetProject_ = getDefaultInstance().getTargetProject();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1153,8 +1183,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetProject_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1220,8 +1250,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetNetwork_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1237,8 +1267,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetNetwork() {
-
       targetNetwork_ = getDefaultInstance().getTargetNetwork();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1259,8 +1289,8 @@ public final class DnsPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetNetwork_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

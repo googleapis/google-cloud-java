@@ -71,7 +71,9 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
 
   private int bitField0_;
   public static final int FUNCTION_FIELD_NUMBER = 307196888;
-  private volatile java.lang.Object function_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object function_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
   }
 
   public static final int URL_MASK_FIELD_NUMBER = 103352252;
-  private volatile java.lang.Object urlMask_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object urlMask_ = "";
   /**
    *
    *
@@ -415,10 +419,9 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       function_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       urlMask_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -447,19 +450,26 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction buildPartial() {
       com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction result =
           new com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.function_ = function_;
         to_bitField0_ |= 0x00000001;
       }
-      result.function_ = function_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.urlMask_ = urlMask_;
         to_bitField0_ |= 0x00000002;
       }
-      result.urlMask_ = urlMask_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -510,13 +520,13 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
           == com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.getDefaultInstance())
         return this;
       if (other.hasFunction()) {
-        bitField0_ |= 0x00000001;
         function_ = other.function_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUrlMask()) {
-        bitField0_ |= 0x00000002;
         urlMask_ = other.urlMask_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -651,8 +661,8 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       function_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +678,8 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearFunction() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       function_ = getDefaultInstance().getFunction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -690,8 +700,8 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       function_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -771,8 +781,8 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       urlMask_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -788,8 +798,8 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearUrlMask() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       urlMask_ = getDefaultInstance().getUrlMask();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -810,8 +820,8 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       urlMask_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

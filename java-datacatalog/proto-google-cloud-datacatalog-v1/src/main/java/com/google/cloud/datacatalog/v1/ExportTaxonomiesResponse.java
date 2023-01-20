@@ -69,6 +69,8 @@ public final class ExportTaxonomiesResponse extends com.google.protobuf.Generate
   }
 
   public static final int TAXONOMIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.SerializedTaxonomy> taxonomies_;
   /**
    *
@@ -339,6 +341,7 @@ public final class ExportTaxonomiesResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (taxonomiesBuilder_ == null) {
         taxonomies_ = java.util.Collections.emptyList();
       } else {
@@ -373,7 +376,16 @@ public final class ExportTaxonomiesResponse extends com.google.protobuf.Generate
     public com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse buildPartial() {
       com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse result =
           new com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse result) {
       if (taxonomiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           taxonomies_ = java.util.Collections.unmodifiableList(taxonomies_);
@@ -383,8 +395,10 @@ public final class ExportTaxonomiesResponse extends com.google.protobuf.Generate
       } else {
         result.taxonomies_ = taxonomiesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

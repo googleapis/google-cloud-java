@@ -67,7 +67,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int MAX_CONNECTIONS_FIELD_NUMBER = 110652154;
-  private int maxConnections_;
+  private int maxConnections_ = 0;
   /**
    *
    *
@@ -100,7 +100,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MAX_PENDING_REQUESTS_FIELD_NUMBER = 375558887;
-  private int maxPendingRequests_;
+  private int maxPendingRequests_ = 0;
   /**
    *
    *
@@ -133,7 +133,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MAX_REQUESTS_FIELD_NUMBER = 28097599;
-  private int maxRequests_;
+  private int maxRequests_ = 0;
   /**
    *
    *
@@ -166,7 +166,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MAX_REQUESTS_PER_CONNECTION_FIELD_NUMBER = 361630528;
-  private int maxRequestsPerConnection_;
+  private int maxRequestsPerConnection_ = 0;
   /**
    *
    *
@@ -199,7 +199,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MAX_RETRIES_FIELD_NUMBER = 55546219;
-  private int maxRetries_;
+  private int maxRetries_ = 0;
   /**
    *
    *
@@ -492,16 +492,12 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maxConnections_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       maxPendingRequests_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       maxRequests_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       maxRequestsPerConnection_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       maxRetries_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -529,6 +525,14 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.CircuitBreakers buildPartial() {
       com.google.cloud.compute.v1.CircuitBreakers result =
           new com.google.cloud.compute.v1.CircuitBreakers(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.CircuitBreakers result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -551,9 +555,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
         result.maxRetries_ = maxRetries_;
         to_bitField0_ |= 0x00000010;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -735,8 +737,9 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setMaxConnections(int value) {
-      bitField0_ |= 0x00000001;
+
       maxConnections_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -802,8 +805,9 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setMaxPendingRequests(int value) {
-      bitField0_ |= 0x00000002;
+
       maxPendingRequests_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -869,8 +873,9 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setMaxRequests(int value) {
-      bitField0_ |= 0x00000004;
+
       maxRequests_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -936,8 +941,9 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setMaxRequestsPerConnection(int value) {
-      bitField0_ |= 0x00000008;
+
       maxRequestsPerConnection_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1003,8 +1009,9 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setMaxRetries(int value) {
-      bitField0_ |= 0x00000010;
+
       maxRetries_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

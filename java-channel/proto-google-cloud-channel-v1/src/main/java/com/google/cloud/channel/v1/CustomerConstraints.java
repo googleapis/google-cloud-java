@@ -70,6 +70,8 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ALLOWED_REGIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowedRegions_;
   /**
    *
@@ -131,7 +133,10 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ALLOWED_CUSTOMER_TYPES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> allowedCustomerTypes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType>
       allowedCustomerTypes_converter_ =
@@ -139,9 +144,8 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
               java.lang.Integer, com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType>() {
             public com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType result =
-                  com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.valueOf(from);
+                  com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.forNumber(from);
               return result == null
                   ? com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.UNRECOGNIZED
                   : result;
@@ -242,7 +246,10 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   private int allowedCustomerTypesMemoizedSerializedSize;
 
   public static final int PROMOTIONAL_ORDER_TYPES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> promotionalOrderTypes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.channel.v1.PromotionalOrderType>
       promotionalOrderTypes_converter_ =
@@ -250,9 +257,8 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
               java.lang.Integer, com.google.cloud.channel.v1.PromotionalOrderType>() {
             public com.google.cloud.channel.v1.PromotionalOrderType convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.channel.v1.PromotionalOrderType result =
-                  com.google.cloud.channel.v1.PromotionalOrderType.valueOf(from);
+                  com.google.cloud.channel.v1.PromotionalOrderType.forNumber(from);
               return result == null
                   ? com.google.cloud.channel.v1.PromotionalOrderType.UNRECOGNIZED
                   : result;
@@ -603,6 +609,7 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allowedRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       allowedCustomerTypes_ = java.util.Collections.emptyList();
@@ -636,7 +643,16 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public com.google.cloud.channel.v1.CustomerConstraints buildPartial() {
       com.google.cloud.channel.v1.CustomerConstraints result =
           new com.google.cloud.channel.v1.CustomerConstraints(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.channel.v1.CustomerConstraints result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         allowedRegions_ = allowedRegions_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -652,8 +668,10 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.promotionalOrderTypes_ = promotionalOrderTypes_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.CustomerConstraints result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

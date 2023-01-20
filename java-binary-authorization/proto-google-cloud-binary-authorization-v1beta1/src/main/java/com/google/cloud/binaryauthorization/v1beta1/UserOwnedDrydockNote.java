@@ -71,7 +71,9 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NOTE_REFERENCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object noteReference_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object noteReference_ = "";
   /**
    *
    *
@@ -130,6 +132,8 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PUBLIC_KEYS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey>
       publicKeys_;
   /**
@@ -243,7 +247,9 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DELEGATION_SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object delegationServiceAccountEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object delegationServiceAccountEmail_ = "";
   /**
    *
    *
@@ -531,17 +537,16 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       noteReference_ = "";
-
       if (publicKeysBuilder_ == null) {
         publicKeys_ = java.util.Collections.emptyList();
       } else {
         publicKeys_ = null;
         publicKeysBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       delegationServiceAccountEmail_ = "";
-
       return this;
     }
 
@@ -570,20 +575,36 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     public com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote buildPartial() {
       com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote result =
           new com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote(this);
-      int from_bitField0_ = bitField0_;
-      result.noteReference_ = noteReference_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote result) {
       if (publicKeysBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           publicKeys_ = java.util.Collections.unmodifiableList(publicKeys_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.publicKeys_ = publicKeys_;
       } else {
         result.publicKeys_ = publicKeysBuilder_.build();
       }
-      result.delegationServiceAccountEmail_ = delegationServiceAccountEmail_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.noteReference_ = noteReference_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.delegationServiceAccountEmail_ = delegationServiceAccountEmail_;
+      }
     }
 
     @java.lang.Override
@@ -636,13 +657,14 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getNoteReference().isEmpty()) {
         noteReference_ = other.noteReference_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (publicKeysBuilder_ == null) {
         if (!other.publicKeys_.isEmpty()) {
           if (publicKeys_.isEmpty()) {
             publicKeys_ = other.publicKeys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePublicKeysIsMutable();
             publicKeys_.addAll(other.publicKeys_);
@@ -655,7 +677,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
             publicKeysBuilder_.dispose();
             publicKeysBuilder_ = null;
             publicKeys_ = other.publicKeys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             publicKeysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPublicKeysFieldBuilder()
@@ -667,6 +689,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       }
       if (!other.getDelegationServiceAccountEmail().isEmpty()) {
         delegationServiceAccountEmail_ = other.delegationServiceAccountEmail_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -698,7 +721,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 noteReference_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -718,7 +741,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
             case 26:
               {
                 delegationServiceAccountEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -816,8 +839,8 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       noteReference_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -838,8 +861,8 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNoteReference() {
-
       noteReference_ = getDefaultInstance().getNoteReference();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -865,8 +888,8 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       noteReference_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -875,11 +898,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         publicKeys_ = java.util.Collections.emptyList();
 
     private void ensurePublicKeysIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         publicKeys_ =
             new java.util.ArrayList<com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey>(
                 publicKeys_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1190,7 +1213,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     public Builder clearPublicKeys() {
       if (publicKeysBuilder_ == null) {
         publicKeys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         publicKeysBuilder_.clear();
@@ -1376,7 +1399,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
                 com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey,
                 com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey.Builder,
                 com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKeyOrBuilder>(
-                publicKeys_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                publicKeys_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         publicKeys_ = null;
       }
       return publicKeysBuilder_;
@@ -1470,8 +1493,8 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       delegationServiceAccountEmail_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1496,8 +1519,8 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDelegationServiceAccountEmail() {
-
       delegationServiceAccountEmail_ = getDefaultInstance().getDelegationServiceAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1527,8 +1550,8 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       delegationServiceAccountEmail_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

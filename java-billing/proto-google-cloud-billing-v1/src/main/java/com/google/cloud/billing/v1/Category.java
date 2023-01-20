@@ -71,7 +71,9 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceDisplayName_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_FAMILY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resourceFamily_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceFamily_ = "";
   /**
    *
    *
@@ -171,7 +175,9 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_GROUP_FIELD_NUMBER = 3;
-  private volatile java.lang.Object resourceGroup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceGroup_ = "";
   /**
    *
    *
@@ -222,7 +228,9 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USAGE_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object usageType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object usageType_ = "";
   /**
    *
    *
@@ -494,14 +502,11 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceDisplayName_ = "";
-
       resourceFamily_ = "";
-
       resourceGroup_ = "";
-
       usageType_ = "";
-
       return this;
     }
 
@@ -528,12 +533,27 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.billing.v1.Category buildPartial() {
       com.google.cloud.billing.v1.Category result = new com.google.cloud.billing.v1.Category(this);
-      result.serviceDisplayName_ = serviceDisplayName_;
-      result.resourceFamily_ = resourceFamily_;
-      result.resourceGroup_ = resourceGroup_;
-      result.usageType_ = usageType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.v1.Category result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceDisplayName_ = serviceDisplayName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceFamily_ = resourceFamily_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resourceGroup_ = resourceGroup_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.usageType_ = usageType_;
+      }
     }
 
     @java.lang.Override
@@ -583,18 +603,22 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.billing.v1.Category.getDefaultInstance()) return this;
       if (!other.getServiceDisplayName().isEmpty()) {
         serviceDisplayName_ = other.serviceDisplayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResourceFamily().isEmpty()) {
         resourceFamily_ = other.resourceFamily_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getResourceGroup().isEmpty()) {
         resourceGroup_ = other.resourceGroup_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getUsageType().isEmpty()) {
         usageType_ = other.usageType_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -626,25 +650,25 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 serviceDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 resourceFamily_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 resourceGroup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 usageType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -663,6 +687,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceDisplayName_ = "";
     /**
@@ -725,8 +751,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceDisplayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -742,8 +768,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceDisplayName() {
-
       serviceDisplayName_ = getDefaultInstance().getServiceDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -764,8 +790,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceDisplayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -834,8 +860,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceFamily_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -852,8 +878,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceFamily() {
-
       resourceFamily_ = getDefaultInstance().getResourceFamily();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -875,8 +901,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceFamily_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,8 +971,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceGroup_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -963,8 +989,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceGroup() {
-
       resourceGroup_ = getDefaultInstance().getResourceGroup();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -986,8 +1012,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceGroup_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1056,8 +1082,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       usageType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1074,8 +1100,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUsageType() {
-
       usageType_ = getDefaultInstance().getUsageType();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1097,8 +1123,8 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       usageType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

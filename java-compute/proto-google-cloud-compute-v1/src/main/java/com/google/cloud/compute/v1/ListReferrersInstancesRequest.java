@@ -74,7 +74,9 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
 
   private int bitField0_;
   public static final int FILTER_FIELD_NUMBER = 336120696;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -187,7 +191,7 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
   }
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
-  private int maxResults_;
+  private int maxResults_ = 0;
   /**
    *
    *
@@ -220,7 +224,9 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 160562920;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -284,7 +290,9 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 19994697;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -348,7 +356,9 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -397,7 +407,7 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
   }
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
-  private boolean returnPartialSuccess_;
+  private boolean returnPartialSuccess_ = false;
   /**
    *
    *
@@ -430,7 +440,9 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -765,22 +777,15 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filter_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       instance_ = "";
-
       maxResults_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       orderBy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       pageToken_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       project_ = "";
-
       returnPartialSuccess_ = false;
-      bitField0_ = (bitField0_ & ~0x00000010);
       zone_ = "";
-
       return this;
     }
 
@@ -808,34 +813,46 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.ListReferrersInstancesRequest buildPartial() {
       com.google.cloud.compute.v1.ListReferrersInstancesRequest result =
           new com.google.cloud.compute.v1.ListReferrersInstancesRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ListReferrersInstancesRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.filter_ = filter_;
         to_bitField0_ |= 0x00000001;
       }
-      result.filter_ = filter_;
-      result.instance_ = instance_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maxResults_ = maxResults_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.orderBy_ = orderBy_;
         to_bitField0_ |= 0x00000004;
       }
-      result.orderBy_ = orderBy_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageToken_ = pageToken_;
         to_bitField0_ |= 0x00000008;
       }
-      result.pageToken_ = pageToken_;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.returnPartialSuccess_ = returnPartialSuccess_;
         to_bitField0_ |= 0x00000010;
       }
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -885,29 +902,31 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
       if (other == com.google.cloud.compute.v1.ListReferrersInstancesRequest.getDefaultInstance())
         return this;
       if (other.hasFilter()) {
-        bitField0_ |= 0x00000001;
         filter_ = other.filter_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasMaxResults()) {
         setMaxResults(other.getMaxResults());
       }
       if (other.hasOrderBy()) {
-        bitField0_ |= 0x00000004;
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasPageToken()) {
-        bitField0_ |= 0x00000008;
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasReturnPartialSuccess()) {
@@ -915,6 +934,7 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -946,37 +966,37 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 29957474
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 146056362
             case 159957578:
               {
                 pageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 159957578
             case 437723352:
               {
                 maxResults_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 437723352
             case 1284503362:
               {
                 orderBy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1284503362
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1820481738
             case -1606001726:
@@ -988,7 +1008,7 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
             case -157380176:
               {
                 returnPartialSuccess_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -157380176
             default:
@@ -1085,8 +1105,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1102,8 +1122,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1124,8 +1144,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1191,8 +1211,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1208,8 +1228,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1230,8 +1250,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1250,7 +1270,7 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public boolean hasMaxResults() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1280,8 +1300,9 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setMaxResults(int value) {
-      bitField0_ |= 0x00000002;
+
       maxResults_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1297,7 +1318,7 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearMaxResults() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxResults_ = 0;
       onChanged();
       return this;
@@ -1316,7 +1337,7 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return Whether the orderBy field is set.
      */
     public boolean hasOrderBy() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1378,8 +1399,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       orderBy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1395,8 +1416,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1417,8 +1438,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       orderBy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1436,7 +1457,7 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return Whether the pageToken field is set.
      */
     public boolean hasPageToken() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1498,8 +1519,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1515,8 +1536,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1537,8 +1558,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1604,8 +1625,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1621,8 +1642,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1643,8 +1664,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1663,7 +1684,7 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public boolean hasReturnPartialSuccess() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1693,8 +1714,9 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setReturnPartialSuccess(boolean value) {
-      bitField0_ |= 0x00000010;
+
       returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1710,7 +1732,7 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearReturnPartialSuccess() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       returnPartialSuccess_ = false;
       onChanged();
       return this;
@@ -1777,8 +1799,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1794,8 +1816,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1816,8 +1838,8 @@ public final class ListReferrersInstancesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

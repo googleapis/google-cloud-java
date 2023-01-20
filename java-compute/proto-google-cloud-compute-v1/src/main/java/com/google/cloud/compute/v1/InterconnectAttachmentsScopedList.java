@@ -69,6 +69,8 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
 
   private int bitField0_;
   public static final int INTERCONNECT_ATTACHMENTS_FIELD_NUMBER = 425388415;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectAttachment>
       interconnectAttachments_;
   /**
@@ -422,6 +424,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (interconnectAttachmentsBuilder_ == null) {
         interconnectAttachments_ = java.util.Collections.emptyList();
       } else {
@@ -429,12 +432,11 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
         interconnectAttachmentsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (warningBuilder_ == null) {
-        warning_ = null;
-      } else {
-        warningBuilder_.clear();
+      warning_ = null;
+      if (warningBuilder_ != null) {
+        warningBuilder_.dispose();
+        warningBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -463,8 +465,16 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
     public com.google.cloud.compute.v1.InterconnectAttachmentsScopedList buildPartial() {
       com.google.cloud.compute.v1.InterconnectAttachmentsScopedList result =
           new com.google.cloud.compute.v1.InterconnectAttachmentsScopedList(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InterconnectAttachmentsScopedList result) {
       if (interconnectAttachmentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           interconnectAttachments_ =
@@ -475,17 +485,17 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       } else {
         result.interconnectAttachments_ = interconnectAttachmentsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InterconnectAttachmentsScopedList result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (warningBuilder_ == null) {
-          result.warning_ = warning_;
-        } else {
-          result.warning_ = warningBuilder_.build();
-        }
+        result.warning_ = warningBuilder_ == null ? warning_ : warningBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1086,11 +1096,11 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
           throw new NullPointerException();
         }
         warning_ = value;
-        onChanged();
       } else {
         warningBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1105,11 +1115,11 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
     public Builder setWarning(com.google.cloud.compute.v1.Warning.Builder builderForValue) {
       if (warningBuilder_ == null) {
         warning_ = builderForValue.build();
-        onChanged();
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1126,18 +1136,15 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
         if (((bitField0_ & 0x00000002) != 0)
             && warning_ != null
             && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
-          warning_ =
-              com.google.cloud.compute.v1.Warning.newBuilder(warning_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getWarningBuilder().mergeFrom(value);
         } else {
           warning_ = value;
         }
-        onChanged();
       } else {
         warningBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1150,13 +1157,13 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder clearWarning() {
-      if (warningBuilder_ == null) {
-        warning_ = null;
-        onChanged();
-      } else {
-        warningBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      warning_ = null;
+      if (warningBuilder_ != null) {
+        warningBuilder_.dispose();
+        warningBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

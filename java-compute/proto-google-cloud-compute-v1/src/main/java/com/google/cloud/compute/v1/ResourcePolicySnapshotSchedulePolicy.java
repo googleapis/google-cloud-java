@@ -494,24 +494,22 @@ public final class ResourcePolicySnapshotSchedulePolicy
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (retentionPolicyBuilder_ == null) {
-        retentionPolicy_ = null;
-      } else {
-        retentionPolicyBuilder_.clear();
+      bitField0_ = 0;
+      retentionPolicy_ = null;
+      if (retentionPolicyBuilder_ != null) {
+        retentionPolicyBuilder_.dispose();
+        retentionPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (scheduleBuilder_ == null) {
-        schedule_ = null;
-      } else {
-        scheduleBuilder_.clear();
+      schedule_ = null;
+      if (scheduleBuilder_ != null) {
+        scheduleBuilder_.dispose();
+        scheduleBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (snapshotPropertiesBuilder_ == null) {
-        snapshotProperties_ = null;
-      } else {
-        snapshotPropertiesBuilder_.clear();
+      snapshotProperties_ = null;
+      if (snapshotPropertiesBuilder_ != null) {
+        snapshotPropertiesBuilder_.dispose();
+        snapshotPropertiesBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -540,35 +538,34 @@ public final class ResourcePolicySnapshotSchedulePolicy
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy result =
           new com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (retentionPolicyBuilder_ == null) {
-          result.retentionPolicy_ = retentionPolicy_;
-        } else {
-          result.retentionPolicy_ = retentionPolicyBuilder_.build();
-        }
+        result.retentionPolicy_ =
+            retentionPolicyBuilder_ == null ? retentionPolicy_ : retentionPolicyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (scheduleBuilder_ == null) {
-          result.schedule_ = schedule_;
-        } else {
-          result.schedule_ = scheduleBuilder_.build();
-        }
+        result.schedule_ = scheduleBuilder_ == null ? schedule_ : scheduleBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (snapshotPropertiesBuilder_ == null) {
-          result.snapshotProperties_ = snapshotProperties_;
-        } else {
-          result.snapshotProperties_ = snapshotPropertiesBuilder_.build();
-        }
+        result.snapshotProperties_ =
+            snapshotPropertiesBuilder_ == null
+                ? snapshotProperties_
+                : snapshotPropertiesBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -758,11 +755,11 @@ public final class ResourcePolicySnapshotSchedulePolicy
           throw new NullPointerException();
         }
         retentionPolicy_ = value;
-        onChanged();
       } else {
         retentionPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -781,11 +778,11 @@ public final class ResourcePolicySnapshotSchedulePolicy
             builderForValue) {
       if (retentionPolicyBuilder_ == null) {
         retentionPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         retentionPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -807,19 +804,15 @@ public final class ResourcePolicySnapshotSchedulePolicy
             && retentionPolicy_
                 != com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
                     .getDefaultInstance()) {
-          retentionPolicy_ =
-              com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
-                  .newBuilder(retentionPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getRetentionPolicyBuilder().mergeFrom(value);
         } else {
           retentionPolicy_ = value;
         }
-        onChanged();
       } else {
         retentionPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -834,13 +827,13 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </code>
      */
     public Builder clearRetentionPolicy() {
-      if (retentionPolicyBuilder_ == null) {
-        retentionPolicy_ = null;
-        onChanged();
-      } else {
-        retentionPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      retentionPolicy_ = null;
+      if (retentionPolicyBuilder_ != null) {
+        retentionPolicyBuilder_.dispose();
+        retentionPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -976,11 +969,11 @@ public final class ResourcePolicySnapshotSchedulePolicy
           throw new NullPointerException();
         }
         schedule_ = value;
-        onChanged();
       } else {
         scheduleBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -999,11 +992,11 @@ public final class ResourcePolicySnapshotSchedulePolicy
             builderForValue) {
       if (scheduleBuilder_ == null) {
         schedule_ = builderForValue.build();
-        onChanged();
       } else {
         scheduleBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1025,19 +1018,15 @@ public final class ResourcePolicySnapshotSchedulePolicy
             && schedule_
                 != com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule
                     .getDefaultInstance()) {
-          schedule_ =
-              com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.newBuilder(
-                      schedule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getScheduleBuilder().mergeFrom(value);
         } else {
           schedule_ = value;
         }
-        onChanged();
       } else {
         scheduleBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1052,13 +1041,13 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </code>
      */
     public Builder clearSchedule() {
-      if (scheduleBuilder_ == null) {
-        schedule_ = null;
-        onChanged();
-      } else {
-        scheduleBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      schedule_ = null;
+      if (scheduleBuilder_ != null) {
+        scheduleBuilder_.dispose();
+        scheduleBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1195,11 +1184,11 @@ public final class ResourcePolicySnapshotSchedulePolicy
           throw new NullPointerException();
         }
         snapshotProperties_ = value;
-        onChanged();
       } else {
         snapshotPropertiesBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1218,11 +1207,11 @@ public final class ResourcePolicySnapshotSchedulePolicy
             builderForValue) {
       if (snapshotPropertiesBuilder_ == null) {
         snapshotProperties_ = builderForValue.build();
-        onChanged();
       } else {
         snapshotPropertiesBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1244,19 +1233,15 @@ public final class ResourcePolicySnapshotSchedulePolicy
             && snapshotProperties_
                 != com.google.cloud.compute.v1
                     .ResourcePolicySnapshotSchedulePolicySnapshotProperties.getDefaultInstance()) {
-          snapshotProperties_ =
-              com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
-                  .newBuilder(snapshotProperties_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getSnapshotPropertiesBuilder().mergeFrom(value);
         } else {
           snapshotProperties_ = value;
         }
-        onChanged();
       } else {
         snapshotPropertiesBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1271,13 +1256,13 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </code>
      */
     public Builder clearSnapshotProperties() {
-      if (snapshotPropertiesBuilder_ == null) {
-        snapshotProperties_ = null;
-        onChanged();
-      } else {
-        snapshotPropertiesBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      snapshotProperties_ = null;
+      if (snapshotPropertiesBuilder_ != null) {
+        snapshotPropertiesBuilder_.dispose();
+        snapshotPropertiesBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

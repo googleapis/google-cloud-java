@@ -68,7 +68,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
 
   private int bitField0_;
   public static final int TAG8021Q_FIELD_NUMBER = 271820992;
-  private int tag8021Q_;
+  private int tag8021Q_ = 0;
   /**
    *
    *
@@ -303,8 +303,8 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tag8021Q_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -333,15 +333,22 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     public com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo buildPartial() {
       com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo result =
           new com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.tag8021Q_ = tag8021Q_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -489,8 +496,9 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder setTag8021Q(int value) {
-      bitField0_ |= 0x00000001;
+
       tag8021Q_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

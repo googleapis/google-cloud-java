@@ -72,7 +72,9 @@ public final class SslCertificateSelfManagedSslCertificate
 
   private int bitField0_;
   public static final int CERTIFICATE_FIELD_NUMBER = 341787031;
-  private volatile java.lang.Object certificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object certificate_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class SslCertificateSelfManagedSslCertificate
   }
 
   public static final int PRIVATE_KEY_FIELD_NUMBER = 361331107;
-  private volatile java.lang.Object privateKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object privateKey_ = "";
   /**
    *
    *
@@ -418,10 +422,9 @@ public final class SslCertificateSelfManagedSslCertificate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       certificate_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       privateKey_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -451,19 +454,26 @@ public final class SslCertificateSelfManagedSslCertificate
     public com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate buildPartial() {
       com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate result =
           new com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.certificate_ = certificate_;
         to_bitField0_ |= 0x00000001;
       }
-      result.certificate_ = certificate_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.privateKey_ = privateKey_;
         to_bitField0_ |= 0x00000002;
       }
-      result.privateKey_ = privateKey_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -516,13 +526,13 @@ public final class SslCertificateSelfManagedSslCertificate
           == com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate
               .getDefaultInstance()) return this;
       if (other.hasCertificate()) {
-        bitField0_ |= 0x00000001;
         certificate_ = other.certificate_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPrivateKey()) {
-        bitField0_ |= 0x00000002;
         privateKey_ = other.privateKey_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -657,8 +667,8 @@ public final class SslCertificateSelfManagedSslCertificate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       certificate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -674,8 +684,8 @@ public final class SslCertificateSelfManagedSslCertificate
      * @return This builder for chaining.
      */
     public Builder clearCertificate() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       certificate_ = getDefaultInstance().getCertificate();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -696,8 +706,8 @@ public final class SslCertificateSelfManagedSslCertificate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       certificate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,8 +787,8 @@ public final class SslCertificateSelfManagedSslCertificate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       privateKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -794,8 +804,8 @@ public final class SslCertificateSelfManagedSslCertificate
      * @return This builder for chaining.
      */
     public Builder clearPrivateKey() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       privateKey_ = getDefaultInstance().getPrivateKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -816,8 +826,8 @@ public final class SslCertificateSelfManagedSslCertificate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       privateKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

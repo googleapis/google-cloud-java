@@ -72,6 +72,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.BuiltImage> images_;
   /**
    *
@@ -141,6 +143,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUILD_STEP_IMAGES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList buildStepImages_;
   /**
    *
@@ -206,7 +210,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARTIFACT_MANIFEST_FIELD_NUMBER = 4;
-  private volatile java.lang.Object artifactManifest_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object artifactManifest_ = "";
   /**
    *
    *
@@ -255,7 +261,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NUM_ARTIFACTS_FIELD_NUMBER = 5;
-  private long numArtifacts_;
+  private long numArtifacts_ = 0L;
   /**
    *
    *
@@ -273,6 +279,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUILD_STEP_OUTPUTS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.ByteString> buildStepOutputs_;
   /**
    *
@@ -376,10 +384,14 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpanOrBuilder getArtifactTimingOrBuilder() {
-    return getArtifactTiming();
+    return artifactTiming_ == null
+        ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
+        : artifactTiming_;
   }
 
   public static final int PYTHON_PACKAGES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.UploadedPythonPackage> pythonPackages_;
   /**
    *
@@ -450,6 +462,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAVEN_ARTIFACTS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.UploadedMavenArtifact> mavenArtifacts_;
   /**
    *
@@ -803,6 +817,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (imagesBuilder_ == null) {
         images_ = java.util.Collections.emptyList();
       } else {
@@ -813,15 +828,11 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       buildStepImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       artifactManifest_ = "";
-
       numArtifacts_ = 0L;
-
       buildStepOutputs_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (artifactTimingBuilder_ == null) {
-        artifactTiming_ = null;
-      } else {
-        artifactTiming_ = null;
+      artifactTiming_ = null;
+      if (artifactTimingBuilder_ != null) {
+        artifactTimingBuilder_.dispose();
         artifactTimingBuilder_ = null;
       }
       if (pythonPackagesBuilder_ == null) {
@@ -830,14 +841,14 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         pythonPackages_ = null;
         pythonPackagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (mavenArtifactsBuilder_ == null) {
         mavenArtifacts_ = java.util.Collections.emptyList();
       } else {
         mavenArtifacts_ = null;
         mavenArtifactsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -864,7 +875,15 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloudbuild.v1.Results buildPartial() {
       com.google.cloudbuild.v1.Results result = new com.google.cloudbuild.v1.Results(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloudbuild.v1.Results result) {
       if (imagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           images_ = java.util.Collections.unmodifiableList(images_);
@@ -879,38 +898,43 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.buildStepImages_ = buildStepImages_;
-      result.artifactManifest_ = artifactManifest_;
-      result.numArtifacts_ = numArtifacts_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         buildStepOutputs_ = java.util.Collections.unmodifiableList(buildStepOutputs_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.buildStepOutputs_ = buildStepOutputs_;
-      if (artifactTimingBuilder_ == null) {
-        result.artifactTiming_ = artifactTiming_;
-      } else {
-        result.artifactTiming_ = artifactTimingBuilder_.build();
-      }
       if (pythonPackagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           pythonPackages_ = java.util.Collections.unmodifiableList(pythonPackages_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.pythonPackages_ = pythonPackages_;
       } else {
         result.pythonPackages_ = pythonPackagesBuilder_.build();
       }
       if (mavenArtifactsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           mavenArtifacts_ = java.util.Collections.unmodifiableList(mavenArtifacts_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.mavenArtifacts_ = mavenArtifacts_;
       } else {
         result.mavenArtifacts_ = mavenArtifactsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.Results result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.artifactManifest_ = artifactManifest_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.numArtifacts_ = numArtifacts_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.artifactTiming_ =
+            artifactTimingBuilder_ == null ? artifactTiming_ : artifactTimingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -997,6 +1021,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getArtifactManifest().isEmpty()) {
         artifactManifest_ = other.artifactManifest_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getNumArtifacts() != 0L) {
@@ -1005,7 +1030,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       if (!other.buildStepOutputs_.isEmpty()) {
         if (buildStepOutputs_.isEmpty()) {
           buildStepOutputs_ = other.buildStepOutputs_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureBuildStepOutputsIsMutable();
           buildStepOutputs_.addAll(other.buildStepOutputs_);
@@ -1019,7 +1044,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         if (!other.pythonPackages_.isEmpty()) {
           if (pythonPackages_.isEmpty()) {
             pythonPackages_ = other.pythonPackages_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensurePythonPackagesIsMutable();
             pythonPackages_.addAll(other.pythonPackages_);
@@ -1032,7 +1057,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
             pythonPackagesBuilder_.dispose();
             pythonPackagesBuilder_ = null;
             pythonPackages_ = other.pythonPackages_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
             pythonPackagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPythonPackagesFieldBuilder()
@@ -1046,7 +1071,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         if (!other.mavenArtifacts_.isEmpty()) {
           if (mavenArtifacts_.isEmpty()) {
             mavenArtifacts_ = other.mavenArtifacts_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureMavenArtifactsIsMutable();
             mavenArtifacts_.addAll(other.mavenArtifacts_);
@@ -1059,7 +1084,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
             mavenArtifactsBuilder_.dispose();
             mavenArtifactsBuilder_ = null;
             mavenArtifacts_ = other.mavenArtifacts_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000080);
             mavenArtifactsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMavenArtifactsFieldBuilder()
@@ -1118,13 +1143,13 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 artifactManifest_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 40:
               {
                 numArtifacts_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             case 50:
@@ -1137,7 +1162,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getArtifactTimingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
@@ -1771,8 +1796,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       artifactManifest_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1788,8 +1813,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArtifactManifest() {
-
       artifactManifest_ = getDefaultInstance().getArtifactManifest();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1810,8 +1835,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       artifactManifest_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1847,6 +1872,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     public Builder setNumArtifacts(long value) {
 
       numArtifacts_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1862,7 +1888,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNumArtifacts() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       numArtifacts_ = 0L;
       onChanged();
       return this;
@@ -1872,10 +1898,10 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureBuildStepOutputsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         buildStepOutputs_ =
             new java.util.ArrayList<com.google.protobuf.ByteString>(buildStepOutputs_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1894,7 +1920,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the buildStepOutputs.
      */
     public java.util.List<com.google.protobuf.ByteString> getBuildStepOutputsList() {
-      return ((bitField0_ & 0x00000004) != 0)
+      return ((bitField0_ & 0x00000010) != 0)
           ? java.util.Collections.unmodifiableList(buildStepOutputs_)
           : buildStepOutputs_;
     }
@@ -2026,7 +2052,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBuildStepOutputs() {
       buildStepOutputs_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2049,7 +2075,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the artifactTiming field is set.
      */
     public boolean hasArtifactTiming() {
-      return artifactTimingBuilder_ != null || artifactTiming_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2086,11 +2112,11 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         artifactTiming_ = value;
-        onChanged();
       } else {
         artifactTimingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2105,11 +2131,11 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     public Builder setArtifactTiming(com.google.cloudbuild.v1.TimeSpan.Builder builderForValue) {
       if (artifactTimingBuilder_ == null) {
         artifactTiming_ = builderForValue.build();
-        onChanged();
       } else {
         artifactTimingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2123,19 +2149,18 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeArtifactTiming(com.google.cloudbuild.v1.TimeSpan value) {
       if (artifactTimingBuilder_ == null) {
-        if (artifactTiming_ != null) {
-          artifactTiming_ =
-              com.google.cloudbuild.v1.TimeSpan.newBuilder(artifactTiming_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && artifactTiming_ != null
+            && artifactTiming_ != com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()) {
+          getArtifactTimingBuilder().mergeFrom(value);
         } else {
           artifactTiming_ = value;
         }
-        onChanged();
       } else {
         artifactTimingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2148,14 +2173,13 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
      */
     public Builder clearArtifactTiming() {
-      if (artifactTimingBuilder_ == null) {
-        artifactTiming_ = null;
-        onChanged();
-      } else {
-        artifactTiming_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      artifactTiming_ = null;
+      if (artifactTimingBuilder_ != null) {
+        artifactTimingBuilder_.dispose();
         artifactTimingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2168,7 +2192,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
      */
     public com.google.cloudbuild.v1.TimeSpan.Builder getArtifactTimingBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getArtifactTimingFieldBuilder().getBuilder();
     }
@@ -2220,11 +2244,11 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePythonPackagesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         pythonPackages_ =
             new java.util.ArrayList<com.google.cloudbuild.v1.UploadedPythonPackage>(
                 pythonPackages_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2453,7 +2477,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPythonPackages() {
       if (pythonPackagesBuilder_ == null) {
         pythonPackages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         pythonPackagesBuilder_.clear();
@@ -2586,7 +2610,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.UploadedPythonPackage.Builder,
                 com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder>(
                 pythonPackages_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         pythonPackages_ = null;
@@ -2598,11 +2622,11 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMavenArtifactsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         mavenArtifacts_ =
             new java.util.ArrayList<com.google.cloudbuild.v1.UploadedMavenArtifact>(
                 mavenArtifacts_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2831,7 +2855,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMavenArtifacts() {
       if (mavenArtifactsBuilder_ == null) {
         mavenArtifacts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         mavenArtifactsBuilder_.clear();
@@ -2964,7 +2988,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.UploadedMavenArtifact.Builder,
                 com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder>(
                 mavenArtifacts_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         mavenArtifacts_ = null;

@@ -73,7 +73,9 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
 
   private int bitField0_;
   public static final int DISK_FIELD_NUMBER = 3083677;
-  private volatile java.lang.Object disk_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object disk_ = "";
   /**
    *
    *
@@ -175,11 +177,15 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.compute.v1.DisksAddResourcePoliciesRequestOrBuilder
       getDisksAddResourcePoliciesRequestResourceOrBuilder() {
-    return getDisksAddResourcePoliciesRequestResource();
+    return disksAddResourcePoliciesRequestResource_ == null
+        ? com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest.getDefaultInstance()
+        : disksAddResourcePoliciesRequestResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -232,7 +238,9 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -296,7 +304,9 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -596,20 +606,16 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       disk_ = "";
-
-      if (disksAddResourcePoliciesRequestResourceBuilder_ == null) {
-        disksAddResourcePoliciesRequestResource_ = null;
-      } else {
-        disksAddResourcePoliciesRequestResource_ = null;
+      disksAddResourcePoliciesRequestResource_ = null;
+      if (disksAddResourcePoliciesRequestResourceBuilder_ != null) {
+        disksAddResourcePoliciesRequestResourceBuilder_.dispose();
         disksAddResourcePoliciesRequestResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = "";
-
       return this;
     }
 
@@ -637,24 +643,36 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest buildPartial() {
       com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest result =
           new com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.disk_ = disk_;
-      if (disksAddResourcePoliciesRequestResourceBuilder_ == null) {
-        result.disksAddResourcePoliciesRequestResource_ = disksAddResourcePoliciesRequestResource_;
-      } else {
-        result.disksAddResourcePoliciesRequestResource_ =
-            disksAddResourcePoliciesRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disk_ = disk_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.disksAddResourcePoliciesRequestResource_ =
+            disksAddResourcePoliciesRequestResourceBuilder_ == null
+                ? disksAddResourcePoliciesRequestResource_
+                : disksAddResourcePoliciesRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -705,6 +723,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getDisk().isEmpty()) {
         disk_ = other.disk_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDisksAddResourcePoliciesRequestResource()) {
@@ -713,15 +732,17 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -753,25 +774,25 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
             case 24669418:
               {
                 disk_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24669418
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 29957474
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -323100390:
@@ -779,7 +800,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
                 input.readMessage(
                     getDisksAddResourcePoliciesRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -323100390
             default:
@@ -862,8 +883,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       disk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -879,8 +900,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearDisk() {
-
       disk_ = getDefaultInstance().getDisk();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -901,8 +922,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       disk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -928,8 +949,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
      * @return Whether the disksAddResourcePoliciesRequestResource field is set.
      */
     public boolean hasDisksAddResourcePoliciesRequestResource() {
-      return disksAddResourcePoliciesRequestResourceBuilder_ != null
-          || disksAddResourcePoliciesRequestResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -972,11 +992,11 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         disksAddResourcePoliciesRequestResource_ = value;
-        onChanged();
       } else {
         disksAddResourcePoliciesRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -994,11 +1014,11 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest.Builder builderForValue) {
       if (disksAddResourcePoliciesRequestResourceBuilder_ == null) {
         disksAddResourcePoliciesRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         disksAddResourcePoliciesRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1015,20 +1035,20 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     public Builder mergeDisksAddResourcePoliciesRequestResource(
         com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest value) {
       if (disksAddResourcePoliciesRequestResourceBuilder_ == null) {
-        if (disksAddResourcePoliciesRequestResource_ != null) {
-          disksAddResourcePoliciesRequestResource_ =
-              com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest.newBuilder(
-                      disksAddResourcePoliciesRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && disksAddResourcePoliciesRequestResource_ != null
+            && disksAddResourcePoliciesRequestResource_
+                != com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest
+                    .getDefaultInstance()) {
+          getDisksAddResourcePoliciesRequestResourceBuilder().mergeFrom(value);
         } else {
           disksAddResourcePoliciesRequestResource_ = value;
         }
-        onChanged();
       } else {
         disksAddResourcePoliciesRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1043,14 +1063,13 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearDisksAddResourcePoliciesRequestResource() {
-      if (disksAddResourcePoliciesRequestResourceBuilder_ == null) {
-        disksAddResourcePoliciesRequestResource_ = null;
-        onChanged();
-      } else {
-        disksAddResourcePoliciesRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      disksAddResourcePoliciesRequestResource_ = null;
+      if (disksAddResourcePoliciesRequestResourceBuilder_ != null) {
+        disksAddResourcePoliciesRequestResourceBuilder_.dispose();
         disksAddResourcePoliciesRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1066,7 +1085,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest.Builder
         getDisksAddResourcePoliciesRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDisksAddResourcePoliciesRequestResourceFieldBuilder().getBuilder();
     }
@@ -1186,8 +1205,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1205,8 +1224,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1229,8 +1248,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1248,7 +1267,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1310,8 +1329,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1327,8 +1346,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1349,8 +1368,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1422,8 +1441,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1441,8 +1460,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1465,8 +1484,8 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -546,7 +546,9 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -597,7 +599,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MODE_FIELD_NUMBER = 2;
-    private int mode_;
+    private int mode_ = 0;
     /**
      *
      *
@@ -626,16 +628,17 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode getMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode result =
-          com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode.valueOf(mode_);
+          com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode.forNumber(mode_);
       return result == null
           ? com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode.UNRECOGNIZED
           : result;
     }
 
     public static final int TYPE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object type_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
     /**
      *
      *
@@ -907,12 +910,10 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         mode_ = 0;
-
         type_ = "";
-
         return this;
       }
 
@@ -940,11 +941,24 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.datacatalog.v1.RoutineSpec.Argument buildPartial() {
         com.google.cloud.datacatalog.v1.RoutineSpec.Argument result =
             new com.google.cloud.datacatalog.v1.RoutineSpec.Argument(this);
-        result.name_ = name_;
-        result.mode_ = mode_;
-        result.type_ = type_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.datacatalog.v1.RoutineSpec.Argument result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.mode_ = mode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.type_ = type_;
+        }
       }
 
       @java.lang.Override
@@ -997,6 +1011,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.mode_ != 0) {
@@ -1004,6 +1019,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1035,19 +1051,19 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   mode_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   type_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1066,6 +1082,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -1131,8 +1149,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1149,8 +1167,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1172,8 +1190,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1207,8 +1225,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setModeValue(int value) {
-
         mode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1225,9 +1243,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode getMode() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode result =
-            com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode.valueOf(mode_);
+            com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode.forNumber(mode_);
         return result == null
             ? com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode.UNRECOGNIZED
             : result;
@@ -1248,7 +1265,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         mode_ = value.getNumber();
         onChanged();
         return this;
@@ -1265,7 +1282,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMode() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         mode_ = 0;
         onChanged();
         return this;
@@ -1335,8 +1352,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         type_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1353,8 +1370,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
         type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1376,8 +1393,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         type_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1491,7 +1508,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROUTINE_TYPE_FIELD_NUMBER = 1;
-  private int routineType_;
+  private int routineType_ = 0;
   /**
    *
    *
@@ -1520,16 +1537,17 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType getRoutineType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType result =
-        com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType.valueOf(routineType_);
+        com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType.forNumber(routineType_);
     return result == null
         ? com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType.UNRECOGNIZED
         : result;
   }
 
   public static final int LANGUAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object language_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object language_ = "";
   /**
    *
    *
@@ -1584,6 +1602,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROUTINE_ARGUMENTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.RoutineSpec.Argument> routineArguments_;
   /**
    *
@@ -1655,7 +1675,9 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RETURN_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object returnType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object returnType_ = "";
   /**
    *
    *
@@ -1706,7 +1728,9 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFINITION_BODY_FIELD_NUMBER = 5;
-  private volatile java.lang.Object definitionBody_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object definitionBody_ = "";
   /**
    *
    *
@@ -2070,21 +2094,18 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       routineType_ = 0;
-
       language_ = "";
-
       if (routineArgumentsBuilder_ == null) {
         routineArguments_ = java.util.Collections.emptyList();
       } else {
         routineArguments_ = null;
         routineArgumentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       returnType_ = "";
-
       definitionBody_ = "";
-
       if (bigqueryRoutineSpecBuilder_ != null) {
         bigqueryRoutineSpecBuilder_.clear();
       }
@@ -2117,30 +2138,49 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.RoutineSpec buildPartial() {
       com.google.cloud.datacatalog.v1.RoutineSpec result =
           new com.google.cloud.datacatalog.v1.RoutineSpec(this);
-      int from_bitField0_ = bitField0_;
-      result.routineType_ = routineType_;
-      result.language_ = language_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datacatalog.v1.RoutineSpec result) {
       if (routineArgumentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           routineArguments_ = java.util.Collections.unmodifiableList(routineArguments_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.routineArguments_ = routineArguments_;
       } else {
         result.routineArguments_ = routineArgumentsBuilder_.build();
       }
-      result.returnType_ = returnType_;
-      result.definitionBody_ = definitionBody_;
-      if (systemSpecCase_ == 6) {
-        if (bigqueryRoutineSpecBuilder_ == null) {
-          result.systemSpec_ = systemSpec_;
-        } else {
-          result.systemSpec_ = bigqueryRoutineSpecBuilder_.build();
-        }
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.RoutineSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.routineType_ = routineType_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.language_ = language_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.returnType_ = returnType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.definitionBody_ = definitionBody_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datacatalog.v1.RoutineSpec result) {
       result.systemSpecCase_ = systemSpecCase_;
-      onBuilt();
-      return result;
+      result.systemSpec_ = this.systemSpec_;
+      if (systemSpecCase_ == 6 && bigqueryRoutineSpecBuilder_ != null) {
+        result.systemSpec_ = bigqueryRoutineSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2193,13 +2233,14 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLanguage().isEmpty()) {
         language_ = other.language_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (routineArgumentsBuilder_ == null) {
         if (!other.routineArguments_.isEmpty()) {
           if (routineArguments_.isEmpty()) {
             routineArguments_ = other.routineArguments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureRoutineArgumentsIsMutable();
             routineArguments_.addAll(other.routineArguments_);
@@ -2212,7 +2253,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
             routineArgumentsBuilder_.dispose();
             routineArgumentsBuilder_ = null;
             routineArguments_ = other.routineArguments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             routineArgumentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRoutineArgumentsFieldBuilder()
@@ -2224,10 +2265,12 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getReturnType().isEmpty()) {
         returnType_ = other.returnType_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDefinitionBody().isEmpty()) {
         definitionBody_ = other.definitionBody_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getSystemSpecCase()) {
@@ -2270,13 +2313,13 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 routineType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 language_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -2296,13 +2339,13 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 returnType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 definitionBody_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -2374,8 +2417,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRoutineTypeValue(int value) {
-
       routineType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2392,9 +2435,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType getRoutineType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType result =
-          com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType.valueOf(routineType_);
+          com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType.forNumber(routineType_);
       return result == null
           ? com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType.UNRECOGNIZED
           : result;
@@ -2415,7 +2457,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       routineType_ = value.getNumber();
       onChanged();
       return this;
@@ -2432,7 +2474,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRoutineType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       routineType_ = 0;
       onChanged();
       return this;
@@ -2508,8 +2550,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       language_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2528,8 +2570,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLanguage() {
-
       language_ = getDefaultInstance().getLanguage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2553,8 +2595,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       language_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2563,11 +2605,11 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRoutineArgumentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         routineArguments_ =
             new java.util.ArrayList<com.google.cloud.datacatalog.v1.RoutineSpec.Argument>(
                 routineArguments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2797,7 +2839,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRoutineArguments() {
       if (routineArgumentsBuilder_ == null) {
         routineArguments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         routineArgumentsBuilder_.clear();
@@ -2932,7 +2974,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Builder,
                 com.google.cloud.datacatalog.v1.RoutineSpec.ArgumentOrBuilder>(
                 routineArguments_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         routineArguments_ = null;
@@ -3004,8 +3046,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       returnType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3022,8 +3064,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReturnType() {
-
       returnType_ = getDefaultInstance().getReturnType();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3045,8 +3087,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       returnType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3112,8 +3154,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       definitionBody_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3129,8 +3171,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefinitionBody() {
-
       definitionBody_ = getDefaultInstance().getDefinitionBody();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3151,8 +3193,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       definitionBody_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3368,7 +3410,6 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       systemSpecCase_ = 6;
       onChanged();
-      ;
       return bigqueryRoutineSpecBuilder_;
     }
 

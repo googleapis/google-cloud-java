@@ -72,7 +72,9 @@ public final class RenameTagTemplateFieldEnumValueRequest
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class RenameTagTemplateFieldEnumValueRequest
   }
 
   public static final int NEW_ENUM_VALUE_DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object newEnumValueDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object newEnumValueDisplayName_ = "";
   /**
    *
    *
@@ -383,10 +387,9 @@ public final class RenameTagTemplateFieldEnumValueRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       newEnumValueDisplayName_ = "";
-
       return this;
     }
 
@@ -417,10 +420,22 @@ public final class RenameTagTemplateFieldEnumValueRequest
     public com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest buildPartial() {
       com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest result =
           new com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest(this);
-      result.name_ = name_;
-      result.newEnumValueDisplayName_ = newEnumValueDisplayName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.newEnumValueDisplayName_ = newEnumValueDisplayName_;
+      }
     }
 
     @java.lang.Override
@@ -474,10 +489,12 @@ public final class RenameTagTemplateFieldEnumValueRequest
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNewEnumValueDisplayName().isEmpty()) {
         newEnumValueDisplayName_ = other.newEnumValueDisplayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -509,13 +526,13 @@ public final class RenameTagTemplateFieldEnumValueRequest
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 newEnumValueDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -534,6 +551,8 @@ public final class RenameTagTemplateFieldEnumValueRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -602,8 +621,8 @@ public final class RenameTagTemplateFieldEnumValueRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,8 +640,8 @@ public final class RenameTagTemplateFieldEnumValueRequest
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -645,8 +664,8 @@ public final class RenameTagTemplateFieldEnumValueRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +734,8 @@ public final class RenameTagTemplateFieldEnumValueRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       newEnumValueDisplayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -733,8 +752,8 @@ public final class RenameTagTemplateFieldEnumValueRequest
      * @return This builder for chaining.
      */
     public Builder clearNewEnumValueDisplayName() {
-
       newEnumValueDisplayName_ = getDefaultInstance().getNewEnumValueDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -756,8 +775,8 @@ public final class RenameTagTemplateFieldEnumValueRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       newEnumValueDisplayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

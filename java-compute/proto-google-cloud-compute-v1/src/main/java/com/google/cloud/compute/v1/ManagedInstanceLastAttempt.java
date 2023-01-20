@@ -322,12 +322,12 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (errorsBuilder_ == null) {
-        errors_ = null;
-      } else {
-        errorsBuilder_.clear();
+      bitField0_ = 0;
+      errors_ = null;
+      if (errorsBuilder_ != null) {
+        errorsBuilder_.dispose();
+        errorsBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -355,19 +355,21 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.ManagedInstanceLastAttempt buildPartial() {
       com.google.cloud.compute.v1.ManagedInstanceLastAttempt result =
           new com.google.cloud.compute.v1.ManagedInstanceLastAttempt(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ManagedInstanceLastAttempt result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (errorsBuilder_ == null) {
-          result.errors_ = errors_;
-        } else {
-          result.errors_ = errorsBuilder_.build();
-        }
+        result.errors_ = errorsBuilder_ == null ? errors_ : errorsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -523,11 +525,11 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         errors_ = value;
-        onChanged();
       } else {
         errorsBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -542,11 +544,11 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
     public Builder setErrors(com.google.cloud.compute.v1.Errors.Builder builderForValue) {
       if (errorsBuilder_ == null) {
         errors_ = builderForValue.build();
-        onChanged();
       } else {
         errorsBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -563,18 +565,15 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
         if (((bitField0_ & 0x00000001) != 0)
             && errors_ != null
             && errors_ != com.google.cloud.compute.v1.Errors.getDefaultInstance()) {
-          errors_ =
-              com.google.cloud.compute.v1.Errors.newBuilder(errors_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getErrorsBuilder().mergeFrom(value);
         } else {
           errors_ = value;
         }
-        onChanged();
       } else {
         errorsBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -587,13 +586,13 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
      */
     public Builder clearErrors() {
-      if (errorsBuilder_ == null) {
-        errors_ = null;
-        onChanged();
-      } else {
-        errorsBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      errors_ = null;
+      if (errorsBuilder_ != null) {
+        errorsBuilder_.dispose();
+        errorsBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

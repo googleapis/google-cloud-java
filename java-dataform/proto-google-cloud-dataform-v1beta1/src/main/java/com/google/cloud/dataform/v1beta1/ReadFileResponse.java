@@ -68,7 +68,7 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FILE_CONTENTS_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString fileContents_;
+  private com.google.protobuf.ByteString fileContents_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -282,8 +282,8 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fileContents_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -311,9 +311,18 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataform.v1beta1.ReadFileResponse buildPartial() {
       com.google.cloud.dataform.v1beta1.ReadFileResponse result =
           new com.google.cloud.dataform.v1beta1.ReadFileResponse(this);
-      result.fileContents_ = fileContents_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataform.v1beta1.ReadFileResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fileContents_ = fileContents_;
+      }
     }
 
     @java.lang.Override
@@ -394,7 +403,7 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 fileContents_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -413,6 +422,8 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString fileContents_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -446,8 +457,8 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       fileContents_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -463,7 +474,7 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFileContents() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       fileContents_ = getDefaultInstance().getFileContents();
       onChanged();
       return this;

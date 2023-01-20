@@ -120,11 +120,15 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InterconnectOrBuilder getInterconnectResourceOrBuilder() {
-    return getInterconnectResource();
+    return interconnectResource_ == null
+        ? com.google.cloud.compute.v1.Interconnect.getDefaultInstance()
+        : interconnectResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -468,16 +474,14 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (interconnectResourceBuilder_ == null) {
-        interconnectResource_ = null;
-      } else {
-        interconnectResource_ = null;
+      bitField0_ = 0;
+      interconnectResource_ = null;
+      if (interconnectResourceBuilder_ != null) {
+        interconnectResourceBuilder_.dispose();
         interconnectResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -505,21 +509,30 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.InsertInterconnectRequest buildPartial() {
       com.google.cloud.compute.v1.InsertInterconnectRequest result =
           new com.google.cloud.compute.v1.InsertInterconnectRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (interconnectResourceBuilder_ == null) {
-        result.interconnectResource_ = interconnectResource_;
-      } else {
-        result.interconnectResource_ = interconnectResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertInterconnectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.interconnectResource_ =
+            interconnectResourceBuilder_ == null
+                ? interconnectResource_
+                : interconnectResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -573,11 +586,12 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -609,20 +623,20 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1114077958:
               {
                 input.readMessage(
                     getInterconnectResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1114077958
             default:
@@ -664,7 +678,7 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
      * @return Whether the interconnectResource field is set.
      */
     public boolean hasInterconnectResource() {
-      return interconnectResourceBuilder_ != null || interconnectResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -705,11 +719,11 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         interconnectResource_ = value;
-        onChanged();
       } else {
         interconnectResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -727,11 +741,11 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
         com.google.cloud.compute.v1.Interconnect.Builder builderForValue) {
       if (interconnectResourceBuilder_ == null) {
         interconnectResource_ = builderForValue.build();
-        onChanged();
       } else {
         interconnectResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -747,19 +761,19 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
      */
     public Builder mergeInterconnectResource(com.google.cloud.compute.v1.Interconnect value) {
       if (interconnectResourceBuilder_ == null) {
-        if (interconnectResource_ != null) {
-          interconnectResource_ =
-              com.google.cloud.compute.v1.Interconnect.newBuilder(interconnectResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && interconnectResource_ != null
+            && interconnectResource_
+                != com.google.cloud.compute.v1.Interconnect.getDefaultInstance()) {
+          getInterconnectResourceBuilder().mergeFrom(value);
         } else {
           interconnectResource_ = value;
         }
-        onChanged();
       } else {
         interconnectResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -774,14 +788,13 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearInterconnectResource() {
-      if (interconnectResourceBuilder_ == null) {
-        interconnectResource_ = null;
-        onChanged();
-      } else {
-        interconnectResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      interconnectResource_ = null;
+      if (interconnectResourceBuilder_ != null) {
+        interconnectResourceBuilder_.dispose();
         interconnectResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -796,7 +809,7 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.compute.v1.Interconnect.Builder getInterconnectResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInterconnectResourceFieldBuilder().getBuilder();
     }
@@ -915,8 +928,8 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -934,8 +947,8 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -958,8 +971,8 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -977,7 +990,7 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1039,8 +1052,8 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1056,8 +1069,8 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1078,8 +1091,8 @@ public final class InsertInterconnectRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

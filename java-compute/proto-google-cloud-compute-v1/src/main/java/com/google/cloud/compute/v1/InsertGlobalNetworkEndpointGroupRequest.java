@@ -123,11 +123,15 @@ public final class InsertGlobalNetworkEndpointGroupRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkEndpointGroupOrBuilder
       getNetworkEndpointGroupResourceOrBuilder() {
-    return getNetworkEndpointGroupResource();
+    return networkEndpointGroupResource_ == null
+        ? com.google.cloud.compute.v1.NetworkEndpointGroup.getDefaultInstance()
+        : networkEndpointGroupResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -180,7 +184,9 @@ public final class InsertGlobalNetworkEndpointGroupRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -474,16 +480,14 @@ public final class InsertGlobalNetworkEndpointGroupRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (networkEndpointGroupResourceBuilder_ == null) {
-        networkEndpointGroupResource_ = null;
-      } else {
-        networkEndpointGroupResource_ = null;
+      bitField0_ = 0;
+      networkEndpointGroupResource_ = null;
+      if (networkEndpointGroupResourceBuilder_ != null) {
+        networkEndpointGroupResourceBuilder_.dispose();
         networkEndpointGroupResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -513,21 +517,31 @@ public final class InsertGlobalNetworkEndpointGroupRequest
     public com.google.cloud.compute.v1.InsertGlobalNetworkEndpointGroupRequest buildPartial() {
       com.google.cloud.compute.v1.InsertGlobalNetworkEndpointGroupRequest result =
           new com.google.cloud.compute.v1.InsertGlobalNetworkEndpointGroupRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (networkEndpointGroupResourceBuilder_ == null) {
-        result.networkEndpointGroupResource_ = networkEndpointGroupResource_;
-      } else {
-        result.networkEndpointGroupResource_ = networkEndpointGroupResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InsertGlobalNetworkEndpointGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.networkEndpointGroupResource_ =
+            networkEndpointGroupResourceBuilder_ == null
+                ? networkEndpointGroupResource_
+                : networkEndpointGroupResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -584,11 +598,12 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -620,20 +635,20 @@ public final class InsertGlobalNetworkEndpointGroupRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -88656582:
               {
                 input.readMessage(
                     getNetworkEndpointGroupResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -88656582
             default:
@@ -675,7 +690,7 @@ public final class InsertGlobalNetworkEndpointGroupRequest
      * @return Whether the networkEndpointGroupResource field is set.
      */
     public boolean hasNetworkEndpointGroupResource() {
-      return networkEndpointGroupResourceBuilder_ != null || networkEndpointGroupResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -717,11 +732,11 @@ public final class InsertGlobalNetworkEndpointGroupRequest
           throw new NullPointerException();
         }
         networkEndpointGroupResource_ = value;
-        onChanged();
       } else {
         networkEndpointGroupResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -739,11 +754,11 @@ public final class InsertGlobalNetworkEndpointGroupRequest
         com.google.cloud.compute.v1.NetworkEndpointGroup.Builder builderForValue) {
       if (networkEndpointGroupResourceBuilder_ == null) {
         networkEndpointGroupResource_ = builderForValue.build();
-        onChanged();
       } else {
         networkEndpointGroupResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -760,20 +775,19 @@ public final class InsertGlobalNetworkEndpointGroupRequest
     public Builder mergeNetworkEndpointGroupResource(
         com.google.cloud.compute.v1.NetworkEndpointGroup value) {
       if (networkEndpointGroupResourceBuilder_ == null) {
-        if (networkEndpointGroupResource_ != null) {
-          networkEndpointGroupResource_ =
-              com.google.cloud.compute.v1.NetworkEndpointGroup.newBuilder(
-                      networkEndpointGroupResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && networkEndpointGroupResource_ != null
+            && networkEndpointGroupResource_
+                != com.google.cloud.compute.v1.NetworkEndpointGroup.getDefaultInstance()) {
+          getNetworkEndpointGroupResourceBuilder().mergeFrom(value);
         } else {
           networkEndpointGroupResource_ = value;
         }
-        onChanged();
       } else {
         networkEndpointGroupResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -788,14 +802,13 @@ public final class InsertGlobalNetworkEndpointGroupRequest
      * </code>
      */
     public Builder clearNetworkEndpointGroupResource() {
-      if (networkEndpointGroupResourceBuilder_ == null) {
-        networkEndpointGroupResource_ = null;
-        onChanged();
-      } else {
-        networkEndpointGroupResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      networkEndpointGroupResource_ = null;
+      if (networkEndpointGroupResourceBuilder_ != null) {
+        networkEndpointGroupResourceBuilder_.dispose();
         networkEndpointGroupResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -811,7 +824,7 @@ public final class InsertGlobalNetworkEndpointGroupRequest
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroup.Builder
         getNetworkEndpointGroupResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNetworkEndpointGroupResourceFieldBuilder().getBuilder();
     }
@@ -931,8 +944,8 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -950,8 +963,8 @@ public final class InsertGlobalNetworkEndpointGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -974,8 +987,8 @@ public final class InsertGlobalNetworkEndpointGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -993,7 +1006,7 @@ public final class InsertGlobalNetworkEndpointGroupRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1055,8 +1068,8 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1072,8 +1085,8 @@ public final class InsertGlobalNetworkEndpointGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1094,8 +1107,8 @@ public final class InsertGlobalNetworkEndpointGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

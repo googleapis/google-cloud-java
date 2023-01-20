@@ -66,7 +66,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
 
   private int bitField0_;
   public static final int MIN_GUEST_CPU_COUNT_FIELD_NUMBER = 477964836;
-  private int minGuestCpuCount_;
+  private int minGuestCpuCount_ = 0;
   /**
    *
    *
@@ -99,7 +99,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
   }
 
   public static final int MIN_MEMORY_MB_FIELD_NUMBER = 504785894;
-  private int minMemoryMb_;
+  private int minMemoryMb_ = 0;
   /**
    *
    *
@@ -347,10 +347,9 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       minGuestCpuCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       minMemoryMb_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -378,6 +377,14 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.LicenseResourceRequirements buildPartial() {
       com.google.cloud.compute.v1.LicenseResourceRequirements result =
           new com.google.cloud.compute.v1.LicenseResourceRequirements(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.LicenseResourceRequirements result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -388,9 +395,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
         result.minMemoryMb_ = minMemoryMb_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -546,8 +551,9 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setMinGuestCpuCount(int value) {
-      bitField0_ |= 0x00000001;
+
       minGuestCpuCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -613,8 +619,9 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setMinMemoryMb(int value) {
-      bitField0_ |= 0x00000002;
+
       minMemoryMb_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

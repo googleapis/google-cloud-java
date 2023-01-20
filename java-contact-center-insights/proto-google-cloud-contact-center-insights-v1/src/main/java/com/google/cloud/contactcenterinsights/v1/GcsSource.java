@@ -69,7 +69,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUDIO_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object audioUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object audioUri_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRANSCRIPT_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object transcriptUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object transcriptUri_ = "";
   /**
    *
    *
@@ -376,10 +380,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       audioUri_ = "";
-
       transcriptUri_ = "";
-
       return this;
     }
 
@@ -407,10 +410,21 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.GcsSource buildPartial() {
       com.google.cloud.contactcenterinsights.v1.GcsSource result =
           new com.google.cloud.contactcenterinsights.v1.GcsSource(this);
-      result.audioUri_ = audioUri_;
-      result.transcriptUri_ = transcriptUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.GcsSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.audioUri_ = audioUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.transcriptUri_ = transcriptUri_;
+      }
     }
 
     @java.lang.Override
@@ -461,10 +475,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getAudioUri().isEmpty()) {
         audioUri_ = other.audioUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTranscriptUri().isEmpty()) {
         transcriptUri_ = other.transcriptUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -496,13 +512,13 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 audioUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 transcriptUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -521,6 +537,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object audioUri_ = "";
     /**
@@ -586,8 +604,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       audioUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -604,8 +622,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAudioUri() {
-
       audioUri_ = getDefaultInstance().getAudioUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -627,8 +645,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       audioUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -697,8 +715,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       transcriptUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -715,8 +733,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTranscriptUri() {
-
       transcriptUri_ = getDefaultInstance().getTranscriptUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -738,8 +756,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       transcriptUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

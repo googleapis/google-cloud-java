@@ -70,7 +70,9 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ROUTER_FIELD_NUMBER = 148608841;
-  private volatile java.lang.Object router_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object router_ = "";
   /**
    *
    *
@@ -267,7 +273,9 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouterOrBuilder getRouterResourceOrBuilder() {
-    return getRouterResource();
+    return routerResource_ == null
+        ? com.google.cloud.compute.v1.Router.getDefaultInstance()
+        : routerResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -500,16 +508,13 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       router_ = "";
-
-      if (routerResourceBuilder_ == null) {
-        routerResource_ = null;
-      } else {
-        routerResource_ = null;
+      routerResource_ = null;
+      if (routerResourceBuilder_ != null) {
+        routerResourceBuilder_.dispose();
         routerResourceBuilder_ = null;
       }
       return this;
@@ -539,16 +544,28 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.PreviewRouterRequest buildPartial() {
       com.google.cloud.compute.v1.PreviewRouterRequest result =
           new com.google.cloud.compute.v1.PreviewRouterRequest(this);
-      result.project_ = project_;
-      result.region_ = region_;
-      result.router_ = router_;
-      if (routerResourceBuilder_ == null) {
-        result.routerResource_ = routerResource_;
-      } else {
-        result.routerResource_ = routerResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PreviewRouterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.router_ = router_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.routerResource_ =
+            routerResourceBuilder_ == null ? routerResource_ : routerResourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -599,14 +616,17 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRouter().isEmpty()) {
         router_ = other.router_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRouterResource()) {
@@ -641,25 +661,25 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1188870730:
               {
                 router_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1188870730
             case 1241776674:
               {
                 input.readMessage(getRouterResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1241776674
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -678,6 +698,8 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -740,8 +762,8 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,8 +779,8 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -779,8 +801,8 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -846,8 +868,8 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,8 +885,8 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -885,8 +907,8 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -952,8 +974,8 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       router_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -969,8 +991,8 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRouter() {
-
       router_ = getDefaultInstance().getRouter();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -991,8 +1013,8 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       router_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1017,7 +1039,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the routerResource field is set.
      */
     public boolean hasRouterResource() {
-      return routerResourceBuilder_ != null || routerResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1058,11 +1080,11 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         routerResource_ = value;
-        onChanged();
       } else {
         routerResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1079,11 +1101,11 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
     public Builder setRouterResource(com.google.cloud.compute.v1.Router.Builder builderForValue) {
       if (routerResourceBuilder_ == null) {
         routerResource_ = builderForValue.build();
-        onChanged();
       } else {
         routerResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1099,19 +1121,18 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeRouterResource(com.google.cloud.compute.v1.Router value) {
       if (routerResourceBuilder_ == null) {
-        if (routerResource_ != null) {
-          routerResource_ =
-              com.google.cloud.compute.v1.Router.newBuilder(routerResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && routerResource_ != null
+            && routerResource_ != com.google.cloud.compute.v1.Router.getDefaultInstance()) {
+          getRouterResourceBuilder().mergeFrom(value);
         } else {
           routerResource_ = value;
         }
-        onChanged();
       } else {
         routerResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1126,14 +1147,13 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRouterResource() {
-      if (routerResourceBuilder_ == null) {
-        routerResource_ = null;
-        onChanged();
-      } else {
-        routerResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      routerResource_ = null;
+      if (routerResourceBuilder_ != null) {
+        routerResourceBuilder_.dispose();
         routerResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1148,7 +1168,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.compute.v1.Router.Builder getRouterResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRouterResourceFieldBuilder().getBuilder();
     }

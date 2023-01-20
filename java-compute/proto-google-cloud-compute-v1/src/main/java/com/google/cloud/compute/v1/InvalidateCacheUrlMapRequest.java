@@ -122,11 +122,15 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.compute.v1.CacheInvalidationRuleOrBuilder
       getCacheInvalidationRuleResourceOrBuilder() {
-    return getCacheInvalidationRuleResource();
+    return cacheInvalidationRuleResource_ == null
+        ? com.google.cloud.compute.v1.CacheInvalidationRule.getDefaultInstance()
+        : cacheInvalidationRuleResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -243,7 +249,9 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
   }
 
   public static final int URL_MAP_FIELD_NUMBER = 367020684;
-  private volatile java.lang.Object urlMap_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object urlMap_ = "";
   /**
    *
    *
@@ -530,18 +538,15 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (cacheInvalidationRuleResourceBuilder_ == null) {
-        cacheInvalidationRuleResource_ = null;
-      } else {
-        cacheInvalidationRuleResource_ = null;
+      bitField0_ = 0;
+      cacheInvalidationRuleResource_ = null;
+      if (cacheInvalidationRuleResourceBuilder_ != null) {
+        cacheInvalidationRuleResourceBuilder_.dispose();
         cacheInvalidationRuleResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       urlMap_ = "";
-
       return this;
     }
 
@@ -569,22 +574,33 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.InvalidateCacheUrlMapRequest buildPartial() {
       com.google.cloud.compute.v1.InvalidateCacheUrlMapRequest result =
           new com.google.cloud.compute.v1.InvalidateCacheUrlMapRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (cacheInvalidationRuleResourceBuilder_ == null) {
-        result.cacheInvalidationRuleResource_ = cacheInvalidationRuleResource_;
-      } else {
-        result.cacheInvalidationRuleResource_ = cacheInvalidationRuleResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.urlMap_ = urlMap_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InvalidateCacheUrlMapRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cacheInvalidationRuleResource_ =
+            cacheInvalidationRuleResourceBuilder_ == null
+                ? cacheInvalidationRuleResource_
+                : cacheInvalidationRuleResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.urlMap_ = urlMap_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -638,15 +654,17 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getUrlMap().isEmpty()) {
         urlMap_ = other.urlMap_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -678,26 +696,26 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1792602774:
               {
                 input.readMessage(
                     getCacheInvalidationRuleResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1792602774
             case -1358801822:
               {
                 urlMap_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1358801822
             default:
@@ -739,8 +757,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * @return Whether the cacheInvalidationRuleResource field is set.
      */
     public boolean hasCacheInvalidationRuleResource() {
-      return cacheInvalidationRuleResourceBuilder_ != null
-          || cacheInvalidationRuleResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -782,11 +799,11 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         cacheInvalidationRuleResource_ = value;
-        onChanged();
       } else {
         cacheInvalidationRuleResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -804,11 +821,11 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         com.google.cloud.compute.v1.CacheInvalidationRule.Builder builderForValue) {
       if (cacheInvalidationRuleResourceBuilder_ == null) {
         cacheInvalidationRuleResource_ = builderForValue.build();
-        onChanged();
       } else {
         cacheInvalidationRuleResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -825,20 +842,19 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     public Builder mergeCacheInvalidationRuleResource(
         com.google.cloud.compute.v1.CacheInvalidationRule value) {
       if (cacheInvalidationRuleResourceBuilder_ == null) {
-        if (cacheInvalidationRuleResource_ != null) {
-          cacheInvalidationRuleResource_ =
-              com.google.cloud.compute.v1.CacheInvalidationRule.newBuilder(
-                      cacheInvalidationRuleResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && cacheInvalidationRuleResource_ != null
+            && cacheInvalidationRuleResource_
+                != com.google.cloud.compute.v1.CacheInvalidationRule.getDefaultInstance()) {
+          getCacheInvalidationRuleResourceBuilder().mergeFrom(value);
         } else {
           cacheInvalidationRuleResource_ = value;
         }
-        onChanged();
       } else {
         cacheInvalidationRuleResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -853,14 +869,13 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearCacheInvalidationRuleResource() {
-      if (cacheInvalidationRuleResourceBuilder_ == null) {
-        cacheInvalidationRuleResource_ = null;
-        onChanged();
-      } else {
-        cacheInvalidationRuleResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      cacheInvalidationRuleResource_ = null;
+      if (cacheInvalidationRuleResourceBuilder_ != null) {
+        cacheInvalidationRuleResourceBuilder_.dispose();
         cacheInvalidationRuleResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -876,7 +891,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      */
     public com.google.cloud.compute.v1.CacheInvalidationRule.Builder
         getCacheInvalidationRuleResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCacheInvalidationRuleResourceFieldBuilder().getBuilder();
     }
@@ -996,8 +1011,8 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1015,8 +1030,8 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1039,8 +1054,8 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1058,7 +1073,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1120,8 +1135,8 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1137,8 +1152,8 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1159,8 +1174,8 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1226,8 +1241,8 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       urlMap_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1243,8 +1258,8 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearUrlMap() {
-
       urlMap_ = getDefaultInstance().getUrlMap();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1265,8 +1280,8 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       urlMap_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

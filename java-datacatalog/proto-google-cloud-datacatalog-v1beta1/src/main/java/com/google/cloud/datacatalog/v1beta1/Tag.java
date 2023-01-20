@@ -129,7 +129,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -184,7 +186,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEMPLATE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object template_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object template_ = "";
   /**
    *
    *
@@ -237,7 +241,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEMPLATE_DISPLAY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object templateDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object templateDisplayName_ = "";
   /**
    *
    *
@@ -384,6 +390,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
                         com.google.cloud.datacatalog.v1beta1.TagField.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField>
       fields_;
@@ -459,8 +466,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.datacatalog.v1beta1.TagField getFieldsOrDefault(
-      java.lang.String key, com.google.cloud.datacatalog.v1beta1.TagField defaultValue) {
+  public /* nullable */ com.google.cloud.datacatalog.v1beta1.TagField getFieldsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.datacatalog.v1beta1.TagField defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -772,12 +781,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       template_ = "";
-
       templateDisplayName_ = "";
-
       internalGetMutableFields().clear();
       scopeCase_ = 0;
       scope_ = null;
@@ -808,18 +815,34 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1beta1.Tag buildPartial() {
       com.google.cloud.datacatalog.v1beta1.Tag result =
           new com.google.cloud.datacatalog.v1beta1.Tag(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.template_ = template_;
-      result.templateDisplayName_ = templateDisplayName_;
-      if (scopeCase_ == 4) {
-        result.scope_ = scope_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.fields_ = internalGetFields();
-      result.fields_.makeImmutable();
-      result.scopeCase_ = scopeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.Tag result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.template_ = template_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.templateDisplayName_ = templateDisplayName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.fields_ = internalGetFields();
+        result.fields_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datacatalog.v1beta1.Tag result) {
+      result.scopeCase_ = scopeCase_;
+      result.scope_ = this.scope_;
     }
 
     @java.lang.Override
@@ -869,17 +892,21 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datacatalog.v1beta1.Tag.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTemplate().isEmpty()) {
         template_ = other.template_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTemplateDisplayName().isEmpty()) {
         templateDisplayName_ = other.templateDisplayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableFields().mergeFrom(other.internalGetFields());
+      bitField0_ |= 0x00000010;
       switch (other.getScopeCase()) {
         case COLUMN:
           {
@@ -922,13 +949,13 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 template_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -942,6 +969,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableFields()
                     .getMutableMap()
                     .put(fields__.getKey(), fields__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
@@ -954,7 +982,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 templateDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             default:
@@ -1060,8 +1088,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1080,8 +1108,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1105,8 +1133,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1178,8 +1206,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       template_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1197,8 +1225,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTemplate() {
-
       template_ = getDefaultInstance().getTemplate();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1221,8 +1249,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       template_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1288,8 +1316,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       templateDisplayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1305,8 +1333,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTemplateDisplayName() {
-
       templateDisplayName_ = getDefaultInstance().getTemplateDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1327,8 +1355,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       templateDisplayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1507,14 +1535,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField>
         internalGetMutableFields() {
-      onChanged();
-      ;
       if (fields_ == null) {
         fields_ = com.google.protobuf.MapField.newMapField(FieldsDefaultEntryHolder.defaultEntry);
       }
       if (!fields_.isMutable()) {
         fields_ = fields_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return fields_;
     }
 
@@ -1580,8 +1608,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.datacatalog.v1beta1.TagField getFieldsOrDefault(
-        java.lang.String key, com.google.cloud.datacatalog.v1beta1.TagField defaultValue) {
+    public /* nullable */ com.google.cloud.datacatalog.v1beta1.TagField getFieldsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.datacatalog.v1beta1.TagField defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1616,6 +1646,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearFields() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableFields().getMutableMap().clear();
       return this;
     }
@@ -1643,6 +1674,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField>
         getMutableFields() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableFields().getMutableMap();
     }
     /**
@@ -1666,8 +1698,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableFields().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1686,6 +1718,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllFields(
         java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField> values) {
       internalGetMutableFields().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 

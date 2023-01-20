@@ -69,7 +69,9 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
   }
 
   public static final int CERTIFICATE_MAP_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object certificateMapId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object certificateMapId_ = "";
   /**
    *
    *
@@ -224,7 +228,9 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
   @java.lang.Override
   public com.google.cloud.certificatemanager.v1.CertificateMapOrBuilder
       getCertificateMapOrBuilder() {
-    return getCertificateMap();
+    return certificateMap_ == null
+        ? com.google.cloud.certificatemanager.v1.CertificateMap.getDefaultInstance()
+        : certificateMap_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -450,14 +456,12 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       certificateMapId_ = "";
-
-      if (certificateMapBuilder_ == null) {
-        certificateMap_ = null;
-      } else {
-        certificateMap_ = null;
+      certificateMap_ = null;
+      if (certificateMapBuilder_ != null) {
+        certificateMapBuilder_.dispose();
         certificateMapBuilder_ = null;
       }
       return this;
@@ -489,15 +493,26 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
     public com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest buildPartial() {
       com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest result =
           new com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest(this);
-      result.parent_ = parent_;
-      result.certificateMapId_ = certificateMapId_;
-      if (certificateMapBuilder_ == null) {
-        result.certificateMap_ = certificateMap_;
-      } else {
-        result.certificateMap_ = certificateMapBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.certificateMapId_ = certificateMapId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.certificateMap_ =
+            certificateMapBuilder_ == null ? certificateMap_ : certificateMapBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -551,10 +566,12 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCertificateMapId().isEmpty()) {
         certificateMapId_ = other.certificateMapId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCertificateMap()) {
@@ -589,19 +606,19 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 certificateMapId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCertificateMapFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -620,6 +637,8 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -691,8 +710,8 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +730,8 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -736,8 +755,8 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -803,8 +822,8 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       certificateMapId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -820,8 +839,8 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearCertificateMapId() {
-
       certificateMapId_ = getDefaultInstance().getCertificateMapId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -842,8 +861,8 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       certificateMapId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -868,7 +887,7 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
      * @return Whether the certificateMap field is set.
      */
     public boolean hasCertificateMap() {
-      return certificateMapBuilder_ != null || certificateMap_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -909,11 +928,11 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         certificateMap_ = value;
-        onChanged();
       } else {
         certificateMapBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -931,11 +950,11 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
         com.google.cloud.certificatemanager.v1.CertificateMap.Builder builderForValue) {
       if (certificateMapBuilder_ == null) {
         certificateMap_ = builderForValue.build();
-        onChanged();
       } else {
         certificateMapBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -952,19 +971,19 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
     public Builder mergeCertificateMap(
         com.google.cloud.certificatemanager.v1.CertificateMap value) {
       if (certificateMapBuilder_ == null) {
-        if (certificateMap_ != null) {
-          certificateMap_ =
-              com.google.cloud.certificatemanager.v1.CertificateMap.newBuilder(certificateMap_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && certificateMap_ != null
+            && certificateMap_
+                != com.google.cloud.certificatemanager.v1.CertificateMap.getDefaultInstance()) {
+          getCertificateMapBuilder().mergeFrom(value);
         } else {
           certificateMap_ = value;
         }
-        onChanged();
       } else {
         certificateMapBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -979,14 +998,13 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearCertificateMap() {
-      if (certificateMapBuilder_ == null) {
-        certificateMap_ = null;
-        onChanged();
-      } else {
-        certificateMap_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      certificateMap_ = null;
+      if (certificateMapBuilder_ != null) {
+        certificateMapBuilder_.dispose();
         certificateMapBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1002,7 +1020,7 @@ public final class CreateCertificateMapRequest extends com.google.protobuf.Gener
      */
     public com.google.cloud.certificatemanager.v1.CertificateMap.Builder
         getCertificateMapBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCertificateMapFieldBuilder().getBuilder();
     }

@@ -68,6 +68,8 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PROPERTY_DEFINITIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition>
       propertyDefinitions_;
   /**
@@ -350,6 +352,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (propertyDefinitionsBuilder_ == null) {
         propertyDefinitions_ = java.util.Collections.emptyList();
       } else {
@@ -384,7 +387,16 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
     public com.google.cloud.contentwarehouse.v1.PropertyTypeOptions buildPartial() {
       com.google.cloud.contentwarehouse.v1.PropertyTypeOptions result =
           new com.google.cloud.contentwarehouse.v1.PropertyTypeOptions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.PropertyTypeOptions result) {
       if (propertyDefinitionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           propertyDefinitions_ = java.util.Collections.unmodifiableList(propertyDefinitions_);
@@ -394,8 +406,10 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       } else {
         result.propertyDefinitions_ = propertyDefinitionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.PropertyTypeOptions result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

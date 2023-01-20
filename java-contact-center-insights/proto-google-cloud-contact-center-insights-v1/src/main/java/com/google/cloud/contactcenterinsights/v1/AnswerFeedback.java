@@ -252,7 +252,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CORRECTNESS_LEVEL_FIELD_NUMBER = 1;
-  private int correctnessLevel_;
+  private int correctnessLevel_ = 0;
   /**
    *
    *
@@ -286,9 +286,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel
       getCorrectnessLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel result =
-        com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel.valueOf(
+        com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel.forNumber(
             correctnessLevel_);
     return result == null
         ? com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel.UNRECOGNIZED
@@ -296,7 +295,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLICKED_FIELD_NUMBER = 2;
-  private boolean clicked_;
+  private boolean clicked_ = false;
   /**
    *
    *
@@ -314,7 +313,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAYED_FIELD_NUMBER = 3;
-  private boolean displayed_;
+  private boolean displayed_ = false;
   /**
    *
    *
@@ -555,12 +554,10 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       correctnessLevel_ = 0;
-
       clicked_ = false;
-
       displayed_ = false;
-
       return this;
     }
 
@@ -588,11 +585,24 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.AnswerFeedback buildPartial() {
       com.google.cloud.contactcenterinsights.v1.AnswerFeedback result =
           new com.google.cloud.contactcenterinsights.v1.AnswerFeedback(this);
-      result.correctnessLevel_ = correctnessLevel_;
-      result.clicked_ = clicked_;
-      result.displayed_ = displayed_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.AnswerFeedback result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.correctnessLevel_ = correctnessLevel_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clicked_ = clicked_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayed_ = displayed_;
+      }
     }
 
     @java.lang.Override
@@ -679,19 +689,19 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 correctnessLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 clicked_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 displayed_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -710,6 +720,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int correctnessLevel_ = 0;
     /**
@@ -744,8 +756,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCorrectnessLevelValue(int value) {
-
       correctnessLevel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -765,9 +777,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel
         getCorrectnessLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel result =
-          com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel.valueOf(
+          com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel.forNumber(
               correctnessLevel_);
       return result == null
           ? com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel.UNRECOGNIZED
@@ -792,7 +803,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       correctnessLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -811,7 +822,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCorrectnessLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       correctnessLevel_ = 0;
       onChanged();
       return this;
@@ -848,6 +859,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public Builder setClicked(boolean value) {
 
       clicked_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,7 +875,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClicked() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       clicked_ = false;
       onChanged();
       return this;
@@ -902,6 +914,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisplayed(boolean value) {
 
       displayed_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -918,7 +931,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayed() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       displayed_ = false;
       onChanged();
       return this;

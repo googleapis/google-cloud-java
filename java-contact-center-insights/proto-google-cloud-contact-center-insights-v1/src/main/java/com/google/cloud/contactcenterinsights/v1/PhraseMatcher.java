@@ -237,7 +237,9 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -290,7 +292,9 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REVISION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object revisionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revisionId_ = "";
   /**
    *
    *
@@ -349,7 +353,9 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_TAG_FIELD_NUMBER = 3;
-  private volatile java.lang.Object versionTag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object versionTag_ = "";
   /**
    *
    *
@@ -453,11 +459,15 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRevisionCreateTimeOrBuilder() {
-    return getRevisionCreateTime();
+    return revisionCreateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : revisionCreateTime_;
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -506,7 +516,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 6;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -539,16 +549,15 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType result =
-        com.google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType.valueOf(type_);
+        com.google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType.forNumber(type_);
     return result == null
         ? com.google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType.UNRECOGNIZED
         : result;
   }
 
   public static final int ACTIVE_FIELD_NUMBER = 7;
-  private boolean active_;
+  private boolean active_ = false;
   /**
    *
    *
@@ -566,6 +575,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PHRASE_MATCH_RULE_GROUPS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup>
       phraseMatchRuleGroups_;
   /**
@@ -700,11 +711,13 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getActivationUpdateTimeOrBuilder() {
-    return getActivationUpdateTime();
+    return activationUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : activationUpdateTime_;
   }
 
   public static final int ROLE_MATCH_FIELD_NUMBER = 10;
-  private int roleMatch_;
+  private int roleMatch_ = 0;
   /**
    *
    *
@@ -739,9 +752,9 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getRoleMatch() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role result =
-        com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.valueOf(roleMatch_);
+        com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.forNumber(
+            roleMatch_);
     return result == null
         ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.UNRECOGNIZED
         : result;
@@ -793,7 +806,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1114,43 +1127,34 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       revisionId_ = "";
-
       versionTag_ = "";
-
-      if (revisionCreateTimeBuilder_ == null) {
-        revisionCreateTime_ = null;
-      } else {
-        revisionCreateTime_ = null;
+      revisionCreateTime_ = null;
+      if (revisionCreateTimeBuilder_ != null) {
+        revisionCreateTimeBuilder_.dispose();
         revisionCreateTimeBuilder_ = null;
       }
       displayName_ = "";
-
       type_ = 0;
-
       active_ = false;
-
       if (phraseMatchRuleGroupsBuilder_ == null) {
         phraseMatchRuleGroups_ = java.util.Collections.emptyList();
       } else {
         phraseMatchRuleGroups_ = null;
         phraseMatchRuleGroupsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (activationUpdateTimeBuilder_ == null) {
-        activationUpdateTime_ = null;
-      } else {
-        activationUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      activationUpdateTime_ = null;
+      if (activationUpdateTimeBuilder_ != null) {
+        activationUpdateTimeBuilder_.dispose();
         activationUpdateTimeBuilder_ = null;
       }
       roleMatch_ = 0;
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       return this;
@@ -1180,40 +1184,65 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.PhraseMatcher buildPartial() {
       com.google.cloud.contactcenterinsights.v1.PhraseMatcher result =
           new com.google.cloud.contactcenterinsights.v1.PhraseMatcher(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.revisionId_ = revisionId_;
-      result.versionTag_ = versionTag_;
-      if (revisionCreateTimeBuilder_ == null) {
-        result.revisionCreateTime_ = revisionCreateTime_;
-      } else {
-        result.revisionCreateTime_ = revisionCreateTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.displayName_ = displayName_;
-      result.type_ = type_;
-      result.active_ = active_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contactcenterinsights.v1.PhraseMatcher result) {
       if (phraseMatchRuleGroupsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           phraseMatchRuleGroups_ = java.util.Collections.unmodifiableList(phraseMatchRuleGroups_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.phraseMatchRuleGroups_ = phraseMatchRuleGroups_;
       } else {
         result.phraseMatchRuleGroups_ = phraseMatchRuleGroupsBuilder_.build();
       }
-      if (activationUpdateTimeBuilder_ == null) {
-        result.activationUpdateTime_ = activationUpdateTime_;
-      } else {
-        result.activationUpdateTime_ = activationUpdateTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.PhraseMatcher result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      result.roleMatch_ = roleMatch_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.revisionId_ = revisionId_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.versionTag_ = versionTag_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.revisionCreateTime_ =
+            revisionCreateTimeBuilder_ == null
+                ? revisionCreateTime_
+                : revisionCreateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.active_ = active_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.activationUpdateTime_ =
+            activationUpdateTimeBuilder_ == null
+                ? activationUpdateTime_
+                : activationUpdateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.roleMatch_ = roleMatch_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1264,14 +1293,17 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRevisionId().isEmpty()) {
         revisionId_ = other.revisionId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getVersionTag().isEmpty()) {
         versionTag_ = other.versionTag_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRevisionCreateTime()) {
@@ -1279,6 +1311,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -1291,7 +1324,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
         if (!other.phraseMatchRuleGroups_.isEmpty()) {
           if (phraseMatchRuleGroups_.isEmpty()) {
             phraseMatchRuleGroups_ = other.phraseMatchRuleGroups_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensurePhraseMatchRuleGroupsIsMutable();
             phraseMatchRuleGroups_.addAll(other.phraseMatchRuleGroups_);
@@ -1304,7 +1337,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
             phraseMatchRuleGroupsBuilder_.dispose();
             phraseMatchRuleGroupsBuilder_ = null;
             phraseMatchRuleGroups_ = other.phraseMatchRuleGroups_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
             phraseMatchRuleGroupsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPhraseMatchRuleGroupsFieldBuilder()
@@ -1352,44 +1385,44 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 revisionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 versionTag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getRevisionCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 active_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
@@ -1410,19 +1443,19 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getActivationUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 80:
               {
                 roleMatch_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             default:
@@ -1511,8 +1544,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1530,8 +1563,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1554,8 +1587,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1636,8 +1669,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       revisionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1658,8 +1691,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRevisionId() {
-
       revisionId_ = getDefaultInstance().getRevisionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1685,8 +1718,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       revisionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1755,8 +1788,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       versionTag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1773,8 +1806,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersionTag() {
-
       versionTag_ = getDefaultInstance().getVersionTag();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1796,8 +1829,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       versionTag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1823,7 +1856,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the revisionCreateTime field is set.
      */
     public boolean hasRevisionCreateTime() {
-      return revisionCreateTimeBuilder_ != null || revisionCreateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1866,11 +1899,11 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         revisionCreateTime_ = value;
-        onChanged();
       } else {
         revisionCreateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1888,11 +1921,11 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
     public Builder setRevisionCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (revisionCreateTimeBuilder_ == null) {
         revisionCreateTime_ = builderForValue.build();
-        onChanged();
       } else {
         revisionCreateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1909,19 +1942,18 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRevisionCreateTime(com.google.protobuf.Timestamp value) {
       if (revisionCreateTimeBuilder_ == null) {
-        if (revisionCreateTime_ != null) {
-          revisionCreateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(revisionCreateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && revisionCreateTime_ != null
+            && revisionCreateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRevisionCreateTimeBuilder().mergeFrom(value);
         } else {
           revisionCreateTime_ = value;
         }
-        onChanged();
       } else {
         revisionCreateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1937,14 +1969,13 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRevisionCreateTime() {
-      if (revisionCreateTimeBuilder_ == null) {
-        revisionCreateTime_ = null;
-        onChanged();
-      } else {
-        revisionCreateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      revisionCreateTime_ = null;
+      if (revisionCreateTimeBuilder_ != null) {
+        revisionCreateTimeBuilder_.dispose();
         revisionCreateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1960,7 +1991,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getRevisionCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRevisionCreateTimeFieldBuilder().getBuilder();
     }
@@ -2075,8 +2106,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2092,8 +2123,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2114,8 +2145,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2153,8 +2184,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2173,9 +2204,9 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType result =
-          com.google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType.valueOf(type_);
+          com.google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType.forNumber(
+              type_);
       return result == null
           ? com.google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType.UNRECOGNIZED
           : result;
@@ -2199,7 +2230,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -2218,7 +2249,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       type_ = 0;
       onChanged();
       return this;
@@ -2255,6 +2286,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
     public Builder setActive(boolean value) {
 
       active_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2270,7 +2302,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearActive() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       active_ = false;
       onChanged();
       return this;
@@ -2280,11 +2312,11 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
         phraseMatchRuleGroups_ = java.util.Collections.emptyList();
 
     private void ensurePhraseMatchRuleGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         phraseMatchRuleGroups_ =
             new java.util.ArrayList<com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup>(
                 phraseMatchRuleGroups_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2530,7 +2562,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPhraseMatchRuleGroups() {
       if (phraseMatchRuleGroupsBuilder_ == null) {
         phraseMatchRuleGroups_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         phraseMatchRuleGroupsBuilder_.clear();
@@ -2675,7 +2707,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup.Builder,
                 com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroupOrBuilder>(
                 phraseMatchRuleGroups_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         phraseMatchRuleGroups_ = null;
@@ -2703,7 +2735,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the activationUpdateTime field is set.
      */
     public boolean hasActivationUpdateTime() {
-      return activationUpdateTimeBuilder_ != null || activationUpdateTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2744,11 +2776,11 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         activationUpdateTime_ = value;
-        onChanged();
       } else {
         activationUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2765,11 +2797,11 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
     public Builder setActivationUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (activationUpdateTimeBuilder_ == null) {
         activationUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         activationUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2785,19 +2817,18 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeActivationUpdateTime(com.google.protobuf.Timestamp value) {
       if (activationUpdateTimeBuilder_ == null) {
-        if (activationUpdateTime_ != null) {
-          activationUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(activationUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && activationUpdateTime_ != null
+            && activationUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getActivationUpdateTimeBuilder().mergeFrom(value);
         } else {
           activationUpdateTime_ = value;
         }
-        onChanged();
       } else {
         activationUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2812,14 +2843,13 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearActivationUpdateTime() {
-      if (activationUpdateTimeBuilder_ == null) {
-        activationUpdateTime_ = null;
-        onChanged();
-      } else {
-        activationUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      activationUpdateTime_ = null;
+      if (activationUpdateTimeBuilder_ != null) {
+        activationUpdateTimeBuilder_.dispose();
         activationUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2834,7 +2864,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getActivationUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getActivationUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2921,8 +2951,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRoleMatchValue(int value) {
-
       roleMatch_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2942,9 +2972,8 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getRoleMatch() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role result =
-          com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.valueOf(
+          com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.forNumber(
               roleMatch_);
       return result == null
           ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.UNRECOGNIZED
@@ -2970,7 +2999,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       roleMatch_ = value.getNumber();
       onChanged();
       return this;
@@ -2990,7 +3019,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRoleMatch() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       roleMatch_ = 0;
       onChanged();
       return this;
@@ -3016,7 +3045,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3057,11 +3086,11 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3078,11 +3107,11 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3098,17 +3127,18 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3123,14 +3153,13 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3145,7 +3174,7 @@ public final class PhraseMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

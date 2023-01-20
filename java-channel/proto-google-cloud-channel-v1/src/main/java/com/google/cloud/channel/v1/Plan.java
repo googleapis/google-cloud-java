@@ -69,7 +69,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAYMENT_PLAN_FIELD_NUMBER = 1;
-  private int paymentPlan_;
+  private int paymentPlan_ = 0;
   /**
    *
    *
@@ -98,14 +98,13 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PaymentPlan getPaymentPlan() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.PaymentPlan result =
-        com.google.cloud.channel.v1.PaymentPlan.valueOf(paymentPlan_);
+        com.google.cloud.channel.v1.PaymentPlan.forNumber(paymentPlan_);
     return result == null ? com.google.cloud.channel.v1.PaymentPlan.UNRECOGNIZED : result;
   }
 
   public static final int PAYMENT_TYPE_FIELD_NUMBER = 2;
-  private int paymentType_;
+  private int paymentType_ = 0;
   /**
    *
    *
@@ -134,9 +133,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PaymentType getPaymentType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.PaymentType result =
-        com.google.cloud.channel.v1.PaymentType.valueOf(paymentType_);
+        com.google.cloud.channel.v1.PaymentType.forNumber(paymentType_);
     return result == null ? com.google.cloud.channel.v1.PaymentType.UNRECOGNIZED : result;
   }
 
@@ -188,7 +186,9 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PeriodOrBuilder getPaymentCycleOrBuilder() {
-    return getPaymentCycle();
+    return paymentCycle_ == null
+        ? com.google.cloud.channel.v1.Period.getDefaultInstance()
+        : paymentCycle_;
   }
 
   public static final int TRIAL_PERIOD_FIELD_NUMBER = 4;
@@ -251,11 +251,15 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PeriodOrBuilder getTrialPeriodOrBuilder() {
-    return getTrialPeriod();
+    return trialPeriod_ == null
+        ? com.google.cloud.channel.v1.Period.getDefaultInstance()
+        : trialPeriod_;
   }
 
   public static final int BILLING_ACCOUNT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object billingAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object billingAccount_ = "";
   /**
    *
    *
@@ -550,24 +554,20 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       paymentPlan_ = 0;
-
       paymentType_ = 0;
-
-      if (paymentCycleBuilder_ == null) {
-        paymentCycle_ = null;
-      } else {
-        paymentCycle_ = null;
+      paymentCycle_ = null;
+      if (paymentCycleBuilder_ != null) {
+        paymentCycleBuilder_.dispose();
         paymentCycleBuilder_ = null;
       }
-      if (trialPeriodBuilder_ == null) {
-        trialPeriod_ = null;
-      } else {
-        trialPeriod_ = null;
+      trialPeriod_ = null;
+      if (trialPeriodBuilder_ != null) {
+        trialPeriodBuilder_.dispose();
         trialPeriodBuilder_ = null;
       }
       billingAccount_ = "";
-
       return this;
     }
 
@@ -594,21 +594,32 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.channel.v1.Plan buildPartial() {
       com.google.cloud.channel.v1.Plan result = new com.google.cloud.channel.v1.Plan(this);
-      result.paymentPlan_ = paymentPlan_;
-      result.paymentType_ = paymentType_;
-      if (paymentCycleBuilder_ == null) {
-        result.paymentCycle_ = paymentCycle_;
-      } else {
-        result.paymentCycle_ = paymentCycleBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (trialPeriodBuilder_ == null) {
-        result.trialPeriod_ = trialPeriod_;
-      } else {
-        result.trialPeriod_ = trialPeriodBuilder_.build();
-      }
-      result.billingAccount_ = billingAccount_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.Plan result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.paymentPlan_ = paymentPlan_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.paymentType_ = paymentType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.paymentCycle_ =
+            paymentCycleBuilder_ == null ? paymentCycle_ : paymentCycleBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.trialPeriod_ =
+            trialPeriodBuilder_ == null ? trialPeriod_ : trialPeriodBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.billingAccount_ = billingAccount_;
+      }
     }
 
     @java.lang.Override
@@ -670,6 +681,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getBillingAccount().isEmpty()) {
         billingAccount_ = other.billingAccount_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -701,31 +713,31 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 paymentPlan_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 paymentType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getPaymentCycleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getTrialPeriodFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 billingAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -744,6 +756,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int paymentPlan_ = 0;
     /**
@@ -774,8 +788,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPaymentPlanValue(int value) {
-
       paymentPlan_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -792,9 +806,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.PaymentPlan getPaymentPlan() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.PaymentPlan result =
-          com.google.cloud.channel.v1.PaymentPlan.valueOf(paymentPlan_);
+          com.google.cloud.channel.v1.PaymentPlan.forNumber(paymentPlan_);
       return result == null ? com.google.cloud.channel.v1.PaymentPlan.UNRECOGNIZED : result;
     }
     /**
@@ -813,7 +826,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       paymentPlan_ = value.getNumber();
       onChanged();
       return this;
@@ -830,7 +843,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPaymentPlan() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       paymentPlan_ = 0;
       onChanged();
       return this;
@@ -865,8 +878,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPaymentTypeValue(int value) {
-
       paymentType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -883,9 +896,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.PaymentType getPaymentType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.PaymentType result =
-          com.google.cloud.channel.v1.PaymentType.valueOf(paymentType_);
+          com.google.cloud.channel.v1.PaymentType.forNumber(paymentType_);
       return result == null ? com.google.cloud.channel.v1.PaymentType.UNRECOGNIZED : result;
     }
     /**
@@ -904,7 +916,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       paymentType_ = value.getNumber();
       onChanged();
       return this;
@@ -921,7 +933,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPaymentType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       paymentType_ = 0;
       onChanged();
       return this;
@@ -946,7 +958,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the paymentCycle field is set.
      */
     public boolean hasPaymentCycle() {
-      return paymentCycleBuilder_ != null || paymentCycle_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -985,11 +997,11 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         paymentCycle_ = value;
-        onChanged();
       } else {
         paymentCycleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1005,11 +1017,11 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
     public Builder setPaymentCycle(com.google.cloud.channel.v1.Period.Builder builderForValue) {
       if (paymentCycleBuilder_ == null) {
         paymentCycle_ = builderForValue.build();
-        onChanged();
       } else {
         paymentCycleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1024,19 +1036,18 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePaymentCycle(com.google.cloud.channel.v1.Period value) {
       if (paymentCycleBuilder_ == null) {
-        if (paymentCycle_ != null) {
-          paymentCycle_ =
-              com.google.cloud.channel.v1.Period.newBuilder(paymentCycle_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && paymentCycle_ != null
+            && paymentCycle_ != com.google.cloud.channel.v1.Period.getDefaultInstance()) {
+          getPaymentCycleBuilder().mergeFrom(value);
         } else {
           paymentCycle_ = value;
         }
-        onChanged();
       } else {
         paymentCycleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1050,14 +1061,13 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Period payment_cycle = 3;</code>
      */
     public Builder clearPaymentCycle() {
-      if (paymentCycleBuilder_ == null) {
-        paymentCycle_ = null;
-        onChanged();
-      } else {
-        paymentCycle_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      paymentCycle_ = null;
+      if (paymentCycleBuilder_ != null) {
+        paymentCycleBuilder_.dispose();
         paymentCycleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1071,7 +1081,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Period payment_cycle = 3;</code>
      */
     public com.google.cloud.channel.v1.Period.Builder getPaymentCycleBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPaymentCycleFieldBuilder().getBuilder();
     }
@@ -1144,7 +1154,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the trialPeriod field is set.
      */
     public boolean hasTrialPeriod() {
-      return trialPeriodBuilder_ != null || trialPeriod_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1191,11 +1201,11 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         trialPeriod_ = value;
-        onChanged();
       } else {
         trialPeriodBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1215,11 +1225,11 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
     public Builder setTrialPeriod(com.google.cloud.channel.v1.Period.Builder builderForValue) {
       if (trialPeriodBuilder_ == null) {
         trialPeriod_ = builderForValue.build();
-        onChanged();
       } else {
         trialPeriodBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1238,19 +1248,18 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTrialPeriod(com.google.cloud.channel.v1.Period value) {
       if (trialPeriodBuilder_ == null) {
-        if (trialPeriod_ != null) {
-          trialPeriod_ =
-              com.google.cloud.channel.v1.Period.newBuilder(trialPeriod_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && trialPeriod_ != null
+            && trialPeriod_ != com.google.cloud.channel.v1.Period.getDefaultInstance()) {
+          getTrialPeriodBuilder().mergeFrom(value);
         } else {
           trialPeriod_ = value;
         }
-        onChanged();
       } else {
         trialPeriodBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1268,14 +1277,13 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Period trial_period = 4;</code>
      */
     public Builder clearTrialPeriod() {
-      if (trialPeriodBuilder_ == null) {
-        trialPeriod_ = null;
-        onChanged();
-      } else {
-        trialPeriod_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      trialPeriod_ = null;
+      if (trialPeriodBuilder_ != null) {
+        trialPeriodBuilder_.dispose();
         trialPeriodBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1293,7 +1301,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Period trial_period = 4;</code>
      */
     public com.google.cloud.channel.v1.Period.Builder getTrialPeriodBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTrialPeriodFieldBuilder().getBuilder();
     }
@@ -1415,8 +1423,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       billingAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1433,8 +1441,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBillingAccount() {
-
       billingAccount_ = getDefaultInstance().getBillingAccount();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1456,8 +1464,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       billingAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

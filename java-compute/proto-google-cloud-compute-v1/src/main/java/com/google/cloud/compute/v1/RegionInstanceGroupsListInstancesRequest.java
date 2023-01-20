@@ -231,7 +231,9 @@ public final class RegionInstanceGroupsListInstancesRequest
 
   private int bitField0_;
   public static final int INSTANCE_STATE_FIELD_NUMBER = 92223591;
-  private volatile java.lang.Object instanceState_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceState_ = "";
   /**
    *
    *
@@ -298,7 +300,9 @@ public final class RegionInstanceGroupsListInstancesRequest
   }
 
   public static final int PORT_NAME_FIELD_NUMBER = 41534345;
-  private volatile java.lang.Object portName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object portName_ = "";
   /**
    *
    *
@@ -579,10 +583,9 @@ public final class RegionInstanceGroupsListInstancesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceState_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       portName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -612,19 +615,26 @@ public final class RegionInstanceGroupsListInstancesRequest
     public com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest buildPartial() {
       com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest result =
           new com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceState_ = instanceState_;
         to_bitField0_ |= 0x00000001;
       }
-      result.instanceState_ = instanceState_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.portName_ = portName_;
         to_bitField0_ |= 0x00000002;
       }
-      result.portName_ = portName_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -677,13 +687,13 @@ public final class RegionInstanceGroupsListInstancesRequest
           == com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest
               .getDefaultInstance()) return this;
       if (other.hasInstanceState()) {
-        bitField0_ |= 0x00000001;
         instanceState_ = other.instanceState_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPortName()) {
-        bitField0_ |= 0x00000002;
         portName_ = other.portName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -822,8 +832,8 @@ public final class RegionInstanceGroupsListInstancesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       instanceState_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -840,8 +850,8 @@ public final class RegionInstanceGroupsListInstancesRequest
      * @return This builder for chaining.
      */
     public Builder clearInstanceState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       instanceState_ = getDefaultInstance().getInstanceState();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -863,8 +873,8 @@ public final class RegionInstanceGroupsListInstancesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       instanceState_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -944,8 +954,8 @@ public final class RegionInstanceGroupsListInstancesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       portName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -961,8 +971,8 @@ public final class RegionInstanceGroupsListInstancesRequest
      * @return This builder for chaining.
      */
     public Builder clearPortName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       portName_ = getDefaultInstance().getPortName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -983,8 +993,8 @@ public final class RegionInstanceGroupsListInstancesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       portName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

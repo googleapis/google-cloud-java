@@ -71,6 +71,8 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REQUEST_HEADERS_TO_ADD_FIELD_NUMBER = 72111974;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HttpHeaderOption> requestHeadersToAdd_;
   /**
    *
@@ -146,6 +148,8 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REQUEST_HEADERS_TO_REMOVE_FIELD_NUMBER = 218425247;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList requestHeadersToRemove_;
   /**
    *
@@ -207,6 +211,8 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RESPONSE_HEADERS_TO_ADD_FIELD_NUMBER = 32136052;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HttpHeaderOption> responseHeadersToAdd_;
   /**
    *
@@ -283,6 +289,8 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RESPONSE_HEADERS_TO_REMOVE_FIELD_NUMBER = 75415761;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList responseHeadersToRemove_;
   /**
    *
@@ -593,6 +601,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (requestHeadersToAddBuilder_ == null) {
         requestHeadersToAdd_ = java.util.Collections.emptyList();
       } else {
@@ -638,7 +647,15 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.HttpHeaderAction buildPartial() {
       com.google.cloud.compute.v1.HttpHeaderAction result =
           new com.google.cloud.compute.v1.HttpHeaderAction(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HttpHeaderAction result) {
       if (requestHeadersToAddBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           requestHeadersToAdd_ = java.util.Collections.unmodifiableList(requestHeadersToAdd_);
@@ -667,8 +684,10 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.responseHeadersToRemove_ = responseHeadersToRemove_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpHeaderAction result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

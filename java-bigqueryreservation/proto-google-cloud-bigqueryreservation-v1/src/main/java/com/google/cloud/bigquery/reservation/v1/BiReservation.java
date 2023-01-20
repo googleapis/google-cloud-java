@@ -69,7 +69,9 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -167,11 +169,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int SIZE_FIELD_NUMBER = 4;
-  private long size_;
+  private long size_ = 0L;
   /**
    *
    *
@@ -189,6 +191,8 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PREFERRED_TABLES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference> preferredTables_;
   /**
    *
@@ -496,23 +500,21 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       size_ = 0L;
-
       if (preferredTablesBuilder_ == null) {
         preferredTables_ = java.util.Collections.emptyList();
       } else {
         preferredTables_ = null;
         preferredTablesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -540,25 +542,38 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.reservation.v1.BiReservation buildPartial() {
       com.google.cloud.bigquery.reservation.v1.BiReservation result =
           new com.google.cloud.bigquery.reservation.v1.BiReservation(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.size_ = size_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.reservation.v1.BiReservation result) {
       if (preferredTablesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           preferredTables_ = java.util.Collections.unmodifiableList(preferredTables_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.preferredTables_ = preferredTables_;
       } else {
         result.preferredTables_ = preferredTablesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.reservation.v1.BiReservation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.size_ = size_;
+      }
     }
 
     @java.lang.Override
@@ -609,6 +624,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUpdateTime()) {
@@ -621,7 +637,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
         if (!other.preferredTables_.isEmpty()) {
           if (preferredTables_.isEmpty()) {
             preferredTables_ = other.preferredTables_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensurePreferredTablesIsMutable();
             preferredTables_.addAll(other.preferredTables_);
@@ -634,7 +650,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
             preferredTablesBuilder_.dispose();
             preferredTablesBuilder_ = null;
             preferredTables_ = other.preferredTables_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             preferredTablesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPreferredTablesFieldBuilder()
@@ -673,19 +689,19 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 32:
               {
                 size_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 42:
@@ -788,8 +804,8 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -807,8 +823,8 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -831,8 +847,8 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -857,7 +873,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -898,11 +914,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -919,11 +935,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -939,17 +955,18 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -964,14 +981,13 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -986,7 +1002,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1069,6 +1085,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setSize(long value) {
 
       size_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1084,7 +1101,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       size_ = 0L;
       onChanged();
       return this;
@@ -1094,11 +1111,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
         preferredTables_ = java.util.Collections.emptyList();
 
     private void ensurePreferredTablesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         preferredTables_ =
             new java.util.ArrayList<com.google.cloud.bigquery.reservation.v1.TableReference>(
                 preferredTables_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1332,7 +1349,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPreferredTables() {
       if (preferredTablesBuilder_ == null) {
         preferredTables_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         preferredTablesBuilder_.clear();
@@ -1468,7 +1485,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.reservation.v1.TableReference.Builder,
                 com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder>(
                 preferredTables_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         preferredTables_ = null;

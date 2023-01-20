@@ -73,7 +73,9 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int FILTER_FIELD_NUMBER = 336120696;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -137,7 +139,7 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
-  private int maxResults_;
+  private int maxResults_ = 0;
   /**
    *
    *
@@ -170,7 +172,9 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 160562920;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -234,7 +238,9 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 19994697;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -298,7 +304,9 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -347,7 +355,7 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
-  private boolean returnPartialSuccess_;
+  private boolean returnPartialSuccess_ = false;
   /**
    *
    *
@@ -380,7 +388,9 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -705,20 +715,14 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filter_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       maxResults_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       orderBy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       pageToken_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       project_ = "";
-
       returnPartialSuccess_ = false;
-      bitField0_ = (bitField0_ & ~0x00000010);
       zone_ = "";
-
       return this;
     }
 
@@ -746,33 +750,43 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.ListDisksRequest buildPartial() {
       com.google.cloud.compute.v1.ListDisksRequest result =
           new com.google.cloud.compute.v1.ListDisksRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ListDisksRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.filter_ = filter_;
         to_bitField0_ |= 0x00000001;
       }
-      result.filter_ = filter_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.maxResults_ = maxResults_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.orderBy_ = orderBy_;
         to_bitField0_ |= 0x00000004;
       }
-      result.orderBy_ = orderBy_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageToken_ = pageToken_;
         to_bitField0_ |= 0x00000008;
       }
-      result.pageToken_ = pageToken_;
-      result.project_ = project_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.returnPartialSuccess_ = returnPartialSuccess_;
         to_bitField0_ |= 0x00000010;
       }
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -821,25 +835,26 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
     public Builder mergeFrom(com.google.cloud.compute.v1.ListDisksRequest other) {
       if (other == com.google.cloud.compute.v1.ListDisksRequest.getDefaultInstance()) return this;
       if (other.hasFilter()) {
-        bitField0_ |= 0x00000001;
         filter_ = other.filter_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMaxResults()) {
         setMaxResults(other.getMaxResults());
       }
       if (other.hasOrderBy()) {
-        bitField0_ |= 0x00000004;
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasPageToken()) {
-        bitField0_ |= 0x00000008;
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasReturnPartialSuccess()) {
@@ -847,6 +862,7 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -878,7 +894,7 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 29957474
             case 159957578:
@@ -902,7 +918,7 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1820481738
             case -1606001726:
@@ -914,7 +930,7 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
             case -157380176:
               {
                 returnPartialSuccess_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -157380176
             default:
@@ -1011,8 +1027,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1028,8 +1044,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1050,8 +1066,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1100,8 +1116,9 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setMaxResults(int value) {
-      bitField0_ |= 0x00000002;
+
       maxResults_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1198,8 +1215,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       orderBy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1215,8 +1232,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1237,8 +1254,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       orderBy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1318,8 +1335,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1335,8 +1352,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1357,8 +1374,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1424,8 +1441,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1441,8 +1458,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1463,8 +1480,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1483,7 +1500,7 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasReturnPartialSuccess() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1513,8 +1530,9 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setReturnPartialSuccess(boolean value) {
-      bitField0_ |= 0x00000010;
+
       returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1530,7 +1548,7 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReturnPartialSuccess() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       returnPartialSuccess_ = false;
       onChanged();
       return this;
@@ -1597,8 +1615,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1614,8 +1632,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1636,8 +1654,8 @@ public final class ListDisksRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

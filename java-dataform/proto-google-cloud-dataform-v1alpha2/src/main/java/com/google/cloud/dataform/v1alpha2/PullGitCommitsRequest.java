@@ -69,7 +69,9 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REMOTE_BRANCH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object remoteBranch_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object remoteBranch_ = "";
   /**
    *
    *
@@ -226,7 +230,9 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.dataform.v1alpha2.CommitAuthorOrBuilder getAuthorOrBuilder() {
-    return getAuthor();
+    return author_ == null
+        ? com.google.cloud.dataform.v1alpha2.CommitAuthor.getDefaultInstance()
+        : author_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -450,14 +456,12 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       remoteBranch_ = "";
-
-      if (authorBuilder_ == null) {
-        author_ = null;
-      } else {
-        author_ = null;
+      author_ = null;
+      if (authorBuilder_ != null) {
+        authorBuilder_.dispose();
         authorBuilder_ = null;
       }
       return this;
@@ -487,15 +491,24 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dataform.v1alpha2.PullGitCommitsRequest buildPartial() {
       com.google.cloud.dataform.v1alpha2.PullGitCommitsRequest result =
           new com.google.cloud.dataform.v1alpha2.PullGitCommitsRequest(this);
-      result.name_ = name_;
-      result.remoteBranch_ = remoteBranch_;
-      if (authorBuilder_ == null) {
-        result.author_ = author_;
-      } else {
-        result.author_ = authorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataform.v1alpha2.PullGitCommitsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.remoteBranch_ = remoteBranch_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.author_ = authorBuilder_ == null ? author_ : authorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -546,10 +559,12 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRemoteBranch().isEmpty()) {
         remoteBranch_ = other.remoteBranch_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasAuthor()) {
@@ -584,19 +599,19 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 remoteBranch_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAuthorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -615,6 +630,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -683,8 +700,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -702,8 +719,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -726,8 +743,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -796,8 +813,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       remoteBranch_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -814,8 +831,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRemoteBranch() {
-
       remoteBranch_ = getDefaultInstance().getRemoteBranch();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -837,8 +854,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       remoteBranch_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -864,7 +881,7 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the author field is set.
      */
     public boolean hasAuthor() {
-      return authorBuilder_ != null || author_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -907,11 +924,11 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         author_ = value;
-        onChanged();
       } else {
         authorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -930,11 +947,11 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.dataform.v1alpha2.CommitAuthor.Builder builderForValue) {
       if (authorBuilder_ == null) {
         author_ = builderForValue.build();
-        onChanged();
       } else {
         authorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -951,19 +968,18 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeAuthor(com.google.cloud.dataform.v1alpha2.CommitAuthor value) {
       if (authorBuilder_ == null) {
-        if (author_ != null) {
-          author_ =
-              com.google.cloud.dataform.v1alpha2.CommitAuthor.newBuilder(author_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && author_ != null
+            && author_ != com.google.cloud.dataform.v1alpha2.CommitAuthor.getDefaultInstance()) {
+          getAuthorBuilder().mergeFrom(value);
         } else {
           author_ = value;
         }
-        onChanged();
       } else {
         authorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -979,14 +995,13 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearAuthor() {
-      if (authorBuilder_ == null) {
-        author_ = null;
-        onChanged();
-      } else {
-        author_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      author_ = null;
+      if (authorBuilder_ != null) {
+        authorBuilder_.dispose();
         authorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1002,7 +1017,7 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.dataform.v1alpha2.CommitAuthor.Builder getAuthorBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAuthorFieldBuilder().getBuilder();
     }

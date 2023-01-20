@@ -69,7 +69,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIGEST_FIELD_NUMBER = 3;
-  private volatile java.lang.Object digest_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object digest_ = "";
   /**
    *
    *
@@ -219,7 +223,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpanOrBuilder getPushTimingOrBuilder() {
-    return getPushTiming();
+    return pushTiming_ == null
+        ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
+        : pushTiming_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -440,14 +446,12 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       digest_ = "";
-
-      if (pushTimingBuilder_ == null) {
-        pushTiming_ = null;
-      } else {
-        pushTiming_ = null;
+      pushTiming_ = null;
+      if (pushTimingBuilder_ != null) {
+        pushTimingBuilder_.dispose();
         pushTimingBuilder_ = null;
       }
       return this;
@@ -476,15 +480,24 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloudbuild.v1.BuiltImage buildPartial() {
       com.google.cloudbuild.v1.BuiltImage result = new com.google.cloudbuild.v1.BuiltImage(this);
-      result.name_ = name_;
-      result.digest_ = digest_;
-      if (pushTimingBuilder_ == null) {
-        result.pushTiming_ = pushTiming_;
-      } else {
-        result.pushTiming_ = pushTimingBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.BuiltImage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.digest_ = digest_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pushTiming_ = pushTimingBuilder_ == null ? pushTiming_ : pushTimingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -534,10 +547,12 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloudbuild.v1.BuiltImage.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDigest().isEmpty()) {
         digest_ = other.digest_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPushTiming()) {
@@ -572,19 +587,19 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 digest_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getPushTimingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -603,6 +618,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -668,8 +685,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,8 +703,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -709,8 +726,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -776,8 +793,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       digest_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -793,8 +810,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDigest() {
-
       digest_ = getDefaultInstance().getDigest();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -815,8 +832,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       digest_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -841,7 +858,7 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pushTiming field is set.
      */
     public boolean hasPushTiming() {
-      return pushTimingBuilder_ != null || pushTiming_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -882,11 +899,11 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         pushTiming_ = value;
-        onChanged();
       } else {
         pushTimingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -903,11 +920,11 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
     public Builder setPushTiming(com.google.cloudbuild.v1.TimeSpan.Builder builderForValue) {
       if (pushTimingBuilder_ == null) {
         pushTiming_ = builderForValue.build();
-        onChanged();
       } else {
         pushTimingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -923,19 +940,18 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePushTiming(com.google.cloudbuild.v1.TimeSpan value) {
       if (pushTimingBuilder_ == null) {
-        if (pushTiming_ != null) {
-          pushTiming_ =
-              com.google.cloudbuild.v1.TimeSpan.newBuilder(pushTiming_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && pushTiming_ != null
+            && pushTiming_ != com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()) {
+          getPushTimingBuilder().mergeFrom(value);
         } else {
           pushTiming_ = value;
         }
-        onChanged();
       } else {
         pushTimingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -950,14 +966,13 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPushTiming() {
-      if (pushTimingBuilder_ == null) {
-        pushTiming_ = null;
-        onChanged();
-      } else {
-        pushTiming_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      pushTiming_ = null;
+      if (pushTimingBuilder_ != null) {
+        pushTimingBuilder_.dispose();
         pushTimingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -972,7 +987,7 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloudbuild.v1.TimeSpan.Builder getPushTimingBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPushTimingFieldBuilder().getBuilder();
     }

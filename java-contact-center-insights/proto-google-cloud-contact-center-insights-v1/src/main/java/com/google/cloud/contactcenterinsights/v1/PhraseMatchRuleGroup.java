@@ -233,7 +233,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -267,10 +267,9 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup.PhraseMatchRuleGroupType
       getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup.PhraseMatchRuleGroupType result =
         com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup.PhraseMatchRuleGroupType
-            .valueOf(type_);
+            .forNumber(type_);
     return result == null
         ? com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup.PhraseMatchRuleGroupType
             .UNRECOGNIZED
@@ -278,6 +277,8 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PHRASE_MATCH_RULES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.PhraseMatchRule>
       phraseMatchRules_;
   /**
@@ -570,15 +571,15 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       if (phraseMatchRulesBuilder_ == null) {
         phraseMatchRules_ = java.util.Collections.emptyList();
       } else {
         phraseMatchRules_ = null;
         phraseMatchRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -607,19 +608,33 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
     public com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup buildPartial() {
       com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup result =
           new com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup(this);
-      int from_bitField0_ = bitField0_;
-      result.type_ = type_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup result) {
       if (phraseMatchRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           phraseMatchRules_ = java.util.Collections.unmodifiableList(phraseMatchRules_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.phraseMatchRules_ = phraseMatchRules_;
       } else {
         result.phraseMatchRules_ = phraseMatchRulesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -676,7 +691,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
         if (!other.phraseMatchRules_.isEmpty()) {
           if (phraseMatchRules_.isEmpty()) {
             phraseMatchRules_ = other.phraseMatchRules_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePhraseMatchRulesIsMutable();
             phraseMatchRules_.addAll(other.phraseMatchRules_);
@@ -689,7 +704,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
             phraseMatchRulesBuilder_.dispose();
             phraseMatchRulesBuilder_ = null;
             phraseMatchRules_ = other.phraseMatchRules_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             phraseMatchRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPhraseMatchRulesFieldBuilder()
@@ -728,7 +743,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -797,8 +812,8 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -818,11 +833,10 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup.PhraseMatchRuleGroupType
         getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup.PhraseMatchRuleGroupType
           result =
               com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup
-                  .PhraseMatchRuleGroupType.valueOf(type_);
+                  .PhraseMatchRuleGroupType.forNumber(type_);
       return result == null
           ? com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup.PhraseMatchRuleGroupType
               .UNRECOGNIZED
@@ -848,7 +862,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -867,7 +881,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -877,11 +891,11 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
         phraseMatchRules_ = java.util.Collections.emptyList();
 
     private void ensurePhraseMatchRulesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         phraseMatchRules_ =
             new java.util.ArrayList<com.google.cloud.contactcenterinsights.v1.PhraseMatchRule>(
                 phraseMatchRules_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1116,7 +1130,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
     public Builder clearPhraseMatchRules() {
       if (phraseMatchRulesBuilder_ == null) {
         phraseMatchRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         phraseMatchRulesBuilder_.clear();
@@ -1254,7 +1268,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
                 com.google.cloud.contactcenterinsights.v1.PhraseMatchRule.Builder,
                 com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleOrBuilder>(
                 phraseMatchRules_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         phraseMatchRules_ = null;

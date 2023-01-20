@@ -76,6 +76,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ACCELERATORS_FIELD_NUMBER = 269577064;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Accelerators> accelerators_;
   /**
    *
@@ -145,7 +147,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -259,7 +263,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -323,7 +329,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GUEST_CPUS_FIELD_NUMBER = 393356754;
-  private int guestCpus_;
+  private int guestCpus_ = 0;
   /**
    *
    *
@@ -356,7 +362,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -389,7 +395,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_SPACE_GB_FIELD_NUMBER = 75331864;
-  private int imageSpaceGb_;
+  private int imageSpaceGb_ = 0;
   /**
    *
    *
@@ -422,7 +428,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IS_SHARED_CPU_FIELD_NUMBER = 521399555;
-  private boolean isSharedCpu_;
+  private boolean isSharedCpu_ = false;
   /**
    *
    *
@@ -455,7 +461,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -519,7 +527,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAXIMUM_PERSISTENT_DISKS_FIELD_NUMBER = 496220941;
-  private int maximumPersistentDisks_;
+  private int maximumPersistentDisks_ = 0;
   /**
    *
    *
@@ -552,7 +560,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAXIMUM_PERSISTENT_DISKS_SIZE_GB_FIELD_NUMBER = 154274471;
-  private long maximumPersistentDisksSizeGb_;
+  private long maximumPersistentDisksSizeGb_ = 0L;
   /**
    *
    *
@@ -585,7 +593,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMORY_MB_FIELD_NUMBER = 116001171;
-  private int memoryMb_;
+  private int memoryMb_ = 0;
   /**
    *
    *
@@ -618,7 +626,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -682,6 +692,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCRATCH_DISKS_FIELD_NUMBER = 480778481;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ScratchDisks> scratchDisks_;
   /**
    *
@@ -751,7 +763,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -815,7 +829,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -1302,6 +1318,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
       } else {
@@ -1310,33 +1327,21 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (deprecatedBuilder_ == null) {
-        deprecated_ = null;
-      } else {
-        deprecatedBuilder_.clear();
+      deprecated_ = null;
+      if (deprecatedBuilder_ != null) {
+        deprecatedBuilder_.dispose();
+        deprecatedBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       guestCpus_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000020);
       imageSpaceGb_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
       isSharedCpu_ = false;
-      bitField0_ = (bitField0_ & ~0x00000080);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       maximumPersistentDisks_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000200);
       maximumPersistentDisksSizeGb_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000400);
       memoryMb_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000800);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
       if (scratchDisksBuilder_ == null) {
         scratchDisks_ = java.util.Collections.emptyList();
       } else {
@@ -1345,9 +1350,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00004000);
       zone_ = "";
-      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1375,8 +1378,15 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.MachineType buildPartial() {
       com.google.cloud.compute.v1.MachineType result =
           new com.google.cloud.compute.v1.MachineType(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.MachineType result) {
       if (acceleratorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
@@ -1386,22 +1396,32 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.accelerators_ = acceleratorsBuilder_.build();
       }
+      if (scratchDisksBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)) {
+          scratchDisks_ = java.util.Collections.unmodifiableList(scratchDisks_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.scratchDisks_ = scratchDisks_;
+      } else {
+        result.scratchDisks_ = scratchDisksBuilder_.build();
+      }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.MachineType result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000001;
       }
-      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (deprecatedBuilder_ == null) {
-          result.deprecated_ = deprecated_;
-        } else {
-          result.deprecated_ = deprecatedBuilder_.build();
-        }
+        result.deprecated_ = deprecatedBuilder_ == null ? deprecated_ : deprecatedBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000004;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.guestCpus_ = guestCpus_;
         to_bitField0_ |= 0x00000008;
@@ -1419,9 +1439,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000080;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.maximumPersistentDisks_ = maximumPersistentDisks_;
         to_bitField0_ |= 0x00000100;
@@ -1435,29 +1455,18 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000800;
       }
-      result.name_ = name_;
-      if (scratchDisksBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
-          scratchDisks_ = java.util.Collections.unmodifiableList(scratchDisks_);
-          bitField0_ = (bitField0_ & ~0x00002000);
-        }
-        result.scratchDisks_ = scratchDisks_;
-      } else {
-        result.scratchDisks_ = scratchDisksBuilder_.build();
-      }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00001000;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.zone_ = zone_;
         to_bitField0_ |= 0x00002000;
       }
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1533,16 +1542,16 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDeprecated()) {
         mergeDeprecated(other.getDeprecated());
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000008;
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasGuestCpus()) {
@@ -1558,8 +1567,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         setIsSharedCpu(other.getIsSharedCpu());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000100;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasMaximumPersistentDisks()) {
@@ -1572,8 +1581,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         setMemoryMb(other.getMemoryMb());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00001000;
         name_ = other.name_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (scratchDisksBuilder_ == null) {
@@ -1604,13 +1613,13 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00004000;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasZone()) {
-        bitField0_ |= 0x00008000;
         zone_ = other.zone_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2194,8 +2203,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2211,8 +2220,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2233,8 +2242,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2294,11 +2303,11 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deprecated_ = value;
-        onChanged();
       } else {
         deprecatedBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2314,11 +2323,11 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.DeprecationStatus.Builder builderForValue) {
       if (deprecatedBuilder_ == null) {
         deprecated_ = builderForValue.build();
-        onChanged();
       } else {
         deprecatedBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2335,18 +2344,15 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000004) != 0)
             && deprecated_ != null
             && deprecated_ != com.google.cloud.compute.v1.DeprecationStatus.getDefaultInstance()) {
-          deprecated_ =
-              com.google.cloud.compute.v1.DeprecationStatus.newBuilder(deprecated_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getDeprecatedBuilder().mergeFrom(value);
         } else {
           deprecated_ = value;
         }
-        onChanged();
       } else {
         deprecatedBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2359,13 +2365,13 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder clearDeprecated() {
-      if (deprecatedBuilder_ == null) {
-        deprecated_ = null;
-        onChanged();
-      } else {
-        deprecatedBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      deprecated_ = null;
+      if (deprecatedBuilder_ != null) {
+        deprecatedBuilder_.dispose();
+        deprecatedBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2501,8 +2507,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2518,8 +2524,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2540,8 +2546,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2590,8 +2596,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setGuestCpus(int value) {
-      bitField0_ |= 0x00000010;
+
       guestCpus_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2657,8 +2664,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000020;
+
       id_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2724,8 +2732,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setImageSpaceGb(int value) {
-      bitField0_ |= 0x00000040;
+
       imageSpaceGb_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2791,8 +2800,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIsSharedCpu(boolean value) {
-      bitField0_ |= 0x00000080;
+
       isSharedCpu_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2889,8 +2899,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       kind_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2906,8 +2916,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2928,8 +2938,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       kind_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2978,8 +2988,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaximumPersistentDisks(int value) {
-      bitField0_ |= 0x00000200;
+
       maximumPersistentDisks_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3045,8 +3056,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaximumPersistentDisksSizeGb(long value) {
-      bitField0_ |= 0x00000400;
+
       maximumPersistentDisksSizeGb_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3112,8 +3124,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMemoryMb(int value) {
-      bitField0_ |= 0x00000800;
+
       memoryMb_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3210,8 +3223,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
       name_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3227,8 +3240,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00001000);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3249,8 +3262,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
       name_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3681,8 +3694,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
       selfLink_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3698,8 +3711,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00004000);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -3720,8 +3733,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
       selfLink_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3801,8 +3814,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
       zone_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3818,8 +3831,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-      bitField0_ = (bitField0_ & ~0x00008000);
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -3840,8 +3853,8 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
       zone_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

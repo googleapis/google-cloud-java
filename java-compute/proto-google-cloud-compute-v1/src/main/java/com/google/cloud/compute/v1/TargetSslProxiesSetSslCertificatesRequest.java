@@ -69,6 +69,8 @@ public final class TargetSslProxiesSetSslCertificatesRequest
   }
 
   public static final int SSL_CERTIFICATES_FIELD_NUMBER = 366006543;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList sslCertificates_;
   /**
    *
@@ -336,6 +338,7 @@ public final class TargetSslProxiesSetSslCertificatesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -367,14 +370,26 @@ public final class TargetSslProxiesSetSslCertificatesRequest
     public com.google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest buildPartial() {
       com.google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest result =
           new com.google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         sslCertificates_ = sslCertificates_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.sslCertificates_ = sslCertificates_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

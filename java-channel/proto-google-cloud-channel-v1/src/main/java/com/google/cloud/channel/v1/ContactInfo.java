@@ -73,7 +73,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIRST_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object firstName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firstName_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAST_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object lastName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastName_ = "";
   /**
    *
    *
@@ -171,7 +175,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -222,7 +228,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EMAIL_FIELD_NUMBER = 5;
-  private volatile java.lang.Object email_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
   /**
    *
    *
@@ -275,7 +283,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TITLE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -324,7 +334,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PHONE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object phone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object phone_ = "";
   /**
    *
    *
@@ -613,18 +625,13 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firstName_ = "";
-
       lastName_ = "";
-
       displayName_ = "";
-
       email_ = "";
-
       title_ = "";
-
       phone_ = "";
-
       return this;
     }
 
@@ -652,14 +659,33 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.ContactInfo buildPartial() {
       com.google.cloud.channel.v1.ContactInfo result =
           new com.google.cloud.channel.v1.ContactInfo(this);
-      result.firstName_ = firstName_;
-      result.lastName_ = lastName_;
-      result.displayName_ = displayName_;
-      result.email_ = email_;
-      result.title_ = title_;
-      result.phone_ = phone_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ContactInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firstName_ = firstName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.lastName_ = lastName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.email_ = email_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.phone_ = phone_;
+      }
     }
 
     @java.lang.Override
@@ -709,26 +735,32 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.channel.v1.ContactInfo.getDefaultInstance()) return this;
       if (!other.getFirstName().isEmpty()) {
         firstName_ = other.firstName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLastName().isEmpty()) {
         lastName_ = other.lastName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getPhone().isEmpty()) {
         phone_ = other.phone_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -760,37 +792,37 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 firstName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 lastName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 email_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 phone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -809,6 +841,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object firstName_ = "";
     /**
@@ -871,8 +905,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       firstName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -888,8 +922,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFirstName() {
-
       firstName_ = getDefaultInstance().getFirstName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -910,8 +944,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firstName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -977,8 +1011,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       lastName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -994,8 +1028,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLastName() {
-
       lastName_ = getDefaultInstance().getLastName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1016,8 +1050,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       lastName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1086,8 +1120,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1104,8 +1138,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1127,8 +1161,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1200,8 +1234,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       email_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1219,8 +1253,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-
       email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1243,8 +1277,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       email_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1310,8 +1344,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1327,8 +1361,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1349,8 +1383,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1416,8 +1450,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       phone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1433,8 +1467,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPhone() {
-
       phone_ = getDefaultInstance().getPhone();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1455,8 +1489,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       phone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

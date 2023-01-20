@@ -71,7 +71,9 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBSUB_TOPIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object pubsubTopic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pubsubTopic_ = "";
   /**
    *
    *
@@ -140,7 +142,9 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCHEMA_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object schemaVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object schemaVersion_ = "";
   /**
    *
    *
@@ -195,6 +199,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MONITORING_NOTIFICATION_CHANNELS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList monitoringNotificationChannels_;
   /**
    *
@@ -292,7 +298,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISABLE_DEFAULT_IAM_RECIPIENTS_FIELD_NUMBER = 4;
-  private boolean disableDefaultIamRecipients_;
+  private boolean disableDefaultIamRecipients_ = false;
   /**
    *
    *
@@ -547,14 +553,12 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pubsubTopic_ = "";
-
       schemaVersion_ = "";
-
       monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       disableDefaultIamRecipients_ = false;
-
       return this;
     }
 
@@ -582,17 +586,34 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule buildPartial() {
       com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule result =
           new com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule(this);
-      int from_bitField0_ = bitField0_;
-      result.pubsubTopic_ = pubsubTopic_;
-      result.schemaVersion_ = schemaVersion_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        monitoringNotificationChannels_ = monitoringNotificationChannels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.monitoringNotificationChannels_ = monitoringNotificationChannels_;
-      result.disableDefaultIamRecipients_ = disableDefaultIamRecipients_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        monitoringNotificationChannels_ = monitoringNotificationChannels_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.monitoringNotificationChannels_ = monitoringNotificationChannels_;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pubsubTopic_ = pubsubTopic_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.schemaVersion_ = schemaVersion_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.disableDefaultIamRecipients_ = disableDefaultIamRecipients_;
+      }
     }
 
     @java.lang.Override
@@ -643,16 +664,18 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getPubsubTopic().isEmpty()) {
         pubsubTopic_ = other.pubsubTopic_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSchemaVersion().isEmpty()) {
         schemaVersion_ = other.schemaVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.monitoringNotificationChannels_.isEmpty()) {
         if (monitoringNotificationChannels_.isEmpty()) {
           monitoringNotificationChannels_ = other.monitoringNotificationChannels_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureMonitoringNotificationChannelsIsMutable();
           monitoringNotificationChannels_.addAll(other.monitoringNotificationChannels_);
@@ -691,13 +714,13 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 pubsubTopic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 schemaVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -710,7 +733,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 disableDefaultIamRecipients_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -823,8 +846,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pubsubTopic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,8 +873,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPubsubTopic() {
-
       pubsubTopic_ = getDefaultInstance().getPubsubTopic();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -882,8 +905,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pubsubTopic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -958,8 +981,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       schemaVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -978,8 +1001,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSchemaVersion() {
-
       schemaVersion_ = getDefaultInstance().getSchemaVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1003,8 +1026,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       schemaVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1013,10 +1036,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMonitoringNotificationChannelsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         monitoringNotificationChannels_ =
             new com.google.protobuf.LazyStringArrayList(monitoringNotificationChannels_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1225,7 +1248,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMonitoringNotificationChannels() {
       monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1298,6 +1321,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisableDefaultIamRecipients(boolean value) {
 
       disableDefaultIamRecipients_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1316,7 +1340,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisableDefaultIamRecipients() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       disableDefaultIamRecipients_ = false;
       onChanged();
       return this;

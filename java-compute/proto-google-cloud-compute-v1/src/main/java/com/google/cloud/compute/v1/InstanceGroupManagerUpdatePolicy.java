@@ -741,7 +741,9 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
   private int bitField0_;
   public static final int INSTANCE_REDISTRIBUTION_TYPE_FIELD_NUMBER = 292630424;
-  private volatile java.lang.Object instanceRedistributionType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceRedistributionType_ = "";
   /**
    *
    *
@@ -908,7 +910,9 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   }
 
   public static final int MINIMAL_ACTION_FIELD_NUMBER = 270567060;
-  private volatile java.lang.Object minimalAction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object minimalAction_ = "";
   /**
    *
    *
@@ -975,7 +979,9 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   }
 
   public static final int MOST_DISRUPTIVE_ALLOWED_ACTION_FIELD_NUMBER = 66103053;
-  private volatile java.lang.Object mostDisruptiveAllowedAction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mostDisruptiveAllowedAction_ = "";
   /**
    *
    *
@@ -1042,7 +1048,9 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   }
 
   public static final int REPLACEMENT_METHOD_FIELD_NUMBER = 505931694;
-  private volatile java.lang.Object replacementMethod_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object replacementMethod_ = "";
   /**
    *
    *
@@ -1109,7 +1117,9 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -1481,28 +1491,22 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceRedistributionType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (maxSurgeBuilder_ == null) {
-        maxSurge_ = null;
-      } else {
-        maxSurgeBuilder_.clear();
+      maxSurge_ = null;
+      if (maxSurgeBuilder_ != null) {
+        maxSurgeBuilder_.dispose();
+        maxSurgeBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (maxUnavailableBuilder_ == null) {
-        maxUnavailable_ = null;
-      } else {
-        maxUnavailableBuilder_.clear();
+      maxUnavailable_ = null;
+      if (maxUnavailableBuilder_ != null) {
+        maxUnavailableBuilder_.dispose();
+        maxUnavailableBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       minimalAction_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       mostDisruptiveAllowedAction_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       replacementMethod_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -1531,47 +1535,47 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     public com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy result =
           new com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceRedistributionType_ = instanceRedistributionType_;
         to_bitField0_ |= 0x00000001;
       }
-      result.instanceRedistributionType_ = instanceRedistributionType_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (maxSurgeBuilder_ == null) {
-          result.maxSurge_ = maxSurge_;
-        } else {
-          result.maxSurge_ = maxSurgeBuilder_.build();
-        }
+        result.maxSurge_ = maxSurgeBuilder_ == null ? maxSurge_ : maxSurgeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (maxUnavailableBuilder_ == null) {
-          result.maxUnavailable_ = maxUnavailable_;
-        } else {
-          result.maxUnavailable_ = maxUnavailableBuilder_.build();
-        }
+        result.maxUnavailable_ =
+            maxUnavailableBuilder_ == null ? maxUnavailable_ : maxUnavailableBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.minimalAction_ = minimalAction_;
         to_bitField0_ |= 0x00000008;
       }
-      result.minimalAction_ = minimalAction_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.mostDisruptiveAllowedAction_ = mostDisruptiveAllowedAction_;
         to_bitField0_ |= 0x00000010;
       }
-      result.mostDisruptiveAllowedAction_ = mostDisruptiveAllowedAction_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.replacementMethod_ = replacementMethod_;
         to_bitField0_ |= 0x00000020;
       }
-      result.replacementMethod_ = replacementMethod_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00000040;
       }
-      result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1622,8 +1626,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
           == com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.getDefaultInstance())
         return this;
       if (other.hasInstanceRedistributionType()) {
-        bitField0_ |= 0x00000001;
         instanceRedistributionType_ = other.instanceRedistributionType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMaxSurge()) {
@@ -1633,23 +1637,23 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         mergeMaxUnavailable(other.getMaxUnavailable());
       }
       if (other.hasMinimalAction()) {
-        bitField0_ |= 0x00000008;
         minimalAction_ = other.minimalAction_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasMostDisruptiveAllowedAction()) {
-        bitField0_ |= 0x00000010;
         mostDisruptiveAllowedAction_ = other.mostDisruptiveAllowedAction_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasReplacementMethod()) {
-        bitField0_ |= 0x00000020;
         replacementMethod_ = other.replacementMethod_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00000040;
         type_ = other.type_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1818,8 +1822,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       instanceRedistributionType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1836,8 +1840,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearInstanceRedistributionType() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       instanceRedistributionType_ = getDefaultInstance().getInstanceRedistributionType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1859,8 +1863,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       instanceRedistributionType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1920,11 +1924,11 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
           throw new NullPointerException();
         }
         maxSurge_ = value;
-        onChanged();
       } else {
         maxSurgeBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1939,11 +1943,11 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     public Builder setMaxSurge(com.google.cloud.compute.v1.FixedOrPercent.Builder builderForValue) {
       if (maxSurgeBuilder_ == null) {
         maxSurge_ = builderForValue.build();
-        onChanged();
       } else {
         maxSurgeBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1960,18 +1964,15 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         if (((bitField0_ & 0x00000002) != 0)
             && maxSurge_ != null
             && maxSurge_ != com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()) {
-          maxSurge_ =
-              com.google.cloud.compute.v1.FixedOrPercent.newBuilder(maxSurge_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getMaxSurgeBuilder().mergeFrom(value);
         } else {
           maxSurge_ = value;
         }
-        onChanged();
       } else {
         maxSurgeBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1984,13 +1985,13 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * <code>optional .google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
      */
     public Builder clearMaxSurge() {
-      if (maxSurgeBuilder_ == null) {
-        maxSurge_ = null;
-        onChanged();
-      } else {
-        maxSurgeBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      maxSurge_ = null;
+      if (maxSurgeBuilder_ != null) {
+        maxSurgeBuilder_.dispose();
+        maxSurgeBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2106,11 +2107,11 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
           throw new NullPointerException();
         }
         maxUnavailable_ = value;
-        onChanged();
       } else {
         maxUnavailableBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2126,11 +2127,11 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         com.google.cloud.compute.v1.FixedOrPercent.Builder builderForValue) {
       if (maxUnavailableBuilder_ == null) {
         maxUnavailable_ = builderForValue.build();
-        onChanged();
       } else {
         maxUnavailableBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2147,18 +2148,15 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         if (((bitField0_ & 0x00000004) != 0)
             && maxUnavailable_ != null
             && maxUnavailable_ != com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()) {
-          maxUnavailable_ =
-              com.google.cloud.compute.v1.FixedOrPercent.newBuilder(maxUnavailable_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getMaxUnavailableBuilder().mergeFrom(value);
         } else {
           maxUnavailable_ = value;
         }
-        onChanged();
       } else {
         maxUnavailableBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2171,13 +2169,13 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * <code>optional .google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
      */
     public Builder clearMaxUnavailable() {
-      if (maxUnavailableBuilder_ == null) {
-        maxUnavailable_ = null;
-        onChanged();
-      } else {
-        maxUnavailableBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      maxUnavailable_ = null;
+      if (maxUnavailableBuilder_ != null) {
+        maxUnavailableBuilder_.dispose();
+        maxUnavailableBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2317,8 +2315,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       minimalAction_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2335,8 +2333,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearMinimalAction() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       minimalAction_ = getDefaultInstance().getMinimalAction();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2358,8 +2356,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       minimalAction_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2443,8 +2441,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       mostDisruptiveAllowedAction_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2461,8 +2459,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearMostDisruptiveAllowedAction() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       mostDisruptiveAllowedAction_ = getDefaultInstance().getMostDisruptiveAllowedAction();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2484,8 +2482,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       mostDisruptiveAllowedAction_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2569,8 +2567,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       replacementMethod_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2587,8 +2585,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearReplacementMethod() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       replacementMethod_ = getDefaultInstance().getReplacementMethod();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2610,8 +2608,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       replacementMethod_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2695,8 +2693,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       type_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2713,8 +2711,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2736,8 +2734,8 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       type_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

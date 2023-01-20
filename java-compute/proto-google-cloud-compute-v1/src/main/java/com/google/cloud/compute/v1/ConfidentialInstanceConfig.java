@@ -67,7 +67,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER = 102135228;
-  private boolean enableConfidentialCompute_;
+  private boolean enableConfidentialCompute_ = false;
   /**
    *
    *
@@ -304,8 +304,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableConfidentialCompute_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -333,15 +333,21 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.ConfidentialInstanceConfig buildPartial() {
       com.google.cloud.compute.v1.ConfidentialInstanceConfig result =
           new com.google.cloud.compute.v1.ConfidentialInstanceConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ConfidentialInstanceConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enableConfidentialCompute_ = enableConfidentialCompute_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -488,8 +494,9 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setEnableConfidentialCompute(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enableConfidentialCompute_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -79,7 +79,9 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int LABEL_FINGERPRINT_FIELD_NUMBER = 178124825;
-  private volatile java.lang.Object labelFingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object labelFingerprint_ = "";
   /**
    *
    *
@@ -155,6 +157,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -212,7 +215,10 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -479,8 +485,8 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       labelFingerprint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLabels().clear();
       return this;
     }
@@ -509,17 +515,25 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.RegionSetLabelsRequest buildPartial() {
       com.google.cloud.compute.v1.RegionSetLabelsRequest result =
           new com.google.cloud.compute.v1.RegionSetLabelsRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RegionSetLabelsRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.labelFingerprint_ = labelFingerprint_;
         to_bitField0_ |= 0x00000001;
       }
-      result.labelFingerprint_ = labelFingerprint_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -569,11 +583,12 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.compute.v1.RegionSetLabelsRequest.getDefaultInstance())
         return this;
       if (other.hasLabelFingerprint()) {
-        bitField0_ |= 0x00000001;
         labelFingerprint_ = other.labelFingerprint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -615,6 +630,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case -293404678
             default:
@@ -711,8 +727,8 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       labelFingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -728,8 +744,8 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLabelFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -750,8 +766,8 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       labelFingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -767,14 +783,14 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return labels_;
     }
 
@@ -826,8 +842,10 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -856,6 +874,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -878,6 +897,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -896,8 +916,8 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -911,6 +931,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

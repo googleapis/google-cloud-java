@@ -67,7 +67,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 311764355;
-  private boolean enable_;
+  private boolean enable_ = false;
   /**
    *
    *
@@ -100,7 +100,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   }
 
   public static final int SAMPLE_RATE_FIELD_NUMBER = 153193045;
-  private float sampleRate_;
+  private float sampleRate_ = 0F;
   /**
    *
    *
@@ -349,10 +349,9 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enable_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       sampleRate_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -380,6 +379,14 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.BackendServiceLogConfig buildPartial() {
       com.google.cloud.compute.v1.BackendServiceLogConfig result =
           new com.google.cloud.compute.v1.BackendServiceLogConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BackendServiceLogConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -390,9 +397,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
         result.sampleRate_ = sampleRate_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -548,8 +553,9 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setEnable(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -615,8 +621,9 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setSampleRate(float value) {
-      bitField0_ |= 0x00000002;
+
       sampleRate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

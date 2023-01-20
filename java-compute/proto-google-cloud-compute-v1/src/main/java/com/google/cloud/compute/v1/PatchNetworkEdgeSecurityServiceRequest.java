@@ -76,7 +76,9 @@ public final class PatchNetworkEdgeSecurityServiceRequest
 
   private int bitField0_;
   public static final int NETWORK_EDGE_SECURITY_SERVICE_FIELD_NUMBER = 157011879;
-  private volatile java.lang.Object networkEdgeSecurityService_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkEdgeSecurityService_ = "";
   /**
    *
    *
@@ -182,11 +184,15 @@ public final class PatchNetworkEdgeSecurityServiceRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkEdgeSecurityServiceOrBuilder
       getNetworkEdgeSecurityServiceResourceOrBuilder() {
-    return getNetworkEdgeSecurityServiceResource();
+    return networkEdgeSecurityServiceResource_ == null
+        ? com.google.cloud.compute.v1.NetworkEdgeSecurityService.getDefaultInstance()
+        : networkEdgeSecurityServiceResource_;
   }
 
   public static final int PATHS_FIELD_NUMBER = 106438894;
-  private volatile java.lang.Object paths_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object paths_ = "";
   /**
    * <code>optional string paths = 106438894;</code>
    *
@@ -232,7 +238,9 @@ public final class PatchNetworkEdgeSecurityServiceRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -285,7 +293,9 @@ public final class PatchNetworkEdgeSecurityServiceRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -338,7 +348,9 @@ public final class PatchNetworkEdgeSecurityServiceRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -402,7 +414,9 @@ public final class PatchNetworkEdgeSecurityServiceRequest
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 500079778;
-  private volatile java.lang.Object updateMask_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object updateMask_ = "";
   /**
    *
    *
@@ -747,24 +761,18 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       networkEdgeSecurityService_ = "";
-
-      if (networkEdgeSecurityServiceResourceBuilder_ == null) {
-        networkEdgeSecurityServiceResource_ = null;
-      } else {
-        networkEdgeSecurityServiceResource_ = null;
+      networkEdgeSecurityServiceResource_ = null;
+      if (networkEdgeSecurityServiceResourceBuilder_ != null) {
+        networkEdgeSecurityServiceResourceBuilder_.dispose();
         networkEdgeSecurityServiceResourceBuilder_ = null;
       }
       paths_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       updateMask_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -794,32 +802,45 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     public com.google.cloud.compute.v1.PatchNetworkEdgeSecurityServiceRequest buildPartial() {
       com.google.cloud.compute.v1.PatchNetworkEdgeSecurityServiceRequest result =
           new com.google.cloud.compute.v1.PatchNetworkEdgeSecurityServiceRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.networkEdgeSecurityService_ = networkEdgeSecurityService_;
-      if (networkEdgeSecurityServiceResourceBuilder_ == null) {
-        result.networkEdgeSecurityServiceResource_ = networkEdgeSecurityServiceResource_;
-      } else {
-        result.networkEdgeSecurityServiceResource_ =
-            networkEdgeSecurityServiceResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.paths_ = paths_;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.requestId_ = requestId_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.updateMask_ = updateMask_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.PatchNetworkEdgeSecurityServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.networkEdgeSecurityService_ = networkEdgeSecurityService_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.networkEdgeSecurityServiceResource_ =
+            networkEdgeSecurityServiceResourceBuilder_ == null
+                ? networkEdgeSecurityServiceResource_
+                : networkEdgeSecurityServiceResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.paths_ = paths_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateMask_ = updateMask_;
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -873,32 +894,35 @@ public final class PatchNetworkEdgeSecurityServiceRequest
               .getDefaultInstance()) return this;
       if (!other.getNetworkEdgeSecurityService().isEmpty()) {
         networkEdgeSecurityService_ = other.networkEdgeSecurityService_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasNetworkEdgeSecurityServiceResource()) {
         mergeNetworkEdgeSecurityServiceResource(other.getNetworkEdgeSecurityServiceResource());
       }
       if (other.hasPaths()) {
-        bitField0_ |= 0x00000001;
         paths_ = other.paths_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasUpdateMask()) {
-        bitField0_ |= 0x00000004;
         updateMask_ = other.updateMask_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -930,31 +954,31 @@ public final class PatchNetworkEdgeSecurityServiceRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 296879706
             case 851511154:
               {
                 paths_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 851511154
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1111570338
             case 1256095034:
               {
                 networkEdgeSecurityService_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1256095034
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1820481738
             case -474575566:
@@ -962,13 +986,13 @@ public final class PatchNetworkEdgeSecurityServiceRequest
                 input.readMessage(
                     getNetworkEdgeSecurityServiceResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -474575566
             case -294329070:
               {
                 updateMask_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -294329070
             default:
@@ -1057,8 +1081,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkEdgeSecurityService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1076,8 +1100,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearNetworkEdgeSecurityService() {
-
       networkEdgeSecurityService_ = getDefaultInstance().getNetworkEdgeSecurityService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1100,8 +1124,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkEdgeSecurityService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1127,8 +1151,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * @return Whether the networkEdgeSecurityServiceResource field is set.
      */
     public boolean hasNetworkEdgeSecurityServiceResource() {
-      return networkEdgeSecurityServiceResourceBuilder_ != null
-          || networkEdgeSecurityServiceResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1171,11 +1194,11 @@ public final class PatchNetworkEdgeSecurityServiceRequest
           throw new NullPointerException();
         }
         networkEdgeSecurityServiceResource_ = value;
-        onChanged();
       } else {
         networkEdgeSecurityServiceResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1193,11 +1216,11 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         com.google.cloud.compute.v1.NetworkEdgeSecurityService.Builder builderForValue) {
       if (networkEdgeSecurityServiceResourceBuilder_ == null) {
         networkEdgeSecurityServiceResource_ = builderForValue.build();
-        onChanged();
       } else {
         networkEdgeSecurityServiceResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1214,20 +1237,19 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     public Builder mergeNetworkEdgeSecurityServiceResource(
         com.google.cloud.compute.v1.NetworkEdgeSecurityService value) {
       if (networkEdgeSecurityServiceResourceBuilder_ == null) {
-        if (networkEdgeSecurityServiceResource_ != null) {
-          networkEdgeSecurityServiceResource_ =
-              com.google.cloud.compute.v1.NetworkEdgeSecurityService.newBuilder(
-                      networkEdgeSecurityServiceResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && networkEdgeSecurityServiceResource_ != null
+            && networkEdgeSecurityServiceResource_
+                != com.google.cloud.compute.v1.NetworkEdgeSecurityService.getDefaultInstance()) {
+          getNetworkEdgeSecurityServiceResourceBuilder().mergeFrom(value);
         } else {
           networkEdgeSecurityServiceResource_ = value;
         }
-        onChanged();
       } else {
         networkEdgeSecurityServiceResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1242,14 +1264,13 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * </code>
      */
     public Builder clearNetworkEdgeSecurityServiceResource() {
-      if (networkEdgeSecurityServiceResourceBuilder_ == null) {
-        networkEdgeSecurityServiceResource_ = null;
-        onChanged();
-      } else {
-        networkEdgeSecurityServiceResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      networkEdgeSecurityServiceResource_ = null;
+      if (networkEdgeSecurityServiceResourceBuilder_ != null) {
+        networkEdgeSecurityServiceResourceBuilder_.dispose();
         networkEdgeSecurityServiceResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1265,7 +1286,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      */
     public com.google.cloud.compute.v1.NetworkEdgeSecurityService.Builder
         getNetworkEdgeSecurityServiceResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNetworkEdgeSecurityServiceResourceFieldBuilder().getBuilder();
     }
@@ -1325,7 +1346,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * @return Whether the paths field is set.
      */
     public boolean hasPaths() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional string paths = 106438894;</code>
@@ -1369,8 +1390,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       paths_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1380,8 +1401,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearPaths() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       paths_ = getDefaultInstance().getPaths();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1396,8 +1417,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       paths_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1469,8 +1490,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1488,8 +1509,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1512,8 +1533,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1585,8 +1606,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1604,8 +1625,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1628,8 +1649,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1647,7 +1668,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1709,8 +1730,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1726,8 +1747,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1748,8 +1769,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1767,7 +1788,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1829,8 +1850,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       updateMask_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1846,8 +1867,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearUpdateMask() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       updateMask_ = getDefaultInstance().getUpdateMask();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1868,8 +1889,8 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       updateMask_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

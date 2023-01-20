@@ -120,11 +120,15 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceOrBuilder getBackendServiceResourceOrBuilder() {
-    return getBackendServiceResource();
+    return backendServiceResource_ == null
+        ? com.google.cloud.compute.v1.BackendService.getDefaultInstance()
+        : backendServiceResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -468,16 +474,14 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (backendServiceResourceBuilder_ == null) {
-        backendServiceResource_ = null;
-      } else {
-        backendServiceResource_ = null;
+      bitField0_ = 0;
+      backendServiceResource_ = null;
+      if (backendServiceResourceBuilder_ != null) {
+        backendServiceResourceBuilder_.dispose();
         backendServiceResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -505,21 +509,30 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.InsertBackendServiceRequest buildPartial() {
       com.google.cloud.compute.v1.InsertBackendServiceRequest result =
           new com.google.cloud.compute.v1.InsertBackendServiceRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (backendServiceResourceBuilder_ == null) {
-        result.backendServiceResource_ = backendServiceResource_;
-      } else {
-        result.backendServiceResource_ = backendServiceResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertBackendServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.backendServiceResource_ =
+            backendServiceResourceBuilder_ == null
+                ? backendServiceResource_
+                : backendServiceResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -573,11 +586,12 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -609,20 +623,20 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1514273510:
               {
                 input.readMessage(
                     getBackendServiceResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1514273510
             default:
@@ -664,7 +678,7 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
      * @return Whether the backendServiceResource field is set.
      */
     public boolean hasBackendServiceResource() {
-      return backendServiceResourceBuilder_ != null || backendServiceResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -705,11 +719,11 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         backendServiceResource_ = value;
-        onChanged();
       } else {
         backendServiceResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -727,11 +741,11 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
         com.google.cloud.compute.v1.BackendService.Builder builderForValue) {
       if (backendServiceResourceBuilder_ == null) {
         backendServiceResource_ = builderForValue.build();
-        onChanged();
       } else {
         backendServiceResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -747,19 +761,19 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
      */
     public Builder mergeBackendServiceResource(com.google.cloud.compute.v1.BackendService value) {
       if (backendServiceResourceBuilder_ == null) {
-        if (backendServiceResource_ != null) {
-          backendServiceResource_ =
-              com.google.cloud.compute.v1.BackendService.newBuilder(backendServiceResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && backendServiceResource_ != null
+            && backendServiceResource_
+                != com.google.cloud.compute.v1.BackendService.getDefaultInstance()) {
+          getBackendServiceResourceBuilder().mergeFrom(value);
         } else {
           backendServiceResource_ = value;
         }
-        onChanged();
       } else {
         backendServiceResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -774,14 +788,13 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearBackendServiceResource() {
-      if (backendServiceResourceBuilder_ == null) {
-        backendServiceResource_ = null;
-        onChanged();
-      } else {
-        backendServiceResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      backendServiceResource_ = null;
+      if (backendServiceResourceBuilder_ != null) {
+        backendServiceResourceBuilder_.dispose();
         backendServiceResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -796,7 +809,7 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.compute.v1.BackendService.Builder getBackendServiceResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBackendServiceResourceFieldBuilder().getBuilder();
     }
@@ -916,8 +929,8 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -935,8 +948,8 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -959,8 +972,8 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -978,7 +991,7 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1040,8 +1053,8 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1057,8 +1070,8 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1079,8 +1092,8 @@ public final class InsertBackendServiceRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

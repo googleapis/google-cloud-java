@@ -75,7 +75,9 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
   }
 
   public static final int INSTANCE_GROUP_MANAGER_FIELD_NUMBER = 249363395;
-  private volatile java.lang.Object instanceGroupManager_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceGroupManager_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -287,7 +293,10 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReqOrBuilder
       getRegionInstanceGroupManagerDeleteInstanceConfigReqResourceOrBuilder() {
-    return getRegionInstanceGroupManagerDeleteInstanceConfigReqResource();
+    return regionInstanceGroupManagerDeleteInstanceConfigReqResource_ == null
+        ? com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq
+            .getDefaultInstance()
+        : regionInstanceGroupManagerDeleteInstanceConfigReqResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -556,16 +565,13 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceGroupManager_ = "";
-
       project_ = "";
-
       region_ = "";
-
-      if (regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ == null) {
-        regionInstanceGroupManagerDeleteInstanceConfigReqResource_ = null;
-      } else {
-        regionInstanceGroupManagerDeleteInstanceConfigReqResource_ = null;
+      regionInstanceGroupManagerDeleteInstanceConfigReqResource_ = null;
+      if (regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ != null) {
+        regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_.dispose();
         regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ = null;
       }
       return this;
@@ -601,18 +607,32 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       com.google.cloud.compute.v1.DeletePerInstanceConfigsRegionInstanceGroupManagerRequest result =
           new com.google.cloud.compute.v1.DeletePerInstanceConfigsRegionInstanceGroupManagerRequest(
               this);
-      result.instanceGroupManager_ = instanceGroupManager_;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ == null) {
-        result.regionInstanceGroupManagerDeleteInstanceConfigReqResource_ =
-            regionInstanceGroupManagerDeleteInstanceConfigReqResource_;
-      } else {
-        result.regionInstanceGroupManagerDeleteInstanceConfigReqResource_ =
-            regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceGroupManager_ = instanceGroupManager_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.regionInstanceGroupManagerDeleteInstanceConfigReqResource_ =
+            regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ == null
+                ? regionInstanceGroupManagerDeleteInstanceConfigReqResource_
+                : regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -670,14 +690,17 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
               .getDefaultInstance()) return this;
       if (!other.getInstanceGroupManager().isEmpty()) {
         instanceGroupManager_ = other.instanceGroupManager_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRegionInstanceGroupManagerDeleteInstanceConfigReqResource()) {
@@ -716,25 +739,25 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
                     getRegionInstanceGroupManagerDeleteInstanceConfigReqResourceFieldBuilder()
                         .getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 5925930
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case 1994907162:
               {
                 instanceGroupManager_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1994907162
             default:
@@ -753,6 +776,8 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
     /**
@@ -818,8 +843,8 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceGroupManager_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -836,8 +861,8 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearInstanceGroupManager() {
-
       instanceGroupManager_ = getDefaultInstance().getInstanceGroupManager();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -859,8 +884,8 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceGroupManager_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -932,8 +957,8 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -951,8 +976,8 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -975,8 +1000,8 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1048,8 +1073,8 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1067,8 +1092,8 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1091,8 +1116,8 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1118,8 +1143,7 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
      * @return Whether the regionInstanceGroupManagerDeleteInstanceConfigReqResource field is set.
      */
     public boolean hasRegionInstanceGroupManagerDeleteInstanceConfigReqResource() {
-      return regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ != null
-          || regionInstanceGroupManagerDeleteInstanceConfigReqResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1163,11 +1187,11 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
           throw new NullPointerException();
         }
         regionInstanceGroupManagerDeleteInstanceConfigReqResource_ = value;
-        onChanged();
       } else {
         regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1186,12 +1210,12 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
             builderForValue) {
       if (regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ == null) {
         regionInstanceGroupManagerDeleteInstanceConfigReqResource_ = builderForValue.build();
-        onChanged();
       } else {
         regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_.setMessage(
             builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1208,20 +1232,20 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
     public Builder mergeRegionInstanceGroupManagerDeleteInstanceConfigReqResource(
         com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq value) {
       if (regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ == null) {
-        if (regionInstanceGroupManagerDeleteInstanceConfigReqResource_ != null) {
-          regionInstanceGroupManagerDeleteInstanceConfigReqResource_ =
-              com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq
-                  .newBuilder(regionInstanceGroupManagerDeleteInstanceConfigReqResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && regionInstanceGroupManagerDeleteInstanceConfigReqResource_ != null
+            && regionInstanceGroupManagerDeleteInstanceConfigReqResource_
+                != com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq
+                    .getDefaultInstance()) {
+          getRegionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder().mergeFrom(value);
         } else {
           regionInstanceGroupManagerDeleteInstanceConfigReqResource_ = value;
         }
-        onChanged();
       } else {
         regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1236,14 +1260,13 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
      * </code>
      */
     public Builder clearRegionInstanceGroupManagerDeleteInstanceConfigReqResource() {
-      if (regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ == null) {
-        regionInstanceGroupManagerDeleteInstanceConfigReqResource_ = null;
-        onChanged();
-      } else {
-        regionInstanceGroupManagerDeleteInstanceConfigReqResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      regionInstanceGroupManagerDeleteInstanceConfigReqResource_ = null;
+      if (regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ != null) {
+        regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_.dispose();
         regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1259,7 +1282,7 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq.Builder
         getRegionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRegionInstanceGroupManagerDeleteInstanceConfigReqResourceFieldBuilder()
           .getBuilder();

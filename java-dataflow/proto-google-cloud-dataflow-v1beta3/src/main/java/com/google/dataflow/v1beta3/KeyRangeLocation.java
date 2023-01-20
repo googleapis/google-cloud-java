@@ -74,7 +74,9 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int START_FIELD_NUMBER = 1;
-  private volatile java.lang.Object start_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object start_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int END_FIELD_NUMBER = 2;
-  private volatile java.lang.Object end_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object end_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DELIVERY_ENDPOINT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object deliveryEndpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deliveryEndpoint_ = "";
   /**
    *
    *
@@ -223,7 +229,9 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DATA_DISK_FIELD_NUMBER = 5;
-  private volatile java.lang.Object dataDisk_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataDisk_ = "";
   /**
    *
    *
@@ -278,7 +286,9 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DEPRECATED_PERSISTENT_DIRECTORY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object deprecatedPersistentDirectory_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deprecatedPersistentDirectory_ = "";
   /**
    *
    *
@@ -572,16 +582,12 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       start_ = "";
-
       end_ = "";
-
       deliveryEndpoint_ = "";
-
       dataDisk_ = "";
-
       deprecatedPersistentDirectory_ = "";
-
       return this;
     }
 
@@ -609,13 +615,30 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
     public com.google.dataflow.v1beta3.KeyRangeLocation buildPartial() {
       com.google.dataflow.v1beta3.KeyRangeLocation result =
           new com.google.dataflow.v1beta3.KeyRangeLocation(this);
-      result.start_ = start_;
-      result.end_ = end_;
-      result.deliveryEndpoint_ = deliveryEndpoint_;
-      result.dataDisk_ = dataDisk_;
-      result.deprecatedPersistentDirectory_ = deprecatedPersistentDirectory_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.KeyRangeLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.start_ = start_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.end_ = end_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deliveryEndpoint_ = deliveryEndpoint_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dataDisk_ = dataDisk_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.deprecatedPersistentDirectory_ = deprecatedPersistentDirectory_;
+      }
     }
 
     @java.lang.Override
@@ -665,22 +688,27 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       if (other == com.google.dataflow.v1beta3.KeyRangeLocation.getDefaultInstance()) return this;
       if (!other.getStart().isEmpty()) {
         start_ = other.start_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEnd().isEmpty()) {
         end_ = other.end_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDeliveryEndpoint().isEmpty()) {
         deliveryEndpoint_ = other.deliveryEndpoint_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDataDisk().isEmpty()) {
         dataDisk_ = other.dataDisk_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDeprecatedPersistentDirectory().isEmpty()) {
         deprecatedPersistentDirectory_ = other.deprecatedPersistentDirectory_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -712,31 +740,31 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 start_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 end_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 deliveryEndpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 deprecatedPersistentDirectory_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 dataDisk_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -755,6 +783,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object start_ = "";
     /**
@@ -817,8 +847,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       start_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -834,8 +864,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStart() {
-
       start_ = getDefaultInstance().getStart();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -856,8 +886,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       start_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -923,8 +953,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       end_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -940,8 +970,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnd() {
-
       end_ = getDefaultInstance().getEnd();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -962,8 +992,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       end_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1032,8 +1062,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       deliveryEndpoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1050,8 +1080,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDeliveryEndpoint() {
-
       deliveryEndpoint_ = getDefaultInstance().getDeliveryEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1073,8 +1103,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deliveryEndpoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1149,8 +1179,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataDisk_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1169,8 +1199,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDataDisk() {
-
       dataDisk_ = getDefaultInstance().getDataDisk();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1194,8 +1224,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataDisk_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1273,8 +1303,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       deprecatedPersistentDirectory_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1294,8 +1324,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Deprecated
     public Builder clearDeprecatedPersistentDirectory() {
-
       deprecatedPersistentDirectory_ = getDefaultInstance().getDeprecatedPersistentDirectory();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1320,8 +1350,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deprecatedPersistentDirectory_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -217,6 +217,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int CONNECTED_ENDPOINTS_FIELD_NUMBER = 72223688;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint>
       connectedEndpoints_;
   /**
@@ -301,7 +303,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CONNECTION_PREFERENCE_FIELD_NUMBER = 285818076;
-  private volatile java.lang.Object connectionPreference_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectionPreference_ = "";
   /**
    *
    *
@@ -368,6 +372,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CONSUMER_ACCEPT_LISTS_FIELD_NUMBER = 402725703;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ServiceAttachmentConsumerProjectLimit>
       consumerAcceptLists_;
   /**
@@ -452,6 +458,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CONSUMER_REJECT_LISTS_FIELD_NUMBER = 204033182;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList consumerRejectLists_;
   /**
    *
@@ -513,7 +521,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -577,7 +587,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -641,6 +653,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DOMAIN_NAMES_FIELD_NUMBER = 6450189;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList domainNames_;
   /**
    *
@@ -702,7 +716,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENABLE_PROXY_PROTOCOL_FIELD_NUMBER = 363791237;
-  private boolean enableProxyProtocol_;
+  private boolean enableProxyProtocol_ = false;
   /**
    *
    *
@@ -735,7 +749,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
-  private volatile java.lang.Object fingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fingerprint_ = "";
   /**
    *
    *
@@ -799,7 +815,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -832,7 +848,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -896,7 +914,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -960,6 +980,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAT_SUBNETS_FIELD_NUMBER = 374785944;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList natSubnets_;
   /**
    *
@@ -1021,7 +1043,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PRODUCER_FORWARDING_RULE_FIELD_NUMBER = 247927889;
-  private volatile java.lang.Object producerForwardingRule_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object producerForwardingRule_ = "";
   /**
    *
    *
@@ -1135,7 +1159,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -1199,7 +1225,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -1263,7 +1291,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TARGET_SERVICE_FIELD_NUMBER = 1293831;
-  private volatile java.lang.Object targetService_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetService_ = "";
   /**
    *
    *
@@ -1791,6 +1821,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (connectedEndpointsBuilder_ == null) {
         connectedEndpoints_ = java.util.Collections.emptyList();
       } else {
@@ -1799,7 +1830,6 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       connectionPreference_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       if (consumerAcceptListsBuilder_ == null) {
         consumerAcceptLists_ = java.util.Collections.emptyList();
       } else {
@@ -1810,37 +1840,25 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       consumerRejectLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       domainNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000040);
       enableProxyProtocol_ = false;
-      bitField0_ = (bitField0_ & ~0x00000080);
       fingerprint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000200);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
       natSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00001000);
       producerForwardingRule_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
-      if (pscServiceAttachmentIdBuilder_ == null) {
-        pscServiceAttachmentId_ = null;
-      } else {
-        pscServiceAttachmentIdBuilder_.clear();
+      pscServiceAttachmentId_ = null;
+      if (pscServiceAttachmentIdBuilder_ != null) {
+        pscServiceAttachmentIdBuilder_.dispose();
+        pscServiceAttachmentIdBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x00008000);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00010000);
       targetService_ = "";
-      bitField0_ = (bitField0_ & ~0x00020000);
       return this;
     }
 
@@ -1868,8 +1886,15 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.ServiceAttachment buildPartial() {
       com.google.cloud.compute.v1.ServiceAttachment result =
           new com.google.cloud.compute.v1.ServiceAttachment(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.ServiceAttachment result) {
       if (connectedEndpointsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           connectedEndpoints_ = java.util.Collections.unmodifiableList(connectedEndpoints_);
@@ -1879,10 +1904,6 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         result.connectedEndpoints_ = connectedEndpointsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.connectionPreference_ = connectionPreference_;
       if (consumerAcceptListsBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           consumerAcceptLists_ = java.util.Collections.unmodifiableList(consumerAcceptLists_);
@@ -1897,71 +1918,77 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.consumerRejectLists_ = consumerRejectLists_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.creationTimestamp_ = creationTimestamp_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.description_ = description_;
       if (((bitField0_ & 0x00000040) != 0)) {
         domainNames_ = domainNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.domainNames_ = domainNames_;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.enableProxyProtocol_ = enableProxyProtocol_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        to_bitField0_ |= 0x00000010;
-      }
-      result.fingerprint_ = fingerprint_;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        to_bitField0_ |= 0x00000040;
-      }
-      result.kind_ = kind_;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        to_bitField0_ |= 0x00000080;
-      }
-      result.name_ = name_;
       if (((bitField0_ & 0x00001000) != 0)) {
         natSubnets_ = natSubnets_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.natSubnets_ = natSubnets_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ServiceAttachment result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.connectionPreference_ = connectionPreference_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enableProxyProtocol_ = enableProxyProtocol_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.fingerprint_ = fingerprint_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000080;
+      }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.producerForwardingRule_ = producerForwardingRule_;
         to_bitField0_ |= 0x00000100;
       }
-      result.producerForwardingRule_ = producerForwardingRule_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        if (pscServiceAttachmentIdBuilder_ == null) {
-          result.pscServiceAttachmentId_ = pscServiceAttachmentId_;
-        } else {
-          result.pscServiceAttachmentId_ = pscServiceAttachmentIdBuilder_.build();
-        }
+        result.pscServiceAttachmentId_ =
+            pscServiceAttachmentIdBuilder_ == null
+                ? pscServiceAttachmentId_
+                : pscServiceAttachmentIdBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.region_ = region_;
         to_bitField0_ |= 0x00000400;
       }
-      result.region_ = region_;
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000800;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.targetService_ = targetService_;
         to_bitField0_ |= 0x00001000;
       }
-      result.targetService_ = targetService_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2037,8 +2064,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         }
       }
       if (other.hasConnectionPreference()) {
-        bitField0_ |= 0x00000002;
         connectionPreference_ = other.connectionPreference_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (consumerAcceptListsBuilder_ == null) {
@@ -2079,13 +2106,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000010;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000020;
         description_ = other.description_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.domainNames_.isEmpty()) {
@@ -2102,21 +2129,21 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         setEnableProxyProtocol(other.getEnableProxyProtocol());
       }
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000100;
         fingerprint_ = other.fingerprint_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000400;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000800;
         name_ = other.name_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.natSubnets_.isEmpty()) {
@@ -2130,26 +2157,26 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         onChanged();
       }
       if (other.hasProducerForwardingRule()) {
-        bitField0_ |= 0x00002000;
         producerForwardingRule_ = other.producerForwardingRule_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasPscServiceAttachmentId()) {
         mergePscServiceAttachmentId(other.getPscServiceAttachmentId());
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00008000;
         region_ = other.region_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00010000;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasTargetService()) {
-        bitField0_ |= 0x00020000;
         targetService_ = other.targetService_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2811,8 +2838,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       connectionPreference_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2829,8 +2856,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearConnectionPreference() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       connectionPreference_ = getDefaultInstance().getConnectionPreference();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2852,8 +2879,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       connectionPreference_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3512,8 +3539,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3529,8 +3556,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3551,8 +3578,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3632,8 +3659,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3649,8 +3676,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3671,8 +3698,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3889,8 +3916,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setEnableProxyProtocol(boolean value) {
-      bitField0_ |= 0x00000080;
+
       enableProxyProtocol_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3987,8 +4015,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       fingerprint_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4004,8 +4032,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       fingerprint_ = getDefaultInstance().getFingerprint();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4026,8 +4054,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       fingerprint_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4076,8 +4104,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000200;
+
       id_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4174,8 +4203,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       kind_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4191,8 +4220,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4213,8 +4242,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       kind_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4294,8 +4323,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       name_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4311,8 +4340,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4333,8 +4362,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       name_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4582,8 +4611,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
       producerForwardingRule_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4599,8 +4628,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProducerForwardingRule() {
-      bitField0_ = (bitField0_ & ~0x00002000);
       producerForwardingRule_ = getDefaultInstance().getProducerForwardingRule();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4621,8 +4650,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
       producerForwardingRule_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4682,11 +4711,11 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         pscServiceAttachmentId_ = value;
-        onChanged();
       } else {
         pscServiceAttachmentIdBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4702,11 +4731,11 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         com.google.cloud.compute.v1.Uint128.Builder builderForValue) {
       if (pscServiceAttachmentIdBuilder_ == null) {
         pscServiceAttachmentId_ = builderForValue.build();
-        onChanged();
       } else {
         pscServiceAttachmentIdBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4724,18 +4753,15 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             && pscServiceAttachmentId_ != null
             && pscServiceAttachmentId_
                 != com.google.cloud.compute.v1.Uint128.getDefaultInstance()) {
-          pscServiceAttachmentId_ =
-              com.google.cloud.compute.v1.Uint128.newBuilder(pscServiceAttachmentId_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPscServiceAttachmentIdBuilder().mergeFrom(value);
         } else {
           pscServiceAttachmentId_ = value;
         }
-        onChanged();
       } else {
         pscServiceAttachmentIdBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4748,13 +4774,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
      */
     public Builder clearPscServiceAttachmentId() {
-      if (pscServiceAttachmentIdBuilder_ == null) {
-        pscServiceAttachmentId_ = null;
-        onChanged();
-      } else {
-        pscServiceAttachmentIdBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00004000);
+      pscServiceAttachmentId_ = null;
+      if (pscServiceAttachmentIdBuilder_ != null) {
+        pscServiceAttachmentIdBuilder_.dispose();
+        pscServiceAttachmentIdBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -4890,8 +4916,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
       region_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4907,8 +4933,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00008000);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4929,8 +4955,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
       region_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5010,8 +5036,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
       selfLink_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5027,8 +5053,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00010000);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5049,8 +5075,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00010000;
       selfLink_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5130,8 +5156,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00020000;
       targetService_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5147,8 +5173,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTargetService() {
-      bitField0_ = (bitField0_ & ~0x00020000);
       targetService_ = getDefaultInstance().getTargetService();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5169,8 +5195,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00020000;
       targetService_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

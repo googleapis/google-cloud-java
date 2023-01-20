@@ -70,7 +70,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int CLIENT_TLS_POLICY_FIELD_NUMBER = 462325226;
-  private volatile java.lang.Object clientTlsPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientTlsPolicy_ = "";
   /**
    *
    *
@@ -134,6 +136,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUBJECT_ALT_NAMES_FIELD_NUMBER = 330029535;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList subjectAltNames_;
   /**
    *
@@ -413,8 +417,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       clientTlsPolicy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       subjectAltNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
@@ -444,20 +448,30 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.SecuritySettings buildPartial() {
       com.google.cloud.compute.v1.SecuritySettings result =
           new com.google.cloud.compute.v1.SecuritySettings(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.clientTlsPolicy_ = clientTlsPolicy_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.SecuritySettings result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         subjectAltNames_ = subjectAltNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.subjectAltNames_ = subjectAltNames_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SecuritySettings result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.clientTlsPolicy_ = clientTlsPolicy_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -506,8 +520,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeFrom(com.google.cloud.compute.v1.SecuritySettings other) {
       if (other == com.google.cloud.compute.v1.SecuritySettings.getDefaultInstance()) return this;
       if (other.hasClientTlsPolicy()) {
-        bitField0_ |= 0x00000001;
         clientTlsPolicy_ = other.clientTlsPolicy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.subjectAltNames_.isEmpty()) {
@@ -653,8 +667,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       clientTlsPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -670,8 +684,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearClientTlsPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       clientTlsPolicy_ = getDefaultInstance().getClientTlsPolicy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -692,8 +706,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       clientTlsPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

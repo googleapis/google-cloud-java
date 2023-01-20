@@ -158,7 +158,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; parameters = 3;</code>
    */
-
   /* nullable */
   java.lang.String getParametersOrDefault(
       java.lang.String key,

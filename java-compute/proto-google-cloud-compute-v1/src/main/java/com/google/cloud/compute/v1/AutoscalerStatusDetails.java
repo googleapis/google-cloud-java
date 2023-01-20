@@ -608,7 +608,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int MESSAGE_FIELD_NUMBER = 418054151;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -672,7 +674,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -953,10 +957,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       message_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -984,19 +987,25 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.AutoscalerStatusDetails buildPartial() {
       com.google.cloud.compute.v1.AutoscalerStatusDetails result =
           new com.google.cloud.compute.v1.AutoscalerStatusDetails(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AutoscalerStatusDetails result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.message_ = message_;
         to_bitField0_ |= 0x00000001;
       }
-      result.message_ = message_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00000002;
       }
-      result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1046,13 +1055,13 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       if (other == com.google.cloud.compute.v1.AutoscalerStatusDetails.getDefaultInstance())
         return this;
       if (other.hasMessage()) {
-        bitField0_ |= 0x00000001;
         message_ = other.message_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00000002;
         type_ = other.type_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1187,8 +1196,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1204,8 +1213,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1226,8 +1235,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1311,8 +1320,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1329,8 +1338,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1352,8 +1361,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

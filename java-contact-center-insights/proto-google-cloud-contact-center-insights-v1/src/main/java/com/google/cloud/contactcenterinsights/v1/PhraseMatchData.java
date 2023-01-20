@@ -70,7 +70,9 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PHRASE_MATCHER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object phraseMatcher_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object phraseMatcher_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -375,10 +379,9 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       phraseMatcher_ = "";
-
       displayName_ = "";
-
       return this;
     }
 
@@ -406,10 +409,21 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.contactcenterinsights.v1.PhraseMatchData buildPartial() {
       com.google.cloud.contactcenterinsights.v1.PhraseMatchData result =
           new com.google.cloud.contactcenterinsights.v1.PhraseMatchData(this);
-      result.phraseMatcher_ = phraseMatcher_;
-      result.displayName_ = displayName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.PhraseMatchData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.phraseMatcher_ = phraseMatcher_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
     }
 
     @java.lang.Override
@@ -460,10 +474,12 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getPhraseMatcher().isEmpty()) {
         phraseMatcher_ = other.phraseMatcher_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -495,13 +511,13 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 phraseMatcher_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -520,6 +536,8 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object phraseMatcher_ = "";
     /**
@@ -582,8 +600,8 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       phraseMatcher_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -599,8 +617,8 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPhraseMatcher() {
-
       phraseMatcher_ = getDefaultInstance().getPhraseMatcher();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -621,8 +639,8 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       phraseMatcher_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,8 +706,8 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -705,8 +723,8 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -727,8 +745,8 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

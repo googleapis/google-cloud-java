@@ -110,7 +110,9 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.EntryOverviewOrBuilder getEntryOverviewOrBuilder() {
-    return getEntryOverview();
+    return entryOverview_ == null
+        ? com.google.cloud.datacatalog.v1.EntryOverview.getDefaultInstance()
+        : entryOverview_;
   }
 
   public static final int CONTACTS_FIELD_NUMBER = 2;
@@ -158,7 +160,9 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.ContactsOrBuilder getContactsOrBuilder() {
-    return getContacts();
+    return contacts_ == null
+        ? com.google.cloud.datacatalog.v1.Contacts.getDefaultInstance()
+        : contacts_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -377,16 +381,15 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (entryOverviewBuilder_ == null) {
-        entryOverview_ = null;
-      } else {
-        entryOverview_ = null;
+      bitField0_ = 0;
+      entryOverview_ = null;
+      if (entryOverviewBuilder_ != null) {
+        entryOverviewBuilder_.dispose();
         entryOverviewBuilder_ = null;
       }
-      if (contactsBuilder_ == null) {
-        contacts_ = null;
-      } else {
-        contacts_ = null;
+      contacts_ = null;
+      if (contactsBuilder_ != null) {
+        contactsBuilder_.dispose();
         contactsBuilder_ = null;
       }
       return this;
@@ -416,18 +419,22 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.datacatalog.v1.BusinessContext buildPartial() {
       com.google.cloud.datacatalog.v1.BusinessContext result =
           new com.google.cloud.datacatalog.v1.BusinessContext(this);
-      if (entryOverviewBuilder_ == null) {
-        result.entryOverview_ = entryOverview_;
-      } else {
-        result.entryOverview_ = entryOverviewBuilder_.build();
-      }
-      if (contactsBuilder_ == null) {
-        result.contacts_ = contacts_;
-      } else {
-        result.contacts_ = contactsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.BusinessContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entryOverview_ =
+            entryOverviewBuilder_ == null ? entryOverview_ : entryOverviewBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.contacts_ = contactsBuilder_ == null ? contacts_ : contactsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -511,13 +518,13 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getEntryOverviewFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getContactsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -537,6 +544,8 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datacatalog.v1.EntryOverview entryOverview_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.v1.EntryOverview,
@@ -555,7 +564,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
      * @return Whether the entryOverview field is set.
      */
     public boolean hasEntryOverview() {
-      return entryOverviewBuilder_ != null || entryOverview_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -592,11 +601,11 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         entryOverview_ = value;
-        onChanged();
       } else {
         entryOverviewBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -612,11 +621,11 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.datacatalog.v1.EntryOverview.Builder builderForValue) {
       if (entryOverviewBuilder_ == null) {
         entryOverview_ = builderForValue.build();
-        onChanged();
       } else {
         entryOverviewBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -630,19 +639,19 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeEntryOverview(com.google.cloud.datacatalog.v1.EntryOverview value) {
       if (entryOverviewBuilder_ == null) {
-        if (entryOverview_ != null) {
-          entryOverview_ =
-              com.google.cloud.datacatalog.v1.EntryOverview.newBuilder(entryOverview_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && entryOverview_ != null
+            && entryOverview_
+                != com.google.cloud.datacatalog.v1.EntryOverview.getDefaultInstance()) {
+          getEntryOverviewBuilder().mergeFrom(value);
         } else {
           entryOverview_ = value;
         }
-        onChanged();
       } else {
         entryOverviewBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -655,14 +664,13 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.datacatalog.v1.EntryOverview entry_overview = 1;</code>
      */
     public Builder clearEntryOverview() {
-      if (entryOverviewBuilder_ == null) {
-        entryOverview_ = null;
-        onChanged();
-      } else {
-        entryOverview_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      entryOverview_ = null;
+      if (entryOverviewBuilder_ != null) {
+        entryOverviewBuilder_.dispose();
         entryOverviewBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -675,7 +683,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.datacatalog.v1.EntryOverview entry_overview = 1;</code>
      */
     public com.google.cloud.datacatalog.v1.EntryOverview.Builder getEntryOverviewBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEntryOverviewFieldBuilder().getBuilder();
     }
@@ -741,7 +749,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
      * @return Whether the contacts field is set.
      */
     public boolean hasContacts() {
-      return contactsBuilder_ != null || contacts_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -778,11 +786,11 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         contacts_ = value;
-        onChanged();
       } else {
         contactsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -797,11 +805,11 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
     public Builder setContacts(com.google.cloud.datacatalog.v1.Contacts.Builder builderForValue) {
       if (contactsBuilder_ == null) {
         contacts_ = builderForValue.build();
-        onChanged();
       } else {
         contactsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -815,19 +823,18 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeContacts(com.google.cloud.datacatalog.v1.Contacts value) {
       if (contactsBuilder_ == null) {
-        if (contacts_ != null) {
-          contacts_ =
-              com.google.cloud.datacatalog.v1.Contacts.newBuilder(contacts_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && contacts_ != null
+            && contacts_ != com.google.cloud.datacatalog.v1.Contacts.getDefaultInstance()) {
+          getContactsBuilder().mergeFrom(value);
         } else {
           contacts_ = value;
         }
-        onChanged();
       } else {
         contactsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -840,14 +847,13 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.datacatalog.v1.Contacts contacts = 2;</code>
      */
     public Builder clearContacts() {
-      if (contactsBuilder_ == null) {
-        contacts_ = null;
-        onChanged();
-      } else {
-        contacts_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      contacts_ = null;
+      if (contactsBuilder_ != null) {
+        contactsBuilder_.dispose();
         contactsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -860,7 +866,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.datacatalog.v1.Contacts contacts = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.Contacts.Builder getContactsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getContactsFieldBuilder().getBuilder();
     }

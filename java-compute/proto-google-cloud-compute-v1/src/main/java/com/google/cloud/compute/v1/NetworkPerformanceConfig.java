@@ -197,7 +197,9 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int TOTAL_EGRESS_BANDWIDTH_TIER_FIELD_NUMBER = 130109439;
-  private volatile java.lang.Object totalEgressBandwidthTier_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object totalEgressBandwidthTier_ = "";
   /**
    *
    *
@@ -467,8 +469,8 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       totalEgressBandwidthTier_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -496,15 +498,21 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.NetworkPerformanceConfig buildPartial() {
       com.google.cloud.compute.v1.NetworkPerformanceConfig result =
           new com.google.cloud.compute.v1.NetworkPerformanceConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NetworkPerformanceConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.totalEgressBandwidthTier_ = totalEgressBandwidthTier_;
         to_bitField0_ |= 0x00000001;
       }
-      result.totalEgressBandwidthTier_ = totalEgressBandwidthTier_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -554,8 +562,8 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
       if (other == com.google.cloud.compute.v1.NetworkPerformanceConfig.getDefaultInstance())
         return this;
       if (other.hasTotalEgressBandwidthTier()) {
-        bitField0_ |= 0x00000001;
         totalEgressBandwidthTier_ = other.totalEgressBandwidthTier_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -688,8 +696,8 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       totalEgressBandwidthTier_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,8 +714,8 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearTotalEgressBandwidthTier() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       totalEgressBandwidthTier_ = getDefaultInstance().getTotalEgressBandwidthTier();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -729,8 +737,8 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       totalEgressBandwidthTier_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
