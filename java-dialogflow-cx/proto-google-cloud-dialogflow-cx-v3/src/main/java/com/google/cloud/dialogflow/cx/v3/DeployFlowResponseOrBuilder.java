@@ -62,8 +62,9 @@ public interface DeployFlowResponseOrBuilder
    *
    *
    * <pre>
-   * The name of the flow version [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
+   * The name of the flow version
+   * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
    * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
    * </pre>
    *
@@ -76,8 +77,9 @@ public interface DeployFlowResponseOrBuilder
    *
    *
    * <pre>
-   * The name of the flow version [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
+   * The name of the flow version
+   * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
    * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
    * </pre>
    *

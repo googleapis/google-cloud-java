@@ -114,7 +114,9 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.MatchIntentRequestOrBuilder
       getMatchIntentRequestOrBuilder() {
-    return getMatchIntentRequest();
+    return matchIntentRequest_ == null
+        ? com.google.cloud.dialogflow.cx.v3.MatchIntentRequest.getDefaultInstance()
+        : matchIntentRequest_;
   }
 
   public static final int MATCH_FIELD_NUMBER = 2;
@@ -160,7 +162,7 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.MatchOrBuilder getMatchOrBuilder() {
-    return getMatch();
+    return match_ == null ? com.google.cloud.dialogflow.cx.v3.Match.getDefaultInstance() : match_;
   }
 
   public static final int OUTPUT_AUDIO_CONFIG_FIELD_NUMBER = 3;
@@ -209,7 +211,9 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.OutputAudioConfigOrBuilder
       getOutputAudioConfigOrBuilder() {
-    return getOutputAudioConfig();
+    return outputAudioConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3.OutputAudioConfig.getDefaultInstance()
+        : outputAudioConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -443,22 +447,20 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (matchIntentRequestBuilder_ == null) {
-        matchIntentRequest_ = null;
-      } else {
-        matchIntentRequest_ = null;
+      bitField0_ = 0;
+      matchIntentRequest_ = null;
+      if (matchIntentRequestBuilder_ != null) {
+        matchIntentRequestBuilder_.dispose();
         matchIntentRequestBuilder_ = null;
       }
-      if (matchBuilder_ == null) {
-        match_ = null;
-      } else {
-        match_ = null;
+      match_ = null;
+      if (matchBuilder_ != null) {
+        matchBuilder_.dispose();
         matchBuilder_ = null;
       }
-      if (outputAudioConfigBuilder_ == null) {
-        outputAudioConfig_ = null;
-      } else {
-        outputAudioConfig_ = null;
+      outputAudioConfig_ = null;
+      if (outputAudioConfigBuilder_ != null) {
+        outputAudioConfigBuilder_.dispose();
         outputAudioConfigBuilder_ = null;
       }
       return this;
@@ -488,23 +490,30 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3.FulfillIntentRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.FulfillIntentRequest result =
           new com.google.cloud.dialogflow.cx.v3.FulfillIntentRequest(this);
-      if (matchIntentRequestBuilder_ == null) {
-        result.matchIntentRequest_ = matchIntentRequest_;
-      } else {
-        result.matchIntentRequest_ = matchIntentRequestBuilder_.build();
-      }
-      if (matchBuilder_ == null) {
-        result.match_ = match_;
-      } else {
-        result.match_ = matchBuilder_.build();
-      }
-      if (outputAudioConfigBuilder_ == null) {
-        result.outputAudioConfig_ = outputAudioConfig_;
-      } else {
-        result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.FulfillIntentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.matchIntentRequest_ =
+            matchIntentRequestBuilder_ == null
+                ? matchIntentRequest_
+                : matchIntentRequestBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.match_ = matchBuilder_ == null ? match_ : matchBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputAudioConfig_ =
+            outputAudioConfigBuilder_ == null
+                ? outputAudioConfig_
+                : outputAudioConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -592,20 +601,20 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getMatchIntentRequestFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMatchFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getOutputAudioConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -624,6 +633,8 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3.MatchIntentRequest matchIntentRequest_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -644,7 +655,7 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the matchIntentRequest field is set.
      */
     public boolean hasMatchIntentRequest() {
-      return matchIntentRequestBuilder_ != null || matchIntentRequest_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -684,11 +695,11 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         matchIntentRequest_ = value;
-        onChanged();
       } else {
         matchIntentRequestBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -705,11 +716,11 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.dialogflow.cx.v3.MatchIntentRequest.Builder builderForValue) {
       if (matchIntentRequestBuilder_ == null) {
         matchIntentRequest_ = builderForValue.build();
-        onChanged();
       } else {
         matchIntentRequestBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -725,19 +736,19 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
     public Builder mergeMatchIntentRequest(
         com.google.cloud.dialogflow.cx.v3.MatchIntentRequest value) {
       if (matchIntentRequestBuilder_ == null) {
-        if (matchIntentRequest_ != null) {
-          matchIntentRequest_ =
-              com.google.cloud.dialogflow.cx.v3.MatchIntentRequest.newBuilder(matchIntentRequest_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && matchIntentRequest_ != null
+            && matchIntentRequest_
+                != com.google.cloud.dialogflow.cx.v3.MatchIntentRequest.getDefaultInstance()) {
+          getMatchIntentRequestBuilder().mergeFrom(value);
         } else {
           matchIntentRequest_ = value;
         }
-        onChanged();
       } else {
         matchIntentRequestBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -751,14 +762,13 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.dialogflow.cx.v3.MatchIntentRequest match_intent_request = 1;</code>
      */
     public Builder clearMatchIntentRequest() {
-      if (matchIntentRequestBuilder_ == null) {
-        matchIntentRequest_ = null;
-        onChanged();
-      } else {
-        matchIntentRequest_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      matchIntentRequest_ = null;
+      if (matchIntentRequestBuilder_ != null) {
+        matchIntentRequestBuilder_.dispose();
         matchIntentRequestBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -773,7 +783,7 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.dialogflow.cx.v3.MatchIntentRequest.Builder
         getMatchIntentRequestBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMatchIntentRequestFieldBuilder().getBuilder();
     }
@@ -842,7 +852,7 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the match field is set.
      */
     public boolean hasMatch() {
-      return matchBuilder_ != null || match_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -879,11 +889,11 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         match_ = value;
-        onChanged();
       } else {
         matchBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -898,11 +908,11 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
     public Builder setMatch(com.google.cloud.dialogflow.cx.v3.Match.Builder builderForValue) {
       if (matchBuilder_ == null) {
         match_ = builderForValue.build();
-        onChanged();
       } else {
         matchBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -916,19 +926,18 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeMatch(com.google.cloud.dialogflow.cx.v3.Match value) {
       if (matchBuilder_ == null) {
-        if (match_ != null) {
-          match_ =
-              com.google.cloud.dialogflow.cx.v3.Match.newBuilder(match_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && match_ != null
+            && match_ != com.google.cloud.dialogflow.cx.v3.Match.getDefaultInstance()) {
+          getMatchBuilder().mergeFrom(value);
         } else {
           match_ = value;
         }
-        onChanged();
       } else {
         matchBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -941,14 +950,13 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.dialogflow.cx.v3.Match match = 2;</code>
      */
     public Builder clearMatch() {
-      if (matchBuilder_ == null) {
-        match_ = null;
-        onChanged();
-      } else {
-        match_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      match_ = null;
+      if (matchBuilder_ != null) {
+        matchBuilder_.dispose();
         matchBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -961,7 +969,7 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.dialogflow.cx.v3.Match match = 2;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.Match.Builder getMatchBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMatchFieldBuilder().getBuilder();
     }
@@ -1027,7 +1035,7 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the outputAudioConfig field is set.
      */
     public boolean hasOutputAudioConfig() {
-      return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1064,11 +1072,11 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         outputAudioConfig_ = value;
-        onChanged();
       } else {
         outputAudioConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1084,11 +1092,11 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.dialogflow.cx.v3.OutputAudioConfig.Builder builderForValue) {
       if (outputAudioConfigBuilder_ == null) {
         outputAudioConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputAudioConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1103,19 +1111,19 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
     public Builder mergeOutputAudioConfig(
         com.google.cloud.dialogflow.cx.v3.OutputAudioConfig value) {
       if (outputAudioConfigBuilder_ == null) {
-        if (outputAudioConfig_ != null) {
-          outputAudioConfig_ =
-              com.google.cloud.dialogflow.cx.v3.OutputAudioConfig.newBuilder(outputAudioConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && outputAudioConfig_ != null
+            && outputAudioConfig_
+                != com.google.cloud.dialogflow.cx.v3.OutputAudioConfig.getDefaultInstance()) {
+          getOutputAudioConfigBuilder().mergeFrom(value);
         } else {
           outputAudioConfig_ = value;
         }
-        onChanged();
       } else {
         outputAudioConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1128,14 +1136,13 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.dialogflow.cx.v3.OutputAudioConfig output_audio_config = 3;</code>
      */
     public Builder clearOutputAudioConfig() {
-      if (outputAudioConfigBuilder_ == null) {
-        outputAudioConfig_ = null;
-        onChanged();
-      } else {
-        outputAudioConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      outputAudioConfig_ = null;
+      if (outputAudioConfigBuilder_ != null) {
+        outputAudioConfigBuilder_.dispose();
         outputAudioConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1149,7 +1156,7 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.dialogflow.cx.v3.OutputAudioConfig.Builder
         getOutputAudioConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOutputAudioConfigFieldBuilder().getBuilder();
     }

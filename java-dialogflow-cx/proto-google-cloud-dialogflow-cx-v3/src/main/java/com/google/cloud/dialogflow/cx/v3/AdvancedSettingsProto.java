@@ -52,12 +52,11 @@ public final class AdvancedSettingsProto {
           + "dvancedSettings.LoggingSettings\032Y\n\017Loggi"
           + "ngSettings\022\"\n\032enable_stackdriver_logging"
           + "\030\002 \001(\010\022\"\n\032enable_interaction_logging\030\003 \001"
-          + "(\010B\311\001\n!com.google.cloud.dialogflow.cx.v3"
-          + "B\025AdvancedSettingsProtoP\001Z?google.golang"
-          + ".org/genproto/googleapis/cloud/dialogflo"
-          + "w/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialog"
-          + "flow.Cx.V3\352\002!Google::Cloud::Dialogflow::"
-          + "CX::V3b\006proto3"
+          + "(\010B\273\001\n!com.google.cloud.dialogflow.cx.v3"
+          + "B\025AdvancedSettingsProtoP\001Z1cloud.google."
+          + "com/go/dialogflow/cx/apiv3/cxpb;cxpb\370\001\001\242"
+          + "\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!G"
+          + "oogle::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

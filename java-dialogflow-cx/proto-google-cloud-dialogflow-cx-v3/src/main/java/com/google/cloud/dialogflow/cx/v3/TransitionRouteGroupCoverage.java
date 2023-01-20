@@ -392,11 +392,13 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
       @java.lang.Override
       public com.google.cloud.dialogflow.cx.v3.TransitionRouteOrBuilder
           getTransitionRouteOrBuilder() {
-        return getTransitionRoute();
+        return transitionRoute_ == null
+            ? com.google.cloud.dialogflow.cx.v3.TransitionRoute.getDefaultInstance()
+            : transitionRoute_;
       }
 
       public static final int COVERED_FIELD_NUMBER = 2;
-      private boolean covered_;
+      private boolean covered_ = false;
       /**
        *
        *
@@ -657,14 +659,13 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          if (transitionRouteBuilder_ == null) {
-            transitionRoute_ = null;
-          } else {
-            transitionRoute_ = null;
+          bitField0_ = 0;
+          transitionRoute_ = null;
+          if (transitionRouteBuilder_ != null) {
+            transitionRouteBuilder_.dispose();
             transitionRouteBuilder_ = null;
           }
           covered_ = false;
-
           return this;
         }
 
@@ -699,14 +700,26 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
               result =
                   new com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage
                       .Transition(this);
-          if (transitionRouteBuilder_ == null) {
-            result.transitionRoute_ = transitionRoute_;
-          } else {
-            result.transitionRoute_ = transitionRouteBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          result.covered_ = covered_;
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage.Transition
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.transitionRoute_ =
+                transitionRouteBuilder_ == null
+                    ? transitionRoute_
+                    : transitionRouteBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.covered_ = covered_;
+          }
         }
 
         @java.lang.Override
@@ -800,13 +813,13 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
                   {
                     input.readMessage(
                         getTransitionRouteFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 16:
                   {
                     covered_ = input.readBool();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -826,6 +839,8 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
           return this;
         }
 
+        private int bitField0_;
+
         private com.google.cloud.dialogflow.cx.v3.TransitionRoute transitionRoute_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.dialogflow.cx.v3.TransitionRoute,
@@ -844,7 +859,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
          * @return Whether the transitionRoute field is set.
          */
         public boolean hasTransitionRoute() {
-          return transitionRouteBuilder_ != null || transitionRoute_ != null;
+          return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          *
@@ -881,11 +896,11 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
               throw new NullPointerException();
             }
             transitionRoute_ = value;
-            onChanged();
           } else {
             transitionRouteBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -901,11 +916,11 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
             com.google.cloud.dialogflow.cx.v3.TransitionRoute.Builder builderForValue) {
           if (transitionRouteBuilder_ == null) {
             transitionRoute_ = builderForValue.build();
-            onChanged();
           } else {
             transitionRouteBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -920,19 +935,19 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
         public Builder mergeTransitionRoute(
             com.google.cloud.dialogflow.cx.v3.TransitionRoute value) {
           if (transitionRouteBuilder_ == null) {
-            if (transitionRoute_ != null) {
-              transitionRoute_ =
-                  com.google.cloud.dialogflow.cx.v3.TransitionRoute.newBuilder(transitionRoute_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000001) != 0)
+                && transitionRoute_ != null
+                && transitionRoute_
+                    != com.google.cloud.dialogflow.cx.v3.TransitionRoute.getDefaultInstance()) {
+              getTransitionRouteBuilder().mergeFrom(value);
             } else {
               transitionRoute_ = value;
             }
-            onChanged();
           } else {
             transitionRouteBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -945,14 +960,13 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
          * <code>.google.cloud.dialogflow.cx.v3.TransitionRoute transition_route = 1;</code>
          */
         public Builder clearTransitionRoute() {
-          if (transitionRouteBuilder_ == null) {
-            transitionRoute_ = null;
-            onChanged();
-          } else {
-            transitionRoute_ = null;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          transitionRoute_ = null;
+          if (transitionRouteBuilder_ != null) {
+            transitionRouteBuilder_.dispose();
             transitionRouteBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -966,7 +980,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
          */
         public com.google.cloud.dialogflow.cx.v3.TransitionRoute.Builder
             getTransitionRouteBuilder() {
-
+          bitField0_ |= 0x00000001;
           onChanged();
           return getTransitionRouteFieldBuilder().getBuilder();
         }
@@ -1048,6 +1062,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
         public Builder setCovered(boolean value) {
 
           covered_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1064,7 +1079,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearCovered() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           covered_ = false;
           onChanged();
           return this;
@@ -1187,10 +1202,14 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupOrBuilder
         getRouteGroupOrBuilder() {
-      return getRouteGroup();
+      return routeGroup_ == null
+          ? com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup.getDefaultInstance()
+          : routeGroup_;
     }
 
     public static final int TRANSITIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage.Transition>
         transitions_;
@@ -1280,7 +1299,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
     }
 
     public static final int COVERAGE_SCORE_FIELD_NUMBER = 3;
-    private float coverageScore_;
+    private float coverageScore_ = 0F;
     /**
      *
      *
@@ -1528,10 +1547,10 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (routeGroupBuilder_ == null) {
-          routeGroup_ = null;
-        } else {
-          routeGroup_ = null;
+        bitField0_ = 0;
+        routeGroup_ = null;
+        if (routeGroupBuilder_ != null) {
+          routeGroupBuilder_.dispose();
           routeGroupBuilder_ = null;
         }
         if (transitionsBuilder_ == null) {
@@ -1540,9 +1559,8 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
           transitions_ = null;
           transitionsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         coverageScore_ = 0F;
-
         return this;
       }
 
@@ -1574,24 +1592,37 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
           buildPartial() {
         com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage result =
             new com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage(this);
-        int from_bitField0_ = bitField0_;
-        if (routeGroupBuilder_ == null) {
-          result.routeGroup_ = routeGroup_;
-        } else {
-          result.routeGroup_ = routeGroupBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage result) {
         if (transitionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             transitions_ = java.util.Collections.unmodifiableList(transitions_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.transitions_ = transitions_;
         } else {
           result.transitions_ = transitionsBuilder_.build();
         }
-        result.coverageScore_ = coverageScore_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.routeGroup_ =
+              routeGroupBuilder_ == null ? routeGroup_ : routeGroupBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.coverageScore_ = coverageScore_;
+        }
       }
 
       @java.lang.Override
@@ -1653,7 +1684,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
           if (!other.transitions_.isEmpty()) {
             if (transitions_.isEmpty()) {
               transitions_ = other.transitions_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureTransitionsIsMutable();
               transitions_.addAll(other.transitions_);
@@ -1666,7 +1697,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
               transitionsBuilder_.dispose();
               transitionsBuilder_ = null;
               transitions_ = other.transitions_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               transitionsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getTransitionsFieldBuilder()
@@ -1708,7 +1739,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
               case 10:
                 {
                   input.readMessage(getRouteGroupFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -1730,7 +1761,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
               case 29:
                 {
                   coverageScore_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 29
               default:
@@ -1770,7 +1801,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
        * @return Whether the routeGroup field is set.
        */
       public boolean hasRouteGroup() {
-        return routeGroupBuilder_ != null || routeGroup_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1807,11 +1838,11 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
             throw new NullPointerException();
           }
           routeGroup_ = value;
-          onChanged();
         } else {
           routeGroupBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1827,11 +1858,11 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
           com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup.Builder builderForValue) {
         if (routeGroupBuilder_ == null) {
           routeGroup_ = builderForValue.build();
-          onChanged();
         } else {
           routeGroupBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1845,19 +1876,19 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
        */
       public Builder mergeRouteGroup(com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup value) {
         if (routeGroupBuilder_ == null) {
-          if (routeGroup_ != null) {
-            routeGroup_ =
-                com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup.newBuilder(routeGroup_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && routeGroup_ != null
+              && routeGroup_
+                  != com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup.getDefaultInstance()) {
+            getRouteGroupBuilder().mergeFrom(value);
           } else {
             routeGroup_ = value;
           }
-          onChanged();
         } else {
           routeGroupBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1870,14 +1901,13 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
        * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroup route_group = 1;</code>
        */
       public Builder clearRouteGroup() {
-        if (routeGroupBuilder_ == null) {
-          routeGroup_ = null;
-          onChanged();
-        } else {
-          routeGroup_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        routeGroup_ = null;
+        if (routeGroupBuilder_ != null) {
+          routeGroupBuilder_.dispose();
           routeGroupBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1890,7 +1920,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
        * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroup route_group = 1;</code>
        */
       public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup.Builder getRouteGroupBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getRouteGroupFieldBuilder().getBuilder();
       }
@@ -1944,12 +1974,12 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
           transitions_ = java.util.Collections.emptyList();
 
       private void ensureTransitionsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           transitions_ =
               new java.util.ArrayList<
                   com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage
                       .Transition>(transitions_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -2209,7 +2239,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
       public Builder clearTransitions() {
         if (transitionsBuilder_ == null) {
           transitions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           transitionsBuilder_.clear();
@@ -2369,7 +2399,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
                   com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage
                       .TransitionOrBuilder>(
                   transitions_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           transitions_ = null;
@@ -2410,6 +2440,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
       public Builder setCoverageScore(float value) {
 
         coverageScore_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2426,7 +2457,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearCoverageScore() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         coverageScore_ = 0F;
         onChanged();
         return this;
@@ -2501,6 +2532,8 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
   }
 
   public static final int COVERAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage>
       coverages_;
   /**
@@ -2586,7 +2619,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
   }
 
   public static final int COVERAGE_SCORE_FIELD_NUMBER = 2;
-  private float coverageScore_;
+  private float coverageScore_ = 0F;
   /**
    *
    *
@@ -2816,6 +2849,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (coveragesBuilder_ == null) {
         coverages_ = java.util.Collections.emptyList();
       } else {
@@ -2824,7 +2858,6 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       coverageScore_ = 0F;
-
       return this;
     }
 
@@ -2853,7 +2886,16 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
     public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage buildPartial() {
       com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage result =
           new com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage result) {
       if (coveragesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           coverages_ = java.util.Collections.unmodifiableList(coverages_);
@@ -2863,9 +2905,14 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
       } else {
         result.coverages_ = coveragesBuilder_.build();
       }
-      result.coverageScore_ = coverageScore_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.coverageScore_ = coverageScore_;
+      }
     }
 
     @java.lang.Override
@@ -2989,7 +3036,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
             case 21:
               {
                 coverageScore_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -3457,6 +3504,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
     public Builder setCoverageScore(float value) {
 
       coverageScore_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3473,7 +3521,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearCoverageScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       coverageScore_ = 0F;
       onChanged();
       return this;

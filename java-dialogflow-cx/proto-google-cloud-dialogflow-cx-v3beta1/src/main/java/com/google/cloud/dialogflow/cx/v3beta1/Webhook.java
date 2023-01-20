@@ -211,7 +211,6 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
      */
-
     /* nullable */
     java.lang.String getRequestHeadersOrDefault(
         java.lang.String key,
@@ -364,7 +363,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
     /**
      *
      *
@@ -415,7 +416,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int USERNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object username_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object username_ = "";
     /**
      *
      *
@@ -470,7 +473,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PASSWORD_FIELD_NUMBER = 3;
-    private volatile java.lang.Object password_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object password_ = "";
     /**
      *
      *
@@ -537,6 +542,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
               "");
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> requestHeaders_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -599,8 +605,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getRequestHeadersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getRequestHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -630,6 +638,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ALLOWED_CA_CERTS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.protobuf.ByteString> allowedCaCerts_;
     /**
      *
@@ -983,15 +993,12 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uri_ = "";
-
         username_ = "";
-
         password_ = "";
-
         internalGetMutableRequestHeaders().clear();
         allowedCaCerts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1021,19 +1028,39 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService buildPartial() {
         com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService result =
             new com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService(this);
-        int from_bitField0_ = bitField0_;
-        result.uri_ = uri_;
-        result.username_ = username_;
-        result.password_ = password_;
-        result.requestHeaders_ = internalGetRequestHeaders();
-        result.requestHeaders_.makeImmutable();
-        if (((bitField0_ & 0x00000002) != 0)) {
-          allowedCaCerts_ = java.util.Collections.unmodifiableList(allowedCaCerts_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.allowedCaCerts_ = allowedCaCerts_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService result) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          allowedCaCerts_ = java.util.Collections.unmodifiableList(allowedCaCerts_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.allowedCaCerts_ = allowedCaCerts_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.username_ = username_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.password_ = password_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.requestHeaders_ = internalGetRequestHeaders();
+          result.requestHeaders_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -1089,21 +1116,25 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         internalGetMutableRequestHeaders().mergeFrom(other.internalGetRequestHeaders());
+        bitField0_ |= 0x00000008;
         if (!other.allowedCaCerts_.isEmpty()) {
           if (allowedCaCerts_.isEmpty()) {
             allowedCaCerts_ = other.allowedCaCerts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAllowedCaCertsIsMutable();
             allowedCaCerts_.addAll(other.allowedCaCerts_);
@@ -1139,19 +1170,19 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   uri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   username_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   password_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -1164,6 +1195,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableRequestHeaders()
                       .getMutableMap()
                       .put(requestHeaders__.getKey(), requestHeaders__.getValue());
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
@@ -1256,8 +1288,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1274,8 +1306,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUri() {
-
         uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1297,8 +1329,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1373,8 +1405,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         username_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1393,8 +1425,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Deprecated
       public Builder clearUsername() {
-
         username_ = getDefaultInstance().getUsername();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1418,8 +1450,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         username_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1494,8 +1526,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         password_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1514,8 +1546,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Deprecated
       public Builder clearPassword() {
-
         password_ = getDefaultInstance().getPassword();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1539,8 +1571,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         password_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1558,8 +1590,6 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
           internalGetMutableRequestHeaders() {
-        onChanged();
-        ;
         if (requestHeaders_ == null) {
           requestHeaders_ =
               com.google.protobuf.MapField.newMapField(
@@ -1568,6 +1598,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (!requestHeaders_.isMutable()) {
           requestHeaders_ = requestHeaders_.copy();
         }
+        bitField0_ |= 0x00000008;
+        onChanged();
         return requestHeaders_;
       }
 
@@ -1622,8 +1654,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>map&lt;string, string&gt; request_headers = 4;</code>
        */
       @java.lang.Override
-      public java.lang.String getRequestHeadersOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getRequestHeadersOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1655,6 +1689,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearRequestHeaders() {
+        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableRequestHeaders().getMutableMap().clear();
         return this;
       }
@@ -1678,6 +1713,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableRequestHeaders() {
+        bitField0_ |= 0x00000008;
         return internalGetMutableRequestHeaders().getMutableMap();
       }
       /**
@@ -1697,8 +1733,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableRequestHeaders().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -1714,6 +1750,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       public Builder putAllRequestHeaders(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableRequestHeaders().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000008;
         return this;
       }
 
@@ -1721,10 +1758,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureAllowedCaCertsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           allowedCaCerts_ =
               new java.util.ArrayList<com.google.protobuf.ByteString>(allowedCaCerts_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000010;
         }
       }
       /**
@@ -1750,7 +1787,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the allowedCaCerts.
        */
       public java.util.List<com.google.protobuf.ByteString> getAllowedCaCertsList() {
-        return ((bitField0_ & 0x00000002) != 0)
+        return ((bitField0_ & 0x00000010) != 0)
             ? java.util.Collections.unmodifiableList(allowedCaCerts_)
             : allowedCaCerts_;
       }
@@ -1924,7 +1961,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearAllowedCaCerts() {
         allowedCaCerts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -2130,7 +2167,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SERVICE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object service_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object service_ = "";
     /**
      *
      *
@@ -2241,7 +2280,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebServiceOrBuilder
         getGenericWebServiceOrBuilder() {
-      return getGenericWebService();
+      return genericWebService_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.getDefaultInstance()
+          : genericWebService_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2462,12 +2503,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         service_ = "";
-
-        if (genericWebServiceBuilder_ == null) {
-          genericWebService_ = null;
-        } else {
-          genericWebService_ = null;
+        genericWebService_ = null;
+        if (genericWebServiceBuilder_ != null) {
+          genericWebServiceBuilder_.dispose();
           genericWebServiceBuilder_ = null;
         }
         return this;
@@ -2500,14 +2540,25 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig buildPartial() {
         com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig result =
             new com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig(this);
-        result.service_ = service_;
-        if (genericWebServiceBuilder_ == null) {
-          result.genericWebService_ = genericWebService_;
-        } else {
-          result.genericWebService_ = genericWebServiceBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.service_ = service_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.genericWebService_ =
+              genericWebServiceBuilder_ == null
+                  ? genericWebService_
+                  : genericWebServiceBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2564,6 +2615,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getService().isEmpty()) {
           service_ = other.service_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasGenericWebService()) {
@@ -2598,14 +2650,14 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   service_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getGenericWebServiceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -2624,6 +2676,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object service_ = "";
       /**
@@ -2707,8 +2761,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         service_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2731,8 +2785,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearService() {
-
         service_ = getDefaultInstance().getService();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2760,8 +2814,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         service_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2786,7 +2840,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the genericWebService field is set.
        */
       public boolean hasGenericWebService() {
-        return genericWebServiceBuilder_ != null || genericWebService_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -2830,11 +2884,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           genericWebService_ = value;
-          onChanged();
         } else {
           genericWebServiceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2853,11 +2907,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (genericWebServiceBuilder_ == null) {
           genericWebService_ = builderForValue.build();
-          onChanged();
         } else {
           genericWebServiceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2874,20 +2928,20 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeGenericWebService(
           com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService value) {
         if (genericWebServiceBuilder_ == null) {
-          if (genericWebService_ != null) {
-            genericWebService_ =
-                com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.newBuilder(
-                        genericWebService_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && genericWebService_ != null
+              && genericWebService_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                      .getDefaultInstance()) {
+            getGenericWebServiceBuilder().mergeFrom(value);
           } else {
             genericWebService_ = value;
           }
-          onChanged();
         } else {
           genericWebServiceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2902,14 +2956,13 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearGenericWebService() {
-        if (genericWebServiceBuilder_ == null) {
-          genericWebService_ = null;
-          onChanged();
-        } else {
-          genericWebService_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        genericWebService_ = null;
+        if (genericWebServiceBuilder_ != null) {
+          genericWebServiceBuilder_.dispose();
           genericWebServiceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2925,7 +2978,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.Builder
           getGenericWebServiceBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getGenericWebServiceFieldBuilder().getBuilder();
       }
@@ -3095,7 +3148,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -3156,7 +3211,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -3369,11 +3426,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   public static final int DISABLED_FIELD_NUMBER = 5;
-  private boolean disabled_;
+  private boolean disabled_ = false;
   /**
    *
    *
@@ -3663,24 +3720,21 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       if (genericWebServiceBuilder_ != null) {
         genericWebServiceBuilder_.clear();
       }
       if (serviceDirectoryBuilder_ != null) {
         serviceDirectoryBuilder_.clear();
       }
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       disabled_ = false;
-
       webhookCase_ = 0;
       webhook_ = null;
       return this;
@@ -3710,31 +3764,39 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.Webhook buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.Webhook result =
           new com.google.cloud.dialogflow.cx.v3beta1.Webhook(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (webhookCase_ == 4) {
-        if (genericWebServiceBuilder_ == null) {
-          result.webhook_ = webhook_;
-        } else {
-          result.webhook_ = genericWebServiceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (webhookCase_ == 7) {
-        if (serviceDirectoryBuilder_ == null) {
-          result.webhook_ = webhook_;
-        } else {
-          result.webhook_ = serviceDirectoryBuilder_.build();
-        }
-      }
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
-      }
-      result.disabled_ = disabled_;
-      result.webhookCase_ = webhookCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.Webhook result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.disabled_ = disabled_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3beta1.Webhook result) {
+      result.webhookCase_ = webhookCase_;
+      result.webhook_ = this.webhook_;
+      if (webhookCase_ == 4 && genericWebServiceBuilder_ != null) {
+        result.webhook_ = genericWebServiceBuilder_.build();
+      }
+      if (webhookCase_ == 7 && serviceDirectoryBuilder_ != null) {
+        result.webhook_ = serviceDirectoryBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3784,10 +3846,12 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3beta1.Webhook.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTimeout()) {
@@ -3841,13 +3905,13 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
@@ -3860,13 +3924,13 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 disabled_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
@@ -3906,6 +3970,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -3986,8 +4052,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -4009,8 +4075,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -4037,8 +4103,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -4104,8 +4170,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4121,8 +4187,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -4143,8 +4209,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4374,7 +4440,6 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       }
       webhookCase_ = 4;
       onChanged();
-      ;
       return genericWebServiceBuilder_;
     }
 
@@ -4625,7 +4690,6 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       }
       webhookCase_ = 7;
       onChanged();
-      ;
       return serviceDirectoryBuilder_;
     }
 
@@ -4649,7 +4713,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -4688,11 +4752,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4709,11 +4773,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4729,17 +4793,18 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4754,14 +4819,13 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 6;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4776,7 +4840,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 6;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -4857,6 +4921,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4872,7 +4937,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       disabled_ = false;
       onChanged();
       return this;

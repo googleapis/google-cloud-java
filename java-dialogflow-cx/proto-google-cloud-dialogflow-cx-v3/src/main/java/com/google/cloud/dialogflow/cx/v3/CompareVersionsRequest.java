@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
+ * The request message for
+ * [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CompareVersionsRequest}
@@ -70,13 +71,15 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int BASE_VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object baseVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseVersion_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Name of the base flow version to compare with the target version. Use
-   * version ID `0` to indicate the draft version of the specified flow.
+   * Required. Name of the base flow version to compare with the target version.
+   * Use version ID `0` to indicate the draft version of the specified flow.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
    * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
@@ -103,8 +106,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Name of the base flow version to compare with the target version. Use
-   * version ID `0` to indicate the draft version of the specified flow.
+   * Required. Name of the base flow version to compare with the target version.
+   * Use version ID `0` to indicate the draft version of the specified flow.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
    * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
@@ -129,7 +132,9 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int TARGET_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object targetVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetVersion_ = "";
   /**
    *
    *
@@ -188,7 +193,9 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -428,7 +435,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
+   * The request message for
+   * [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CompareVersionsRequest}
@@ -462,12 +470,10 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       baseVersion_ = "";
-
       targetVersion_ = "";
-
       languageCode_ = "";
-
       return this;
     }
 
@@ -495,11 +501,24 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest result =
           new com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest(this);
-      result.baseVersion_ = baseVersion_;
-      result.targetVersion_ = targetVersion_;
-      result.languageCode_ = languageCode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.baseVersion_ = baseVersion_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetVersion_ = targetVersion_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -550,14 +569,17 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getBaseVersion().isEmpty()) {
         baseVersion_ = other.baseVersion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTargetVersion().isEmpty()) {
         targetVersion_ = other.targetVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -589,19 +611,19 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 baseVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 targetVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -621,13 +643,15 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object baseVersion_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Name of the base flow version to compare with the target version. Use
-     * version ID `0` to indicate the draft version of the specified flow.
+     * Required. Name of the base flow version to compare with the target version.
+     * Use version ID `0` to indicate the draft version of the specified flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -653,8 +677,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the base flow version to compare with the target version. Use
-     * version ID `0` to indicate the draft version of the specified flow.
+     * Required. Name of the base flow version to compare with the target version.
+     * Use version ID `0` to indicate the draft version of the specified flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -680,8 +704,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the base flow version to compare with the target version. Use
-     * version ID `0` to indicate the draft version of the specified flow.
+     * Required. Name of the base flow version to compare with the target version.
+     * Use version ID `0` to indicate the draft version of the specified flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -697,8 +721,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,8 +730,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the base flow version to compare with the target version. Use
-     * version ID `0` to indicate the draft version of the specified flow.
+     * Required. Name of the base flow version to compare with the target version.
+     * Use version ID `0` to indicate the draft version of the specified flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -719,8 +743,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearBaseVersion() {
-
       baseVersion_ = getDefaultInstance().getBaseVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -728,8 +752,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the base flow version to compare with the target version. Use
-     * version ID `0` to indicate the draft version of the specified flow.
+     * Required. Name of the base flow version to compare with the target version.
+     * Use version ID `0` to indicate the draft version of the specified flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -746,8 +770,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -828,8 +852,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -850,8 +874,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTargetVersion() {
-
       targetVersion_ = getDefaultInstance().getTargetVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -877,8 +901,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -959,8 +983,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -981,8 +1005,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1008,8 +1032,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

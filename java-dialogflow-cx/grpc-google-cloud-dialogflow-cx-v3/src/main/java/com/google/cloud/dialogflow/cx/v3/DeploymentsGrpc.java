@@ -180,7 +180,8 @@ public final class DeploymentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all deployments in the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * Returns the list of all deployments in the specified
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment].
      * </pre>
      */
     public void listDeployments(
@@ -195,7 +196,8 @@ public final class DeploymentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
+     * Retrieves the specified
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
      * </pre>
      */
     public void getDeployment(
@@ -248,7 +250,8 @@ public final class DeploymentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all deployments in the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * Returns the list of all deployments in the specified
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment].
      * </pre>
      */
     public void listDeployments(
@@ -265,7 +268,8 @@ public final class DeploymentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
+     * Retrieves the specified
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
      * </pre>
      */
     public void getDeployment(
@@ -302,7 +306,8 @@ public final class DeploymentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all deployments in the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * Returns the list of all deployments in the specified
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListDeploymentsResponse listDeployments(
@@ -315,7 +320,8 @@ public final class DeploymentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
+     * Retrieves the specified
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Deployment getDeployment(
@@ -348,7 +354,8 @@ public final class DeploymentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all deployments in the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * Returns the list of all deployments in the specified
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -362,7 +369,8 @@ public final class DeploymentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
+     * Retrieves the specified
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

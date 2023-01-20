@@ -69,7 +69,9 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int FLOW_FIELD_NUMBER = 1;
-  private volatile java.lang.Object flow_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object flow_ = "";
   /**
    *
    *
@@ -320,8 +322,8 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       flow_ = "";
-
       return this;
     }
 
@@ -349,9 +351,18 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse result =
           new com.google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse(this);
-      result.flow_ = flow_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.flow_ = flow_;
+      }
     }
 
     @java.lang.Override
@@ -402,6 +413,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getFlow().isEmpty()) {
         flow_ = other.flow_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -433,7 +445,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 flow_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -452,6 +464,8 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object flow_ = "";
     /**
@@ -520,8 +534,8 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       flow_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -539,8 +553,8 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearFlow() {
-
       flow_ = getDefaultInstance().getFlow();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -563,8 +577,8 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       flow_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

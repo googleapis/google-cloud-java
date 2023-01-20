@@ -66,7 +66,7 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENABLE_SPEECH_ADAPTATION_FIELD_NUMBER = 1;
-  private boolean enableSpeechAdaptation_;
+  private boolean enableSpeechAdaptation_ = false;
   /**
    *
    *
@@ -281,8 +281,8 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableSpeechAdaptation_ = false;
-
       return this;
     }
 
@@ -310,9 +310,18 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3.SpeechToTextSettings buildPartial() {
       com.google.cloud.dialogflow.cx.v3.SpeechToTextSettings result =
           new com.google.cloud.dialogflow.cx.v3.SpeechToTextSettings(this);
-      result.enableSpeechAdaptation_ = enableSpeechAdaptation_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.SpeechToTextSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableSpeechAdaptation_ = enableSpeechAdaptation_;
+      }
     }
 
     @java.lang.Override
@@ -393,7 +402,7 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 enableSpeechAdaptation_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -412,6 +421,8 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableSpeechAdaptation_;
     /**
@@ -444,6 +455,7 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
     public Builder setEnableSpeechAdaptation(boolean value) {
 
       enableSpeechAdaptation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -459,7 +471,7 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEnableSpeechAdaptation() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableSpeechAdaptation_ = false;
       onChanged();
       return this;

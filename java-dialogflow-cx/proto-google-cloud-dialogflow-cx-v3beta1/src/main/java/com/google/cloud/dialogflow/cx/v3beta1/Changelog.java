@@ -73,7 +73,9 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_EMAIL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object userEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userEmail_ = "";
   /**
    *
    *
@@ -175,7 +179,9 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -224,7 +230,9 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTION_FIELD_NUMBER = 11;
-  private volatile java.lang.Object action_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object action_ = "";
   /**
    *
    *
@@ -273,7 +281,9 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -322,7 +332,9 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -413,7 +425,7 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -672,22 +684,16 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       userEmail_ = "";
-
       displayName_ = "";
-
       action_ = "";
-
       type_ = "";
-
       resource_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       return this;
@@ -717,19 +723,36 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.Changelog buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.Changelog result =
           new com.google.cloud.dialogflow.cx.v3beta1.Changelog(this);
-      result.name_ = name_;
-      result.userEmail_ = userEmail_;
-      result.displayName_ = displayName_;
-      result.action_ = action_;
-      result.type_ = type_;
-      result.resource_ = resource_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.Changelog result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.userEmail_ = userEmail_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.action_ = action_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -780,26 +803,32 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUserEmail().isEmpty()) {
         userEmail_ = other.userEmail_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -834,43 +863,43 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 userEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 58:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 58
             case 66:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 90:
               {
                 action_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 90
             default:
@@ -889,6 +918,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -957,8 +988,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -976,8 +1007,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1000,8 +1031,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1067,8 +1098,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       userEmail_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1084,8 +1115,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserEmail() {
-
       userEmail_ = getDefaultInstance().getUserEmail();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1106,8 +1137,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userEmail_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1173,8 +1204,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1190,8 +1221,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1212,8 +1243,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1279,8 +1310,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       action_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1296,8 +1327,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
       action_ = getDefaultInstance().getAction();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1318,8 +1349,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       action_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1385,8 +1416,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1402,8 +1433,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1424,8 +1455,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1491,8 +1522,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1508,8 +1539,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1530,8 +1561,8 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1554,7 +1585,7 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1591,11 +1622,11 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1610,11 +1641,11 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1628,17 +1659,18 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1651,14 +1683,13 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1671,7 +1702,7 @@ public final class Changelog extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }

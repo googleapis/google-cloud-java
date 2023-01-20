@@ -26,9 +26,9 @@ package com.google.cloud.dialogflow.cx.v3;
  * entities that are built for an individual user such as favorites,
  * preferences, playlists, and so on.
  * You can redefine a session entity type at the session level to extend or
- * replace a [custom entity type][google.cloud.dialogflow.cx.v3.EntityType] at the user session level (we
- * refer to the entity types defined at the agent level as "custom entity
- * types").
+ * replace a [custom entity type][google.cloud.dialogflow.cx.v3.EntityType] at
+ * the user session level (we refer to the entity types defined at the agent
+ * level as "custom entity types").
  * Note: session entity types apply to all queries, regardless of the language.
  * For more information about entity types, see the [Dialogflow
  * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
@@ -119,8 +119,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * `GetSessionEntityType`, `CreateSessionEntityType` and
      * `UpdateSessionEntityType` only return the additional entities added in
      * this session entity type. If you want to get the supplemented list,
-     * please call [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.GetEntityType] on the custom entity type
-     * and merge.
+     * please call
+     * [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.GetEntityType]
+     * on the custom entity type and merge.
      * </pre>
      *
      * <code>ENTITY_OVERRIDE_MODE_SUPPLEMENT = 2;</code>
@@ -160,8 +161,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * `GetSessionEntityType`, `CreateSessionEntityType` and
      * `UpdateSessionEntityType` only return the additional entities added in
      * this session entity type. If you want to get the supplemented list,
-     * please call [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.GetEntityType] on the custom entity type
-     * and merge.
+     * please call
+     * [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.GetEntityType]
+     * on the custom entity type and merge.
      * </pre>
      *
      * <code>ENTITY_OVERRIDE_MODE_SUPPLEMENT = 2;</code>
@@ -257,7 +259,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -318,13 +322,13 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENTITY_OVERRIDE_MODE_FIELD_NUMBER = 3;
-  private int entityOverrideMode_;
+  private int entityOverrideMode_ = 0;
   /**
    *
    *
    * <pre>
-   * Required. Indicates whether the additional data should override or supplement the
-   * custom entity type definition.
+   * Required. Indicates whether the additional data should override or
+   * supplement the custom entity type definition.
    * </pre>
    *
    * <code>
@@ -341,8 +345,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Indicates whether the additional data should override or supplement the
-   * custom entity type definition.
+   * Required. Indicates whether the additional data should override or
+   * supplement the custom entity type definition.
    * </pre>
    *
    * <code>
@@ -354,9 +358,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode
       getEntityOverrideMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode result =
-        com.google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode.valueOf(
+        com.google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode.forNumber(
             entityOverrideMode_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode.UNRECOGNIZED
@@ -364,13 +367,15 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENTITIES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.EntityType.Entity> entities_;
   /**
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -385,8 +390,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -402,8 +407,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -418,8 +423,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -434,8 +439,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -641,9 +646,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * entities that are built for an individual user such as favorites,
    * preferences, playlists, and so on.
    * You can redefine a session entity type at the session level to extend or
-   * replace a [custom entity type][google.cloud.dialogflow.cx.v3.EntityType] at the user session level (we
-   * refer to the entity types defined at the agent level as "custom entity
-   * types").
+   * replace a [custom entity type][google.cloud.dialogflow.cx.v3.EntityType] at
+   * the user session level (we refer to the entity types defined at the agent
+   * level as "custom entity types").
    * Note: session entity types apply to all queries, regardless of the language.
    * For more information about entity types, see the [Dialogflow
    * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
@@ -680,17 +685,16 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       entityOverrideMode_ = 0;
-
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
       } else {
         entities_ = null;
         entitiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -718,20 +722,35 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.cx.v3.SessionEntityType buildPartial() {
       com.google.cloud.dialogflow.cx.v3.SessionEntityType result =
           new com.google.cloud.dialogflow.cx.v3.SessionEntityType(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.entityOverrideMode_ = entityOverrideMode_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.SessionEntityType result) {
       if (entitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.entities_ = entities_;
       } else {
         result.entities_ = entitiesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.SessionEntityType result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entityOverrideMode_ = entityOverrideMode_;
+      }
     }
 
     @java.lang.Override
@@ -782,6 +801,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.entityOverrideMode_ != 0) {
@@ -791,7 +811,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         if (!other.entities_.isEmpty()) {
           if (entities_.isEmpty()) {
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureEntitiesIsMutable();
             entities_.addAll(other.entities_);
@@ -804,7 +824,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
             entitiesBuilder_.dispose();
             entitiesBuilder_ = null;
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             entitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntitiesFieldBuilder()
@@ -843,13 +863,13 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 entityOverrideMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             case 34:
@@ -964,8 +984,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -987,8 +1007,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1015,8 +1035,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1026,8 +1046,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Indicates whether the additional data should override or supplement the
-     * custom entity type definition.
+     * Required. Indicates whether the additional data should override or
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1044,8 +1064,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Indicates whether the additional data should override or supplement the
-     * custom entity type definition.
+     * Required. Indicates whether the additional data should override or
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1056,8 +1076,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setEntityOverrideModeValue(int value) {
-
       entityOverrideMode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1065,8 +1085,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Indicates whether the additional data should override or supplement the
-     * custom entity type definition.
+     * Required. Indicates whether the additional data should override or
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1078,9 +1098,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode
         getEntityOverrideMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode result =
-          com.google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode.valueOf(
+          com.google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode.forNumber(
               entityOverrideMode_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode.UNRECOGNIZED
@@ -1090,8 +1109,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Indicates whether the additional data should override or supplement the
-     * custom entity type definition.
+     * Required. Indicates whether the additional data should override or
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1106,7 +1125,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       entityOverrideMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1115,8 +1134,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Indicates whether the additional data should override or supplement the
-     * custom entity type definition.
+     * Required. Indicates whether the additional data should override or
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1126,7 +1145,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEntityOverrideMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       entityOverrideMode_ = 0;
       onChanged();
       return this;
@@ -1136,10 +1155,10 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureEntitiesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         entities_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.EntityType.Entity>(entities_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1153,8 +1172,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1172,8 +1191,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1191,8 +1210,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1210,8 +1229,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1236,8 +1255,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1259,8 +1278,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1284,8 +1303,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1310,8 +1329,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1333,8 +1352,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1356,8 +1375,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1379,8 +1398,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1390,7 +1409,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         entitiesBuilder_.clear();
@@ -1401,8 +1420,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1423,8 +1442,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1439,8 +1458,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1459,8 +1478,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1479,8 +1498,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1495,8 +1514,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1513,8 +1532,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1537,7 +1556,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dialogflow.cx.v3.EntityType.Entity,
                 com.google.cloud.dialogflow.cx.v3.EntityType.Entity.Builder,
                 com.google.cloud.dialogflow.cx.v3.EntityType.EntityOrBuilder>(
-                entities_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                entities_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         entities_ = null;
       }
       return entitiesBuilder_;

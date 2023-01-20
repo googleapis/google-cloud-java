@@ -70,7 +70,9 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,6 +125,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FLOW_VALIDATION_RESULTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
       flowValidationResults_;
   /**
@@ -418,15 +422,15 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (flowValidationResultsBuilder_ == null) {
         flowValidationResults_ = java.util.Collections.emptyList();
       } else {
         flowValidationResults_ = null;
         flowValidationResultsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -455,19 +459,33 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult result =
           new com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult result) {
       if (flowValidationResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           flowValidationResults_ = java.util.Collections.unmodifiableList(flowValidationResults_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.flowValidationResults_ = flowValidationResults_;
       } else {
         result.flowValidationResults_ = flowValidationResultsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -519,13 +537,14 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (flowValidationResultsBuilder_ == null) {
         if (!other.flowValidationResults_.isEmpty()) {
           if (flowValidationResults_.isEmpty()) {
             flowValidationResults_ = other.flowValidationResults_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFlowValidationResultsIsMutable();
             flowValidationResults_.addAll(other.flowValidationResults_);
@@ -538,7 +557,7 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
             flowValidationResultsBuilder_.dispose();
             flowValidationResultsBuilder_ = null;
             flowValidationResults_ = other.flowValidationResults_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             flowValidationResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFlowValidationResultsFieldBuilder()
@@ -577,7 +596,7 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -680,8 +699,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,8 +718,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -723,8 +742,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -733,11 +752,11 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
         flowValidationResults_ = java.util.Collections.emptyList();
 
     private void ensureFlowValidationResultsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         flowValidationResults_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>(
                 flowValidationResults_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -983,7 +1002,7 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
     public Builder clearFlowValidationResults() {
       if (flowValidationResultsBuilder_ == null) {
         flowValidationResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         flowValidationResultsBuilder_.clear();
@@ -1128,7 +1147,7 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
                 com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult.Builder,
                 com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResultOrBuilder>(
                 flowValidationResults_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         flowValidationResults_ = null;

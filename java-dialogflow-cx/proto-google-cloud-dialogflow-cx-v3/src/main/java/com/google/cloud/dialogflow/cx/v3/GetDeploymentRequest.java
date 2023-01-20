@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Deployments.GetDeployment][google.cloud.dialogflow.cx.v3.Deployments.GetDeployment].
+ * The request message for
+ * [Deployments.GetDeployment][google.cloud.dialogflow.cx.v3.Deployments.GetDeployment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.GetDeploymentRequest}
@@ -68,13 +69,16 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The name of the [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the
+   * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
    * </pre>
    *
@@ -100,8 +104,9 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the
+   * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
    * </pre>
    *
@@ -288,7 +293,8 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Deployments.GetDeployment][google.cloud.dialogflow.cx.v3.Deployments.GetDeployment].
+   * The request message for
+   * [Deployments.GetDeployment][google.cloud.dialogflow.cx.v3.Deployments.GetDeployment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.GetDeploymentRequest}
@@ -322,8 +328,8 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       return this;
     }
 
@@ -351,9 +357,18 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3.GetDeploymentRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.GetDeploymentRequest result =
           new com.google.cloud.dialogflow.cx.v3.GetDeploymentRequest(this);
-      result.name_ = name_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.GetDeploymentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -404,6 +419,7 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -435,7 +451,7 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,13 +471,16 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The name of the [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
      * </pre>
      *
@@ -486,8 +505,9 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
      * </pre>
      *
@@ -512,8 +532,9 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
      * </pre>
      *
@@ -528,8 +549,8 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -537,8 +558,9 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
      * </pre>
      *
@@ -549,8 +571,8 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -558,8 +580,9 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
      * </pre>
      *
@@ -575,8 +598,8 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

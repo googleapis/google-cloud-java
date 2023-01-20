@@ -115,7 +115,9 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResultOrBuilder
       getContinuousTestResultOrBuilder() {
-    return getContinuousTestResult();
+    return continuousTestResult_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult.getDefaultInstance()
+        : continuousTestResult_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -323,10 +325,10 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (continuousTestResultBuilder_ == null) {
-        continuousTestResult_ = null;
-      } else {
-        continuousTestResult_ = null;
+      bitField0_ = 0;
+      continuousTestResult_ = null;
+      if (continuousTestResultBuilder_ != null) {
+        continuousTestResultBuilder_.dispose();
         continuousTestResultBuilder_ = null;
       }
       return this;
@@ -357,13 +359,22 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse result =
           new com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse(this);
-      if (continuousTestResultBuilder_ == null) {
-        result.continuousTestResult_ = continuousTestResult_;
-      } else {
-        result.continuousTestResult_ = continuousTestResultBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.continuousTestResult_ =
+            continuousTestResultBuilder_ == null
+                ? continuousTestResult_
+                : continuousTestResultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -447,7 +458,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
               {
                 input.readMessage(
                     getContinuousTestResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -466,6 +477,8 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult continuousTestResult_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -486,7 +499,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
      * @return Whether the continuousTestResult field is set.
      */
     public boolean hasContinuousTestResult() {
-      return continuousTestResultBuilder_ != null || continuousTestResult_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -526,11 +539,11 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         continuousTestResult_ = value;
-        onChanged();
       } else {
         continuousTestResultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -547,11 +560,11 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
         com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult.Builder builderForValue) {
       if (continuousTestResultBuilder_ == null) {
         continuousTestResult_ = builderForValue.build();
-        onChanged();
       } else {
         continuousTestResultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -567,20 +580,20 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
     public Builder mergeContinuousTestResult(
         com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult value) {
       if (continuousTestResultBuilder_ == null) {
-        if (continuousTestResult_ != null) {
-          continuousTestResult_ =
-              com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult.newBuilder(
-                      continuousTestResult_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && continuousTestResult_ != null
+            && continuousTestResult_
+                != com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult
+                    .getDefaultInstance()) {
+          getContinuousTestResultBuilder().mergeFrom(value);
         } else {
           continuousTestResult_ = value;
         }
-        onChanged();
       } else {
         continuousTestResultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -594,14 +607,13 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearContinuousTestResult() {
-      if (continuousTestResultBuilder_ == null) {
-        continuousTestResult_ = null;
-        onChanged();
-      } else {
-        continuousTestResult_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      continuousTestResult_ = null;
+      if (continuousTestResultBuilder_ != null) {
+        continuousTestResultBuilder_.dispose();
         continuousTestResultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -616,7 +628,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult.Builder
         getContinuousTestResultBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getContinuousTestResultFieldBuilder().getBuilder();
     }

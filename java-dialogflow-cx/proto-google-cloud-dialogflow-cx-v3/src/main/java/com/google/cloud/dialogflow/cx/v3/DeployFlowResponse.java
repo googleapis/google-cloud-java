@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The response message for [Environments.DeployFlow][google.cloud.dialogflow.cx.v3.Environments.DeployFlow].
+ * The response message for
+ * [Environments.DeployFlow][google.cloud.dialogflow.cx.v3.Environments.DeployFlow].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.DeployFlowResponse}
@@ -112,17 +113,22 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.EnvironmentOrBuilder getEnvironmentOrBuilder() {
-    return getEnvironment();
+    return environment_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Environment.getDefaultInstance()
+        : environment_;
   }
 
   public static final int DEPLOYMENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deployment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deployment_ = "";
   /**
    *
    *
    * <pre>
-   * The name of the flow version [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
+   * The name of the flow version
+   * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
    * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
    * </pre>
    *
@@ -146,8 +152,9 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The name of the flow version [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
+   * The name of the flow version
+   * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
    * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
    * </pre>
    *
@@ -345,7 +352,8 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The response message for [Environments.DeployFlow][google.cloud.dialogflow.cx.v3.Environments.DeployFlow].
+   * The response message for
+   * [Environments.DeployFlow][google.cloud.dialogflow.cx.v3.Environments.DeployFlow].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.DeployFlowResponse}
@@ -379,14 +387,13 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-      } else {
-        environment_ = null;
+      bitField0_ = 0;
+      environment_ = null;
+      if (environmentBuilder_ != null) {
+        environmentBuilder_.dispose();
         environmentBuilder_ = null;
       }
       deployment_ = "";
-
       return this;
     }
 
@@ -414,14 +421,22 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.cx.v3.DeployFlowResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3.DeployFlowResponse result =
           new com.google.cloud.dialogflow.cx.v3.DeployFlowResponse(this);
-      if (environmentBuilder_ == null) {
-        result.environment_ = environment_;
-      } else {
-        result.environment_ = environmentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.deployment_ = deployment_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.DeployFlowResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.environment_ =
+            environmentBuilder_ == null ? environment_ : environmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deployment_ = deployment_;
+      }
     }
 
     @java.lang.Override
@@ -475,6 +490,7 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getDeployment().isEmpty()) {
         deployment_ = other.deployment_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -506,13 +522,13 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 deployment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -532,6 +548,8 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dialogflow.cx.v3.Environment environment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3.Environment,
@@ -550,7 +568,7 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the environment field is set.
      */
     public boolean hasEnvironment() {
-      return environmentBuilder_ != null || environment_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -587,11 +605,11 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         environment_ = value;
-        onChanged();
       } else {
         environmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -607,11 +625,11 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
         com.google.cloud.dialogflow.cx.v3.Environment.Builder builderForValue) {
       if (environmentBuilder_ == null) {
         environment_ = builderForValue.build();
-        onChanged();
       } else {
         environmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -625,19 +643,18 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeEnvironment(com.google.cloud.dialogflow.cx.v3.Environment value) {
       if (environmentBuilder_ == null) {
-        if (environment_ != null) {
-          environment_ =
-              com.google.cloud.dialogflow.cx.v3.Environment.newBuilder(environment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && environment_ != null
+            && environment_ != com.google.cloud.dialogflow.cx.v3.Environment.getDefaultInstance()) {
+          getEnvironmentBuilder().mergeFrom(value);
         } else {
           environment_ = value;
         }
-        onChanged();
       } else {
         environmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -650,14 +667,13 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.dialogflow.cx.v3.Environment environment = 1;</code>
      */
     public Builder clearEnvironment() {
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-        onChanged();
-      } else {
-        environment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      environment_ = null;
+      if (environmentBuilder_ != null) {
+        environmentBuilder_.dispose();
         environmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -670,7 +686,7 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.dialogflow.cx.v3.Environment environment = 1;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.Environment.Builder getEnvironmentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
@@ -723,8 +739,9 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the flow version [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
+     * The name of the flow version
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
      * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
      * </pre>
      *
@@ -747,8 +764,9 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the flow version [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
+     * The name of the flow version
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
      * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
      * </pre>
      *
@@ -771,8 +789,9 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the flow version [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
+     * The name of the flow version
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
      * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
      * </pre>
      *
@@ -785,8 +804,8 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       deployment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -794,8 +813,9 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the flow version [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
+     * The name of the flow version
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
      * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
      * </pre>
      *
@@ -804,8 +824,8 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDeployment() {
-
       deployment_ = getDefaultInstance().getDeployment();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -813,8 +833,9 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the flow version [Deployment][google.cloud.dialogflow.cx.v3.Deployment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
+     * The name of the flow version
+     * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
      * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
      * </pre>
      *
@@ -828,8 +849,8 @@ public final class DeployFlowResponse extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deployment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

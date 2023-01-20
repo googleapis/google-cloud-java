@@ -82,12 +82,12 @@ public final class FulfillmentProto {
           + "alogflow.cx.v3.ResponseMessageH\000\022W\n\020addi"
           + "tional_cases\030\002 \001(\0132;.google.cloud.dialog"
           + "flow.cx.v3.Fulfillment.ConditionalCasesH"
-          + "\000B\022\n\020cases_or_messageB\304\001\n!com.google.clo"
+          + "\000B\022\n\020cases_or_messageB\266\001\n!com.google.clo"
           + "ud.dialogflow.cx.v3B\020FulfillmentProtoP\001Z"
-          + "?google.golang.org/genproto/googleapis/c"
-          + "loud/dialogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Googl"
-          + "e.Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud"
-          + "::Dialogflow::CX::V3b\006proto3"
+          + "1cloud.google.com/go/dialogflow/cx/apiv3"
+          + "/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialog"
+          + "flow.Cx.V3\352\002!Google::Cloud::Dialogflow::"
+          + "CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

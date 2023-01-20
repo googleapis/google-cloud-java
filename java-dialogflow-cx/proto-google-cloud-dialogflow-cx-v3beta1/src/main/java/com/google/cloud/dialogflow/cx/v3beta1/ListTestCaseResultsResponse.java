@@ -70,6 +70,8 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
   }
 
   public static final int TEST_CASE_RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult> testCaseResults_;
   /**
    *
@@ -141,7 +143,9 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -403,6 +407,7 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (testCaseResultsBuilder_ == null) {
         testCaseResults_ = java.util.Collections.emptyList();
       } else {
@@ -411,7 +416,6 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -441,7 +445,16 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
     public com.google.cloud.dialogflow.cx.v3beta1.ListTestCaseResultsResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.ListTestCaseResultsResponse result =
           new com.google.cloud.dialogflow.cx.v3beta1.ListTestCaseResultsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3beta1.ListTestCaseResultsResponse result) {
       if (testCaseResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           testCaseResults_ = java.util.Collections.unmodifiableList(testCaseResults_);
@@ -451,9 +464,14 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
       } else {
         result.testCaseResults_ = testCaseResultsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3beta1.ListTestCaseResultsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -534,6 +552,7 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -579,7 +598,7 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1047,8 +1066,8 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1065,8 +1084,8 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1088,8 +1107,8 @@ public final class ListTestCaseResultsResponse extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

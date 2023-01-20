@@ -498,6 +498,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (recognitionResultBuilder_ != null) {
         recognitionResultBuilder_.clear();
       }
@@ -535,23 +536,29 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse result =
           new com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse(this);
-      if (responseCase_ == 1) {
-        if (recognitionResultBuilder_ == null) {
-          result.response_ = response_;
-        } else {
-          result.response_ = recognitionResultBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (responseCase_ == 2) {
-        if (detectIntentResponseBuilder_ == null) {
-          result.response_ = response_;
-        } else {
-          result.response_ = detectIntentResponseBuilder_.build();
-        }
-      }
-      result.responseCase_ = responseCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse result) {
+      result.responseCase_ = responseCase_;
+      result.response_ = this.response_;
+      if (responseCase_ == 1 && recognitionResultBuilder_ != null) {
+        result.response_ = recognitionResultBuilder_.build();
+      }
+      if (responseCase_ == 2 && detectIntentResponseBuilder_ != null) {
+        result.response_ = detectIntentResponseBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -689,6 +696,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult,
@@ -917,7 +926,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       responseCase_ = 1;
       onChanged();
-      ;
       return recognitionResultBuilder_;
     }
 
@@ -1143,7 +1151,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       responseCase_ = 2;
       onChanged();
-      ;
       return detectIntentResponseBuilder_;
     }
 

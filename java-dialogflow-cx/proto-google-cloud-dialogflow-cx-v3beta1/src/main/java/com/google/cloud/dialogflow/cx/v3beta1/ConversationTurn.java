@@ -288,7 +288,9 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.QueryInputOrBuilder getInputOrBuilder() {
-      return getInput();
+      return input_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.QueryInput.getDefaultInstance()
+          : input_;
     }
 
     public static final int INJECTED_PARAMETERS_FIELD_NUMBER = 2;
@@ -339,11 +341,13 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.protobuf.StructOrBuilder getInjectedParametersOrBuilder() {
-      return getInjectedParameters();
+      return injectedParameters_ == null
+          ? com.google.protobuf.Struct.getDefaultInstance()
+          : injectedParameters_;
     }
 
     public static final int IS_WEBHOOK_ENABLED_FIELD_NUMBER = 3;
-    private boolean isWebhookEnabled_;
+    private boolean isWebhookEnabled_ = false;
     /**
      *
      *
@@ -363,7 +367,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ENABLE_SENTIMENT_ANALYSIS_FIELD_NUMBER = 7;
-    private boolean enableSentimentAnalysis_;
+    private boolean enableSentimentAnalysis_ = false;
     /**
      *
      *
@@ -620,22 +624,19 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (inputBuilder_ == null) {
-          input_ = null;
-        } else {
-          input_ = null;
+        bitField0_ = 0;
+        input_ = null;
+        if (inputBuilder_ != null) {
+          inputBuilder_.dispose();
           inputBuilder_ = null;
         }
-        if (injectedParametersBuilder_ == null) {
-          injectedParameters_ = null;
-        } else {
-          injectedParameters_ = null;
+        injectedParameters_ = null;
+        if (injectedParametersBuilder_ != null) {
+          injectedParametersBuilder_.dispose();
           injectedParametersBuilder_ = null;
         }
         isWebhookEnabled_ = false;
-
         enableSentimentAnalysis_ = false;
-
         return this;
       }
 
@@ -665,20 +666,31 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput buildPartial() {
         com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput result =
             new com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput(this);
-        if (inputBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = inputBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (injectedParametersBuilder_ == null) {
-          result.injectedParameters_ = injectedParameters_;
-        } else {
-          result.injectedParameters_ = injectedParametersBuilder_.build();
-        }
-        result.isWebhookEnabled_ = isWebhookEnabled_;
-        result.enableSentimentAnalysis_ = enableSentimentAnalysis_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.input_ = inputBuilder_ == null ? input_ : inputBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.injectedParameters_ =
+              injectedParametersBuilder_ == null
+                  ? injectedParameters_
+                  : injectedParametersBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isWebhookEnabled_ = isWebhookEnabled_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.enableSentimentAnalysis_ = enableSentimentAnalysis_;
+        }
       }
 
       @java.lang.Override
@@ -774,25 +786,25 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       getInjectedParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   isWebhookEnabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 42:
                 {
                   input.readMessage(getInputFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 42
               case 56:
                 {
                   enableSentimentAnalysis_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 56
               default:
@@ -811,6 +823,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.dialogflow.cx.v3beta1.QueryInput input_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -834,7 +848,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * @return Whether the input field is set.
        */
       public boolean hasInput() {
-        return inputBuilder_ != null || input_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -879,11 +893,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           input_ = value;
-          onChanged();
         } else {
           inputBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -903,11 +917,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           com.google.cloud.dialogflow.cx.v3beta1.QueryInput.Builder builderForValue) {
         if (inputBuilder_ == null) {
           input_ = builderForValue.build();
-          onChanged();
         } else {
           inputBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -925,19 +939,18 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeInput(com.google.cloud.dialogflow.cx.v3beta1.QueryInput value) {
         if (inputBuilder_ == null) {
-          if (input_ != null) {
-            input_ =
-                com.google.cloud.dialogflow.cx.v3beta1.QueryInput.newBuilder(input_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && input_ != null
+              && input_ != com.google.cloud.dialogflow.cx.v3beta1.QueryInput.getDefaultInstance()) {
+            getInputBuilder().mergeFrom(value);
           } else {
             input_ = value;
           }
-          onChanged();
         } else {
           inputBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -954,14 +967,13 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.cloud.dialogflow.cx.v3beta1.QueryInput input = 5;</code>
        */
       public Builder clearInput() {
-        if (inputBuilder_ == null) {
-          input_ = null;
-          onChanged();
-        } else {
-          input_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        input_ = null;
+        if (inputBuilder_ != null) {
+          inputBuilder_.dispose();
           inputBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -978,7 +990,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.cloud.dialogflow.cx.v3beta1.QueryInput input = 5;</code>
        */
       public com.google.cloud.dialogflow.cx.v3beta1.QueryInput.Builder getInputBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getInputFieldBuilder().getBuilder();
       }
@@ -1053,7 +1065,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * @return Whether the injectedParameters field is set.
        */
       public boolean hasInjectedParameters() {
-        return injectedParametersBuilder_ != null || injectedParameters_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1092,11 +1104,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           injectedParameters_ = value;
-          onChanged();
         } else {
           injectedParametersBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1112,11 +1124,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public Builder setInjectedParameters(com.google.protobuf.Struct.Builder builderForValue) {
         if (injectedParametersBuilder_ == null) {
           injectedParameters_ = builderForValue.build();
-          onChanged();
         } else {
           injectedParametersBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1131,19 +1143,18 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeInjectedParameters(com.google.protobuf.Struct value) {
         if (injectedParametersBuilder_ == null) {
-          if (injectedParameters_ != null) {
-            injectedParameters_ =
-                com.google.protobuf.Struct.newBuilder(injectedParameters_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && injectedParameters_ != null
+              && injectedParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getInjectedParametersBuilder().mergeFrom(value);
           } else {
             injectedParameters_ = value;
           }
-          onChanged();
         } else {
           injectedParametersBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1157,14 +1168,13 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.Struct injected_parameters = 2;</code>
        */
       public Builder clearInjectedParameters() {
-        if (injectedParametersBuilder_ == null) {
-          injectedParameters_ = null;
-          onChanged();
-        } else {
-          injectedParameters_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        injectedParameters_ = null;
+        if (injectedParametersBuilder_ != null) {
+          injectedParametersBuilder_.dispose();
           injectedParametersBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1178,7 +1188,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.Struct injected_parameters = 2;</code>
        */
       public com.google.protobuf.Struct.Builder getInjectedParametersBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getInjectedParametersFieldBuilder().getBuilder();
       }
@@ -1263,6 +1273,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public Builder setIsWebhookEnabled(boolean value) {
 
         isWebhookEnabled_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1280,7 +1291,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearIsWebhookEnabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         isWebhookEnabled_ = false;
         onChanged();
         return this;
@@ -1317,6 +1328,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public Builder setEnableSentimentAnalysis(boolean value) {
 
         enableSentimentAnalysis_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1332,7 +1344,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearEnableSentimentAnalysis() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         enableSentimentAnalysis_ = false;
         onChanged();
         return this;
@@ -1839,10 +1851,14 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.protobuf.StructOrBuilder getSessionParametersOrBuilder() {
-      return getSessionParameters();
+      return sessionParameters_ == null
+          ? com.google.protobuf.Struct.getDefaultInstance()
+          : sessionParameters_;
     }
 
     public static final int DIFFERENCES_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference> differences_;
     /**
      *
@@ -1991,7 +2007,9 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.protobuf.StructOrBuilder getDiagnosticInfoOrBuilder() {
-      return getDiagnosticInfo();
+      return diagnosticInfo_ == null
+          ? com.google.protobuf.Struct.getDefaultInstance()
+          : diagnosticInfo_;
     }
 
     public static final int TRIGGERED_INTENT_FIELD_NUMBER = 7;
@@ -2042,7 +2060,9 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.IntentOrBuilder getTriggeredIntentOrBuilder() {
-      return getTriggeredIntent();
+      return triggeredIntent_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Intent.getDefaultInstance()
+          : triggeredIntent_;
     }
 
     public static final int CURRENT_PAGE_FIELD_NUMBER = 8;
@@ -2093,10 +2113,14 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.PageOrBuilder getCurrentPageOrBuilder() {
-      return getCurrentPage();
+      return currentPage_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Page.getDefaultInstance()
+          : currentPage_;
     }
 
     public static final int TEXT_RESPONSES_FIELD_NUMBER = 9;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text>
         textResponses_;
     /**
@@ -2225,7 +2249,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-      return getStatus();
+      return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2520,10 +2544,10 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (sessionParametersBuilder_ == null) {
-          sessionParameters_ = null;
-        } else {
-          sessionParameters_ = null;
+        bitField0_ = 0;
+        sessionParameters_ = null;
+        if (sessionParametersBuilder_ != null) {
+          sessionParametersBuilder_.dispose();
           sessionParametersBuilder_ = null;
         }
         if (differencesBuilder_ == null) {
@@ -2532,23 +2556,20 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           differences_ = null;
           differencesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (diagnosticInfoBuilder_ == null) {
-          diagnosticInfo_ = null;
-        } else {
-          diagnosticInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        diagnosticInfo_ = null;
+        if (diagnosticInfoBuilder_ != null) {
+          diagnosticInfoBuilder_.dispose();
           diagnosticInfoBuilder_ = null;
         }
-        if (triggeredIntentBuilder_ == null) {
-          triggeredIntent_ = null;
-        } else {
-          triggeredIntent_ = null;
+        triggeredIntent_ = null;
+        if (triggeredIntentBuilder_ != null) {
+          triggeredIntentBuilder_.dispose();
           triggeredIntentBuilder_ = null;
         }
-        if (currentPageBuilder_ == null) {
-          currentPage_ = null;
-        } else {
-          currentPage_ = null;
+        currentPage_ = null;
+        if (currentPageBuilder_ != null) {
+          currentPageBuilder_.dispose();
           currentPageBuilder_ = null;
         }
         if (textResponsesBuilder_ == null) {
@@ -2557,11 +2578,10 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           textResponses_ = null;
           textResponsesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (statusBuilder_ == null) {
-          status_ = null;
-        } else {
-          status_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
         return this;
@@ -2595,52 +2615,60 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           buildPartial() {
         com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput result =
             new com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput(this);
-        int from_bitField0_ = bitField0_;
-        if (sessionParametersBuilder_ == null) {
-          result.sessionParameters_ = sessionParameters_;
-        } else {
-          result.sessionParameters_ = sessionParametersBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput result) {
         if (differencesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             differences_ = java.util.Collections.unmodifiableList(differences_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.differences_ = differences_;
         } else {
           result.differences_ = differencesBuilder_.build();
         }
-        if (diagnosticInfoBuilder_ == null) {
-          result.diagnosticInfo_ = diagnosticInfo_;
-        } else {
-          result.diagnosticInfo_ = diagnosticInfoBuilder_.build();
-        }
-        if (triggeredIntentBuilder_ == null) {
-          result.triggeredIntent_ = triggeredIntent_;
-        } else {
-          result.triggeredIntent_ = triggeredIntentBuilder_.build();
-        }
-        if (currentPageBuilder_ == null) {
-          result.currentPage_ = currentPage_;
-        } else {
-          result.currentPage_ = currentPageBuilder_.build();
-        }
         if (textResponsesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             textResponses_ = java.util.Collections.unmodifiableList(textResponses_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.textResponses_ = textResponses_;
         } else {
           result.textResponses_ = textResponsesBuilder_.build();
         }
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
-        } else {
-          result.status_ = statusBuilder_.build();
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sessionParameters_ =
+              sessionParametersBuilder_ == null
+                  ? sessionParameters_
+                  : sessionParametersBuilder_.build();
         }
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.diagnosticInfo_ =
+              diagnosticInfoBuilder_ == null ? diagnosticInfo_ : diagnosticInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.triggeredIntent_ =
+              triggeredIntentBuilder_ == null ? triggeredIntent_ : triggeredIntentBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.currentPage_ =
+              currentPageBuilder_ == null ? currentPage_ : currentPageBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2702,7 +2730,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           if (!other.differences_.isEmpty()) {
             if (differences_.isEmpty()) {
               differences_ = other.differences_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureDifferencesIsMutable();
               differences_.addAll(other.differences_);
@@ -2715,7 +2743,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               differencesBuilder_.dispose();
               differencesBuilder_ = null;
               differences_ = other.differences_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               differencesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getDifferencesFieldBuilder()
@@ -2738,7 +2766,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           if (!other.textResponses_.isEmpty()) {
             if (textResponses_.isEmpty()) {
               textResponses_ = other.textResponses_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureTextResponsesIsMutable();
               textResponses_.addAll(other.textResponses_);
@@ -2751,7 +2779,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               textResponsesBuilder_.dispose();
               textResponsesBuilder_ = null;
               textResponses_ = other.textResponses_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000020);
               textResponsesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getTextResponsesFieldBuilder()
@@ -2794,7 +2822,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       getSessionParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 34
               case 42:
@@ -2815,20 +2843,20 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       getDiagnosticInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 50
               case 58:
                 {
                   input.readMessage(
                       getTriggeredIntentFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 58
               case 66:
                 {
                   input.readMessage(getCurrentPageFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 66
               case 74:
@@ -2848,7 +2876,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               case 82:
                 {
                   input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 82
               default:
@@ -2888,7 +2916,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * @return Whether the sessionParameters field is set.
        */
       public boolean hasSessionParameters() {
-        return sessionParametersBuilder_ != null || sessionParameters_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -2925,11 +2953,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           sessionParameters_ = value;
-          onChanged();
         } else {
           sessionParametersBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2944,11 +2972,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public Builder setSessionParameters(com.google.protobuf.Struct.Builder builderForValue) {
         if (sessionParametersBuilder_ == null) {
           sessionParameters_ = builderForValue.build();
-          onChanged();
         } else {
           sessionParametersBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2962,19 +2990,18 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeSessionParameters(com.google.protobuf.Struct value) {
         if (sessionParametersBuilder_ == null) {
-          if (sessionParameters_ != null) {
-            sessionParameters_ =
-                com.google.protobuf.Struct.newBuilder(sessionParameters_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && sessionParameters_ != null
+              && sessionParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getSessionParametersBuilder().mergeFrom(value);
           } else {
             sessionParameters_ = value;
           }
-          onChanged();
         } else {
           sessionParametersBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2987,14 +3014,13 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.Struct session_parameters = 4;</code>
        */
       public Builder clearSessionParameters() {
-        if (sessionParametersBuilder_ == null) {
-          sessionParameters_ = null;
-          onChanged();
-        } else {
-          sessionParameters_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        sessionParameters_ = null;
+        if (sessionParametersBuilder_ != null) {
+          sessionParametersBuilder_.dispose();
           sessionParametersBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3007,7 +3033,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.Struct session_parameters = 4;</code>
        */
       public com.google.protobuf.Struct.Builder getSessionParametersBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getSessionParametersFieldBuilder().getBuilder();
       }
@@ -3059,11 +3085,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           differences_ = java.util.Collections.emptyList();
 
       private void ensureDifferencesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           differences_ =
               new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference>(
                   differences_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -3330,7 +3356,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public Builder clearDifferences() {
         if (differencesBuilder_ == null) {
           differences_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           differencesBuilder_.clear();
@@ -3489,7 +3515,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
                   com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.Builder,
                   com.google.cloud.dialogflow.cx.v3beta1.TestRunDifferenceOrBuilder>(
                   differences_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           differences_ = null;
@@ -3519,7 +3545,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * @return Whether the diagnosticInfo field is set.
        */
       public boolean hasDiagnosticInfo() {
-        return diagnosticInfoBuilder_ != null || diagnosticInfo_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -3564,11 +3590,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           diagnosticInfo_ = value;
-          onChanged();
         } else {
           diagnosticInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3587,11 +3613,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public Builder setDiagnosticInfo(com.google.protobuf.Struct.Builder builderForValue) {
         if (diagnosticInfoBuilder_ == null) {
           diagnosticInfo_ = builderForValue.build();
-          onChanged();
         } else {
           diagnosticInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3609,19 +3635,18 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeDiagnosticInfo(com.google.protobuf.Struct value) {
         if (diagnosticInfoBuilder_ == null) {
-          if (diagnosticInfo_ != null) {
-            diagnosticInfo_ =
-                com.google.protobuf.Struct.newBuilder(diagnosticInfo_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && diagnosticInfo_ != null
+              && diagnosticInfo_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getDiagnosticInfoBuilder().mergeFrom(value);
           } else {
             diagnosticInfo_ = value;
           }
-          onChanged();
         } else {
           diagnosticInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3638,14 +3663,13 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearDiagnosticInfo() {
-        if (diagnosticInfoBuilder_ == null) {
-          diagnosticInfo_ = null;
-          onChanged();
-        } else {
-          diagnosticInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        diagnosticInfo_ = null;
+        if (diagnosticInfoBuilder_ != null) {
+          diagnosticInfoBuilder_.dispose();
           diagnosticInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3662,7 +3686,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public com.google.protobuf.Struct.Builder getDiagnosticInfoBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getDiagnosticInfoFieldBuilder().getBuilder();
       }
@@ -3737,7 +3761,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * @return Whether the triggeredIntent field is set.
        */
       public boolean hasTriggeredIntent() {
-        return triggeredIntentBuilder_ != null || triggeredIntent_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -3776,11 +3800,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           triggeredIntent_ = value;
-          onChanged();
         } else {
           triggeredIntentBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3797,11 +3821,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           com.google.cloud.dialogflow.cx.v3beta1.Intent.Builder builderForValue) {
         if (triggeredIntentBuilder_ == null) {
           triggeredIntent_ = builderForValue.build();
-          onChanged();
         } else {
           triggeredIntentBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3816,19 +3840,19 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeTriggeredIntent(com.google.cloud.dialogflow.cx.v3beta1.Intent value) {
         if (triggeredIntentBuilder_ == null) {
-          if (triggeredIntent_ != null) {
-            triggeredIntent_ =
-                com.google.cloud.dialogflow.cx.v3beta1.Intent.newBuilder(triggeredIntent_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && triggeredIntent_ != null
+              && triggeredIntent_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Intent.getDefaultInstance()) {
+            getTriggeredIntentBuilder().mergeFrom(value);
           } else {
             triggeredIntent_ = value;
           }
-          onChanged();
         } else {
           triggeredIntentBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3842,14 +3866,13 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
        */
       public Builder clearTriggeredIntent() {
-        if (triggeredIntentBuilder_ == null) {
-          triggeredIntent_ = null;
-          onChanged();
-        } else {
-          triggeredIntent_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        triggeredIntent_ = null;
+        if (triggeredIntentBuilder_ != null) {
+          triggeredIntentBuilder_.dispose();
           triggeredIntentBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3863,7 +3886,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
        */
       public com.google.cloud.dialogflow.cx.v3beta1.Intent.Builder getTriggeredIntentBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getTriggeredIntentFieldBuilder().getBuilder();
       }
@@ -3932,7 +3955,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * @return Whether the currentPage field is set.
        */
       public boolean hasCurrentPage() {
-        return currentPageBuilder_ != null || currentPage_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -3971,11 +3994,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           currentPage_ = value;
-          onChanged();
         } else {
           currentPageBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -3992,11 +4015,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           com.google.cloud.dialogflow.cx.v3beta1.Page.Builder builderForValue) {
         if (currentPageBuilder_ == null) {
           currentPage_ = builderForValue.build();
-          onChanged();
         } else {
           currentPageBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -4011,19 +4034,18 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeCurrentPage(com.google.cloud.dialogflow.cx.v3beta1.Page value) {
         if (currentPageBuilder_ == null) {
-          if (currentPage_ != null) {
-            currentPage_ =
-                com.google.cloud.dialogflow.cx.v3beta1.Page.newBuilder(currentPage_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && currentPage_ != null
+              && currentPage_ != com.google.cloud.dialogflow.cx.v3beta1.Page.getDefaultInstance()) {
+            getCurrentPageBuilder().mergeFrom(value);
           } else {
             currentPage_ = value;
           }
-          onChanged();
         } else {
           currentPageBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -4037,14 +4059,13 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
        */
       public Builder clearCurrentPage() {
-        if (currentPageBuilder_ == null) {
-          currentPage_ = null;
-          onChanged();
-        } else {
-          currentPage_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        currentPage_ = null;
+        if (currentPageBuilder_ != null) {
+          currentPageBuilder_.dispose();
           currentPageBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4058,7 +4079,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
        */
       public com.google.cloud.dialogflow.cx.v3beta1.Page.Builder getCurrentPageBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getCurrentPageFieldBuilder().getBuilder();
       }
@@ -4112,11 +4133,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           textResponses_ = java.util.Collections.emptyList();
 
       private void ensureTextResponsesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           textResponses_ =
               new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text>(
                   textResponses_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000020;
         }
       }
 
@@ -4362,7 +4383,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public Builder clearTextResponses() {
         if (textResponsesBuilder_ == null) {
           textResponses_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           textResponsesBuilder_.clear();
@@ -4507,7 +4528,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
                   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text.Builder,
                   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.TextOrBuilder>(
                   textResponses_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           textResponses_ = null;
@@ -4532,7 +4553,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        *
@@ -4569,11 +4590,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           status_ = value;
-          onChanged();
         } else {
           statusBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -4589,11 +4610,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
         if (statusBuilder_ == null) {
           status_ = builderForValue.build();
-          onChanged();
         } else {
           statusBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -4608,16 +4629,18 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeStatus(com.google.rpc.Status value) {
         if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000040) != 0)
+              && status_ != null
+              && status_ != com.google.rpc.Status.getDefaultInstance()) {
+            getStatusBuilder().mergeFrom(value);
           } else {
             status_ = value;
           }
-          onChanged();
         } else {
           statusBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -4631,14 +4654,13 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.rpc.Status status = 10;</code>
        */
       public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
-          onChanged();
-        } else {
-          status_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4652,7 +4674,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <code>.google.rpc.Status status = 10;</code>
        */
       public com.google.rpc.Status.Builder getStatusBuilder() {
-
+        bitField0_ |= 0x00000040;
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
@@ -4811,7 +4833,9 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInputOrBuilder
       getUserInputOrBuilder() {
-    return getUserInput();
+    return userInput_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput.getDefaultInstance()
+        : userInput_;
   }
 
   public static final int VIRTUAL_AGENT_OUTPUT_FIELD_NUMBER = 2;
@@ -4869,7 +4893,10 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutputOrBuilder
       getVirtualAgentOutputOrBuilder() {
-    return getVirtualAgentOutput();
+    return virtualAgentOutput_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput
+            .getDefaultInstance()
+        : virtualAgentOutput_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -5090,16 +5117,15 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (userInputBuilder_ == null) {
-        userInput_ = null;
-      } else {
-        userInput_ = null;
+      bitField0_ = 0;
+      userInput_ = null;
+      if (userInputBuilder_ != null) {
+        userInputBuilder_.dispose();
         userInputBuilder_ = null;
       }
-      if (virtualAgentOutputBuilder_ == null) {
-        virtualAgentOutput_ = null;
-      } else {
-        virtualAgentOutput_ = null;
+      virtualAgentOutput_ = null;
+      if (virtualAgentOutputBuilder_ != null) {
+        virtualAgentOutputBuilder_.dispose();
         virtualAgentOutputBuilder_ = null;
       }
       return this;
@@ -5129,18 +5155,24 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn result =
           new com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn(this);
-      if (userInputBuilder_ == null) {
-        result.userInput_ = userInput_;
-      } else {
-        result.userInput_ = userInputBuilder_.build();
-      }
-      if (virtualAgentOutputBuilder_ == null) {
-        result.virtualAgentOutput_ = virtualAgentOutput_;
-      } else {
-        result.virtualAgentOutput_ = virtualAgentOutputBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.userInput_ = userInputBuilder_ == null ? userInput_ : userInputBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.virtualAgentOutput_ =
+            virtualAgentOutputBuilder_ == null
+                ? virtualAgentOutput_
+                : virtualAgentOutputBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5224,14 +5256,14 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getUserInputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getVirtualAgentOutputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -5251,6 +5283,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput userInput_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput,
@@ -5269,7 +5303,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return Whether the userInput field is set.
      */
     public boolean hasUserInput() {
-      return userInputBuilder_ != null || userInput_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -5307,11 +5341,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         userInput_ = value;
-        onChanged();
       } else {
         userInputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -5327,11 +5361,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput.Builder builderForValue) {
       if (userInputBuilder_ == null) {
         userInput_ = builderForValue.build();
-        onChanged();
       } else {
         userInputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -5346,20 +5380,20 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public Builder mergeUserInput(
         com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput value) {
       if (userInputBuilder_ == null) {
-        if (userInput_ != null) {
-          userInput_ =
-              com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput.newBuilder(
-                      userInput_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && userInput_ != null
+            && userInput_
+                != com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput
+                    .getDefaultInstance()) {
+          getUserInputBuilder().mergeFrom(value);
         } else {
           userInput_ = value;
         }
-        onChanged();
       } else {
         userInputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -5372,14 +5406,13 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput user_input = 1;</code>
      */
     public Builder clearUserInput() {
-      if (userInputBuilder_ == null) {
-        userInput_ = null;
-        onChanged();
-      } else {
-        userInput_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      userInput_ = null;
+      if (userInputBuilder_ != null) {
+        userInputBuilder_.dispose();
         userInputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5393,7 +5426,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput.Builder
         getUserInputBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUserInputFieldBuilder().getBuilder();
     }
@@ -5463,7 +5496,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return Whether the virtualAgentOutput field is set.
      */
     public boolean hasVirtualAgentOutput() {
-      return virtualAgentOutputBuilder_ != null || virtualAgentOutput_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -5507,11 +5540,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         virtualAgentOutput_ = value;
-        onChanged();
       } else {
         virtualAgentOutputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5530,11 +5563,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             builderForValue) {
       if (virtualAgentOutputBuilder_ == null) {
         virtualAgentOutput_ = builderForValue.build();
-        onChanged();
       } else {
         virtualAgentOutputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5551,20 +5584,20 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public Builder mergeVirtualAgentOutput(
         com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput value) {
       if (virtualAgentOutputBuilder_ == null) {
-        if (virtualAgentOutput_ != null) {
-          virtualAgentOutput_ =
-              com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput.newBuilder(
-                      virtualAgentOutput_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && virtualAgentOutput_ != null
+            && virtualAgentOutput_
+                != com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput
+                    .getDefaultInstance()) {
+          getVirtualAgentOutputBuilder().mergeFrom(value);
         } else {
           virtualAgentOutput_ = value;
         }
-        onChanged();
       } else {
         virtualAgentOutputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5579,14 +5612,13 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearVirtualAgentOutput() {
-      if (virtualAgentOutputBuilder_ == null) {
-        virtualAgentOutput_ = null;
-        onChanged();
-      } else {
-        virtualAgentOutput_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      virtualAgentOutput_ = null;
+      if (virtualAgentOutputBuilder_ != null) {
+        virtualAgentOutputBuilder_.dispose();
         virtualAgentOutputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5602,7 +5634,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput.Builder
         getVirtualAgentOutputBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getVirtualAgentOutputFieldBuilder().getBuilder();
     }

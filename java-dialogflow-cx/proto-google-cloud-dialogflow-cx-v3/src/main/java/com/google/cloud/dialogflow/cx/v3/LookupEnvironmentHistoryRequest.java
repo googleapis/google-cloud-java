@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3.Environments.LookupEnvironmentHistory].
+ * The request message for
+ * [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3.Environments.LookupEnvironmentHistory].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest}
@@ -70,7 +71,9 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,7 +130,7 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -146,7 +149,9 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -377,7 +382,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The request message for [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3.Environments.LookupEnvironmentHistory].
+   * The request message for
+   * [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3.Environments.LookupEnvironmentHistory].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest}
@@ -412,12 +418,10 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       return this;
     }
 
@@ -446,11 +450,25 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
     public com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest result =
           new com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest(this);
-      result.name_ = name_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
     }
 
     @java.lang.Override
@@ -503,6 +521,7 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -510,6 +529,7 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -541,19 +561,19 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -572,6 +592,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -646,8 +668,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -667,8 +689,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -693,8 +715,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -732,6 +754,7 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -748,7 +771,7 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -815,8 +838,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -832,8 +855,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -854,8 +877,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

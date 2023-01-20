@@ -130,7 +130,9 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -179,7 +181,9 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object event_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object event_ = "";
   /**
    *
    *
@@ -282,7 +286,9 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.FulfillmentOrBuilder
       getTriggerFulfillmentOrBuilder() {
-    return getTriggerFulfillment();
+    return triggerFulfillment_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.getDefaultInstance()
+        : triggerFulfillment_;
   }
 
   public static final int TARGET_PAGE_FIELD_NUMBER = 2;
@@ -706,14 +712,12 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       event_ = "";
-
-      if (triggerFulfillmentBuilder_ == null) {
-        triggerFulfillment_ = null;
-      } else {
-        triggerFulfillment_ = null;
+      triggerFulfillment_ = null;
+      if (triggerFulfillmentBuilder_ != null) {
+        triggerFulfillmentBuilder_.dispose();
         triggerFulfillmentBuilder_ = null;
       }
       targetCase_ = 0;
@@ -745,22 +749,33 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.EventHandler buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.EventHandler result =
           new com.google.cloud.dialogflow.cx.v3beta1.EventHandler(this);
-      result.name_ = name_;
-      result.event_ = event_;
-      if (triggerFulfillmentBuilder_ == null) {
-        result.triggerFulfillment_ = triggerFulfillment_;
-      } else {
-        result.triggerFulfillment_ = triggerFulfillmentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (targetCase_ == 2) {
-        result.target_ = target_;
-      }
-      if (targetCase_ == 3) {
-        result.target_ = target_;
-      }
-      result.targetCase_ = targetCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.EventHandler result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.event_ = event_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.triggerFulfillment_ =
+            triggerFulfillmentBuilder_ == null
+                ? triggerFulfillment_
+                : triggerFulfillmentBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3beta1.EventHandler result) {
+      result.targetCase_ = targetCase_;
+      result.target_ = this.target_;
     }
 
     @java.lang.Override
@@ -811,10 +826,12 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEvent().isEmpty()) {
         event_ = other.event_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTriggerFulfillment()) {
@@ -883,20 +900,20 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 event_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getTriggerFulfillmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 50
             default:
@@ -929,6 +946,8 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -991,8 +1010,8 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1008,8 +1027,8 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1030,8 +1049,8 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1097,8 +1116,8 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       event_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1114,8 +1133,8 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEvent() {
-
       event_ = getDefaultInstance().getEvent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1136,8 +1155,8 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       event_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1163,7 +1182,7 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the triggerFulfillment field is set.
      */
     public boolean hasTriggerFulfillment() {
-      return triggerFulfillmentBuilder_ != null || triggerFulfillment_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1206,11 +1225,11 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         triggerFulfillment_ = value;
-        onChanged();
       } else {
         triggerFulfillmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1229,11 +1248,11 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.Builder builderForValue) {
       if (triggerFulfillmentBuilder_ == null) {
         triggerFulfillment_ = builderForValue.build();
-        onChanged();
       } else {
         triggerFulfillmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1251,19 +1270,19 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTriggerFulfillment(
         com.google.cloud.dialogflow.cx.v3beta1.Fulfillment value) {
       if (triggerFulfillmentBuilder_ == null) {
-        if (triggerFulfillment_ != null) {
-          triggerFulfillment_ =
-              com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.newBuilder(triggerFulfillment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && triggerFulfillment_ != null
+            && triggerFulfillment_
+                != com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.getDefaultInstance()) {
+          getTriggerFulfillmentBuilder().mergeFrom(value);
         } else {
           triggerFulfillment_ = value;
         }
-        onChanged();
       } else {
         triggerFulfillmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1279,14 +1298,13 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Fulfillment trigger_fulfillment = 5;</code>
      */
     public Builder clearTriggerFulfillment() {
-      if (triggerFulfillmentBuilder_ == null) {
-        triggerFulfillment_ = null;
-        onChanged();
-      } else {
-        triggerFulfillment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      triggerFulfillment_ = null;
+      if (triggerFulfillmentBuilder_ != null) {
+        triggerFulfillmentBuilder_.dispose();
         triggerFulfillmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1303,7 +1321,7 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.Builder
         getTriggerFulfillmentBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTriggerFulfillmentFieldBuilder().getBuilder();
     }

@@ -86,8 +86,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
      * </pre>
      *
      * <code>
@@ -101,8 +101,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
      * </pre>
      *
      * <code>
@@ -163,13 +163,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VERSION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object version_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object version_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
      * </pre>
      *
      * <code>
@@ -194,8 +196,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
      * </pre>
      *
      * <code>
@@ -417,8 +419,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         version_ = "";
-
         return this;
       }
 
@@ -447,9 +449,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig buildPartial() {
         com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig result =
             new com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig(this);
-        result.version_ = version_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.version_ = version_;
+        }
       }
 
       @java.lang.Override
@@ -503,6 +515,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -534,7 +547,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   version_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -554,13 +567,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int bitField0_;
+
       private java.lang.Object version_ = "";
       /**
        *
        *
        * <pre>
-       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
        * </pre>
        *
        * <code>
@@ -584,8 +599,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
        * </pre>
        *
        * <code>
@@ -609,8 +624,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
        * </pre>
        *
        * <code>
@@ -624,8 +639,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         version_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -633,8 +648,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
        * </pre>
        *
        * <code>
@@ -644,8 +659,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-
         version_ = getDefaultInstance().getVersion();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -653,8 +668,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
        * </pre>
        *
        * <code>
@@ -669,8 +684,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         version_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -808,8 +823,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
-     * Default false. If set to true, run once a day.
+     * Whether to run test cases in
+     * [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases]
+     * periodically. Default false. If set to true, run once a day.
      * </pre>
      *
      * <code>bool enable_continuous_run = 2;</code>
@@ -822,8 +838,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] before
-     * deploying a flow version to the environment. Default false.
+     * Whether to run test cases in
+     * [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases]
+     * before deploying a flow version to the environment. Default false.
      * </pre>
      *
      * <code>bool enable_predeployment_run = 3;</code>
@@ -882,6 +899,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TEST_CASES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList testCases_;
     /**
      *
@@ -951,13 +970,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENABLE_CONTINUOUS_RUN_FIELD_NUMBER = 2;
-    private boolean enableContinuousRun_;
+    private boolean enableContinuousRun_ = false;
     /**
      *
      *
      * <pre>
-     * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
-     * Default false. If set to true, run once a day.
+     * Whether to run test cases in
+     * [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases]
+     * periodically. Default false. If set to true, run once a day.
      * </pre>
      *
      * <code>bool enable_continuous_run = 2;</code>
@@ -970,13 +990,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENABLE_PREDEPLOYMENT_RUN_FIELD_NUMBER = 3;
-    private boolean enablePredeploymentRun_;
+    private boolean enablePredeploymentRun_ = false;
     /**
      *
      *
      * <pre>
-     * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] before
-     * deploying a flow version to the environment. Default false.
+     * Whether to run test cases in
+     * [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases]
+     * before deploying a flow version to the environment. Default false.
      * </pre>
      *
      * <code>bool enable_predeployment_run = 3;</code>
@@ -1213,12 +1234,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         enableContinuousRun_ = false;
-
         enablePredeploymentRun_ = false;
-
         return this;
       }
 
@@ -1247,16 +1267,32 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig buildPartial() {
         com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig result =
             new com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           testCases_ = testCases_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.testCases_ = testCases_;
-        result.enableContinuousRun_ = enableContinuousRun_;
-        result.enablePredeploymentRun_ = enablePredeploymentRun_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.enableContinuousRun_ = enableContinuousRun_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enablePredeploymentRun_ = enablePredeploymentRun_;
+        }
       }
 
       @java.lang.Override
@@ -1361,13 +1397,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
               case 16:
                 {
                   enableContinuousRun_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   enablePredeploymentRun_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -1580,8 +1616,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
-       * Default false. If set to true, run once a day.
+       * Whether to run test cases in
+       * [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases]
+       * periodically. Default false. If set to true, run once a day.
        * </pre>
        *
        * <code>bool enable_continuous_run = 2;</code>
@@ -1596,8 +1633,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
-       * Default false. If set to true, run once a day.
+       * Whether to run test cases in
+       * [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases]
+       * periodically. Default false. If set to true, run once a day.
        * </pre>
        *
        * <code>bool enable_continuous_run = 2;</code>
@@ -1608,6 +1646,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public Builder setEnableContinuousRun(boolean value) {
 
         enableContinuousRun_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1615,8 +1654,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
-       * Default false. If set to true, run once a day.
+       * Whether to run test cases in
+       * [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases]
+       * periodically. Default false. If set to true, run once a day.
        * </pre>
        *
        * <code>bool enable_continuous_run = 2;</code>
@@ -1624,7 +1664,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEnableContinuousRun() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         enableContinuousRun_ = false;
         onChanged();
         return this;
@@ -1635,8 +1675,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] before
-       * deploying a flow version to the environment. Default false.
+       * Whether to run test cases in
+       * [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases]
+       * before deploying a flow version to the environment. Default false.
        * </pre>
        *
        * <code>bool enable_predeployment_run = 3;</code>
@@ -1651,8 +1692,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] before
-       * deploying a flow version to the environment. Default false.
+       * Whether to run test cases in
+       * [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases]
+       * before deploying a flow version to the environment. Default false.
        * </pre>
        *
        * <code>bool enable_predeployment_run = 3;</code>
@@ -1663,6 +1705,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public Builder setEnablePredeploymentRun(boolean value) {
 
         enablePredeploymentRun_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1670,8 +1713,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] before
-       * deploying a flow version to the environment. Default false.
+       * Whether to run test cases in
+       * [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases]
+       * before deploying a flow version to the environment. Default false.
        * </pre>
        *
        * <code>bool enable_predeployment_run = 3;</code>
@@ -1679,7 +1723,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEnablePredeploymentRun() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         enablePredeploymentRun_ = false;
         onChanged();
         return this;
@@ -1763,7 +1807,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The list of webhooks to override for the agent environment. The webhook
      * must exist in the agent. You can override fields in
-     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+     * and
      * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
      * </pre>
      *
@@ -1776,7 +1821,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The list of webhooks to override for the agent environment. The webhook
      * must exist in the agent. You can override fields in
-     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+     * and
      * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
      * </pre>
      *
@@ -1789,7 +1835,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The list of webhooks to override for the agent environment. The webhook
      * must exist in the agent. You can override fields in
-     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+     * and
      * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
      * </pre>
      *
@@ -1802,7 +1849,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The list of webhooks to override for the agent environment. The webhook
      * must exist in the agent. You can override fields in
-     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+     * and
      * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
      * </pre>
      *
@@ -1816,7 +1864,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The list of webhooks to override for the agent environment. The webhook
      * must exist in the agent. You can override fields in
-     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+     * and
      * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
      * </pre>
      *
@@ -1874,6 +1923,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int WEBHOOK_OVERRIDES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dialogflow.cx.v3.Webhook> webhookOverrides_;
     /**
      *
@@ -1881,7 +1932,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The list of webhooks to override for the agent environment. The webhook
      * must exist in the agent. You can override fields in
-     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+     * and
      * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
      * </pre>
      *
@@ -1897,7 +1949,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The list of webhooks to override for the agent environment. The webhook
      * must exist in the agent. You can override fields in
-     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+     * and
      * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
      * </pre>
      *
@@ -1914,7 +1967,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The list of webhooks to override for the agent environment. The webhook
      * must exist in the agent. You can override fields in
-     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+     * and
      * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
      * </pre>
      *
@@ -1930,7 +1984,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The list of webhooks to override for the agent environment. The webhook
      * must exist in the agent. You can override fields in
-     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+     * and
      * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
      * </pre>
      *
@@ -1946,7 +2001,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The list of webhooks to override for the agent environment. The webhook
      * must exist in the agent. You can override fields in
-     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+     * and
      * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
      * </pre>
      *
@@ -2161,6 +2217,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (webhookOverridesBuilder_ == null) {
           webhookOverrides_ = java.util.Collections.emptyList();
         } else {
@@ -2196,7 +2253,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig buildPartial() {
         com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig result =
             new com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig result) {
         if (webhookOverridesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             webhookOverrides_ = java.util.Collections.unmodifiableList(webhookOverrides_);
@@ -2206,8 +2272,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.webhookOverrides_ = webhookOverridesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2367,7 +2436,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2386,7 +2456,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2405,7 +2476,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2424,7 +2496,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2450,7 +2523,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2473,7 +2547,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2498,7 +2573,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2524,7 +2600,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2547,7 +2624,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2570,7 +2648,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2593,7 +2672,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2615,7 +2695,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2637,7 +2718,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2653,7 +2735,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2673,7 +2756,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2693,7 +2777,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2709,7 +2794,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2726,7 +2812,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The list of webhooks to override for the agent environment. The webhook
        * must exist in the agent. You can override fields in
-       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service] and
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3.Webhook.generic_web_service]
+       * and
        * [`service_directory`][google.cloud.dialogflow.cx.v3.Webhook.service_directory].
        * </pre>
        *
@@ -2823,7 +2910,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -2876,13 +2965,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The human-readable name of the environment (unique in an agent). Limit of
-   * 64 characters.
+   * Required. The human-readable name of the environment (unique in an agent).
+   * Limit of 64 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2905,8 +2996,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The human-readable name of the environment (unique in an agent). Limit of
-   * 64 characters.
+   * Required. The human-readable name of the environment (unique in an agent).
+   * Limit of 64 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2927,7 +3018,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -2978,14 +3071,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_CONFIGS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig>
       versionConfigs_;
   /**
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include version
-   * configs for all flows that are reachable from [`Start
+   * Required. A list of configurations for flow versions. You should include
+   * version configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
@@ -3003,8 +3098,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include version
-   * configs for all flows that are reachable from [`Start
+   * Required. A list of configurations for flow versions. You should include
+   * version configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
@@ -3023,8 +3118,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include version
-   * configs for all flows that are reachable from [`Start
+   * Required. A list of configurations for flow versions. You should include
+   * version configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
@@ -3041,8 +3136,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include version
-   * configs for all flows that are reachable from [`Start
+   * Required. A list of configurations for flow versions. You should include
+   * version configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
@@ -3059,8 +3154,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include version
-   * configs for all flows that are reachable from [`Start
+   * Required. A list of configurations for flow versions. You should include
+   * version configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
@@ -3121,7 +3216,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int TEST_CASES_CONFIG_FIELD_NUMBER = 7;
@@ -3170,7 +3265,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfigOrBuilder
       getTestCasesConfigOrBuilder() {
-    return getTestCasesConfig();
+    return testCasesConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.getDefaultInstance()
+        : testCasesConfig_;
   }
 
   public static final int WEBHOOK_CONFIG_FIELD_NUMBER = 10;
@@ -3219,7 +3316,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfigOrBuilder
       getWebhookConfigOrBuilder() {
-    return getWebhookConfig();
+    return webhookConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig.getDefaultInstance()
+        : webhookConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3497,35 +3596,30 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       if (versionConfigsBuilder_ == null) {
         versionConfigs_ = java.util.Collections.emptyList();
       } else {
         versionConfigs_ = null;
         versionConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (testCasesConfigBuilder_ == null) {
-        testCasesConfig_ = null;
-      } else {
-        testCasesConfig_ = null;
+      testCasesConfig_ = null;
+      if (testCasesConfigBuilder_ != null) {
+        testCasesConfigBuilder_.dispose();
         testCasesConfigBuilder_ = null;
       }
-      if (webhookConfigBuilder_ == null) {
-        webhookConfig_ = null;
-      } else {
-        webhookConfig_ = null;
+      webhookConfig_ = null;
+      if (webhookConfigBuilder_ != null) {
+        webhookConfigBuilder_.dispose();
         webhookConfigBuilder_ = null;
       }
       return this;
@@ -3555,36 +3649,48 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.Environment buildPartial() {
       com.google.cloud.dialogflow.cx.v3.Environment result =
           new com.google.cloud.dialogflow.cx.v3.Environment(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.cx.v3.Environment result) {
       if (versionConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           versionConfigs_ = java.util.Collections.unmodifiableList(versionConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.versionConfigs_ = versionConfigs_;
       } else {
         result.versionConfigs_ = versionConfigsBuilder_.build();
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.Environment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (testCasesConfigBuilder_ == null) {
-        result.testCasesConfig_ = testCasesConfig_;
-      } else {
-        result.testCasesConfig_ = testCasesConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
       }
-      if (webhookConfigBuilder_ == null) {
-        result.webhookConfig_ = webhookConfig_;
-      } else {
-        result.webhookConfig_ = webhookConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.testCasesConfig_ =
+            testCasesConfigBuilder_ == null ? testCasesConfig_ : testCasesConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.webhookConfig_ =
+            webhookConfigBuilder_ == null ? webhookConfig_ : webhookConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3634,21 +3740,24 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3.Environment.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (versionConfigsBuilder_ == null) {
         if (!other.versionConfigs_.isEmpty()) {
           if (versionConfigs_.isEmpty()) {
             versionConfigs_ = other.versionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureVersionConfigsIsMutable();
             versionConfigs_.addAll(other.versionConfigs_);
@@ -3661,7 +3770,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             versionConfigsBuilder_.dispose();
             versionConfigsBuilder_ = null;
             versionConfigs_ = other.versionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             versionConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVersionConfigsFieldBuilder()
@@ -3709,25 +3818,25 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -3747,13 +3856,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getTestCasesConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 82:
               {
                 input.readMessage(getWebhookConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             default:
@@ -3842,8 +3951,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3861,8 +3970,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3885,8 +3994,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3896,8 +4005,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the environment (unique in an agent). Limit of
-     * 64 characters.
+     * Required. The human-readable name of the environment (unique in an agent).
+     * Limit of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3919,8 +4028,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the environment (unique in an agent). Limit of
-     * 64 characters.
+     * Required. The human-readable name of the environment (unique in an agent).
+     * Limit of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3942,8 +4051,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the environment (unique in an agent). Limit of
-     * 64 characters.
+     * Required. The human-readable name of the environment (unique in an agent).
+     * Limit of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3955,8 +4064,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3964,8 +4073,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the environment (unique in an agent). Limit of
-     * 64 characters.
+     * Required. The human-readable name of the environment (unique in an agent).
+     * Limit of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3973,8 +4082,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3982,8 +4091,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the environment (unique in an agent). Limit of
-     * 64 characters.
+     * Required. The human-readable name of the environment (unique in an agent).
+     * Limit of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3996,8 +4105,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4066,8 +4175,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4084,8 +4193,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -4107,8 +4216,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4117,11 +4226,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         versionConfigs_ = java.util.Collections.emptyList();
 
     private void ensureVersionConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         versionConfigs_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig>(
                 versionConfigs_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -4135,8 +4244,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4157,8 +4266,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4178,8 +4287,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4200,8 +4309,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4228,8 +4337,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4254,8 +4363,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4282,8 +4391,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4310,8 +4419,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4335,8 +4444,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4361,8 +4470,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4387,8 +4496,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4400,7 +4509,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVersionConfigs() {
       if (versionConfigsBuilder_ == null) {
         versionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         versionConfigsBuilder_.clear();
@@ -4411,8 +4520,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4435,8 +4544,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4453,8 +4562,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4475,8 +4584,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4498,8 +4607,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4518,8 +4627,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4539,8 +4648,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include version
-     * configs for all flows that are reachable from [`Start
+     * Required. A list of configurations for flow versions. You should include
+     * version configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
@@ -4566,7 +4675,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig.Builder,
                 com.google.cloud.dialogflow.cx.v3.Environment.VersionConfigOrBuilder>(
                 versionConfigs_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         versionConfigs_ = null;
@@ -4594,7 +4703,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -4635,11 +4744,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4656,11 +4765,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4676,17 +4785,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4701,14 +4811,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4723,7 +4832,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4794,7 +4903,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the testCasesConfig field is set.
      */
     public boolean hasTestCasesConfig() {
-      return testCasesConfigBuilder_ != null || testCasesConfig_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -4834,11 +4943,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         testCasesConfig_ = value;
-        onChanged();
       } else {
         testCasesConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -4855,11 +4964,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.Builder builderForValue) {
       if (testCasesConfigBuilder_ == null) {
         testCasesConfig_ = builderForValue.build();
-        onChanged();
       } else {
         testCasesConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -4875,20 +4984,20 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTestCasesConfig(
         com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig value) {
       if (testCasesConfigBuilder_ == null) {
-        if (testCasesConfig_ != null) {
-          testCasesConfig_ =
-              com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.newBuilder(
-                      testCasesConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && testCasesConfig_ != null
+            && testCasesConfig_
+                != com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig
+                    .getDefaultInstance()) {
+          getTestCasesConfigBuilder().mergeFrom(value);
         } else {
           testCasesConfig_ = value;
         }
-        onChanged();
       } else {
         testCasesConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -4902,14 +5011,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTestCasesConfig() {
-      if (testCasesConfigBuilder_ == null) {
-        testCasesConfig_ = null;
-        onChanged();
-      } else {
-        testCasesConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      testCasesConfig_ = null;
+      if (testCasesConfigBuilder_ != null) {
+        testCasesConfigBuilder_.dispose();
         testCasesConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4924,7 +5032,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.Builder
         getTestCasesConfigBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTestCasesConfigFieldBuilder().getBuilder();
     }
@@ -4993,7 +5101,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the webhookConfig field is set.
      */
     public boolean hasWebhookConfig() {
-      return webhookConfigBuilder_ != null || webhookConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -5031,11 +5139,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         webhookConfig_ = value;
-        onChanged();
       } else {
         webhookConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -5051,11 +5159,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig.Builder builderForValue) {
       if (webhookConfigBuilder_ == null) {
         webhookConfig_ = builderForValue.build();
-        onChanged();
       } else {
         webhookConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -5070,19 +5178,20 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeWebhookConfig(
         com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig value) {
       if (webhookConfigBuilder_ == null) {
-        if (webhookConfig_ != null) {
-          webhookConfig_ =
-              com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig.newBuilder(webhookConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && webhookConfig_ != null
+            && webhookConfig_
+                != com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig
+                    .getDefaultInstance()) {
+          getWebhookConfigBuilder().mergeFrom(value);
         } else {
           webhookConfig_ = value;
         }
-        onChanged();
       } else {
         webhookConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -5095,14 +5204,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig webhook_config = 10;</code>
      */
     public Builder clearWebhookConfig() {
-      if (webhookConfigBuilder_ == null) {
-        webhookConfig_ = null;
-        onChanged();
-      } else {
-        webhookConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      webhookConfig_ = null;
+      if (webhookConfigBuilder_ != null) {
+        webhookConfigBuilder_.dispose();
         webhookConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5116,7 +5224,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig.Builder
         getWebhookConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getWebhookConfigFieldBuilder().getBuilder();
     }

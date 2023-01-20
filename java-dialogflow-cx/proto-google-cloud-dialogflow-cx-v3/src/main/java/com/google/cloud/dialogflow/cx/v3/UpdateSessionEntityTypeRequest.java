@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.cx.v3.SessionEntityTypes.UpdateSessionEntityType].
+ * The request message for
+ * [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.cx.v3.SessionEntityTypes.UpdateSessionEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateSessionEntityTypeRequest}
@@ -136,7 +137,9 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SessionEntityTypeOrBuilder
       getSessionEntityTypeOrBuilder() {
-    return getSessionEntityType();
+    return sessionEntityType_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SessionEntityType.getDefaultInstance()
+        : sessionEntityType_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -182,7 +185,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -368,7 +371,8 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The request message for [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.cx.v3.SessionEntityTypes.UpdateSessionEntityType].
+   * The request message for
+   * [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.cx.v3.SessionEntityTypes.UpdateSessionEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateSessionEntityTypeRequest}
@@ -402,16 +406,15 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (sessionEntityTypeBuilder_ == null) {
-        sessionEntityType_ = null;
-      } else {
-        sessionEntityType_ = null;
+      bitField0_ = 0;
+      sessionEntityType_ = null;
+      if (sessionEntityTypeBuilder_ != null) {
+        sessionEntityTypeBuilder_.dispose();
         sessionEntityTypeBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -442,18 +445,25 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
     public com.google.cloud.dialogflow.cx.v3.UpdateSessionEntityTypeRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.UpdateSessionEntityTypeRequest result =
           new com.google.cloud.dialogflow.cx.v3.UpdateSessionEntityTypeRequest(this);
-      if (sessionEntityTypeBuilder_ == null) {
-        result.sessionEntityType_ = sessionEntityType_;
-      } else {
-        result.sessionEntityType_ = sessionEntityTypeBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3.UpdateSessionEntityTypeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sessionEntityType_ =
+            sessionEntityTypeBuilder_ == null
+                ? sessionEntityType_
+                : sessionEntityTypeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -540,13 +550,13 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
               {
                 input.readMessage(
                     getSessionEntityTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -565,6 +575,8 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3.SessionEntityType sessionEntityType_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -592,7 +604,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * @return Whether the sessionEntityType field is set.
      */
     public boolean hasSessionEntityType() {
-      return sessionEntityTypeBuilder_ != null || sessionEntityType_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -645,11 +657,11 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         sessionEntityType_ = value;
-        onChanged();
       } else {
         sessionEntityTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -673,11 +685,11 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
         com.google.cloud.dialogflow.cx.v3.SessionEntityType.Builder builderForValue) {
       if (sessionEntityTypeBuilder_ == null) {
         sessionEntityType_ = builderForValue.build();
-        onChanged();
       } else {
         sessionEntityTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -700,19 +712,19 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
     public Builder mergeSessionEntityType(
         com.google.cloud.dialogflow.cx.v3.SessionEntityType value) {
       if (sessionEntityTypeBuilder_ == null) {
-        if (sessionEntityType_ != null) {
-          sessionEntityType_ =
-              com.google.cloud.dialogflow.cx.v3.SessionEntityType.newBuilder(sessionEntityType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && sessionEntityType_ != null
+            && sessionEntityType_
+                != com.google.cloud.dialogflow.cx.v3.SessionEntityType.getDefaultInstance()) {
+          getSessionEntityTypeBuilder().mergeFrom(value);
         } else {
           sessionEntityType_ = value;
         }
-        onChanged();
       } else {
         sessionEntityTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -733,14 +745,13 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearSessionEntityType() {
-      if (sessionEntityTypeBuilder_ == null) {
-        sessionEntityType_ = null;
-        onChanged();
-      } else {
-        sessionEntityType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      sessionEntityType_ = null;
+      if (sessionEntityTypeBuilder_ != null) {
+        sessionEntityTypeBuilder_.dispose();
         sessionEntityTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -762,7 +773,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.dialogflow.cx.v3.SessionEntityType.Builder
         getSessionEntityTypeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSessionEntityTypeFieldBuilder().getBuilder();
     }
@@ -845,7 +856,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -882,11 +893,11 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -901,11 +912,11 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -919,17 +930,18 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -942,14 +954,13 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -962,7 +973,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

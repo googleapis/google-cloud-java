@@ -27,7 +27,8 @@ public interface CreateSecuritySettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The location to create an [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
+   * Required. The location to create an
+   * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface CreateSecuritySettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The location to create an [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
+   * Required. The location to create an
+   * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *

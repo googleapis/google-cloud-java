@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [TestCases.UpdateTestCase][google.cloud.dialogflow.cx.v3.TestCases.UpdateTestCase].
+ * The request message for
+ * [TestCases.UpdateTestCase][google.cloud.dialogflow.cx.v3.TestCases.UpdateTestCase].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest}
@@ -116,7 +117,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.TestCaseOrBuilder getTestCaseOrBuilder() {
-    return getTestCase();
+    return testCase_ == null
+        ? com.google.cloud.dialogflow.cx.v3.TestCase.getDefaultInstance()
+        : testCase_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -127,7 +130,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The mask to specify which fields should be updated. The
    * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+   * cannot be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -145,7 +149,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The mask to specify which fields should be updated. The
    * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+   * cannot be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -163,7 +168,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The mask to specify which fields should be updated. The
    * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+   * cannot be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -171,7 +177,7 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -357,7 +363,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request message for [TestCases.UpdateTestCase][google.cloud.dialogflow.cx.v3.TestCases.UpdateTestCase].
+   * The request message for
+   * [TestCases.UpdateTestCase][google.cloud.dialogflow.cx.v3.TestCases.UpdateTestCase].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest}
@@ -391,16 +398,15 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (testCaseBuilder_ == null) {
-        testCase_ = null;
-      } else {
-        testCase_ = null;
+      bitField0_ = 0;
+      testCase_ = null;
+      if (testCaseBuilder_ != null) {
+        testCaseBuilder_.dispose();
         testCaseBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -430,18 +436,21 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest result =
           new com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest(this);
-      if (testCaseBuilder_ == null) {
-        result.testCase_ = testCase_;
-      } else {
-        result.testCase_ = testCaseBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.testCase_ = testCaseBuilder_ == null ? testCase_ : testCaseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -525,13 +534,13 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getTestCaseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +559,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3.TestCase testCase_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -571,7 +582,7 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the testCase field is set.
      */
     public boolean hasTestCase() {
-      return testCaseBuilder_ != null || testCase_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -612,11 +623,11 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         testCase_ = value;
-        onChanged();
       } else {
         testCaseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -633,11 +644,11 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
     public Builder setTestCase(com.google.cloud.dialogflow.cx.v3.TestCase.Builder builderForValue) {
       if (testCaseBuilder_ == null) {
         testCase_ = builderForValue.build();
-        onChanged();
       } else {
         testCaseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -653,19 +664,18 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeTestCase(com.google.cloud.dialogflow.cx.v3.TestCase value) {
       if (testCaseBuilder_ == null) {
-        if (testCase_ != null) {
-          testCase_ =
-              com.google.cloud.dialogflow.cx.v3.TestCase.newBuilder(testCase_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && testCase_ != null
+            && testCase_ != com.google.cloud.dialogflow.cx.v3.TestCase.getDefaultInstance()) {
+          getTestCaseBuilder().mergeFrom(value);
         } else {
           testCase_ = value;
         }
-        onChanged();
       } else {
         testCaseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -680,14 +690,13 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearTestCase() {
-      if (testCaseBuilder_ == null) {
-        testCase_ = null;
-        onChanged();
-      } else {
-        testCase_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      testCase_ = null;
+      if (testCaseBuilder_ != null) {
+        testCaseBuilder_.dispose();
         testCaseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -702,7 +711,7 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.TestCase.Builder getTestCaseBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTestCaseFieldBuilder().getBuilder();
     }
@@ -766,7 +775,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The mask to specify which fields should be updated. The
      * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+     * cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -775,7 +785,7 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -783,7 +793,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The mask to specify which fields should be updated. The
      * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+     * cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -806,7 +817,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The mask to specify which fields should be updated. The
      * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+     * cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -818,11 +830,11 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -831,7 +843,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The mask to specify which fields should be updated. The
      * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+     * cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -840,11 +853,11 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -853,7 +866,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The mask to specify which fields should be updated. The
      * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+     * cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -861,17 +875,18 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -880,21 +895,21 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The mask to specify which fields should be updated. The
      * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+     * cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -903,14 +918,15 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The mask to specify which fields should be updated. The
      * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+     * cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -920,7 +936,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The mask to specify which fields should be updated. The
      * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+     * cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -941,7 +958,8 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The mask to specify which fields should be updated. The
      * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+     * cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

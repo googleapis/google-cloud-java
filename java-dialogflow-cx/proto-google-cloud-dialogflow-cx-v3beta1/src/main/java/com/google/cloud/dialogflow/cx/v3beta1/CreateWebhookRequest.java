@@ -69,7 +69,9 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,7 +176,9 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.WebhookOrBuilder getWebhookOrBuilder() {
-    return getWebhook();
+    return webhook_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Webhook.getDefaultInstance()
+        : webhook_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,12 +394,11 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (webhookBuilder_ == null) {
-        webhook_ = null;
-      } else {
-        webhook_ = null;
+      webhook_ = null;
+      if (webhookBuilder_ != null) {
+        webhookBuilder_.dispose();
         webhookBuilder_ = null;
       }
       return this;
@@ -425,14 +428,21 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3beta1.CreateWebhookRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.CreateWebhookRequest result =
           new com.google.cloud.dialogflow.cx.v3beta1.CreateWebhookRequest(this);
-      result.parent_ = parent_;
-      if (webhookBuilder_ == null) {
-        result.webhook_ = webhook_;
-      } else {
-        result.webhook_ = webhookBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.CreateWebhookRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.webhook_ = webhookBuilder_ == null ? webhook_ : webhookBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -483,6 +493,7 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasWebhook()) {
@@ -517,13 +528,13 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getWebhookFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +553,8 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -613,8 +626,8 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +646,8 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +671,8 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,7 +697,7 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the webhook field is set.
      */
     public boolean hasWebhook() {
-      return webhookBuilder_ != null || webhook_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -725,11 +738,11 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         webhook_ = value;
-        onChanged();
       } else {
         webhookBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -747,11 +760,11 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder builderForValue) {
       if (webhookBuilder_ == null) {
         webhook_ = builderForValue.build();
-        onChanged();
       } else {
         webhookBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -767,19 +780,18 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeWebhook(com.google.cloud.dialogflow.cx.v3beta1.Webhook value) {
       if (webhookBuilder_ == null) {
-        if (webhook_ != null) {
-          webhook_ =
-              com.google.cloud.dialogflow.cx.v3beta1.Webhook.newBuilder(webhook_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && webhook_ != null
+            && webhook_ != com.google.cloud.dialogflow.cx.v3beta1.Webhook.getDefaultInstance()) {
+          getWebhookBuilder().mergeFrom(value);
         } else {
           webhook_ = value;
         }
-        onChanged();
       } else {
         webhookBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -794,14 +806,13 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearWebhook() {
-      if (webhookBuilder_ == null) {
-        webhook_ = null;
-        onChanged();
-      } else {
-        webhook_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      webhook_ = null;
+      if (webhookBuilder_ != null) {
+        webhookBuilder_.dispose();
         webhookBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -816,7 +827,7 @@ public final class CreateWebhookRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder getWebhookBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWebhookFieldBuilder().getBuilder();
     }

@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3.TestCases.CalculateCoverage].
+ * The request message for
+ * [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3.TestCases.CalculateCoverage].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CalculateCoverageRequest}
@@ -250,7 +251,9 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
   }
 
   public static final int AGENT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object agent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agent_ = "";
   /**
    *
    *
@@ -305,7 +308,7 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -338,9 +341,8 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest.CoverageType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest.CoverageType result =
-        com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest.CoverageType.valueOf(type_);
+        com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest.CoverageType.forNumber(type_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest.CoverageType.UNRECOGNIZED
         : result;
@@ -525,7 +527,8 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request message for [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3.TestCases.CalculateCoverage].
+   * The request message for
+   * [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3.TestCases.CalculateCoverage].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CalculateCoverageRequest}
@@ -559,10 +562,9 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       agent_ = "";
-
       type_ = 0;
-
       return this;
     }
 
@@ -590,10 +592,21 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
     public com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest result =
           new com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest(this);
-      result.agent_ = agent_;
-      result.type_ = type_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.agent_ = agent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -644,6 +657,7 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getAgent().isEmpty()) {
         agent_ = other.agent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -678,13 +692,13 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 agent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -703,6 +717,8 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object agent_ = "";
     /**
@@ -774,8 +790,8 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       agent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -794,8 +810,8 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAgent() {
-
       agent_ = getDefaultInstance().getAgent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -819,8 +835,8 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       agent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -858,8 +874,8 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,9 +894,8 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest.CoverageType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest.CoverageType result =
-          com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest.CoverageType.valueOf(type_);
+          com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest.CoverageType.forNumber(type_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest.CoverageType.UNRECOGNIZED
           : result;
@@ -904,7 +919,7 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -923,7 +938,7 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;

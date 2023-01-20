@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent].
+ * The request message for
+ * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateAgentRequest}
@@ -68,7 +69,9 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -168,7 +171,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.AgentOrBuilder getAgentOrBuilder() {
-    return getAgent();
+    return agent_ == null ? com.google.cloud.dialogflow.cx.v3.Agent.getDefaultInstance() : agent_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -348,7 +351,8 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent].
+   * The request message for
+   * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateAgentRequest}
@@ -382,12 +386,11 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (agentBuilder_ == null) {
-        agent_ = null;
-      } else {
-        agent_ = null;
+      agent_ = null;
+      if (agentBuilder_ != null) {
+        agentBuilder_.dispose();
         agentBuilder_ = null;
       }
       return this;
@@ -417,14 +420,21 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.cx.v3.CreateAgentRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.CreateAgentRequest result =
           new com.google.cloud.dialogflow.cx.v3.CreateAgentRequest(this);
-      result.parent_ = parent_;
-      if (agentBuilder_ == null) {
-        result.agent_ = agent_;
-      } else {
-        result.agent_ = agentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.CreateAgentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.agent_ = agentBuilder_ == null ? agent_ : agentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -475,6 +485,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAgent()) {
@@ -509,13 +520,13 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAgentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -534,6 +545,8 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -605,8 +618,8 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,8 +638,8 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -650,8 +663,8 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,7 +689,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the agent field is set.
      */
     public boolean hasAgent() {
-      return agentBuilder_ != null || agent_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -717,11 +730,11 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         agent_ = value;
-        onChanged();
       } else {
         agentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -738,11 +751,11 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
     public Builder setAgent(com.google.cloud.dialogflow.cx.v3.Agent.Builder builderForValue) {
       if (agentBuilder_ == null) {
         agent_ = builderForValue.build();
-        onChanged();
       } else {
         agentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -758,19 +771,18 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeAgent(com.google.cloud.dialogflow.cx.v3.Agent value) {
       if (agentBuilder_ == null) {
-        if (agent_ != null) {
-          agent_ =
-              com.google.cloud.dialogflow.cx.v3.Agent.newBuilder(agent_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && agent_ != null
+            && agent_ != com.google.cloud.dialogflow.cx.v3.Agent.getDefaultInstance()) {
+          getAgentBuilder().mergeFrom(value);
         } else {
           agent_ = value;
         }
-        onChanged();
       } else {
         agentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -785,14 +797,13 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearAgent() {
-      if (agentBuilder_ == null) {
-        agent_ = null;
-        onChanged();
-      } else {
-        agent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      agent_ = null;
+      if (agentBuilder_ != null) {
+        agentBuilder_.dispose();
         agentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -807,7 +818,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Agent.Builder getAgentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAgentFieldBuilder().getBuilder();
     }

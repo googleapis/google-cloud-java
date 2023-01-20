@@ -204,7 +204,9 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -253,7 +255,7 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TRAFFIC_PERCENT_FIELD_NUMBER = 2;
-    private int trafficPercent_;
+    private int trafficPercent_ = 0;
     /**
      *
      *
@@ -322,7 +324,9 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMinDurationOrBuilder() {
-      return getMinDuration();
+      return minDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : minDuration_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -548,14 +552,12 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         displayName_ = "";
-
         trafficPercent_ = 0;
-
-        if (minDurationBuilder_ == null) {
-          minDuration_ = null;
-        } else {
-          minDuration_ = null;
+        minDuration_ = null;
+        if (minDurationBuilder_ != null) {
+          minDurationBuilder_.dispose();
           minDurationBuilder_ = null;
         }
         return this;
@@ -586,15 +588,26 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.RolloutConfig.RolloutStep buildPartial() {
         com.google.cloud.dialogflow.cx.v3.RolloutConfig.RolloutStep result =
             new com.google.cloud.dialogflow.cx.v3.RolloutConfig.RolloutStep(this);
-        result.displayName_ = displayName_;
-        result.trafficPercent_ = trafficPercent_;
-        if (minDurationBuilder_ == null) {
-          result.minDuration_ = minDuration_;
-        } else {
-          result.minDuration_ = minDurationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.RolloutConfig.RolloutStep result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.trafficPercent_ = trafficPercent_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.minDuration_ =
+              minDurationBuilder_ == null ? minDuration_ : minDurationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -648,6 +661,7 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getTrafficPercent() != 0) {
@@ -685,19 +699,19 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   trafficPercent_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   input.readMessage(getMinDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -716,6 +730,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object displayName_ = "";
       /**
@@ -778,8 +794,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -795,8 +811,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -817,8 +833,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -856,6 +872,7 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder setTrafficPercent(int value) {
 
         trafficPercent_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -872,7 +889,7 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTrafficPercent() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         trafficPercent_ = 0;
         onChanged();
         return this;
@@ -898,7 +915,7 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the minDuration field is set.
        */
       public boolean hasMinDuration() {
-        return minDurationBuilder_ != null || minDuration_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -939,11 +956,11 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           minDuration_ = value;
-          onChanged();
         } else {
           minDurationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -960,11 +977,11 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder setMinDuration(com.google.protobuf.Duration.Builder builderForValue) {
         if (minDurationBuilder_ == null) {
           minDuration_ = builderForValue.build();
-          onChanged();
         } else {
           minDurationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -980,19 +997,18 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeMinDuration(com.google.protobuf.Duration value) {
         if (minDurationBuilder_ == null) {
-          if (minDuration_ != null) {
-            minDuration_ =
-                com.google.protobuf.Duration.newBuilder(minDuration_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && minDuration_ != null
+              && minDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMinDurationBuilder().mergeFrom(value);
           } else {
             minDuration_ = value;
           }
-          onChanged();
         } else {
           minDurationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1007,14 +1023,13 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Duration min_duration = 3;</code>
        */
       public Builder clearMinDuration() {
-        if (minDurationBuilder_ == null) {
-          minDuration_ = null;
-          onChanged();
-        } else {
-          minDuration_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        minDuration_ = null;
+        if (minDurationBuilder_ != null) {
+          minDurationBuilder_.dispose();
           minDurationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1029,7 +1044,7 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Duration min_duration = 3;</code>
        */
       public com.google.protobuf.Duration.Builder getMinDurationBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getMinDurationFieldBuilder().getBuilder();
       }
@@ -1147,6 +1162,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROLLOUT_STEPS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.RolloutConfig.RolloutStep> rolloutSteps_;
   /**
    *
@@ -1229,7 +1246,9 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROLLOUT_CONDITION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object rolloutCondition_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rolloutCondition_ = "";
   /**
    *
    *
@@ -1286,7 +1305,9 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAILURE_CONDITION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object failureCondition_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object failureCondition_ = "";
   /**
    *
    *
@@ -1557,6 +1578,7 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (rolloutStepsBuilder_ == null) {
         rolloutSteps_ = java.util.Collections.emptyList();
       } else {
@@ -1565,9 +1587,7 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       rolloutCondition_ = "";
-
       failureCondition_ = "";
-
       return this;
     }
 
@@ -1595,7 +1615,16 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.RolloutConfig buildPartial() {
       com.google.cloud.dialogflow.cx.v3.RolloutConfig result =
           new com.google.cloud.dialogflow.cx.v3.RolloutConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.RolloutConfig result) {
       if (rolloutStepsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           rolloutSteps_ = java.util.Collections.unmodifiableList(rolloutSteps_);
@@ -1605,10 +1634,16 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.rolloutSteps_ = rolloutStepsBuilder_.build();
       }
-      result.rolloutCondition_ = rolloutCondition_;
-      result.failureCondition_ = failureCondition_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.RolloutConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rolloutCondition_ = rolloutCondition_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.failureCondition_ = failureCondition_;
+      }
     }
 
     @java.lang.Override
@@ -1686,10 +1721,12 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRolloutCondition().isEmpty()) {
         rolloutCondition_ = other.rolloutCondition_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getFailureCondition().isEmpty()) {
         failureCondition_ = other.failureCondition_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1735,13 +1772,13 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 rolloutCondition_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 failureCondition_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -2239,8 +2276,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       rolloutCondition_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2260,8 +2297,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRolloutCondition() {
-
       rolloutCondition_ = getDefaultInstance().getRolloutCondition();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2286,8 +2323,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rolloutCondition_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2362,8 +2399,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       failureCondition_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2382,8 +2419,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailureCondition() {
-
       failureCondition_ = getDefaultInstance().getFailureCondition();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2407,8 +2444,8 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       failureCondition_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

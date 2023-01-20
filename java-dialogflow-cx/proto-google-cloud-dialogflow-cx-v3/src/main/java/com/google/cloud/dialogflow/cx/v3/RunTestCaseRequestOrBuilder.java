@@ -27,8 +27,8 @@ public interface RunTestCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format of test case name to run: `projects/&lt;Project ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format of test case name to run: `projects/&lt;Project
+   * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface RunTestCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format of test case name to run: `projects/&lt;Project ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format of test case name to run: `projects/&lt;Project
+   * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>

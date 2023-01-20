@@ -68,7 +68,9 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEST_CASE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object testCase_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object testCase_ = "";
   /**
    *
    *
@@ -159,7 +161,7 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
 
   public static final int TEST_TIME_FIELD_NUMBER = 3;
@@ -205,7 +207,7 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTestTimeOrBuilder() {
-    return getTestTime();
+    return testTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : testTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -433,18 +435,16 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       testCase_ = "";
-
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-      if (testTimeBuilder_ == null) {
-        testTime_ = null;
-      } else {
-        testTime_ = null;
+      testTime_ = null;
+      if (testTimeBuilder_ != null) {
+        testTimeBuilder_.dispose();
         testTimeBuilder_ = null;
       }
       return this;
@@ -474,19 +474,24 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.TestError buildPartial() {
       com.google.cloud.dialogflow.cx.v3.TestError result =
           new com.google.cloud.dialogflow.cx.v3.TestError(this);
-      result.testCase_ = testCase_;
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
-      }
-      if (testTimeBuilder_ == null) {
-        result.testTime_ = testTime_;
-      } else {
-        result.testTime_ = testTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.TestError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.testCase_ = testCase_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.testTime_ = testTimeBuilder_ == null ? testTime_ : testTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -536,6 +541,7 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3.TestError.getDefaultInstance()) return this;
       if (!other.getTestCase().isEmpty()) {
         testCase_ = other.testCase_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -573,19 +579,19 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 testCase_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getTestTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -604,6 +610,8 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object testCase_ = "";
     /**
@@ -666,8 +674,8 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       testCase_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,8 +691,8 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTestCase() {
-
       testCase_ = getDefaultInstance().getTestCase();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -705,8 +713,8 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       testCase_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -727,7 +735,7 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -762,11 +770,11 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -781,11 +789,11 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,16 +807,18 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && status_ != null
+            && status_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -821,14 +831,13 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 2;</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -841,7 +850,7 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 2;</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -902,7 +911,7 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the testTime field is set.
      */
     public boolean hasTestTime() {
-      return testTimeBuilder_ != null || testTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -937,11 +946,11 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         testTime_ = value;
-        onChanged();
       } else {
         testTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -956,11 +965,11 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
     public Builder setTestTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (testTimeBuilder_ == null) {
         testTime_ = builderForValue.build();
-        onChanged();
       } else {
         testTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -974,17 +983,18 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTestTime(com.google.protobuf.Timestamp value) {
       if (testTimeBuilder_ == null) {
-        if (testTime_ != null) {
-          testTime_ =
-              com.google.protobuf.Timestamp.newBuilder(testTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && testTime_ != null
+            && testTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getTestTimeBuilder().mergeFrom(value);
         } else {
           testTime_ = value;
         }
-        onChanged();
       } else {
         testTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -997,14 +1007,13 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp test_time = 3;</code>
      */
     public Builder clearTestTime() {
-      if (testTimeBuilder_ == null) {
-        testTime_ = null;
-        onChanged();
-      } else {
-        testTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      testTime_ = null;
+      if (testTimeBuilder_ != null) {
+        testTimeBuilder_.dispose();
         testTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1017,7 +1026,7 @@ public final class TestError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp test_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getTestTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTestTimeFieldBuilder().getBuilder();
     }

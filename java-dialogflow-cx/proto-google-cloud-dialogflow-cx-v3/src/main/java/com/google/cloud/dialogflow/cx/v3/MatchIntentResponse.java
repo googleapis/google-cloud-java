@@ -125,8 +125,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-   * will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+   * provided as input, this field will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -140,8 +140,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-   * will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+   * provided as input, this field will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -168,8 +168,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-   * will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+   * provided as input, this field will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -198,9 +198,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-   * contain a copy of the intent identifier.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+   * input, this field will contain a copy of the intent identifier. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -215,9 +215,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-   * contain a copy of the intent identifier.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+   * input, this field will contain a copy of the intent identifier. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -245,9 +245,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-   * contain a copy of the intent identifier.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+   * input, this field will contain a copy of the intent identifier. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -277,7 +277,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech
+   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -292,7 +293,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech
+   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -320,7 +322,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech
+   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -350,8 +353,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
-   * contain a copy of the event name.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+   * input, this field will contain a copy of the event name.
    * </pre>
    *
    * <code>string trigger_event = 6;</code>
@@ -365,8 +368,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
-   * contain a copy of the event name.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+   * input, this field will contain a copy of the event name.
    * </pre>
    *
    * <code>string trigger_event = 6;</code>
@@ -393,8 +396,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
-   * contain a copy of the event name.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+   * input, this field will contain a copy of the event name.
    * </pre>
    *
    * <code>string trigger_event = 6;</code>
@@ -419,6 +422,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MATCHES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.Match> matches_;
   /**
    *
@@ -498,8 +503,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-   * including but not limited to `name` and `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+   * fields are filled in this message, including but not limited to `name` and
+   * `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
@@ -514,8 +520,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-   * including but not limited to `name` and `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+   * fields are filled in this message, including but not limited to `name` and
+   * `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
@@ -532,15 +539,18 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-   * including but not limited to `name` and `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+   * fields are filled in this message, including but not limited to `name` and
+   * `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.PageOrBuilder getCurrentPageOrBuilder() {
-    return getCurrentPage();
+    return currentPage_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Page.getDefaultInstance()
+        : currentPage_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -818,17 +828,17 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (matchesBuilder_ == null) {
         matches_ = java.util.Collections.emptyList();
       } else {
         matches_ = null;
         matchesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (currentPageBuilder_ == null) {
-        currentPage_ = null;
-      } else {
-        currentPage_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      currentPage_ = null;
+      if (currentPageBuilder_ != null) {
+        currentPageBuilder_.dispose();
         currentPageBuilder_ = null;
       }
       queryCase_ = 0;
@@ -860,36 +870,39 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.cx.v3.MatchIntentResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3.MatchIntentResponse result =
           new com.google.cloud.dialogflow.cx.v3.MatchIntentResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (queryCase_ == 1) {
-        result.query_ = query_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (queryCase_ == 2) {
-        result.query_ = query_;
-      }
-      if (queryCase_ == 3) {
-        result.query_ = query_;
-      }
-      if (queryCase_ == 6) {
-        result.query_ = query_;
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.MatchIntentResponse result) {
       if (matchesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           matches_ = java.util.Collections.unmodifiableList(matches_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.matches_ = matches_;
       } else {
         result.matches_ = matchesBuilder_.build();
       }
-      if (currentPageBuilder_ == null) {
-        result.currentPage_ = currentPage_;
-      } else {
-        result.currentPage_ = currentPageBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.MatchIntentResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.currentPage_ =
+            currentPageBuilder_ == null ? currentPage_ : currentPageBuilder_.build();
       }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3.MatchIntentResponse result) {
       result.queryCase_ = queryCase_;
-      onBuilt();
-      return result;
+      result.query_ = this.query_;
     }
 
     @java.lang.Override
@@ -942,7 +955,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         if (!other.matches_.isEmpty()) {
           if (matches_.isEmpty()) {
             matches_ = other.matches_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureMatchesIsMutable();
             matches_.addAll(other.matches_);
@@ -955,7 +968,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
             matchesBuilder_.dispose();
             matchesBuilder_ = null;
             matches_ = other.matches_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             matchesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMatchesFieldBuilder()
@@ -1065,7 +1078,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
             case 42:
               {
                 input.readMessage(getCurrentPageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
@@ -1112,8 +1125,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -1128,8 +1141,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -1157,8 +1170,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -1186,8 +1199,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -1208,8 +1221,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -1228,8 +1241,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -1252,9 +1265,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -1270,9 +1283,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -1301,9 +1314,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -1332,9 +1345,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -1356,9 +1369,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -1378,9 +1391,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -1404,7 +1417,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -1420,7 +1434,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -1449,7 +1464,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -1478,7 +1494,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -1500,7 +1517,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -1520,7 +1538,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -1544,8 +1563,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
-     * contain a copy of the event name.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain a copy of the event name.
      * </pre>
      *
      * <code>string trigger_event = 6;</code>
@@ -1560,8 +1579,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
-     * contain a copy of the event name.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain a copy of the event name.
      * </pre>
      *
      * <code>string trigger_event = 6;</code>
@@ -1589,8 +1608,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
-     * contain a copy of the event name.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain a copy of the event name.
      * </pre>
      *
      * <code>string trigger_event = 6;</code>
@@ -1618,8 +1637,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
-     * contain a copy of the event name.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain a copy of the event name.
      * </pre>
      *
      * <code>string trigger_event = 6;</code>
@@ -1640,8 +1659,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
-     * contain a copy of the event name.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain a copy of the event name.
      * </pre>
      *
      * <code>string trigger_event = 6;</code>
@@ -1660,8 +1679,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
-     * contain a copy of the event name.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain a copy of the event name.
      * </pre>
      *
      * <code>string trigger_event = 6;</code>
@@ -1684,9 +1703,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureMatchesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         matches_ = new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.Match>(matches_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1912,7 +1931,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     public Builder clearMatches() {
       if (matchesBuilder_ == null) {
         matches_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         matchesBuilder_.clear();
@@ -2040,7 +2059,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
                 com.google.cloud.dialogflow.cx.v3.Match,
                 com.google.cloud.dialogflow.cx.v3.Match.Builder,
                 com.google.cloud.dialogflow.cx.v3.MatchOrBuilder>(
-                matches_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                matches_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         matches_ = null;
       }
       return matchesBuilder_;
@@ -2056,8 +2075,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-     * including but not limited to `name` and `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
@@ -2065,14 +2085,15 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      * @return Whether the currentPage field is set.
      */
     public boolean hasCurrentPage() {
-      return currentPageBuilder_ != null || currentPage_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-     * including but not limited to `name` and `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
@@ -2092,8 +2113,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-     * including but not limited to `name` and `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
@@ -2104,19 +2126,20 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         currentPage_ = value;
-        onChanged();
       } else {
         currentPageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-     * including but not limited to `name` and `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
@@ -2124,73 +2147,74 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     public Builder setCurrentPage(com.google.cloud.dialogflow.cx.v3.Page.Builder builderForValue) {
       if (currentPageBuilder_ == null) {
         currentPage_ = builderForValue.build();
-        onChanged();
       } else {
         currentPageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-     * including but not limited to `name` and `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
      */
     public Builder mergeCurrentPage(com.google.cloud.dialogflow.cx.v3.Page value) {
       if (currentPageBuilder_ == null) {
-        if (currentPage_ != null) {
-          currentPage_ =
-              com.google.cloud.dialogflow.cx.v3.Page.newBuilder(currentPage_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && currentPage_ != null
+            && currentPage_ != com.google.cloud.dialogflow.cx.v3.Page.getDefaultInstance()) {
+          getCurrentPageBuilder().mergeFrom(value);
         } else {
           currentPage_ = value;
         }
-        onChanged();
       } else {
         currentPageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-     * including but not limited to `name` and `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
      */
     public Builder clearCurrentPage() {
-      if (currentPageBuilder_ == null) {
-        currentPage_ = null;
-        onChanged();
-      } else {
-        currentPage_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      currentPage_ = null;
+      if (currentPageBuilder_ != null) {
+        currentPageBuilder_.dispose();
         currentPageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-     * including but not limited to `name` and `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.Page.Builder getCurrentPageBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCurrentPageFieldBuilder().getBuilder();
     }
@@ -2198,8 +2222,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-     * including but not limited to `name` and `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
@@ -2217,8 +2242,9 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-     * including but not limited to `name` and `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>

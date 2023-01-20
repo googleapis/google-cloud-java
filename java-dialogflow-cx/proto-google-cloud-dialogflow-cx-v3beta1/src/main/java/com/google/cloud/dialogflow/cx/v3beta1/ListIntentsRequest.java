@@ -72,7 +72,9 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -190,7 +194,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INTENT_VIEW_FIELD_NUMBER = 5;
-  private int intentView_;
+  private int intentView_ = 0;
   /**
    *
    *
@@ -219,14 +223,13 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.IntentView getIntentView() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3beta1.IntentView result =
-        com.google.cloud.dialogflow.cx.v3beta1.IntentView.valueOf(intentView_);
+        com.google.cloud.dialogflow.cx.v3beta1.IntentView.forNumber(intentView_);
     return result == null ? com.google.cloud.dialogflow.cx.v3beta1.IntentView.UNRECOGNIZED : result;
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -245,7 +248,9 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -530,16 +535,12 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       languageCode_ = "";
-
       intentView_ = 0;
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       return this;
     }
 
@@ -567,13 +568,30 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.cx.v3beta1.ListIntentsRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.ListIntentsRequest result =
           new com.google.cloud.dialogflow.cx.v3beta1.ListIntentsRequest(this);
-      result.parent_ = parent_;
-      result.languageCode_ = languageCode_;
-      result.intentView_ = intentView_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.ListIntentsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.intentView_ = intentView_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
     }
 
     @java.lang.Override
@@ -624,10 +642,12 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.intentView_ != 0) {
@@ -638,6 +658,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -669,31 +690,31 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 intentView_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 40
             default:
@@ -712,6 +733,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -783,8 +806,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -803,8 +826,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -828,8 +851,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -916,8 +939,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -940,8 +963,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -969,8 +992,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1004,8 +1027,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setIntentViewValue(int value) {
-
       intentView_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1022,9 +1045,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.IntentView getIntentView() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3beta1.IntentView result =
-          com.google.cloud.dialogflow.cx.v3beta1.IntentView.valueOf(intentView_);
+          com.google.cloud.dialogflow.cx.v3beta1.IntentView.forNumber(intentView_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3beta1.IntentView.UNRECOGNIZED
           : result;
@@ -1045,7 +1067,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       intentView_ = value.getNumber();
       onChanged();
       return this;
@@ -1062,7 +1084,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIntentView() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       intentView_ = 0;
       onChanged();
       return this;
@@ -1101,6 +1123,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1117,7 +1140,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1184,8 +1207,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1201,8 +1224,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1223,8 +1246,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

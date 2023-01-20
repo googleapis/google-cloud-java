@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The response message for [Flows.ExportFlow][google.cloud.dialogflow.cx.v3.Flows.ExportFlow].
+ * The response message for
+ * [Flows.ExportFlow][google.cloud.dialogflow.cx.v3.Flows.ExportFlow].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.ExportFlowResponse}
@@ -118,7 +119,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The URI to a file containing the exported flow. This field is populated
-   * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+   * only if `flow_uri` is specified in
+   * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
    * </pre>
    *
    * <code>string flow_uri = 1;</code>
@@ -133,7 +135,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The URI to a file containing the exported flow. This field is populated
-   * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+   * only if `flow_uri` is specified in
+   * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
    * </pre>
    *
    * <code>string flow_uri = 1;</code>
@@ -161,7 +164,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The URI to a file containing the exported flow. This field is populated
-   * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+   * only if `flow_uri` is specified in
+   * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
    * </pre>
    *
    * <code>string flow_uri = 1;</code>
@@ -411,7 +415,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The response message for [Flows.ExportFlow][google.cloud.dialogflow.cx.v3.Flows.ExportFlow].
+   * The response message for
+   * [Flows.ExportFlow][google.cloud.dialogflow.cx.v3.Flows.ExportFlow].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.ExportFlowResponse}
@@ -445,6 +450,7 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       flowCase_ = 0;
       flow_ = null;
       return this;
@@ -474,15 +480,21 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.cx.v3.ExportFlowResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3.ExportFlowResponse result =
           new com.google.cloud.dialogflow.cx.v3.ExportFlowResponse(this);
-      if (flowCase_ == 1) {
-        result.flow_ = flow_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (flowCase_ == 2) {
-        result.flow_ = flow_;
-      }
-      result.flowCase_ = flowCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.ExportFlowResponse result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3.ExportFlowResponse result) {
+      result.flowCase_ = flowCase_;
+      result.flow_ = this.flow_;
     }
 
     @java.lang.Override
@@ -619,12 +631,15 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
      * <pre>
      * The URI to a file containing the exported flow. This field is populated
-     * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+     * only if `flow_uri` is specified in
+     * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
      * </pre>
      *
      * <code>string flow_uri = 1;</code>
@@ -640,7 +655,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The URI to a file containing the exported flow. This field is populated
-     * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+     * only if `flow_uri` is specified in
+     * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
      * </pre>
      *
      * <code>string flow_uri = 1;</code>
@@ -669,7 +685,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The URI to a file containing the exported flow. This field is populated
-     * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+     * only if `flow_uri` is specified in
+     * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
      * </pre>
      *
      * <code>string flow_uri = 1;</code>
@@ -698,7 +715,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The URI to a file containing the exported flow. This field is populated
-     * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+     * only if `flow_uri` is specified in
+     * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
      * </pre>
      *
      * <code>string flow_uri = 1;</code>
@@ -720,7 +738,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The URI to a file containing the exported flow. This field is populated
-     * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+     * only if `flow_uri` is specified in
+     * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
      * </pre>
      *
      * <code>string flow_uri = 1;</code>
@@ -740,7 +759,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The URI to a file containing the exported flow. This field is populated
-     * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+     * only if `flow_uri` is specified in
+     * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
      * </pre>
      *
      * <code>string flow_uri = 1;</code>

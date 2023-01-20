@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The response message for [Flows.ListFlows][google.cloud.dialogflow.cx.v3.Flows.ListFlows].
+ * The response message for
+ * [Flows.ListFlows][google.cloud.dialogflow.cx.v3.Flows.ListFlows].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.ListFlowsResponse}
@@ -69,6 +70,8 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FLOWS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.Flow> flows_;
   /**
    *
@@ -143,7 +146,9 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -367,7 +372,8 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The response message for [Flows.ListFlows][google.cloud.dialogflow.cx.v3.Flows.ListFlows].
+   * The response message for
+   * [Flows.ListFlows][google.cloud.dialogflow.cx.v3.Flows.ListFlows].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.ListFlowsResponse}
@@ -401,6 +407,7 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (flowsBuilder_ == null) {
         flows_ = java.util.Collections.emptyList();
       } else {
@@ -409,7 +416,6 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -437,7 +443,16 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.cx.v3.ListFlowsResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3.ListFlowsResponse result =
           new com.google.cloud.dialogflow.cx.v3.ListFlowsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.ListFlowsResponse result) {
       if (flowsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           flows_ = java.util.Collections.unmodifiableList(flows_);
@@ -447,9 +462,13 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
       } else {
         result.flows_ = flowsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.ListFlowsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -527,6 +546,7 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -571,7 +591,7 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1023,8 +1043,8 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1041,8 +1061,8 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1064,8 +1084,8 @@ public final class ListFlowsResponse extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

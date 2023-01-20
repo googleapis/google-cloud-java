@@ -28,7 +28,8 @@ public interface LookupEnvironmentHistoryResponseOrBuilder
    *
    * <pre>
    * Represents a list of snapshots for an environment. Time of the snapshots is
-   * stored in [`update_time`][google.cloud.dialogflow.cx.v3.Environment.update_time].
+   * stored in
+   * [`update_time`][google.cloud.dialogflow.cx.v3.Environment.update_time].
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.Environment environments = 1;</code>
@@ -39,7 +40,8 @@ public interface LookupEnvironmentHistoryResponseOrBuilder
    *
    * <pre>
    * Represents a list of snapshots for an environment. Time of the snapshots is
-   * stored in [`update_time`][google.cloud.dialogflow.cx.v3.Environment.update_time].
+   * stored in
+   * [`update_time`][google.cloud.dialogflow.cx.v3.Environment.update_time].
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.Environment environments = 1;</code>
@@ -50,7 +52,8 @@ public interface LookupEnvironmentHistoryResponseOrBuilder
    *
    * <pre>
    * Represents a list of snapshots for an environment. Time of the snapshots is
-   * stored in [`update_time`][google.cloud.dialogflow.cx.v3.Environment.update_time].
+   * stored in
+   * [`update_time`][google.cloud.dialogflow.cx.v3.Environment.update_time].
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.Environment environments = 1;</code>
@@ -61,7 +64,8 @@ public interface LookupEnvironmentHistoryResponseOrBuilder
    *
    * <pre>
    * Represents a list of snapshots for an environment. Time of the snapshots is
-   * stored in [`update_time`][google.cloud.dialogflow.cx.v3.Environment.update_time].
+   * stored in
+   * [`update_time`][google.cloud.dialogflow.cx.v3.Environment.update_time].
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.Environment environments = 1;</code>
@@ -73,7 +77,8 @@ public interface LookupEnvironmentHistoryResponseOrBuilder
    *
    * <pre>
    * Represents a list of snapshots for an environment. Time of the snapshots is
-   * stored in [`update_time`][google.cloud.dialogflow.cx.v3.Environment.update_time].
+   * stored in
+   * [`update_time`][google.cloud.dialogflow.cx.v3.Environment.update_time].
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.Environment environments = 1;</code>

@@ -383,7 +383,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -722,6 +724,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (textBuilder_ != null) {
         textBuilder_.clear();
       }
@@ -738,7 +741,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         dtmfBuilder_.clear();
       }
       languageCode_ = "";
-
       inputCase_ = 0;
       input_ = null;
       return this;
@@ -768,45 +770,39 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.QueryInput buildPartial() {
       com.google.cloud.dialogflow.cx.v3.QueryInput result =
           new com.google.cloud.dialogflow.cx.v3.QueryInput(this);
-      if (inputCase_ == 2) {
-        if (textBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = textBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (inputCase_ == 3) {
-        if (intentBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = intentBuilder_.build();
-        }
-      }
-      if (inputCase_ == 5) {
-        if (audioBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = audioBuilder_.build();
-        }
-      }
-      if (inputCase_ == 6) {
-        if (eventBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = eventBuilder_.build();
-        }
-      }
-      if (inputCase_ == 7) {
-        if (dtmfBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = dtmfBuilder_.build();
-        }
-      }
-      result.languageCode_ = languageCode_;
-      result.inputCase_ = inputCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.QueryInput result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3.QueryInput result) {
+      result.inputCase_ = inputCase_;
+      result.input_ = this.input_;
+      if (inputCase_ == 2 && textBuilder_ != null) {
+        result.input_ = textBuilder_.build();
+      }
+      if (inputCase_ == 3 && intentBuilder_ != null) {
+        result.input_ = intentBuilder_.build();
+      }
+      if (inputCase_ == 5 && audioBuilder_ != null) {
+        result.input_ = audioBuilder_.build();
+      }
+      if (inputCase_ == 6 && eventBuilder_ != null) {
+        result.input_ = eventBuilder_.build();
+      }
+      if (inputCase_ == 7 && dtmfBuilder_ != null) {
+        result.input_ = dtmfBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -856,6 +852,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3.QueryInput.getDefaultInstance()) return this;
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       switch (other.getInputCase()) {
@@ -930,7 +927,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
@@ -981,6 +978,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3.TextInput,
@@ -1187,7 +1186,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       inputCase_ = 2;
       onChanged();
-      ;
       return textBuilder_;
     }
 
@@ -1397,7 +1395,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       inputCase_ = 3;
       onChanged();
-      ;
       return intentBuilder_;
     }
 
@@ -1606,7 +1603,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       inputCase_ = 5;
       onChanged();
-      ;
       return audioBuilder_;
     }
 
@@ -1815,7 +1811,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       inputCase_ = 6;
       onChanged();
-      ;
       return eventBuilder_;
     }
 
@@ -2024,7 +2019,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       inputCase_ = 7;
       onChanged();
-      ;
       return dtmfBuilder_;
     }
 
@@ -2098,8 +2092,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2118,8 +2112,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2143,8 +2137,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

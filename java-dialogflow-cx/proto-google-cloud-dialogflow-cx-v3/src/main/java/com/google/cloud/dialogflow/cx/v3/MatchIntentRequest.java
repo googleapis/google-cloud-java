@@ -68,7 +68,9 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SESSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object session_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object session_ = "";
   /**
    *
    *
@@ -185,7 +187,9 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.QueryParametersOrBuilder getQueryParamsOrBuilder() {
-    return getQueryParams();
+    return queryParams_ == null
+        ? com.google.cloud.dialogflow.cx.v3.QueryParameters.getDefaultInstance()
+        : queryParams_;
   }
 
   public static final int QUERY_INPUT_FIELD_NUMBER = 3;
@@ -239,7 +243,9 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.QueryInputOrBuilder getQueryInputOrBuilder() {
-    return getQueryInput();
+    return queryInput_ == null
+        ? com.google.cloud.dialogflow.cx.v3.QueryInput.getDefaultInstance()
+        : queryInput_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -467,18 +473,16 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       session_ = "";
-
-      if (queryParamsBuilder_ == null) {
-        queryParams_ = null;
-      } else {
-        queryParams_ = null;
+      queryParams_ = null;
+      if (queryParamsBuilder_ != null) {
+        queryParamsBuilder_.dispose();
         queryParamsBuilder_ = null;
       }
-      if (queryInputBuilder_ == null) {
-        queryInput_ = null;
-      } else {
-        queryInput_ = null;
+      queryInput_ = null;
+      if (queryInputBuilder_ != null) {
+        queryInputBuilder_.dispose();
         queryInputBuilder_ = null;
       }
       return this;
@@ -508,19 +512,25 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.cx.v3.MatchIntentRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.MatchIntentRequest result =
           new com.google.cloud.dialogflow.cx.v3.MatchIntentRequest(this);
-      result.session_ = session_;
-      if (queryParamsBuilder_ == null) {
-        result.queryParams_ = queryParams_;
-      } else {
-        result.queryParams_ = queryParamsBuilder_.build();
-      }
-      if (queryInputBuilder_ == null) {
-        result.queryInput_ = queryInput_;
-      } else {
-        result.queryInput_ = queryInputBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.MatchIntentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.session_ = session_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.queryParams_ =
+            queryParamsBuilder_ == null ? queryParams_ : queryParamsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.queryInput_ = queryInputBuilder_ == null ? queryInput_ : queryInputBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -571,6 +581,7 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getSession().isEmpty()) {
         session_ = other.session_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasQueryParams()) {
@@ -608,19 +619,19 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 session_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getQueryInputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -639,6 +650,8 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object session_ = "";
     /**
@@ -737,8 +750,8 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       session_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +779,8 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSession() {
-
       session_ = getDefaultInstance().getSession();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -800,8 +813,8 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       session_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -824,7 +837,7 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the queryParams field is set.
      */
     public boolean hasQueryParams() {
-      return queryParamsBuilder_ != null || queryParams_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -861,11 +874,11 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         queryParams_ = value;
-        onChanged();
       } else {
         queryParamsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -881,11 +894,11 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
         com.google.cloud.dialogflow.cx.v3.QueryParameters.Builder builderForValue) {
       if (queryParamsBuilder_ == null) {
         queryParams_ = builderForValue.build();
-        onChanged();
       } else {
         queryParamsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -899,19 +912,19 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeQueryParams(com.google.cloud.dialogflow.cx.v3.QueryParameters value) {
       if (queryParamsBuilder_ == null) {
-        if (queryParams_ != null) {
-          queryParams_ =
-              com.google.cloud.dialogflow.cx.v3.QueryParameters.newBuilder(queryParams_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && queryParams_ != null
+            && queryParams_
+                != com.google.cloud.dialogflow.cx.v3.QueryParameters.getDefaultInstance()) {
+          getQueryParamsBuilder().mergeFrom(value);
         } else {
           queryParams_ = value;
         }
-        onChanged();
       } else {
         queryParamsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -924,14 +937,13 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.dialogflow.cx.v3.QueryParameters query_params = 2;</code>
      */
     public Builder clearQueryParams() {
-      if (queryParamsBuilder_ == null) {
-        queryParams_ = null;
-        onChanged();
-      } else {
-        queryParams_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      queryParams_ = null;
+      if (queryParamsBuilder_ != null) {
+        queryParamsBuilder_.dispose();
         queryParamsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -944,7 +956,7 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.dialogflow.cx.v3.QueryParameters query_params = 2;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.QueryParameters.Builder getQueryParamsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getQueryParamsFieldBuilder().getBuilder();
     }
@@ -1012,7 +1024,7 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the queryInput field is set.
      */
     public boolean hasQueryInput() {
-      return queryInputBuilder_ != null || queryInput_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1053,11 +1065,11 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         queryInput_ = value;
-        onChanged();
       } else {
         queryInputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1075,11 +1087,11 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
         com.google.cloud.dialogflow.cx.v3.QueryInput.Builder builderForValue) {
       if (queryInputBuilder_ == null) {
         queryInput_ = builderForValue.build();
-        onChanged();
       } else {
         queryInputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1095,19 +1107,18 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeQueryInput(com.google.cloud.dialogflow.cx.v3.QueryInput value) {
       if (queryInputBuilder_ == null) {
-        if (queryInput_ != null) {
-          queryInput_ =
-              com.google.cloud.dialogflow.cx.v3.QueryInput.newBuilder(queryInput_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && queryInput_ != null
+            && queryInput_ != com.google.cloud.dialogflow.cx.v3.QueryInput.getDefaultInstance()) {
+          getQueryInputBuilder().mergeFrom(value);
         } else {
           queryInput_ = value;
         }
-        onChanged();
       } else {
         queryInputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1122,14 +1133,13 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearQueryInput() {
-      if (queryInputBuilder_ == null) {
-        queryInput_ = null;
-        onChanged();
-      } else {
-        queryInput_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      queryInput_ = null;
+      if (queryInputBuilder_ != null) {
+        queryInputBuilder_.dispose();
         queryInputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1144,7 +1154,7 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.QueryInput.Builder getQueryInputBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getQueryInputFieldBuilder().getBuilder();
     }

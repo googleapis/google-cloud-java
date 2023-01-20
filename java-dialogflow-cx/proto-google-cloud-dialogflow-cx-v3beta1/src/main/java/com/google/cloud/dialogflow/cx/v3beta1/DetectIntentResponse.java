@@ -233,7 +233,9 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RESPONSE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object responseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object responseId_ = "";
   /**
    *
    *
@@ -328,11 +330,13 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.QueryResultOrBuilder getQueryResultOrBuilder() {
-    return getQueryResult();
+    return queryResult_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.QueryResult.getDefaultInstance()
+        : queryResult_;
   }
 
   public static final int OUTPUT_AUDIO_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString outputAudio_;
+  private com.google.protobuf.ByteString outputAudio_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -404,11 +408,13 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfigOrBuilder
       getOutputAudioConfigOrBuilder() {
-    return getOutputAudioConfig();
+    return outputAudioConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.getDefaultInstance()
+        : outputAudioConfig_;
   }
 
   public static final int RESPONSE_TYPE_FIELD_NUMBER = 6;
-  private int responseType_;
+  private int responseType_ = 0;
   /**
    *
    *
@@ -440,9 +446,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType
       getResponseType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType result =
-        com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType.valueOf(
+        com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType.forNumber(
             responseType_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType.UNRECOGNIZED
@@ -450,7 +455,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ALLOW_CANCELLATION_FIELD_NUMBER = 7;
-  private boolean allowCancellation_;
+  private boolean allowCancellation_ = false;
   /**
    *
    *
@@ -728,26 +733,21 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       responseId_ = "";
-
-      if (queryResultBuilder_ == null) {
-        queryResult_ = null;
-      } else {
-        queryResult_ = null;
+      queryResult_ = null;
+      if (queryResultBuilder_ != null) {
+        queryResultBuilder_.dispose();
         queryResultBuilder_ = null;
       }
       outputAudio_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (outputAudioConfigBuilder_ == null) {
-        outputAudioConfig_ = null;
-      } else {
-        outputAudioConfig_ = null;
+      outputAudioConfig_ = null;
+      if (outputAudioConfigBuilder_ != null) {
+        outputAudioConfigBuilder_.dispose();
         outputAudioConfigBuilder_ = null;
       }
       responseType_ = 0;
-
       allowCancellation_ = false;
-
       return this;
     }
 
@@ -775,22 +775,37 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse result =
           new com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse(this);
-      result.responseId_ = responseId_;
-      if (queryResultBuilder_ == null) {
-        result.queryResult_ = queryResult_;
-      } else {
-        result.queryResult_ = queryResultBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.outputAudio_ = outputAudio_;
-      if (outputAudioConfigBuilder_ == null) {
-        result.outputAudioConfig_ = outputAudioConfig_;
-      } else {
-        result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
-      }
-      result.responseType_ = responseType_;
-      result.allowCancellation_ = allowCancellation_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.responseId_ = responseId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.queryResult_ =
+            queryResultBuilder_ == null ? queryResult_ : queryResultBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputAudio_ = outputAudio_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.outputAudioConfig_ =
+            outputAudioConfigBuilder_ == null
+                ? outputAudioConfig_
+                : outputAudioConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.responseType_ = responseType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.allowCancellation_ = allowCancellation_;
+      }
     }
 
     @java.lang.Override
@@ -841,6 +856,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getResponseId().isEmpty()) {
         responseId_ = other.responseId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasQueryResult()) {
@@ -887,38 +903,38 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 responseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getQueryResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 outputAudio_ = input.readBytes();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getOutputAudioConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 48:
               {
                 responseType_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 56:
               {
                 allowCancellation_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             default:
@@ -937,6 +953,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object responseId_ = "";
     /**
@@ -1002,8 +1020,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       responseId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1020,8 +1038,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearResponseId() {
-
       responseId_ = getDefaultInstance().getResponseId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1043,8 +1061,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       responseId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1067,7 +1085,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the queryResult field is set.
      */
     public boolean hasQueryResult() {
-      return queryResultBuilder_ != null || queryResult_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1104,11 +1122,11 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         queryResult_ = value;
-        onChanged();
       } else {
         queryResultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1124,11 +1142,11 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         com.google.cloud.dialogflow.cx.v3beta1.QueryResult.Builder builderForValue) {
       if (queryResultBuilder_ == null) {
         queryResult_ = builderForValue.build();
-        onChanged();
       } else {
         queryResultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1142,19 +1160,19 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeQueryResult(com.google.cloud.dialogflow.cx.v3beta1.QueryResult value) {
       if (queryResultBuilder_ == null) {
-        if (queryResult_ != null) {
-          queryResult_ =
-              com.google.cloud.dialogflow.cx.v3beta1.QueryResult.newBuilder(queryResult_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && queryResult_ != null
+            && queryResult_
+                != com.google.cloud.dialogflow.cx.v3beta1.QueryResult.getDefaultInstance()) {
+          getQueryResultBuilder().mergeFrom(value);
         } else {
           queryResult_ = value;
         }
-        onChanged();
       } else {
         queryResultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1167,14 +1185,13 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.dialogflow.cx.v3beta1.QueryResult query_result = 2;</code>
      */
     public Builder clearQueryResult() {
-      if (queryResultBuilder_ == null) {
-        queryResult_ = null;
-        onChanged();
-      } else {
-        queryResult_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      queryResult_ = null;
+      if (queryResultBuilder_ != null) {
+        queryResultBuilder_.dispose();
         queryResultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1187,7 +1204,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.dialogflow.cx.v3beta1.QueryResult query_result = 2;</code>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.QueryResult.Builder getQueryResultBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getQueryResultFieldBuilder().getBuilder();
     }
@@ -1285,8 +1302,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputAudio_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1311,7 +1328,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearOutputAudio() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       outputAudio_ = getDefaultInstance().getOutputAudio();
       onChanged();
       return this;
@@ -1335,7 +1352,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the outputAudioConfig field is set.
      */
     public boolean hasOutputAudioConfig() {
-      return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1373,11 +1390,11 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         outputAudioConfig_ = value;
-        onChanged();
       } else {
         outputAudioConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1393,11 +1410,11 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.Builder builderForValue) {
       if (outputAudioConfigBuilder_ == null) {
         outputAudioConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputAudioConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1412,20 +1429,19 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     public Builder mergeOutputAudioConfig(
         com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig value) {
       if (outputAudioConfigBuilder_ == null) {
-        if (outputAudioConfig_ != null) {
-          outputAudioConfig_ =
-              com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.newBuilder(
-                      outputAudioConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && outputAudioConfig_ != null
+            && outputAudioConfig_
+                != com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.getDefaultInstance()) {
+          getOutputAudioConfigBuilder().mergeFrom(value);
         } else {
           outputAudioConfig_ = value;
         }
-        onChanged();
       } else {
         outputAudioConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1438,14 +1454,13 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig output_audio_config = 5;</code>
      */
     public Builder clearOutputAudioConfig() {
-      if (outputAudioConfigBuilder_ == null) {
-        outputAudioConfig_ = null;
-        onChanged();
-      } else {
-        outputAudioConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      outputAudioConfig_ = null;
+      if (outputAudioConfigBuilder_ != null) {
+        outputAudioConfigBuilder_.dispose();
         outputAudioConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1459,7 +1474,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.Builder
         getOutputAudioConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getOutputAudioConfigFieldBuilder().getBuilder();
     }
@@ -1541,8 +1556,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setResponseTypeValue(int value) {
-
       responseType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1562,9 +1577,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType
         getResponseType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType result =
-          com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType.valueOf(
+          com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType.forNumber(
               responseType_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType.UNRECOGNIZED
@@ -1589,7 +1603,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       responseType_ = value.getNumber();
       onChanged();
       return this;
@@ -1608,7 +1622,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearResponseType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       responseType_ = 0;
       onChanged();
       return this;
@@ -1649,6 +1663,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     public Builder setAllowCancellation(boolean value) {
 
       allowCancellation_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1666,7 +1681,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAllowCancellation() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       allowCancellation_ = false;
       onChanged();
       return this;

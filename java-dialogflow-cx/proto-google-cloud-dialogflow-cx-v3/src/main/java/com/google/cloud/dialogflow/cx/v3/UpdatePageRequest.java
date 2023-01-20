@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage].
+ * The request message for
+ * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdatePageRequest}
@@ -113,11 +114,13 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.PageOrBuilder getPageOrBuilder() {
-    return getPage();
+    return page_ == null ? com.google.cloud.dialogflow.cx.v3.Page.getDefaultInstance() : page_;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -245,7 +248,7 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -439,7 +442,8 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage].
+   * The request message for
+   * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdatePageRequest}
@@ -473,18 +477,16 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (pageBuilder_ == null) {
-        page_ = null;
-      } else {
-        page_ = null;
+      bitField0_ = 0;
+      page_ = null;
+      if (pageBuilder_ != null) {
+        pageBuilder_.dispose();
         pageBuilder_ = null;
       }
       languageCode_ = "";
-
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -514,19 +516,24 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.cx.v3.UpdatePageRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.UpdatePageRequest result =
           new com.google.cloud.dialogflow.cx.v3.UpdatePageRequest(this);
-      if (pageBuilder_ == null) {
-        result.page_ = page_;
-      } else {
-        result.page_ = pageBuilder_.build();
-      }
-      result.languageCode_ = languageCode_;
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.UpdatePageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.page_ = pageBuilder_ == null ? page_ : pageBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -580,6 +587,7 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasUpdateMask()) {
@@ -614,19 +622,19 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getPageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -645,6 +653,8 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3.Page page_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -665,7 +675,7 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the page field is set.
      */
     public boolean hasPage() {
-      return pageBuilder_ != null || page_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -702,11 +712,11 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         page_ = value;
-        onChanged();
       } else {
         pageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -722,11 +732,11 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
     public Builder setPage(com.google.cloud.dialogflow.cx.v3.Page.Builder builderForValue) {
       if (pageBuilder_ == null) {
         page_ = builderForValue.build();
-        onChanged();
       } else {
         pageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -741,19 +751,18 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePage(com.google.cloud.dialogflow.cx.v3.Page value) {
       if (pageBuilder_ == null) {
-        if (page_ != null) {
-          page_ =
-              com.google.cloud.dialogflow.cx.v3.Page.newBuilder(page_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && page_ != null
+            && page_ != com.google.cloud.dialogflow.cx.v3.Page.getDefaultInstance()) {
+          getPageBuilder().mergeFrom(value);
         } else {
           page_ = value;
         }
-        onChanged();
       } else {
         pageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -767,14 +776,13 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearPage() {
-      if (pageBuilder_ == null) {
-        page_ = null;
-        onChanged();
-      } else {
-        page_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      page_ = null;
+      if (pageBuilder_ != null) {
+        pageBuilder_.dispose();
         pageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -788,7 +796,7 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Page.Builder getPageBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPageFieldBuilder().getBuilder();
     }
@@ -948,8 +956,8 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -982,8 +990,8 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1021,8 +1029,8 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1046,7 +1054,7 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1085,11 +1093,11 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1105,11 +1113,11 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1124,17 +1132,18 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1148,14 +1157,13 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1169,7 +1177,7 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

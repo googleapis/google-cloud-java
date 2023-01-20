@@ -232,12 +232,12 @@ public final class FlowProto {
           + "se\022\026google.protobuf.Struct\032x\312A\031dialogflo"
           + "w.googleapis.com\322AYhttps://www.googleapi"
           + "s.com/auth/cloud-platform,https://www.go"
-          + "ogleapis.com/auth/dialogflowB\275\001\n!com.goo"
+          + "ogleapis.com/auth/dialogflowB\257\001\n!com.goo"
           + "gle.cloud.dialogflow.cx.v3B\tFlowProtoP\001Z"
-          + "?google.golang.org/genproto/googleapis/c"
-          + "loud/dialogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Googl"
-          + "e.Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud"
-          + "::Dialogflow::CX::V3b\006proto3"
+          + "1cloud.google.com/go/dialogflow/cx/apiv3"
+          + "/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialog"
+          + "flow.Cx.V3\352\002!Google::Cloud::Dialogflow::"
+          + "CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

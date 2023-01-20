@@ -268,13 +268,12 @@ public final class EnvironmentProto {
           + "yFlowResponse\022\022DeployFlowMetadata\032x\312A\031di"
           + "alogflow.googleapis.com\322AYhttps://www.go"
           + "ogleapis.com/auth/cloud-platform,https:/"
-          + "/www.googleapis.com/auth/dialogflowB\304\001\n!"
+          + "/www.googleapis.com/auth/dialogflowB\266\001\n!"
           + "com.google.cloud.dialogflow.cx.v3B\020Envir"
-          + "onmentProtoP\001Z?google.golang.org/genprot"
-          + "o/googleapis/cloud/dialogflow/cx/v3;cx\370\001"
-          + "\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002"
-          + "!Google::Cloud::Dialogflow::CX::V3b\006prot"
-          + "o3"
+          + "onmentProtoP\001Z1cloud.google.com/go/dialo"
+          + "gflow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Googl"
+          + "e.Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud"
+          + "::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -28,7 +28,10 @@ public interface AgentOrBuilder
    *
    * <pre>
    * The unique identifier of the agent.
-   * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
+   * Required for the
+   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+   * method.
+   * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
    * populates the name automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * </pre>
@@ -43,7 +46,10 @@ public interface AgentOrBuilder
    *
    * <pre>
    * The unique identifier of the agent.
-   * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
+   * Required for the
+   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+   * method.
+   * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
    * populates the name automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * </pre>
@@ -87,7 +93,9 @@ public interface AgentOrBuilder
    * See [Language
    * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * for a list of the currently supported language codes.
-   * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
+   * This field cannot be set by the
+   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+   * method.
    * </pre>
    *
    * <code>
@@ -105,7 +113,9 @@ public interface AgentOrBuilder
    * See [Language
    * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * for a list of the currently supported language codes.
-   * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
+   * This field cannot be set by the
+   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+   * method.
    * </pre>
    *
    * <code>
@@ -298,11 +308,10 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be automatically
-   * created when the agent is created, and can only be deleted by deleting the
-   * agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Immutable. Name of the start flow in this agent. A start flow will be
+   * automatically created when the agent is created, and can only be deleted by
+   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -316,11 +325,10 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be automatically
-   * created when the agent is created, and can only be deleted by deleting the
-   * agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Immutable. Name of the start flow in this agent. A start flow will be
+   * automatically created when the agent is created, and can only be deleted by
+   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -335,8 +343,9 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * Name of the
+   * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
+   * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
@@ -349,8 +358,9 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * Name of the
+   * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
+   * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
@@ -365,14 +375,15 @@ public interface AgentOrBuilder
    *
    * <pre>
    * Indicates if stackdriver logging is enabled for the agent.
-   * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
+   * Please use
+   * [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
    * instead.
    * </pre>
    *
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=245
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=255
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated

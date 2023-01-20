@@ -368,11 +368,15 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.IntentOrBuilder getIntentOrBuilder() {
-    return getIntent();
+    return intent_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Intent.getDefaultInstance()
+        : intent_;
   }
 
   public static final int EVENT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object event_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object event_ = "";
   /**
    *
    *
@@ -504,11 +508,13 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
-    return getParameters();
+    return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
   }
 
   public static final int RESOLVED_INPUT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object resolvedInput_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resolvedInput_ = "";
   /**
    *
    *
@@ -561,7 +567,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MATCH_TYPE_FIELD_NUMBER = 4;
-  private int matchType_;
+  private int matchType_ = 0;
   /**
    *
    *
@@ -590,16 +596,15 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.Match.MatchType getMatchType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3beta1.Match.MatchType result =
-        com.google.cloud.dialogflow.cx.v3beta1.Match.MatchType.valueOf(matchType_);
+        com.google.cloud.dialogflow.cx.v3beta1.Match.MatchType.forNumber(matchType_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3beta1.Match.MatchType.UNRECOGNIZED
         : result;
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 5;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -878,26 +883,21 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (intentBuilder_ == null) {
-        intent_ = null;
-      } else {
-        intent_ = null;
+      bitField0_ = 0;
+      intent_ = null;
+      if (intentBuilder_ != null) {
+        intentBuilder_.dispose();
         intentBuilder_ = null;
       }
       event_ = "";
-
-      if (parametersBuilder_ == null) {
-        parameters_ = null;
-      } else {
-        parameters_ = null;
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
       resolvedInput_ = "";
-
       matchType_ = 0;
-
       confidence_ = 0F;
-
       return this;
     }
 
@@ -925,22 +925,33 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.Match buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.Match result =
           new com.google.cloud.dialogflow.cx.v3beta1.Match(this);
-      if (intentBuilder_ == null) {
-        result.intent_ = intent_;
-      } else {
-        result.intent_ = intentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.event_ = event_;
-      if (parametersBuilder_ == null) {
-        result.parameters_ = parameters_;
-      } else {
-        result.parameters_ = parametersBuilder_.build();
-      }
-      result.resolvedInput_ = resolvedInput_;
-      result.matchType_ = matchType_;
-      result.confidence_ = confidence_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.Match result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.intent_ = intentBuilder_ == null ? intent_ : intentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.event_ = event_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parameters_ = parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resolvedInput_ = resolvedInput_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.matchType_ = matchType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.confidence_ = confidence_;
+      }
     }
 
     @java.lang.Override
@@ -993,6 +1004,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEvent().isEmpty()) {
         event_ = other.event_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasParameters()) {
@@ -1000,6 +1012,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getResolvedInput().isEmpty()) {
         resolvedInput_ = other.resolvedInput_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.matchType_ != 0) {
@@ -1037,37 +1050,37 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getIntentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 resolvedInput_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 32:
               {
                 matchType_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 45:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 45
             case 50:
               {
                 event_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             default:
@@ -1086,6 +1099,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3beta1.Intent intent_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1108,7 +1123,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the intent field is set.
      */
     public boolean hasIntent() {
-      return intentBuilder_ != null || intent_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1151,11 +1166,11 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         intent_ = value;
-        onChanged();
       } else {
         intentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1174,11 +1189,11 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3beta1.Intent.Builder builderForValue) {
       if (intentBuilder_ == null) {
         intent_ = builderForValue.build();
-        onChanged();
       } else {
         intentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1195,19 +1210,18 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIntent(com.google.cloud.dialogflow.cx.v3beta1.Intent value) {
       if (intentBuilder_ == null) {
-        if (intent_ != null) {
-          intent_ =
-              com.google.cloud.dialogflow.cx.v3beta1.Intent.newBuilder(intent_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && intent_ != null
+            && intent_ != com.google.cloud.dialogflow.cx.v3beta1.Intent.getDefaultInstance()) {
+          getIntentBuilder().mergeFrom(value);
         } else {
           intent_ = value;
         }
-        onChanged();
       } else {
         intentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1223,14 +1237,13 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
      */
     public Builder clearIntent() {
-      if (intentBuilder_ == null) {
-        intent_ = null;
-        onChanged();
-      } else {
-        intent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      intent_ = null;
+      if (intentBuilder_ != null) {
+        intentBuilder_.dispose();
         intentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1246,7 +1259,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Intent.Builder getIntentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIntentFieldBuilder().getBuilder();
     }
@@ -1373,8 +1386,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       event_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1394,8 +1407,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEvent() {
-
       event_ = getDefaultInstance().getEvent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1420,8 +1433,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       event_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1455,7 +1468,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the parameters field is set.
      */
     public boolean hasParameters() {
-      return parametersBuilder_ != null || parameters_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1512,11 +1525,11 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         parameters_ = value;
-        onChanged();
       } else {
         parametersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1542,11 +1555,11 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     public Builder setParameters(com.google.protobuf.Struct.Builder builderForValue) {
       if (parametersBuilder_ == null) {
         parameters_ = builderForValue.build();
-        onChanged();
       } else {
         parametersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1571,17 +1584,18 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeParameters(com.google.protobuf.Struct value) {
       if (parametersBuilder_ == null) {
-        if (parameters_ != null) {
-          parameters_ =
-              com.google.protobuf.Struct.newBuilder(parameters_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && parameters_ != null
+            && parameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getParametersBuilder().mergeFrom(value);
         } else {
           parameters_ = value;
         }
-        onChanged();
       } else {
         parametersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1605,14 +1619,13 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct parameters = 2;</code>
      */
     public Builder clearParameters() {
-      if (parametersBuilder_ == null) {
-        parameters_ = null;
-        onChanged();
-      } else {
-        parameters_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1636,7 +1649,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct parameters = 2;</code>
      */
     public com.google.protobuf.Struct.Builder getParametersBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
@@ -1771,8 +1784,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resolvedInput_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1790,8 +1803,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResolvedInput() {
-
       resolvedInput_ = getDefaultInstance().getResolvedInput();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1814,8 +1827,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resolvedInput_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1849,8 +1862,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMatchTypeValue(int value) {
-
       matchType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1867,9 +1880,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.Match.MatchType getMatchType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3beta1.Match.MatchType result =
-          com.google.cloud.dialogflow.cx.v3beta1.Match.MatchType.valueOf(matchType_);
+          com.google.cloud.dialogflow.cx.v3beta1.Match.MatchType.forNumber(matchType_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3beta1.Match.MatchType.UNRECOGNIZED
           : result;
@@ -1890,7 +1902,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       matchType_ = value.getNumber();
       onChanged();
       return this;
@@ -1907,7 +1919,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMatchType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       matchType_ = 0;
       onChanged();
       return this;
@@ -1954,6 +1966,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1974,7 +1987,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       confidence_ = 0F;
       onChanged();
       return this;

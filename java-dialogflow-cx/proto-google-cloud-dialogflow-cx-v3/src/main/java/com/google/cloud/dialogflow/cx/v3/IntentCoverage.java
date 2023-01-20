@@ -162,7 +162,9 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INTENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object intent_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object intent_ = "";
     /**
      *
      *
@@ -211,7 +213,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int COVERED_FIELD_NUMBER = 2;
-    private boolean covered_;
+    private boolean covered_ = false;
     /**
      *
      *
@@ -438,10 +440,9 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         intent_ = "";
-
         covered_ = false;
-
         return this;
       }
 
@@ -469,10 +470,21 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent buildPartial() {
         com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent result =
             new com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent(this);
-        result.intent_ = intent_;
-        result.covered_ = covered_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.intent_ = intent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.covered_ = covered_;
+        }
       }
 
       @java.lang.Override
@@ -525,6 +537,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getIntent().isEmpty()) {
           intent_ = other.intent_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getCovered() != false) {
@@ -559,13 +572,13 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   intent_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   covered_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -584,6 +597,8 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object intent_ = "";
       /**
@@ -646,8 +661,8 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         intent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -663,8 +678,8 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIntent() {
-
         intent_ = getDefaultInstance().getIntent();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -685,8 +700,8 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         intent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -724,6 +739,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       public Builder setCovered(boolean value) {
 
         covered_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -740,7 +756,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCovered() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         covered_ = false;
         onChanged();
         return this;
@@ -811,6 +827,8 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent> intents_;
   /**
    *
@@ -881,7 +899,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COVERAGE_SCORE_FIELD_NUMBER = 2;
-  private float coverageScore_;
+  private float coverageScore_ = 0F;
   /**
    *
    *
@@ -1108,6 +1126,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (intentsBuilder_ == null) {
         intents_ = java.util.Collections.emptyList();
       } else {
@@ -1116,7 +1135,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       coverageScore_ = 0F;
-
       return this;
     }
 
@@ -1144,7 +1162,16 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.IntentCoverage buildPartial() {
       com.google.cloud.dialogflow.cx.v3.IntentCoverage result =
           new com.google.cloud.dialogflow.cx.v3.IntentCoverage(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.IntentCoverage result) {
       if (intentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           intents_ = java.util.Collections.unmodifiableList(intents_);
@@ -1154,9 +1181,13 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.intents_ = intentsBuilder_.build();
       }
-      result.coverageScore_ = coverageScore_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.IntentCoverage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.coverageScore_ = coverageScore_;
+      }
     }
 
     @java.lang.Override
@@ -1278,7 +1309,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
             case 21:
               {
                 coverageScore_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -1694,6 +1725,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     public Builder setCoverageScore(float value) {
 
       coverageScore_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1709,7 +1741,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCoverageScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       coverageScore_ = 0F;
       onChanged();
       return this;

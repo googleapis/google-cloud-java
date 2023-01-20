@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Flows.CreateFlow][google.cloud.dialogflow.cx.v3.Flows.CreateFlow].
+ * The request message for
+ * [Flows.CreateFlow][google.cloud.dialogflow.cx.v3.Flows.CreateFlow].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateFlowRequest}
@@ -69,7 +70,9 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -169,11 +172,13 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.FlowOrBuilder getFlowOrBuilder() {
-    return getFlow();
+    return flow_ == null ? com.google.cloud.dialogflow.cx.v3.Flow.getDefaultInstance() : flow_;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -425,7 +430,8 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [Flows.CreateFlow][google.cloud.dialogflow.cx.v3.Flows.CreateFlow].
+   * The request message for
+   * [Flows.CreateFlow][google.cloud.dialogflow.cx.v3.Flows.CreateFlow].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateFlowRequest}
@@ -459,16 +465,14 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (flowBuilder_ == null) {
-        flow_ = null;
-      } else {
-        flow_ = null;
+      flow_ = null;
+      if (flowBuilder_ != null) {
+        flowBuilder_.dispose();
         flowBuilder_ = null;
       }
       languageCode_ = "";
-
       return this;
     }
 
@@ -496,15 +500,24 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.cx.v3.CreateFlowRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.CreateFlowRequest result =
           new com.google.cloud.dialogflow.cx.v3.CreateFlowRequest(this);
-      result.parent_ = parent_;
-      if (flowBuilder_ == null) {
-        result.flow_ = flow_;
-      } else {
-        result.flow_ = flowBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.languageCode_ = languageCode_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.CreateFlowRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.flow_ = flowBuilder_ == null ? flow_ : flowBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -555,6 +568,7 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFlow()) {
@@ -562,6 +576,7 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -593,19 +608,19 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFlowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -624,6 +639,8 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -695,8 +712,8 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +732,8 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -740,8 +757,8 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -765,7 +782,7 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the flow field is set.
      */
     public boolean hasFlow() {
-      return flowBuilder_ != null || flow_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -802,11 +819,11 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         flow_ = value;
-        onChanged();
       } else {
         flowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -822,11 +839,11 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
     public Builder setFlow(com.google.cloud.dialogflow.cx.v3.Flow.Builder builderForValue) {
       if (flowBuilder_ == null) {
         flow_ = builderForValue.build();
-        onChanged();
       } else {
         flowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -841,19 +858,18 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeFlow(com.google.cloud.dialogflow.cx.v3.Flow value) {
       if (flowBuilder_ == null) {
-        if (flow_ != null) {
-          flow_ =
-              com.google.cloud.dialogflow.cx.v3.Flow.newBuilder(flow_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && flow_ != null
+            && flow_ != com.google.cloud.dialogflow.cx.v3.Flow.getDefaultInstance()) {
+          getFlowBuilder().mergeFrom(value);
         } else {
           flow_ = value;
         }
-        onChanged();
       } else {
         flowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -867,14 +883,13 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearFlow() {
-      if (flowBuilder_ == null) {
-        flow_ = null;
-        onChanged();
-      } else {
-        flow_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      flow_ = null;
+      if (flowBuilder_ != null) {
+        flowBuilder_.dispose();
         flowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -888,7 +903,7 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Flow.Builder getFlowBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFlowFieldBuilder().getBuilder();
     }
@@ -1024,8 +1039,8 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1050,8 +1065,8 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1081,8 +1096,8 @@ public final class CreateFlowRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

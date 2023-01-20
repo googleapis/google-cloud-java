@@ -70,7 +70,9 @@ public final class CreateVersionOperationMetadata extends com.google.protobuf.Ge
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -323,8 +325,8 @@ public final class CreateVersionOperationMetadata extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = "";
-
       return this;
     }
 
@@ -354,9 +356,19 @@ public final class CreateVersionOperationMetadata extends com.google.protobuf.Ge
     public com.google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata result =
           new com.google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata(this);
-      result.version_ = version_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -410,6 +422,7 @@ public final class CreateVersionOperationMetadata extends com.google.protobuf.Ge
               .getDefaultInstance()) return this;
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -441,7 +454,7 @@ public final class CreateVersionOperationMetadata extends com.google.protobuf.Ge
             case 10:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -460,6 +473,8 @@ public final class CreateVersionOperationMetadata extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object version_ = "";
     /**
@@ -528,8 +543,8 @@ public final class CreateVersionOperationMetadata extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -547,8 +562,8 @@ public final class CreateVersionOperationMetadata extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -571,8 +586,8 @@ public final class CreateVersionOperationMetadata extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

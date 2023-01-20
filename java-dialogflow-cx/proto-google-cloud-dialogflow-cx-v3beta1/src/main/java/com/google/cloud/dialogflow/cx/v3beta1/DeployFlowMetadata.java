@@ -70,6 +70,8 @@ public final class DeployFlowMetadata extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TEST_ERRORS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TestError> testErrors_;
   /**
    *
@@ -341,6 +343,7 @@ public final class DeployFlowMetadata extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (testErrorsBuilder_ == null) {
         testErrors_ = java.util.Collections.emptyList();
       } else {
@@ -375,7 +378,16 @@ public final class DeployFlowMetadata extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata result =
           new com.google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata result) {
       if (testErrorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           testErrors_ = java.util.Collections.unmodifiableList(testErrors_);
@@ -385,8 +397,10 @@ public final class DeployFlowMetadata extends com.google.protobuf.GeneratedMessa
       } else {
         result.testErrors_ = testErrorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

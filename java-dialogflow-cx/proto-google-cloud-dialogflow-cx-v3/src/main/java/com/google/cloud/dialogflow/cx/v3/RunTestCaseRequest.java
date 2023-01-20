@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase].
+ * The request message for
+ * [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.RunTestCaseRequest}
@@ -69,13 +70,15 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Format of test case name to run: `projects/&lt;Project ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format of test case name to run: `projects/&lt;Project
+   * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>
@@ -100,8 +103,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Format of test case name to run: `projects/&lt;Project ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format of test case name to run: `projects/&lt;Project
+   * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>
@@ -124,7 +127,9 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object environment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object environment_ = "";
   /**
    *
    *
@@ -352,7 +357,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase].
+   * The request message for
+   * [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.RunTestCaseRequest}
@@ -386,10 +392,9 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       environment_ = "";
-
       return this;
     }
 
@@ -417,10 +422,21 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest result =
           new com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest(this);
-      result.name_ = name_;
-      result.environment_ = environment_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.environment_ = environment_;
+      }
     }
 
     @java.lang.Override
@@ -471,10 +487,12 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEnvironment().isEmpty()) {
         environment_ = other.environment_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -506,13 +524,13 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 environment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -532,13 +550,15 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Format of test case name to run: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case name to run: `projects/&lt;Project
+     * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -562,8 +582,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Format of test case name to run: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case name to run: `projects/&lt;Project
+     * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -587,8 +607,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Format of test case name to run: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case name to run: `projects/&lt;Project
+     * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -602,8 +622,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -611,8 +631,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Format of test case name to run: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case name to run: `projects/&lt;Project
+     * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -622,8 +642,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -631,8 +651,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Format of test case name to run: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case name to run: `projects/&lt;Project
+     * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -647,8 +667,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -726,8 +746,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       environment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -747,8 +767,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEnvironment() {
-
       environment_ = getDefaultInstance().getEnvironment();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -773,8 +793,8 @@ public final class RunTestCaseRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       environment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

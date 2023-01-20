@@ -69,7 +69,9 @@ public final class IntentInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object intent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object intent_ = "";
   /**
    *
    *
@@ -323,8 +325,8 @@ public final class IntentInput extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       intent_ = "";
-
       return this;
     }
 
@@ -352,9 +354,18 @@ public final class IntentInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.IntentInput buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.IntentInput result =
           new com.google.cloud.dialogflow.cx.v3beta1.IntentInput(this);
-      result.intent_ = intent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.IntentInput result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.intent_ = intent_;
+      }
     }
 
     @java.lang.Override
@@ -405,6 +416,7 @@ public final class IntentInput extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getIntent().isEmpty()) {
         intent_ = other.intent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -436,7 +448,7 @@ public final class IntentInput extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 intent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +467,8 @@ public final class IntentInput extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object intent_ = "";
     /**
@@ -529,8 +543,8 @@ public final class IntentInput extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       intent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -550,8 +564,8 @@ public final class IntentInput extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIntent() {
-
       intent_ = getDefaultInstance().getIntent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -576,8 +590,8 @@ public final class IntentInput extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       intent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

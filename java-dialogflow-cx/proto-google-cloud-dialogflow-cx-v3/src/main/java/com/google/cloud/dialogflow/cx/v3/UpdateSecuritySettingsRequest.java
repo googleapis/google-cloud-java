@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings].
+ * The request message for
+ * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest}
@@ -120,7 +121,9 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SecuritySettingsOrBuilder
       getSecuritySettingsOrBuilder() {
-    return getSecuritySettings();
+    return securitySettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.getDefaultInstance()
+        : securitySettings_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -129,8 +132,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If the mask is not present,
-   * all fields will be updated.
+   * Required. The mask to control which fields get updated. If the mask is not
+   * present, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -146,8 +149,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If the mask is not present,
-   * all fields will be updated.
+   * Required. The mask to control which fields get updated. If the mask is not
+   * present, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -163,8 +166,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If the mask is not present,
-   * all fields will be updated.
+   * Required. The mask to control which fields get updated. If the mask is not
+   * present, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -172,7 +175,7 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -358,7 +361,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The request message for [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings].
+   * The request message for
+   * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest}
@@ -392,16 +396,15 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (securitySettingsBuilder_ == null) {
-        securitySettings_ = null;
-      } else {
-        securitySettings_ = null;
+      bitField0_ = 0;
+      securitySettings_ = null;
+      if (securitySettingsBuilder_ != null) {
+        securitySettingsBuilder_.dispose();
         securitySettingsBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -432,18 +435,23 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
     public com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest result =
           new com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest(this);
-      if (securitySettingsBuilder_ == null) {
-        result.securitySettings_ = securitySettings_;
-      } else {
-        result.securitySettings_ = securitySettingsBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.securitySettings_ =
+            securitySettingsBuilder_ == null ? securitySettings_ : securitySettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -530,13 +538,13 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
               {
                 input.readMessage(
                     getSecuritySettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -555,6 +563,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3.SecuritySettings securitySettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -577,7 +587,7 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      * @return Whether the securitySettings field is set.
      */
     public boolean hasSecuritySettings() {
-      return securitySettingsBuilder_ != null || securitySettings_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -620,11 +630,11 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         securitySettings_ = value;
-        onChanged();
       } else {
         securitySettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -643,11 +653,11 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
         com.google.cloud.dialogflow.cx.v3.SecuritySettings.Builder builderForValue) {
       if (securitySettingsBuilder_ == null) {
         securitySettings_ = builderForValue.build();
-        onChanged();
       } else {
         securitySettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -664,19 +674,19 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      */
     public Builder mergeSecuritySettings(com.google.cloud.dialogflow.cx.v3.SecuritySettings value) {
       if (securitySettingsBuilder_ == null) {
-        if (securitySettings_ != null) {
-          securitySettings_ =
-              com.google.cloud.dialogflow.cx.v3.SecuritySettings.newBuilder(securitySettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && securitySettings_ != null
+            && securitySettings_
+                != com.google.cloud.dialogflow.cx.v3.SecuritySettings.getDefaultInstance()) {
+          getSecuritySettingsBuilder().mergeFrom(value);
         } else {
           securitySettings_ = value;
         }
-        onChanged();
       } else {
         securitySettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -692,14 +702,13 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearSecuritySettings() {
-      if (securitySettingsBuilder_ == null) {
-        securitySettings_ = null;
-        onChanged();
-      } else {
-        securitySettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      securitySettings_ = null;
+      if (securitySettingsBuilder_ != null) {
+        securitySettingsBuilder_.dispose();
         securitySettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -715,7 +724,7 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings.Builder getSecuritySettingsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSecuritySettingsFieldBuilder().getBuilder();
     }
@@ -780,8 +789,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -790,14 +799,14 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -818,8 +827,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -831,19 +840,19 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -852,19 +861,19 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -872,54 +881,54 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -927,8 +936,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -947,8 +956,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

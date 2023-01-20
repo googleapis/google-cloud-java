@@ -23,7 +23,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  * <pre>
  * The top-level message returned from the
- * [StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent] method.
+ * [StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent]
+ * method.
  * Multiple response messages (N) can be returned in order.
  * The first (N-1) responses set either the `recognition_result` or
  * `detect_intent_response` field, depending on the request:
@@ -31,15 +32,19 @@ package com.google.cloud.dialogflow.cx.v3;
  *     set, and the `StreamingDetectIntentRequest.enable_partial_response`
  *     field was false, the `recognition_result` field is populated for each
  *     of the (N-1) responses.
- *     See the [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult] message for details
- *     about the result message sequence.
+ *     See the
+ *     [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult]
+ *     message for details about the result message sequence.
  * *   If the `StreamingDetectIntentRequest.enable_partial_response` field was
  *     true, the `detect_intent_response` field is populated for each
  *     of the (N-1) responses, where 1 &lt;= N &lt;= 4.
- *     These responses set the [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type] field
- *     to `PARTIAL`.
+ *     These responses set the
+ *     [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type]
+ *     field to `PARTIAL`.
  * For the final Nth response message, the `detect_intent_response` is fully
- * populated, and [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type] is set to `FINAL`.
+ * populated, and
+ * [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type]
+ * is set to `FINAL`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse}
@@ -429,7 +434,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <pre>
    * The top-level message returned from the
-   * [StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent] method.
+   * [StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent]
+   * method.
    * Multiple response messages (N) can be returned in order.
    * The first (N-1) responses set either the `recognition_result` or
    * `detect_intent_response` field, depending on the request:
@@ -437,15 +443,19 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *     set, and the `StreamingDetectIntentRequest.enable_partial_response`
    *     field was false, the `recognition_result` field is populated for each
    *     of the (N-1) responses.
-   *     See the [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult] message for details
-   *     about the result message sequence.
+   *     See the
+   *     [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult]
+   *     message for details about the result message sequence.
    * *   If the `StreamingDetectIntentRequest.enable_partial_response` field was
    *     true, the `detect_intent_response` field is populated for each
    *     of the (N-1) responses, where 1 &lt;= N &lt;= 4.
-   *     These responses set the [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type] field
-   *     to `PARTIAL`.
+   *     These responses set the
+   *     [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type]
+   *     field to `PARTIAL`.
    * For the final Nth response message, the `detect_intent_response` is fully
-   * populated, and [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type] is set to `FINAL`.
+   * populated, and
+   * [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type]
+   * is set to `FINAL`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse}
@@ -479,6 +489,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (recognitionResultBuilder_ != null) {
         recognitionResultBuilder_.clear();
       }
@@ -515,23 +526,29 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse result =
           new com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse(this);
-      if (responseCase_ == 1) {
-        if (recognitionResultBuilder_ == null) {
-          result.response_ = response_;
-        } else {
-          result.response_ = recognitionResultBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (responseCase_ == 2) {
-        if (detectIntentResponseBuilder_ == null) {
-          result.response_ = response_;
-        } else {
-          result.response_ = detectIntentResponseBuilder_.build();
-        }
-      }
-      result.responseCase_ = responseCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse result) {
+      result.responseCase_ = responseCase_;
+      result.response_ = this.response_;
+      if (responseCase_ == 1 && recognitionResultBuilder_ != null) {
+        result.response_ = recognitionResultBuilder_.build();
+      }
+      if (responseCase_ == 2 && detectIntentResponseBuilder_ != null) {
+        result.response_ = detectIntentResponseBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -668,6 +685,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult,
@@ -891,7 +910,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       responseCase_ = 1;
       onChanged();
-      ;
       return recognitionResultBuilder_;
     }
 
@@ -1106,7 +1124,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       responseCase_ = 2;
       onChanged();
-      ;
       return detectIntentResponseBuilder_;
     }
 

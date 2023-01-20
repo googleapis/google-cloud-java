@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Environments.CreateEnvironment][google.cloud.dialogflow.cx.v3.Environments.CreateEnvironment].
+ * The request message for
+ * [Environments.CreateEnvironment][google.cloud.dialogflow.cx.v3.Environments.CreateEnvironment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest}
@@ -68,13 +69,16 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+   * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * </pre>
    *
    * <code>
@@ -99,8 +103,9 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+   * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * </pre>
    *
    * <code>
@@ -173,7 +178,9 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.EnvironmentOrBuilder getEnvironmentOrBuilder() {
-    return getEnvironment();
+    return environment_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Environment.getDefaultInstance()
+        : environment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -354,7 +361,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request message for [Environments.CreateEnvironment][google.cloud.dialogflow.cx.v3.Environments.CreateEnvironment].
+   * The request message for
+   * [Environments.CreateEnvironment][google.cloud.dialogflow.cx.v3.Environments.CreateEnvironment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest}
@@ -388,12 +396,11 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-      } else {
-        environment_ = null;
+      environment_ = null;
+      if (environmentBuilder_ != null) {
+        environmentBuilder_.dispose();
         environmentBuilder_ = null;
       }
       return this;
@@ -423,14 +430,22 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
     public com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest result =
           new com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest(this);
-      result.parent_ = parent_;
-      if (environmentBuilder_ == null) {
-        result.environment_ = environment_;
-      } else {
-        result.environment_ = environmentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.environment_ =
+            environmentBuilder_ == null ? environment_ : environmentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +496,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEnvironment()) {
@@ -515,13 +531,13 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -541,13 +557,16 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object parent_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
      *
      * <code>
@@ -571,8 +590,9 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
      *
      * <code>
@@ -596,8 +616,9 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
      *
      * <code>
@@ -611,8 +632,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -620,8 +641,9 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
      *
      * <code>
@@ -631,8 +653,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -640,8 +662,9 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
      *
      * <code>
@@ -656,8 +679,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,7 +705,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      * @return Whether the environment field is set.
      */
     public boolean hasEnvironment() {
-      return environmentBuilder_ != null || environment_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -723,11 +746,11 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         environment_ = value;
-        onChanged();
       } else {
         environmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -745,11 +768,11 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
         com.google.cloud.dialogflow.cx.v3.Environment.Builder builderForValue) {
       if (environmentBuilder_ == null) {
         environment_ = builderForValue.build();
-        onChanged();
       } else {
         environmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -765,19 +788,18 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      */
     public Builder mergeEnvironment(com.google.cloud.dialogflow.cx.v3.Environment value) {
       if (environmentBuilder_ == null) {
-        if (environment_ != null) {
-          environment_ =
-              com.google.cloud.dialogflow.cx.v3.Environment.newBuilder(environment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && environment_ != null
+            && environment_ != com.google.cloud.dialogflow.cx.v3.Environment.getDefaultInstance()) {
+          getEnvironmentBuilder().mergeFrom(value);
         } else {
           environment_ = value;
         }
-        onChanged();
       } else {
         environmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -792,14 +814,13 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearEnvironment() {
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-        onChanged();
-      } else {
-        environment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      environment_ = null;
+      if (environmentBuilder_ != null) {
+        environmentBuilder_.dispose();
         environmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -814,7 +835,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Environment.Builder getEnvironmentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }

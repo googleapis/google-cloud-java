@@ -140,8 +140,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * additional results). The client should stop sending additional audio
      * data, half-close the gRPC connection, and wait for any additional results
      * until the server closes the gRPC connection. This message is only sent if
-     * [`single_utterance`][google.cloud.dialogflow.cx.v3.InputAudioConfig.single_utterance] was set to
-     * `true`, and is not used otherwise.
+     * [`single_utterance`][google.cloud.dialogflow.cx.v3.InputAudioConfig.single_utterance]
+     * was set to `true`, and is not used otherwise.
      * </pre>
      *
      * <code>END_OF_SINGLE_UTTERANCE = 2;</code>
@@ -180,8 +180,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * additional results). The client should stop sending additional audio
      * data, half-close the gRPC connection, and wait for any additional results
      * until the server closes the gRPC connection. This message is only sent if
-     * [`single_utterance`][google.cloud.dialogflow.cx.v3.InputAudioConfig.single_utterance] was set to
-     * `true`, and is not used otherwise.
+     * [`single_utterance`][google.cloud.dialogflow.cx.v3.InputAudioConfig.single_utterance]
+     * was set to `true`, and is not used otherwise.
      * </pre>
      *
      * <code>END_OF_SINGLE_UTTERANCE = 2;</code>
@@ -274,7 +274,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   public static final int MESSAGE_TYPE_FIELD_NUMBER = 1;
-  private int messageType_;
+  private int messageType_ = 0;
   /**
    *
    *
@@ -305,9 +305,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType getMessageType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType result =
-        com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType.valueOf(
+        com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType.forNumber(
             messageType_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType.UNRECOGNIZED
@@ -315,7 +314,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   public static final int TRANSCRIPT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object transcript_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object transcript_ = "";
   /**
    *
    *
@@ -366,7 +367,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   public static final int IS_FINAL_FIELD_NUMBER = 3;
-  private boolean isFinal_;
+  private boolean isFinal_ = false;
   /**
    *
    *
@@ -387,7 +388,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -410,7 +411,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   public static final int STABILITY_FIELD_NUMBER = 6;
-  private float stability_;
+  private float stability_ = 0F;
   /**
    *
    *
@@ -434,13 +435,16 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   public static final int SPEECH_WORD_INFO_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.SpeechWordInfo> speechWordInfo_;
   /**
    *
    *
    * <pre>
    * Word-specific information for the words recognized by Speech in
-   * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+   * Populated if and only if `message_type` = `TRANSCRIPT` and
    * [InputAudioConfig.enable_word_info] is set.
    * </pre>
    *
@@ -455,7 +459,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Word-specific information for the words recognized by Speech in
-   * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+   * Populated if and only if `message_type` = `TRANSCRIPT` and
    * [InputAudioConfig.enable_word_info] is set.
    * </pre>
    *
@@ -471,7 +476,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Word-specific information for the words recognized by Speech in
-   * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+   * Populated if and only if `message_type` = `TRANSCRIPT` and
    * [InputAudioConfig.enable_word_info] is set.
    * </pre>
    *
@@ -486,7 +492,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Word-specific information for the words recognized by Speech in
-   * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+   * Populated if and only if `message_type` = `TRANSCRIPT` and
    * [InputAudioConfig.enable_word_info] is set.
    * </pre>
    *
@@ -501,7 +508,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Word-specific information for the words recognized by Speech in
-   * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+   * Populated if and only if `message_type` = `TRANSCRIPT` and
    * [InputAudioConfig.enable_word_info] is set.
    * </pre>
    *
@@ -564,11 +572,15 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getSpeechEndOffsetOrBuilder() {
-    return getSpeechEndOffset();
+    return speechEndOffset_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : speechEndOffset_;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 10;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -922,31 +934,25 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       messageType_ = 0;
-
       transcript_ = "";
-
       isFinal_ = false;
-
       confidence_ = 0F;
-
       stability_ = 0F;
-
       if (speechWordInfoBuilder_ == null) {
         speechWordInfo_ = java.util.Collections.emptyList();
       } else {
         speechWordInfo_ = null;
         speechWordInfoBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (speechEndOffsetBuilder_ == null) {
-        speechEndOffset_ = null;
-      } else {
-        speechEndOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      speechEndOffset_ = null;
+      if (speechEndOffsetBuilder_ != null) {
+        speechEndOffsetBuilder_.dispose();
         speechEndOffsetBuilder_ = null;
       }
       languageCode_ = "";
-
       return this;
     }
 
@@ -975,29 +981,52 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult buildPartial() {
       com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult result =
           new com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult(this);
-      int from_bitField0_ = bitField0_;
-      result.messageType_ = messageType_;
-      result.transcript_ = transcript_;
-      result.isFinal_ = isFinal_;
-      result.confidence_ = confidence_;
-      result.stability_ = stability_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult result) {
       if (speechWordInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           speechWordInfo_ = java.util.Collections.unmodifiableList(speechWordInfo_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.speechWordInfo_ = speechWordInfo_;
       } else {
         result.speechWordInfo_ = speechWordInfoBuilder_.build();
       }
-      if (speechEndOffsetBuilder_ == null) {
-        result.speechEndOffset_ = speechEndOffset_;
-      } else {
-        result.speechEndOffset_ = speechEndOffsetBuilder_.build();
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.messageType_ = messageType_;
       }
-      result.languageCode_ = languageCode_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.transcript_ = transcript_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.isFinal_ = isFinal_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.confidence_ = confidence_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.stability_ = stability_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.speechEndOffset_ =
+            speechEndOffsetBuilder_ == null ? speechEndOffset_ : speechEndOffsetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -1052,6 +1081,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       if (!other.getTranscript().isEmpty()) {
         transcript_ = other.transcript_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getIsFinal() != false) {
@@ -1067,7 +1097,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         if (!other.speechWordInfo_.isEmpty()) {
           if (speechWordInfo_.isEmpty()) {
             speechWordInfo_ = other.speechWordInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureSpeechWordInfoIsMutable();
             speechWordInfo_.addAll(other.speechWordInfo_);
@@ -1080,7 +1110,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             speechWordInfoBuilder_.dispose();
             speechWordInfoBuilder_ = null;
             speechWordInfo_ = other.speechWordInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             speechWordInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeechWordInfoFieldBuilder()
@@ -1095,6 +1125,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1126,31 +1157,31 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             case 8:
               {
                 messageType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 transcript_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 isFinal_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 37:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 53:
               {
                 stability_ = input.readFloat();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 53
             case 58:
@@ -1170,13 +1201,13 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             case 66:
               {
                 input.readMessage(getSpeechEndOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 82:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             default:
@@ -1229,8 +1260,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setMessageTypeValue(int value) {
-
       messageType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1249,9 +1280,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType
         getMessageType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType result =
-          com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType.valueOf(
+          com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType.forNumber(
               messageType_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType.UNRECOGNIZED
@@ -1275,7 +1305,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       messageType_ = value.getNumber();
       onChanged();
       return this;
@@ -1293,7 +1323,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearMessageType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       messageType_ = 0;
       onChanged();
       return this;
@@ -1363,8 +1393,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       transcript_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1381,8 +1411,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearTranscript() {
-
       transcript_ = getDefaultInstance().getTranscript();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1404,8 +1434,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       transcript_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1447,6 +1477,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder setIsFinal(boolean value) {
 
       isFinal_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1465,7 +1496,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearIsFinal() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       isFinal_ = false;
       onChanged();
       return this;
@@ -1512,6 +1543,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1532,7 +1564,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       confidence_ = 0F;
       onChanged();
       return this;
@@ -1581,6 +1613,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder setStability(float value) {
 
       stability_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1602,7 +1635,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearStability() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       stability_ = 0F;
       onChanged();
       return this;
@@ -1612,11 +1645,11 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         java.util.Collections.emptyList();
 
     private void ensureSpeechWordInfoIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         speechWordInfo_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.SpeechWordInfo>(
                 speechWordInfo_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -1631,7 +1664,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1650,7 +1684,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1668,7 +1703,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1686,7 +1722,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1711,7 +1748,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1733,7 +1771,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1757,7 +1796,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1782,7 +1822,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1804,7 +1845,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1826,7 +1868,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1848,7 +1891,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1857,7 +1901,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder clearSpeechWordInfo() {
       if (speechWordInfoBuilder_ == null) {
         speechWordInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         speechWordInfoBuilder_.clear();
@@ -1869,7 +1913,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1890,7 +1935,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1905,7 +1951,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1924,7 +1971,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1943,7 +1991,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1958,7 +2007,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1974,7 +2024,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1997,7 +2048,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
                 com.google.cloud.dialogflow.cx.v3.SpeechWordInfo.Builder,
                 com.google.cloud.dialogflow.cx.v3.SpeechWordInfoOrBuilder>(
                 speechWordInfo_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         speechWordInfo_ = null;
@@ -2025,7 +2076,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return Whether the speechEndOffset field is set.
      */
     public boolean hasSpeechEndOffset() {
-      return speechEndOffsetBuilder_ != null || speechEndOffset_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2066,11 +2117,11 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         speechEndOffset_ = value;
-        onChanged();
       } else {
         speechEndOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2087,11 +2138,11 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder setSpeechEndOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (speechEndOffsetBuilder_ == null) {
         speechEndOffset_ = builderForValue.build();
-        onChanged();
       } else {
         speechEndOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2107,19 +2158,18 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      */
     public Builder mergeSpeechEndOffset(com.google.protobuf.Duration value) {
       if (speechEndOffsetBuilder_ == null) {
-        if (speechEndOffset_ != null) {
-          speechEndOffset_ =
-              com.google.protobuf.Duration.newBuilder(speechEndOffset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && speechEndOffset_ != null
+            && speechEndOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getSpeechEndOffsetBuilder().mergeFrom(value);
         } else {
           speechEndOffset_ = value;
         }
-        onChanged();
       } else {
         speechEndOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2134,14 +2184,13 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
      */
     public Builder clearSpeechEndOffset() {
-      if (speechEndOffsetBuilder_ == null) {
-        speechEndOffset_ = null;
-        onChanged();
-      } else {
-        speechEndOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      speechEndOffset_ = null;
+      if (speechEndOffsetBuilder_ != null) {
+        speechEndOffsetBuilder_.dispose();
         speechEndOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2156,7 +2205,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getSpeechEndOffsetBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getSpeechEndOffsetFieldBuilder().getBuilder();
     }
@@ -2269,8 +2318,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2286,8 +2335,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2308,8 +2357,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

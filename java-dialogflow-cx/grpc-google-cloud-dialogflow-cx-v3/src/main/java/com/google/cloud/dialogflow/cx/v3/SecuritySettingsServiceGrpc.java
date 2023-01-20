@@ -366,8 +366,9 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * The returned settings may be stale by up to 1 minute.
+     * Retrieves the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]. The
+     * returned settings may be stale by up to 1 minute.
      * </pre>
      */
     public void getSecuritySettings(
@@ -382,7 +383,8 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
+     * Updates the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
      * </pre>
      */
     public void updateSecuritySettings(
@@ -412,7 +414,8 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
+     * Deletes the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
      * </pre>
      */
     public void deleteSecuritySettings(
@@ -503,8 +506,9 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * The returned settings may be stale by up to 1 minute.
+     * Retrieves the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]. The
+     * returned settings may be stale by up to 1 minute.
      * </pre>
      */
     public void getSecuritySettings(
@@ -521,7 +525,8 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
+     * Updates the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
      * </pre>
      */
     public void updateSecuritySettings(
@@ -555,7 +560,8 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
+     * Deletes the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
      * </pre>
      */
     public void deleteSecuritySettings(
@@ -605,8 +611,9 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * The returned settings may be stale by up to 1 minute.
+     * Retrieves the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]. The
+     * returned settings may be stale by up to 1 minute.
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings getSecuritySettings(
@@ -619,7 +626,8 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
+     * Updates the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings updateSecuritySettings(
@@ -645,7 +653,8 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
+     * Deletes the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
      * </pre>
      */
     public com.google.protobuf.Empty deleteSecuritySettings(
@@ -694,8 +703,9 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * The returned settings may be stale by up to 1 minute.
+     * Retrieves the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]. The
+     * returned settings may be stale by up to 1 minute.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -709,7 +719,8 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
+     * Updates the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -739,7 +750,8 @@ public final class SecuritySettingsServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
+     * Deletes the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

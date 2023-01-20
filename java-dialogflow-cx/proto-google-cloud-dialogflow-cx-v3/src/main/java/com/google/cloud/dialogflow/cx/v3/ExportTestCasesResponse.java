@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The response message for [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ExportTestCases].
+ * The response message for
+ * [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ExportTestCases].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.ExportTestCasesResponse}
@@ -415,7 +416,8 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The response message for [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ExportTestCases].
+   * The response message for
+   * [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ExportTestCases].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.ExportTestCasesResponse}
@@ -449,6 +451,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -478,15 +481,22 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.cx.v3.ExportTestCasesResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3.ExportTestCasesResponse result =
           new com.google.cloud.dialogflow.cx.v3.ExportTestCasesResponse(this);
-      if (destinationCase_ == 1) {
-        result.destination_ = destination_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (destinationCase_ == 2) {
-        result.destination_ = destination_;
-      }
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.ExportTestCasesResponse result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.cx.v3.ExportTestCasesResponse result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
     }
 
     @java.lang.Override
@@ -622,6 +632,8 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

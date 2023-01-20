@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The response message for [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3.Flows.GetFlowValidationResult].
+ * The response message for
+ * [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3.Flows.GetFlowValidationResult].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.FlowValidationResult}
@@ -69,7 +70,9 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,6 +125,8 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VALIDATION_MESSAGES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.ValidationMessage> validationMessages_;
   /**
    *
@@ -235,7 +240,7 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -428,7 +433,8 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The response message for [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3.Flows.GetFlowValidationResult].
+   * The response message for
+   * [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3.Flows.GetFlowValidationResult].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.FlowValidationResult}
@@ -462,19 +468,18 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (validationMessagesBuilder_ == null) {
         validationMessages_ = java.util.Collections.emptyList();
       } else {
         validationMessages_ = null;
         validationMessagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       return this;
@@ -504,24 +509,35 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3.FlowValidationResult buildPartial() {
       com.google.cloud.dialogflow.cx.v3.FlowValidationResult result =
           new com.google.cloud.dialogflow.cx.v3.FlowValidationResult(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.FlowValidationResult result) {
       if (validationMessagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           validationMessages_ = java.util.Collections.unmodifiableList(validationMessages_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.validationMessages_ = validationMessages_;
       } else {
         result.validationMessages_ = validationMessagesBuilder_.build();
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.FlowValidationResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -572,13 +588,14 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (validationMessagesBuilder_ == null) {
         if (!other.validationMessages_.isEmpty()) {
           if (validationMessages_.isEmpty()) {
             validationMessages_ = other.validationMessages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureValidationMessagesIsMutable();
             validationMessages_.addAll(other.validationMessages_);
@@ -591,7 +608,7 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
             validationMessagesBuilder_.dispose();
             validationMessagesBuilder_ = null;
             validationMessages_ = other.validationMessages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             validationMessagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getValidationMessagesFieldBuilder()
@@ -633,7 +650,7 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -653,7 +670,7 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -742,8 +759,8 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -761,8 +778,8 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -785,8 +802,8 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -795,11 +812,11 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
         validationMessages_ = java.util.Collections.emptyList();
 
     private void ensureValidationMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         validationMessages_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.ValidationMessage>(
                 validationMessages_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1030,7 +1047,7 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
     public Builder clearValidationMessages() {
       if (validationMessagesBuilder_ == null) {
         validationMessages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         validationMessagesBuilder_.clear();
@@ -1165,7 +1182,7 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
                 com.google.cloud.dialogflow.cx.v3.ValidationMessage.Builder,
                 com.google.cloud.dialogflow.cx.v3.ValidationMessageOrBuilder>(
                 validationMessages_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         validationMessages_ = null;
@@ -1191,7 +1208,7 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1228,11 +1245,11 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1247,11 +1264,11 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1265,17 +1282,18 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1288,14 +1306,13 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp update_time = 3;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1308,7 +1325,7 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp update_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

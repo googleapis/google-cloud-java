@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The response message for [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ImportTestCases].
+ * The response message for
+ * [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ImportTestCases].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.ImportTestCasesResponse}
@@ -68,6 +69,8 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
   }
 
   public static final int NAMES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList names_;
   /**
    *
@@ -307,7 +310,8 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The response message for [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ImportTestCases].
+   * The response message for
+   * [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ImportTestCases].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.ImportTestCasesResponse}
@@ -341,6 +345,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -370,14 +375,25 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.cx.v3.ImportTestCasesResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3.ImportTestCasesResponse result =
           new com.google.cloud.dialogflow.cx.v3.ImportTestCasesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.ImportTestCasesResponse result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         names_ = names_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.names_ = names_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.ImportTestCasesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

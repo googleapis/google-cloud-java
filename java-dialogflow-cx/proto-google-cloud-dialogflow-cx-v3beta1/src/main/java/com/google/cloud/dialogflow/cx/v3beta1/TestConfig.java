@@ -70,6 +70,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRACKING_PARAMETERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList trackingParameters_;
   /**
    *
@@ -131,7 +133,9 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FLOW_FIELD_NUMBER = 2;
-  private volatile java.lang.Object flow_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object flow_ = "";
   /**
    *
    *
@@ -192,7 +196,9 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object page_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object page_ = "";
   /**
    *
    *
@@ -474,12 +480,11 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       trackingParameters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       flow_ = "";
-
       page_ = "";
-
       return this;
     }
 
@@ -507,16 +512,31 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.TestConfig buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.TestConfig result =
           new com.google.cloud.dialogflow.cx.v3beta1.TestConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3beta1.TestConfig result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         trackingParameters_ = trackingParameters_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.trackingParameters_ = trackingParameters_;
-      result.flow_ = flow_;
-      result.page_ = page_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.TestConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.flow_ = flow_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.page_ = page_;
+      }
     }
 
     @java.lang.Override
@@ -577,10 +597,12 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFlow().isEmpty()) {
         flow_ = other.flow_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getPage().isEmpty()) {
         page_ = other.page_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -619,13 +641,13 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 flow_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 page_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -894,8 +916,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       flow_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -917,8 +939,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFlow() {
-
       flow_ = getDefaultInstance().getFlow();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -945,8 +967,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       flow_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1030,8 +1052,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       page_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1053,8 +1075,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPage() {
-
       page_ = getDefaultInstance().getPage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1081,8 +1103,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       page_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

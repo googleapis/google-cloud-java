@@ -455,12 +455,12 @@ public final class TestCaseProto {
           + "tCases/*/results/*}\332A\004name\032x\312A\031dialogflo"
           + "w.googleapis.com\322AYhttps://www.googleapi"
           + "s.com/auth/cloud-platform,https://www.go"
-          + "ogleapis.com/auth/dialogflowB\301\001\n!com.goo"
+          + "ogleapis.com/auth/dialogflowB\263\001\n!com.goo"
           + "gle.cloud.dialogflow.cx.v3B\rTestCaseProt"
-          + "oP\001Z?google.golang.org/genproto/googleap"
-          + "is/cloud/dialogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035G"
-          + "oogle.Cloud.Dialogflow.Cx.V3\352\002!Google::C"
-          + "loud::Dialogflow::CX::V3b\006proto3"
+          + "oP\001Z1cloud.google.com/go/dialogflow/cx/a"
+          + "piv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Di"
+          + "alogflow.Cx.V3\352\002!Google::Cloud::Dialogfl"
+          + "ow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

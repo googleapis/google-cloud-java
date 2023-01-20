@@ -315,17 +315,18 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-   * page][QueryResult.current_page] in the session.
+   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
+   * override the [current page][QueryResult.current_page] in the session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
    * If `current_page` is specified, the previous state of the session will be
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters].
-   * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
-   * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
-   * direct a session to a specific state.
+   * In most cases,
+   * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
+   * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
+   * should be configured together to direct a session to a specific state.
    * </pre>
    *
    * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -337,17 +338,18 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-   * page][QueryResult.current_page] in the session.
+   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
+   * override the [current page][QueryResult.current_page] in the session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
    * If `current_page` is specified, the previous state of the session will be
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters].
-   * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
-   * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
-   * direct a session to a specific state.
+   * In most cases,
+   * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
+   * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
+   * should be configured together to direct a session to a specific state.
    * </pre>
    *
    * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -453,7 +455,6 @@ public interface QueryParametersOrBuilder
    *
    * <code>map&lt;string, string&gt; webhook_headers = 10;</code>
    */
-
   /* nullable */
   java.lang.String getWebhookHeadersOrDefault(
       java.lang.String key,
@@ -551,4 +552,49 @@ public interface QueryParametersOrBuilder
    * @return The bytes of the flowVersions at the given index.
    */
   com.google.protobuf.ByteString getFlowVersionsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The channel which this query is for.
+   * If specified, only the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3.ResponseMessage] associated
+   * with the channel will be returned. If no
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3.ResponseMessage] is
+   * associated with the channel, it falls back to the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3.ResponseMessage] with
+   * unspecified channel.
+   * If unspecified, the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3.ResponseMessage] with
+   * unspecified channel will be returned.
+   * </pre>
+   *
+   * <code>string channel = 15;</code>
+   *
+   * @return The channel.
+   */
+  java.lang.String getChannel();
+  /**
+   *
+   *
+   * <pre>
+   * The channel which this query is for.
+   * If specified, only the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3.ResponseMessage] associated
+   * with the channel will be returned. If no
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3.ResponseMessage] is
+   * associated with the channel, it falls back to the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3.ResponseMessage] with
+   * unspecified channel.
+   * If unspecified, the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3.ResponseMessage] with
+   * unspecified channel will be returned.
+   * </pre>
+   *
+   * <code>string channel = 15;</code>
+   *
+   * @return The bytes for channel.
+   */
+  com.google.protobuf.ByteString getChannelBytes();
 }

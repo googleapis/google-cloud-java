@@ -26,10 +26,14 @@ package com.google.cloud.dialogflow.cx.v3;
  *   * Generate rich message responses.
  *   * Set parameter values.
  *   * Call the webhook.
- * Fulfillments can be called at various stages in the [Page][google.cloud.dialogflow.cx.v3.Page] or
- * [Form][google.cloud.dialogflow.cx.v3.Form] lifecycle. For example, when a [DetectIntentRequest][google.cloud.dialogflow.cx.v3.DetectIntentRequest] drives a
- * session to enter a new page, the page's entry fulfillment can add a static
- * response to the [QueryResult][google.cloud.dialogflow.cx.v3.QueryResult] in the returning [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse],
+ * Fulfillments can be called at various stages in the
+ * [Page][google.cloud.dialogflow.cx.v3.Page] or
+ * [Form][google.cloud.dialogflow.cx.v3.Form] lifecycle. For example, when a
+ * [DetectIntentRequest][google.cloud.dialogflow.cx.v3.DetectIntentRequest]
+ * drives a session to enter a new page, the page's entry fulfillment can add a
+ * static response to the
+ * [QueryResult][google.cloud.dialogflow.cx.v3.QueryResult] in the returning
+ * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse],
  * call the webhook (for example, to load user data from a database), or both.
  * </pre>
  *
@@ -194,7 +198,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PARAMETER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object parameter_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parameter_ = "";
     /**
      *
      *
@@ -285,7 +291,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
-      return getValue();
+      return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -504,12 +510,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parameter_ = "";
-
-        if (valueBuilder_ == null) {
-          value_ = null;
-        } else {
-          value_ = null;
+        value_ = null;
+        if (valueBuilder_ != null) {
+          valueBuilder_.dispose();
           valueBuilder_ = null;
         }
         return this;
@@ -541,14 +546,22 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction buildPartial() {
         com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction result =
             new com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction(this);
-        result.parameter_ = parameter_;
-        if (valueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = valueBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parameter_ = parameter_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = valueBuilder_ == null ? value_ : valueBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -604,6 +617,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getParameter().isEmpty()) {
           parameter_ = other.parameter_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasValue()) {
@@ -638,13 +652,13 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   parameter_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -663,6 +677,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object parameter_ = "";
       /**
@@ -725,8 +741,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         parameter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -742,8 +758,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearParameter() {
-
         parameter_ = getDefaultInstance().getParameter();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -764,8 +780,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parameter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -788,7 +804,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the value field is set.
        */
       public boolean hasValue() {
-        return valueBuilder_ != null || value_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -823,11 +839,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           value_ = value;
-          onChanged();
         } else {
           valueBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -842,11 +858,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public Builder setValue(com.google.protobuf.Value.Builder builderForValue) {
         if (valueBuilder_ == null) {
           value_ = builderForValue.build();
-          onChanged();
         } else {
           valueBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -860,16 +876,18 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeValue(com.google.protobuf.Value value) {
         if (valueBuilder_ == null) {
-          if (value_ != null) {
-            value_ = com.google.protobuf.Value.newBuilder(value_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && value_ != null
+              && value_ != com.google.protobuf.Value.getDefaultInstance()) {
+            getValueBuilder().mergeFrom(value);
           } else {
             value_ = value;
           }
-          onChanged();
         } else {
           valueBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -882,14 +900,13 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Value value = 2;</code>
        */
       public Builder clearValue() {
-        if (valueBuilder_ == null) {
-          value_ = null;
-          onChanged();
-        } else {
-          value_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        value_ = null;
+        if (valueBuilder_ != null) {
+          valueBuilder_.dispose();
           valueBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -902,7 +919,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Value value = 2;</code>
        */
       public com.google.protobuf.Value.Builder getValueBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
@@ -1844,6 +1861,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             if (messageBuilder_ != null) {
               messageBuilder_.clear();
             }
@@ -1885,23 +1903,31 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent result =
                 new com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent(
                     this);
-            if (casesOrMessageCase_ == 1) {
-              if (messageBuilder_ == null) {
-                result.casesOrMessage_ = casesOrMessage_;
-              } else {
-                result.casesOrMessage_ = messageBuilder_.build();
-              }
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            if (casesOrMessageCase_ == 2) {
-              if (additionalCasesBuilder_ == null) {
-                result.casesOrMessage_ = casesOrMessage_;
-              } else {
-                result.casesOrMessage_ = additionalCasesBuilder_.build();
-              }
-            }
-            result.casesOrMessageCase_ = casesOrMessageCase_;
+            buildPartialOneofs(result);
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent
+                  result) {
+            int from_bitField0_ = bitField0_;
+          }
+
+          private void buildPartialOneofs(
+              com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent
+                  result) {
+            result.casesOrMessageCase_ = casesOrMessageCase_;
+            result.casesOrMessage_ = this.casesOrMessage_;
+            if (casesOrMessageCase_ == 1 && messageBuilder_ != null) {
+              result.casesOrMessage_ = messageBuilder_.build();
+            }
+            if (casesOrMessageCase_ == 2 && additionalCasesBuilder_ != null) {
+              result.casesOrMessage_ = additionalCasesBuilder_.build();
+            }
           }
 
           @java.lang.Override
@@ -2044,6 +2070,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
+          private int bitField0_;
 
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.cx.v3.ResponseMessage,
@@ -2253,7 +2281,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             }
             casesOrMessageCase_ = 1;
             onChanged();
-            ;
             return messageBuilder_;
           }
 
@@ -2489,7 +2516,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             }
             casesOrMessageCase_ = 2;
             onChanged();
-            ;
             return additionalCasesBuilder_;
           }
 
@@ -2564,7 +2590,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int CONDITION_FIELD_NUMBER = 1;
-      private volatile java.lang.Object condition_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object condition_ = "";
       /**
        *
        *
@@ -2623,6 +2651,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int CASE_CONTENT_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private java.util.List<
               com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent>
           caseContent_;
@@ -2927,15 +2957,15 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           condition_ = "";
-
           if (caseContentBuilder_ == null) {
             caseContent_ = java.util.Collections.emptyList();
           } else {
             caseContent_ = null;
             caseContentBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -2966,19 +2996,33 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case buildPartial() {
           com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case result =
               new com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case(this);
-          int from_bitField0_ = bitField0_;
-          result.condition_ = condition_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case result) {
           if (caseContentBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               caseContent_ = java.util.Collections.unmodifiableList(caseContent_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.caseContent_ = caseContent_;
           } else {
             result.caseContent_ = caseContentBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.condition_ = condition_;
+          }
         }
 
         @java.lang.Override
@@ -3035,13 +3079,14 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getCondition().isEmpty()) {
             condition_ = other.condition_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (caseContentBuilder_ == null) {
             if (!other.caseContent_.isEmpty()) {
               if (caseContent_.isEmpty()) {
                 caseContent_ = other.caseContent_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureCaseContentIsMutable();
                 caseContent_.addAll(other.caseContent_);
@@ -3054,7 +3099,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 caseContentBuilder_.dispose();
                 caseContentBuilder_ = null;
                 caseContent_ = other.caseContent_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 caseContentBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getCaseContentFieldBuilder()
@@ -3093,7 +3138,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     condition_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
@@ -3207,8 +3252,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           condition_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3229,8 +3274,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearCondition() {
-
           condition_ = getDefaultInstance().getCondition();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -3256,8 +3301,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           condition_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3267,12 +3312,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             caseContent_ = java.util.Collections.emptyList();
 
         private void ensureCaseContentIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             caseContent_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case
                         .CaseContent>(caseContent_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -3529,7 +3574,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         public Builder clearCaseContent() {
           if (caseContentBuilder_ == null) {
             caseContent_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             caseContentBuilder_.clear();
@@ -3688,7 +3733,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case
                         .CaseContentOrBuilder>(
                     caseContent_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             caseContent_ = null;
@@ -3765,6 +3810,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CASES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case>
         cases_;
     /**
@@ -4045,6 +4092,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (casesBuilder_ == null) {
           cases_ = java.util.Collections.emptyList();
         } else {
@@ -4080,7 +4128,16 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases buildPartial() {
         com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases result =
             new com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases result) {
         if (casesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             cases_ = java.util.Collections.unmodifiableList(cases_);
@@ -4090,8 +4147,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.cases_ = casesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -4693,6 +4753,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.ResponseMessage> messages_;
   /**
    *
@@ -4763,7 +4825,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEBHOOK_FIELD_NUMBER = 2;
-  private volatile java.lang.Object webhook_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object webhook_ = "";
   /**
    *
    *
@@ -4816,7 +4880,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RETURN_PARTIAL_RESPONSES_FIELD_NUMBER = 8;
-  private boolean returnPartialResponses_;
+  private boolean returnPartialResponses_ = false;
   /**
    *
    *
@@ -4842,12 +4906,15 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAG_FIELD_NUMBER = 3;
-  private volatile java.lang.Object tag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tag_ = "";
   /**
    *
    *
    * <pre>
-   * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
+   * The value of this field will be populated in the
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
    * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
    * called.
    * The tag is typically used by the webhook service to identify which
@@ -4875,7 +4942,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
+   * The value of this field will be populated in the
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
    * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
    * called.
    * The tag is typically used by the webhook service to identify which
@@ -4901,6 +4969,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SET_PARAMETER_ACTIONS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction>
       setParameterActions_;
   /**
@@ -4985,6 +5055,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONDITIONAL_CASES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases>
       conditionalCases_;
   /**
@@ -5287,10 +5359,14 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    *   * Generate rich message responses.
    *   * Set parameter values.
    *   * Call the webhook.
-   * Fulfillments can be called at various stages in the [Page][google.cloud.dialogflow.cx.v3.Page] or
-   * [Form][google.cloud.dialogflow.cx.v3.Form] lifecycle. For example, when a [DetectIntentRequest][google.cloud.dialogflow.cx.v3.DetectIntentRequest] drives a
-   * session to enter a new page, the page's entry fulfillment can add a static
-   * response to the [QueryResult][google.cloud.dialogflow.cx.v3.QueryResult] in the returning [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse],
+   * Fulfillments can be called at various stages in the
+   * [Page][google.cloud.dialogflow.cx.v3.Page] or
+   * [Form][google.cloud.dialogflow.cx.v3.Form] lifecycle. For example, when a
+   * [DetectIntentRequest][google.cloud.dialogflow.cx.v3.DetectIntentRequest]
+   * drives a session to enter a new page, the page's entry fulfillment can add a
+   * static response to the
+   * [QueryResult][google.cloud.dialogflow.cx.v3.QueryResult] in the returning
+   * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse],
    * call the webhook (for example, to load user data from a database), or both.
    * </pre>
    *
@@ -5325,6 +5401,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
       } else {
@@ -5333,25 +5410,22 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       webhook_ = "";
-
       returnPartialResponses_ = false;
-
       tag_ = "";
-
       if (setParameterActionsBuilder_ == null) {
         setParameterActions_ = java.util.Collections.emptyList();
       } else {
         setParameterActions_ = null;
         setParameterActionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (conditionalCasesBuilder_ == null) {
         conditionalCases_ = java.util.Collections.emptyList();
       } else {
         conditionalCases_ = null;
         conditionalCasesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -5379,7 +5453,15 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.Fulfillment buildPartial() {
       com.google.cloud.dialogflow.cx.v3.Fulfillment result =
           new com.google.cloud.dialogflow.cx.v3.Fulfillment(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.cx.v3.Fulfillment result) {
       if (messagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
@@ -5389,29 +5471,37 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.messages_ = messagesBuilder_.build();
       }
-      result.webhook_ = webhook_;
-      result.returnPartialResponses_ = returnPartialResponses_;
-      result.tag_ = tag_;
       if (setParameterActionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           setParameterActions_ = java.util.Collections.unmodifiableList(setParameterActions_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.setParameterActions_ = setParameterActions_;
       } else {
         result.setParameterActions_ = setParameterActionsBuilder_.build();
       }
       if (conditionalCasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           conditionalCases_ = java.util.Collections.unmodifiableList(conditionalCases_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.conditionalCases_ = conditionalCases_;
       } else {
         result.conditionalCases_ = conditionalCasesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.Fulfillment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.webhook_ = webhook_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.returnPartialResponses_ = returnPartialResponses_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tag_ = tag_;
+      }
     }
 
     @java.lang.Override
@@ -5488,6 +5578,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWebhook().isEmpty()) {
         webhook_ = other.webhook_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getReturnPartialResponses() != false) {
@@ -5495,13 +5586,14 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTag().isEmpty()) {
         tag_ = other.tag_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (setParameterActionsBuilder_ == null) {
         if (!other.setParameterActions_.isEmpty()) {
           if (setParameterActions_.isEmpty()) {
             setParameterActions_ = other.setParameterActions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureSetParameterActionsIsMutable();
             setParameterActions_.addAll(other.setParameterActions_);
@@ -5514,7 +5606,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             setParameterActionsBuilder_.dispose();
             setParameterActionsBuilder_ = null;
             setParameterActions_ = other.setParameterActions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             setParameterActionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSetParameterActionsFieldBuilder()
@@ -5528,7 +5620,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (!other.conditionalCases_.isEmpty()) {
           if (conditionalCases_.isEmpty()) {
             conditionalCases_ = other.conditionalCases_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureConditionalCasesIsMutable();
             conditionalCases_.addAll(other.conditionalCases_);
@@ -5541,7 +5633,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             conditionalCasesBuilder_.dispose();
             conditionalCasesBuilder_ = null;
             conditionalCases_ = other.conditionalCases_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
             conditionalCasesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionalCasesFieldBuilder()
@@ -5594,13 +5686,13 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 webhook_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 tag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -5634,7 +5726,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             case 64:
               {
                 returnPartialResponses_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 64
             default:
@@ -6076,8 +6168,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       webhook_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6095,8 +6187,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWebhook() {
-
       webhook_ = getDefaultInstance().getWebhook();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -6119,8 +6211,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       webhook_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6172,6 +6264,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public Builder setReturnPartialResponses(boolean value) {
 
       returnPartialResponses_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -6195,7 +6288,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReturnPartialResponses() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       returnPartialResponses_ = false;
       onChanged();
       return this;
@@ -6206,7 +6299,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
+     * The value of this field will be populated in the
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
      * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
      * called.
      * The tag is typically used by the webhook service to identify which
@@ -6233,7 +6327,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
+     * The value of this field will be populated in the
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
      * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
      * called.
      * The tag is typically used by the webhook service to identify which
@@ -6260,7 +6355,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
+     * The value of this field will be populated in the
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
      * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
      * called.
      * The tag is typically used by the webhook service to identify which
@@ -6277,8 +6373,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       tag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6286,7 +6382,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
+     * The value of this field will be populated in the
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
      * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
      * called.
      * The tag is typically used by the webhook service to identify which
@@ -6299,8 +6396,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTag() {
-
       tag_ = getDefaultInstance().getTag();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -6308,7 +6405,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
+     * The value of this field will be populated in the
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
      * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
      * called.
      * The tag is typically used by the webhook service to identify which
@@ -6326,8 +6424,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6336,12 +6434,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         setParameterActions_ = java.util.Collections.emptyList();
 
     private void ensureSetParameterActionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         setParameterActions_ =
             new java.util.ArrayList<
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction>(
                 setParameterActions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -6588,7 +6686,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSetParameterActions() {
       if (setParameterActionsBuilder_ == null) {
         setParameterActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         setParameterActionsBuilder_.clear();
@@ -6735,7 +6833,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction.Builder,
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterActionOrBuilder>(
                 setParameterActions_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         setParameterActions_ = null;
@@ -6747,11 +6845,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         conditionalCases_ = java.util.Collections.emptyList();
 
     private void ensureConditionalCasesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         conditionalCases_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases>(
                 conditionalCases_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -6997,7 +7095,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditionalCases() {
       if (conditionalCasesBuilder_ == null) {
         conditionalCases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         conditionalCasesBuilder_.clear();
@@ -7142,7 +7240,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Builder,
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCasesOrBuilder>(
                 conditionalCases_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         conditionalCases_ = null;

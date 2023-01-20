@@ -282,7 +282,9 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -463,7 +465,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int RESTORE_OPTION_FIELD_NUMBER = 5;
-  private int restoreOption_;
+  private int restoreOption_ = 0;
   /**
    *
    *
@@ -495,9 +497,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption
       getRestoreOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption result =
-        com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.valueOf(
+        com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.forNumber(
             restoreOption_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.UNRECOGNIZED
@@ -755,10 +756,9 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       restoreOption_ = 0;
-
       agentCase_ = 0;
       agent_ = null;
       return this;
@@ -788,17 +788,28 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest result =
           new com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest(this);
-      result.name_ = name_;
-      if (agentCase_ == 2) {
-        result.agent_ = agent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (agentCase_ == 3) {
-        result.agent_ = agent_;
-      }
-      result.restoreOption_ = restoreOption_;
-      result.agentCase_ = agentCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.restoreOption_ = restoreOption_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest result) {
+      result.agentCase_ = agentCase_;
+      result.agent_ = this.agent_;
     }
 
     @java.lang.Override
@@ -849,6 +860,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.restoreOption_ != 0) {
@@ -901,7 +913,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -920,7 +932,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
             case 40:
               {
                 restoreOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             default:
@@ -953,6 +965,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1024,8 +1038,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1044,8 +1058,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1069,8 +1083,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1356,8 +1370,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setRestoreOptionValue(int value) {
-
       restoreOption_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1377,9 +1391,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption
         getRestoreOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption result =
-          com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.valueOf(
+          com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.forNumber(
               restoreOption_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.UNRECOGNIZED
@@ -1404,7 +1417,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       restoreOption_ = value.getNumber();
       onChanged();
       return this;
@@ -1423,7 +1436,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRestoreOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       restoreOption_ = 0;
       onChanged();
       return this;

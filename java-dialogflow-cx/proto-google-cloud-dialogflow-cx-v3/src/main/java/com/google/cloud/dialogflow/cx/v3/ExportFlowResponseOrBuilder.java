@@ -28,7 +28,8 @@ public interface ExportFlowResponseOrBuilder
    *
    * <pre>
    * The URI to a file containing the exported flow. This field is populated
-   * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+   * only if `flow_uri` is specified in
+   * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
    * </pre>
    *
    * <code>string flow_uri = 1;</code>
@@ -41,7 +42,8 @@ public interface ExportFlowResponseOrBuilder
    *
    * <pre>
    * The URI to a file containing the exported flow. This field is populated
-   * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+   * only if `flow_uri` is specified in
+   * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
    * </pre>
    *
    * <code>string flow_uri = 1;</code>
@@ -54,7 +56,8 @@ public interface ExportFlowResponseOrBuilder
    *
    * <pre>
    * The URI to a file containing the exported flow. This field is populated
-   * only if `flow_uri` is specified in [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
+   * only if `flow_uri` is specified in
+   * [ExportFlowRequest][google.cloud.dialogflow.cx.v3.ExportFlowRequest].
    * </pre>
    *
    * <code>string flow_uri = 1;</code>

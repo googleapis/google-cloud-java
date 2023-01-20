@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase].
+ * The request message for
+ * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateTestCaseRequest}
@@ -68,7 +69,9 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +176,9 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.TestCaseOrBuilder getTestCaseOrBuilder() {
-    return getTestCase();
+    return testCase_ == null
+        ? com.google.cloud.dialogflow.cx.v3.TestCase.getDefaultInstance()
+        : testCase_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -354,7 +359,8 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request message for [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase].
+   * The request message for
+   * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateTestCaseRequest}
@@ -388,12 +394,11 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (testCaseBuilder_ == null) {
-        testCase_ = null;
-      } else {
-        testCase_ = null;
+      testCase_ = null;
+      if (testCaseBuilder_ != null) {
+        testCaseBuilder_.dispose();
         testCaseBuilder_ = null;
       }
       return this;
@@ -423,14 +428,21 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest result =
           new com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest(this);
-      result.parent_ = parent_;
-      if (testCaseBuilder_ == null) {
-        result.testCase_ = testCase_;
-      } else {
-        result.testCase_ = testCaseBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.testCase_ = testCaseBuilder_ == null ? testCase_ : testCaseBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +493,7 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTestCase()) {
@@ -515,13 +528,13 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTestCaseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +553,8 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -611,8 +626,8 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +646,8 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +671,8 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,7 +697,7 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the testCase field is set.
      */
     public boolean hasTestCase() {
-      return testCaseBuilder_ != null || testCase_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -723,11 +738,11 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         testCase_ = value;
-        onChanged();
       } else {
         testCaseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -744,11 +759,11 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
     public Builder setTestCase(com.google.cloud.dialogflow.cx.v3.TestCase.Builder builderForValue) {
       if (testCaseBuilder_ == null) {
         testCase_ = builderForValue.build();
-        onChanged();
       } else {
         testCaseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -764,19 +779,18 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeTestCase(com.google.cloud.dialogflow.cx.v3.TestCase value) {
       if (testCaseBuilder_ == null) {
-        if (testCase_ != null) {
-          testCase_ =
-              com.google.cloud.dialogflow.cx.v3.TestCase.newBuilder(testCase_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && testCase_ != null
+            && testCase_ != com.google.cloud.dialogflow.cx.v3.TestCase.getDefaultInstance()) {
+          getTestCaseBuilder().mergeFrom(value);
         } else {
           testCase_ = value;
         }
-        onChanged();
       } else {
         testCaseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -791,14 +805,13 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearTestCase() {
-      if (testCaseBuilder_ == null) {
-        testCase_ = null;
-        onChanged();
-      } else {
-        testCase_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      testCase_ = null;
+      if (testCaseBuilder_ != null) {
+        testCaseBuilder_.dispose();
         testCaseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -813,7 +826,7 @@ public final class CreateTestCaseRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.TestCase.Builder getTestCaseBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTestCaseFieldBuilder().getBuilder();
     }

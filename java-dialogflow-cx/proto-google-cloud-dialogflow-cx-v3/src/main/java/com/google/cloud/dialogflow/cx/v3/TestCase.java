@@ -72,14 +72,17 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
    * <pre>
    * The unique identifier of the test case.
-   * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase] will populate the name automatically.
-   * Otherwise use format: `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
+   * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase]
+   * will populate the name automatically. Otherwise use format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
    * &lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
@@ -104,8 +107,9 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the test case.
-   * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase] will populate the name automatically.
-   * Otherwise use format: `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
+   * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase]
+   * will populate the name automatically. Otherwise use format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
    * &lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
@@ -127,6 +131,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAGS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList tags_;
   /**
    *
@@ -196,13 +202,15 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The human-readable name of the test case, unique within the agent. Limit of
-   * 200 characters.
+   * Required. The human-readable name of the test case, unique within the
+   * agent. Limit of 200 characters.
    * </pre>
    *
    * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -225,8 +233,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The human-readable name of the test case, unique within the agent. Limit of
-   * 200 characters.
+   * Required. The human-readable name of the test case, unique within the
+   * agent. Limit of 200 characters.
    * </pre>
    *
    * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -247,7 +255,9 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NOTES_FIELD_NUMBER = 4;
-  private volatile java.lang.Object notes_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object notes_ = "";
   /**
    *
    *
@@ -340,10 +350,14 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.TestConfigOrBuilder getTestConfigOrBuilder() {
-    return getTestConfig();
+    return testConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3.TestConfig.getDefaultInstance()
+        : testConfig_;
   }
 
   public static final int TEST_CASE_CONVERSATION_TURNS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.ConversationTurn>
       testCaseConversationTurns_;
   /**
@@ -487,7 +501,9 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreationTimeOrBuilder() {
-    return getCreationTime();
+    return creationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : creationTime_;
   }
 
   public static final int LAST_TEST_RESULT_FIELD_NUMBER = 12;
@@ -535,7 +551,9 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.TestCaseResultOrBuilder getLastTestResultOrBuilder() {
-    return getLastTestResult();
+    return lastTestResult_ == null
+        ? com.google.cloud.dialogflow.cx.v3.TestCaseResult.getDefaultInstance()
+        : lastTestResult_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -825,18 +843,15 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       displayName_ = "";
-
       notes_ = "";
-
-      if (testConfigBuilder_ == null) {
-        testConfig_ = null;
-      } else {
-        testConfig_ = null;
+      testConfig_ = null;
+      if (testConfigBuilder_ != null) {
+        testConfigBuilder_.dispose();
         testConfigBuilder_ = null;
       }
       if (testCaseConversationTurnsBuilder_ == null) {
@@ -845,17 +860,15 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
         testCaseConversationTurns_ = null;
         testCaseConversationTurnsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (creationTimeBuilder_ == null) {
-        creationTime_ = null;
-      } else {
-        creationTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      creationTime_ = null;
+      if (creationTimeBuilder_ != null) {
+        creationTimeBuilder_.dispose();
         creationTimeBuilder_ = null;
       }
-      if (lastTestResultBuilder_ == null) {
-        lastTestResult_ = null;
-      } else {
-        lastTestResult_ = null;
+      lastTestResult_ = null;
+      if (lastTestResultBuilder_ != null) {
+        lastTestResultBuilder_.dispose();
         lastTestResultBuilder_ = null;
       }
       return this;
@@ -885,42 +898,54 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.TestCase buildPartial() {
       com.google.cloud.dialogflow.cx.v3.TestCase result =
           new com.google.cloud.dialogflow.cx.v3.TestCase(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.cx.v3.TestCase result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.tags_ = tags_;
-      result.displayName_ = displayName_;
-      result.notes_ = notes_;
-      if (testConfigBuilder_ == null) {
-        result.testConfig_ = testConfig_;
-      } else {
-        result.testConfig_ = testConfigBuilder_.build();
-      }
       if (testCaseConversationTurnsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           testCaseConversationTurns_ =
               java.util.Collections.unmodifiableList(testCaseConversationTurns_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.testCaseConversationTurns_ = testCaseConversationTurns_;
       } else {
         result.testCaseConversationTurns_ = testCaseConversationTurnsBuilder_.build();
       }
-      if (creationTimeBuilder_ == null) {
-        result.creationTime_ = creationTime_;
-      } else {
-        result.creationTime_ = creationTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.TestCase result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (lastTestResultBuilder_ == null) {
-        result.lastTestResult_ = lastTestResult_;
-      } else {
-        result.lastTestResult_ = lastTestResultBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.notes_ = notes_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.testConfig_ = testConfigBuilder_ == null ? testConfig_ : testConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.creationTime_ =
+            creationTimeBuilder_ == null ? creationTime_ : creationTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.lastTestResult_ =
+            lastTestResultBuilder_ == null ? lastTestResult_ : lastTestResultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -970,12 +995,13 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3.TestCase.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -984,10 +1010,12 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getNotes().isEmpty()) {
         notes_ = other.notes_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasTestConfig()) {
@@ -997,7 +1025,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
         if (!other.testCaseConversationTurns_.isEmpty()) {
           if (testCaseConversationTurns_.isEmpty()) {
             testCaseConversationTurns_ = other.testCaseConversationTurns_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureTestCaseConversationTurnsIsMutable();
             testCaseConversationTurns_.addAll(other.testCaseConversationTurns_);
@@ -1010,7 +1038,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
             testCaseConversationTurnsBuilder_.dispose();
             testCaseConversationTurnsBuilder_ = null;
             testCaseConversationTurns_ = other.testCaseConversationTurns_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
             testCaseConversationTurnsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTestCaseConversationTurnsFieldBuilder()
@@ -1055,7 +1083,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1068,13 +1096,13 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 notes_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1094,19 +1122,19 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getCreationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             case 98:
               {
                 input.readMessage(getLastTestResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getTestConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 106
             default:
@@ -1134,8 +1162,9 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the test case.
-     * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase] will populate the name automatically.
-     * Otherwise use format: `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
+     * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase]
+     * will populate the name automatically. Otherwise use format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
      * &lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
@@ -1159,8 +1188,9 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the test case.
-     * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase] will populate the name automatically.
-     * Otherwise use format: `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
+     * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase]
+     * will populate the name automatically. Otherwise use format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
      * &lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
@@ -1184,8 +1214,9 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the test case.
-     * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase] will populate the name automatically.
-     * Otherwise use format: `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
+     * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase]
+     * will populate the name automatically. Otherwise use format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
      * &lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
@@ -1198,8 +1229,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1208,8 +1239,9 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the test case.
-     * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase] will populate the name automatically.
-     * Otherwise use format: `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
+     * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase]
+     * will populate the name automatically. Otherwise use format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
      * &lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
@@ -1218,8 +1250,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1228,8 +1260,9 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the test case.
-     * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase] will populate the name automatically.
-     * Otherwise use format: `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
+     * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase]
+     * will populate the name automatically. Otherwise use format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
      * &lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
@@ -1243,8 +1276,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1253,9 +1286,9 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1406,7 +1439,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1440,8 +1473,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the test case, unique within the agent. Limit of
-     * 200 characters.
+     * Required. The human-readable name of the test case, unique within the
+     * agent. Limit of 200 characters.
      * </pre>
      *
      * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1463,8 +1496,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the test case, unique within the agent. Limit of
-     * 200 characters.
+     * Required. The human-readable name of the test case, unique within the
+     * agent. Limit of 200 characters.
      * </pre>
      *
      * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1486,8 +1519,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the test case, unique within the agent. Limit of
-     * 200 characters.
+     * Required. The human-readable name of the test case, unique within the
+     * agent. Limit of 200 characters.
      * </pre>
      *
      * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1499,8 +1532,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1508,8 +1541,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the test case, unique within the agent. Limit of
-     * 200 characters.
+     * Required. The human-readable name of the test case, unique within the
+     * agent. Limit of 200 characters.
      * </pre>
      *
      * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1517,8 +1550,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1526,8 +1559,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the test case, unique within the agent. Limit of
-     * 200 characters.
+     * Required. The human-readable name of the test case, unique within the
+     * agent. Limit of 200 characters.
      * </pre>
      *
      * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1540,8 +1573,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1607,8 +1640,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       notes_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1624,8 +1657,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNotes() {
-
       notes_ = getDefaultInstance().getNotes();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1646,8 +1679,8 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       notes_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1670,7 +1703,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the testConfig field is set.
      */
     public boolean hasTestConfig() {
-      return testConfigBuilder_ != null || testConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1707,11 +1740,11 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         testConfig_ = value;
-        onChanged();
       } else {
         testConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1727,11 +1760,11 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.TestConfig.Builder builderForValue) {
       if (testConfigBuilder_ == null) {
         testConfig_ = builderForValue.build();
-        onChanged();
       } else {
         testConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1745,19 +1778,18 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTestConfig(com.google.cloud.dialogflow.cx.v3.TestConfig value) {
       if (testConfigBuilder_ == null) {
-        if (testConfig_ != null) {
-          testConfig_ =
-              com.google.cloud.dialogflow.cx.v3.TestConfig.newBuilder(testConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && testConfig_ != null
+            && testConfig_ != com.google.cloud.dialogflow.cx.v3.TestConfig.getDefaultInstance()) {
+          getTestConfigBuilder().mergeFrom(value);
         } else {
           testConfig_ = value;
         }
-        onChanged();
       } else {
         testConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1770,14 +1802,13 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.TestConfig test_config = 13;</code>
      */
     public Builder clearTestConfig() {
-      if (testConfigBuilder_ == null) {
-        testConfig_ = null;
-        onChanged();
-      } else {
-        testConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      testConfig_ = null;
+      if (testConfigBuilder_ != null) {
+        testConfigBuilder_.dispose();
         testConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1790,7 +1821,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.TestConfig test_config = 13;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.TestConfig.Builder getTestConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTestConfigFieldBuilder().getBuilder();
     }
@@ -1842,11 +1873,11 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
         testCaseConversationTurns_ = java.util.Collections.emptyList();
 
     private void ensureTestCaseConversationTurnsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         testCaseConversationTurns_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.ConversationTurn>(
                 testCaseConversationTurns_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2111,7 +2142,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTestCaseConversationTurns() {
       if (testCaseConversationTurnsBuilder_ == null) {
         testCaseConversationTurns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         testCaseConversationTurnsBuilder_.clear();
@@ -2267,7 +2298,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3.ConversationTurn.Builder,
                 com.google.cloud.dialogflow.cx.v3.ConversationTurnOrBuilder>(
                 testCaseConversationTurns_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         testCaseConversationTurns_ = null;
@@ -2295,7 +2326,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the creationTime field is set.
      */
     public boolean hasCreationTime() {
-      return creationTimeBuilder_ != null || creationTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2336,11 +2367,11 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         creationTime_ = value;
-        onChanged();
       } else {
         creationTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2357,11 +2388,11 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (creationTimeBuilder_ == null) {
         creationTime_ = builderForValue.build();
-        onChanged();
       } else {
         creationTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2377,19 +2408,18 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreationTime(com.google.protobuf.Timestamp value) {
       if (creationTimeBuilder_ == null) {
-        if (creationTime_ != null) {
-          creationTime_ =
-              com.google.protobuf.Timestamp.newBuilder(creationTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && creationTime_ != null
+            && creationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreationTimeBuilder().mergeFrom(value);
         } else {
           creationTime_ = value;
         }
-        onChanged();
       } else {
         creationTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2404,14 +2434,13 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreationTime() {
-      if (creationTimeBuilder_ == null) {
-        creationTime_ = null;
-        onChanged();
-      } else {
-        creationTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      creationTime_ = null;
+      if (creationTimeBuilder_ != null) {
+        creationTimeBuilder_.dispose();
         creationTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2426,7 +2455,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreationTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreationTimeFieldBuilder().getBuilder();
     }
@@ -2496,7 +2525,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastTestResult field is set.
      */
     public boolean hasLastTestResult() {
-      return lastTestResultBuilder_ != null || lastTestResult_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2533,11 +2562,11 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastTestResult_ = value;
-        onChanged();
       } else {
         lastTestResultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2553,11 +2582,11 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.TestCaseResult.Builder builderForValue) {
       if (lastTestResultBuilder_ == null) {
         lastTestResult_ = builderForValue.build();
-        onChanged();
       } else {
         lastTestResultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2571,19 +2600,19 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastTestResult(com.google.cloud.dialogflow.cx.v3.TestCaseResult value) {
       if (lastTestResultBuilder_ == null) {
-        if (lastTestResult_ != null) {
-          lastTestResult_ =
-              com.google.cloud.dialogflow.cx.v3.TestCaseResult.newBuilder(lastTestResult_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && lastTestResult_ != null
+            && lastTestResult_
+                != com.google.cloud.dialogflow.cx.v3.TestCaseResult.getDefaultInstance()) {
+          getLastTestResultBuilder().mergeFrom(value);
         } else {
           lastTestResult_ = value;
         }
-        onChanged();
       } else {
         lastTestResultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2596,14 +2625,13 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.TestCaseResult last_test_result = 12;</code>
      */
     public Builder clearLastTestResult() {
-      if (lastTestResultBuilder_ == null) {
-        lastTestResult_ = null;
-        onChanged();
-      } else {
-        lastTestResult_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      lastTestResult_ = null;
+      if (lastTestResultBuilder_ != null) {
+        lastTestResultBuilder_.dispose();
         lastTestResultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2616,7 +2644,7 @@ public final class TestCase extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.TestCaseResult last_test_result = 12;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.TestCaseResult.Builder getLastTestResultBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getLastTestResultFieldBuilder().getBuilder();
     }

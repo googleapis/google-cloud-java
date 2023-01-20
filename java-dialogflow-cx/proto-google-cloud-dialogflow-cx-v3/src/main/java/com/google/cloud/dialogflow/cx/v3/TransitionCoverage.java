@@ -78,8 +78,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -91,8 +91,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -104,8 +104,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -116,8 +116,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -129,8 +129,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -142,8 +142,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -252,8 +252,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -268,8 +268,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -287,8 +287,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -306,8 +306,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -322,8 +322,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -341,8 +341,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-     * displayname will be set.
+     * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Only some fields such as name and displayname will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -587,6 +587,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (pageBuilder_ != null) {
           pageBuilder_.clear();
         }
@@ -624,23 +625,29 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode buildPartial() {
         com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode result =
             new com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode(this);
-        if (kindCase_ == 1) {
-          if (pageBuilder_ == null) {
-            result.kind_ = kind_;
-          } else {
-            result.kind_ = pageBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (kindCase_ == 2) {
-          if (flowBuilder_ == null) {
-            result.kind_ = kind_;
-          } else {
-            result.kind_ = flowBuilder_.build();
-          }
-        }
-        result.kindCase_ = kindCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode result) {
+        result.kindCase_ = kindCase_;
+        result.kind_ = this.kind_;
+        if (kindCase_ == 1 && pageBuilder_ != null) {
+          result.kind_ = pageBuilder_.build();
+        }
+        if (kindCase_ == 2 && flowBuilder_ != null) {
+          result.kind_ = flowBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -779,6 +786,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.dialogflow.cx.v3.Page,
               com.google.cloud.dialogflow.cx.v3.Page.Builder,
@@ -788,8 +797,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -804,8 +813,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -830,8 +839,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -853,8 +862,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -873,8 +882,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -906,8 +915,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -932,8 +941,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -945,8 +954,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -966,8 +975,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Page][google.cloud.dialogflow.cx.v3.Page].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
@@ -993,7 +1002,6 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         }
         kindCase_ = 1;
         onChanged();
-        ;
         return pageBuilder_;
       }
 
@@ -1006,8 +1014,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -1022,8 +1030,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -1048,8 +1056,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -1071,8 +1079,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -1091,8 +1099,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -1124,8 +1132,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -1150,8 +1158,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -1163,8 +1171,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -1184,8 +1192,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow]. Only some fields such as name and
-       * displayname will be set.
+       * Indicates a transition to a [Flow][google.cloud.dialogflow.cx.v3.Flow].
+       * Only some fields such as name and displayname will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
@@ -1211,7 +1219,6 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         }
         kindCase_ = 2;
         onChanged();
-        ;
         return flowBuilder_;
       }
 
@@ -1599,11 +1606,13 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNodeOrBuilder
         getSourceOrBuilder() {
-      return getSource();
+      return source_ == null
+          ? com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode.getDefaultInstance()
+          : source_;
     }
 
     public static final int INDEX_FIELD_NUMBER = 4;
-    private int index_;
+    private int index_ = 0;
     /**
      *
      *
@@ -1666,11 +1675,13 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNodeOrBuilder
         getTargetOrBuilder() {
-      return getTarget();
+      return target_ == null
+          ? com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode.getDefaultInstance()
+          : target_;
     }
 
     public static final int COVERED_FIELD_NUMBER = 3;
-    private boolean covered_;
+    private boolean covered_ = false;
     /**
      *
      *
@@ -2069,22 +2080,19 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (sourceBuilder_ == null) {
-          source_ = null;
-        } else {
-          source_ = null;
+        bitField0_ = 0;
+        source_ = null;
+        if (sourceBuilder_ != null) {
+          sourceBuilder_.dispose();
           sourceBuilder_ = null;
         }
         index_ = 0;
-
-        if (targetBuilder_ == null) {
-          target_ = null;
-        } else {
-          target_ = null;
+        target_ = null;
+        if (targetBuilder_ != null) {
+          targetBuilder_.dispose();
           targetBuilder_ = null;
         }
         covered_ = false;
-
         if (transitionRouteBuilder_ != null) {
           transitionRouteBuilder_.clear();
         }
@@ -2121,35 +2129,41 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition buildPartial() {
         com.google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition result =
             new com.google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition(this);
-        if (sourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = sourceBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.index_ = index_;
-        if (targetBuilder_ == null) {
-          result.target_ = target_;
-        } else {
-          result.target_ = targetBuilder_.build();
-        }
-        result.covered_ = covered_;
-        if (detailCase_ == 5) {
-          if (transitionRouteBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = transitionRouteBuilder_.build();
-          }
-        }
-        if (detailCase_ == 6) {
-          if (eventHandlerBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = eventHandlerBuilder_.build();
-          }
-        }
-        result.detailCase_ = detailCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.index_ = index_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.covered_ = covered_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition result) {
+        result.detailCase_ = detailCase_;
+        result.detail_ = this.detail_;
+        if (detailCase_ == 5 && transitionRouteBuilder_ != null) {
+          result.detail_ = transitionRouteBuilder_.build();
+        }
+        if (detailCase_ == 6 && eventHandlerBuilder_ != null) {
+          result.detail_ = eventHandlerBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2259,25 +2273,25 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getTargetFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 18
               case 24:
                 {
                   covered_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 24
               case 32:
                 {
                   index_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 32
               case 42:
@@ -2324,6 +2338,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode source_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode,
@@ -2342,7 +2358,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        * @return Whether the source field is set.
        */
       public boolean hasSource() {
-        return sourceBuilder_ != null || source_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -2381,11 +2397,11 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           source_ = value;
-          onChanged();
         } else {
           sourceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2402,11 +2418,11 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
               builderForValue) {
         if (sourceBuilder_ == null) {
           source_ = builderForValue.build();
-          onChanged();
         } else {
           sourceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2421,20 +2437,20 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       public Builder mergeSource(
           com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode value) {
         if (sourceBuilder_ == null) {
-          if (source_ != null) {
-            source_ =
-                com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode.newBuilder(
-                        source_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && source_ != null
+              && source_
+                  != com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode
+                      .getDefaultInstance()) {
+            getSourceBuilder().mergeFrom(value);
           } else {
             source_ = value;
           }
-          onChanged();
         } else {
           sourceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2447,14 +2463,13 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode source = 1;</code>
        */
       public Builder clearSource() {
-        if (sourceBuilder_ == null) {
-          source_ = null;
-          onChanged();
-        } else {
-          source_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        source_ = null;
+        if (sourceBuilder_ != null) {
+          sourceBuilder_.dispose();
           sourceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2468,7 +2483,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        */
       public com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode.Builder
           getSourceBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getSourceFieldBuilder().getBuilder();
       }
@@ -2549,6 +2564,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       public Builder setIndex(int value) {
 
         index_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2564,7 +2580,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         index_ = 0;
         onChanged();
         return this;
@@ -2588,7 +2604,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        * @return Whether the target field is set.
        */
       public boolean hasTarget() {
-        return targetBuilder_ != null || target_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -2627,11 +2643,11 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           target_ = value;
-          onChanged();
         } else {
           targetBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2648,11 +2664,11 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
               builderForValue) {
         if (targetBuilder_ == null) {
           target_ = builderForValue.build();
-          onChanged();
         } else {
           targetBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2667,20 +2683,20 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       public Builder mergeTarget(
           com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode value) {
         if (targetBuilder_ == null) {
-          if (target_ != null) {
-            target_ =
-                com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode.newBuilder(
-                        target_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && target_ != null
+              && target_
+                  != com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode
+                      .getDefaultInstance()) {
+            getTargetBuilder().mergeFrom(value);
           } else {
             target_ = value;
           }
-          onChanged();
         } else {
           targetBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2693,14 +2709,13 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode target = 2;</code>
        */
       public Builder clearTarget() {
-        if (targetBuilder_ == null) {
-          target_ = null;
-          onChanged();
-        } else {
-          target_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        target_ = null;
+        if (targetBuilder_ != null) {
+          targetBuilder_.dispose();
           targetBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2714,7 +2729,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        */
       public com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode.Builder
           getTargetBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTargetFieldBuilder().getBuilder();
       }
@@ -2797,6 +2812,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       public Builder setCovered(boolean value) {
 
         covered_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2813,7 +2829,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearCovered() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         covered_ = false;
         onChanged();
         return this;
@@ -3027,7 +3043,6 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         }
         detailCase_ = 5;
         onChanged();
-        ;
         return transitionRouteBuilder_;
       }
 
@@ -3237,7 +3252,6 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         }
         detailCase_ = 6;
         onChanged();
-        ;
         return eventHandlerBuilder_;
       }
 
@@ -3309,6 +3323,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TRANSITIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition>
       transitions_;
   /**
@@ -3387,7 +3403,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int COVERAGE_SCORE_FIELD_NUMBER = 2;
-  private float coverageScore_;
+  private float coverageScore_ = 0F;
   /**
    *
    *
@@ -3615,6 +3631,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (transitionsBuilder_ == null) {
         transitions_ = java.util.Collections.emptyList();
       } else {
@@ -3623,7 +3640,6 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       coverageScore_ = 0F;
-
       return this;
     }
 
@@ -3651,7 +3667,16 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.cx.v3.TransitionCoverage buildPartial() {
       com.google.cloud.dialogflow.cx.v3.TransitionCoverage result =
           new com.google.cloud.dialogflow.cx.v3.TransitionCoverage(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.TransitionCoverage result) {
       if (transitionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           transitions_ = java.util.Collections.unmodifiableList(transitions_);
@@ -3661,9 +3686,13 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       } else {
         result.transitions_ = transitionsBuilder_.build();
       }
-      result.coverageScore_ = coverageScore_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.TransitionCoverage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.coverageScore_ = coverageScore_;
+      }
     }
 
     @java.lang.Override
@@ -3785,7 +3814,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
             case 21:
               {
                 coverageScore_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -4225,6 +4254,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
     public Builder setCoverageScore(float value) {
 
       coverageScore_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4240,7 +4270,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCoverageScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       coverageScore_ = 0F;
       onChanged();
       return this;

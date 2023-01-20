@@ -70,7 +70,9 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object environment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object environment_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FLOW_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object flowVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object flowVersion_ = "";
   /**
    *
    *
@@ -391,10 +395,9 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       environment_ = "";
-
       flowVersion_ = "";
-
       return this;
     }
 
@@ -422,10 +425,21 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.cx.v3beta1.DeployFlowRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.DeployFlowRequest result =
           new com.google.cloud.dialogflow.cx.v3beta1.DeployFlowRequest(this);
-      result.environment_ = environment_;
-      result.flowVersion_ = flowVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.DeployFlowRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.environment_ = environment_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.flowVersion_ = flowVersion_;
+      }
     }
 
     @java.lang.Override
@@ -476,10 +490,12 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getEnvironment().isEmpty()) {
         environment_ = other.environment_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFlowVersion().isEmpty()) {
         flowVersion_ = other.flowVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -511,13 +527,13 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 environment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 flowVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +552,8 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object environment_ = "";
     /**
@@ -610,8 +628,8 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       environment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +649,8 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnvironment() {
-
       environment_ = getDefaultInstance().getEnvironment();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -657,8 +675,8 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       environment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -736,8 +754,8 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       flowVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -757,8 +775,8 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFlowVersion() {
-
       flowVersion_ = getDefaultInstance().getFlowVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -783,8 +801,8 @@ public final class DeployFlowRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       flowVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

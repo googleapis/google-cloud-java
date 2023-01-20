@@ -232,7 +232,9 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -287,7 +289,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RESULT_FIELD_NUMBER = 2;
-  private int result_;
+  private int result_ = 0;
   /**
    *
    *
@@ -320,9 +322,8 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult getResult() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult result =
-        com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult.valueOf(
+        com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult.forNumber(
             result_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult.UNRECOGNIZED
@@ -330,6 +331,8 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TEST_CASE_RESULTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList testCaseResults_;
   /**
    *
@@ -433,7 +436,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRunTimeOrBuilder() {
-    return getRunTime();
+    return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -679,16 +682,14 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       result_ = 0;
-
       testCaseResults_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (runTimeBuilder_ == null) {
-        runTime_ = null;
-      } else {
-        runTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      runTime_ = null;
+      if (runTimeBuilder_ != null) {
+        runTimeBuilder_.dispose();
         runTimeBuilder_ = null;
       }
       return this;
@@ -718,21 +719,34 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3.ContinuousTestResult buildPartial() {
       com.google.cloud.dialogflow.cx.v3.ContinuousTestResult result =
           new com.google.cloud.dialogflow.cx.v3.ContinuousTestResult(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.result_ = result_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        testCaseResults_ = testCaseResults_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.testCaseResults_ = testCaseResults_;
-      if (runTimeBuilder_ == null) {
-        result.runTime_ = runTime_;
-      } else {
-        result.runTime_ = runTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.ContinuousTestResult result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        testCaseResults_ = testCaseResults_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.testCaseResults_ = testCaseResults_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.ContinuousTestResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.result_ = result_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.runTime_ = runTimeBuilder_ == null ? runTime_ : runTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -783,6 +797,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.result_ != 0) {
@@ -791,7 +806,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       if (!other.testCaseResults_.isEmpty()) {
         if (testCaseResults_.isEmpty()) {
           testCaseResults_ = other.testCaseResults_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureTestCaseResultsIsMutable();
           testCaseResults_.addAll(other.testCaseResults_);
@@ -830,13 +845,13 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 result_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -849,7 +864,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
             case 34:
               {
                 input.readMessage(getRunTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -941,8 +956,8 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -961,8 +976,8 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -986,8 +1001,8 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1025,8 +1040,8 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setResultValue(int value) {
-
       result_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1045,9 +1060,8 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult getResult() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult result =
-          com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult.valueOf(
+          com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult.forNumber(
               result_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult.UNRECOGNIZED
@@ -1072,7 +1086,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       result_ = value.getNumber();
       onChanged();
       return this;
@@ -1091,7 +1105,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearResult() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       result_ = 0;
       onChanged();
       return this;
@@ -1101,9 +1115,9 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTestCaseResultsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         testCaseResults_ = new com.google.protobuf.LazyStringArrayList(testCaseResults_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1246,7 +1260,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      */
     public Builder clearTestCaseResults() {
       testCaseResults_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1292,7 +1306,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      * @return Whether the runTime field is set.
      */
     public boolean hasRunTime() {
-      return runTimeBuilder_ != null || runTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1327,11 +1341,11 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         runTime_ = value;
-        onChanged();
       } else {
         runTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1346,11 +1360,11 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     public Builder setRunTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (runTimeBuilder_ == null) {
         runTime_ = builderForValue.build();
-        onChanged();
       } else {
         runTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1364,17 +1378,18 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeRunTime(com.google.protobuf.Timestamp value) {
       if (runTimeBuilder_ == null) {
-        if (runTime_ != null) {
-          runTime_ =
-              com.google.protobuf.Timestamp.newBuilder(runTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && runTime_ != null
+            && runTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRunTimeBuilder().mergeFrom(value);
         } else {
           runTime_ = value;
         }
-        onChanged();
       } else {
         runTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1387,14 +1402,13 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp run_time = 4;</code>
      */
     public Builder clearRunTime() {
-      if (runTimeBuilder_ == null) {
-        runTime_ = null;
-        onChanged();
-      } else {
-        runTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      runTime_ = null;
+      if (runTimeBuilder_ != null) {
+        runTimeBuilder_.dispose();
         runTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1407,7 +1421,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp run_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRunTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRunTimeFieldBuilder().getBuilder();
     }

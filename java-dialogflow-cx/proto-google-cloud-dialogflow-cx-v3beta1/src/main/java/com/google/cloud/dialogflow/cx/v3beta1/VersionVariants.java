@@ -178,7 +178,9 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int VERSION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object version_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object version_ = "";
     /**
      *
      *
@@ -231,7 +233,7 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int TRAFFIC_ALLOCATION_FIELD_NUMBER = 2;
-    private float trafficAllocation_;
+    private float trafficAllocation_ = 0F;
     /**
      *
      *
@@ -250,7 +252,7 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int IS_CONTROL_GROUP_FIELD_NUMBER = 3;
-    private boolean isControlGroup_;
+    private boolean isControlGroup_ = false;
     /**
      *
      *
@@ -486,12 +488,10 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         version_ = "";
-
         trafficAllocation_ = 0F;
-
         isControlGroup_ = false;
-
         return this;
       }
 
@@ -520,11 +520,25 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dialogflow.cx.v3beta1.VersionVariants.Variant buildPartial() {
         com.google.cloud.dialogflow.cx.v3beta1.VersionVariants.Variant result =
             new com.google.cloud.dialogflow.cx.v3beta1.VersionVariants.Variant(this);
-        result.version_ = version_;
-        result.trafficAllocation_ = trafficAllocation_;
-        result.isControlGroup_ = isControlGroup_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.VersionVariants.Variant result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.version_ = version_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.trafficAllocation_ = trafficAllocation_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isControlGroup_ = isControlGroup_;
+        }
       }
 
       @java.lang.Override
@@ -579,6 +593,7 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
           return this;
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getTrafficAllocation() != 0F) {
@@ -616,19 +631,19 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   version_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 21:
                 {
                   trafficAllocation_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 24:
                 {
                   isControlGroup_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -647,6 +662,8 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object version_ = "";
       /**
@@ -715,8 +732,8 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         version_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -734,8 +751,8 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-
         version_ = getDefaultInstance().getVersion();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -758,8 +775,8 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         version_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -797,6 +814,7 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
       public Builder setTrafficAllocation(float value) {
 
         trafficAllocation_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -813,7 +831,7 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearTrafficAllocation() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         trafficAllocation_ = 0F;
         onChanged();
         return this;
@@ -850,6 +868,7 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
       public Builder setIsControlGroup(boolean value) {
 
         isControlGroup_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -865,7 +884,7 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearIsControlGroup() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         isControlGroup_ = false;
         onChanged();
         return this;
@@ -939,6 +958,8 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VARIANTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.VersionVariants.Variant> variants_;
   /**
    *
@@ -1210,6 +1231,7 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (variantsBuilder_ == null) {
         variants_ = java.util.Collections.emptyList();
       } else {
@@ -1244,7 +1266,16 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dialogflow.cx.v3beta1.VersionVariants buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.VersionVariants result =
           new com.google.cloud.dialogflow.cx.v3beta1.VersionVariants(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3beta1.VersionVariants result) {
       if (variantsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           variants_ = java.util.Collections.unmodifiableList(variants_);
@@ -1254,8 +1285,10 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
       } else {
         result.variants_ = variantsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.VersionVariants result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

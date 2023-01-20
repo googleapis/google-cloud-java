@@ -68,7 +68,9 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STEP_FIELD_NUMBER = 1;
-  private volatile java.lang.Object step_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object step_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STEP_INDEX_FIELD_NUMBER = 3;
-  private int stepIndex_;
+  private int stepIndex_ = 0;
   /**
    *
    *
@@ -177,7 +179,7 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -400,14 +402,12 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       step_ = "";
-
       stepIndex_ = 0;
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
       return this;
@@ -437,15 +437,24 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.RolloutState buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.RolloutState result =
           new com.google.cloud.dialogflow.cx.v3beta1.RolloutState(this);
-      result.step_ = step_;
-      result.stepIndex_ = stepIndex_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.RolloutState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.step_ = step_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stepIndex_ = stepIndex_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -496,6 +505,7 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getStep().isEmpty()) {
         step_ = other.step_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getStepIndex() != 0) {
@@ -533,19 +543,19 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 step_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 24:
               {
                 stepIndex_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -564,6 +574,8 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object step_ = "";
     /**
@@ -626,8 +638,8 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       step_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -643,8 +655,8 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStep() {
-
       step_ = getDefaultInstance().getStep();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +677,8 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       step_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -702,6 +714,7 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
     public Builder setStepIndex(int value) {
 
       stepIndex_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -717,7 +730,7 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStepIndex() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       stepIndex_ = 0;
       onChanged();
       return this;
@@ -741,7 +754,7 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -776,11 +789,11 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -795,11 +808,11 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -813,17 +826,18 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -836,14 +850,13 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 2;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -856,7 +869,7 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }

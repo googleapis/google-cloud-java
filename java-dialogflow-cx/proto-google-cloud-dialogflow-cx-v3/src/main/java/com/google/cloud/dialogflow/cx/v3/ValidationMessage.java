@@ -654,7 +654,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
-  private int resourceType_;
+  private int resourceType_ = 0;
   /**
    *
    *
@@ -683,15 +683,16 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType getResourceType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType result =
-        com.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType.valueOf(resourceType_);
+        com.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType.forNumber(resourceType_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType.UNRECOGNIZED
         : result;
   }
 
   public static final int RESOURCES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList resources_;
   /**
    *
@@ -765,6 +766,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RESOURCE_NAMES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.ResourceName> resourceNames_;
   /**
    *
@@ -835,7 +838,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SEVERITY_FIELD_NUMBER = 3;
-  private int severity_;
+  private int severity_ = 0;
   /**
    *
    *
@@ -864,16 +867,17 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.ValidationMessage.Severity getSeverity() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.ValidationMessage.Severity result =
-        com.google.cloud.dialogflow.cx.v3.ValidationMessage.Severity.valueOf(severity_);
+        com.google.cloud.dialogflow.cx.v3.ValidationMessage.Severity.forNumber(severity_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.ValidationMessage.Severity.UNRECOGNIZED
         : result;
   }
 
   public static final int DETAIL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object detail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object detail_ = "";
   /**
    *
    *
@@ -1173,21 +1177,19 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceType_ = 0;
-
       resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (resourceNamesBuilder_ == null) {
         resourceNames_ = java.util.Collections.emptyList();
       } else {
         resourceNames_ = null;
         resourceNamesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       severity_ = 0;
-
       detail_ = "";
-
       return this;
     }
 
@@ -1215,26 +1217,43 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.cx.v3.ValidationMessage buildPartial() {
       com.google.cloud.dialogflow.cx.v3.ValidationMessage result =
           new com.google.cloud.dialogflow.cx.v3.ValidationMessage(this);
-      int from_bitField0_ = bitField0_;
-      result.resourceType_ = resourceType_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.ValidationMessage result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         resources_ = resources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.resources_ = resources_;
       if (resourceNamesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           resourceNames_ = java.util.Collections.unmodifiableList(resourceNames_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.resourceNames_ = resourceNames_;
       } else {
         result.resourceNames_ = resourceNamesBuilder_.build();
       }
-      result.severity_ = severity_;
-      result.detail_ = detail_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.ValidationMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.severity_ = severity_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.detail_ = detail_;
+      }
     }
 
     @java.lang.Override
@@ -1289,7 +1308,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       if (!other.resources_.isEmpty()) {
         if (resources_.isEmpty()) {
           resources_ = other.resources_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureResourcesIsMutable();
           resources_.addAll(other.resources_);
@@ -1300,7 +1319,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         if (!other.resourceNames_.isEmpty()) {
           if (resourceNames_.isEmpty()) {
             resourceNames_ = other.resourceNames_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureResourceNamesIsMutable();
             resourceNames_.addAll(other.resourceNames_);
@@ -1313,7 +1332,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
             resourceNamesBuilder_.dispose();
             resourceNamesBuilder_ = null;
             resourceNames_ = other.resourceNames_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             resourceNamesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResourceNamesFieldBuilder()
@@ -1328,6 +1347,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getDetail().isEmpty()) {
         detail_ = other.detail_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1359,7 +1379,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 resourceType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -1372,13 +1392,13 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
             case 24:
               {
                 severity_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
               {
                 detail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 50:
@@ -1442,8 +1462,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setResourceTypeValue(int value) {
-
       resourceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1460,9 +1480,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType getResourceType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType result =
-          com.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType.valueOf(resourceType_);
+          com.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType.forNumber(resourceType_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType.UNRECOGNIZED
           : result;
@@ -1484,7 +1503,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       resourceType_ = value.getNumber();
       onChanged();
       return this;
@@ -1501,7 +1520,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       resourceType_ = 0;
       onChanged();
       return this;
@@ -1511,9 +1530,9 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         resources_ = new com.google.protobuf.LazyStringArrayList(resources_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1672,7 +1691,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     @java.lang.Deprecated
     public Builder clearResources() {
       resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1706,10 +1725,10 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureResourceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         resourceNames_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.ResourceName>(resourceNames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1927,7 +1946,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     public Builder clearResourceNames() {
       if (resourceNamesBuilder_ == null) {
         resourceNames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         resourceNamesBuilder_.clear();
@@ -2053,7 +2072,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dialogflow.cx.v3.ResourceName.Builder,
                 com.google.cloud.dialogflow.cx.v3.ResourceNameOrBuilder>(
                 resourceNames_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         resourceNames_ = null;
@@ -2090,8 +2109,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
-
       severity_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2108,9 +2127,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.ValidationMessage.Severity getSeverity() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.ValidationMessage.Severity result =
-          com.google.cloud.dialogflow.cx.v3.ValidationMessage.Severity.valueOf(severity_);
+          com.google.cloud.dialogflow.cx.v3.ValidationMessage.Severity.forNumber(severity_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.ValidationMessage.Severity.UNRECOGNIZED
           : result;
@@ -2131,7 +2149,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       severity_ = value.getNumber();
       onChanged();
       return this;
@@ -2148,7 +2166,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       severity_ = 0;
       onChanged();
       return this;
@@ -2215,8 +2233,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       detail_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2232,8 +2250,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDetail() {
-
       detail_ = getDefaultInstance().getDetail();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2254,8 +2272,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       detail_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

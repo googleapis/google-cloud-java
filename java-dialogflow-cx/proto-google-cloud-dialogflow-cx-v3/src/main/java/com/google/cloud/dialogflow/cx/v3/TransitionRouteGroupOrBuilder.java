@@ -28,10 +28,10 @@ public interface TransitionRouteGroupOrBuilder
    *
    * <pre>
    * The unique identifier of the transition route group.
-   * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup] populates the name
-   * automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
+   * populates the name automatically. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
+   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -44,10 +44,10 @@ public interface TransitionRouteGroupOrBuilder
    *
    * <pre>
    * The unique identifier of the transition route group.
-   * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup] populates the name
-   * automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
+   * populates the name automatically. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
+   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -60,8 +60,8 @@ public interface TransitionRouteGroupOrBuilder
    *
    *
    * <pre>
-   * Required. The human-readable name of the transition route group, unique within
-   * the flow. The display name can be no longer than 30 characters.
+   * Required. The human-readable name of the transition route group, unique
+   * within the flow. The display name can be no longer than 30 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -73,8 +73,8 @@ public interface TransitionRouteGroupOrBuilder
    *
    *
    * <pre>
-   * Required. The human-readable name of the transition route group, unique within
-   * the flow. The display name can be no longer than 30 characters.
+   * Required. The human-readable name of the transition route group, unique
+   * within the flow. The display name can be no longer than 30 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -87,7 +87,8 @@ public interface TransitionRouteGroupOrBuilder
    *
    *
    * <pre>
-   * Transition routes associated with the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+   * Transition routes associated with the
+   * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.TransitionRoute transition_routes = 5;</code>
@@ -97,7 +98,8 @@ public interface TransitionRouteGroupOrBuilder
    *
    *
    * <pre>
-   * Transition routes associated with the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+   * Transition routes associated with the
+   * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.TransitionRoute transition_routes = 5;</code>
@@ -107,7 +109,8 @@ public interface TransitionRouteGroupOrBuilder
    *
    *
    * <pre>
-   * Transition routes associated with the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+   * Transition routes associated with the
+   * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.TransitionRoute transition_routes = 5;</code>
@@ -117,7 +120,8 @@ public interface TransitionRouteGroupOrBuilder
    *
    *
    * <pre>
-   * Transition routes associated with the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+   * Transition routes associated with the
+   * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.TransitionRoute transition_routes = 5;</code>
@@ -128,7 +132,8 @@ public interface TransitionRouteGroupOrBuilder
    *
    *
    * <pre>
-   * Transition routes associated with the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+   * Transition routes associated with the
+   * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.TransitionRoute transition_routes = 5;</code>

@@ -121,7 +121,9 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupOrBuilder
       getTransitionRouteGroupOrBuilder() {
-    return getTransitionRouteGroup();
+    return transitionRouteGroup_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup.getDefaultInstance()
+        : transitionRouteGroup_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -167,11 +169,13 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -467,20 +471,18 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (transitionRouteGroupBuilder_ == null) {
-        transitionRouteGroup_ = null;
-      } else {
-        transitionRouteGroup_ = null;
+      bitField0_ = 0;
+      transitionRouteGroup_ = null;
+      if (transitionRouteGroupBuilder_ != null) {
+        transitionRouteGroupBuilder_.dispose();
         transitionRouteGroupBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       languageCode_ = "";
-
       return this;
     }
 
@@ -511,19 +513,28 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
     public com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest result =
           new com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest(this);
-      if (transitionRouteGroupBuilder_ == null) {
-        result.transitionRouteGroup_ = transitionRouteGroup_;
-      } else {
-        result.transitionRouteGroup_ = transitionRouteGroupBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.languageCode_ = languageCode_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.transitionRouteGroup_ =
+            transitionRouteGroupBuilder_ == null
+                ? transitionRouteGroup_
+                : transitionRouteGroupBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -584,6 +595,7 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -616,19 +628,19 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
               {
                 input.readMessage(
                     getTransitionRouteGroupFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -647,6 +659,8 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup transitionRouteGroup_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -668,7 +682,7 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
      * @return Whether the transitionRouteGroup field is set.
      */
     public boolean hasTransitionRouteGroup() {
-      return transitionRouteGroupBuilder_ != null || transitionRouteGroup_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -710,11 +724,11 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         transitionRouteGroup_ = value;
-        onChanged();
       } else {
         transitionRouteGroupBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -732,11 +746,11 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
         com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup.Builder builderForValue) {
       if (transitionRouteGroupBuilder_ == null) {
         transitionRouteGroup_ = builderForValue.build();
-        onChanged();
       } else {
         transitionRouteGroupBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -753,20 +767,20 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
     public Builder mergeTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup value) {
       if (transitionRouteGroupBuilder_ == null) {
-        if (transitionRouteGroup_ != null) {
-          transitionRouteGroup_ =
-              com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup.newBuilder(
-                      transitionRouteGroup_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && transitionRouteGroup_ != null
+            && transitionRouteGroup_
+                != com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup
+                    .getDefaultInstance()) {
+          getTransitionRouteGroupBuilder().mergeFrom(value);
         } else {
           transitionRouteGroup_ = value;
         }
-        onChanged();
       } else {
         transitionRouteGroupBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -781,14 +795,13 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearTransitionRouteGroup() {
-      if (transitionRouteGroupBuilder_ == null) {
-        transitionRouteGroup_ = null;
-        onChanged();
-      } else {
-        transitionRouteGroup_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      transitionRouteGroup_ = null;
+      if (transitionRouteGroupBuilder_ != null) {
+        transitionRouteGroupBuilder_.dispose();
         transitionRouteGroupBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -804,7 +817,7 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
      */
     public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup.Builder
         getTransitionRouteGroupBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTransitionRouteGroupFieldBuilder().getBuilder();
     }
@@ -875,7 +888,7 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -912,11 +925,11 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -931,11 +944,11 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -949,17 +962,18 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -972,14 +986,13 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -992,7 +1005,7 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1125,8 +1138,8 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1150,8 +1163,8 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1180,8 +1193,8 @@ public final class UpdateTransitionRouteGroupRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

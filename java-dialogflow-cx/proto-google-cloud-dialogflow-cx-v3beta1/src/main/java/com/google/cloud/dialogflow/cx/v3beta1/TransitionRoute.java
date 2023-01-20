@@ -131,7 +131,9 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -180,7 +182,9 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INTENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object intent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object intent_ = "";
   /**
    *
    *
@@ -245,7 +249,9 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CONDITION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object condition_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object condition_ = "";
   /**
    *
    *
@@ -359,7 +365,9 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.FulfillmentOrBuilder
       getTriggerFulfillmentOrBuilder() {
-    return getTriggerFulfillment();
+    return triggerFulfillment_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.getDefaultInstance()
+        : triggerFulfillment_;
   }
 
   public static final int TARGET_PAGE_FIELD_NUMBER = 4;
@@ -793,16 +801,13 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       intent_ = "";
-
       condition_ = "";
-
-      if (triggerFulfillmentBuilder_ == null) {
-        triggerFulfillment_ = null;
-      } else {
-        triggerFulfillment_ = null;
+      triggerFulfillment_ = null;
+      if (triggerFulfillmentBuilder_ != null) {
+        triggerFulfillmentBuilder_.dispose();
         triggerFulfillmentBuilder_ = null;
       }
       targetCase_ = 0;
@@ -834,23 +839,36 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute result =
           new com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute(this);
-      result.name_ = name_;
-      result.intent_ = intent_;
-      result.condition_ = condition_;
-      if (triggerFulfillmentBuilder_ == null) {
-        result.triggerFulfillment_ = triggerFulfillment_;
-      } else {
-        result.triggerFulfillment_ = triggerFulfillmentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (targetCase_ == 4) {
-        result.target_ = target_;
-      }
-      if (targetCase_ == 5) {
-        result.target_ = target_;
-      }
-      result.targetCase_ = targetCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.intent_ = intent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.condition_ = condition_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.triggerFulfillment_ =
+            triggerFulfillmentBuilder_ == null
+                ? triggerFulfillment_
+                : triggerFulfillmentBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute result) {
+      result.targetCase_ = targetCase_;
+      result.target_ = this.target_;
     }
 
     @java.lang.Override
@@ -901,14 +919,17 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getIntent().isEmpty()) {
         intent_ = other.intent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getCondition().isEmpty()) {
         condition_ = other.condition_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasTriggerFulfillment()) {
@@ -963,20 +984,20 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 intent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 condition_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getTriggerFulfillmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -996,7 +1017,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
             case 50:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 50
             default:
@@ -1029,6 +1050,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1091,8 +1114,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1108,8 +1131,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1130,8 +1153,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1221,8 +1244,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       intent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1246,8 +1269,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIntent() {
-
       intent_ = getDefaultInstance().getIntent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1276,8 +1299,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       intent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1364,8 +1387,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       condition_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1388,8 +1411,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCondition() {
-
       condition_ = getDefaultInstance().getCondition();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1417,8 +1440,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       condition_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1443,7 +1466,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * @return Whether the triggerFulfillment field is set.
      */
     public boolean hasTriggerFulfillment() {
-      return triggerFulfillmentBuilder_ != null || triggerFulfillment_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1484,11 +1507,11 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         triggerFulfillment_ = value;
-        onChanged();
       } else {
         triggerFulfillmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1506,11 +1529,11 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.Builder builderForValue) {
       if (triggerFulfillmentBuilder_ == null) {
         triggerFulfillment_ = builderForValue.build();
-        onChanged();
       } else {
         triggerFulfillmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1527,19 +1550,19 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     public Builder mergeTriggerFulfillment(
         com.google.cloud.dialogflow.cx.v3beta1.Fulfillment value) {
       if (triggerFulfillmentBuilder_ == null) {
-        if (triggerFulfillment_ != null) {
-          triggerFulfillment_ =
-              com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.newBuilder(triggerFulfillment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && triggerFulfillment_ != null
+            && triggerFulfillment_
+                != com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.getDefaultInstance()) {
+          getTriggerFulfillmentBuilder().mergeFrom(value);
         } else {
           triggerFulfillment_ = value;
         }
-        onChanged();
       } else {
         triggerFulfillmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1554,14 +1577,13 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.dialogflow.cx.v3beta1.Fulfillment trigger_fulfillment = 3;</code>
      */
     public Builder clearTriggerFulfillment() {
-      if (triggerFulfillmentBuilder_ == null) {
-        triggerFulfillment_ = null;
-        onChanged();
-      } else {
-        triggerFulfillment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      triggerFulfillment_ = null;
+      if (triggerFulfillmentBuilder_ != null) {
+        triggerFulfillmentBuilder_.dispose();
         triggerFulfillmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1577,7 +1599,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.Builder
         getTriggerFulfillmentBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTriggerFulfillmentFieldBuilder().getBuilder();
     }

@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchDeleteTestCases].
+ * The request message for
+ * [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchDeleteTestCases].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest}
@@ -69,7 +70,9 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,6 +127,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
   }
 
   public static final int NAMES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList names_;
   /**
    *
@@ -376,7 +381,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The request message for [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchDeleteTestCases].
+   * The request message for
+   * [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchDeleteTestCases].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest}
@@ -410,10 +416,10 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -442,15 +448,29 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
     public com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest result =
           new com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        names_ = names_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.names_ = names_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        names_ = names_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.names_ = names_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -502,12 +522,13 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.names_.isEmpty()) {
         if (names_.isEmpty()) {
           names_ = other.names_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureNamesIsMutable();
           names_.addAll(other.names_);
@@ -543,7 +564,7 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -642,8 +663,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -662,8 +683,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -687,8 +708,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -697,9 +718,9 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         names_ = new com.google.protobuf.LazyStringArrayList(names_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -858,7 +879,7 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      */
     public Builder clearNames() {
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

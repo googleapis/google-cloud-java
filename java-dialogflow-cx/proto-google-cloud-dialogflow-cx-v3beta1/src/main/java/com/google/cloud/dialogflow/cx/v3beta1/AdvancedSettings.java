@@ -153,7 +153,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ENABLE_STACKDRIVER_LOGGING_FIELD_NUMBER = 2;
-    private boolean enableStackdriverLogging_;
+    private boolean enableStackdriverLogging_ = false;
     /**
      *
      *
@@ -171,7 +171,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ENABLE_INTERACTION_LOGGING_FIELD_NUMBER = 3;
-    private boolean enableInteractionLogging_;
+    private boolean enableInteractionLogging_ = false;
     /**
      *
      *
@@ -401,10 +401,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         enableStackdriverLogging_ = false;
-
         enableInteractionLogging_ = false;
-
         return this;
       }
 
@@ -436,10 +435,22 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
           buildPartial() {
         com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings result =
             new com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings(this);
-        result.enableStackdriverLogging_ = enableStackdriverLogging_;
-        result.enableInteractionLogging_ = enableInteractionLogging_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enableStackdriverLogging_ = enableStackdriverLogging_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.enableInteractionLogging_ = enableInteractionLogging_;
+        }
       }
 
       @java.lang.Override
@@ -529,13 +540,13 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
               case 16:
                 {
                   enableStackdriverLogging_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 16
               case 24:
                 {
                   enableInteractionLogging_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 24
               default:
@@ -554,6 +565,8 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean enableStackdriverLogging_;
       /**
@@ -586,6 +599,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       public Builder setEnableStackdriverLogging(boolean value) {
 
         enableStackdriverLogging_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -601,7 +615,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearEnableStackdriverLogging() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         enableStackdriverLogging_ = false;
         onChanged();
         return this;
@@ -638,6 +652,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       public Builder setEnableInteractionLogging(boolean value) {
 
         enableInteractionLogging_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -653,7 +668,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearEnableInteractionLogging() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         enableInteractionLogging_ = false;
         onChanged();
         return this;
@@ -793,7 +808,10 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettingsOrBuilder
       getLoggingSettingsOrBuilder() {
-    return getLoggingSettings();
+    return loggingSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings
+            .getDefaultInstance()
+        : loggingSettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1007,10 +1025,10 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (loggingSettingsBuilder_ == null) {
-        loggingSettings_ = null;
-      } else {
-        loggingSettings_ = null;
+      bitField0_ = 0;
+      loggingSettings_ = null;
+      if (loggingSettingsBuilder_ != null) {
+        loggingSettingsBuilder_.dispose();
         loggingSettingsBuilder_ = null;
       }
       return this;
@@ -1040,13 +1058,19 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings result =
           new com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings(this);
-      if (loggingSettingsBuilder_ == null) {
-        result.loggingSettings_ = loggingSettings_;
-      } else {
-        result.loggingSettings_ = loggingSettingsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.loggingSettings_ =
+            loggingSettingsBuilder_ == null ? loggingSettings_ : loggingSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1127,7 +1151,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
             case 50:
               {
                 input.readMessage(getLoggingSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 50
             default:
@@ -1146,6 +1170,8 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings
         loggingSettings_;
@@ -1172,7 +1198,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the loggingSettings field is set.
      */
     public boolean hasLoggingSettings() {
-      return loggingSettingsBuilder_ != null || loggingSettings_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1224,11 +1250,11 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         loggingSettings_ = value;
-        onChanged();
       } else {
         loggingSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1251,11 +1277,11 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
             builderForValue) {
       if (loggingSettingsBuilder_ == null) {
         loggingSettings_ = builderForValue.build();
-        onChanged();
       } else {
         loggingSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1276,20 +1302,20 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeLoggingSettings(
         com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings value) {
       if (loggingSettingsBuilder_ == null) {
-        if (loggingSettings_ != null) {
-          loggingSettings_ =
-              com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings.newBuilder(
-                      loggingSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && loggingSettings_ != null
+            && loggingSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings
+                    .getDefaultInstance()) {
+          getLoggingSettingsBuilder().mergeFrom(value);
         } else {
           loggingSettings_ = value;
         }
-        onChanged();
       } else {
         loggingSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1308,14 +1334,13 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearLoggingSettings() {
-      if (loggingSettingsBuilder_ == null) {
-        loggingSettings_ = null;
-        onChanged();
-      } else {
-        loggingSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      loggingSettings_ = null;
+      if (loggingSettingsBuilder_ != null) {
+        loggingSettingsBuilder_.dispose();
         loggingSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1335,7 +1360,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings.Builder
         getLoggingSettingsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLoggingSettingsFieldBuilder().getBuilder();
     }

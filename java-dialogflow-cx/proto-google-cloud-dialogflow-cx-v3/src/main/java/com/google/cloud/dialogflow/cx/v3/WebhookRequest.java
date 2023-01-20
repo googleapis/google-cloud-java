@@ -82,10 +82,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Always present.
-     * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
-     * field by Dialogflow when the associated webhook is called.
-     * The tag is typically used by the webhook service to identify which
-     * fulfillment is being called, but it could be used for other purposes.
+     * The value of the
+     * [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field
+     * will be populated in this field by Dialogflow when the associated webhook
+     * is called. The tag is typically used by the webhook service to identify
+     * which fulfillment is being called, but it could be used for other
+     * purposes.
      * </pre>
      *
      * <code>string tag = 1;</code>
@@ -98,10 +100,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Always present.
-     * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
-     * field by Dialogflow when the associated webhook is called.
-     * The tag is typically used by the webhook service to identify which
-     * fulfillment is being called, but it could be used for other purposes.
+     * The value of the
+     * [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field
+     * will be populated in this field by Dialogflow when the associated webhook
+     * is called. The tag is typically used by the webhook service to identify
+     * which fulfillment is being called, but it could be used for other
+     * purposes.
      * </pre>
      *
      * <code>string tag = 1;</code>
@@ -160,16 +164,20 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TAG_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tag_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object tag_ = "";
     /**
      *
      *
      * <pre>
      * Always present.
-     * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
-     * field by Dialogflow when the associated webhook is called.
-     * The tag is typically used by the webhook service to identify which
-     * fulfillment is being called, but it could be used for other purposes.
+     * The value of the
+     * [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field
+     * will be populated in this field by Dialogflow when the associated webhook
+     * is called. The tag is typically used by the webhook service to identify
+     * which fulfillment is being called, but it could be used for other
+     * purposes.
      * </pre>
      *
      * <code>string tag = 1;</code>
@@ -193,10 +201,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Always present.
-     * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
-     * field by Dialogflow when the associated webhook is called.
-     * The tag is typically used by the webhook service to identify which
-     * fulfillment is being called, but it could be used for other purposes.
+     * The value of the
+     * [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field
+     * will be populated in this field by Dialogflow when the associated webhook
+     * is called. The tag is typically used by the webhook service to identify
+     * which fulfillment is being called, but it could be used for other
+     * purposes.
      * </pre>
      *
      * <code>string tag = 1;</code>
@@ -418,8 +428,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         tag_ = "";
-
         return this;
       }
 
@@ -449,9 +459,19 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo buildPartial() {
         com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo result =
             new com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo(this);
-        result.tag_ = tag_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.tag_ = tag_;
+        }
       }
 
       @java.lang.Override
@@ -507,6 +527,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getTag().isEmpty()) {
           tag_ = other.tag_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -538,7 +559,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   tag_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -558,16 +579,20 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int bitField0_;
+
       private java.lang.Object tag_ = "";
       /**
        *
        *
        * <pre>
        * Always present.
-       * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
-       * field by Dialogflow when the associated webhook is called.
-       * The tag is typically used by the webhook service to identify which
-       * fulfillment is being called, but it could be used for other purposes.
+       * The value of the
+       * [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field
+       * will be populated in this field by Dialogflow when the associated webhook
+       * is called. The tag is typically used by the webhook service to identify
+       * which fulfillment is being called, but it could be used for other
+       * purposes.
        * </pre>
        *
        * <code>string tag = 1;</code>
@@ -590,10 +615,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Always present.
-       * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
-       * field by Dialogflow when the associated webhook is called.
-       * The tag is typically used by the webhook service to identify which
-       * fulfillment is being called, but it could be used for other purposes.
+       * The value of the
+       * [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field
+       * will be populated in this field by Dialogflow when the associated webhook
+       * is called. The tag is typically used by the webhook service to identify
+       * which fulfillment is being called, but it could be used for other
+       * purposes.
        * </pre>
        *
        * <code>string tag = 1;</code>
@@ -616,10 +643,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Always present.
-       * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
-       * field by Dialogflow when the associated webhook is called.
-       * The tag is typically used by the webhook service to identify which
-       * fulfillment is being called, but it could be used for other purposes.
+       * The value of the
+       * [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field
+       * will be populated in this field by Dialogflow when the associated webhook
+       * is called. The tag is typically used by the webhook service to identify
+       * which fulfillment is being called, but it could be used for other
+       * purposes.
        * </pre>
        *
        * <code>string tag = 1;</code>
@@ -631,8 +660,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         tag_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -641,10 +670,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Always present.
-       * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
-       * field by Dialogflow when the associated webhook is called.
-       * The tag is typically used by the webhook service to identify which
-       * fulfillment is being called, but it could be used for other purposes.
+       * The value of the
+       * [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field
+       * will be populated in this field by Dialogflow when the associated webhook
+       * is called. The tag is typically used by the webhook service to identify
+       * which fulfillment is being called, but it could be used for other
+       * purposes.
        * </pre>
        *
        * <code>string tag = 1;</code>
@@ -652,8 +683,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTag() {
-
         tag_ = getDefaultInstance().getTag();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -662,10 +693,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Always present.
-       * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
-       * field by Dialogflow when the associated webhook is called.
-       * The tag is typically used by the webhook service to identify which
-       * fulfillment is being called, but it could be used for other purposes.
+       * The value of the
+       * [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field
+       * will be populated in this field by Dialogflow when the associated webhook
+       * is called. The tag is typically used by the webhook service to identify
+       * which fulfillment is being called, but it could be used for other
+       * purposes.
        * </pre>
        *
        * <code>string tag = 1;</code>
@@ -678,8 +711,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         tag_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -791,7 +824,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
+     * Always present. The display name of the last matched
+     * [intent][google.cloud.dialogflow.cx.v3.Intent].
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -803,7 +837,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
+     * Always present. The display name of the last matched
+     * [intent][google.cloud.dialogflow.cx.v3.Intent].
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -880,7 +915,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue&gt; parameters = 2;
      * </code>
      */
-
     /* nullable */
     com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
         getParametersOrDefault(
@@ -1101,7 +1135,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ORIGINAL_VALUE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object originalValue_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object originalValue_ = "";
       /**
        *
        *
@@ -1197,7 +1233,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.protobuf.ValueOrBuilder getResolvedValueOrBuilder() {
-        return getResolvedValue();
+        return resolvedValue_ == null
+            ? com.google.protobuf.Value.getDefaultInstance()
+            : resolvedValue_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1430,12 +1468,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           originalValue_ = "";
-
-          if (resolvedValueBuilder_ == null) {
-            resolvedValue_ = null;
-          } else {
-            resolvedValue_ = null;
+          resolvedValue_ = null;
+          if (resolvedValueBuilder_ != null) {
+            resolvedValueBuilder_.dispose();
             resolvedValueBuilder_ = null;
           }
           return this;
@@ -1471,14 +1508,24 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue result =
               new com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue(
                   this);
-          result.originalValue_ = originalValue_;
-          if (resolvedValueBuilder_ == null) {
-            result.resolvedValue_ = resolvedValue_;
-          } else {
-            result.resolvedValue_ = resolvedValueBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.originalValue_ = originalValue_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.resolvedValue_ =
+                resolvedValueBuilder_ == null ? resolvedValue_ : resolvedValueBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -1538,6 +1585,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getOriginalValue().isEmpty()) {
             originalValue_ = other.originalValue_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.hasResolvedValue()) {
@@ -1572,14 +1620,14 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     originalValue_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     input.readMessage(
                         getResolvedValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -1598,6 +1646,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object originalValue_ = "";
         /**
@@ -1660,8 +1710,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           originalValue_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1677,8 +1727,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearOriginalValue() {
-
           originalValue_ = getDefaultInstance().getOriginalValue();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -1699,8 +1749,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           originalValue_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1724,7 +1774,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the resolvedValue field is set.
          */
         public boolean hasResolvedValue() {
-          return resolvedValueBuilder_ != null || resolvedValue_ != null;
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          *
@@ -1763,11 +1813,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             resolvedValue_ = value;
-            onChanged();
           } else {
             resolvedValueBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -1783,11 +1833,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         public Builder setResolvedValue(com.google.protobuf.Value.Builder builderForValue) {
           if (resolvedValueBuilder_ == null) {
             resolvedValue_ = builderForValue.build();
-            onChanged();
           } else {
             resolvedValueBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -1802,19 +1852,18 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder mergeResolvedValue(com.google.protobuf.Value value) {
           if (resolvedValueBuilder_ == null) {
-            if (resolvedValue_ != null) {
-              resolvedValue_ =
-                  com.google.protobuf.Value.newBuilder(resolvedValue_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000002) != 0)
+                && resolvedValue_ != null
+                && resolvedValue_ != com.google.protobuf.Value.getDefaultInstance()) {
+              getResolvedValueBuilder().mergeFrom(value);
             } else {
               resolvedValue_ = value;
             }
-            onChanged();
           } else {
             resolvedValueBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -1828,14 +1877,13 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.protobuf.Value resolved_value = 2;</code>
          */
         public Builder clearResolvedValue() {
-          if (resolvedValueBuilder_ == null) {
-            resolvedValue_ = null;
-            onChanged();
-          } else {
-            resolvedValue_ = null;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          resolvedValue_ = null;
+          if (resolvedValueBuilder_ != null) {
+            resolvedValueBuilder_.dispose();
             resolvedValueBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -1849,7 +1897,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.protobuf.Value resolved_value = 2;</code>
          */
         public com.google.protobuf.Value.Builder getResolvedValueBuilder() {
-
+          bitField0_ |= 0x00000002;
           onChanged();
           return getResolvedValueFieldBuilder().getBuilder();
         }
@@ -1969,7 +2017,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LAST_MATCHED_INTENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object lastMatchedIntent_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object lastMatchedIntent_ = "";
     /**
      *
      *
@@ -2024,12 +2074,15 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
      * <pre>
-     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
+     * Always present. The display name of the last matched
+     * [intent][google.cloud.dialogflow.cx.v3.Intent].
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -2052,7 +2105,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
+     * Always present. The display name of the last matched
+     * [intent][google.cloud.dialogflow.cx.v3.Intent].
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -2093,6 +2147,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                               .IntentParameterValue.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String,
             com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue>
@@ -2178,9 +2233,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
+    public /* nullable */ com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo
+            .IntentParameterValue
         getParametersOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
                 defaultValue) {
       if (key == null) {
@@ -2223,7 +2280,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CONFIDENCE_FIELD_NUMBER = 4;
-    private float confidence_;
+    private float confidence_ = 0F;
     /**
      *
      *
@@ -2502,13 +2559,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         lastMatchedIntent_ = "";
-
         displayName_ = "";
-
         internalGetMutableParameters().clear();
         confidence_ = 0F;
-
         return this;
       }
 
@@ -2537,14 +2592,29 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo buildPartial() {
         com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo result =
             new com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.lastMatchedIntent_ = lastMatchedIntent_;
-        result.displayName_ = displayName_;
-        result.parameters_ = internalGetParameters();
-        result.parameters_.makeImmutable();
-        result.confidence_ = confidence_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.lastMatchedIntent_ = lastMatchedIntent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.parameters_ = internalGetParameters();
+          result.parameters_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.confidence_ = confidence_;
+        }
       }
 
       @java.lang.Override
@@ -2598,13 +2668,16 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getLastMatchedIntent().isEmpty()) {
           lastMatchedIntent_ = other.lastMatchedIntent_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         internalGetMutableParameters().mergeFrom(other.internalGetParameters());
+        bitField0_ |= 0x00000004;
         if (other.getConfidence() != 0F) {
           setConfidence(other.getConfidence());
         }
@@ -2637,7 +2710,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   lastMatchedIntent_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -2653,18 +2726,19 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableParameters()
                       .getMutableMap()
                       .put(parameters__.getKey(), parameters__.getValue());
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 18
               case 26:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 26
               case 37:
                 {
                   confidence_ = input.readFloat();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 37
               default:
@@ -2756,8 +2830,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         lastMatchedIntent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2776,8 +2850,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLastMatchedIntent() {
-
         lastMatchedIntent_ = getDefaultInstance().getLastMatchedIntent();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2801,8 +2875,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         lastMatchedIntent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2812,7 +2886,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
+       * Always present. The display name of the last matched
+       * [intent][google.cloud.dialogflow.cx.v3.Intent].
        * </pre>
        *
        * <code>string display_name = 3;</code>
@@ -2834,7 +2909,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
+       * Always present. The display name of the last matched
+       * [intent][google.cloud.dialogflow.cx.v3.Intent].
        * </pre>
        *
        * <code>string display_name = 3;</code>
@@ -2856,7 +2932,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
+       * Always present. The display name of the last matched
+       * [intent][google.cloud.dialogflow.cx.v3.Intent].
        * </pre>
        *
        * <code>string display_name = 3;</code>
@@ -2868,8 +2945,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2877,7 +2954,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
+       * Always present. The display name of the last matched
+       * [intent][google.cloud.dialogflow.cx.v3.Intent].
        * </pre>
        *
        * <code>string display_name = 3;</code>
@@ -2885,8 +2963,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2894,7 +2972,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
+       * Always present. The display name of the last matched
+       * [intent][google.cloud.dialogflow.cx.v3.Intent].
        * </pre>
        *
        * <code>string display_name = 3;</code>
@@ -2907,8 +2986,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2933,8 +3012,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
               java.lang.String,
               com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue>
           internalGetMutableParameters() {
-        onChanged();
-        ;
         if (parameters_ == null) {
           parameters_ =
               com.google.protobuf.MapField.newMapField(ParametersDefaultEntryHolder.defaultEntry);
@@ -2942,6 +3019,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         if (!parameters_.isMutable()) {
           parameters_ = parameters_.copy();
         }
+        bitField0_ |= 0x00000004;
+        onChanged();
         return parameters_;
       }
 
@@ -3014,9 +3093,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
+      public /* nullable */ com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo
+              .IntentParameterValue
           getParametersOrDefault(
               java.lang.String key,
+              /* nullable */
               com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
                   defaultValue) {
         if (key == null) {
@@ -3059,6 +3140,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearParameters() {
+        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableParameters().getMutableMap().clear();
         return this;
       }
@@ -3089,6 +3171,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
               java.lang.String,
               com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue>
           getMutableParameters() {
+        bitField0_ |= 0x00000004;
         return internalGetMutableParameters().getMutableMap();
       }
       /**
@@ -3114,8 +3197,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableParameters().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -3138,6 +3221,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue>
               values) {
         internalGetMutableParameters().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -3174,6 +3258,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       public Builder setConfidence(float value) {
 
         confidence_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3190,7 +3275,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearConfidence() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         confidence_ = 0F;
         onChanged();
         return this;
@@ -3344,7 +3429,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SCORE_FIELD_NUMBER = 1;
-    private float score_;
+    private float score_ = 0F;
     /**
      *
      *
@@ -3363,7 +3448,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MAGNITUDE_FIELD_NUMBER = 2;
-    private float magnitude_;
+    private float magnitude_ = 0F;
     /**
      *
      *
@@ -3602,10 +3687,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         score_ = 0F;
-
         magnitude_ = 0F;
-
         return this;
       }
 
@@ -3637,10 +3721,22 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult result =
             new com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult(this);
-        result.score_ = score_;
-        result.magnitude_ = magnitude_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.magnitude_ = magnitude_;
+        }
       }
 
       @java.lang.Override
@@ -3730,13 +3826,13 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
               case 13:
                 {
                   score_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   magnitude_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               default:
@@ -3755,6 +3851,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float score_;
       /**
@@ -3789,6 +3887,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       public Builder setScore(float value) {
 
         score_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3805,7 +3904,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         score_ = 0F;
         onChanged();
         return this;
@@ -3846,6 +3945,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       public Builder setMagnitude(float value) {
 
         magnitude_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3863,7 +3963,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMagnitude() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         magnitude_ = 0F;
         onChanged();
         return this;
@@ -3991,13 +4091,16 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DETECT_INTENT_RESPONSE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object detectIntentResponseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object detectIntentResponseId_ = "";
   /**
    *
    *
    * <pre>
-   * Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-   * will be returned to the API caller.
+   * Always present. The unique identifier of the
+   * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+   * that will be returned to the API caller.
    * </pre>
    *
    * <code>string detect_intent_response_id = 1;</code>
@@ -4020,8 +4123,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-   * will be returned to the API caller.
+   * Always present. The unique identifier of the
+   * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+   * that will be returned to the API caller.
    * </pre>
    *
    * <code>string detect_intent_response_id = 1;</code>
@@ -4046,8 +4150,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-   * will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+   * provided as input, this field will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 10;</code>
@@ -4061,8 +4165,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-   * will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+   * provided as input, this field will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 10;</code>
@@ -4089,8 +4193,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-   * will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+   * provided as input, this field will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 10;</code>
@@ -4119,9 +4223,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-   * contain a copy of the intent identifier.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+   * input, this field will contain a copy of the intent identifier. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -4136,9 +4240,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-   * contain a copy of the intent identifier.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+   * input, this field will contain a copy of the intent identifier. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -4166,9 +4270,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-   * contain a copy of the intent identifier.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+   * input, this field will contain a copy of the intent identifier. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -4198,7 +4302,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech
+   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -4213,7 +4318,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech
+   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -4241,7 +4347,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech
+   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -4271,8 +4378,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-   * the name of the event.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+   * input, this field will contain the name of the event.
    * </pre>
    *
    * <code>string trigger_event = 14;</code>
@@ -4286,8 +4393,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-   * the name of the event.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+   * input, this field will contain the name of the event.
    * </pre>
    *
    * <code>string trigger_event = 14;</code>
@@ -4314,8 +4421,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-   * the name of the event.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+   * input, this field will contain the name of the event.
    * </pre>
    *
    * <code>string trigger_event = 14;</code>
@@ -4340,7 +4447,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 15;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -4442,7 +4551,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfoOrBuilder
       getFulfillmentInfoOrBuilder() {
-    return getFulfillmentInfo();
+    return fulfillmentInfo_ == null
+        ? com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo.getDefaultInstance()
+        : fulfillmentInfo_;
   }
 
   public static final int INTENT_INFO_FIELD_NUMBER = 3;
@@ -4491,7 +4602,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfoOrBuilder
       getIntentInfoOrBuilder() {
-    return getIntentInfo();
+    return intentInfo_ == null
+        ? com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.getDefaultInstance()
+        : intentInfo_;
   }
 
   public static final int PAGE_INFO_FIELD_NUMBER = 4;
@@ -4539,7 +4652,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.PageInfoOrBuilder getPageInfoOrBuilder() {
-    return getPageInfo();
+    return pageInfo_ == null
+        ? com.google.cloud.dialogflow.cx.v3.PageInfo.getDefaultInstance()
+        : pageInfo_;
   }
 
   public static final int SESSION_INFO_FIELD_NUMBER = 5;
@@ -4587,10 +4702,14 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SessionInfoOrBuilder getSessionInfoOrBuilder() {
-    return getSessionInfo();
+    return sessionInfo_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SessionInfo.getDefaultInstance()
+        : sessionInfo_;
   }
 
   public static final int MESSAGES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.ResponseMessage> messages_;
   /**
    *
@@ -4676,7 +4795,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+   * Custom data set in
+   * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 8;</code>
@@ -4691,7 +4811,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+   * Custom data set in
+   * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 8;</code>
@@ -4706,14 +4827,15 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+   * Custom data set in
+   * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 8;</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getPayloadOrBuilder() {
-    return getPayload();
+    return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
   }
 
   public static final int SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER = 9;
@@ -4774,7 +4896,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResultOrBuilder
       getSentimentAnalysisResultOrBuilder() {
-    return getSentimentAnalysisResult();
+    return sentimentAnalysisResult_ == null
+        ? com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult
+            .getDefaultInstance()
+        : sentimentAnalysisResult_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -5143,32 +5268,27 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       detectIntentResponseId_ = "";
-
       languageCode_ = "";
-
-      if (fulfillmentInfoBuilder_ == null) {
-        fulfillmentInfo_ = null;
-      } else {
-        fulfillmentInfo_ = null;
+      fulfillmentInfo_ = null;
+      if (fulfillmentInfoBuilder_ != null) {
+        fulfillmentInfoBuilder_.dispose();
         fulfillmentInfoBuilder_ = null;
       }
-      if (intentInfoBuilder_ == null) {
-        intentInfo_ = null;
-      } else {
-        intentInfo_ = null;
+      intentInfo_ = null;
+      if (intentInfoBuilder_ != null) {
+        intentInfoBuilder_.dispose();
         intentInfoBuilder_ = null;
       }
-      if (pageInfoBuilder_ == null) {
-        pageInfo_ = null;
-      } else {
-        pageInfo_ = null;
+      pageInfo_ = null;
+      if (pageInfoBuilder_ != null) {
+        pageInfoBuilder_.dispose();
         pageInfoBuilder_ = null;
       }
-      if (sessionInfoBuilder_ == null) {
-        sessionInfo_ = null;
-      } else {
-        sessionInfo_ = null;
+      sessionInfo_ = null;
+      if (sessionInfoBuilder_ != null) {
+        sessionInfoBuilder_.dispose();
         sessionInfoBuilder_ = null;
       }
       if (messagesBuilder_ == null) {
@@ -5177,17 +5297,15 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         messages_ = null;
         messagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-      } else {
-        payload_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-      if (sentimentAnalysisResultBuilder_ == null) {
-        sentimentAnalysisResult_ = null;
-      } else {
-        sentimentAnalysisResult_ = null;
+      sentimentAnalysisResult_ = null;
+      if (sentimentAnalysisResultBuilder_ != null) {
+        sentimentAnalysisResultBuilder_.dispose();
         sentimentAnalysisResultBuilder_ = null;
       }
       queryCase_ = 0;
@@ -5219,63 +5337,64 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.WebhookRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.WebhookRequest result =
           new com.google.cloud.dialogflow.cx.v3.WebhookRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.detectIntentResponseId_ = detectIntentResponseId_;
-      if (queryCase_ == 10) {
-        result.query_ = query_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (queryCase_ == 11) {
-        result.query_ = query_;
-      }
-      if (queryCase_ == 12) {
-        result.query_ = query_;
-      }
-      if (queryCase_ == 14) {
-        result.query_ = query_;
-      }
-      result.languageCode_ = languageCode_;
-      if (fulfillmentInfoBuilder_ == null) {
-        result.fulfillmentInfo_ = fulfillmentInfo_;
-      } else {
-        result.fulfillmentInfo_ = fulfillmentInfoBuilder_.build();
-      }
-      if (intentInfoBuilder_ == null) {
-        result.intentInfo_ = intentInfo_;
-      } else {
-        result.intentInfo_ = intentInfoBuilder_.build();
-      }
-      if (pageInfoBuilder_ == null) {
-        result.pageInfo_ = pageInfo_;
-      } else {
-        result.pageInfo_ = pageInfoBuilder_.build();
-      }
-      if (sessionInfoBuilder_ == null) {
-        result.sessionInfo_ = sessionInfo_;
-      } else {
-        result.sessionInfo_ = sessionInfoBuilder_.build();
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.WebhookRequest result) {
       if (messagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.messages_ = messages_;
       } else {
         result.messages_ = messagesBuilder_.build();
       }
-      if (payloadBuilder_ == null) {
-        result.payload_ = payload_;
-      } else {
-        result.payload_ = payloadBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.WebhookRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.detectIntentResponseId_ = detectIntentResponseId_;
       }
-      if (sentimentAnalysisResultBuilder_ == null) {
-        result.sentimentAnalysisResult_ = sentimentAnalysisResult_;
-      } else {
-        result.sentimentAnalysisResult_ = sentimentAnalysisResultBuilder_.build();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.languageCode_ = languageCode_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.fulfillmentInfo_ =
+            fulfillmentInfoBuilder_ == null ? fulfillmentInfo_ : fulfillmentInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.intentInfo_ = intentInfoBuilder_ == null ? intentInfo_ : intentInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.pageInfo_ = pageInfoBuilder_ == null ? pageInfo_ : pageInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.sessionInfo_ =
+            sessionInfoBuilder_ == null ? sessionInfo_ : sessionInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.sentimentAnalysisResult_ =
+            sentimentAnalysisResultBuilder_ == null
+                ? sentimentAnalysisResult_
+                : sentimentAnalysisResultBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3.WebhookRequest result) {
       result.queryCase_ = queryCase_;
-      onBuilt();
-      return result;
+      result.query_ = this.query_;
     }
 
     @java.lang.Override
@@ -5326,10 +5445,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getDetectIntentResponseId().isEmpty()) {
         detectIntentResponseId_ = other.detectIntentResponseId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasFulfillmentInfo()) {
@@ -5348,7 +5469,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.messages_.isEmpty()) {
           if (messages_.isEmpty()) {
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureMessagesIsMutable();
             messages_.addAll(other.messages_);
@@ -5361,7 +5482,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             messagesBuilder_.dispose();
             messagesBuilder_ = null;
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000400);
             messagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMessagesFieldBuilder()
@@ -5440,31 +5561,31 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 detectIntentResponseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getIntentInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getPageInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getSessionInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getFulfillmentInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
@@ -5484,14 +5605,14 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(
                     getSentimentAnalysisResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 74
             case 82:
@@ -5525,7 +5646,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             case 122:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 122
             default:
@@ -5566,8 +5687,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-     * will be returned to the API caller.
+     * Always present. The unique identifier of the
+     * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+     * that will be returned to the API caller.
      * </pre>
      *
      * <code>string detect_intent_response_id = 1;</code>
@@ -5589,8 +5711,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-     * will be returned to the API caller.
+     * Always present. The unique identifier of the
+     * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+     * that will be returned to the API caller.
      * </pre>
      *
      * <code>string detect_intent_response_id = 1;</code>
@@ -5612,8 +5735,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-     * will be returned to the API caller.
+     * Always present. The unique identifier of the
+     * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+     * that will be returned to the API caller.
      * </pre>
      *
      * <code>string detect_intent_response_id = 1;</code>
@@ -5625,8 +5749,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       detectIntentResponseId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5634,8 +5758,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-     * will be returned to the API caller.
+     * Always present. The unique identifier of the
+     * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+     * that will be returned to the API caller.
      * </pre>
      *
      * <code>string detect_intent_response_id = 1;</code>
@@ -5643,8 +5768,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDetectIntentResponseId() {
-
       detectIntentResponseId_ = getDefaultInstance().getDetectIntentResponseId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -5652,8 +5777,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-     * will be returned to the API caller.
+     * Always present. The unique identifier of the
+     * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+     * that will be returned to the API caller.
      * </pre>
      *
      * <code>string detect_intent_response_id = 1;</code>
@@ -5666,8 +5792,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       detectIntentResponseId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5676,8 +5802,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 10;</code>
@@ -5692,8 +5818,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 10;</code>
@@ -5721,8 +5847,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 10;</code>
@@ -5750,8 +5876,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 10;</code>
@@ -5772,8 +5898,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 10;</code>
@@ -5792,8 +5918,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 10;</code>
@@ -5816,9 +5942,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -5834,9 +5960,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -5865,9 +5991,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -5896,9 +6022,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -5920,9 +6046,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -5942,9 +6068,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -5968,7 +6094,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -5984,7 +6111,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -6013,7 +6141,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -6042,7 +6171,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -6064,7 +6194,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -6084,7 +6215,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      * </pre>
      *
@@ -6108,8 +6240,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-     * the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -6124,8 +6256,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-     * the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -6153,8 +6285,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-     * the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -6182,8 +6314,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-     * the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -6204,8 +6336,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-     * the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -6224,8 +6356,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-     * the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -6308,8 +6440,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6326,8 +6458,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -6349,8 +6481,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6375,7 +6507,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fulfillmentInfo field is set.
      */
     public boolean hasFulfillmentInfo() {
-      return fulfillmentInfoBuilder_ != null || fulfillmentInfo_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -6417,11 +6549,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         fulfillmentInfo_ = value;
-        onChanged();
       } else {
         fulfillmentInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -6439,11 +6571,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo.Builder builderForValue) {
       if (fulfillmentInfoBuilder_ == null) {
         fulfillmentInfo_ = builderForValue.build();
-        onChanged();
       } else {
         fulfillmentInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -6460,20 +6592,20 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFulfillmentInfo(
         com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo value) {
       if (fulfillmentInfoBuilder_ == null) {
-        if (fulfillmentInfo_ != null) {
-          fulfillmentInfo_ =
-              com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo.newBuilder(
-                      fulfillmentInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && fulfillmentInfo_ != null
+            && fulfillmentInfo_
+                != com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo
+                    .getDefaultInstance()) {
+          getFulfillmentInfoBuilder().mergeFrom(value);
         } else {
           fulfillmentInfo_ = value;
         }
-        onChanged();
       } else {
         fulfillmentInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -6488,14 +6620,13 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFulfillmentInfo() {
-      if (fulfillmentInfoBuilder_ == null) {
-        fulfillmentInfo_ = null;
-        onChanged();
-      } else {
-        fulfillmentInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      fulfillmentInfo_ = null;
+      if (fulfillmentInfoBuilder_ != null) {
+        fulfillmentInfoBuilder_.dispose();
         fulfillmentInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6511,7 +6642,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo.Builder
         getFulfillmentInfoBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getFulfillmentInfoFieldBuilder().getBuilder();
     }
@@ -6582,7 +6713,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the intentInfo field is set.
      */
     public boolean hasIntentInfo() {
-      return intentInfoBuilder_ != null || intentInfo_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -6620,11 +6751,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         intentInfo_ = value;
-        onChanged();
       } else {
         intentInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -6640,11 +6771,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.Builder builderForValue) {
       if (intentInfoBuilder_ == null) {
         intentInfo_ = builderForValue.build();
-        onChanged();
       } else {
         intentInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -6659,19 +6790,20 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeIntentInfo(
         com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo value) {
       if (intentInfoBuilder_ == null) {
-        if (intentInfo_ != null) {
-          intentInfo_ =
-              com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.newBuilder(intentInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && intentInfo_ != null
+            && intentInfo_
+                != com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo
+                    .getDefaultInstance()) {
+          getIntentInfoBuilder().mergeFrom(value);
         } else {
           intentInfo_ = value;
         }
-        onChanged();
       } else {
         intentInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -6684,14 +6816,13 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo intent_info = 3;</code>
      */
     public Builder clearIntentInfo() {
-      if (intentInfoBuilder_ == null) {
-        intentInfo_ = null;
-        onChanged();
-      } else {
-        intentInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      intentInfo_ = null;
+      if (intentInfoBuilder_ != null) {
+        intentInfoBuilder_.dispose();
         intentInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6705,7 +6836,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.Builder
         getIntentInfoBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getIntentInfoFieldBuilder().getBuilder();
     }
@@ -6772,7 +6903,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pageInfo field is set.
      */
     public boolean hasPageInfo() {
-      return pageInfoBuilder_ != null || pageInfo_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -6809,11 +6940,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         pageInfo_ = value;
-        onChanged();
       } else {
         pageInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -6828,11 +6959,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setPageInfo(com.google.cloud.dialogflow.cx.v3.PageInfo.Builder builderForValue) {
       if (pageInfoBuilder_ == null) {
         pageInfo_ = builderForValue.build();
-        onChanged();
       } else {
         pageInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -6846,19 +6977,18 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePageInfo(com.google.cloud.dialogflow.cx.v3.PageInfo value) {
       if (pageInfoBuilder_ == null) {
-        if (pageInfo_ != null) {
-          pageInfo_ =
-              com.google.cloud.dialogflow.cx.v3.PageInfo.newBuilder(pageInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && pageInfo_ != null
+            && pageInfo_ != com.google.cloud.dialogflow.cx.v3.PageInfo.getDefaultInstance()) {
+          getPageInfoBuilder().mergeFrom(value);
         } else {
           pageInfo_ = value;
         }
-        onChanged();
       } else {
         pageInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -6871,14 +7001,13 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.PageInfo page_info = 4;</code>
      */
     public Builder clearPageInfo() {
-      if (pageInfoBuilder_ == null) {
-        pageInfo_ = null;
-        onChanged();
-      } else {
-        pageInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      pageInfo_ = null;
+      if (pageInfoBuilder_ != null) {
+        pageInfoBuilder_.dispose();
         pageInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6891,7 +7020,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.PageInfo page_info = 4;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.PageInfo.Builder getPageInfoBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getPageInfoFieldBuilder().getBuilder();
     }
@@ -6957,7 +7086,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sessionInfo field is set.
      */
     public boolean hasSessionInfo() {
-      return sessionInfoBuilder_ != null || sessionInfo_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -6994,11 +7123,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sessionInfo_ = value;
-        onChanged();
       } else {
         sessionInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -7014,11 +7143,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.SessionInfo.Builder builderForValue) {
       if (sessionInfoBuilder_ == null) {
         sessionInfo_ = builderForValue.build();
-        onChanged();
       } else {
         sessionInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -7032,19 +7161,18 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSessionInfo(com.google.cloud.dialogflow.cx.v3.SessionInfo value) {
       if (sessionInfoBuilder_ == null) {
-        if (sessionInfo_ != null) {
-          sessionInfo_ =
-              com.google.cloud.dialogflow.cx.v3.SessionInfo.newBuilder(sessionInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && sessionInfo_ != null
+            && sessionInfo_ != com.google.cloud.dialogflow.cx.v3.SessionInfo.getDefaultInstance()) {
+          getSessionInfoBuilder().mergeFrom(value);
         } else {
           sessionInfo_ = value;
         }
-        onChanged();
       } else {
         sessionInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -7057,14 +7185,13 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.SessionInfo session_info = 5;</code>
      */
     public Builder clearSessionInfo() {
-      if (sessionInfoBuilder_ == null) {
-        sessionInfo_ = null;
-        onChanged();
-      } else {
-        sessionInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      sessionInfo_ = null;
+      if (sessionInfoBuilder_ != null) {
+        sessionInfoBuilder_.dispose();
         sessionInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7077,7 +7204,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.SessionInfo session_info = 5;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.SessionInfo.Builder getSessionInfoBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getSessionInfoFieldBuilder().getBuilder();
     }
@@ -7129,10 +7256,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         messages_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.ResponseMessage>(messages_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -7370,7 +7497,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         messagesBuilder_.clear();
@@ -7508,7 +7635,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3.ResponseMessage,
                 com.google.cloud.dialogflow.cx.v3.ResponseMessage.Builder,
                 com.google.cloud.dialogflow.cx.v3.ResponseMessageOrBuilder>(
-                messages_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                messages_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         messages_ = null;
       }
       return messagesBuilder_;
@@ -7524,7 +7651,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 8;</code>
@@ -7532,13 +7660,14 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
-      return payloadBuilder_ != null || payload_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 8;</code>
@@ -7556,7 +7685,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 8;</code>
@@ -7567,18 +7697,19 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         payload_ = value;
-        onChanged();
       } else {
         payloadBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 8;</code>
@@ -7586,68 +7717,71 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setPayload(com.google.protobuf.Struct.Builder builderForValue) {
       if (payloadBuilder_ == null) {
         payload_ = builderForValue.build();
-        onChanged();
       } else {
         payloadBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 8;</code>
      */
     public Builder mergePayload(com.google.protobuf.Struct value) {
       if (payloadBuilder_ == null) {
-        if (payload_ != null) {
-          payload_ =
-              com.google.protobuf.Struct.newBuilder(payload_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && payload_ != null
+            && payload_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getPayloadBuilder().mergeFrom(value);
         } else {
           payload_ = value;
         }
-        onChanged();
       } else {
         payloadBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 8;</code>
      */
     public Builder clearPayload() {
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-        onChanged();
-      } else {
-        payload_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 8;</code>
      */
     public com.google.protobuf.Struct.Builder getPayloadBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
@@ -7655,7 +7789,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 8;</code>
@@ -7671,7 +7806,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 8;</code>
@@ -7715,7 +7851,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sentimentAnalysisResult field is set.
      */
     public boolean hasSentimentAnalysisResult() {
-      return sentimentAnalysisResultBuilder_ != null || sentimentAnalysisResult_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -7761,11 +7897,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sentimentAnalysisResult_ = value;
-        onChanged();
       } else {
         sentimentAnalysisResultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -7785,11 +7921,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (sentimentAnalysisResultBuilder_ == null) {
         sentimentAnalysisResult_ = builderForValue.build();
-        onChanged();
       } else {
         sentimentAnalysisResultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -7807,20 +7943,20 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSentimentAnalysisResult(
         com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult value) {
       if (sentimentAnalysisResultBuilder_ == null) {
-        if (sentimentAnalysisResult_ != null) {
-          sentimentAnalysisResult_ =
-              com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult.newBuilder(
-                      sentimentAnalysisResult_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && sentimentAnalysisResult_ != null
+            && sentimentAnalysisResult_
+                != com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult
+                    .getDefaultInstance()) {
+          getSentimentAnalysisResultBuilder().mergeFrom(value);
         } else {
           sentimentAnalysisResult_ = value;
         }
-        onChanged();
       } else {
         sentimentAnalysisResultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -7836,14 +7972,13 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSentimentAnalysisResult() {
-      if (sentimentAnalysisResultBuilder_ == null) {
-        sentimentAnalysisResult_ = null;
-        onChanged();
-      } else {
-        sentimentAnalysisResult_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      sentimentAnalysisResult_ = null;
+      if (sentimentAnalysisResultBuilder_ != null) {
+        sentimentAnalysisResultBuilder_.dispose();
         sentimentAnalysisResultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7860,7 +7995,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult.Builder
         getSentimentAnalysisResultBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getSentimentAnalysisResultFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIGITS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object digits_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object digits_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FINISH_DIGIT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object finishDigit_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object finishDigit_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       digits_ = "";
-
       finishDigit_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.DtmfInput buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.DtmfInput result =
           new com.google.cloud.dialogflow.cx.v3beta1.DtmfInput(this);
-      result.digits_ = digits_;
-      result.finishDigit_ = finishDigit_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.DtmfInput result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.digits_ = digits_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.finishDigit_ = finishDigit_;
+      }
     }
 
     @java.lang.Override
@@ -457,10 +471,12 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getDigits().isEmpty()) {
         digits_ = other.digits_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFinishDigit().isEmpty()) {
         finishDigit_ = other.finishDigit_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -492,13 +508,13 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 digits_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 finishDigit_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -517,6 +533,8 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object digits_ = "";
     /**
@@ -579,8 +597,8 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       digits_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -596,8 +614,8 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDigits() {
-
       digits_ = getDefaultInstance().getDigits();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -618,8 +636,8 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       digits_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,8 +703,8 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       finishDigit_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -702,8 +720,8 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFinishDigit() {
-
       finishDigit_ = getDefaultInstance().getFinishDigit();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class DtmfInput extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       finishDigit_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

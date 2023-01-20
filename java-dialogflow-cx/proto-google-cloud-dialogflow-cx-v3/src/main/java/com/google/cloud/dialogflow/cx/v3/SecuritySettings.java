@@ -839,7 +839,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int GCS_BUCKET_FIELD_NUMBER = 1;
-    private volatile java.lang.Object gcsBucket_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gcsBucket_ = "";
     /**
      *
      *
@@ -896,7 +898,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int AUDIO_EXPORT_PATTERN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object audioExportPattern_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object audioExportPattern_ = "";
     /**
      *
      *
@@ -945,7 +949,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ENABLE_AUDIO_REDACTION_FIELD_NUMBER = 3;
-    private boolean enableAudioRedaction_;
+    private boolean enableAudioRedaction_ = false;
     /**
      *
      *
@@ -963,7 +967,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int AUDIO_FORMAT_FIELD_NUMBER = 4;
-    private int audioFormat_;
+    private int audioFormat_ = 0;
     /**
      *
      *
@@ -999,10 +1003,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings.AudioFormat
         getAudioFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings.AudioFormat result =
           com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings.AudioFormat
-              .valueOf(audioFormat_);
+              .forNumber(audioFormat_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings.AudioFormat
               .UNRECOGNIZED
@@ -1246,14 +1249,11 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         gcsBucket_ = "";
-
         audioExportPattern_ = "";
-
         enableAudioRedaction_ = false;
-
         audioFormat_ = 0;
-
         return this;
       }
 
@@ -1284,12 +1284,28 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings buildPartial() {
         com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings result =
             new com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings(this);
-        result.gcsBucket_ = gcsBucket_;
-        result.audioExportPattern_ = audioExportPattern_;
-        result.enableAudioRedaction_ = enableAudioRedaction_;
-        result.audioFormat_ = audioFormat_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.gcsBucket_ = gcsBucket_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.audioExportPattern_ = audioExportPattern_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enableAudioRedaction_ = enableAudioRedaction_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.audioFormat_ = audioFormat_;
+        }
       }
 
       @java.lang.Override
@@ -1346,10 +1362,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance()) return this;
         if (!other.getGcsBucket().isEmpty()) {
           gcsBucket_ = other.gcsBucket_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getAudioExportPattern().isEmpty()) {
           audioExportPattern_ = other.audioExportPattern_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getEnableAudioRedaction() != false) {
@@ -1387,25 +1405,25 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   gcsBucket_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   audioExportPattern_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   enableAudioRedaction_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   audioFormat_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -1424,6 +1442,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object gcsBucket_ = "";
       /**
@@ -1498,8 +1518,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         gcsBucket_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1519,8 +1539,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearGcsBucket() {
-
         gcsBucket_ = getDefaultInstance().getGcsBucket();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1545,8 +1565,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         gcsBucket_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1612,8 +1632,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         audioExportPattern_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1629,8 +1649,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearAudioExportPattern() {
-
         audioExportPattern_ = getDefaultInstance().getAudioExportPattern();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1651,8 +1671,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         audioExportPattern_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1688,6 +1708,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       public Builder setEnableAudioRedaction(boolean value) {
 
         enableAudioRedaction_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1703,7 +1724,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearEnableAudioRedaction() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         enableAudioRedaction_ = false;
         onChanged();
         return this;
@@ -1744,8 +1765,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder setAudioFormatValue(int value) {
-
         audioFormat_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1766,10 +1787,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings.AudioFormat
           getAudioFormat() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings.AudioFormat result =
             com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings.AudioFormat
-                .valueOf(audioFormat_);
+                .forNumber(audioFormat_);
         return result == null
             ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings.AudioFormat
                 .UNRECOGNIZED
@@ -1796,7 +1816,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         audioFormat_ = value.getNumber();
         onChanged();
         return this;
@@ -1816,7 +1836,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearAudioFormat() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         audioFormat_ = 0;
         onChanged();
         return this;
@@ -1959,7 +1979,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ENABLE_INSIGHTS_EXPORT_FIELD_NUMBER = 1;
-    private boolean enableInsightsExport_;
+    private boolean enableInsightsExport_ = false;
     /**
      *
      *
@@ -2187,8 +2207,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         enableInsightsExport_ = false;
-
         return this;
       }
 
@@ -2220,9 +2240,19 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
           buildPartial() {
         com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings result =
             new com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings(this);
-        result.enableInsightsExport_ = enableInsightsExport_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enableInsightsExport_ = enableInsightsExport_;
+        }
       }
 
       @java.lang.Override
@@ -2309,7 +2339,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
               case 8:
                 {
                   enableInsightsExport_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -2328,6 +2358,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean enableInsightsExport_;
       /**
@@ -2362,6 +2394,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       public Builder setEnableInsightsExport(boolean value) {
 
         enableInsightsExport_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2378,7 +2411,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearEnableInsightsExport() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         enableInsightsExport_ = false;
         onChanged();
         return this;
@@ -2497,17 +2530,20 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
    * <pre>
    * Resource name of the settings.
-   * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
-   * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
-   * automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * Required for the
+   * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings]
+   * method.
+   * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings]
+   * populates the name automatically. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -2531,11 +2567,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Resource name of the settings.
-   * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
-   * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
-   * automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * Required for the
+   * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings]
+   * method.
+   * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings]
+   * populates the name automatically. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -2556,13 +2593,15 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The human-readable name of the security settings, unique within the
-   * location.
+   * Required. The human-readable name of the security settings, unique within
+   * the location.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2585,8 +2624,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The human-readable name of the security settings, unique within the
-   * location.
+   * Required. The human-readable name of the security settings, unique within
+   * the location.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2607,7 +2646,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REDACTION_STRATEGY_FIELD_NUMBER = 3;
-  private int redactionStrategy_;
+  private int redactionStrategy_ = 0;
   /**
    *
    *
@@ -2639,9 +2678,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy
       getRedactionStrategy() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy result =
-        com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy.valueOf(
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy.forNumber(
             redactionStrategy_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy.UNRECOGNIZED
@@ -2649,7 +2687,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REDACTION_SCOPE_FIELD_NUMBER = 4;
-  private int redactionScope_;
+  private int redactionScope_ = 0;
   /**
    *
    *
@@ -2684,16 +2722,18 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope getRedactionScope() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope result =
-        com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope.valueOf(redactionScope_);
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope.forNumber(
+            redactionScope_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope.UNRECOGNIZED
         : result;
   }
 
   public static final int INSPECT_TEMPLATE_FIELD_NUMBER = 9;
-  private volatile java.lang.Object inspectTemplate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object inspectTemplate_ = "";
   /**
    *
    *
@@ -2766,7 +2806,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DEIDENTIFY_TEMPLATE_FIELD_NUMBER = 17;
-  private volatile java.lang.Object deidentifyTemplate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deidentifyTemplate_ = "";
   /**
    *
    *
@@ -2882,7 +2924,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PURGE_DATA_TYPES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> purgeDataTypes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType>
       purgeDataTypes_converter_ =
@@ -2891,9 +2936,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
               com.google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType>() {
             public com.google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType result =
-                  com.google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType.valueOf(from);
+                  com.google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType.forNumber(from);
               return result == null
                   ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType.UNRECOGNIZED
                   : result;
@@ -3003,13 +3047,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Controls audio export settings for post-conversation analytics when
    * ingesting audio to conversations via [Participants.AnalyzeContent][] or
    * [Participants.StreamingAnalyzeContent][].
-   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-   * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+   * If
+   * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+   * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+   * is empty, audio export is disabled.
    * If audio export is enabled, audio is recorded and saved to
    * [audio_export_settings.gcs_bucket][], subject to retention policy of
    * [audio_export_settings.gcs_bucket][].
    * This setting won't effect audio input for implicit sessions via
-   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+   * or
+   * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
    * </pre>
    *
    * <code>
@@ -3029,13 +3077,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Controls audio export settings for post-conversation analytics when
    * ingesting audio to conversations via [Participants.AnalyzeContent][] or
    * [Participants.StreamingAnalyzeContent][].
-   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-   * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+   * If
+   * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+   * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+   * is empty, audio export is disabled.
    * If audio export is enabled, audio is recorded and saved to
    * [audio_export_settings.gcs_bucket][], subject to retention policy of
    * [audio_export_settings.gcs_bucket][].
    * This setting won't effect audio input for implicit sessions via
-   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+   * or
+   * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
    * </pre>
    *
    * <code>
@@ -3059,13 +3111,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Controls audio export settings for post-conversation analytics when
    * ingesting audio to conversations via [Participants.AnalyzeContent][] or
    * [Participants.StreamingAnalyzeContent][].
-   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-   * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+   * If
+   * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+   * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+   * is empty, audio export is disabled.
    * If audio export is enabled, audio is recorded and saved to
    * [audio_export_settings.gcs_bucket][], subject to retention policy of
    * [audio_export_settings.gcs_bucket][].
    * This setting won't effect audio input for implicit sessions via
-   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+   * or
+   * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
    * </pre>
    *
    * <code>
@@ -3075,7 +3131,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettingsOrBuilder
       getAudioExportSettingsOrBuilder() {
-    return getAudioExportSettings();
+    return audioExportSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings
+            .getDefaultInstance()
+        : audioExportSettings_;
   }
 
   public static final int INSIGHTS_EXPORT_SETTINGS_FIELD_NUMBER = 13;
@@ -3087,8 +3146,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Controls conversation exporting settings to Insights after conversation is
    * completed.
-   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-   * Insights export is disabled no matter what you configure here.
+   * If
+   * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+   * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+   * what you configure here.
    * </pre>
    *
    * <code>
@@ -3107,8 +3168,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Controls conversation exporting settings to Insights after conversation is
    * completed.
-   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-   * Insights export is disabled no matter what you configure here.
+   * If
+   * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+   * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+   * what you configure here.
    * </pre>
    *
    * <code>
@@ -3131,8 +3194,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Controls conversation exporting settings to Insights after conversation is
    * completed.
-   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-   * Insights export is disabled no matter what you configure here.
+   * If
+   * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+   * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+   * what you configure here.
    * </pre>
    *
    * <code>
@@ -3142,7 +3207,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettingsOrBuilder
       getInsightsExportSettingsOrBuilder() {
-    return getInsightsExportSettings();
+    return insightsExportSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+            .getDefaultInstance()
+        : insightsExportSettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3481,30 +3549,23 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       redactionStrategy_ = 0;
-
       redactionScope_ = 0;
-
       inspectTemplate_ = "";
-
       deidentifyTemplate_ = "";
-
       purgeDataTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (audioExportSettingsBuilder_ == null) {
-        audioExportSettings_ = null;
-      } else {
-        audioExportSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      audioExportSettings_ = null;
+      if (audioExportSettingsBuilder_ != null) {
+        audioExportSettingsBuilder_.dispose();
         audioExportSettingsBuilder_ = null;
       }
-      if (insightsExportSettingsBuilder_ == null) {
-        insightsExportSettings_ = null;
-      } else {
-        insightsExportSettings_ = null;
+      insightsExportSettings_ = null;
+      if (insightsExportSettingsBuilder_ != null) {
+        insightsExportSettingsBuilder_.dispose();
         insightsExportSettingsBuilder_ = null;
       }
       dataRetentionCase_ = 0;
@@ -3536,34 +3597,61 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings buildPartial() {
       com.google.cloud.dialogflow.cx.v3.SecuritySettings result =
           new com.google.cloud.dialogflow.cx.v3.SecuritySettings(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.redactionStrategy_ = redactionStrategy_;
-      result.redactionScope_ = redactionScope_;
-      result.inspectTemplate_ = inspectTemplate_;
-      result.deidentifyTemplate_ = deidentifyTemplate_;
-      if (dataRetentionCase_ == 6) {
-        result.dataRetention_ = dataRetention_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        purgeDataTypes_ = java.util.Collections.unmodifiableList(purgeDataTypes_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.purgeDataTypes_ = purgeDataTypes_;
-      if (audioExportSettingsBuilder_ == null) {
-        result.audioExportSettings_ = audioExportSettings_;
-      } else {
-        result.audioExportSettings_ = audioExportSettingsBuilder_.build();
-      }
-      if (insightsExportSettingsBuilder_ == null) {
-        result.insightsExportSettings_ = insightsExportSettings_;
-      } else {
-        result.insightsExportSettings_ = insightsExportSettingsBuilder_.build();
-      }
-      result.dataRetentionCase_ = dataRetentionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings result) {
+      if (((bitField0_ & 0x00000080) != 0)) {
+        purgeDataTypes_ = java.util.Collections.unmodifiableList(purgeDataTypes_);
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.purgeDataTypes_ = purgeDataTypes_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.SecuritySettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.redactionStrategy_ = redactionStrategy_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.redactionScope_ = redactionScope_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.inspectTemplate_ = inspectTemplate_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.deidentifyTemplate_ = deidentifyTemplate_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.audioExportSettings_ =
+            audioExportSettingsBuilder_ == null
+                ? audioExportSettings_
+                : audioExportSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.insightsExportSettings_ =
+            insightsExportSettingsBuilder_ == null
+                ? insightsExportSettings_
+                : insightsExportSettingsBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3.SecuritySettings result) {
+      result.dataRetentionCase_ = dataRetentionCase_;
+      result.dataRetention_ = this.dataRetention_;
     }
 
     @java.lang.Override
@@ -3614,10 +3702,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.redactionStrategy_ != 0) {
@@ -3628,16 +3718,18 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getInspectTemplate().isEmpty()) {
         inspectTemplate_ = other.inspectTemplate_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDeidentifyTemplate().isEmpty()) {
         deidentifyTemplate_ = other.deidentifyTemplate_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.purgeDataTypes_.isEmpty()) {
         if (purgeDataTypes_.isEmpty()) {
           purgeDataTypes_ = other.purgeDataTypes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensurePurgeDataTypesIsMutable();
           purgeDataTypes_.addAll(other.purgeDataTypes_);
@@ -3690,25 +3782,25 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 redactionStrategy_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 redactionScope_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 48:
@@ -3739,27 +3831,27 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
             case 74:
               {
                 inspectTemplate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 74
             case 98:
               {
                 input.readMessage(
                     getAudioExportSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     getInsightsExportSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 106
             case 138:
               {
                 deidentifyTemplate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 138
             default:
@@ -3801,11 +3893,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Resource name of the settings.
-     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
-     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
-     * automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * Required for the
+     * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings]
+     * method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings]
+     * populates the name automatically. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3828,11 +3921,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Resource name of the settings.
-     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
-     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
-     * automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * Required for the
+     * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings]
+     * method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings]
+     * populates the name automatically. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3855,11 +3949,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Resource name of the settings.
-     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
-     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
-     * automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * Required for the
+     * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings]
+     * method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings]
+     * populates the name automatically. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3871,8 +3966,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3881,11 +3976,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Resource name of the settings.
-     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
-     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
-     * automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * Required for the
+     * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings]
+     * method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings]
+     * populates the name automatically. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3893,8 +3989,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3903,11 +3999,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Resource name of the settings.
-     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
-     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
-     * automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * Required for the
+     * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings]
+     * method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings]
+     * populates the name automatically. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3920,8 +4017,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3931,8 +4028,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The human-readable name of the security settings, unique within the
-     * location.
+     * Required. The human-readable name of the security settings, unique within
+     * the location.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3954,8 +4051,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The human-readable name of the security settings, unique within the
-     * location.
+     * Required. The human-readable name of the security settings, unique within
+     * the location.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3977,8 +4074,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The human-readable name of the security settings, unique within the
-     * location.
+     * Required. The human-readable name of the security settings, unique within
+     * the location.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3990,8 +4087,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3999,8 +4096,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The human-readable name of the security settings, unique within the
-     * location.
+     * Required. The human-readable name of the security settings, unique within
+     * the location.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4008,8 +4105,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -4017,8 +4114,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The human-readable name of the security settings, unique within the
-     * location.
+     * Required. The human-readable name of the security settings, unique within
+     * the location.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4031,8 +4128,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4070,8 +4167,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setRedactionStrategyValue(int value) {
-
       redactionStrategy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4091,9 +4188,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy
         getRedactionStrategy() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy result =
-          com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy.valueOf(
+          com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy.forNumber(
               redactionStrategy_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy.UNRECOGNIZED
@@ -4118,7 +4214,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       redactionStrategy_ = value.getNumber();
       onChanged();
       return this;
@@ -4137,7 +4233,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRedactionStrategy() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       redactionStrategy_ = 0;
       onChanged();
       return this;
@@ -4178,8 +4274,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setRedactionScopeValue(int value) {
-
       redactionScope_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4199,9 +4295,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope getRedactionScope() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope result =
-          com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope.valueOf(
+          com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope.forNumber(
               redactionScope_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope.UNRECOGNIZED
@@ -4227,7 +4322,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       redactionScope_ = value.getNumber();
       onChanged();
       return this;
@@ -4247,7 +4342,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRedactionScope() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       redactionScope_ = 0;
       onChanged();
       return this;
@@ -4350,8 +4445,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       inspectTemplate_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4379,8 +4474,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInspectTemplate() {
-
       inspectTemplate_ = getDefaultInstance().getInspectTemplate();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -4413,8 +4508,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       inspectTemplate_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4516,8 +4611,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       deidentifyTemplate_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4545,8 +4640,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDeidentifyTemplate() {
-
       deidentifyTemplate_ = getDefaultInstance().getDeidentifyTemplate();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4579,8 +4674,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deidentifyTemplate_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4641,6 +4736,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setRetentionWindowDays(int value) {
+
       dataRetentionCase_ = 6;
       dataRetention_ = value;
       onChanged();
@@ -4673,9 +4769,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     private java.util.List<java.lang.Integer> purgeDataTypes_ = java.util.Collections.emptyList();
 
     private void ensurePurgeDataTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         purgeDataTypes_ = new java.util.ArrayList<java.lang.Integer>(purgeDataTypes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -4820,7 +4916,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPurgeDataTypes() {
       purgeDataTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4935,13 +5031,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Controls audio export settings for post-conversation analytics when
      * ingesting audio to conversations via [Participants.AnalyzeContent][] or
      * [Participants.StreamingAnalyzeContent][].
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+     * is empty, audio export is disabled.
      * If audio export is enabled, audio is recorded and saved to
      * [audio_export_settings.gcs_bucket][], subject to retention policy of
      * [audio_export_settings.gcs_bucket][].
      * This setting won't effect audio input for implicit sessions via
-     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+     * or
+     * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
      * </pre>
      *
      * <code>
@@ -4951,7 +5051,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the audioExportSettings field is set.
      */
     public boolean hasAudioExportSettings() {
-      return audioExportSettingsBuilder_ != null || audioExportSettings_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -4960,13 +5060,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Controls audio export settings for post-conversation analytics when
      * ingesting audio to conversations via [Participants.AnalyzeContent][] or
      * [Participants.StreamingAnalyzeContent][].
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+     * is empty, audio export is disabled.
      * If audio export is enabled, audio is recorded and saved to
      * [audio_export_settings.gcs_bucket][], subject to retention policy of
      * [audio_export_settings.gcs_bucket][].
      * This setting won't effect audio input for implicit sessions via
-     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+     * or
+     * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
      * </pre>
      *
      * <code>
@@ -4993,13 +5097,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Controls audio export settings for post-conversation analytics when
      * ingesting audio to conversations via [Participants.AnalyzeContent][] or
      * [Participants.StreamingAnalyzeContent][].
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+     * is empty, audio export is disabled.
      * If audio export is enabled, audio is recorded and saved to
      * [audio_export_settings.gcs_bucket][], subject to retention policy of
      * [audio_export_settings.gcs_bucket][].
      * This setting won't effect audio input for implicit sessions via
-     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+     * or
+     * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
      * </pre>
      *
      * <code>
@@ -5013,11 +5121,11 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         audioExportSettings_ = value;
-        onChanged();
       } else {
         audioExportSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -5027,13 +5135,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Controls audio export settings for post-conversation analytics when
      * ingesting audio to conversations via [Participants.AnalyzeContent][] or
      * [Participants.StreamingAnalyzeContent][].
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+     * is empty, audio export is disabled.
      * If audio export is enabled, audio is recorded and saved to
      * [audio_export_settings.gcs_bucket][], subject to retention policy of
      * [audio_export_settings.gcs_bucket][].
      * This setting won't effect audio input for implicit sessions via
-     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+     * or
+     * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
      * </pre>
      *
      * <code>
@@ -5045,11 +5157,11 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
             builderForValue) {
       if (audioExportSettingsBuilder_ == null) {
         audioExportSettings_ = builderForValue.build();
-        onChanged();
       } else {
         audioExportSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -5059,13 +5171,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Controls audio export settings for post-conversation analytics when
      * ingesting audio to conversations via [Participants.AnalyzeContent][] or
      * [Participants.StreamingAnalyzeContent][].
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+     * is empty, audio export is disabled.
      * If audio export is enabled, audio is recorded and saved to
      * [audio_export_settings.gcs_bucket][], subject to retention policy of
      * [audio_export_settings.gcs_bucket][].
      * This setting won't effect audio input for implicit sessions via
-     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+     * or
+     * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
      * </pre>
      *
      * <code>
@@ -5075,20 +5191,20 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeAudioExportSettings(
         com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings value) {
       if (audioExportSettingsBuilder_ == null) {
-        if (audioExportSettings_ != null) {
-          audioExportSettings_ =
-              com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings.newBuilder(
-                      audioExportSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && audioExportSettings_ != null
+            && audioExportSettings_
+                != com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings
+                    .getDefaultInstance()) {
+          getAudioExportSettingsBuilder().mergeFrom(value);
         } else {
           audioExportSettings_ = value;
         }
-        onChanged();
       } else {
         audioExportSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -5098,13 +5214,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Controls audio export settings for post-conversation analytics when
      * ingesting audio to conversations via [Participants.AnalyzeContent][] or
      * [Participants.StreamingAnalyzeContent][].
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+     * is empty, audio export is disabled.
      * If audio export is enabled, audio is recorded and saved to
      * [audio_export_settings.gcs_bucket][], subject to retention policy of
      * [audio_export_settings.gcs_bucket][].
      * This setting won't effect audio input for implicit sessions via
-     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+     * or
+     * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
      * </pre>
      *
      * <code>
@@ -5112,14 +5232,13 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAudioExportSettings() {
-      if (audioExportSettingsBuilder_ == null) {
-        audioExportSettings_ = null;
-        onChanged();
-      } else {
-        audioExportSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      audioExportSettings_ = null;
+      if (audioExportSettingsBuilder_ != null) {
+        audioExportSettingsBuilder_.dispose();
         audioExportSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5129,13 +5248,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Controls audio export settings for post-conversation analytics when
      * ingesting audio to conversations via [Participants.AnalyzeContent][] or
      * [Participants.StreamingAnalyzeContent][].
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+     * is empty, audio export is disabled.
      * If audio export is enabled, audio is recorded and saved to
      * [audio_export_settings.gcs_bucket][], subject to retention policy of
      * [audio_export_settings.gcs_bucket][].
      * This setting won't effect audio input for implicit sessions via
-     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+     * or
+     * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
      * </pre>
      *
      * <code>
@@ -5144,7 +5267,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings.Builder
         getAudioExportSettingsBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getAudioExportSettingsFieldBuilder().getBuilder();
     }
@@ -5155,13 +5278,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Controls audio export settings for post-conversation analytics when
      * ingesting audio to conversations via [Participants.AnalyzeContent][] or
      * [Participants.StreamingAnalyzeContent][].
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+     * is empty, audio export is disabled.
      * If audio export is enabled, audio is recorded and saved to
      * [audio_export_settings.gcs_bucket][], subject to retention policy of
      * [audio_export_settings.gcs_bucket][].
      * This setting won't effect audio input for implicit sessions via
-     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+     * or
+     * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
      * </pre>
      *
      * <code>
@@ -5186,13 +5313,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Controls audio export settings for post-conversation analytics when
      * ingesting audio to conversations via [Participants.AnalyzeContent][] or
      * [Participants.StreamingAnalyzeContent][].
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
-     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
+     * is empty, audio export is disabled.
      * If audio export is enabled, audio is recorded and saved to
      * [audio_export_settings.gcs_bucket][], subject to retention policy of
      * [audio_export_settings.gcs_bucket][].
      * This setting won't effect audio input for implicit sessions via
-     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
+     * or
+     * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
      * </pre>
      *
      * <code>
@@ -5229,8 +5360,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Controls conversation exporting settings to Insights after conversation is
      * completed.
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-     * Insights export is disabled no matter what you configure here.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+     * what you configure here.
      * </pre>
      *
      * <code>
@@ -5240,7 +5373,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the insightsExportSettings field is set.
      */
     public boolean hasInsightsExportSettings() {
-      return insightsExportSettingsBuilder_ != null || insightsExportSettings_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -5248,8 +5381,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Controls conversation exporting settings to Insights after conversation is
      * completed.
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-     * Insights export is disabled no matter what you configure here.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+     * what you configure here.
      * </pre>
      *
      * <code>
@@ -5275,8 +5410,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Controls conversation exporting settings to Insights after conversation is
      * completed.
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-     * Insights export is disabled no matter what you configure here.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+     * what you configure here.
      * </pre>
      *
      * <code>
@@ -5290,11 +5427,11 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         insightsExportSettings_ = value;
-        onChanged();
       } else {
         insightsExportSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -5303,8 +5440,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Controls conversation exporting settings to Insights after conversation is
      * completed.
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-     * Insights export is disabled no matter what you configure here.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+     * what you configure here.
      * </pre>
      *
      * <code>
@@ -5316,11 +5455,11 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
             builderForValue) {
       if (insightsExportSettingsBuilder_ == null) {
         insightsExportSettings_ = builderForValue.build();
-        onChanged();
       } else {
         insightsExportSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -5329,8 +5468,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Controls conversation exporting settings to Insights after conversation is
      * completed.
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-     * Insights export is disabled no matter what you configure here.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+     * what you configure here.
      * </pre>
      *
      * <code>
@@ -5340,20 +5481,20 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeInsightsExportSettings(
         com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings value) {
       if (insightsExportSettingsBuilder_ == null) {
-        if (insightsExportSettings_ != null) {
-          insightsExportSettings_ =
-              com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.newBuilder(
-                      insightsExportSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && insightsExportSettings_ != null
+            && insightsExportSettings_
+                != com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+                    .getDefaultInstance()) {
+          getInsightsExportSettingsBuilder().mergeFrom(value);
         } else {
           insightsExportSettings_ = value;
         }
-        onChanged();
       } else {
         insightsExportSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -5362,8 +5503,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Controls conversation exporting settings to Insights after conversation is
      * completed.
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-     * Insights export is disabled no matter what you configure here.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+     * what you configure here.
      * </pre>
      *
      * <code>
@@ -5371,14 +5514,13 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearInsightsExportSettings() {
-      if (insightsExportSettingsBuilder_ == null) {
-        insightsExportSettings_ = null;
-        onChanged();
-      } else {
-        insightsExportSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      insightsExportSettings_ = null;
+      if (insightsExportSettingsBuilder_ != null) {
+        insightsExportSettingsBuilder_.dispose();
         insightsExportSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5387,8 +5529,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Controls conversation exporting settings to Insights after conversation is
      * completed.
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-     * Insights export is disabled no matter what you configure here.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+     * what you configure here.
      * </pre>
      *
      * <code>
@@ -5397,7 +5541,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.Builder
         getInsightsExportSettingsBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getInsightsExportSettingsFieldBuilder().getBuilder();
     }
@@ -5407,8 +5551,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Controls conversation exporting settings to Insights after conversation is
      * completed.
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-     * Insights export is disabled no matter what you configure here.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+     * what you configure here.
      * </pre>
      *
      * <code>
@@ -5432,8 +5578,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Controls conversation exporting settings to Insights after conversation is
      * completed.
-     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
-     * Insights export is disabled no matter what you configure here.
+     * If
+     * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+     * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
+     * what you configure here.
      * </pre>
      *
      * <code>

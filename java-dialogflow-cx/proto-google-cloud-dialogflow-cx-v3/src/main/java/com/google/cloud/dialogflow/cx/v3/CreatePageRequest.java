@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage].
+ * The request message for
+ * [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreatePageRequest}
@@ -69,7 +70,9 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,11 +174,13 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.PageOrBuilder getPageOrBuilder() {
-    return getPage();
+    return page_ == null ? com.google.cloud.dialogflow.cx.v3.Page.getDefaultInstance() : page_;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -443,7 +448,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage].
+   * The request message for
+   * [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreatePageRequest}
@@ -477,16 +483,14 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (pageBuilder_ == null) {
-        page_ = null;
-      } else {
-        page_ = null;
+      page_ = null;
+      if (pageBuilder_ != null) {
+        pageBuilder_.dispose();
         pageBuilder_ = null;
       }
       languageCode_ = "";
-
       return this;
     }
 
@@ -514,15 +518,24 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.cx.v3.CreatePageRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.CreatePageRequest result =
           new com.google.cloud.dialogflow.cx.v3.CreatePageRequest(this);
-      result.parent_ = parent_;
-      if (pageBuilder_ == null) {
-        result.page_ = page_;
-      } else {
-        result.page_ = pageBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.languageCode_ = languageCode_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.CreatePageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.page_ = pageBuilder_ == null ? page_ : pageBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -573,6 +586,7 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPage()) {
@@ -580,6 +594,7 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -611,19 +626,19 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -642,6 +657,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -716,8 +733,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -737,8 +754,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -763,8 +780,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -788,7 +805,7 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the page field is set.
      */
     public boolean hasPage() {
-      return pageBuilder_ != null || page_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -825,11 +842,11 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         page_ = value;
-        onChanged();
       } else {
         pageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -845,11 +862,11 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
     public Builder setPage(com.google.cloud.dialogflow.cx.v3.Page.Builder builderForValue) {
       if (pageBuilder_ == null) {
         page_ = builderForValue.build();
-        onChanged();
       } else {
         pageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -864,19 +881,18 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePage(com.google.cloud.dialogflow.cx.v3.Page value) {
       if (pageBuilder_ == null) {
-        if (page_ != null) {
-          page_ =
-              com.google.cloud.dialogflow.cx.v3.Page.newBuilder(page_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && page_ != null
+            && page_ != com.google.cloud.dialogflow.cx.v3.Page.getDefaultInstance()) {
+          getPageBuilder().mergeFrom(value);
         } else {
           page_ = value;
         }
-        onChanged();
       } else {
         pageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -890,14 +906,13 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearPage() {
-      if (pageBuilder_ == null) {
-        page_ = null;
-        onChanged();
-      } else {
-        page_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      page_ = null;
+      if (pageBuilder_ != null) {
+        pageBuilder_.dispose();
         pageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -911,7 +926,7 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Page.Builder getPageBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPageFieldBuilder().getBuilder();
     }
@@ -1071,8 +1086,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1105,8 +1120,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1144,8 +1159,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

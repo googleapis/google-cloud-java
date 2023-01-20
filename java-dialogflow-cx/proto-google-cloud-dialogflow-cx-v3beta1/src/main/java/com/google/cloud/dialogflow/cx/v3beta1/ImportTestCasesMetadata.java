@@ -70,6 +70,8 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
   }
 
   public static final int ERRORS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TestCaseError> errors_;
   /**
    *
@@ -341,6 +343,7 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
       } else {
@@ -376,7 +379,16 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata result =
           new com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata result) {
       if (errorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
@@ -386,8 +398,11 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -116,7 +116,9 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -532,8 +534,8 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -564,16 +566,26 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesRequest result =
           new com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesRequest(this);
-      result.parent_ = parent_;
-      if (sourceCase_ == 2) {
-        result.source_ = source_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 3) {
-        result.source_ = source_;
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -625,6 +637,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -674,7 +687,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -720,6 +733,8 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -791,8 +806,8 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -811,8 +826,8 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -836,8 +851,8 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

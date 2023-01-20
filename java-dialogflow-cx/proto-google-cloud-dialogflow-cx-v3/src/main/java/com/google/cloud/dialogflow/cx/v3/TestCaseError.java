@@ -110,7 +110,9 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.TestCaseOrBuilder getTestCaseOrBuilder() {
-    return getTestCase();
+    return testCase_ == null
+        ? com.google.cloud.dialogflow.cx.v3.TestCase.getDefaultInstance()
+        : testCase_;
   }
 
   public static final int STATUS_FIELD_NUMBER = 2;
@@ -156,7 +158,7 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -375,16 +377,15 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (testCaseBuilder_ == null) {
-        testCase_ = null;
-      } else {
-        testCase_ = null;
+      bitField0_ = 0;
+      testCase_ = null;
+      if (testCaseBuilder_ != null) {
+        testCaseBuilder_.dispose();
         testCaseBuilder_ = null;
       }
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
       return this;
@@ -414,18 +415,21 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.TestCaseError buildPartial() {
       com.google.cloud.dialogflow.cx.v3.TestCaseError result =
           new com.google.cloud.dialogflow.cx.v3.TestCaseError(this);
-      if (testCaseBuilder_ == null) {
-        result.testCase_ = testCase_;
-      } else {
-        result.testCase_ = testCaseBuilder_.build();
-      }
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.TestCaseError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.testCase_ = testCaseBuilder_ == null ? testCase_ : testCaseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -509,13 +513,13 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getTestCaseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -535,6 +539,8 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dialogflow.cx.v3.TestCase testCase_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3.TestCase,
@@ -553,7 +559,7 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the testCase field is set.
      */
     public boolean hasTestCase() {
-      return testCaseBuilder_ != null || testCase_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -590,11 +596,11 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         testCase_ = value;
-        onChanged();
       } else {
         testCaseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -609,11 +615,11 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
     public Builder setTestCase(com.google.cloud.dialogflow.cx.v3.TestCase.Builder builderForValue) {
       if (testCaseBuilder_ == null) {
         testCase_ = builderForValue.build();
-        onChanged();
       } else {
         testCaseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -627,19 +633,18 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTestCase(com.google.cloud.dialogflow.cx.v3.TestCase value) {
       if (testCaseBuilder_ == null) {
-        if (testCase_ != null) {
-          testCase_ =
-              com.google.cloud.dialogflow.cx.v3.TestCase.newBuilder(testCase_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && testCase_ != null
+            && testCase_ != com.google.cloud.dialogflow.cx.v3.TestCase.getDefaultInstance()) {
+          getTestCaseBuilder().mergeFrom(value);
         } else {
           testCase_ = value;
         }
-        onChanged();
       } else {
         testCaseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -652,14 +657,13 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.TestCase test_case = 1;</code>
      */
     public Builder clearTestCase() {
-      if (testCaseBuilder_ == null) {
-        testCase_ = null;
-        onChanged();
-      } else {
-        testCase_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      testCase_ = null;
+      if (testCaseBuilder_ != null) {
+        testCaseBuilder_.dispose();
         testCaseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -672,7 +676,7 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.TestCase test_case = 1;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.TestCase.Builder getTestCaseBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTestCaseFieldBuilder().getBuilder();
     }
@@ -736,7 +740,7 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -771,11 +775,11 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -790,11 +794,11 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -808,16 +812,18 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && status_ != null
+            && status_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -830,14 +836,13 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 2;</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -850,7 +855,7 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 2;</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }

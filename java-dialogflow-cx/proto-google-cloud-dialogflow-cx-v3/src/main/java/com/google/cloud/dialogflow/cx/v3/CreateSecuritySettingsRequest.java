@@ -68,12 +68,15 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The location to create an [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
+   * Required. The location to create an
+   * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
@@ -99,7 +102,8 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The location to create an [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
+   * Required. The location to create an
+   * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
@@ -174,7 +178,9 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SecuritySettingsOrBuilder
       getSecuritySettingsOrBuilder() {
-    return getSecuritySettings();
+    return securitySettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.getDefaultInstance()
+        : securitySettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -389,12 +395,11 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (securitySettingsBuilder_ == null) {
-        securitySettings_ = null;
-      } else {
-        securitySettings_ = null;
+      securitySettings_ = null;
+      if (securitySettingsBuilder_ != null) {
+        securitySettingsBuilder_.dispose();
         securitySettingsBuilder_ = null;
       }
       return this;
@@ -425,14 +430,23 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
     public com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest result =
           new com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest(this);
-      result.parent_ = parent_;
-      if (securitySettingsBuilder_ == null) {
-        result.securitySettings_ = securitySettings_;
-      } else {
-        result.securitySettings_ = securitySettingsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.securitySettings_ =
+            securitySettingsBuilder_ == null ? securitySettings_ : securitySettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -485,6 +499,7 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSecuritySettings()) {
@@ -519,14 +534,14 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getSecuritySettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -546,12 +561,15 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object parent_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The location to create an [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
+     * Required. The location to create an
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
@@ -576,7 +594,8 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The location to create an [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
+     * Required. The location to create an
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
@@ -601,7 +620,8 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The location to create an [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
+     * Required. The location to create an
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
@@ -616,8 +636,8 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,7 +645,8 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The location to create an [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
+     * Required. The location to create an
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
@@ -636,8 +657,8 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -645,7 +666,8 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The location to create an [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
+     * Required. The location to create an
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
@@ -661,8 +683,8 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,7 +709,7 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
      * @return Whether the securitySettings field is set.
      */
     public boolean hasSecuritySettings() {
-      return securitySettingsBuilder_ != null || securitySettings_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -728,11 +750,11 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         securitySettings_ = value;
-        onChanged();
       } else {
         securitySettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -750,11 +772,11 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
         com.google.cloud.dialogflow.cx.v3.SecuritySettings.Builder builderForValue) {
       if (securitySettingsBuilder_ == null) {
         securitySettings_ = builderForValue.build();
-        onChanged();
       } else {
         securitySettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -770,19 +792,19 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
      */
     public Builder mergeSecuritySettings(com.google.cloud.dialogflow.cx.v3.SecuritySettings value) {
       if (securitySettingsBuilder_ == null) {
-        if (securitySettings_ != null) {
-          securitySettings_ =
-              com.google.cloud.dialogflow.cx.v3.SecuritySettings.newBuilder(securitySettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && securitySettings_ != null
+            && securitySettings_
+                != com.google.cloud.dialogflow.cx.v3.SecuritySettings.getDefaultInstance()) {
+          getSecuritySettingsBuilder().mergeFrom(value);
         } else {
           securitySettings_ = value;
         }
-        onChanged();
       } else {
         securitySettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -797,14 +819,13 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearSecuritySettings() {
-      if (securitySettingsBuilder_ == null) {
-        securitySettings_ = null;
-        onChanged();
-      } else {
-        securitySettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      securitySettings_ = null;
+      if (securitySettingsBuilder_ != null) {
+        securitySettingsBuilder_.dispose();
         securitySettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -819,7 +840,7 @@ public final class CreateSecuritySettingsRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings.Builder getSecuritySettingsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSecuritySettingsFieldBuilder().getBuilder();
     }

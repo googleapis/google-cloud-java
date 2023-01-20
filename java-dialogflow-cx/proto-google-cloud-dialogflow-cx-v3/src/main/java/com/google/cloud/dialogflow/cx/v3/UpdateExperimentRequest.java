@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3.Experiments.UpdateExperiment].
+ * The request message for
+ * [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3.Experiments.UpdateExperiment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateExperimentRequest}
@@ -116,7 +117,9 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.ExperimentOrBuilder getExperimentOrBuilder() {
-    return getExperiment();
+    return experiment_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Experiment.getDefaultInstance()
+        : experiment_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +168,7 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -351,7 +354,8 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request message for [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3.Experiments.UpdateExperiment].
+   * The request message for
+   * [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3.Experiments.UpdateExperiment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateExperimentRequest}
@@ -385,16 +389,15 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (experimentBuilder_ == null) {
-        experiment_ = null;
-      } else {
-        experiment_ = null;
+      bitField0_ = 0;
+      experiment_ = null;
+      if (experimentBuilder_ != null) {
+        experimentBuilder_.dispose();
         experimentBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -424,18 +427,21 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest result =
           new com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest(this);
-      if (experimentBuilder_ == null) {
-        result.experiment_ = experiment_;
-      } else {
-        result.experiment_ = experimentBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.experiment_ = experimentBuilder_ == null ? experiment_ : experimentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -519,13 +525,13 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getExperimentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +550,8 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3.Experiment experiment_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -565,7 +573,7 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
      * @return Whether the experiment field is set.
      */
     public boolean hasExperiment() {
-      return experimentBuilder_ != null || experiment_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -606,11 +614,11 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         experiment_ = value;
-        onChanged();
       } else {
         experimentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -628,11 +636,11 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
         com.google.cloud.dialogflow.cx.v3.Experiment.Builder builderForValue) {
       if (experimentBuilder_ == null) {
         experiment_ = builderForValue.build();
-        onChanged();
       } else {
         experimentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,19 +656,18 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
      */
     public Builder mergeExperiment(com.google.cloud.dialogflow.cx.v3.Experiment value) {
       if (experimentBuilder_ == null) {
-        if (experiment_ != null) {
-          experiment_ =
-              com.google.cloud.dialogflow.cx.v3.Experiment.newBuilder(experiment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && experiment_ != null
+            && experiment_ != com.google.cloud.dialogflow.cx.v3.Experiment.getDefaultInstance()) {
+          getExperimentBuilder().mergeFrom(value);
         } else {
           experiment_ = value;
         }
-        onChanged();
       } else {
         experimentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,14 +682,13 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearExperiment() {
-      if (experimentBuilder_ == null) {
-        experiment_ = null;
-        onChanged();
-      } else {
-        experiment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      experiment_ = null;
+      if (experimentBuilder_ != null) {
+        experimentBuilder_.dispose();
         experimentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -697,7 +703,7 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment.Builder getExperimentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getExperimentFieldBuilder().getBuilder();
     }
@@ -768,7 +774,7 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -807,11 +813,11 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,11 +833,11 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -846,17 +852,18 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -870,14 +877,13 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -891,7 +897,7 @@ public final class UpdateExperimentRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

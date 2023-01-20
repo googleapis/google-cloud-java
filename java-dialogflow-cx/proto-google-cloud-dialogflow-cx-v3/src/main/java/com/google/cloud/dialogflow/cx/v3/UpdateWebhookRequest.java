@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook].
+ * The request message for
+ * [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateWebhookRequest}
@@ -116,7 +117,9 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.WebhookOrBuilder getWebhookOrBuilder() {
-    return getWebhook();
+    return webhook_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Webhook.getDefaultInstance()
+        : webhook_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +168,7 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -351,7 +354,8 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook].
+   * The request message for
+   * [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateWebhookRequest}
@@ -385,16 +389,15 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (webhookBuilder_ == null) {
-        webhook_ = null;
-      } else {
-        webhook_ = null;
+      bitField0_ = 0;
+      webhook_ = null;
+      if (webhookBuilder_ != null) {
+        webhookBuilder_.dispose();
         webhookBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -424,18 +427,21 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest result =
           new com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest(this);
-      if (webhookBuilder_ == null) {
-        result.webhook_ = webhook_;
-      } else {
-        result.webhook_ = webhookBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.webhook_ = webhookBuilder_ == null ? webhook_ : webhookBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -519,13 +525,13 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getWebhookFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +550,8 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3.Webhook webhook_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -565,7 +573,7 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the webhook field is set.
      */
     public boolean hasWebhook() {
-      return webhookBuilder_ != null || webhook_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -606,11 +614,11 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         webhook_ = value;
-        onChanged();
       } else {
         webhookBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -627,11 +635,11 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
     public Builder setWebhook(com.google.cloud.dialogflow.cx.v3.Webhook.Builder builderForValue) {
       if (webhookBuilder_ == null) {
         webhook_ = builderForValue.build();
-        onChanged();
       } else {
         webhookBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -647,19 +655,18 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeWebhook(com.google.cloud.dialogflow.cx.v3.Webhook value) {
       if (webhookBuilder_ == null) {
-        if (webhook_ != null) {
-          webhook_ =
-              com.google.cloud.dialogflow.cx.v3.Webhook.newBuilder(webhook_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && webhook_ != null
+            && webhook_ != com.google.cloud.dialogflow.cx.v3.Webhook.getDefaultInstance()) {
+          getWebhookBuilder().mergeFrom(value);
         } else {
           webhook_ = value;
         }
-        onChanged();
       } else {
         webhookBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -674,14 +681,13 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearWebhook() {
-      if (webhookBuilder_ == null) {
-        webhook_ = null;
-        onChanged();
-      } else {
-        webhook_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      webhook_ = null;
+      if (webhookBuilder_ != null) {
+        webhookBuilder_.dispose();
         webhookBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -696,7 +702,7 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Webhook.Builder getWebhookBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getWebhookFieldBuilder().getBuilder();
     }
@@ -767,7 +773,7 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -806,11 +812,11 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -826,11 +832,11 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -845,17 +851,18 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -869,14 +876,13 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -890,7 +896,7 @@ public final class UpdateWebhookRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

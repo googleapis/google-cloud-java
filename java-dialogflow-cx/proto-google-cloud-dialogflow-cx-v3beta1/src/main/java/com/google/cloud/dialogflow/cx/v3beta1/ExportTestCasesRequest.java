@@ -274,7 +274,9 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -423,7 +425,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int DATA_FORMAT_FIELD_NUMBER = 3;
-  private int dataFormat_;
+  private int dataFormat_ = 0;
   /**
    *
    *
@@ -456,9 +458,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest.DataFormat getDataFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest.DataFormat result =
-        com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest.DataFormat.valueOf(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest.DataFormat.forNumber(
             dataFormat_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest.DataFormat.UNRECOGNIZED
@@ -466,7 +467,9 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int FILTER_FIELD_NUMBER = 4;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -771,12 +774,10 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       dataFormat_ = 0;
-
       filter_ = "";
-
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -807,15 +808,32 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest result =
           new com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest(this);
-      result.parent_ = parent_;
-      if (destinationCase_ == 2) {
-        result.destination_ = destination_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.dataFormat_ = dataFormat_;
-      result.filter_ = filter_;
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dataFormat_ = dataFormat_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.filter_ = filter_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
     }
 
     @java.lang.Override
@@ -867,6 +885,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.dataFormat_ != 0) {
@@ -874,6 +893,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getDestinationCase()) {
@@ -918,7 +938,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -931,13 +951,13 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
             case 24:
               {
                 dataFormat_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -970,6 +990,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -1041,8 +1063,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1061,8 +1083,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1086,8 +1108,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1307,8 +1329,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setDataFormatValue(int value) {
-
       dataFormat_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1328,9 +1350,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest.DataFormat
         getDataFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest.DataFormat result =
-          com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest.DataFormat.valueOf(
+          com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest.DataFormat.forNumber(
               dataFormat_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest.DataFormat.UNRECOGNIZED
@@ -1355,7 +1376,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       dataFormat_ = value.getNumber();
       onChanged();
       return this;
@@ -1374,7 +1395,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDataFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       dataFormat_ = 0;
       onChanged();
       return this;
@@ -1459,8 +1480,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1482,8 +1503,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1510,8 +1531,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

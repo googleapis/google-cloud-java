@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
+ * The request message for
+ * [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateVersionRequest}
@@ -116,7 +117,9 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.VersionOrBuilder getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Version.getDefaultInstance()
+        : version_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -125,8 +128,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only `description`
-   * and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only
+   * `description` and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -142,8 +145,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only `description`
-   * and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only
+   * `description` and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -159,8 +162,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only `description`
-   * and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only
+   * `description` and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -168,7 +171,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -354,7 +357,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
+   * The request message for
+   * [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateVersionRequest}
@@ -388,16 +392,15 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      bitField0_ = 0;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -427,18 +430,21 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3.UpdateVersionRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.UpdateVersionRequest result =
           new com.google.cloud.dialogflow.cx.v3.UpdateVersionRequest(this);
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.UpdateVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -522,13 +528,13 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -547,6 +553,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.cx.v3.Version version_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -568,7 +576,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -609,11 +617,11 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -630,11 +638,11 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
     public Builder setVersion(com.google.cloud.dialogflow.cx.v3.Version.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -650,19 +658,18 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeVersion(com.google.cloud.dialogflow.cx.v3.Version value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ =
-              com.google.cloud.dialogflow.cx.v3.Version.newBuilder(version_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && version_ != null
+            && version_ != com.google.cloud.dialogflow.cx.v3.Version.getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -677,14 +684,13 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -699,7 +705,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Version.Builder getVersionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
@@ -761,8 +767,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -771,14 +777,14 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -799,8 +805,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -812,19 +818,19 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -833,19 +839,19 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -853,54 +859,54 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -908,8 +914,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -928,8 +934,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

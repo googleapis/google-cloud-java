@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3.Experiments.CreateExperiment].
+ * The request message for
+ * [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3.Experiments.CreateExperiment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateExperimentRequest}
@@ -68,13 +69,16 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+   * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
@@ -100,8 +104,9 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+   * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
@@ -175,7 +180,9 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.ExperimentOrBuilder getExperimentOrBuilder() {
-    return getExperiment();
+    return experiment_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Experiment.getDefaultInstance()
+        : experiment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -356,7 +363,8 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request message for [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3.Experiments.CreateExperiment].
+   * The request message for
+   * [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3.Experiments.CreateExperiment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateExperimentRequest}
@@ -390,12 +398,11 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (experimentBuilder_ == null) {
-        experiment_ = null;
-      } else {
-        experiment_ = null;
+      experiment_ = null;
+      if (experimentBuilder_ != null) {
+        experimentBuilder_.dispose();
         experimentBuilder_ = null;
       }
       return this;
@@ -425,14 +432,21 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest result =
           new com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest(this);
-      result.parent_ = parent_;
-      if (experimentBuilder_ == null) {
-        result.experiment_ = experiment_;
-      } else {
-        result.experiment_ = experimentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.experiment_ = experimentBuilder_ == null ? experiment_ : experimentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -483,6 +497,7 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExperiment()) {
@@ -517,13 +532,13 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExperimentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,13 +558,16 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object parent_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
@@ -574,8 +592,9 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
@@ -600,8 +619,9 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
@@ -616,8 +636,8 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,8 +645,9 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
@@ -637,8 +658,8 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -646,8 +667,9 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
+     * [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
@@ -663,8 +685,8 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -689,7 +711,7 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
      * @return Whether the experiment field is set.
      */
     public boolean hasExperiment() {
-      return experimentBuilder_ != null || experiment_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -730,11 +752,11 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         experiment_ = value;
-        onChanged();
       } else {
         experimentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -752,11 +774,11 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
         com.google.cloud.dialogflow.cx.v3.Experiment.Builder builderForValue) {
       if (experimentBuilder_ == null) {
         experiment_ = builderForValue.build();
-        onChanged();
       } else {
         experimentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -772,19 +794,18 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
      */
     public Builder mergeExperiment(com.google.cloud.dialogflow.cx.v3.Experiment value) {
       if (experimentBuilder_ == null) {
-        if (experiment_ != null) {
-          experiment_ =
-              com.google.cloud.dialogflow.cx.v3.Experiment.newBuilder(experiment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && experiment_ != null
+            && experiment_ != com.google.cloud.dialogflow.cx.v3.Experiment.getDefaultInstance()) {
+          getExperimentBuilder().mergeFrom(value);
         } else {
           experiment_ = value;
         }
-        onChanged();
       } else {
         experimentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,14 +820,13 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearExperiment() {
-      if (experimentBuilder_ == null) {
-        experiment_ = null;
-        onChanged();
-      } else {
-        experiment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      experiment_ = null;
+      if (experimentBuilder_ != null) {
+        experimentBuilder_.dispose();
         experimentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -821,7 +841,7 @@ public final class CreateExperimentRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment.Builder getExperimentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExperimentFieldBuilder().getBuilder();
     }

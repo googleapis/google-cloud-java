@@ -71,7 +71,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
-  private int audioEncoding_;
+  private int audioEncoding_ = 0;
   /**
    *
    *
@@ -104,14 +104,13 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.AudioEncoding getAudioEncoding() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.AudioEncoding result =
-        com.google.cloud.dialogflow.cx.v3.AudioEncoding.valueOf(audioEncoding_);
+        com.google.cloud.dialogflow.cx.v3.AudioEncoding.forNumber(audioEncoding_);
     return result == null ? com.google.cloud.dialogflow.cx.v3.AudioEncoding.UNRECOGNIZED : result;
   }
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 2;
-  private int sampleRateHertz_;
+  private int sampleRateHertz_ = 0;
   /**
    *
    *
@@ -133,15 +132,17 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ENABLE_WORD_INFO_FIELD_NUMBER = 13;
-  private boolean enableWordInfo_;
+  private boolean enableWordInfo_ = false;
   /**
    *
    *
    * <pre>
-   * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.cx.v3.SpeechWordInfo] in
-   * [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult] with information about the recognized speech
-   * words, e.g. start and end time offsets. If false or unspecified, Speech
-   * doesn't return any word-level information.
+   * Optional. If `true`, Dialogflow returns
+   * [SpeechWordInfo][google.cloud.dialogflow.cx.v3.SpeechWordInfo] in
+   * [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult]
+   * with information about the recognized speech words, e.g. start and end time
+   * offsets. If false or unspecified, Speech doesn't return any word-level
+   * information.
    * </pre>
    *
    * <code>bool enable_word_info = 13;</code>
@@ -154,6 +155,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PHRASE_HINTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList phraseHints_;
   /**
    *
@@ -231,7 +234,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MODEL_FIELD_NUMBER = 7;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -300,12 +305,13 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MODEL_VARIANT_FIELD_NUMBER = 10;
-  private int modelVariant_;
+  private int modelVariant_ = 0;
   /**
    *
    *
    * <pre>
-   * Optional. Which variant of the [Speech model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
+   * Optional. Which variant of the [Speech
+   * model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.SpeechModelVariant model_variant = 10;</code>
@@ -320,7 +326,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Which variant of the [Speech model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
+   * Optional. Which variant of the [Speech
+   * model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.SpeechModelVariant model_variant = 10;</code>
@@ -329,16 +336,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SpeechModelVariant getModelVariant() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.SpeechModelVariant result =
-        com.google.cloud.dialogflow.cx.v3.SpeechModelVariant.valueOf(modelVariant_);
+        com.google.cloud.dialogflow.cx.v3.SpeechModelVariant.forNumber(modelVariant_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.SpeechModelVariant.UNRECOGNIZED
         : result;
   }
 
   public static final int SINGLE_UTTERANCE_FIELD_NUMBER = 8;
-  private boolean singleUtterance_;
+  private boolean singleUtterance_ = false;
   /**
    *
    *
@@ -626,20 +632,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       audioEncoding_ = 0;
-
       sampleRateHertz_ = 0;
-
       enableWordInfo_ = false;
-
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       model_ = "";
-
       modelVariant_ = 0;
-
       singleUtterance_ = false;
-
       return this;
     }
 
@@ -667,20 +668,43 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.cx.v3.InputAudioConfig buildPartial() {
       com.google.cloud.dialogflow.cx.v3.InputAudioConfig result =
           new com.google.cloud.dialogflow.cx.v3.InputAudioConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.audioEncoding_ = audioEncoding_;
-      result.sampleRateHertz_ = sampleRateHertz_;
-      result.enableWordInfo_ = enableWordInfo_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        phraseHints_ = phraseHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.phraseHints_ = phraseHints_;
-      result.model_ = model_;
-      result.modelVariant_ = modelVariant_;
-      result.singleUtterance_ = singleUtterance_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.InputAudioConfig result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        phraseHints_ = phraseHints_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.phraseHints_ = phraseHints_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.InputAudioConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.audioEncoding_ = audioEncoding_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sampleRateHertz_ = sampleRateHertz_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enableWordInfo_ = enableWordInfo_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.modelVariant_ = modelVariant_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.singleUtterance_ = singleUtterance_;
+      }
     }
 
     @java.lang.Override
@@ -741,7 +765,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (!other.phraseHints_.isEmpty()) {
         if (phraseHints_.isEmpty()) {
           phraseHints_ = other.phraseHints_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensurePhraseHintsIsMutable();
           phraseHints_.addAll(other.phraseHints_);
@@ -750,6 +774,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.modelVariant_ != 0) {
@@ -787,13 +812,13 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 audioEncoding_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 sampleRateHertz_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 34:
@@ -806,25 +831,25 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             case 58:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 64:
               {
                 singleUtterance_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 80:
               {
                 modelVariant_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 80
             case 104:
               {
                 enableWordInfo_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 104
             default:
@@ -879,8 +904,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAudioEncodingValue(int value) {
-
       audioEncoding_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -899,9 +924,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.AudioEncoding getAudioEncoding() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.AudioEncoding result =
-          com.google.cloud.dialogflow.cx.v3.AudioEncoding.valueOf(audioEncoding_);
+          com.google.cloud.dialogflow.cx.v3.AudioEncoding.forNumber(audioEncoding_);
       return result == null ? com.google.cloud.dialogflow.cx.v3.AudioEncoding.UNRECOGNIZED : result;
     }
     /**
@@ -922,7 +946,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       audioEncoding_ = value.getNumber();
       onChanged();
       return this;
@@ -941,7 +965,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAudioEncoding() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       audioEncoding_ = 0;
       onChanged();
       return this;
@@ -986,6 +1010,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder setSampleRateHertz(int value) {
 
       sampleRateHertz_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1005,7 +1030,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       sampleRateHertz_ = 0;
       onChanged();
       return this;
@@ -1016,10 +1041,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.cx.v3.SpeechWordInfo] in
-     * [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult] with information about the recognized speech
-     * words, e.g. start and end time offsets. If false or unspecified, Speech
-     * doesn't return any word-level information.
+     * Optional. If `true`, Dialogflow returns
+     * [SpeechWordInfo][google.cloud.dialogflow.cx.v3.SpeechWordInfo] in
+     * [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult]
+     * with information about the recognized speech words, e.g. start and end time
+     * offsets. If false or unspecified, Speech doesn't return any word-level
+     * information.
      * </pre>
      *
      * <code>bool enable_word_info = 13;</code>
@@ -1034,10 +1061,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.cx.v3.SpeechWordInfo] in
-     * [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult] with information about the recognized speech
-     * words, e.g. start and end time offsets. If false or unspecified, Speech
-     * doesn't return any word-level information.
+     * Optional. If `true`, Dialogflow returns
+     * [SpeechWordInfo][google.cloud.dialogflow.cx.v3.SpeechWordInfo] in
+     * [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult]
+     * with information about the recognized speech words, e.g. start and end time
+     * offsets. If false or unspecified, Speech doesn't return any word-level
+     * information.
      * </pre>
      *
      * <code>bool enable_word_info = 13;</code>
@@ -1048,6 +1077,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder setEnableWordInfo(boolean value) {
 
       enableWordInfo_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1055,10 +1085,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.cx.v3.SpeechWordInfo] in
-     * [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult] with information about the recognized speech
-     * words, e.g. start and end time offsets. If false or unspecified, Speech
-     * doesn't return any word-level information.
+     * Optional. If `true`, Dialogflow returns
+     * [SpeechWordInfo][google.cloud.dialogflow.cx.v3.SpeechWordInfo] in
+     * [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult]
+     * with information about the recognized speech words, e.g. start and end time
+     * offsets. If false or unspecified, Speech doesn't return any word-level
+     * information.
      * </pre>
      *
      * <code>bool enable_word_info = 13;</code>
@@ -1066,7 +1098,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableWordInfo() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableWordInfo_ = false;
       onChanged();
       return this;
@@ -1076,9 +1108,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePhraseHintsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         phraseHints_ = new com.google.protobuf.LazyStringArrayList(phraseHints_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1245,7 +1277,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPhraseHints() {
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1367,8 +1399,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1394,8 +1426,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1426,8 +1458,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1437,7 +1469,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Which variant of the [Speech model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
+     * Optional. Which variant of the [Speech
+     * model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SpeechModelVariant model_variant = 10;</code>
@@ -1452,7 +1485,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Which variant of the [Speech model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
+     * Optional. Which variant of the [Speech
+     * model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SpeechModelVariant model_variant = 10;</code>
@@ -1461,8 +1495,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setModelVariantValue(int value) {
-
       modelVariant_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1470,7 +1504,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Which variant of the [Speech model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
+     * Optional. Which variant of the [Speech
+     * model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SpeechModelVariant model_variant = 10;</code>
@@ -1479,9 +1514,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.SpeechModelVariant getModelVariant() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.SpeechModelVariant result =
-          com.google.cloud.dialogflow.cx.v3.SpeechModelVariant.valueOf(modelVariant_);
+          com.google.cloud.dialogflow.cx.v3.SpeechModelVariant.forNumber(modelVariant_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.SpeechModelVariant.UNRECOGNIZED
           : result;
@@ -1490,7 +1524,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Which variant of the [Speech model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
+     * Optional. Which variant of the [Speech
+     * model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SpeechModelVariant model_variant = 10;</code>
@@ -1502,7 +1537,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       modelVariant_ = value.getNumber();
       onChanged();
       return this;
@@ -1511,7 +1546,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Which variant of the [Speech model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
+     * Optional. Which variant of the [Speech
+     * model][google.cloud.dialogflow.cx.v3.InputAudioConfig.model] to use.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SpeechModelVariant model_variant = 10;</code>
@@ -1519,7 +1555,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearModelVariant() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       modelVariant_ = 0;
       onChanged();
       return this;
@@ -1570,6 +1606,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder setSingleUtterance(boolean value) {
 
       singleUtterance_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1592,7 +1629,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSingleUtterance() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       singleUtterance_ = false;
       onChanged();
       return this;

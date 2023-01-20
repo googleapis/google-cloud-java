@@ -71,8 +71,8 @@ public interface UpdateSecuritySettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If the mask is not present,
-   * all fields will be updated.
+   * Required. The mask to control which fields get updated. If the mask is not
+   * present, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -85,8 +85,8 @@ public interface UpdateSecuritySettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If the mask is not present,
-   * all fields will be updated.
+   * Required. The mask to control which fields get updated. If the mask is not
+   * present, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -99,8 +99,8 @@ public interface UpdateSecuritySettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If the mask is not present,
-   * all fields will be updated.
+   * Required. The mask to control which fields get updated. If the mask is not
+   * present, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

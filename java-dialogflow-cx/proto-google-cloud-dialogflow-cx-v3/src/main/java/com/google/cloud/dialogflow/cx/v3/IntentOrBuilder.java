@@ -28,7 +28,10 @@ public interface IntentOrBuilder
    *
    * <pre>
    * The unique identifier of the intent.
-   * Required for the [Intents.UpdateIntent][google.cloud.dialogflow.cx.v3.Intents.UpdateIntent] method. [Intents.CreateIntent][google.cloud.dialogflow.cx.v3.Intents.CreateIntent]
+   * Required for the
+   * [Intents.UpdateIntent][google.cloud.dialogflow.cx.v3.Intents.UpdateIntent]
+   * method.
+   * [Intents.CreateIntent][google.cloud.dialogflow.cx.v3.Intents.CreateIntent]
    * populates the name automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
@@ -44,7 +47,10 @@ public interface IntentOrBuilder
    *
    * <pre>
    * The unique identifier of the intent.
-   * Required for the [Intents.UpdateIntent][google.cloud.dialogflow.cx.v3.Intents.UpdateIntent] method. [Intents.CreateIntent][google.cloud.dialogflow.cx.v3.Intents.CreateIntent]
+   * Required for the
+   * [Intents.UpdateIntent][google.cloud.dialogflow.cx.v3.Intents.UpdateIntent]
+   * method.
+   * [Intents.CreateIntent][google.cloud.dialogflow.cx.v3.Intents.CreateIntent]
    * populates the name automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
@@ -315,7 +321,6 @@ public interface IntentOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

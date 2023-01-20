@@ -155,12 +155,11 @@ public final class IntentProto {
           + "\332A\004name\032x\312A\031dialogflow.googleapis.com\322AY"
           + "https://www.googleapis.com/auth/cloud-pl"
           + "atform,https://www.googleapis.com/auth/d"
-          + "ialogflowB\277\001\n!com.google.cloud.dialogflo"
-          + "w.cx.v3B\013IntentProtoP\001Z?google.golang.or"
-          + "g/genproto/googleapis/cloud/dialogflow/c"
-          + "x/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflo"
-          + "w.Cx.V3\352\002!Google::Cloud::Dialogflow::CX:"
-          + ":V3b\006proto3"
+          + "ialogflowB\261\001\n!com.google.cloud.dialogflo"
+          + "w.cx.v3B\013IntentProtoP\001Z1cloud.google.com"
+          + "/go/dialogflow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002D"
+          + "F\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!Goog"
+          + "le::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

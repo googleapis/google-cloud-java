@@ -70,7 +70,8 @@ public interface UpdateTestCaseRequestOrBuilder
    * <pre>
    * Required. The mask to specify which fields should be updated. The
    * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+   * cannot be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -85,7 +86,8 @@ public interface UpdateTestCaseRequestOrBuilder
    * <pre>
    * Required. The mask to specify which fields should be updated. The
    * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+   * cannot be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -100,7 +102,8 @@ public interface UpdateTestCaseRequestOrBuilder
    * <pre>
    * Required. The mask to specify which fields should be updated. The
    * [`creationTime`][google.cloud.dialogflow.cx.v3.TestCase.creation_time] and
-   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
+   * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result]
+   * cannot be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

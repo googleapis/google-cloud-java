@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [Flows.ImportFlow][google.cloud.dialogflow.cx.v3.Flows.ImportFlow].
+ * The request message for
+ * [Flows.ImportFlow][google.cloud.dialogflow.cx.v3.Flows.ImportFlow].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.ImportFlowRequest}
@@ -283,7 +284,9 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -464,7 +467,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int IMPORT_OPTION_FIELD_NUMBER = 4;
-  private int importOption_;
+  private int importOption_ = 0;
   /**
    *
    *
@@ -493,9 +496,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption getImportOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption result =
-        com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption.valueOf(importOption_);
+        com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption.forNumber(importOption_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption.UNRECOGNIZED
         : result;
@@ -716,7 +718,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [Flows.ImportFlow][google.cloud.dialogflow.cx.v3.Flows.ImportFlow].
+   * The request message for
+   * [Flows.ImportFlow][google.cloud.dialogflow.cx.v3.Flows.ImportFlow].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.ImportFlowRequest}
@@ -750,10 +753,9 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       importOption_ = 0;
-
       flowCase_ = 0;
       flow_ = null;
       return this;
@@ -783,17 +785,27 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.cx.v3.ImportFlowRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.ImportFlowRequest result =
           new com.google.cloud.dialogflow.cx.v3.ImportFlowRequest(this);
-      result.parent_ = parent_;
-      if (flowCase_ == 2) {
-        result.flow_ = flow_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (flowCase_ == 3) {
-        result.flow_ = flow_;
-      }
-      result.importOption_ = importOption_;
-      result.flowCase_ = flowCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.ImportFlowRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.importOption_ = importOption_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3.ImportFlowRequest result) {
+      result.flowCase_ = flowCase_;
+      result.flow_ = this.flow_;
     }
 
     @java.lang.Override
@@ -844,6 +856,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.importOption_ != 0) {
@@ -896,7 +909,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -915,7 +928,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
             case 32:
               {
                 importOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -948,6 +961,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -1019,8 +1034,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1039,8 +1054,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1064,8 +1079,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1347,8 +1362,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setImportOptionValue(int value) {
-
       importOption_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1365,9 +1380,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption getImportOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption result =
-          com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption.valueOf(importOption_);
+          com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption.forNumber(importOption_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption.UNRECOGNIZED
           : result;
@@ -1389,7 +1403,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       importOption_ = value.getNumber();
       onChanged();
       return this;
@@ -1406,7 +1420,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearImportOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       importOption_ = 0;
       onChanged();
       return this;

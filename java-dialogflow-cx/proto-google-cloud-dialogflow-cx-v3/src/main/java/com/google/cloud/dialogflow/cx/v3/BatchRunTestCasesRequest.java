@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases].
+ * The request message for
+ * [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest}
@@ -70,13 +71,15 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
-   * &lt;AgentID&gt;`.
+   * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/ &lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -101,8 +104,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
-   * &lt;AgentID&gt;`.
+   * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/ &lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -125,14 +128,16 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object environment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object environment_ = "";
   /**
    *
    *
    * <pre>
-   * Optional. If not set, draft environment is assumed. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   * ID&gt;`.
+   * Optional. If not set, draft environment is assumed. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
    * <code>
@@ -157,9 +162,9 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. If not set, draft environment is assumed. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   * ID&gt;`.
+   * Optional. If not set, draft environment is assumed. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
    * <code>
@@ -182,13 +187,15 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
   }
 
   public static final int TEST_CASES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList testCases_;
   /**
    *
    *
    * <pre>
-   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>
@@ -204,8 +211,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>
@@ -221,8 +228,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>
@@ -239,8 +246,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>
@@ -443,7 +450,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request message for [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases].
+   * The request message for
+   * [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest}
@@ -477,12 +485,11 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       environment_ = "";
-
       testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -510,16 +517,31 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     public com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest result =
           new com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      result.environment_ = environment_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        testCases_ = testCases_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.testCases_ = testCases_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        testCases_ = testCases_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.testCases_ = testCases_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.environment_ = environment_;
+      }
     }
 
     @java.lang.Override
@@ -570,16 +592,18 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEnvironment().isEmpty()) {
         environment_ = other.environment_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.testCases_.isEmpty()) {
         if (testCases_.isEmpty()) {
           testCases_ = other.testCases_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureTestCasesIsMutable();
           testCases_.addAll(other.testCases_);
@@ -615,13 +639,13 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 environment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -655,8 +679,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
-     * &lt;AgentID&gt;`.
+     * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/ &lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -680,8 +704,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
-     * &lt;AgentID&gt;`.
+     * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/ &lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -705,8 +729,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
-     * &lt;AgentID&gt;`.
+     * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/ &lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -720,8 +744,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -729,8 +753,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
-     * &lt;AgentID&gt;`.
+     * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/ &lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -740,8 +764,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -749,8 +773,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
-     * &lt;AgentID&gt;`.
+     * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/ &lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -765,8 +789,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -776,9 +800,9 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If not set, draft environment is assumed. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Optional. If not set, draft environment is assumed. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>
@@ -802,9 +826,9 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If not set, draft environment is assumed. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Optional. If not set, draft environment is assumed. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>
@@ -828,9 +852,9 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If not set, draft environment is assumed. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Optional. If not set, draft environment is assumed. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>
@@ -844,8 +868,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       environment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -853,9 +877,9 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If not set, draft environment is assumed. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Optional. If not set, draft environment is assumed. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>
@@ -865,8 +889,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearEnvironment() {
-
       environment_ = getDefaultInstance().getEnvironment();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -874,9 +898,9 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If not set, draft environment is assumed. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Optional. If not set, draft environment is assumed. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>
@@ -891,8 +915,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       environment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -901,17 +925,17 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTestCasesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         testCases_ = new com.google.protobuf.LazyStringArrayList(testCases_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -927,8 +951,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -944,8 +968,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -962,8 +986,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -980,8 +1004,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -1005,8 +1029,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -1029,8 +1053,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -1050,8 +1074,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>
@@ -1062,7 +1086,7 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      */
     public Builder clearTestCases() {
       testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1070,8 +1094,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
      * </pre>
      *
      * <code>

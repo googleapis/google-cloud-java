@@ -68,7 +68,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
-  private int audioEncoding_;
+  private int audioEncoding_ = 0;
   /**
    *
    *
@@ -101,16 +101,15 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding getAudioEncoding() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding result =
-        com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding.valueOf(audioEncoding_);
+        com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding.forNumber(audioEncoding_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding.UNRECOGNIZED
         : result;
   }
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 2;
-  private int sampleRateHertz_;
+  private int sampleRateHertz_ = 0;
   /**
    *
    *
@@ -180,7 +179,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfigOrBuilder
       getSynthesizeSpeechConfigOrBuilder() {
-    return getSynthesizeSpeechConfig();
+    return synthesizeSpeechConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig.getDefaultInstance()
+        : synthesizeSpeechConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -408,14 +409,12 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       audioEncoding_ = 0;
-
       sampleRateHertz_ = 0;
-
-      if (synthesizeSpeechConfigBuilder_ == null) {
-        synthesizeSpeechConfig_ = null;
-      } else {
-        synthesizeSpeechConfig_ = null;
+      synthesizeSpeechConfig_ = null;
+      if (synthesizeSpeechConfigBuilder_ != null) {
+        synthesizeSpeechConfigBuilder_.dispose();
         synthesizeSpeechConfigBuilder_ = null;
       }
       return this;
@@ -445,15 +444,27 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.cx.v3.OutputAudioConfig buildPartial() {
       com.google.cloud.dialogflow.cx.v3.OutputAudioConfig result =
           new com.google.cloud.dialogflow.cx.v3.OutputAudioConfig(this);
-      result.audioEncoding_ = audioEncoding_;
-      result.sampleRateHertz_ = sampleRateHertz_;
-      if (synthesizeSpeechConfigBuilder_ == null) {
-        result.synthesizeSpeechConfig_ = synthesizeSpeechConfig_;
-      } else {
-        result.synthesizeSpeechConfig_ = synthesizeSpeechConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.OutputAudioConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.audioEncoding_ = audioEncoding_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sampleRateHertz_ = sampleRateHertz_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.synthesizeSpeechConfig_ =
+            synthesizeSpeechConfigBuilder_ == null
+                ? synthesizeSpeechConfig_
+                : synthesizeSpeechConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -540,20 +551,20 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 audioEncoding_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 sampleRateHertz_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getSynthesizeSpeechConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -572,6 +583,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int audioEncoding_ = 0;
     /**
@@ -606,8 +619,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setAudioEncodingValue(int value) {
-
       audioEncoding_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -626,9 +639,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding getAudioEncoding() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding result =
-          com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding.valueOf(audioEncoding_);
+          com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding.forNumber(audioEncoding_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding.UNRECOGNIZED
           : result;
@@ -651,7 +663,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       audioEncoding_ = value.getNumber();
       onChanged();
       return this;
@@ -670,7 +682,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAudioEncoding() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       audioEncoding_ = 0;
       onChanged();
       return this;
@@ -715,6 +727,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     public Builder setSampleRateHertz(int value) {
 
       sampleRateHertz_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -734,7 +747,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       sampleRateHertz_ = 0;
       onChanged();
       return this;
@@ -759,7 +772,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the synthesizeSpeechConfig field is set.
      */
     public boolean hasSynthesizeSpeechConfig() {
-      return synthesizeSpeechConfigBuilder_ != null || synthesizeSpeechConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -799,11 +812,11 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         synthesizeSpeechConfig_ = value;
-        onChanged();
       } else {
         synthesizeSpeechConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -820,11 +833,11 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig.Builder builderForValue) {
       if (synthesizeSpeechConfigBuilder_ == null) {
         synthesizeSpeechConfig_ = builderForValue.build();
-        onChanged();
       } else {
         synthesizeSpeechConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -840,20 +853,19 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeSynthesizeSpeechConfig(
         com.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig value) {
       if (synthesizeSpeechConfigBuilder_ == null) {
-        if (synthesizeSpeechConfig_ != null) {
-          synthesizeSpeechConfig_ =
-              com.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig.newBuilder(
-                      synthesizeSpeechConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && synthesizeSpeechConfig_ != null
+            && synthesizeSpeechConfig_
+                != com.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig.getDefaultInstance()) {
+          getSynthesizeSpeechConfigBuilder().mergeFrom(value);
         } else {
           synthesizeSpeechConfig_ = value;
         }
-        onChanged();
       } else {
         synthesizeSpeechConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -867,14 +879,13 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearSynthesizeSpeechConfig() {
-      if (synthesizeSpeechConfigBuilder_ == null) {
-        synthesizeSpeechConfig_ = null;
-        onChanged();
-      } else {
-        synthesizeSpeechConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      synthesizeSpeechConfig_ = null;
+      if (synthesizeSpeechConfigBuilder_ != null) {
+        synthesizeSpeechConfigBuilder_.dispose();
         synthesizeSpeechConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -889,7 +900,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig.Builder
         getSynthesizeSpeechConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSynthesizeSpeechConfigFieldBuilder().getBuilder();
     }

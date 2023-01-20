@@ -72,7 +72,9 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -180,6 +184,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TRANSITION_ROUTES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute> transitionRoutes_;
   /**
    *
@@ -480,17 +486,16 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       if (transitionRoutesBuilder_ == null) {
         transitionRoutes_ = java.util.Collections.emptyList();
       } else {
         transitionRoutes_ = null;
         transitionRoutesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -518,20 +523,35 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup result =
           new com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup result) {
       if (transitionRoutesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           transitionRoutes_ = java.util.Collections.unmodifiableList(transitionRoutes_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.transitionRoutes_ = transitionRoutes_;
       } else {
         result.transitionRoutes_ = transitionRoutesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
     }
 
     @java.lang.Override
@@ -582,17 +602,19 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (transitionRoutesBuilder_ == null) {
         if (!other.transitionRoutes_.isEmpty()) {
           if (transitionRoutes_.isEmpty()) {
             transitionRoutes_ = other.transitionRoutes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTransitionRoutesIsMutable();
             transitionRoutes_.addAll(other.transitionRoutes_);
@@ -605,7 +627,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
             transitionRoutesBuilder_.dispose();
             transitionRoutesBuilder_ = null;
             transitionRoutes_ = other.transitionRoutes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             transitionRoutesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTransitionRoutesFieldBuilder()
@@ -644,13 +666,13 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 42:
@@ -759,8 +781,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -780,8 +802,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -806,8 +828,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -876,8 +898,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -894,8 +916,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -917,8 +939,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -927,11 +949,11 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
         transitionRoutes_ = java.util.Collections.emptyList();
 
     private void ensureTransitionRoutesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         transitionRoutes_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute>(
                 transitionRoutes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1174,7 +1196,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
     public Builder clearTransitionRoutes() {
       if (transitionRoutesBuilder_ == null) {
         transitionRoutes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         transitionRoutesBuilder_.clear();
@@ -1316,7 +1338,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
                 com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute.Builder,
                 com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteOrBuilder>(
                 transitionRoutes_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         transitionRoutes_ = null;

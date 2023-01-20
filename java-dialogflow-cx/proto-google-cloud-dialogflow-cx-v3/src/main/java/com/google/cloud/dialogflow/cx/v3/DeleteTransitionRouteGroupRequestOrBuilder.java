@@ -27,9 +27,11 @@ public interface DeleteTransitionRouteGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup] to delete.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * Required. The name of the
+   * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
+   * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
+   * Route Group ID&gt;`.
    * </pre>
    *
    * <code>
@@ -43,9 +45,11 @@ public interface DeleteTransitionRouteGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup] to delete.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * Required. The name of the
+   * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
+   * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
+   * Route Group ID&gt;`.
    * </pre>
    *
    * <code>

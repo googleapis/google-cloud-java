@@ -56,8 +56,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. The human-readable name of the environment (unique in an agent). Limit of
-   * 64 characters.
+   * Required. The human-readable name of the environment (unique in an agent).
+   * Limit of 64 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -69,8 +69,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. The human-readable name of the environment (unique in an agent). Limit of
-   * 64 characters.
+   * Required. The human-readable name of the environment (unique in an agent).
+   * Limit of 64 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -110,8 +110,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include version
-   * configs for all flows that are reachable from [`Start
+   * Required. A list of configurations for flow versions. You should include
+   * version configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
@@ -126,8 +126,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include version
-   * configs for all flows that are reachable from [`Start
+   * Required. A list of configurations for flow versions. You should include
+   * version configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
@@ -141,8 +141,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include version
-   * configs for all flows that are reachable from [`Start
+   * Required. A list of configurations for flow versions. You should include
+   * version configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
@@ -156,8 +156,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include version
-   * configs for all flows that are reachable from [`Start
+   * Required. A list of configurations for flow versions. You should include
+   * version configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
@@ -172,8 +172,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include version
-   * configs for all flows that are reachable from [`Start
+   * Required. A list of configurations for flow versions. You should include
+   * version configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>

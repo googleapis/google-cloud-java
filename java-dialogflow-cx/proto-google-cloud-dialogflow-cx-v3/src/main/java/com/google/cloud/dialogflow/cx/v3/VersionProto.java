@@ -172,12 +172,11 @@ public final class VersionProto {
           + "on\032x\312A\031dialogflow.googleapis.com\322AYhttps"
           + "://www.googleapis.com/auth/cloud-platfor"
           + "m,https://www.googleapis.com/auth/dialog"
-          + "flowB\300\001\n!com.google.cloud.dialogflow.cx."
-          + "v3B\014VersionProtoP\001Z?google.golang.org/ge"
-          + "nproto/googleapis/cloud/dialogflow/cx/v3"
-          + ";cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx"
-          + ".V3\352\002!Google::Cloud::Dialogflow::CX::V3b"
-          + "\006proto3"
+          + "flowB\262\001\n!com.google.cloud.dialogflow.cx."
+          + "v3B\014VersionProtoP\001Z1cloud.google.com/go/"
+          + "dialogflow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035"
+          + "Google.Cloud.Dialogflow.Cx.V3\352\002!Google::"
+          + "Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -79,13 +79,18 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SESSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object session_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object session_ = "";
   /**
    *
    *
    * <pre>
-   * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-   * The unique identifier of the [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
+   * Always present for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
+   * unique identifier of the
+   * [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
    * field can be used by the webhook to identify a session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -113,8 +118,11 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-   * The unique identifier of the [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
+   * Always present for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
+   * unique identifier of the
+   * [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
    * field can be used by the webhook to identify a session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -154,6 +162,7 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
                     com.google.protobuf.Value.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> parameters_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -171,12 +180,14 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-   * All parameters collected from forms and intents during the session.
-   * Parameters can be created, updated, or removed by the webhook. To remove a
-   * parameter from the session, the webhook should explicitly set the parameter
-   * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-   * display names.
+   * Optional for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+   * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+   * parameters collected from forms and intents during the session. Parameters
+   * can be created, updated, or removed by the webhook. To remove a parameter
+   * from the session, the webhook should explicitly set the parameter value to
+   * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+   * The map is keyed by parameters' display names.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -198,12 +209,14 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-   * All parameters collected from forms and intents during the session.
-   * Parameters can be created, updated, or removed by the webhook. To remove a
-   * parameter from the session, the webhook should explicitly set the parameter
-   * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-   * display names.
+   * Optional for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+   * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+   * parameters collected from forms and intents during the session. Parameters
+   * can be created, updated, or removed by the webhook. To remove a parameter
+   * from the session, the webhook should explicitly set the parameter value to
+   * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+   * The map is keyed by parameters' display names.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -216,19 +229,23 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-   * All parameters collected from forms and intents during the session.
-   * Parameters can be created, updated, or removed by the webhook. To remove a
-   * parameter from the session, the webhook should explicitly set the parameter
-   * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-   * display names.
+   * Optional for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+   * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+   * parameters collected from forms and intents during the session. Parameters
+   * can be created, updated, or removed by the webhook. To remove a parameter
+   * from the session, the webhook should explicitly set the parameter value to
+   * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+   * The map is keyed by parameters' display names.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.Value getParametersOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue) {
+  public /* nullable */ com.google.protobuf.Value getParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -240,12 +257,14 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-   * All parameters collected from forms and intents during the session.
-   * Parameters can be created, updated, or removed by the webhook. To remove a
-   * parameter from the session, the webhook should explicitly set the parameter
-   * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-   * display names.
+   * Optional for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+   * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+   * parameters collected from forms and intents during the session. Parameters
+   * can be created, updated, or removed by the webhook. To remove a parameter
+   * from the session, the webhook should explicitly set the parameter value to
+   * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+   * The map is keyed by parameters' display names.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -497,8 +516,8 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       session_ = "";
-
       internalGetMutableParameters().clear();
       return this;
     }
@@ -527,12 +546,22 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.SessionInfo buildPartial() {
       com.google.cloud.dialogflow.cx.v3.SessionInfo result =
           new com.google.cloud.dialogflow.cx.v3.SessionInfo(this);
-      int from_bitField0_ = bitField0_;
-      result.session_ = session_;
-      result.parameters_ = internalGetParameters();
-      result.parameters_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.SessionInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.session_ = session_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parameters_ = internalGetParameters();
+        result.parameters_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -582,9 +611,11 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3.SessionInfo.getDefaultInstance()) return this;
       if (!other.getSession().isEmpty()) {
         session_ = other.session_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableParameters().mergeFrom(other.internalGetParameters());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -614,7 +645,7 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 session_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -627,6 +658,7 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableParameters()
                     .getMutableMap()
                     .put(parameters__.getKey(), parameters__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -653,8 +685,11 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * The unique identifier of the [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
+     * Always present for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
+     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
+     * unique identifier of the
+     * [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
      * field can be used by the webhook to identify a session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -681,8 +716,11 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * The unique identifier of the [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
+     * Always present for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
+     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
+     * unique identifier of the
+     * [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
      * field can be used by the webhook to identify a session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -709,8 +747,11 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * The unique identifier of the [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
+     * Always present for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
+     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
+     * unique identifier of the
+     * [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
      * field can be used by the webhook to identify a session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -727,8 +768,8 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       session_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -736,8 +777,11 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * The unique identifier of the [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
+     * Always present for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
+     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
+     * unique identifier of the
+     * [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
      * field can be used by the webhook to identify a session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -750,8 +794,8 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSession() {
-
       session_ = getDefaultInstance().getSession();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -759,8 +803,11 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * The unique identifier of the [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
+     * Always present for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
+     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
+     * unique identifier of the
+     * [session][google.cloud.dialogflow.cx.v3.DetectIntentRequest.session]. This
      * field can be used by the webhook to identify a session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -778,8 +825,8 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       session_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -797,8 +844,6 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
         internalGetMutableParameters() {
-      onChanged();
-      ;
       if (parameters_ == null) {
         parameters_ =
             com.google.protobuf.MapField.newMapField(ParametersDefaultEntryHolder.defaultEntry);
@@ -806,6 +851,8 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
       if (!parameters_.isMutable()) {
         parameters_ = parameters_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return parameters_;
     }
 
@@ -816,12 +863,14 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * All parameters collected from forms and intents during the session.
-     * Parameters can be created, updated, or removed by the webhook. To remove a
-     * parameter from the session, the webhook should explicitly set the parameter
-     * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-     * display names.
+     * Optional for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+     * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+     * parameters collected from forms and intents during the session. Parameters
+     * can be created, updated, or removed by the webhook. To remove a parameter
+     * from the session, the webhook should explicitly set the parameter value to
+     * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The map is keyed by parameters' display names.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -843,12 +892,14 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * All parameters collected from forms and intents during the session.
-     * Parameters can be created, updated, or removed by the webhook. To remove a
-     * parameter from the session, the webhook should explicitly set the parameter
-     * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-     * display names.
+     * Optional for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+     * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+     * parameters collected from forms and intents during the session. Parameters
+     * can be created, updated, or removed by the webhook. To remove a parameter
+     * from the session, the webhook should explicitly set the parameter value to
+     * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The map is keyed by parameters' display names.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -861,19 +912,23 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * All parameters collected from forms and intents during the session.
-     * Parameters can be created, updated, or removed by the webhook. To remove a
-     * parameter from the session, the webhook should explicitly set the parameter
-     * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-     * display names.
+     * Optional for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+     * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+     * parameters collected from forms and intents during the session. Parameters
+     * can be created, updated, or removed by the webhook. To remove a parameter
+     * from the session, the webhook should explicitly set the parameter value to
+     * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The map is keyed by parameters' display names.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getParametersOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getParametersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -885,12 +940,14 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * All parameters collected from forms and intents during the session.
-     * Parameters can be created, updated, or removed by the webhook. To remove a
-     * parameter from the session, the webhook should explicitly set the parameter
-     * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-     * display names.
+     * Optional for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+     * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+     * parameters collected from forms and intents during the session. Parameters
+     * can be created, updated, or removed by the webhook. To remove a parameter
+     * from the session, the webhook should explicitly set the parameter value to
+     * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The map is keyed by parameters' display names.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -909,6 +966,7 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearParameters() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
@@ -916,12 +974,14 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * All parameters collected from forms and intents during the session.
-     * Parameters can be created, updated, or removed by the webhook. To remove a
-     * parameter from the session, the webhook should explicitly set the parameter
-     * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-     * display names.
+     * Optional for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+     * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+     * parameters collected from forms and intents during the session. Parameters
+     * can be created, updated, or removed by the webhook. To remove a parameter
+     * from the session, the webhook should explicitly set the parameter value to
+     * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The map is keyed by parameters' display names.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -936,18 +996,21 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableParameters() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableParameters().getMutableMap();
     }
     /**
      *
      *
      * <pre>
-     * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * All parameters collected from forms and intents during the session.
-     * Parameters can be created, updated, or removed by the webhook. To remove a
-     * parameter from the session, the webhook should explicitly set the parameter
-     * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-     * display names.
+     * Optional for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+     * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+     * parameters collected from forms and intents during the session. Parameters
+     * can be created, updated, or removed by the webhook. To remove a parameter
+     * from the session, the webhook should explicitly set the parameter value to
+     * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The map is keyed by parameters' display names.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -959,20 +1022,22 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableParameters().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
-     * All parameters collected from forms and intents during the session.
-     * Parameters can be created, updated, or removed by the webhook. To remove a
-     * parameter from the session, the webhook should explicitly set the parameter
-     * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The map is keyed by parameters'
-     * display names.
+     * Optional for
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Optional
+     * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. All
+     * parameters collected from forms and intents during the session. Parameters
+     * can be created, updated, or removed by the webhook. To remove a parameter
+     * from the session, the webhook should explicitly set the parameter value to
+     * null in [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The map is keyed by parameters' display names.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -980,6 +1045,7 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllParameters(
         java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableParameters().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

@@ -210,12 +210,12 @@ public final class AgentProto {
           + "tionResult}\332A\004name\032x\312A\031dialogflow.google"
           + "apis.com\322AYhttps://www.googleapis.com/au"
           + "th/cloud-platform,https://www.googleapis"
-          + ".com/auth/dialogflowB\276\001\n!com.google.clou"
-          + "d.dialogflow.cx.v3B\nAgentProtoP\001Z?google"
-          + ".golang.org/genproto/googleapis/cloud/di"
-          + "alogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud"
-          + ".Dialogflow.Cx.V3\352\002!Google::Cloud::Dialo"
-          + "gflow::CX::V3b\006proto3"
+          + ".com/auth/dialogflowB\260\001\n!com.google.clou"
+          + "d.dialogflow.cx.v3B\nAgentProtoP\001Z1cloud."
+          + "google.com/go/dialogflow/cx/apiv3/cxpb;c"
+          + "xpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx"
+          + ".V3\352\002!Google::Cloud::Dialogflow::CX::V3b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

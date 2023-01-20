@@ -668,10 +668,14 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.dialogflow.cx.v3beta1.FulfillmentOrBuilder
           getInitialPromptFulfillmentOrBuilder() {
-        return getInitialPromptFulfillment();
+        return initialPromptFulfillment_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.getDefaultInstance()
+            : initialPromptFulfillment_;
       }
 
       public static final int REPROMPT_EVENT_HANDLERS_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.EventHandler>
           repromptEventHandlers_;
       /**
@@ -1109,10 +1113,10 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          if (initialPromptFulfillmentBuilder_ == null) {
-            initialPromptFulfillment_ = null;
-          } else {
-            initialPromptFulfillment_ = null;
+          bitField0_ = 0;
+          initialPromptFulfillment_ = null;
+          if (initialPromptFulfillmentBuilder_ != null) {
+            initialPromptFulfillmentBuilder_.dispose();
             initialPromptFulfillmentBuilder_ = null;
           }
           if (repromptEventHandlersBuilder_ == null) {
@@ -1121,7 +1125,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
             repromptEventHandlers_ = null;
             repromptEventHandlersBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -1152,24 +1156,37 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior buildPartial() {
           com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior result =
               new com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior(this);
-          int from_bitField0_ = bitField0_;
-          if (initialPromptFulfillmentBuilder_ == null) {
-            result.initialPromptFulfillment_ = initialPromptFulfillment_;
-          } else {
-            result.initialPromptFulfillment_ = initialPromptFulfillmentBuilder_.build();
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior result) {
           if (repromptEventHandlersBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               repromptEventHandlers_ =
                   java.util.Collections.unmodifiableList(repromptEventHandlers_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.repromptEventHandlers_ = repromptEventHandlers_;
           } else {
             result.repromptEventHandlers_ = repromptEventHandlersBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.initialPromptFulfillment_ =
+                initialPromptFulfillmentBuilder_ == null
+                    ? initialPromptFulfillment_
+                    : initialPromptFulfillmentBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -1230,7 +1247,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
             if (!other.repromptEventHandlers_.isEmpty()) {
               if (repromptEventHandlers_.isEmpty()) {
                 repromptEventHandlers_ = other.repromptEventHandlers_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureRepromptEventHandlersIsMutable();
                 repromptEventHandlers_.addAll(other.repromptEventHandlers_);
@@ -1243,7 +1260,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
                 repromptEventHandlersBuilder_.dispose();
                 repromptEventHandlersBuilder_ = null;
                 repromptEventHandlers_ = other.repromptEventHandlers_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 repromptEventHandlersBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getRepromptEventHandlersFieldBuilder()
@@ -1283,7 +1300,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
                   {
                     input.readMessage(
                         getInitialPromptFulfillmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 26
                 case 42:
@@ -1340,7 +1357,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the initialPromptFulfillment field is set.
          */
         public boolean hasInitialPromptFulfillment() {
-          return initialPromptFulfillmentBuilder_ != null || initialPromptFulfillment_ != null;
+          return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          *
@@ -1384,11 +1401,11 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             initialPromptFulfillment_ = value;
-            onChanged();
           } else {
             initialPromptFulfillmentBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -1407,11 +1424,11 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.Builder builderForValue) {
           if (initialPromptFulfillmentBuilder_ == null) {
             initialPromptFulfillment_ = builderForValue.build();
-            onChanged();
           } else {
             initialPromptFulfillmentBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -1429,20 +1446,19 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeInitialPromptFulfillment(
             com.google.cloud.dialogflow.cx.v3beta1.Fulfillment value) {
           if (initialPromptFulfillmentBuilder_ == null) {
-            if (initialPromptFulfillment_ != null) {
-              initialPromptFulfillment_ =
-                  com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.newBuilder(
-                          initialPromptFulfillment_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000001) != 0)
+                && initialPromptFulfillment_ != null
+                && initialPromptFulfillment_
+                    != com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.getDefaultInstance()) {
+              getInitialPromptFulfillmentBuilder().mergeFrom(value);
             } else {
               initialPromptFulfillment_ = value;
             }
-            onChanged();
           } else {
             initialPromptFulfillmentBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -1458,14 +1474,13 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearInitialPromptFulfillment() {
-          if (initialPromptFulfillmentBuilder_ == null) {
-            initialPromptFulfillment_ = null;
-            onChanged();
-          } else {
-            initialPromptFulfillment_ = null;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          initialPromptFulfillment_ = null;
+          if (initialPromptFulfillmentBuilder_ != null) {
+            initialPromptFulfillmentBuilder_.dispose();
             initialPromptFulfillmentBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -1482,7 +1497,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          */
         public com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.Builder
             getInitialPromptFulfillmentBuilder() {
-
+          bitField0_ |= 0x00000001;
           onChanged();
           return getInitialPromptFulfillmentFieldBuilder().getBuilder();
         }
@@ -1541,11 +1556,11 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
             repromptEventHandlers_ = java.util.Collections.emptyList();
 
         private void ensureRepromptEventHandlersIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             repromptEventHandlers_ =
                 new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.EventHandler>(
                     repromptEventHandlers_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -2077,7 +2092,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         public Builder clearRepromptEventHandlers() {
           if (repromptEventHandlersBuilder_ == null) {
             repromptEventHandlers_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             repromptEventHandlersBuilder_.clear();
@@ -2402,7 +2417,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.cx.v3beta1.EventHandler.Builder,
                     com.google.cloud.dialogflow.cx.v3beta1.EventHandlerOrBuilder>(
                     repromptEventHandlers_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             repromptEventHandlers_ = null;
@@ -2478,7 +2493,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -2529,7 +2546,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int REQUIRED_FIELD_NUMBER = 2;
-    private boolean required_;
+    private boolean required_ = false;
     /**
      *
      *
@@ -2549,7 +2566,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENTITY_TYPE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object entityType_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entityType_ = "";
     /**
      *
      *
@@ -2612,7 +2631,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int IS_LIST_FIELD_NUMBER = 4;
-    private boolean isList_;
+    private boolean isList_ = false;
     /**
      *
      *
@@ -2681,7 +2700,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehaviorOrBuilder
         getFillBehaviorOrBuilder() {
-      return getFillBehavior();
+      return fillBehavior_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior.getDefaultInstance()
+          : fillBehavior_;
     }
 
     public static final int DEFAULT_VALUE_FIELD_NUMBER = 9;
@@ -2730,11 +2751,11 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.ValueOrBuilder getDefaultValueOrBuilder() {
-      return getDefaultValue();
+      return defaultValue_ == null ? com.google.protobuf.Value.getDefaultInstance() : defaultValue_;
     }
 
     public static final int REDACT_FIELD_NUMBER = 11;
-    private boolean redact_;
+    private boolean redact_ = false;
     /**
      *
      *
@@ -3021,28 +3042,22 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         displayName_ = "";
-
         required_ = false;
-
         entityType_ = "";
-
         isList_ = false;
-
-        if (fillBehaviorBuilder_ == null) {
-          fillBehavior_ = null;
-        } else {
-          fillBehavior_ = null;
+        fillBehavior_ = null;
+        if (fillBehaviorBuilder_ != null) {
+          fillBehaviorBuilder_.dispose();
           fillBehaviorBuilder_ = null;
         }
-        if (defaultValueBuilder_ == null) {
-          defaultValue_ = null;
-        } else {
-          defaultValue_ = null;
+        defaultValue_ = null;
+        if (defaultValueBuilder_ != null) {
+          defaultValueBuilder_.dispose();
           defaultValueBuilder_ = null;
         }
         redact_ = false;
-
         return this;
       }
 
@@ -3070,23 +3085,38 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter buildPartial() {
         com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter result =
             new com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter(this);
-        result.displayName_ = displayName_;
-        result.required_ = required_;
-        result.entityType_ = entityType_;
-        result.isList_ = isList_;
-        if (fillBehaviorBuilder_ == null) {
-          result.fillBehavior_ = fillBehavior_;
-        } else {
-          result.fillBehavior_ = fillBehaviorBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (defaultValueBuilder_ == null) {
-          result.defaultValue_ = defaultValue_;
-        } else {
-          result.defaultValue_ = defaultValueBuilder_.build();
-        }
-        result.redact_ = redact_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.required_ = required_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.entityType_ = entityType_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isList_ = isList_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.fillBehavior_ =
+              fillBehaviorBuilder_ == null ? fillBehavior_ : fillBehaviorBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.defaultValue_ =
+              defaultValueBuilder_ == null ? defaultValue_ : defaultValueBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.redact_ = redact_;
+        }
       }
 
       @java.lang.Override
@@ -3139,6 +3169,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getRequired() != false) {
@@ -3146,6 +3177,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getEntityType().isEmpty()) {
           entityType_ = other.entityType_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getIsList() != false) {
@@ -3189,43 +3221,43 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   required_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   entityType_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 32:
                 {
                   isList_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 58:
                 {
                   input.readMessage(getFillBehaviorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 58
               case 74:
                 {
                   input.readMessage(getDefaultValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 74
               case 88:
                 {
                   redact_ = input.readBool();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 88
               default:
@@ -3244,6 +3276,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object displayName_ = "";
       /**
@@ -3309,8 +3343,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3327,8 +3361,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3350,8 +3384,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3391,6 +3425,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       public Builder setRequired(boolean value) {
 
         required_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3408,7 +3443,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRequired() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         required_ = false;
         onChanged();
         return this;
@@ -3496,8 +3531,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         entityType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3520,8 +3555,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEntityType() {
-
         entityType_ = getDefaultInstance().getEntityType();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -3549,8 +3584,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entityType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3586,6 +3621,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       public Builder setIsList(boolean value) {
 
         isList_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3601,7 +3637,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIsList() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         isList_ = false;
         onChanged();
         return this;
@@ -3627,7 +3663,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the fillBehavior field is set.
        */
       public boolean hasFillBehavior() {
-        return fillBehaviorBuilder_ != null || fillBehavior_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -3670,11 +3706,11 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           fillBehavior_ = value;
-          onChanged();
         } else {
           fillBehaviorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -3693,11 +3729,11 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (fillBehaviorBuilder_ == null) {
           fillBehavior_ = builderForValue.build();
-          onChanged();
         } else {
           fillBehaviorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -3714,20 +3750,20 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeFillBehavior(
           com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior value) {
         if (fillBehaviorBuilder_ == null) {
-          if (fillBehavior_ != null) {
-            fillBehavior_ =
-                com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior.newBuilder(
-                        fillBehavior_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && fillBehavior_ != null
+              && fillBehavior_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior
+                      .getDefaultInstance()) {
+            getFillBehaviorBuilder().mergeFrom(value);
           } else {
             fillBehavior_ = value;
           }
-          onChanged();
         } else {
           fillBehaviorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -3742,14 +3778,13 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearFillBehavior() {
-        if (fillBehaviorBuilder_ == null) {
-          fillBehavior_ = null;
-          onChanged();
-        } else {
-          fillBehavior_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        fillBehavior_ = null;
+        if (fillBehaviorBuilder_ != null) {
+          fillBehaviorBuilder_.dispose();
           fillBehaviorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3765,7 +3800,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior.Builder
           getFillBehaviorBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getFillBehaviorFieldBuilder().getBuilder();
       }
@@ -3838,7 +3873,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the defaultValue field is set.
        */
       public boolean hasDefaultValue() {
-        return defaultValueBuilder_ != null || defaultValue_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -3877,11 +3912,11 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           defaultValue_ = value;
-          onChanged();
         } else {
           defaultValueBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -3897,11 +3932,11 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       public Builder setDefaultValue(com.google.protobuf.Value.Builder builderForValue) {
         if (defaultValueBuilder_ == null) {
           defaultValue_ = builderForValue.build();
-          onChanged();
         } else {
           defaultValueBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -3916,17 +3951,18 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeDefaultValue(com.google.protobuf.Value value) {
         if (defaultValueBuilder_ == null) {
-          if (defaultValue_ != null) {
-            defaultValue_ =
-                com.google.protobuf.Value.newBuilder(defaultValue_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && defaultValue_ != null
+              && defaultValue_ != com.google.protobuf.Value.getDefaultInstance()) {
+            getDefaultValueBuilder().mergeFrom(value);
           } else {
             defaultValue_ = value;
           }
-          onChanged();
         } else {
           defaultValueBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -3940,14 +3976,13 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Value default_value = 9;</code>
        */
       public Builder clearDefaultValue() {
-        if (defaultValueBuilder_ == null) {
-          defaultValue_ = null;
-          onChanged();
-        } else {
-          defaultValue_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        defaultValue_ = null;
+        if (defaultValueBuilder_ != null) {
+          defaultValueBuilder_.dispose();
           defaultValueBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3961,7 +3996,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Value default_value = 9;</code>
        */
       public com.google.protobuf.Value.Builder getDefaultValueBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getDefaultValueFieldBuilder().getBuilder();
       }
@@ -4054,6 +4089,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       public Builder setRedact(boolean value) {
 
         redact_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -4075,7 +4111,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRedact() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         redact_ = false;
         onChanged();
         return this;
@@ -4146,6 +4182,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter> parameters_;
   /**
    *
@@ -4419,6 +4457,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
       } else {
@@ -4453,7 +4492,15 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.Form buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.Form result =
           new com.google.cloud.dialogflow.cx.v3beta1.Form(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.cx.v3beta1.Form result) {
       if (parametersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
@@ -4463,8 +4510,10 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.Form result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

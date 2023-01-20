@@ -26,9 +26,13 @@ package com.google.cloud.dialogflow.cx.v3;
  * that transform user requests into actionable data. You can include agents
  * in your app, product, or service to determine user intent and respond to the
  * user in a natural way.
- * After you create an agent, you can add [Intents][google.cloud.dialogflow.cx.v3.Intent],
- * [Entity Types][google.cloud.dialogflow.cx.v3.EntityType], [Flows][google.cloud.dialogflow.cx.v3.Flow], [Fulfillments][google.cloud.dialogflow.cx.v3.Fulfillment],
- * [Webhooks][google.cloud.dialogflow.cx.v3.Webhook], and so on to manage the conversation flows..
+ * After you create an agent, you can add
+ * [Intents][google.cloud.dialogflow.cx.v3.Intent], [Entity
+ * Types][google.cloud.dialogflow.cx.v3.EntityType],
+ * [Flows][google.cloud.dialogflow.cx.v3.Flow],
+ * [Fulfillments][google.cloud.dialogflow.cx.v3.Fulfillment],
+ * [Webhooks][google.cloud.dialogflow.cx.v3.Webhook], and so on to manage the
+ * conversation flows..
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.Agent}
@@ -82,13 +86,18 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
    * <pre>
    * The unique identifier of the agent.
-   * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
+   * Required for the
+   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+   * method.
+   * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
    * populates the name automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * </pre>
@@ -114,7 +123,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the agent.
-   * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
+   * Required for the
+   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+   * method.
+   * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
    * populates the name automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * </pre>
@@ -137,7 +149,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -186,7 +200,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object defaultLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultLanguageCode_ = "";
   /**
    *
    *
@@ -195,7 +211,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * See [Language
    * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * for a list of the currently supported language codes.
-   * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
+   * This field cannot be set by the
+   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+   * method.
    * </pre>
    *
    * <code>
@@ -224,7 +242,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * See [Language
    * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * for a list of the currently supported language codes.
-   * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
+   * This field cannot be set by the
+   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+   * method.
    * </pre>
    *
    * <code>
@@ -247,6 +267,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUPPORTED_LANGUAGE_CODES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList supportedLanguageCodes_;
   /**
    *
@@ -312,7 +334,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object timeZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
   /**
    *
    *
@@ -365,7 +389,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -416,7 +442,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVATAR_URI_FIELD_NUMBER = 7;
-  private volatile java.lang.Object avatarUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object avatarUri_ = "";
   /**
    *
    *
@@ -516,20 +544,23 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.SpeechToTextSettingsOrBuilder
       getSpeechToTextSettingsOrBuilder() {
-    return getSpeechToTextSettings();
+    return speechToTextSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SpeechToTextSettings.getDefaultInstance()
+        : speechToTextSettings_;
   }
 
   public static final int START_FLOW_FIELD_NUMBER = 16;
-  private volatile java.lang.Object startFlow_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object startFlow_ = "";
   /**
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be automatically
-   * created when the agent is created, and can only be deleted by deleting the
-   * agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Immutable. Name of the start flow in this agent. A start flow will be
+   * automatically created when the agent is created, and can only be deleted by
+   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -554,11 +585,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be automatically
-   * created when the agent is created, and can only be deleted by deleting the
-   * agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Immutable. Name of the start flow in this agent. A start flow will be
+   * automatically created when the agent is created, and can only be deleted by
+   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -581,13 +611,16 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECURITY_SETTINGS_FIELD_NUMBER = 17;
-  private volatile java.lang.Object securitySettings_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object securitySettings_ = "";
   /**
    *
    *
    * <pre>
-   * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * Name of the
+   * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
+   * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
@@ -611,8 +644,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * Name of the
+   * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
+   * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
@@ -634,20 +668,21 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_STACKDRIVER_LOGGING_FIELD_NUMBER = 18;
-  private boolean enableStackdriverLogging_;
+  private boolean enableStackdriverLogging_ = false;
   /**
    *
    *
    * <pre>
    * Indicates if stackdriver logging is enabled for the agent.
-   * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
+   * Please use
+   * [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
    * instead.
    * </pre>
    *
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=245
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=255
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
@@ -657,7 +692,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_SPELL_CORRECTION_FIELD_NUMBER = 20;
-  private boolean enableSpellCorrection_;
+  private boolean enableSpellCorrection_ = false;
   /**
    *
    *
@@ -676,7 +711,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCKED_FIELD_NUMBER = 27;
-  private boolean locked_;
+  private boolean locked_ = false;
   /**
    *
    *
@@ -743,7 +778,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder
       getAdvancedSettingsOrBuilder() {
-    return getAdvancedSettings();
+    return advancedSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+        : advancedSettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1049,9 +1086,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * that transform user requests into actionable data. You can include agents
    * in your app, product, or service to determine user intent and respond to the
    * user in a natural way.
-   * After you create an agent, you can add [Intents][google.cloud.dialogflow.cx.v3.Intent],
-   * [Entity Types][google.cloud.dialogflow.cx.v3.EntityType], [Flows][google.cloud.dialogflow.cx.v3.Flow], [Fulfillments][google.cloud.dialogflow.cx.v3.Fulfillment],
-   * [Webhooks][google.cloud.dialogflow.cx.v3.Webhook], and so on to manage the conversation flows..
+   * After you create an agent, you can add
+   * [Intents][google.cloud.dialogflow.cx.v3.Intent], [Entity
+   * Types][google.cloud.dialogflow.cx.v3.EntityType],
+   * [Flows][google.cloud.dialogflow.cx.v3.Flow],
+   * [Fulfillments][google.cloud.dialogflow.cx.v3.Fulfillment],
+   * [Webhooks][google.cloud.dialogflow.cx.v3.Webhook], and so on to manage the
+   * conversation flows..
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.Agent}
@@ -1085,40 +1126,28 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       defaultLanguageCode_ = "";
-
       supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       timeZone_ = "";
-
       description_ = "";
-
       avatarUri_ = "";
-
-      if (speechToTextSettingsBuilder_ == null) {
-        speechToTextSettings_ = null;
-      } else {
-        speechToTextSettings_ = null;
+      speechToTextSettings_ = null;
+      if (speechToTextSettingsBuilder_ != null) {
+        speechToTextSettingsBuilder_.dispose();
         speechToTextSettingsBuilder_ = null;
       }
       startFlow_ = "";
-
       securitySettings_ = "";
-
       enableStackdriverLogging_ = false;
-
       enableSpellCorrection_ = false;
-
       locked_ = false;
-
-      if (advancedSettingsBuilder_ == null) {
-        advancedSettings_ = null;
-      } else {
-        advancedSettings_ = null;
+      advancedSettings_ = null;
+      if (advancedSettingsBuilder_ != null) {
+        advancedSettingsBuilder_.dispose();
         advancedSettingsBuilder_ = null;
       }
       return this;
@@ -1148,35 +1177,67 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.Agent buildPartial() {
       com.google.cloud.dialogflow.cx.v3.Agent result =
           new com.google.cloud.dialogflow.cx.v3.Agent(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.defaultLanguageCode_ = defaultLanguageCode_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.supportedLanguageCodes_ = supportedLanguageCodes_;
-      result.timeZone_ = timeZone_;
-      result.description_ = description_;
-      result.avatarUri_ = avatarUri_;
-      if (speechToTextSettingsBuilder_ == null) {
-        result.speechToTextSettings_ = speechToTextSettings_;
-      } else {
-        result.speechToTextSettings_ = speechToTextSettingsBuilder_.build();
-      }
-      result.startFlow_ = startFlow_;
-      result.securitySettings_ = securitySettings_;
-      result.enableStackdriverLogging_ = enableStackdriverLogging_;
-      result.enableSpellCorrection_ = enableSpellCorrection_;
-      result.locked_ = locked_;
-      if (advancedSettingsBuilder_ == null) {
-        result.advancedSettings_ = advancedSettings_;
-      } else {
-        result.advancedSettings_ = advancedSettingsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.cx.v3.Agent result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.supportedLanguageCodes_ = supportedLanguageCodes_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.Agent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.defaultLanguageCode_ = defaultLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.timeZone_ = timeZone_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.avatarUri_ = avatarUri_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.speechToTextSettings_ =
+            speechToTextSettingsBuilder_ == null
+                ? speechToTextSettings_
+                : speechToTextSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.startFlow_ = startFlow_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.securitySettings_ = securitySettings_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableStackdriverLogging_ = enableStackdriverLogging_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.enableSpellCorrection_ = enableSpellCorrection_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.locked_ = locked_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.advancedSettings_ =
+            advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1226,20 +1287,23 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3.Agent.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDefaultLanguageCode().isEmpty()) {
         defaultLanguageCode_ = other.defaultLanguageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.supportedLanguageCodes_.isEmpty()) {
         if (supportedLanguageCodes_.isEmpty()) {
           supportedLanguageCodes_ = other.supportedLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureSupportedLanguageCodesIsMutable();
           supportedLanguageCodes_.addAll(other.supportedLanguageCodes_);
@@ -1248,14 +1312,17 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTimeZone().isEmpty()) {
         timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getAvatarUri().isEmpty()) {
         avatarUri_ = other.avatarUri_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasSpeechToTextSettings()) {
@@ -1263,10 +1330,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getStartFlow().isEmpty()) {
         startFlow_ = other.startFlow_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getSecuritySettings().isEmpty()) {
         securitySettings_ = other.securitySettings_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.getEnableStackdriverLogging() != false) {
@@ -1310,19 +1379,19 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 defaultLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1335,63 +1404,63 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 timeZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 avatarUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 106:
               {
                 input.readMessage(
                     getSpeechToTextSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 106
             case 130:
               {
                 startFlow_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 130
             case 138:
               {
                 securitySettings_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 138
             case 144:
               {
                 enableStackdriverLogging_ = input.readBool();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 144
             case 160:
               {
                 enableSpellCorrection_ = input.readBool();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 160
             case 178:
               {
                 input.readMessage(
                     getAdvancedSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 178
             case 216:
               {
                 locked_ = input.readBool();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 216
             default:
@@ -1419,7 +1488,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the agent.
-     * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
+     * Required for the
+     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+     * method.
+     * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
      * populates the name automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
@@ -1444,7 +1516,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the agent.
-     * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
+     * Required for the
+     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+     * method.
+     * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
      * populates the name automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
@@ -1469,7 +1544,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the agent.
-     * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
+     * Required for the
+     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+     * method.
+     * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
      * populates the name automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
@@ -1483,8 +1561,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1493,7 +1571,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the agent.
-     * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
+     * Required for the
+     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+     * method.
+     * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
      * populates the name automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
@@ -1503,8 +1584,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1513,7 +1594,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the agent.
-     * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
+     * Required for the
+     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+     * method.
+     * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
      * populates the name automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
@@ -1528,8 +1612,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1595,8 +1679,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1612,8 +1696,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1634,8 +1718,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1649,7 +1733,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * See [Language
      * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
-     * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
+     * This field cannot be set by the
+     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+     * method.
      * </pre>
      *
      * <code>
@@ -1677,7 +1763,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * See [Language
      * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
-     * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
+     * This field cannot be set by the
+     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+     * method.
      * </pre>
      *
      * <code>
@@ -1705,7 +1793,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * See [Language
      * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
-     * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
+     * This field cannot be set by the
+     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+     * method.
      * </pre>
      *
      * <code>
@@ -1719,8 +1809,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       defaultLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1732,7 +1822,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * See [Language
      * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
-     * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
+     * This field cannot be set by the
+     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+     * method.
      * </pre>
      *
      * <code>
@@ -1742,8 +1834,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultLanguageCode() {
-
       defaultLanguageCode_ = getDefaultInstance().getDefaultLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1755,7 +1847,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * See [Language
      * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
-     * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
+     * This field cannot be set by the
+     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
+     * method.
      * </pre>
      *
      * <code>
@@ -1770,8 +1864,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       defaultLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1780,10 +1874,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSupportedLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         supportedLanguageCodes_ =
             new com.google.protobuf.LazyStringArrayList(supportedLanguageCodes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1926,7 +2020,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSupportedLanguageCodes() {
       supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2021,8 +2115,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeZone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2040,8 +2134,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
-
       timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2064,8 +2158,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeZone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2134,8 +2228,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2152,8 +2246,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2175,8 +2269,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2251,8 +2345,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       avatarUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2271,8 +2365,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvatarUri() {
-
       avatarUri_ = getDefaultInstance().getAvatarUri();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2296,8 +2390,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       avatarUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2321,7 +2415,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the speechToTextSettings field is set.
      */
     public boolean hasSpeechToTextSettings() {
-      return speechToTextSettingsBuilder_ != null || speechToTextSettings_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2361,11 +2455,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         speechToTextSettings_ = value;
-        onChanged();
       } else {
         speechToTextSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2382,11 +2476,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.SpeechToTextSettings.Builder builderForValue) {
       if (speechToTextSettingsBuilder_ == null) {
         speechToTextSettings_ = builderForValue.build();
-        onChanged();
       } else {
         speechToTextSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2402,20 +2496,19 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpeechToTextSettings(
         com.google.cloud.dialogflow.cx.v3.SpeechToTextSettings value) {
       if (speechToTextSettingsBuilder_ == null) {
-        if (speechToTextSettings_ != null) {
-          speechToTextSettings_ =
-              com.google.cloud.dialogflow.cx.v3.SpeechToTextSettings.newBuilder(
-                      speechToTextSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && speechToTextSettings_ != null
+            && speechToTextSettings_
+                != com.google.cloud.dialogflow.cx.v3.SpeechToTextSettings.getDefaultInstance()) {
+          getSpeechToTextSettingsBuilder().mergeFrom(value);
         } else {
           speechToTextSettings_ = value;
         }
-        onChanged();
       } else {
         speechToTextSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2429,14 +2522,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpeechToTextSettings() {
-      if (speechToTextSettingsBuilder_ == null) {
-        speechToTextSettings_ = null;
-        onChanged();
-      } else {
-        speechToTextSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      speechToTextSettings_ = null;
+      if (speechToTextSettingsBuilder_ != null) {
+        speechToTextSettingsBuilder_.dispose();
         speechToTextSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2451,7 +2543,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.SpeechToTextSettings.Builder
         getSpeechToTextSettingsBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getSpeechToTextSettingsFieldBuilder().getBuilder();
     }
@@ -2507,11 +2599,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be automatically
-     * created when the agent is created, and can only be deleted by deleting the
-     * agent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Immutable. Name of the start flow in this agent. A start flow will be
+     * automatically created when the agent is created, and can only be deleted by
+     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -2535,11 +2626,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be automatically
-     * created when the agent is created, and can only be deleted by deleting the
-     * agent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Immutable. Name of the start flow in this agent. A start flow will be
+     * automatically created when the agent is created, and can only be deleted by
+     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -2563,11 +2653,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be automatically
-     * created when the agent is created, and can only be deleted by deleting the
-     * agent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Immutable. Name of the start flow in this agent. A start flow will be
+     * automatically created when the agent is created, and can only be deleted by
+     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -2581,8 +2670,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       startFlow_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2590,11 +2679,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be automatically
-     * created when the agent is created, and can only be deleted by deleting the
-     * agent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Immutable. Name of the start flow in this agent. A start flow will be
+     * automatically created when the agent is created, and can only be deleted by
+     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -2604,8 +2692,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStartFlow() {
-
       startFlow_ = getDefaultInstance().getStartFlow();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2613,11 +2701,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be automatically
-     * created when the agent is created, and can only be deleted by deleting the
-     * agent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Immutable. Name of the start flow in this agent. A start flow will be
+     * automatically created when the agent is created, and can only be deleted by
+     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -2632,8 +2719,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       startFlow_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2643,8 +2730,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * Name of the
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
+     * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
@@ -2667,8 +2755,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * Name of the
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
+     * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
@@ -2691,8 +2780,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * Name of the
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
+     * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
@@ -2705,8 +2795,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       securitySettings_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2714,8 +2804,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * Name of the
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
+     * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
@@ -2724,8 +2815,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecuritySettings() {
-
       securitySettings_ = getDefaultInstance().getSecuritySettings();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2733,8 +2824,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * Name of the
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
+     * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
@@ -2748,8 +2840,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       securitySettings_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2760,14 +2852,15 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates if stackdriver logging is enabled for the agent.
-     * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
+     * Please use
+     * [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
      * instead.
      * </pre>
      *
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=245
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=255
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
@@ -2780,14 +2873,15 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates if stackdriver logging is enabled for the agent.
-     * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
+     * Please use
+     * [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
      * instead.
      * </pre>
      *
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=245
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=255
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
@@ -2795,6 +2889,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableStackdriverLogging(boolean value) {
 
       enableStackdriverLogging_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2803,19 +2898,20 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates if stackdriver logging is enabled for the agent.
-     * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
+     * Please use
+     * [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
      * instead.
      * </pre>
      *
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=245
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=255
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearEnableStackdriverLogging() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       enableStackdriverLogging_ = false;
       onChanged();
       return this;
@@ -2854,6 +2950,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableSpellCorrection(boolean value) {
 
       enableSpellCorrection_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2870,7 +2967,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableSpellCorrection() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       enableSpellCorrection_ = false;
       onChanged();
       return this;
@@ -2909,6 +3006,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setLocked(boolean value) {
 
       locked_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2925,7 +3023,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocked() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       locked_ = false;
       onChanged();
       return this;
@@ -2950,7 +3048,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the advancedSettings field is set.
      */
     public boolean hasAdvancedSettings() {
-      return advancedSettingsBuilder_ != null || advancedSettings_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -2989,11 +3087,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         advancedSettings_ = value;
-        onChanged();
       } else {
         advancedSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3010,11 +3108,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder builderForValue) {
       if (advancedSettingsBuilder_ == null) {
         advancedSettings_ = builderForValue.build();
-        onChanged();
       } else {
         advancedSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3029,19 +3127,19 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAdvancedSettings(com.google.cloud.dialogflow.cx.v3.AdvancedSettings value) {
       if (advancedSettingsBuilder_ == null) {
-        if (advancedSettings_ != null) {
-          advancedSettings_ =
-              com.google.cloud.dialogflow.cx.v3.AdvancedSettings.newBuilder(advancedSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && advancedSettings_ != null
+            && advancedSettings_
+                != com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()) {
+          getAdvancedSettingsBuilder().mergeFrom(value);
         } else {
           advancedSettings_ = value;
         }
-        onChanged();
       } else {
         advancedSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3055,14 +3153,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
      */
     public Builder clearAdvancedSettings() {
-      if (advancedSettingsBuilder_ == null) {
-        advancedSettings_ = null;
-        onChanged();
-      } else {
-        advancedSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      advancedSettings_ = null;
+      if (advancedSettingsBuilder_ != null) {
+        advancedSettingsBuilder_.dispose();
         advancedSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3076,7 +3173,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder getAdvancedSettingsBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getAdvancedSettingsFieldBuilder().getBuilder();
     }

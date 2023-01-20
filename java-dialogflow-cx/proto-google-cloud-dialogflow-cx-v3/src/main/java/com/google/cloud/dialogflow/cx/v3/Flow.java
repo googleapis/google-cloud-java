@@ -84,7 +84,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -186,7 +190,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -237,6 +243,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRANSITION_ROUTES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.TransitionRoute> transitionRoutes_;
   /**
    *
@@ -363,6 +371,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_HANDLERS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.EventHandler> eventHandlers_;
   /**
    *
@@ -375,9 +385,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
-   * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-   * evaluated on a first-match basis. The first one that matches the event
-   * get executed, with the rest being ignored.
+   * Unlike
+   * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+   * these handlers are evaluated on a first-match basis. The first one that
+   * matches the event get executed, with the rest being ignored.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -397,9 +408,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
-   * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-   * evaluated on a first-match basis. The first one that matches the event
-   * get executed, with the rest being ignored.
+   * Unlike
+   * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+   * these handlers are evaluated on a first-match basis. The first one that
+   * matches the event get executed, with the rest being ignored.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -420,9 +432,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
-   * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-   * evaluated on a first-match basis. The first one that matches the event
-   * get executed, with the rest being ignored.
+   * Unlike
+   * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+   * these handlers are evaluated on a first-match basis. The first one that
+   * matches the event get executed, with the rest being ignored.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -442,9 +455,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
-   * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-   * evaluated on a first-match basis. The first one that matches the event
-   * get executed, with the rest being ignored.
+   * Unlike
+   * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+   * these handlers are evaluated on a first-match basis. The first one that
+   * matches the event get executed, with the rest being ignored.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -464,9 +478,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
-   * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-   * evaluated on a first-match basis. The first one that matches the event
-   * get executed, with the rest being ignored.
+   * Unlike
+   * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+   * these handlers are evaluated on a first-match basis. The first one that
+   * matches the event get executed, with the rest being ignored.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -478,6 +493,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRANSITION_ROUTE_GROUPS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList transitionRouteGroups_;
   /**
    *
@@ -615,7 +632,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.NluSettingsOrBuilder getNluSettingsOrBuilder() {
-    return getNluSettings();
+    return nluSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.NluSettings.getDefaultInstance()
+        : nluSettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -896,32 +915,29 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       if (transitionRoutesBuilder_ == null) {
         transitionRoutes_ = java.util.Collections.emptyList();
       } else {
         transitionRoutes_ = null;
         transitionRoutesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (eventHandlersBuilder_ == null) {
         eventHandlers_ = java.util.Collections.emptyList();
       } else {
         eventHandlers_ = null;
         eventHandlersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (nluSettingsBuilder_ == null) {
-        nluSettings_ = null;
-      } else {
-        nluSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      nluSettings_ = null;
+      if (nluSettingsBuilder_ != null) {
+        nluSettingsBuilder_.dispose();
         nluSettingsBuilder_ = null;
       }
       return this;
@@ -951,40 +967,55 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.Flow buildPartial() {
       com.google.cloud.dialogflow.cx.v3.Flow result =
           new com.google.cloud.dialogflow.cx.v3.Flow(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.cx.v3.Flow result) {
       if (transitionRoutesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           transitionRoutes_ = java.util.Collections.unmodifiableList(transitionRoutes_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.transitionRoutes_ = transitionRoutes_;
       } else {
         result.transitionRoutes_ = transitionRoutesBuilder_.build();
       }
       if (eventHandlersBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           eventHandlers_ = java.util.Collections.unmodifiableList(eventHandlers_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.eventHandlers_ = eventHandlers_;
       } else {
         result.eventHandlers_ = eventHandlersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         transitionRouteGroups_ = transitionRouteGroups_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.transitionRouteGroups_ = transitionRouteGroups_;
-      if (nluSettingsBuilder_ == null) {
-        result.nluSettings_ = nluSettings_;
-      } else {
-        result.nluSettings_ = nluSettingsBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.Flow result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.nluSettings_ =
+            nluSettingsBuilder_ == null ? nluSettings_ : nluSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1034,21 +1065,24 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3.Flow.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (transitionRoutesBuilder_ == null) {
         if (!other.transitionRoutes_.isEmpty()) {
           if (transitionRoutes_.isEmpty()) {
             transitionRoutes_ = other.transitionRoutes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureTransitionRoutesIsMutable();
             transitionRoutes_.addAll(other.transitionRoutes_);
@@ -1061,7 +1095,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
             transitionRoutesBuilder_.dispose();
             transitionRoutesBuilder_ = null;
             transitionRoutes_ = other.transitionRoutes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             transitionRoutesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTransitionRoutesFieldBuilder()
@@ -1075,7 +1109,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         if (!other.eventHandlers_.isEmpty()) {
           if (eventHandlers_.isEmpty()) {
             eventHandlers_ = other.eventHandlers_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureEventHandlersIsMutable();
             eventHandlers_.addAll(other.eventHandlers_);
@@ -1088,7 +1122,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
             eventHandlersBuilder_.dispose();
             eventHandlersBuilder_ = null;
             eventHandlers_ = other.eventHandlers_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             eventHandlersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEventHandlersFieldBuilder()
@@ -1101,7 +1135,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (!other.transitionRouteGroups_.isEmpty()) {
         if (transitionRouteGroups_.isEmpty()) {
           transitionRouteGroups_ = other.transitionRouteGroups_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureTransitionRouteGroupsIsMutable();
           transitionRouteGroups_.addAll(other.transitionRouteGroups_);
@@ -1140,19 +1174,19 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1185,7 +1219,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 input.readMessage(getNluSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 90
             case 122:
@@ -1281,8 +1315,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1300,8 +1334,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1324,8 +1358,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1391,8 +1425,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1408,8 +1442,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1430,8 +1464,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1500,8 +1534,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1518,8 +1552,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1541,8 +1575,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1551,11 +1585,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTransitionRoutesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         transitionRoutes_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.TransitionRoute>(
                 transitionRoutes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1895,7 +1929,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTransitionRoutes() {
       if (transitionRoutesBuilder_ == null) {
         transitionRoutes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         transitionRoutesBuilder_.clear();
@@ -2099,7 +2133,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3.TransitionRoute.Builder,
                 com.google.cloud.dialogflow.cx.v3.TransitionRouteOrBuilder>(
                 transitionRoutes_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         transitionRoutes_ = null;
@@ -2111,10 +2145,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEventHandlersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         eventHandlers_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.EventHandler>(eventHandlers_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2135,9 +2169,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2160,9 +2195,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2185,9 +2221,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2210,9 +2247,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2242,9 +2280,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2271,9 +2310,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2302,9 +2342,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2334,9 +2375,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2363,9 +2405,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2392,9 +2435,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2421,9 +2465,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2431,7 +2476,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEventHandlers() {
       if (eventHandlersBuilder_ == null) {
         eventHandlers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         eventHandlersBuilder_.clear();
@@ -2449,9 +2494,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2477,9 +2523,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2499,9 +2546,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2525,9 +2573,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2551,9 +2600,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2573,9 +2623,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2596,9 +2647,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
-     * Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
-     * evaluated on a first-match basis. The first one that matches the event
-     * get executed, with the rest being ignored.
+     * Unlike
+     * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
+     * these handlers are evaluated on a first-match basis. The first one that
+     * matches the event get executed, with the rest being ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
@@ -2620,7 +2672,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3.EventHandler.Builder,
                 com.google.cloud.dialogflow.cx.v3.EventHandlerOrBuilder>(
                 eventHandlers_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         eventHandlers_ = null;
@@ -2632,10 +2684,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTransitionRouteGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         transitionRouteGroups_ =
             new com.google.protobuf.LazyStringArrayList(transitionRouteGroups_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2842,7 +2894,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTransitionRouteGroups() {
       transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2896,7 +2948,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nluSettings field is set.
      */
     public boolean hasNluSettings() {
-      return nluSettingsBuilder_ != null || nluSettings_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2933,11 +2985,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         nluSettings_ = value;
-        onChanged();
       } else {
         nluSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2953,11 +3005,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.NluSettings.Builder builderForValue) {
       if (nluSettingsBuilder_ == null) {
         nluSettings_ = builderForValue.build();
-        onChanged();
       } else {
         nluSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2971,19 +3023,18 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNluSettings(com.google.cloud.dialogflow.cx.v3.NluSettings value) {
       if (nluSettingsBuilder_ == null) {
-        if (nluSettings_ != null) {
-          nluSettings_ =
-              com.google.cloud.dialogflow.cx.v3.NluSettings.newBuilder(nluSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && nluSettings_ != null
+            && nluSettings_ != com.google.cloud.dialogflow.cx.v3.NluSettings.getDefaultInstance()) {
+          getNluSettingsBuilder().mergeFrom(value);
         } else {
           nluSettings_ = value;
         }
-        onChanged();
       } else {
         nluSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2996,14 +3047,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.NluSettings nlu_settings = 11;</code>
      */
     public Builder clearNluSettings() {
-      if (nluSettingsBuilder_ == null) {
-        nluSettings_ = null;
-        onChanged();
-      } else {
-        nluSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      nluSettings_ = null;
+      if (nluSettingsBuilder_ != null) {
+        nluSettingsBuilder_.dispose();
         nluSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3016,7 +3066,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.NluSettings nlu_settings = 11;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.NluSettings.Builder getNluSettingsBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getNluSettingsFieldBuilder().getBuilder();
     }

@@ -394,7 +394,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
-  private int modelType_;
+  private int modelType_ = 0;
   /**
    *
    *
@@ -423,16 +423,15 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType getModelType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType result =
-        com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType.valueOf(modelType_);
+        com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType.forNumber(modelType_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType.UNRECOGNIZED
         : result;
   }
 
   public static final int CLASSIFICATION_THRESHOLD_FIELD_NUMBER = 3;
-  private float classificationThreshold_;
+  private float classificationThreshold_ = 0F;
   /**
    *
    *
@@ -455,7 +454,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODEL_TRAINING_MODE_FIELD_NUMBER = 4;
-  private int modelTrainingMode_;
+  private int modelTrainingMode_ = 0;
   /**
    *
    *
@@ -489,9 +488,8 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode
       getModelTrainingMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode result =
-        com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode.valueOf(
+        com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode.forNumber(
             modelTrainingMode_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode.UNRECOGNIZED
@@ -724,12 +722,10 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       modelType_ = 0;
-
       classificationThreshold_ = 0F;
-
       modelTrainingMode_ = 0;
-
       return this;
     }
 
@@ -757,11 +753,24 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.NluSettings buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.NluSettings result =
           new com.google.cloud.dialogflow.cx.v3beta1.NluSettings(this);
-      result.modelType_ = modelType_;
-      result.classificationThreshold_ = classificationThreshold_;
-      result.modelTrainingMode_ = modelTrainingMode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.NluSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.modelType_ = modelType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.classificationThreshold_ = classificationThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.modelTrainingMode_ = modelTrainingMode_;
+      }
     }
 
     @java.lang.Override
@@ -848,19 +857,19 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 modelType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 29:
               {
                 classificationThreshold_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 29
             case 32:
               {
                 modelTrainingMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             default:
@@ -879,6 +888,8 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int modelType_ = 0;
     /**
@@ -909,8 +920,8 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setModelTypeValue(int value) {
-
       modelType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -927,9 +938,8 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType getModelType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType result =
-          com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType.valueOf(modelType_);
+          com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType.forNumber(modelType_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType.UNRECOGNIZED
           : result;
@@ -951,7 +961,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       modelType_ = value.getNumber();
       onChanged();
       return this;
@@ -968,7 +978,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearModelType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       modelType_ = 0;
       onChanged();
       return this;
@@ -1015,6 +1025,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     public Builder setClassificationThreshold(float value) {
 
       classificationThreshold_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1035,7 +1046,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClassificationThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       classificationThreshold_ = 0F;
       onChanged();
       return this;
@@ -1074,8 +1085,8 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setModelTrainingModeValue(int value) {
-
       modelTrainingMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1095,9 +1106,8 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode
         getModelTrainingMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode result =
-          com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode.valueOf(
+          com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode.forNumber(
               modelTrainingMode_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode.UNRECOGNIZED
@@ -1122,7 +1132,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       modelTrainingMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1141,7 +1151,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearModelTrainingMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       modelTrainingMode_ = 0;
       onChanged();
       return this;

@@ -22,8 +22,9 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * Metadata returned for the [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases] long running
- * operation.
+ * Metadata returned for the
+ * [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases]
+ * long running operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata}
@@ -69,6 +70,8 @@ public final class BatchRunTestCasesMetadata extends com.google.protobuf.Generat
   }
 
   public static final int ERRORS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.TestError> errors_;
   /**
    *
@@ -303,8 +306,9 @@ public final class BatchRunTestCasesMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Metadata returned for the [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases] long running
-   * operation.
+   * Metadata returned for the
+   * [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases]
+   * long running operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata}
@@ -338,6 +342,7 @@ public final class BatchRunTestCasesMetadata extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
       } else {
@@ -372,7 +377,16 @@ public final class BatchRunTestCasesMetadata extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata buildPartial() {
       com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata result =
           new com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata result) {
       if (errorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
@@ -382,8 +396,10 @@ public final class BatchRunTestCasesMetadata extends com.google.protobuf.Generat
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

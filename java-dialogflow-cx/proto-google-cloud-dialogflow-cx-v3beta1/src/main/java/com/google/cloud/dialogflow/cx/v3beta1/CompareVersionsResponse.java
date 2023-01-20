@@ -70,7 +70,9 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
   }
 
   public static final int BASE_VERSION_CONTENT_JSON_FIELD_NUMBER = 1;
-  private volatile java.lang.Object baseVersionContentJson_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseVersionContentJson_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
   }
 
   public static final int TARGET_VERSION_CONTENT_JSON_FIELD_NUMBER = 2;
-  private volatile java.lang.Object targetVersionContentJson_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetVersionContentJson_ = "";
   /**
    *
    *
@@ -210,7 +214,7 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCompareTimeOrBuilder() {
-    return getCompareTime();
+    return compareTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : compareTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -436,14 +440,12 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       baseVersionContentJson_ = "";
-
       targetVersionContentJson_ = "";
-
-      if (compareTimeBuilder_ == null) {
-        compareTime_ = null;
-      } else {
-        compareTime_ = null;
+      compareTime_ = null;
+      if (compareTimeBuilder_ != null) {
+        compareTimeBuilder_.dispose();
         compareTimeBuilder_ = null;
       }
       return this;
@@ -474,15 +476,26 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.cx.v3beta1.CompareVersionsResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.CompareVersionsResponse result =
           new com.google.cloud.dialogflow.cx.v3beta1.CompareVersionsResponse(this);
-      result.baseVersionContentJson_ = baseVersionContentJson_;
-      result.targetVersionContentJson_ = targetVersionContentJson_;
-      if (compareTimeBuilder_ == null) {
-        result.compareTime_ = compareTime_;
-      } else {
-        result.compareTime_ = compareTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.cx.v3beta1.CompareVersionsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.baseVersionContentJson_ = baseVersionContentJson_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetVersionContentJson_ = targetVersionContentJson_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.compareTime_ =
+            compareTimeBuilder_ == null ? compareTime_ : compareTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -534,10 +547,12 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
         return this;
       if (!other.getBaseVersionContentJson().isEmpty()) {
         baseVersionContentJson_ = other.baseVersionContentJson_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTargetVersionContentJson().isEmpty()) {
         targetVersionContentJson_ = other.targetVersionContentJson_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCompareTime()) {
@@ -572,19 +587,19 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
             case 10:
               {
                 baseVersionContentJson_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 targetVersionContentJson_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCompareTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -603,6 +618,8 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object baseVersionContentJson_ = "";
     /**
@@ -665,8 +682,8 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseVersionContentJson_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,8 +699,8 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearBaseVersionContentJson() {
-
       baseVersionContentJson_ = getDefaultInstance().getBaseVersionContentJson();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -704,8 +721,8 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseVersionContentJson_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -771,8 +788,8 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetVersionContentJson_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -788,8 +805,8 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearTargetVersionContentJson() {
-
       targetVersionContentJson_ = getDefaultInstance().getTargetVersionContentJson();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -810,8 +827,8 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetVersionContentJson_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -834,7 +851,7 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
      * @return Whether the compareTime field is set.
      */
     public boolean hasCompareTime() {
-      return compareTimeBuilder_ != null || compareTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -871,11 +888,11 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         compareTime_ = value;
-        onChanged();
       } else {
         compareTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -890,11 +907,11 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
     public Builder setCompareTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (compareTimeBuilder_ == null) {
         compareTime_ = builderForValue.build();
-        onChanged();
       } else {
         compareTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -908,19 +925,18 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
      */
     public Builder mergeCompareTime(com.google.protobuf.Timestamp value) {
       if (compareTimeBuilder_ == null) {
-        if (compareTime_ != null) {
-          compareTime_ =
-              com.google.protobuf.Timestamp.newBuilder(compareTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && compareTime_ != null
+            && compareTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCompareTimeBuilder().mergeFrom(value);
         } else {
           compareTime_ = value;
         }
-        onChanged();
       } else {
         compareTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -933,14 +949,13 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
      * <code>.google.protobuf.Timestamp compare_time = 3;</code>
      */
     public Builder clearCompareTime() {
-      if (compareTimeBuilder_ == null) {
-        compareTime_ = null;
-        onChanged();
-      } else {
-        compareTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      compareTime_ = null;
+      if (compareTimeBuilder_ != null) {
+        compareTimeBuilder_.dispose();
         compareTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -953,7 +968,7 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
      * <code>.google.protobuf.Timestamp compare_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCompareTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCompareTimeFieldBuilder().getBuilder();
     }

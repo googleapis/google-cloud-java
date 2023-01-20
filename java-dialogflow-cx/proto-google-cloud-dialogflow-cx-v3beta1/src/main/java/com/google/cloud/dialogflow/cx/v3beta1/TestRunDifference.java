@@ -272,7 +272,7 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -301,16 +301,17 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType result =
-        com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType.valueOf(type_);
+        com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType.forNumber(type_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType.UNRECOGNIZED
         : result;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -569,10 +570,9 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       description_ = "";
-
       return this;
     }
 
@@ -600,10 +600,21 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference result =
           new com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference(this);
-      result.type_ = type_;
-      result.description_ = description_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
     }
 
     @java.lang.Override
@@ -657,6 +668,7 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -688,13 +700,13 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -713,6 +725,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -743,8 +757,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -761,9 +775,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType result =
-          com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType.valueOf(type_);
+          com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType.forNumber(type_);
       return result == null
           ? com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType.UNRECOGNIZED
           : result;
@@ -785,7 +798,7 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -802,7 +815,7 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -869,8 +882,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -886,8 +899,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -908,8 +921,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -71,7 +71,9 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object environment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object environment_ = "";
   /**
    *
    *
@@ -175,6 +179,8 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONVERSATION_TURNS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.ConversationTurn> conversationTurns_;
   /**
    *
@@ -251,7 +257,7 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEST_RESULT_FIELD_NUMBER = 4;
-  private int testResult_;
+  private int testResult_ = 0;
   /**
    *
    *
@@ -280,9 +286,8 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.TestResult getTestResult() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.cx.v3.TestResult result =
-        com.google.cloud.dialogflow.cx.v3.TestResult.valueOf(testResult_);
+        com.google.cloud.dialogflow.cx.v3.TestResult.forNumber(testResult_);
     return result == null ? com.google.cloud.dialogflow.cx.v3.TestResult.UNRECOGNIZED : result;
   }
 
@@ -329,7 +334,7 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTestTimeOrBuilder() {
-    return getTestTime();
+    return testTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : testTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -575,23 +580,20 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       environment_ = "";
-
       if (conversationTurnsBuilder_ == null) {
         conversationTurns_ = java.util.Collections.emptyList();
       } else {
         conversationTurns_ = null;
         conversationTurnsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       testResult_ = 0;
-
-      if (testTimeBuilder_ == null) {
-        testTime_ = null;
-      } else {
-        testTime_ = null;
+      testTime_ = null;
+      if (testTimeBuilder_ != null) {
+        testTimeBuilder_.dispose();
         testTimeBuilder_ = null;
       }
       return this;
@@ -621,26 +623,41 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.TestCaseResult buildPartial() {
       com.google.cloud.dialogflow.cx.v3.TestCaseResult result =
           new com.google.cloud.dialogflow.cx.v3.TestCaseResult(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.environment_ = environment_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.cx.v3.TestCaseResult result) {
       if (conversationTurnsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           conversationTurns_ = java.util.Collections.unmodifiableList(conversationTurns_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.conversationTurns_ = conversationTurns_;
       } else {
         result.conversationTurns_ = conversationTurnsBuilder_.build();
       }
-      result.testResult_ = testResult_;
-      if (testTimeBuilder_ == null) {
-        result.testTime_ = testTime_;
-      } else {
-        result.testTime_ = testTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.TestCaseResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.environment_ = environment_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.testResult_ = testResult_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.testTime_ = testTimeBuilder_ == null ? testTime_ : testTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -691,17 +708,19 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEnvironment().isEmpty()) {
         environment_ = other.environment_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (conversationTurnsBuilder_ == null) {
         if (!other.conversationTurns_.isEmpty()) {
           if (conversationTurns_.isEmpty()) {
             conversationTurns_ = other.conversationTurns_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureConversationTurnsIsMutable();
             conversationTurns_.addAll(other.conversationTurns_);
@@ -714,7 +733,7 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
             conversationTurnsBuilder_.dispose();
             conversationTurnsBuilder_ = null;
             conversationTurns_ = other.conversationTurns_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             conversationTurnsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConversationTurnsFieldBuilder()
@@ -759,13 +778,13 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 environment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -785,13 +804,13 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 testResult_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getTestTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -880,8 +899,8 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -899,8 +918,8 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -923,8 +942,8 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -993,8 +1012,8 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       environment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1011,8 +1030,8 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnvironment() {
-
       environment_ = getDefaultInstance().getEnvironment();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1034,8 +1053,8 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       environment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1044,11 +1063,11 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConversationTurnsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         conversationTurns_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.ConversationTurn>(
                 conversationTurns_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1278,7 +1297,7 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConversationTurns() {
       if (conversationTurnsBuilder_ == null) {
         conversationTurns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         conversationTurnsBuilder_.clear();
@@ -1413,7 +1432,7 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3.ConversationTurn.Builder,
                 com.google.cloud.dialogflow.cx.v3.ConversationTurnOrBuilder>(
                 conversationTurns_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         conversationTurns_ = null;
@@ -1450,8 +1469,8 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTestResultValue(int value) {
-
       testResult_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1468,9 +1487,8 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.TestResult getTestResult() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.cx.v3.TestResult result =
-          com.google.cloud.dialogflow.cx.v3.TestResult.valueOf(testResult_);
+          com.google.cloud.dialogflow.cx.v3.TestResult.forNumber(testResult_);
       return result == null ? com.google.cloud.dialogflow.cx.v3.TestResult.UNRECOGNIZED : result;
     }
     /**
@@ -1489,7 +1507,7 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       testResult_ = value.getNumber();
       onChanged();
       return this;
@@ -1506,7 +1524,7 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTestResult() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       testResult_ = 0;
       onChanged();
       return this;
@@ -1530,7 +1548,7 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the testTime field is set.
      */
     public boolean hasTestTime() {
-      return testTimeBuilder_ != null || testTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1565,11 +1583,11 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         testTime_ = value;
-        onChanged();
       } else {
         testTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1584,11 +1602,11 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setTestTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (testTimeBuilder_ == null) {
         testTime_ = builderForValue.build();
-        onChanged();
       } else {
         testTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1602,17 +1620,18 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTestTime(com.google.protobuf.Timestamp value) {
       if (testTimeBuilder_ == null) {
-        if (testTime_ != null) {
-          testTime_ =
-              com.google.protobuf.Timestamp.newBuilder(testTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && testTime_ != null
+            && testTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getTestTimeBuilder().mergeFrom(value);
         } else {
           testTime_ = value;
         }
-        onChanged();
       } else {
         testTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1625,14 +1644,13 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp test_time = 5;</code>
      */
     public Builder clearTestTime() {
-      if (testTimeBuilder_ == null) {
-        testTime_ = null;
-        onChanged();
-      } else {
-        testTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      testTime_ = null;
+      if (testTimeBuilder_ != null) {
+        testTimeBuilder_.dispose();
         testTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1645,7 +1663,7 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp test_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getTestTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTestTimeFieldBuilder().getBuilder();
     }

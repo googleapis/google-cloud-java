@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The response message for [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3.TestCases.CalculateCoverage].
+ * The response message for
+ * [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3.TestCases.CalculateCoverage].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CalculateCoverageResponse}
@@ -118,7 +119,9 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
   }
 
   public static final int AGENT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object agent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agent_ = "";
   /**
    *
    *
@@ -545,7 +548,8 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The response message for [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3.TestCases.CalculateCoverage].
+   * The response message for
+   * [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3.TestCases.CalculateCoverage].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CalculateCoverageResponse}
@@ -579,8 +583,8 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       agent_ = "";
-
       if (intentCoverageBuilder_ != null) {
         intentCoverageBuilder_.clear();
       }
@@ -619,31 +623,34 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse result =
           new com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse(this);
-      result.agent_ = agent_;
-      if (coverageTypeCase_ == 2) {
-        if (intentCoverageBuilder_ == null) {
-          result.coverageType_ = coverageType_;
-        } else {
-          result.coverageType_ = intentCoverageBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (coverageTypeCase_ == 4) {
-        if (transitionCoverageBuilder_ == null) {
-          result.coverageType_ = coverageType_;
-        } else {
-          result.coverageType_ = transitionCoverageBuilder_.build();
-        }
-      }
-      if (coverageTypeCase_ == 6) {
-        if (routeGroupCoverageBuilder_ == null) {
-          result.coverageType_ = coverageType_;
-        } else {
-          result.coverageType_ = routeGroupCoverageBuilder_.build();
-        }
-      }
-      result.coverageTypeCase_ = coverageTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.agent_ = agent_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse result) {
+      result.coverageTypeCase_ = coverageTypeCase_;
+      result.coverageType_ = this.coverageType_;
+      if (coverageTypeCase_ == 2 && intentCoverageBuilder_ != null) {
+        result.coverageType_ = intentCoverageBuilder_.build();
+      }
+      if (coverageTypeCase_ == 4 && transitionCoverageBuilder_ != null) {
+        result.coverageType_ = transitionCoverageBuilder_.build();
+      }
+      if (coverageTypeCase_ == 6 && routeGroupCoverageBuilder_ != null) {
+        result.coverageType_ = routeGroupCoverageBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -694,6 +701,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
         return this;
       if (!other.getAgent().isEmpty()) {
         agent_ = other.agent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getCoverageTypeCase()) {
@@ -759,7 +767,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
             case 42:
               {
                 agent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 42
             case 50:
@@ -799,6 +807,8 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object agent_ = "";
     /**
@@ -864,8 +874,8 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       agent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -882,8 +892,8 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAgent() {
-
       agent_ = getDefaultInstance().getAgent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -905,8 +915,8 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       agent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1118,7 +1128,6 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       }
       coverageTypeCase_ = 2;
       onChanged();
-      ;
       return intentCoverageBuilder_;
     }
 
@@ -1333,7 +1342,6 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       }
       coverageTypeCase_ = 4;
       onChanged();
-      ;
       return transitionCoverageBuilder_;
     }
 
@@ -1560,7 +1568,6 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       }
       coverageTypeCase_ = 6;
       onChanged();
-      ;
       return routeGroupCoverageBuilder_;
     }
 

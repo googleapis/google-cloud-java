@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.DeleteEntityType].
+ * The request message for
+ * [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.DeleteEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest}
@@ -68,7 +69,9 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +128,7 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
   }
 
   public static final int FORCE_FIELD_NUMBER = 2;
-  private boolean force_;
+  private boolean force_ = false;
   /**
    *
    *
@@ -136,9 +139,11 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
    *    indicating the referencing resources.
    * *  If `force` is set to true, Dialogflow will remove the entity type, as
    *    well as any references to the entity type (i.e. Page
-   *    [parameter][google.cloud.dialogflow.cx.v3.Form.Parameter] of the entity type will be changed to
-   *    '&#64;sys.any' and intent [parameter][google.cloud.dialogflow.cx.v3.Intent.Parameter] of the entity type
-   *    will be removed).
+   *    [parameter][google.cloud.dialogflow.cx.v3.Form.Parameter] of the entity
+   *    type will be changed to
+   *    '&#64;sys.any' and intent
+   *    [parameter][google.cloud.dialogflow.cx.v3.Intent.Parameter] of the
+   *    entity type will be removed).
    * </pre>
    *
    * <code>bool force = 2;</code>
@@ -323,7 +328,8 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request message for [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.DeleteEntityType].
+   * The request message for
+   * [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.DeleteEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest}
@@ -357,10 +363,9 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       force_ = false;
-
       return this;
     }
 
@@ -388,10 +393,21 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest result =
           new com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest(this);
-      result.name_ = name_;
-      result.force_ = force_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.force_ = force_;
+      }
     }
 
     @java.lang.Override
@@ -442,6 +458,7 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getForce() != false) {
@@ -476,13 +493,13 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 force_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -501,6 +518,8 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -575,8 +594,8 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -596,8 +615,8 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -622,8 +641,8 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,9 +658,11 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      *    indicating the referencing resources.
      * *  If `force` is set to true, Dialogflow will remove the entity type, as
      *    well as any references to the entity type (i.e. Page
-     *    [parameter][google.cloud.dialogflow.cx.v3.Form.Parameter] of the entity type will be changed to
-     *    '&#64;sys.any' and intent [parameter][google.cloud.dialogflow.cx.v3.Intent.Parameter] of the entity type
-     *    will be removed).
+     *    [parameter][google.cloud.dialogflow.cx.v3.Form.Parameter] of the entity
+     *    type will be changed to
+     *    '&#64;sys.any' and intent
+     *    [parameter][google.cloud.dialogflow.cx.v3.Intent.Parameter] of the
+     *    entity type will be removed).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -662,9 +683,11 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      *    indicating the referencing resources.
      * *  If `force` is set to true, Dialogflow will remove the entity type, as
      *    well as any references to the entity type (i.e. Page
-     *    [parameter][google.cloud.dialogflow.cx.v3.Form.Parameter] of the entity type will be changed to
-     *    '&#64;sys.any' and intent [parameter][google.cloud.dialogflow.cx.v3.Intent.Parameter] of the entity type
-     *    will be removed).
+     *    [parameter][google.cloud.dialogflow.cx.v3.Form.Parameter] of the entity
+     *    type will be changed to
+     *    '&#64;sys.any' and intent
+     *    [parameter][google.cloud.dialogflow.cx.v3.Intent.Parameter] of the
+     *    entity type will be removed).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -675,6 +698,7 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
     public Builder setForce(boolean value) {
 
       force_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -688,9 +712,11 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      *    indicating the referencing resources.
      * *  If `force` is set to true, Dialogflow will remove the entity type, as
      *    well as any references to the entity type (i.e. Page
-     *    [parameter][google.cloud.dialogflow.cx.v3.Form.Parameter] of the entity type will be changed to
-     *    '&#64;sys.any' and intent [parameter][google.cloud.dialogflow.cx.v3.Intent.Parameter] of the entity type
-     *    will be removed).
+     *    [parameter][google.cloud.dialogflow.cx.v3.Form.Parameter] of the entity
+     *    type will be changed to
+     *    '&#64;sys.any' and intent
+     *    [parameter][google.cloud.dialogflow.cx.v3.Intent.Parameter] of the
+     *    entity type will be removed).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -698,7 +724,7 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       force_ = false;
       onChanged();
       return this;

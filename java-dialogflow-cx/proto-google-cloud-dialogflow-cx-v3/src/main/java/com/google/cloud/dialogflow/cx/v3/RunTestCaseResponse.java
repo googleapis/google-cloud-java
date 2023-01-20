@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The response message for [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase].
+ * The response message for
+ * [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.RunTestCaseResponse}
@@ -110,7 +111,9 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3.TestCaseResultOrBuilder getResultOrBuilder() {
-    return getResult();
+    return result_ == null
+        ? com.google.cloud.dialogflow.cx.v3.TestCaseResult.getDefaultInstance()
+        : result_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -282,7 +285,8 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The response message for [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase].
+   * The response message for
+   * [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.RunTestCaseResponse}
@@ -316,10 +320,10 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (resultBuilder_ == null) {
-        result_ = null;
-      } else {
-        result_ = null;
+      bitField0_ = 0;
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
       return this;
@@ -349,13 +353,18 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.cx.v3.RunTestCaseResponse buildPartial() {
       com.google.cloud.dialogflow.cx.v3.RunTestCaseResponse result =
           new com.google.cloud.dialogflow.cx.v3.RunTestCaseResponse(this);
-      if (resultBuilder_ == null) {
-        result.result_ = result_;
-      } else {
-        result.result_ = resultBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.cx.v3.RunTestCaseResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.result_ = resultBuilder_ == null ? result_ : resultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -436,7 +445,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 input.readMessage(getResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -456,6 +465,8 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dialogflow.cx.v3.TestCaseResult result_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3.TestCaseResult,
@@ -474,7 +485,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
      * @return Whether the result field is set.
      */
     public boolean hasResult() {
-      return resultBuilder_ != null || result_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -511,11 +522,11 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         result_ = value;
-        onChanged();
       } else {
         resultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -531,11 +542,11 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.cx.v3.TestCaseResult.Builder builderForValue) {
       if (resultBuilder_ == null) {
         result_ = builderForValue.build();
-        onChanged();
       } else {
         resultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -549,19 +560,18 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeResult(com.google.cloud.dialogflow.cx.v3.TestCaseResult value) {
       if (resultBuilder_ == null) {
-        if (result_ != null) {
-          result_ =
-              com.google.cloud.dialogflow.cx.v3.TestCaseResult.newBuilder(result_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && result_ != null
+            && result_ != com.google.cloud.dialogflow.cx.v3.TestCaseResult.getDefaultInstance()) {
+          getResultBuilder().mergeFrom(value);
         } else {
           result_ = value;
         }
-        onChanged();
       } else {
         resultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -574,14 +584,13 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.cx.v3.TestCaseResult result = 2;</code>
      */
     public Builder clearResult() {
-      if (resultBuilder_ == null) {
-        result_ = null;
-        onChanged();
-      } else {
-        result_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -594,7 +603,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.cx.v3.TestCaseResult result = 2;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.TestCaseResult.Builder getResultBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }

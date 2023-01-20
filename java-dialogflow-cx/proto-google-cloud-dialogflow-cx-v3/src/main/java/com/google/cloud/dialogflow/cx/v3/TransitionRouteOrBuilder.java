@@ -91,8 +91,9 @@ public interface TransitionRouteOrBuilder
    *
    *
    * <pre>
-   * The condition to evaluate against [form parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or
-   * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   * The condition to evaluate against [form
+   * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
+   * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
    * See the [conditions
    * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
    * At least one of `intent` or `condition` must be specified. When both
@@ -109,8 +110,9 @@ public interface TransitionRouteOrBuilder
    *
    *
    * <pre>
-   * The condition to evaluate against [form parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or
-   * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   * The condition to evaluate against [form
+   * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
+   * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
    * See the [conditions
    * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
    * At least one of `intent` or `condition` must be specified. When both
