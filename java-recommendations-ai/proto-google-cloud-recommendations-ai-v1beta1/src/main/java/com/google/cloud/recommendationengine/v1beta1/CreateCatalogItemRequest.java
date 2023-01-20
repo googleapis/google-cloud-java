@@ -68,7 +68,9 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,7 +176,9 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder
       getCatalogItemOrBuilder() {
-    return getCatalogItem();
+    return catalogItem_ == null
+        ? com.google.cloud.recommendationengine.v1beta1.CatalogItem.getDefaultInstance()
+        : catalogItem_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -391,12 +395,11 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (catalogItemBuilder_ == null) {
-        catalogItem_ = null;
-      } else {
-        catalogItem_ = null;
+      catalogItem_ = null;
+      if (catalogItemBuilder_ != null) {
+        catalogItemBuilder_.dispose();
         catalogItemBuilder_ = null;
       }
       return this;
@@ -429,14 +432,23 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
     public com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest result =
           new com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest(this);
-      result.parent_ = parent_;
-      if (catalogItemBuilder_ == null) {
-        result.catalogItem_ = catalogItem_;
-      } else {
-        result.catalogItem_ = catalogItemBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.catalogItem_ =
+            catalogItemBuilder_ == null ? catalogItem_ : catalogItemBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -490,6 +502,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCatalogItem()) {
@@ -524,13 +537,13 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCatalogItemFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -549,6 +562,8 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -620,8 +635,8 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -640,8 +655,8 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +680,8 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,7 +706,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
      * @return Whether the catalogItem field is set.
      */
     public boolean hasCatalogItem() {
-      return catalogItemBuilder_ != null || catalogItem_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -732,11 +747,11 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         catalogItem_ = value;
-        onChanged();
       } else {
         catalogItemBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -754,11 +769,11 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
         com.google.cloud.recommendationengine.v1beta1.CatalogItem.Builder builderForValue) {
       if (catalogItemBuilder_ == null) {
         catalogItem_ = builderForValue.build();
-        onChanged();
       } else {
         catalogItemBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -775,19 +790,19 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
     public Builder mergeCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.CatalogItem value) {
       if (catalogItemBuilder_ == null) {
-        if (catalogItem_ != null) {
-          catalogItem_ =
-              com.google.cloud.recommendationengine.v1beta1.CatalogItem.newBuilder(catalogItem_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && catalogItem_ != null
+            && catalogItem_
+                != com.google.cloud.recommendationengine.v1beta1.CatalogItem.getDefaultInstance()) {
+          getCatalogItemBuilder().mergeFrom(value);
         } else {
           catalogItem_ = value;
         }
-        onChanged();
       } else {
         catalogItemBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -802,14 +817,13 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearCatalogItem() {
-      if (catalogItemBuilder_ == null) {
-        catalogItem_ = null;
-        onChanged();
-      } else {
-        catalogItem_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      catalogItem_ = null;
+      if (catalogItemBuilder_ != null) {
+        catalogItemBuilder_.dispose();
         catalogItemBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -825,7 +839,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.recommendationengine.v1beta1.CatalogItem.Builder
         getCatalogItemBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCatalogItemFieldBuilder().getBuilder();
     }

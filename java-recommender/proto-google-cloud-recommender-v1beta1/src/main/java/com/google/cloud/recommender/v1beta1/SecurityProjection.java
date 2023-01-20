@@ -111,7 +111,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getDetailsOrBuilder() {
-    return getDetails();
+    return details_ == null ? com.google.protobuf.Struct.getDefaultInstance() : details_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -317,10 +317,10 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (detailsBuilder_ == null) {
-        details_ = null;
-      } else {
-        details_ = null;
+      bitField0_ = 0;
+      details_ = null;
+      if (detailsBuilder_ != null) {
+        detailsBuilder_.dispose();
         detailsBuilder_ = null;
       }
       return this;
@@ -350,13 +350,18 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.recommender.v1beta1.SecurityProjection buildPartial() {
       com.google.cloud.recommender.v1beta1.SecurityProjection result =
           new com.google.cloud.recommender.v1beta1.SecurityProjection(this);
-      if (detailsBuilder_ == null) {
-        result.details_ = details_;
-      } else {
-        result.details_ = detailsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommender.v1beta1.SecurityProjection result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.details_ = detailsBuilder_ == null ? details_ : detailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -437,7 +442,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
             case 18:
               {
                 input.readMessage(getDetailsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -456,6 +461,8 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Struct details_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -476,7 +483,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
      * @return Whether the details field is set.
      */
     public boolean hasDetails() {
-      return detailsBuilder_ != null || details_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -513,11 +520,11 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         details_ = value;
-        onChanged();
       } else {
         detailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -533,11 +540,11 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
     public Builder setDetails(com.google.protobuf.Struct.Builder builderForValue) {
       if (detailsBuilder_ == null) {
         details_ = builderForValue.build();
-        onChanged();
       } else {
         detailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -552,17 +559,18 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeDetails(com.google.protobuf.Struct value) {
       if (detailsBuilder_ == null) {
-        if (details_ != null) {
-          details_ =
-              com.google.protobuf.Struct.newBuilder(details_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && details_ != null
+            && details_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getDetailsBuilder().mergeFrom(value);
         } else {
           details_ = value;
         }
-        onChanged();
       } else {
         detailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -576,14 +584,13 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Struct details = 2;</code>
      */
     public Builder clearDetails() {
-      if (detailsBuilder_ == null) {
-        details_ = null;
-        onChanged();
-      } else {
-        details_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      details_ = null;
+      if (detailsBuilder_ != null) {
+        detailsBuilder_.dispose();
         detailsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -597,7 +604,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Struct details = 2;</code>
      */
     public com.google.protobuf.Struct.Builder getDetailsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }

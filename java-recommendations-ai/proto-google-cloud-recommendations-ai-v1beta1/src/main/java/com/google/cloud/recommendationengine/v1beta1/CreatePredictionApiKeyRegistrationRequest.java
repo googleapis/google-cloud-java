@@ -73,7 +73,9 @@ public final class CreatePredictionApiKeyRegistrationRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -182,7 +184,10 @@ public final class CreatePredictionApiKeyRegistrationRequest
   @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistrationOrBuilder
       getPredictionApiKeyRegistrationOrBuilder() {
-    return getPredictionApiKeyRegistration();
+    return predictionApiKeyRegistration_ == null
+        ? com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration
+            .getDefaultInstance()
+        : predictionApiKeyRegistration_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -427,12 +432,11 @@ public final class CreatePredictionApiKeyRegistrationRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (predictionApiKeyRegistrationBuilder_ == null) {
-        predictionApiKeyRegistration_ = null;
-      } else {
-        predictionApiKeyRegistration_ = null;
+      predictionApiKeyRegistration_ = null;
+      if (predictionApiKeyRegistrationBuilder_ != null) {
+        predictionApiKeyRegistrationBuilder_.dispose();
         predictionApiKeyRegistrationBuilder_ = null;
       }
       return this;
@@ -469,14 +473,26 @@ public final class CreatePredictionApiKeyRegistrationRequest
           result =
               new com.google.cloud.recommendationengine.v1beta1
                   .CreatePredictionApiKeyRegistrationRequest(this);
-      result.parent_ = parent_;
-      if (predictionApiKeyRegistrationBuilder_ == null) {
-        result.predictionApiKeyRegistration_ = predictionApiKeyRegistration_;
-      } else {
-        result.predictionApiKeyRegistration_ = predictionApiKeyRegistrationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommendationengine.v1beta1.CreatePredictionApiKeyRegistrationRequest
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.predictionApiKeyRegistration_ =
+            predictionApiKeyRegistrationBuilder_ == null
+                ? predictionApiKeyRegistration_
+                : predictionApiKeyRegistrationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -535,6 +551,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPredictionApiKeyRegistration()) {
@@ -569,14 +586,14 @@ public final class CreatePredictionApiKeyRegistrationRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getPredictionApiKeyRegistrationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -595,6 +612,8 @@ public final class CreatePredictionApiKeyRegistrationRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -666,8 +685,8 @@ public final class CreatePredictionApiKeyRegistrationRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,8 +705,8 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -711,8 +730,8 @@ public final class CreatePredictionApiKeyRegistrationRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -738,7 +757,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * @return Whether the predictionApiKeyRegistration field is set.
      */
     public boolean hasPredictionApiKeyRegistration() {
-      return predictionApiKeyRegistrationBuilder_ != null || predictionApiKeyRegistration_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -782,11 +801,11 @@ public final class CreatePredictionApiKeyRegistrationRequest
           throw new NullPointerException();
         }
         predictionApiKeyRegistration_ = value;
-        onChanged();
       } else {
         predictionApiKeyRegistrationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -805,11 +824,11 @@ public final class CreatePredictionApiKeyRegistrationRequest
             builderForValue) {
       if (predictionApiKeyRegistrationBuilder_ == null) {
         predictionApiKeyRegistration_ = builderForValue.build();
-        onChanged();
       } else {
         predictionApiKeyRegistrationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -826,20 +845,20 @@ public final class CreatePredictionApiKeyRegistrationRequest
     public Builder mergePredictionApiKeyRegistration(
         com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration value) {
       if (predictionApiKeyRegistrationBuilder_ == null) {
-        if (predictionApiKeyRegistration_ != null) {
-          predictionApiKeyRegistration_ =
-              com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration.newBuilder(
-                      predictionApiKeyRegistration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && predictionApiKeyRegistration_ != null
+            && predictionApiKeyRegistration_
+                != com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration
+                    .getDefaultInstance()) {
+          getPredictionApiKeyRegistrationBuilder().mergeFrom(value);
         } else {
           predictionApiKeyRegistration_ = value;
         }
-        onChanged();
       } else {
         predictionApiKeyRegistrationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -854,14 +873,13 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * </code>
      */
     public Builder clearPredictionApiKeyRegistration() {
-      if (predictionApiKeyRegistrationBuilder_ == null) {
-        predictionApiKeyRegistration_ = null;
-        onChanged();
-      } else {
-        predictionApiKeyRegistration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      predictionApiKeyRegistration_ = null;
+      if (predictionApiKeyRegistrationBuilder_ != null) {
+        predictionApiKeyRegistrationBuilder_.dispose();
         predictionApiKeyRegistrationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -877,7 +895,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      */
     public com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration.Builder
         getPredictionApiKeyRegistrationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPredictionApiKeyRegistrationFieldBuilder().getBuilder();
     }

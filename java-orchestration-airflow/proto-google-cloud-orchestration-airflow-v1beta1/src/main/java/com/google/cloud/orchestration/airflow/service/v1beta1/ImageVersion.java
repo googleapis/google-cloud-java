@@ -69,7 +69,9 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_VERSION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object imageVersionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageVersionId_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IS_DEFAULT_FIELD_NUMBER = 2;
-  private boolean isDefault_;
+  private boolean isDefault_ = false;
   /**
    *
    *
@@ -139,6 +141,8 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUPPORTED_PYTHON_VERSIONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList supportedPythonVersions_;
   /**
    *
@@ -242,11 +246,11 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DateOrBuilder getReleaseDateOrBuilder() {
-    return getReleaseDate();
+    return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
   }
 
   public static final int CREATION_DISABLED_FIELD_NUMBER = 5;
-  private boolean creationDisabled_;
+  private boolean creationDisabled_ = false;
   /**
    *
    *
@@ -264,7 +268,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UPGRADE_DISABLED_FIELD_NUMBER = 6;
-  private boolean upgradeDisabled_;
+  private boolean upgradeDisabled_ = false;
   /**
    *
    *
@@ -541,22 +545,18 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       imageVersionId_ = "";
-
       isDefault_ = false;
-
       supportedPythonVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (releaseDateBuilder_ == null) {
-        releaseDate_ = null;
-      } else {
-        releaseDate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      releaseDate_ = null;
+      if (releaseDateBuilder_ != null) {
+        releaseDateBuilder_.dispose();
         releaseDateBuilder_ = null;
       }
       creationDisabled_ = false;
-
       upgradeDisabled_ = false;
-
       return this;
     }
 
@@ -586,23 +586,42 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.orchestration.airflow.service.v1beta1.ImageVersion buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1beta1.ImageVersion result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.ImageVersion(this);
-      int from_bitField0_ = bitField0_;
-      result.imageVersionId_ = imageVersionId_;
-      result.isDefault_ = isDefault_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        supportedPythonVersions_ = supportedPythonVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.supportedPythonVersions_ = supportedPythonVersions_;
-      if (releaseDateBuilder_ == null) {
-        result.releaseDate_ = releaseDate_;
-      } else {
-        result.releaseDate_ = releaseDateBuilder_.build();
-      }
-      result.creationDisabled_ = creationDisabled_;
-      result.upgradeDisabled_ = upgradeDisabled_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.orchestration.airflow.service.v1beta1.ImageVersion result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        supportedPythonVersions_ = supportedPythonVersions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.supportedPythonVersions_ = supportedPythonVersions_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.ImageVersion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.imageVersionId_ = imageVersionId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.isDefault_ = isDefault_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.releaseDate_ =
+            releaseDateBuilder_ == null ? releaseDate_ : releaseDateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.creationDisabled_ = creationDisabled_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.upgradeDisabled_ = upgradeDisabled_;
+      }
     }
 
     @java.lang.Override
@@ -656,6 +675,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()) return this;
       if (!other.getImageVersionId().isEmpty()) {
         imageVersionId_ = other.imageVersionId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getIsDefault() != false) {
@@ -664,7 +684,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedPythonVersions_.isEmpty()) {
         if (supportedPythonVersions_.isEmpty()) {
           supportedPythonVersions_ = other.supportedPythonVersions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureSupportedPythonVersionsIsMutable();
           supportedPythonVersions_.addAll(other.supportedPythonVersions_);
@@ -709,13 +729,13 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 imageVersionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 isDefault_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -728,19 +748,19 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getReleaseDateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 creationDisabled_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 upgradeDisabled_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -826,8 +846,8 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageVersionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,8 +864,8 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImageVersionId() {
-
       imageVersionId_ = getDefaultInstance().getImageVersionId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -867,8 +887,8 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageVersionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -906,6 +926,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsDefault(boolean value) {
 
       isDefault_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -922,7 +943,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsDefault() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       isDefault_ = false;
       onChanged();
       return this;
@@ -932,10 +953,10 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSupportedPythonVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         supportedPythonVersions_ =
             new com.google.protobuf.LazyStringArrayList(supportedPythonVersions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1070,7 +1091,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSupportedPythonVersions() {
       supportedPythonVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1113,7 +1134,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the releaseDate field is set.
      */
     public boolean hasReleaseDate() {
-      return releaseDateBuilder_ != null || releaseDate_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1148,11 +1169,11 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         releaseDate_ = value;
-        onChanged();
       } else {
         releaseDateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1167,11 +1188,11 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public Builder setReleaseDate(com.google.type.Date.Builder builderForValue) {
       if (releaseDateBuilder_ == null) {
         releaseDate_ = builderForValue.build();
-        onChanged();
       } else {
         releaseDateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1185,17 +1206,18 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeReleaseDate(com.google.type.Date value) {
       if (releaseDateBuilder_ == null) {
-        if (releaseDate_ != null) {
-          releaseDate_ =
-              com.google.type.Date.newBuilder(releaseDate_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && releaseDate_ != null
+            && releaseDate_ != com.google.type.Date.getDefaultInstance()) {
+          getReleaseDateBuilder().mergeFrom(value);
         } else {
           releaseDate_ = value;
         }
-        onChanged();
       } else {
         releaseDateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1208,14 +1230,13 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date release_date = 4;</code>
      */
     public Builder clearReleaseDate() {
-      if (releaseDateBuilder_ == null) {
-        releaseDate_ = null;
-        onChanged();
-      } else {
-        releaseDate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      releaseDate_ = null;
+      if (releaseDateBuilder_ != null) {
+        releaseDateBuilder_.dispose();
         releaseDateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1228,7 +1249,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date release_date = 4;</code>
      */
     public com.google.type.Date.Builder getReleaseDateBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getReleaseDateFieldBuilder().getBuilder();
     }
@@ -1301,6 +1322,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreationDisabled(boolean value) {
 
       creationDisabled_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1316,7 +1338,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       creationDisabled_ = false;
       onChanged();
       return this;
@@ -1355,6 +1377,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpgradeDisabled(boolean value) {
 
       upgradeDisabled_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1371,7 +1394,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUpgradeDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       upgradeDisabled_ = false;
       onChanged();
       return this;

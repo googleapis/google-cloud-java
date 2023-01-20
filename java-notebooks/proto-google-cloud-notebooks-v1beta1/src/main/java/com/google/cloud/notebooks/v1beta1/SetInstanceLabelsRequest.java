@@ -79,7 +79,9 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -142,6 +144,7 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -202,7 +205,10 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -466,8 +472,8 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       internalGetMutableLabels().clear();
       return this;
     }
@@ -496,12 +502,22 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
     public com.google.cloud.notebooks.v1beta1.SetInstanceLabelsRequest buildPartial() {
       com.google.cloud.notebooks.v1beta1.SetInstanceLabelsRequest result =
           new com.google.cloud.notebooks.v1beta1.SetInstanceLabelsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1beta1.SetInstanceLabelsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -552,9 +568,11 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -584,7 +602,7 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -596,6 +614,7 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -681,8 +700,8 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,8 +718,8 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -722,8 +741,8 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,14 +758,14 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return labels_;
     }
 
@@ -801,8 +820,10 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
      * <code>map&lt;string, string&gt; labels = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -832,6 +853,7 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -855,6 +877,7 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -874,8 +897,8 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -890,6 +913,7 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

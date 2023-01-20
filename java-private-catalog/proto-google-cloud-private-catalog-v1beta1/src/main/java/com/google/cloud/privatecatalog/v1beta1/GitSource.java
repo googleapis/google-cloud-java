@@ -119,7 +119,9 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPO_FIELD_NUMBER = 1;
-  private volatile java.lang.Object repo_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object repo_ = "";
   /**
    *
    *
@@ -168,7 +170,9 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIR_FIELD_NUMBER = 2;
-  private volatile java.lang.Object dir_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dir_ = "";
   /**
    *
    *
@@ -684,10 +688,9 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       repo_ = "";
-
       dir_ = "";
-
       refCase_ = 0;
       ref_ = null;
       return this;
@@ -717,20 +720,27 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.privatecatalog.v1beta1.GitSource buildPartial() {
       com.google.cloud.privatecatalog.v1beta1.GitSource result =
           new com.google.cloud.privatecatalog.v1beta1.GitSource(this);
-      result.repo_ = repo_;
-      result.dir_ = dir_;
-      if (refCase_ == 3) {
-        result.ref_ = ref_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (refCase_ == 4) {
-        result.ref_ = ref_;
-      }
-      if (refCase_ == 5) {
-        result.ref_ = ref_;
-      }
-      result.refCase_ = refCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.privatecatalog.v1beta1.GitSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.repo_ = repo_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dir_ = dir_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.privatecatalog.v1beta1.GitSource result) {
+      result.refCase_ = refCase_;
+      result.ref_ = this.ref_;
     }
 
     @java.lang.Override
@@ -781,10 +791,12 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getRepo().isEmpty()) {
         repo_ = other.repo_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDir().isEmpty()) {
         dir_ = other.dir_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getRefCase()) {
@@ -843,13 +855,13 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 repo_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 dir_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -903,6 +915,8 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object repo_ = "";
     /**
@@ -965,8 +979,8 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       repo_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -982,8 +996,8 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRepo() {
-
       repo_ = getDefaultInstance().getRepo();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1004,8 +1018,8 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       repo_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1077,8 +1091,8 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dir_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1096,8 +1110,8 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDir() {
-
       dir_ = getDefaultInstance().getDir();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1120,8 +1134,8 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dir_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

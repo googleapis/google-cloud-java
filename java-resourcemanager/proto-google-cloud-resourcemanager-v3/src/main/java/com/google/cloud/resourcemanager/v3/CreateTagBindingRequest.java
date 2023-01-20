@@ -116,11 +116,13 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.resourcemanager.v3.TagBindingOrBuilder getTagBindingOrBuilder() {
-    return getTagBinding();
+    return tagBinding_ == null
+        ? com.google.cloud.resourcemanager.v3.TagBinding.getDefaultInstance()
+        : tagBinding_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -350,14 +352,13 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tagBindingBuilder_ == null) {
-        tagBinding_ = null;
-      } else {
-        tagBinding_ = null;
+      bitField0_ = 0;
+      tagBinding_ = null;
+      if (tagBindingBuilder_ != null) {
+        tagBindingBuilder_.dispose();
         tagBindingBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -385,14 +386,21 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
     public com.google.cloud.resourcemanager.v3.CreateTagBindingRequest buildPartial() {
       com.google.cloud.resourcemanager.v3.CreateTagBindingRequest result =
           new com.google.cloud.resourcemanager.v3.CreateTagBindingRequest(this);
-      if (tagBindingBuilder_ == null) {
-        result.tagBinding_ = tagBinding_;
-      } else {
-        result.tagBinding_ = tagBindingBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcemanager.v3.CreateTagBindingRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tagBinding_ = tagBindingBuilder_ == null ? tagBinding_ : tagBindingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -476,13 +484,13 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getTagBindingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -501,6 +509,8 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.resourcemanager.v3.TagBinding tagBinding_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -522,7 +532,7 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
      * @return Whether the tagBinding field is set.
      */
     public boolean hasTagBinding() {
-      return tagBindingBuilder_ != null || tagBinding_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -563,11 +573,11 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         tagBinding_ = value;
-        onChanged();
       } else {
         tagBindingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -585,11 +595,11 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
         com.google.cloud.resourcemanager.v3.TagBinding.Builder builderForValue) {
       if (tagBindingBuilder_ == null) {
         tagBinding_ = builderForValue.build();
-        onChanged();
       } else {
         tagBindingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -605,19 +615,18 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
      */
     public Builder mergeTagBinding(com.google.cloud.resourcemanager.v3.TagBinding value) {
       if (tagBindingBuilder_ == null) {
-        if (tagBinding_ != null) {
-          tagBinding_ =
-              com.google.cloud.resourcemanager.v3.TagBinding.newBuilder(tagBinding_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && tagBinding_ != null
+            && tagBinding_ != com.google.cloud.resourcemanager.v3.TagBinding.getDefaultInstance()) {
+          getTagBindingBuilder().mergeFrom(value);
         } else {
           tagBinding_ = value;
         }
-        onChanged();
       } else {
         tagBindingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -632,14 +641,13 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearTagBinding() {
-      if (tagBindingBuilder_ == null) {
-        tagBinding_ = null;
-        onChanged();
-      } else {
-        tagBinding_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      tagBinding_ = null;
+      if (tagBindingBuilder_ != null) {
+        tagBindingBuilder_.dispose();
         tagBindingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -654,7 +662,7 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.resourcemanager.v3.TagBinding.Builder getTagBindingBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTagBindingFieldBuilder().getBuilder();
     }
@@ -739,6 +747,7 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -755,7 +764,7 @@ public final class CreateTagBindingRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validateOnly_ = false;
       onChanged();
       return this;

@@ -70,7 +70,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
   }
 
   public static final int PURGED_EVENTS_COUNT_FIELD_NUMBER = 1;
-  private long purgedEventsCount_;
+  private long purgedEventsCount_ = 0L;
   /**
    *
    *
@@ -88,6 +88,8 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
   }
 
   public static final int USER_EVENTS_SAMPLE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommendationengine.v1beta1.UserEvent> userEventsSample_;
   /**
    *
@@ -381,15 +383,15 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       purgedEventsCount_ = 0L;
-
       if (userEventsSampleBuilder_ == null) {
         userEventsSample_ = java.util.Collections.emptyList();
       } else {
         userEventsSample_ = null;
         userEventsSampleBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -419,19 +421,33 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     public com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse result =
           new com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.purgedEventsCount_ = purgedEventsCount_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse result) {
       if (userEventsSampleBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           userEventsSample_ = java.util.Collections.unmodifiableList(userEventsSample_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.userEventsSample_ = userEventsSample_;
       } else {
         result.userEventsSample_ = userEventsSampleBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.purgedEventsCount_ = purgedEventsCount_;
+      }
     }
 
     @java.lang.Override
@@ -490,7 +506,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
         if (!other.userEventsSample_.isEmpty()) {
           if (userEventsSample_.isEmpty()) {
             userEventsSample_ = other.userEventsSample_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureUserEventsSampleIsMutable();
             userEventsSample_.addAll(other.userEventsSample_);
@@ -503,7 +519,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
             userEventsSampleBuilder_.dispose();
             userEventsSampleBuilder_ = null;
             userEventsSample_ = other.userEventsSample_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             userEventsSampleBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getUserEventsSampleFieldBuilder()
@@ -542,7 +558,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
             case 8:
               {
                 purgedEventsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -609,6 +625,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     public Builder setPurgedEventsCount(long value) {
 
       purgedEventsCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -624,7 +641,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearPurgedEventsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       purgedEventsCount_ = 0L;
       onChanged();
       return this;
@@ -634,11 +651,11 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
         userEventsSample_ = java.util.Collections.emptyList();
 
     private void ensureUserEventsSampleIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         userEventsSample_ =
             new java.util.ArrayList<com.google.cloud.recommendationengine.v1beta1.UserEvent>(
                 userEventsSample_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -883,7 +900,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     public Builder clearUserEventsSample() {
       if (userEventsSampleBuilder_ == null) {
         userEventsSample_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         userEventsSampleBuilder_.clear();
@@ -1026,7 +1043,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
                 com.google.cloud.recommendationengine.v1beta1.UserEvent.Builder,
                 com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder>(
                 userEventsSample_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         userEventsSample_ = null;

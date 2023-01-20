@@ -388,6 +388,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bigQuerySourceBuilder_ != null) {
         bigQuerySourceBuilder_.clear();
       }
@@ -420,16 +421,25 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
     public com.google.cloud.retail.v2alpha.CompletionDataInputConfig buildPartial() {
       com.google.cloud.retail.v2alpha.CompletionDataInputConfig result =
           new com.google.cloud.retail.v2alpha.CompletionDataInputConfig(this);
-      if (sourceCase_ == 1) {
-        if (bigQuerySourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = bigQuerySourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.CompletionDataInputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.retail.v2alpha.CompletionDataInputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && bigQuerySourceBuilder_ != null) {
+        result.source_ = bigQuerySourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -551,6 +561,8 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.retail.v2alpha.BigQuerySource,
@@ -803,7 +815,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return bigQuerySourceBuilder_;
     }
 

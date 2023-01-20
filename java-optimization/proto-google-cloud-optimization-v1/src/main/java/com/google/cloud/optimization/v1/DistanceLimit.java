@@ -70,7 +70,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int MAX_METERS_FIELD_NUMBER = 1;
-  private long maxMeters_;
+  private long maxMeters_ = 0L;
   /**
    *
    *
@@ -105,7 +105,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOFT_MAX_METERS_FIELD_NUMBER = 2;
-  private long softMaxMeters_;
+  private long softMaxMeters_ = 0L;
   /**
    *
    *
@@ -146,7 +146,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COST_PER_KILOMETER_ABOVE_SOFT_MAX_FIELD_NUMBER = 3;
-  private double costPerKilometerAboveSoftMax_;
+  private double costPerKilometerAboveSoftMax_ = 0D;
   /**
    *
    *
@@ -431,12 +431,10 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maxMeters_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       softMaxMeters_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       costPerKilometerAboveSoftMax_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -464,6 +462,14 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.DistanceLimit buildPartial() {
       com.google.cloud.optimization.v1.DistanceLimit result =
           new com.google.cloud.optimization.v1.DistanceLimit(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.DistanceLimit result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -478,9 +484,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
         result.costPerKilometerAboveSoftMax_ = costPerKilometerAboveSoftMax_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -647,8 +651,9 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxMeters(long value) {
-      bitField0_ |= 0x00000001;
+
       maxMeters_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -727,8 +732,9 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSoftMaxMeters(long value) {
-      bitField0_ |= 0x00000002;
+
       softMaxMeters_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -819,8 +825,9 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCostPerKilometerAboveSoftMax(double value) {
-      bitField0_ |= 0x00000004;
+
       costPerKilometerAboveSoftMax_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

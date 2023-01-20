@@ -68,6 +68,8 @@ public final class OperationGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPERATIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommender.v1beta1.Operation> operations_;
   /**
    *
@@ -340,6 +342,7 @@ public final class OperationGroup extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (operationsBuilder_ == null) {
         operations_ = java.util.Collections.emptyList();
       } else {
@@ -374,7 +377,16 @@ public final class OperationGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommender.v1beta1.OperationGroup buildPartial() {
       com.google.cloud.recommender.v1beta1.OperationGroup result =
           new com.google.cloud.recommender.v1beta1.OperationGroup(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.recommender.v1beta1.OperationGroup result) {
       if (operationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           operations_ = java.util.Collections.unmodifiableList(operations_);
@@ -384,8 +396,10 @@ public final class OperationGroup extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.operations_ = operationsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommender.v1beta1.OperationGroup result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

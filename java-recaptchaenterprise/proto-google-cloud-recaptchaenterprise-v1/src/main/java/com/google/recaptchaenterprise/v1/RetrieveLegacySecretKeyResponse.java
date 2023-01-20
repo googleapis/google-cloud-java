@@ -70,7 +70,9 @@ public final class RetrieveLegacySecretKeyResponse extends com.google.protobuf.G
   }
 
   public static final int LEGACY_SECRET_KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object legacySecretKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object legacySecretKey_ = "";
   /**
    *
    *
@@ -325,8 +327,8 @@ public final class RetrieveLegacySecretKeyResponse extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       legacySecretKey_ = "";
-
       return this;
     }
 
@@ -355,9 +357,19 @@ public final class RetrieveLegacySecretKeyResponse extends com.google.protobuf.G
     public com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse buildPartial() {
       com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse result =
           new com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse(this);
-      result.legacySecretKey_ = legacySecretKey_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.legacySecretKey_ = legacySecretKey_;
+      }
     }
 
     @java.lang.Override
@@ -410,6 +422,7 @@ public final class RetrieveLegacySecretKeyResponse extends com.google.protobuf.G
         return this;
       if (!other.getLegacySecretKey().isEmpty()) {
         legacySecretKey_ = other.legacySecretKey_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -441,7 +454,7 @@ public final class RetrieveLegacySecretKeyResponse extends com.google.protobuf.G
             case 10:
               {
                 legacySecretKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -460,6 +473,8 @@ public final class RetrieveLegacySecretKeyResponse extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object legacySecretKey_ = "";
     /**
@@ -531,8 +546,8 @@ public final class RetrieveLegacySecretKeyResponse extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       legacySecretKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -551,8 +566,8 @@ public final class RetrieveLegacySecretKeyResponse extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearLegacySecretKey() {
-
       legacySecretKey_ = getDefaultInstance().getLegacySecretKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -576,8 +591,8 @@ public final class RetrieveLegacySecretKeyResponse extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       legacySecretKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

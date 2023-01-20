@@ -893,6 +893,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SERVING_CONFIG_IDS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList servingConfigIds_;
     /**
      *
@@ -1169,6 +1171,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         servingConfigIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -1198,14 +1201,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2beta.Model.ServingConfigList buildPartial() {
         com.google.cloud.retail.v2beta.Model.ServingConfigList result =
             new com.google.cloud.retail.v2beta.Model.ServingConfigList(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.retail.v2beta.Model.ServingConfigList result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           servingConfigIds_ = servingConfigIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.servingConfigIds_ = servingConfigIds_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.retail.v2beta.Model.ServingConfigList result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1569,7 +1583,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1626,7 +1642,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1681,7 +1699,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRAINING_STATE_FIELD_NUMBER = 3;
-  private int trainingState_;
+  private int trainingState_ = 0;
   /**
    *
    *
@@ -1726,16 +1744,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.Model.TrainingState getTrainingState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.Model.TrainingState result =
-        com.google.cloud.retail.v2beta.Model.TrainingState.valueOf(trainingState_);
+        com.google.cloud.retail.v2beta.Model.TrainingState.forNumber(trainingState_);
     return result == null
         ? com.google.cloud.retail.v2beta.Model.TrainingState.UNRECOGNIZED
         : result;
   }
 
   public static final int SERVING_STATE_FIELD_NUMBER = 4;
-  private int servingState_;
+  private int servingState_ = 0;
   /**
    *
    *
@@ -1768,9 +1785,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.Model.ServingState getServingState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.Model.ServingState result =
-        com.google.cloud.retail.v2beta.Model.ServingState.valueOf(servingState_);
+        com.google.cloud.retail.v2beta.Model.ServingState.forNumber(servingState_);
     return result == null ? com.google.cloud.retail.v2beta.Model.ServingState.UNRECOGNIZED : result;
   }
 
@@ -1820,7 +1836,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
@@ -1875,11 +1891,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int TYPE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -1952,7 +1970,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPTIMIZATION_OBJECTIVE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object optimizationObjective_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object optimizationObjective_ = "";
   /**
    *
    *
@@ -2033,7 +2053,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERIODIC_TUNING_STATE_FIELD_NUMBER = 11;
-  private int periodicTuningState_;
+  private int periodicTuningState_ = 0;
   /**
    *
    *
@@ -2072,9 +2092,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.Model.PeriodicTuningState getPeriodicTuningState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.Model.PeriodicTuningState result =
-        com.google.cloud.retail.v2beta.Model.PeriodicTuningState.valueOf(periodicTuningState_);
+        com.google.cloud.retail.v2beta.Model.PeriodicTuningState.forNumber(periodicTuningState_);
     return result == null
         ? com.google.cloud.retail.v2beta.Model.PeriodicTuningState.UNRECOGNIZED
         : result;
@@ -2131,11 +2150,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastTuneTimeOrBuilder() {
-    return getLastTuneTime();
+    return lastTuneTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastTuneTime_;
   }
 
   public static final int TUNING_OPERATION_FIELD_NUMBER = 15;
-  private volatile java.lang.Object tuningOperation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tuningOperation_ = "";
   /**
    *
    *
@@ -2188,7 +2211,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_STATE_FIELD_NUMBER = 16;
-  private int dataState_;
+  private int dataState_ = 0;
   /**
    *
    *
@@ -2233,14 +2256,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.Model.DataState getDataState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.Model.DataState result =
-        com.google.cloud.retail.v2beta.Model.DataState.valueOf(dataState_);
+        com.google.cloud.retail.v2beta.Model.DataState.forNumber(dataState_);
     return result == null ? com.google.cloud.retail.v2beta.Model.DataState.UNRECOGNIZED : result;
   }
 
   public static final int FILTERING_OPTION_FIELD_NUMBER = 18;
-  private int filteringOption_;
+  private int filteringOption_ = 0;
   /**
    *
    *
@@ -2275,15 +2297,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.RecommendationsFilteringOption getFilteringOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.RecommendationsFilteringOption result =
-        com.google.cloud.retail.v2beta.RecommendationsFilteringOption.valueOf(filteringOption_);
+        com.google.cloud.retail.v2beta.RecommendationsFilteringOption.forNumber(filteringOption_);
     return result == null
         ? com.google.cloud.retail.v2beta.RecommendationsFilteringOption.UNRECOGNIZED
         : result;
   }
 
   public static final int SERVING_CONFIG_LISTS_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.Model.ServingConfigList>
       servingConfigLists_;
   /**
@@ -2726,51 +2749,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       trainingState_ = 0;
-
       servingState_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       type_ = "";
-
       optimizationObjective_ = "";
-
       periodicTuningState_ = 0;
-
-      if (lastTuneTimeBuilder_ == null) {
-        lastTuneTime_ = null;
-      } else {
-        lastTuneTime_ = null;
+      lastTuneTime_ = null;
+      if (lastTuneTimeBuilder_ != null) {
+        lastTuneTimeBuilder_.dispose();
         lastTuneTimeBuilder_ = null;
       }
       tuningOperation_ = "";
-
       dataState_ = 0;
-
       filteringOption_ = 0;
-
       if (servingConfigListsBuilder_ == null) {
         servingConfigLists_ = java.util.Collections.emptyList();
       } else {
         servingConfigLists_ = null;
         servingConfigListsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -2797,43 +2808,68 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.retail.v2beta.Model buildPartial() {
       com.google.cloud.retail.v2beta.Model result = new com.google.cloud.retail.v2beta.Model(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.trainingState_ = trainingState_;
-      result.servingState_ = servingState_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.type_ = type_;
-      result.optimizationObjective_ = optimizationObjective_;
-      result.periodicTuningState_ = periodicTuningState_;
-      if (lastTuneTimeBuilder_ == null) {
-        result.lastTuneTime_ = lastTuneTime_;
-      } else {
-        result.lastTuneTime_ = lastTuneTimeBuilder_.build();
-      }
-      result.tuningOperation_ = tuningOperation_;
-      result.dataState_ = dataState_;
-      result.filteringOption_ = filteringOption_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.retail.v2beta.Model result) {
       if (servingConfigListsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           servingConfigLists_ = java.util.Collections.unmodifiableList(servingConfigLists_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.servingConfigLists_ = servingConfigLists_;
       } else {
         result.servingConfigLists_ = servingConfigListsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.Model result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.trainingState_ = trainingState_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.servingState_ = servingState_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.optimizationObjective_ = optimizationObjective_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.periodicTuningState_ = periodicTuningState_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.lastTuneTime_ =
+            lastTuneTimeBuilder_ == null ? lastTuneTime_ : lastTuneTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.tuningOperation_ = tuningOperation_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.dataState_ = dataState_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.filteringOption_ = filteringOption_;
+      }
     }
 
     @java.lang.Override
@@ -2883,10 +2919,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.retail.v2beta.Model.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.trainingState_ != 0) {
@@ -2903,10 +2941,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getOptimizationObjective().isEmpty()) {
         optimizationObjective_ = other.optimizationObjective_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.periodicTuningState_ != 0) {
@@ -2917,6 +2957,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTuningOperation().isEmpty()) {
         tuningOperation_ = other.tuningOperation_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.dataState_ != 0) {
@@ -2929,7 +2970,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         if (!other.servingConfigLists_.isEmpty()) {
           if (servingConfigLists_.isEmpty()) {
             servingConfigLists_ = other.servingConfigLists_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureServingConfigListsIsMutable();
             servingConfigLists_.addAll(other.servingConfigLists_);
@@ -2942,7 +2983,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             servingConfigListsBuilder_.dispose();
             servingConfigListsBuilder_ = null;
             servingConfigLists_ = other.servingConfigLists_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00002000);
             servingConfigListsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServingConfigListsFieldBuilder()
@@ -2981,79 +3022,79 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 trainingState_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 servingState_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 optimizationObjective_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 88:
               {
                 periodicTuningState_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(getLastTuneTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
             case 122:
               {
                 tuningOperation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 122
             case 128:
               {
                 dataState_ = input.readEnum();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 128
             case 144:
               {
                 filteringOption_ = input.readEnum();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 144
             case 154:
@@ -3162,8 +3203,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3183,8 +3224,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3209,8 +3250,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3285,8 +3326,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3305,8 +3346,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3330,8 +3371,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3381,8 +3422,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTrainingStateValue(int value) {
-
       trainingState_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3407,9 +3448,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.Model.TrainingState getTrainingState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.Model.TrainingState result =
-          com.google.cloud.retail.v2beta.Model.TrainingState.valueOf(trainingState_);
+          com.google.cloud.retail.v2beta.Model.TrainingState.forNumber(trainingState_);
       return result == null
           ? com.google.cloud.retail.v2beta.Model.TrainingState.UNRECOGNIZED
           : result;
@@ -3438,7 +3478,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       trainingState_ = value.getNumber();
       onChanged();
       return this;
@@ -3463,7 +3503,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrainingState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       trainingState_ = 0;
       onChanged();
       return this;
@@ -3502,8 +3542,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setServingStateValue(int value) {
-
       servingState_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3522,9 +3562,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.Model.ServingState getServingState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.Model.ServingState result =
-          com.google.cloud.retail.v2beta.Model.ServingState.valueOf(servingState_);
+          com.google.cloud.retail.v2beta.Model.ServingState.forNumber(servingState_);
       return result == null
           ? com.google.cloud.retail.v2beta.Model.ServingState.UNRECOGNIZED
           : result;
@@ -3547,7 +3586,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       servingState_ = value.getNumber();
       onChanged();
       return this;
@@ -3566,7 +3605,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServingState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       servingState_ = 0;
       onChanged();
       return this;
@@ -3592,7 +3631,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3633,11 +3672,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3654,11 +3693,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3674,17 +3713,18 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3699,14 +3739,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3721,7 +3760,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3795,7 +3834,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3840,11 +3879,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3863,11 +3902,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3885,17 +3924,18 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3912,14 +3952,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3936,7 +3975,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4089,8 +4128,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4118,8 +4157,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4152,8 +4191,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4267,8 +4306,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       optimizationObjective_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4300,8 +4339,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOptimizationObjective() {
-
       optimizationObjective_ = getDefaultInstance().getOptimizationObjective();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4338,8 +4377,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       optimizationObjective_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4383,8 +4422,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPeriodicTuningStateValue(int value) {
-
       periodicTuningState_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4406,9 +4445,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.Model.PeriodicTuningState getPeriodicTuningState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.Model.PeriodicTuningState result =
-          com.google.cloud.retail.v2beta.Model.PeriodicTuningState.valueOf(periodicTuningState_);
+          com.google.cloud.retail.v2beta.Model.PeriodicTuningState.forNumber(periodicTuningState_);
       return result == null
           ? com.google.cloud.retail.v2beta.Model.PeriodicTuningState.UNRECOGNIZED
           : result;
@@ -4435,7 +4473,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       periodicTuningState_ = value.getNumber();
       onChanged();
       return this;
@@ -4457,7 +4495,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeriodicTuningState() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       periodicTuningState_ = 0;
       onChanged();
       return this;
@@ -4483,7 +4521,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastTuneTime field is set.
      */
     public boolean hasLastTuneTime() {
-      return lastTuneTimeBuilder_ != null || lastTuneTime_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4524,11 +4562,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastTuneTime_ = value;
-        onChanged();
       } else {
         lastTuneTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4545,11 +4583,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastTuneTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastTuneTimeBuilder_ == null) {
         lastTuneTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastTuneTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4565,19 +4603,18 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastTuneTime(com.google.protobuf.Timestamp value) {
       if (lastTuneTimeBuilder_ == null) {
-        if (lastTuneTime_ != null) {
-          lastTuneTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastTuneTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && lastTuneTime_ != null
+            && lastTuneTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastTuneTimeBuilder().mergeFrom(value);
         } else {
           lastTuneTime_ = value;
         }
-        onChanged();
       } else {
         lastTuneTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4592,14 +4629,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastTuneTime() {
-      if (lastTuneTimeBuilder_ == null) {
-        lastTuneTime_ = null;
-        onChanged();
-      } else {
-        lastTuneTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      lastTuneTime_ = null;
+      if (lastTuneTimeBuilder_ != null) {
+        lastTuneTimeBuilder_.dispose();
         lastTuneTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4614,7 +4650,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastTuneTimeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getLastTuneTimeFieldBuilder().getBuilder();
     }
@@ -4733,8 +4769,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       tuningOperation_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4752,8 +4788,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTuningOperation() {
-
       tuningOperation_ = getDefaultInstance().getTuningOperation();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4776,8 +4812,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tuningOperation_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4827,8 +4863,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataStateValue(int value) {
-
       dataState_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4853,9 +4889,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.Model.DataState getDataState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.Model.DataState result =
-          com.google.cloud.retail.v2beta.Model.DataState.valueOf(dataState_);
+          com.google.cloud.retail.v2beta.Model.DataState.forNumber(dataState_);
       return result == null ? com.google.cloud.retail.v2beta.Model.DataState.UNRECOGNIZED : result;
     }
     /**
@@ -4882,7 +4917,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       dataState_ = value.getNumber();
       onChanged();
       return this;
@@ -4907,7 +4942,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataState() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       dataState_ = 0;
       onChanged();
       return this;
@@ -4948,8 +4983,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFilteringOptionValue(int value) {
-
       filteringOption_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4969,9 +5004,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.RecommendationsFilteringOption getFilteringOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.RecommendationsFilteringOption result =
-          com.google.cloud.retail.v2beta.RecommendationsFilteringOption.valueOf(filteringOption_);
+          com.google.cloud.retail.v2beta.RecommendationsFilteringOption.forNumber(filteringOption_);
       return result == null
           ? com.google.cloud.retail.v2beta.RecommendationsFilteringOption.UNRECOGNIZED
           : result;
@@ -4996,7 +5030,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       filteringOption_ = value.getNumber();
       onChanged();
       return this;
@@ -5016,7 +5050,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilteringOption() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       filteringOption_ = 0;
       onChanged();
       return this;
@@ -5026,11 +5060,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         servingConfigLists_ = java.util.Collections.emptyList();
 
     private void ensureServingConfigListsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         servingConfigLists_ =
             new java.util.ArrayList<com.google.cloud.retail.v2beta.Model.ServingConfigList>(
                 servingConfigLists_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -5284,7 +5318,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder clearServingConfigLists() {
       if (servingConfigListsBuilder_ == null) {
         servingConfigLists_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         servingConfigListsBuilder_.clear();
@@ -5433,7 +5467,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2beta.Model.ServingConfigList.Builder,
                 com.google.cloud.retail.v2beta.Model.ServingConfigListOrBuilder>(
                 servingConfigLists_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         servingConfigLists_ = null;

@@ -69,7 +69,9 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -375,10 +379,9 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       parent_ = "";
-
       return this;
     }
 
@@ -406,10 +409,21 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
     public com.google.cloud.resourcemanager.v3.CreateFolderMetadata buildPartial() {
       com.google.cloud.resourcemanager.v3.CreateFolderMetadata result =
           new com.google.cloud.resourcemanager.v3.CreateFolderMetadata(this);
-      result.displayName_ = displayName_;
-      result.parent_ = parent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcemanager.v3.CreateFolderMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -460,10 +474,12 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -495,13 +511,13 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -520,6 +536,8 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object displayName_ = "";
     /**
@@ -582,8 +600,8 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -599,8 +617,8 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -621,8 +639,8 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,8 +709,8 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -709,8 +727,8 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -732,8 +750,8 @@ public final class CreateFolderMetadata extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

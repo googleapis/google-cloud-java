@@ -183,7 +183,9 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -232,7 +234,9 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     }
 
     public static final int CIDR_BLOCK_FIELD_NUMBER = 2;
-    private volatile java.lang.Object cidrBlock_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object cidrBlock_ = "";
     /**
      *
      *
@@ -521,10 +525,9 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         displayName_ = "";
-
         cidrBlock_ = "";
-
         return this;
       }
 
@@ -564,10 +567,24 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
             result =
                 new com.google.cloud.orchestration.airflow.service.v1beta1
                     .MasterAuthorizedNetworksConfig.CidrBlock(this);
-        result.displayName_ = displayName_;
-        result.cidrBlock_ = cidrBlock_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+                  .CidrBlock
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cidrBlock_ = cidrBlock_;
+        }
       }
 
       @java.lang.Override
@@ -630,10 +647,12 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
                 .CidrBlock.getDefaultInstance()) return this;
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getCidrBlock().isEmpty()) {
           cidrBlock_ = other.cidrBlock_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -665,13 +684,13 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
               case 10:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   cidrBlock_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -690,6 +709,8 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object displayName_ = "";
       /**
@@ -752,8 +773,8 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -769,8 +790,8 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -791,8 +812,8 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -858,8 +879,8 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         if (value == null) {
           throw new NullPointerException();
         }
-
         cidrBlock_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -875,8 +896,8 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
        * @return This builder for chaining.
        */
       public Builder clearCidrBlock() {
-
         cidrBlock_ = getDefaultInstance().getCidrBlock();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -897,8 +918,8 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         cidrBlock_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -976,7 +997,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -994,6 +1015,8 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
   }
 
   public static final int CIDR_BLOCKS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
               .CidrBlock>
@@ -1328,15 +1351,15 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       if (cidrBlocksBuilder_ == null) {
         cidrBlocks_ = java.util.Collections.emptyList();
       } else {
         cidrBlocks_ = null;
         cidrBlocksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1370,19 +1393,35 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig(
               this);
-      int from_bitField0_ = bitField0_;
-      result.enabled_ = enabled_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+            result) {
       if (cidrBlocksBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           cidrBlocks_ = java.util.Collections.unmodifiableList(cidrBlocks_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.cidrBlocks_ = cidrBlocks_;
       } else {
         result.cidrBlocks_ = cidrBlocksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
     }
 
     @java.lang.Override
@@ -1445,7 +1484,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         if (!other.cidrBlocks_.isEmpty()) {
           if (cidrBlocks_.isEmpty()) {
             cidrBlocks_ = other.cidrBlocks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCidrBlocksIsMutable();
             cidrBlocks_.addAll(other.cidrBlocks_);
@@ -1458,7 +1497,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
             cidrBlocksBuilder_.dispose();
             cidrBlocksBuilder_ = null;
             cidrBlocks_ = other.cidrBlocks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             cidrBlocksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCidrBlocksFieldBuilder()
@@ -1497,7 +1536,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -1567,6 +1606,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1582,7 +1622,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -1594,12 +1634,12 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         cidrBlocks_ = java.util.Collections.emptyList();
 
     private void ensureCidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         cidrBlocks_ =
             new java.util.ArrayList<
                 com.google.cloud.orchestration.airflow.service.v1beta1
                     .MasterAuthorizedNetworksConfig.CidrBlock>(cidrBlocks_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1879,7 +1919,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     public Builder clearCidrBlocks() {
       if (cidrBlocksBuilder_ == null) {
         cidrBlocks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         cidrBlocksBuilder_.clear();
@@ -2046,7 +2086,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
                     .MasterAuthorizedNetworksConfig.CidrBlock.Builder,
                 com.google.cloud.orchestration.airflow.service.v1beta1
                     .MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>(
-                cidrBlocks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                cidrBlocks_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         cidrBlocks_ = null;
       }
       return cidrBlocksBuilder_;

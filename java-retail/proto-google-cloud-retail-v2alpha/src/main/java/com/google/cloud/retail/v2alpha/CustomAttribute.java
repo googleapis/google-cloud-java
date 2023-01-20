@@ -71,6 +71,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int TEXT_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList text_;
   /**
    *
@@ -156,6 +158,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NUMBERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.DoubleList numbers_;
   /**
    *
@@ -217,7 +221,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   private int numbersMemoizedSerializedSize = -1;
 
   public static final int SEARCHABLE_FIELD_NUMBER = 3;
-  private boolean searchable_;
+  private boolean searchable_ = false;
   /**
    *
    *
@@ -278,7 +282,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INDEXABLE_FIELD_NUMBER = 4;
-  private boolean indexable_;
+  private boolean indexable_ = false;
   /**
    *
    *
@@ -604,14 +608,12 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       numbers_ = emptyDoubleList();
-      bitField0_ = (bitField0_ & ~0x00000002);
       searchable_ = false;
-      bitField0_ = (bitField0_ & ~0x00000004);
       indexable_ = false;
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -639,8 +641,16 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.retail.v2alpha.CustomAttribute buildPartial() {
       com.google.cloud.retail.v2alpha.CustomAttribute result =
           new com.google.cloud.retail.v2alpha.CustomAttribute(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2alpha.CustomAttribute result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         text_ = text_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -651,6 +661,11 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.numbers_ = numbers_;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.CustomAttribute result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.searchable_ = searchable_;
         to_bitField0_ |= 0x00000001;
@@ -659,9 +674,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
         result.indexable_ = indexable_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1123,6 +1136,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setNumbers(int index, double value) {
+
       ensureNumbersIsMutable();
       numbers_.setDouble(index, value);
       onChanged();
@@ -1145,6 +1159,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder addNumbers(double value) {
+
       ensureNumbersIsMutable();
       numbers_.addDouble(value);
       onChanged();
@@ -1280,8 +1295,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Deprecated
     public Builder setSearchable(boolean value) {
-      bitField0_ |= 0x00000004;
+
       searchable_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1418,8 +1434,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Deprecated
     public Builder setIndexable(boolean value) {
-      bitField0_ |= 0x00000008;
+
       indexable_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

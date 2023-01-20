@@ -70,7 +70,9 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -176,11 +178,15 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOrBuilder
       getOsPolicyAssignmentOrBuilder() {
-    return getOsPolicyAssignment();
+    return osPolicyAssignment_ == null
+        ? com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.getDefaultInstance()
+        : osPolicyAssignment_;
   }
 
   public static final int OS_POLICY_ASSIGNMENT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object osPolicyAssignmentId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object osPolicyAssignmentId_ = "";
   /**
    *
    *
@@ -463,16 +469,14 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (osPolicyAssignmentBuilder_ == null) {
-        osPolicyAssignment_ = null;
-      } else {
-        osPolicyAssignment_ = null;
+      osPolicyAssignment_ = null;
+      if (osPolicyAssignmentBuilder_ != null) {
+        osPolicyAssignmentBuilder_.dispose();
         osPolicyAssignmentBuilder_ = null;
       }
       osPolicyAssignmentId_ = "";
-
       return this;
     }
 
@@ -501,15 +505,28 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
     public com.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest buildPartial() {
       com.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest result =
           new com.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest(this);
-      result.parent_ = parent_;
-      if (osPolicyAssignmentBuilder_ == null) {
-        result.osPolicyAssignment_ = osPolicyAssignment_;
-      } else {
-        result.osPolicyAssignment_ = osPolicyAssignmentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.osPolicyAssignmentId_ = osPolicyAssignmentId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.osPolicyAssignment_ =
+            osPolicyAssignmentBuilder_ == null
+                ? osPolicyAssignment_
+                : osPolicyAssignmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.osPolicyAssignmentId_ = osPolicyAssignmentId_;
+      }
     }
 
     @java.lang.Override
@@ -562,6 +579,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasOsPolicyAssignment()) {
@@ -569,6 +587,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       }
       if (!other.getOsPolicyAssignmentId().isEmpty()) {
         osPolicyAssignmentId_ = other.osPolicyAssignmentId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -600,20 +619,20 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getOsPolicyAssignmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 osPolicyAssignmentId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -632,6 +651,8 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -703,8 +724,8 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,8 +744,8 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -748,8 +769,8 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -774,7 +795,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * @return Whether the osPolicyAssignment field is set.
      */
     public boolean hasOsPolicyAssignment() {
-      return osPolicyAssignmentBuilder_ != null || osPolicyAssignment_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -816,11 +837,11 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         osPolicyAssignment_ = value;
-        onChanged();
       } else {
         osPolicyAssignmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -838,11 +859,11 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
         com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.Builder builderForValue) {
       if (osPolicyAssignmentBuilder_ == null) {
         osPolicyAssignment_ = builderForValue.build();
-        onChanged();
       } else {
         osPolicyAssignmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -859,19 +880,19 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
     public Builder mergeOsPolicyAssignment(
         com.google.cloud.osconfig.v1alpha.OSPolicyAssignment value) {
       if (osPolicyAssignmentBuilder_ == null) {
-        if (osPolicyAssignment_ != null) {
-          osPolicyAssignment_ =
-              com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.newBuilder(osPolicyAssignment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && osPolicyAssignment_ != null
+            && osPolicyAssignment_
+                != com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.getDefaultInstance()) {
+          getOsPolicyAssignmentBuilder().mergeFrom(value);
         } else {
           osPolicyAssignment_ = value;
         }
-        onChanged();
       } else {
         osPolicyAssignmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -886,14 +907,13 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearOsPolicyAssignment() {
-      if (osPolicyAssignmentBuilder_ == null) {
-        osPolicyAssignment_ = null;
-        onChanged();
-      } else {
-        osPolicyAssignment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      osPolicyAssignment_ = null;
+      if (osPolicyAssignmentBuilder_ != null) {
+        osPolicyAssignmentBuilder_.dispose();
         osPolicyAssignmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -909,7 +929,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
      */
     public com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.Builder
         getOsPolicyAssignmentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOsPolicyAssignmentFieldBuilder().getBuilder();
     }
@@ -1041,8 +1061,8 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       osPolicyAssignmentId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1064,8 +1084,8 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearOsPolicyAssignmentId() {
-
       osPolicyAssignmentId_ = getDefaultInstance().getOsPolicyAssignmentId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1092,8 +1112,8 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       osPolicyAssignmentId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

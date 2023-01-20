@@ -526,6 +526,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (catalogInlineSourceBuilder_ != null) {
         catalogInlineSourceBuilder_.clear();
       }
@@ -564,30 +565,31 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommendationengine.v1beta1.InputConfig buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.InputConfig result =
           new com.google.cloud.recommendationengine.v1beta1.InputConfig(this);
-      if (sourceCase_ == 1) {
-        if (catalogInlineSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = catalogInlineSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 2) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 3) {
-        if (userEventInlineSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = userEventInlineSourceBuilder_.build();
-        }
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommendationengine.v1beta1.InputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.recommendationengine.v1beta1.InputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && catalogInlineSourceBuilder_ != null) {
+        result.source_ = catalogInlineSourceBuilder_.build();
+      }
+      if (sourceCase_ == 2 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 3 && userEventInlineSourceBuilder_ != null) {
+        result.source_ = userEventInlineSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -733,6 +735,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.recommendationengine.v1beta1.CatalogInlineSource,
@@ -970,7 +974,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return catalogInlineSourceBuilder_;
     }
 
@@ -1182,7 +1185,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -1423,7 +1425,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return userEventInlineSourceBuilder_;
     }
 

@@ -72,6 +72,8 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   }
 
   public static final int URIS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList uris_;
   /**
    *
@@ -133,7 +135,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   }
 
   public static final int SITE_TO_SITE_DATA_TRANSFER_FIELD_NUMBER = 2;
-  private boolean siteToSiteDataTransfer_;
+  private boolean siteToSiteDataTransfer_ = false;
   /**
    *
    *
@@ -153,7 +155,9 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   }
 
   public static final int VPC_NETWORK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object vpcNetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpcNetwork_ = "";
   /**
    *
    *
@@ -433,12 +437,11 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       siteToSiteDataTransfer_ = false;
-
       vpcNetwork_ = "";
-
       return this;
     }
 
@@ -468,16 +471,32 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     public com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments buildPartial() {
       com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments result =
           new com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         uris_ = uris_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.uris_ = uris_;
-      result.siteToSiteDataTransfer_ = siteToSiteDataTransfer_;
-      result.vpcNetwork_ = vpcNetwork_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.siteToSiteDataTransfer_ = siteToSiteDataTransfer_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.vpcNetwork_ = vpcNetwork_;
+      }
     }
 
     @java.lang.Override
@@ -544,6 +563,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       }
       if (!other.getVpcNetwork().isEmpty()) {
         vpcNetwork_ = other.vpcNetwork_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -582,13 +602,13 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
             case 16:
               {
                 siteToSiteDataTransfer_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 vpcNetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -813,6 +833,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     public Builder setSiteToSiteDataTransfer(boolean value) {
 
       siteToSiteDataTransfer_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -830,7 +851,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearSiteToSiteDataTransfer() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       siteToSiteDataTransfer_ = false;
       onChanged();
       return this;
@@ -903,8 +924,8 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpcNetwork_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -922,8 +943,8 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearVpcNetwork() {
-
       vpcNetwork_ = getDefaultInstance().getVpcNetwork();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -946,8 +967,8 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpcNetwork_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

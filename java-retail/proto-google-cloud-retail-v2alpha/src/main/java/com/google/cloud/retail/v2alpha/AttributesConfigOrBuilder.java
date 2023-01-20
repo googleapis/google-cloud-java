@@ -126,7 +126,6 @@ public interface AttributesConfigOrBuilder
    * <code>map&lt;string, .google.cloud.retail.v2alpha.CatalogAttribute&gt; catalog_attributes = 2;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.retail.v2alpha.CatalogAttribute getCatalogAttributesOrDefault(
       java.lang.String key,

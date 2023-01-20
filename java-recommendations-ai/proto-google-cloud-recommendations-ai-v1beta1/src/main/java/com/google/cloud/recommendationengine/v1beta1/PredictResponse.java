@@ -173,7 +173,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
      */
-
     /* nullable */
     com.google.protobuf.Value getItemMetadataOrDefault(
         java.lang.String key,
@@ -258,7 +257,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      *
      *
@@ -321,6 +322,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
                       com.google.protobuf.Value.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> itemMetadata_;
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -395,8 +397,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getItemMetadataOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getItemMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -680,8 +684,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         internalGetMutableItemMetadata().clear();
         return this;
       }
@@ -716,12 +720,23 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult result =
             new com.google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult(
                 this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
-        result.itemMetadata_ = internalGetItemMetadata();
-        result.itemMetadata_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.itemMetadata_ = internalGetItemMetadata();
+          result.itemMetadata_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -780,9 +795,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
                 .getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         internalGetMutableItemMetadata().mergeFrom(other.internalGetItemMetadata());
+        bitField0_ |= 0x00000002;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -812,7 +829,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -825,6 +842,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
                   internalGetMutableItemMetadata()
                       .getMutableMap()
                       .put(itemMetadata__.getKey(), itemMetadata__.getValue());
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -907,8 +925,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -924,8 +942,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -946,8 +964,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -966,8 +984,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
       private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
           internalGetMutableItemMetadata() {
-        onChanged();
-        ;
         if (itemMetadata_ == null) {
           itemMetadata_ =
               com.google.protobuf.MapField.newMapField(ItemMetadataDefaultEntryHolder.defaultEntry);
@@ -975,6 +991,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         if (!itemMetadata_.isMutable()) {
           itemMetadata_ = itemMetadata_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return itemMetadata_;
       }
 
@@ -1041,8 +1059,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
        */
       @java.lang.Override
-      public com.google.protobuf.Value getItemMetadataOrDefault(
-          java.lang.String key, com.google.protobuf.Value defaultValue) {
+      public /* nullable */ com.google.protobuf.Value getItemMetadataOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.protobuf.Value defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1078,6 +1098,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
 
       public Builder clearItemMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableItemMetadata().getMutableMap().clear();
         return this;
       }
@@ -1105,6 +1126,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableItemMetadata() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableItemMetadata().getMutableMap();
       }
       /**
@@ -1128,8 +1150,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableItemMetadata().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1149,6 +1171,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       public Builder putAllItemMetadata(
           java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
         internalGetMutableItemMetadata().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1222,6 +1245,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult>
       results_;
@@ -1315,7 +1340,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RECOMMENDATION_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object recommendationToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object recommendationToken_ = "";
   /**
    *
    *
@@ -1368,6 +1395,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ITEMS_MISSING_IN_CATALOG_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList itemsMissingInCatalog_;
   /**
    *
@@ -1429,7 +1458,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DRY_RUN_FIELD_NUMBER = 4;
-  private boolean dryRun_;
+  private boolean dryRun_ = false;
   /**
    *
    *
@@ -1461,6 +1490,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
                     com.google.protobuf.Value.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -1519,8 +1549,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.Value getMetadataOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue) {
+  public /* nullable */ com.google.protobuf.Value getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1549,7 +1581,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -1880,6 +1914,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
       } else {
@@ -1888,14 +1923,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       recommendationToken_ = "";
-
       itemsMissingInCatalog_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       dryRun_ = false;
-
       internalGetMutableMetadata().clear();
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -1924,7 +1956,16 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.recommendationengine.v1beta1.PredictResponse buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.PredictResponse result =
           new com.google.cloud.recommendationengine.v1beta1.PredictResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.recommendationengine.v1beta1.PredictResponse result) {
       if (resultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
@@ -1934,18 +1975,29 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       } else {
         result.results_ = resultsBuilder_.build();
       }
-      result.recommendationToken_ = recommendationToken_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         itemsMissingInCatalog_ = itemsMissingInCatalog_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.itemsMissingInCatalog_ = itemsMissingInCatalog_;
-      result.dryRun_ = dryRun_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommendationengine.v1beta1.PredictResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.recommendationToken_ = recommendationToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dryRun_ = dryRun_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -2024,12 +2076,13 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getRecommendationToken().isEmpty()) {
         recommendationToken_ = other.recommendationToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.itemsMissingInCatalog_.isEmpty()) {
         if (itemsMissingInCatalog_.isEmpty()) {
           itemsMissingInCatalog_ = other.itemsMissingInCatalog_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureItemsMissingInCatalogIsMutable();
           itemsMissingInCatalog_.addAll(other.itemsMissingInCatalog_);
@@ -2040,8 +2093,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         setDryRun(other.getDryRun());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000010;
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2088,7 +2143,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             case 18:
               {
                 recommendationToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -2101,7 +2156,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             case 32:
               {
                 dryRun_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
@@ -2114,12 +2169,13 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -2647,8 +2703,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       recommendationToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2666,8 +2722,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRecommendationToken() {
-
       recommendationToken_ = getDefaultInstance().getRecommendationToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2690,8 +2746,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       recommendationToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2700,10 +2756,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureItemsMissingInCatalogIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         itemsMissingInCatalog_ =
             new com.google.protobuf.LazyStringArrayList(itemsMissingInCatalog_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2838,7 +2894,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearItemsMissingInCatalog() {
       itemsMissingInCatalog_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2896,6 +2952,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public Builder setDryRun(boolean value) {
 
       dryRun_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2911,7 +2968,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDryRun() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       dryRun_ = false;
       onChanged();
       return this;
@@ -2929,8 +2986,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -2938,6 +2993,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return metadata_;
     }
 
@@ -2989,8 +3046,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getMetadataOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3021,6 +3080,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -3043,6 +3103,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableMetadata() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -3061,8 +3122,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -3077,6 +3138,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public Builder putAllMetadata(
         java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -3144,8 +3206,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3162,8 +3224,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3185,8 +3247,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

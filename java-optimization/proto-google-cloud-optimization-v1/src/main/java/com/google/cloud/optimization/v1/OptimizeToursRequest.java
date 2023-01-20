@@ -412,7 +412,9 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -519,7 +521,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   public static final int MODEL_FIELD_NUMBER = 3;
@@ -567,11 +569,13 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.optimization.v1.ShipmentModelOrBuilder getModelOrBuilder() {
-    return getModel();
+    return model_ == null
+        ? com.google.cloud.optimization.v1.ShipmentModel.getDefaultInstance()
+        : model_;
   }
 
   public static final int SOLVING_MODE_FIELD_NUMBER = 4;
-  private int solvingMode_;
+  private int solvingMode_ = 0;
   /**
    *
    *
@@ -600,16 +604,15 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.optimization.v1.OptimizeToursRequest.SolvingMode getSolvingMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.optimization.v1.OptimizeToursRequest.SolvingMode result =
-        com.google.cloud.optimization.v1.OptimizeToursRequest.SolvingMode.valueOf(solvingMode_);
+        com.google.cloud.optimization.v1.OptimizeToursRequest.SolvingMode.forNumber(solvingMode_);
     return result == null
         ? com.google.cloud.optimization.v1.OptimizeToursRequest.SolvingMode.UNRECOGNIZED
         : result;
   }
 
   public static final int MAX_VALIDATION_ERRORS_FIELD_NUMBER = 5;
-  private int maxValidationErrors_;
+  private int maxValidationErrors_ = 0;
   /**
    *
    *
@@ -654,7 +657,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SEARCH_MODE_FIELD_NUMBER = 6;
-  private int searchMode_;
+  private int searchMode_ = 0;
   /**
    *
    *
@@ -683,15 +686,16 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode getSearchMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode result =
-        com.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode.valueOf(searchMode_);
+        com.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode.forNumber(searchMode_);
     return result == null
         ? com.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode.UNRECOGNIZED
         : result;
   }
 
   public static final int INJECTED_FIRST_SOLUTION_ROUTES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.ShipmentRoute>
       injectedFirstSolutionRoutes_;
   /**
@@ -959,10 +963,14 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.optimization.v1.InjectedSolutionConstraintOrBuilder
       getInjectedSolutionConstraintOrBuilder() {
-    return getInjectedSolutionConstraint();
+    return injectedSolutionConstraint_ == null
+        ? com.google.cloud.optimization.v1.InjectedSolutionConstraint.getDefaultInstance()
+        : injectedSolutionConstraint_;
   }
 
   public static final int REFRESH_DETAILS_ROUTES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.ShipmentRoute> refreshDetailsRoutes_;
   /**
    *
@@ -1089,7 +1097,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INTERPRET_INJECTED_SOLUTIONS_USING_LABELS_FIELD_NUMBER = 10;
-  private boolean interpretInjectedSolutionsUsingLabels_;
+  private boolean interpretInjectedSolutionsUsingLabels_ = false;
   /**
    *
    *
@@ -1164,7 +1172,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CONSIDER_ROAD_TRAFFIC_FIELD_NUMBER = 11;
-  private boolean considerRoadTraffic_;
+  private boolean considerRoadTraffic_ = false;
   /**
    *
    *
@@ -1189,7 +1197,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int POPULATE_POLYLINES_FIELD_NUMBER = 12;
-  private boolean populatePolylines_;
+  private boolean populatePolylines_ = false;
   /**
    *
    *
@@ -1207,7 +1215,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int POPULATE_TRANSITION_POLYLINES_FIELD_NUMBER = 13;
-  private boolean populateTransitionPolylines_;
+  private boolean populateTransitionPolylines_ = false;
   /**
    *
    *
@@ -1228,7 +1236,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ALLOW_LARGE_DEADLINE_DESPITE_INTERRUPTION_RISK_FIELD_NUMBER = 14;
-  private boolean allowLargeDeadlineDespiteInterruptionRisk_;
+  private boolean allowLargeDeadlineDespiteInterruptionRisk_ = false;
   /**
    *
    *
@@ -1250,7 +1258,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int USE_GEODESIC_DISTANCES_FIELD_NUMBER = 15;
-  private boolean useGeodesicDistances_;
+  private boolean useGeodesicDistances_ = false;
   /**
    *
    *
@@ -1270,7 +1278,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GEODESIC_METERS_PER_SECOND_FIELD_NUMBER = 16;
-  private double geodesicMetersPerSecond_;
+  private double geodesicMetersPerSecond_ = 0D;
   /**
    *
    *
@@ -1307,7 +1315,9 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LABEL_FIELD_NUMBER = 17;
-  private volatile java.lang.Object label_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object label_ = "";
   /**
    *
    *
@@ -1358,7 +1368,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int POPULATE_TRAVEL_STEP_POLYLINES_FIELD_NUMBER = 20;
-  private boolean populateTravelStepPolylines_;
+  private boolean populateTravelStepPolylines_ = false;
   /**
    *
    *
@@ -1795,37 +1805,31 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-      if (modelBuilder_ == null) {
-        model_ = null;
-      } else {
-        model_ = null;
+      model_ = null;
+      if (modelBuilder_ != null) {
+        modelBuilder_.dispose();
         modelBuilder_ = null;
       }
       solvingMode_ = 0;
-
       maxValidationErrors_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       searchMode_ = 0;
-
       if (injectedFirstSolutionRoutesBuilder_ == null) {
         injectedFirstSolutionRoutes_ = java.util.Collections.emptyList();
       } else {
         injectedFirstSolutionRoutes_ = null;
         injectedFirstSolutionRoutesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (injectedSolutionConstraintBuilder_ == null) {
-        injectedSolutionConstraint_ = null;
-      } else {
-        injectedSolutionConstraint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      injectedSolutionConstraint_ = null;
+      if (injectedSolutionConstraintBuilder_ != null) {
+        injectedSolutionConstraintBuilder_.dispose();
         injectedSolutionConstraintBuilder_ = null;
       }
       if (refreshDetailsRoutesBuilder_ == null) {
@@ -1834,25 +1838,16 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
         refreshDetailsRoutes_ = null;
         refreshDetailsRoutesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       interpretInjectedSolutionsUsingLabels_ = false;
-
       considerRoadTraffic_ = false;
-
       populatePolylines_ = false;
-
       populateTransitionPolylines_ = false;
-
       allowLargeDeadlineDespiteInterruptionRisk_ = false;
-
       useGeodesicDistances_ = false;
-
       geodesicMetersPerSecond_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000008);
       label_ = "";
-
       populateTravelStepPolylines_ = false;
-
       return this;
     }
 
@@ -1880,65 +1875,95 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.optimization.v1.OptimizeToursRequest buildPartial() {
       com.google.cloud.optimization.v1.OptimizeToursRequest result =
           new com.google.cloud.optimization.v1.OptimizeToursRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.parent_ = parent_;
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (modelBuilder_ == null) {
-        result.model_ = model_;
-      } else {
-        result.model_ = modelBuilder_.build();
-      }
-      result.solvingMode_ = solvingMode_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.maxValidationErrors_ = maxValidationErrors_;
-        to_bitField0_ |= 0x00000001;
-      }
-      result.searchMode_ = searchMode_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.optimization.v1.OptimizeToursRequest result) {
       if (injectedFirstSolutionRoutesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           injectedFirstSolutionRoutes_ =
               java.util.Collections.unmodifiableList(injectedFirstSolutionRoutes_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.injectedFirstSolutionRoutes_ = injectedFirstSolutionRoutes_;
       } else {
         result.injectedFirstSolutionRoutes_ = injectedFirstSolutionRoutesBuilder_.build();
       }
-      if (injectedSolutionConstraintBuilder_ == null) {
-        result.injectedSolutionConstraint_ = injectedSolutionConstraint_;
-      } else {
-        result.injectedSolutionConstraint_ = injectedSolutionConstraintBuilder_.build();
-      }
       if (refreshDetailsRoutesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           refreshDetailsRoutes_ = java.util.Collections.unmodifiableList(refreshDetailsRoutes_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.refreshDetailsRoutes_ = refreshDetailsRoutes_;
       } else {
         result.refreshDetailsRoutes_ = refreshDetailsRoutesBuilder_.build();
       }
-      result.interpretInjectedSolutionsUsingLabels_ = interpretInjectedSolutionsUsingLabels_;
-      result.considerRoadTraffic_ = considerRoadTraffic_;
-      result.populatePolylines_ = populatePolylines_;
-      result.populateTransitionPolylines_ = populateTransitionPolylines_;
-      result.allowLargeDeadlineDespiteInterruptionRisk_ =
-          allowLargeDeadlineDespiteInterruptionRisk_;
-      result.useGeodesicDistances_ = useGeodesicDistances_;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.OptimizeToursRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.model_ = modelBuilder_ == null ? model_ : modelBuilder_.build();
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.solvingMode_ = solvingMode_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.maxValidationErrors_ = maxValidationErrors_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.searchMode_ = searchMode_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.injectedSolutionConstraint_ =
+            injectedSolutionConstraintBuilder_ == null
+                ? injectedSolutionConstraint_
+                : injectedSolutionConstraintBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.interpretInjectedSolutionsUsingLabels_ = interpretInjectedSolutionsUsingLabels_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.considerRoadTraffic_ = considerRoadTraffic_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.populatePolylines_ = populatePolylines_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.populateTransitionPolylines_ = populateTransitionPolylines_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.allowLargeDeadlineDespiteInterruptionRisk_ =
+            allowLargeDeadlineDespiteInterruptionRisk_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.useGeodesicDistances_ = useGeodesicDistances_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.geodesicMetersPerSecond_ = geodesicMetersPerSecond_;
         to_bitField0_ |= 0x00000002;
       }
-      result.label_ = label_;
-      result.populateTravelStepPolylines_ = populateTravelStepPolylines_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.label_ = label_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.populateTravelStepPolylines_ = populateTravelStepPolylines_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1989,6 +2014,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTimeout()) {
@@ -2010,7 +2036,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
         if (!other.injectedFirstSolutionRoutes_.isEmpty()) {
           if (injectedFirstSolutionRoutes_.isEmpty()) {
             injectedFirstSolutionRoutes_ = other.injectedFirstSolutionRoutes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureInjectedFirstSolutionRoutesIsMutable();
             injectedFirstSolutionRoutes_.addAll(other.injectedFirstSolutionRoutes_);
@@ -2023,7 +2049,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
             injectedFirstSolutionRoutesBuilder_.dispose();
             injectedFirstSolutionRoutesBuilder_ = null;
             injectedFirstSolutionRoutes_ = other.injectedFirstSolutionRoutes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
             injectedFirstSolutionRoutesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInjectedFirstSolutionRoutesFieldBuilder()
@@ -2040,7 +2066,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
         if (!other.refreshDetailsRoutes_.isEmpty()) {
           if (refreshDetailsRoutes_.isEmpty()) {
             refreshDetailsRoutes_ = other.refreshDetailsRoutes_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureRefreshDetailsRoutesIsMutable();
             refreshDetailsRoutes_.addAll(other.refreshDetailsRoutes_);
@@ -2053,7 +2079,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
             refreshDetailsRoutesBuilder_.dispose();
             refreshDetailsRoutesBuilder_ = null;
             refreshDetailsRoutes_ = other.refreshDetailsRoutes_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000100);
             refreshDetailsRoutesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRefreshDetailsRoutesFieldBuilder()
@@ -2087,6 +2113,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getLabel().isEmpty()) {
         label_ = other.label_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.getPopulateTravelStepPolylines() != false) {
@@ -2121,37 +2148,37 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getModelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 solvingMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 maxValidationErrors_ = input.readInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 searchMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
@@ -2171,7 +2198,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getInjectedSolutionConstraintFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -2190,55 +2217,55 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
             case 80:
               {
                 interpretInjectedSolutionsUsingLabels_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 88:
               {
                 considerRoadTraffic_ = input.readBool();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 96:
               {
                 populatePolylines_ = input.readBool();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 96
             case 104:
               {
                 populateTransitionPolylines_ = input.readBool();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 104
             case 112:
               {
                 allowLargeDeadlineDespiteInterruptionRisk_ = input.readBool();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 112
             case 120:
               {
                 useGeodesicDistances_ = input.readBool();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 120
             case 129:
               {
                 geodesicMetersPerSecond_ = input.readDouble();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 129
             case 138:
               {
                 label_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 138
             case 160:
               {
                 populateTravelStepPolylines_ = input.readBool();
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 160
             default:
@@ -2327,8 +2354,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2346,8 +2373,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2370,8 +2397,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2398,7 +2425,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2441,11 +2468,11 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2464,11 +2491,11 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2486,17 +2513,18 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2513,14 +2541,13 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration timeout = 2;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2537,7 +2564,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration timeout = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -2609,7 +2636,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the model field is set.
      */
     public boolean hasModel() {
-      return modelBuilder_ != null || model_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2646,11 +2673,11 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         model_ = value;
-        onChanged();
       } else {
         modelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2666,11 +2693,11 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.optimization.v1.ShipmentModel.Builder builderForValue) {
       if (modelBuilder_ == null) {
         model_ = builderForValue.build();
-        onChanged();
       } else {
         modelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2684,19 +2711,18 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeModel(com.google.cloud.optimization.v1.ShipmentModel value) {
       if (modelBuilder_ == null) {
-        if (model_ != null) {
-          model_ =
-              com.google.cloud.optimization.v1.ShipmentModel.newBuilder(model_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && model_ != null
+            && model_ != com.google.cloud.optimization.v1.ShipmentModel.getDefaultInstance()) {
+          getModelBuilder().mergeFrom(value);
         } else {
           model_ = value;
         }
-        onChanged();
       } else {
         modelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2709,14 +2735,13 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.optimization.v1.ShipmentModel model = 3;</code>
      */
     public Builder clearModel() {
-      if (modelBuilder_ == null) {
-        model_ = null;
-        onChanged();
-      } else {
-        model_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      model_ = null;
+      if (modelBuilder_ != null) {
+        modelBuilder_.dispose();
         modelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2729,7 +2754,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.optimization.v1.ShipmentModel model = 3;</code>
      */
     public com.google.cloud.optimization.v1.ShipmentModel.Builder getModelBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getModelFieldBuilder().getBuilder();
     }
@@ -2806,8 +2831,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSolvingModeValue(int value) {
-
       solvingMode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2824,9 +2849,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.optimization.v1.OptimizeToursRequest.SolvingMode getSolvingMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.optimization.v1.OptimizeToursRequest.SolvingMode result =
-          com.google.cloud.optimization.v1.OptimizeToursRequest.SolvingMode.valueOf(solvingMode_);
+          com.google.cloud.optimization.v1.OptimizeToursRequest.SolvingMode.forNumber(solvingMode_);
       return result == null
           ? com.google.cloud.optimization.v1.OptimizeToursRequest.SolvingMode.UNRECOGNIZED
           : result;
@@ -2848,7 +2872,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       solvingMode_ = value.getNumber();
       onChanged();
       return this;
@@ -2865,7 +2889,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSolvingMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       solvingMode_ = 0;
       onChanged();
       return this;
@@ -2891,7 +2915,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasMaxValidationErrors() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2933,8 +2957,9 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setMaxValidationErrors(int value) {
-      bitField0_ |= 0x00000001;
+
       maxValidationErrors_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2956,7 +2981,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMaxValidationErrors() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       maxValidationErrors_ = 0;
       onChanged();
       return this;
@@ -2991,8 +3016,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSearchModeValue(int value) {
-
       searchMode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3009,9 +3034,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode getSearchMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode result =
-          com.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode.valueOf(searchMode_);
+          com.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode.forNumber(searchMode_);
       return result == null
           ? com.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode.UNRECOGNIZED
           : result;
@@ -3033,7 +3057,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       searchMode_ = value.getNumber();
       onChanged();
       return this;
@@ -3050,7 +3074,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSearchMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       searchMode_ = 0;
       onChanged();
       return this;
@@ -3060,11 +3084,11 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
         injectedFirstSolutionRoutes_ = java.util.Collections.emptyList();
 
     private void ensureInjectedFirstSolutionRoutesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         injectedFirstSolutionRoutes_ =
             new java.util.ArrayList<com.google.cloud.optimization.v1.ShipmentRoute>(
                 injectedFirstSolutionRoutes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -3572,7 +3596,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder clearInjectedFirstSolutionRoutes() {
       if (injectedFirstSolutionRoutesBuilder_ == null) {
         injectedFirstSolutionRoutes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         injectedFirstSolutionRoutesBuilder_.clear();
@@ -3881,7 +3905,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
                 com.google.cloud.optimization.v1.ShipmentRoute.Builder,
                 com.google.cloud.optimization.v1.ShipmentRouteOrBuilder>(
                 injectedFirstSolutionRoutes_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         injectedFirstSolutionRoutes_ = null;
@@ -3915,7 +3939,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the injectedSolutionConstraint field is set.
      */
     public boolean hasInjectedSolutionConstraint() {
-      return injectedSolutionConstraintBuilder_ != null || injectedSolutionConstraint_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3970,11 +3994,11 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         injectedSolutionConstraint_ = value;
-        onChanged();
       } else {
         injectedSolutionConstraintBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3998,11 +4022,11 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.optimization.v1.InjectedSolutionConstraint.Builder builderForValue) {
       if (injectedSolutionConstraintBuilder_ == null) {
         injectedSolutionConstraint_ = builderForValue.build();
-        onChanged();
       } else {
         injectedSolutionConstraintBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4025,20 +4049,20 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder mergeInjectedSolutionConstraint(
         com.google.cloud.optimization.v1.InjectedSolutionConstraint value) {
       if (injectedSolutionConstraintBuilder_ == null) {
-        if (injectedSolutionConstraint_ != null) {
-          injectedSolutionConstraint_ =
-              com.google.cloud.optimization.v1.InjectedSolutionConstraint.newBuilder(
-                      injectedSolutionConstraint_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && injectedSolutionConstraint_ != null
+            && injectedSolutionConstraint_
+                != com.google.cloud.optimization.v1.InjectedSolutionConstraint
+                    .getDefaultInstance()) {
+          getInjectedSolutionConstraintBuilder().mergeFrom(value);
         } else {
           injectedSolutionConstraint_ = value;
         }
-        onChanged();
       } else {
         injectedSolutionConstraintBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4059,14 +4083,13 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearInjectedSolutionConstraint() {
-      if (injectedSolutionConstraintBuilder_ == null) {
-        injectedSolutionConstraint_ = null;
-        onChanged();
-      } else {
-        injectedSolutionConstraint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      injectedSolutionConstraint_ = null;
+      if (injectedSolutionConstraintBuilder_ != null) {
+        injectedSolutionConstraintBuilder_.dispose();
         injectedSolutionConstraintBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4088,7 +4111,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.optimization.v1.InjectedSolutionConstraint.Builder
         getInjectedSolutionConstraintBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getInjectedSolutionConstraintFieldBuilder().getBuilder();
     }
@@ -4157,11 +4180,11 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureRefreshDetailsRoutesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         refreshDetailsRoutes_ =
             new java.util.ArrayList<com.google.cloud.optimization.v1.ShipmentRoute>(
                 refreshDetailsRoutes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -4501,7 +4524,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder clearRefreshDetailsRoutes() {
       if (refreshDetailsRoutesBuilder_ == null) {
         refreshDetailsRoutes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         refreshDetailsRoutesBuilder_.clear();
@@ -4704,7 +4727,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
                 com.google.cloud.optimization.v1.ShipmentRoute.Builder,
                 com.google.cloud.optimization.v1.ShipmentRouteOrBuilder>(
                 refreshDetailsRoutes_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         refreshDetailsRoutes_ = null;
@@ -4857,6 +4880,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder setInterpretInjectedSolutionsUsingLabels(boolean value) {
 
       interpretInjectedSolutionsUsingLabels_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4929,7 +4953,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearInterpretInjectedSolutionsUsingLabels() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       interpretInjectedSolutionsUsingLabels_ = false;
       onChanged();
       return this;
@@ -4980,6 +5004,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder setConsiderRoadTraffic(boolean value) {
 
       considerRoadTraffic_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5002,7 +5027,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearConsiderRoadTraffic() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       considerRoadTraffic_ = false;
       onChanged();
       return this;
@@ -5039,6 +5064,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder setPopulatePolylines(boolean value) {
 
       populatePolylines_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5054,7 +5080,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPopulatePolylines() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       populatePolylines_ = false;
       onChanged();
       return this;
@@ -5097,6 +5123,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder setPopulateTransitionPolylines(boolean value) {
 
       populateTransitionPolylines_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5115,7 +5142,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPopulateTransitionPolylines() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       populateTransitionPolylines_ = false;
       onChanged();
       return this;
@@ -5160,6 +5187,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder setAllowLargeDeadlineDespiteInterruptionRisk(boolean value) {
 
       allowLargeDeadlineDespiteInterruptionRisk_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5179,7 +5207,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAllowLargeDeadlineDespiteInterruptionRisk() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       allowLargeDeadlineDespiteInterruptionRisk_ = false;
       onChanged();
       return this;
@@ -5220,6 +5248,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder setUseGeodesicDistances(boolean value) {
 
       useGeodesicDistances_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5237,7 +5266,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearUseGeodesicDistances() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       useGeodesicDistances_ = false;
       onChanged();
       return this;
@@ -5259,7 +5288,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasGeodesicMetersPerSecond() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -5293,8 +5322,9 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setGeodesicMetersPerSecond(double value) {
-      bitField0_ |= 0x00000008;
+
       geodesicMetersPerSecond_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5312,7 +5342,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearGeodesicMetersPerSecond() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00008000);
       geodesicMetersPerSecond_ = 0D;
       onChanged();
       return this;
@@ -5382,8 +5412,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       label_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5400,8 +5430,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearLabel() {
-
       label_ = getDefaultInstance().getLabel();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5423,8 +5453,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       label_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5474,6 +5504,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     public Builder setPopulateTravelStepPolylines(boolean value) {
 
       populateTravelStepPolylines_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5496,7 +5527,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Deprecated
     public Builder clearPopulateTravelStepPolylines() {
-
+      bitField0_ = (bitField0_ & ~0x00020000);
       populateTravelStepPolylines_ = false;
       onChanged();
       return this;

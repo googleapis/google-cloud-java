@@ -165,7 +165,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     }
 
     public static final int LINE_NUMBER_FIELD_NUMBER = 1;
-    private int lineNumber_;
+    private int lineNumber_ = 0;
     /**
      *
      *
@@ -183,7 +183,9 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     }
 
     public static final int CONTENT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object content_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object content_ = "";
     /**
      *
      *
@@ -467,10 +469,9 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         lineNumber_ = 0;
-
         content_ = "";
-
         return this;
       }
 
@@ -505,10 +506,23 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
             result =
                 new com.google.cloud.orchestration.airflow.service.v1beta1
                     .PollAirflowCommandResponse.Line(this);
-        result.lineNumber_ = lineNumber_;
-        result.content_ = content_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse.Line
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.lineNumber_ = lineNumber_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.content_ = content_;
+        }
       }
 
       @java.lang.Override
@@ -573,6 +587,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         }
         if (!other.getContent().isEmpty()) {
           content_ = other.content_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -604,13 +619,13 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
               case 8:
                 {
                   lineNumber_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   content_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -629,6 +644,8 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int lineNumber_;
       /**
@@ -661,6 +678,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       public Builder setLineNumber(int value) {
 
         lineNumber_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -676,7 +694,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearLineNumber() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         lineNumber_ = 0;
         onChanged();
         return this;
@@ -743,8 +761,8 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
         content_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -760,8 +778,8 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearContent() {
-
         content_ = getDefaultInstance().getContent();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -782,8 +800,8 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         content_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -955,7 +973,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     }
 
     public static final int EXIT_CODE_FIELD_NUMBER = 1;
-    private int exitCode_;
+    private int exitCode_ = 0;
     /**
      *
      *
@@ -973,7 +991,9 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     }
 
     public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object error_ = "";
     /**
      *
      *
@@ -1260,10 +1280,9 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         exitCode_ = 0;
-
         error_ = "";
-
         return this;
       }
 
@@ -1301,10 +1320,23 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
             result =
                 new com.google.cloud.orchestration.airflow.service.v1beta1
                     .PollAirflowCommandResponse.ExitInfo(this);
-        result.exitCode_ = exitCode_;
-        result.error_ = error_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse.ExitInfo
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.exitCode_ = exitCode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.error_ = error_;
+        }
       }
 
       @java.lang.Override
@@ -1369,6 +1401,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         }
         if (!other.getError().isEmpty()) {
           error_ = other.error_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1400,13 +1433,13 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
               case 8:
                 {
                   exitCode_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   error_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1425,6 +1458,8 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int exitCode_;
       /**
@@ -1457,6 +1492,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       public Builder setExitCode(int value) {
 
         exitCode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1472,7 +1508,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearExitCode() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         exitCode_ = 0;
         onChanged();
         return this;
@@ -1539,8 +1575,8 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
         error_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1556,8 +1592,8 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearError() {
-
         error_ = getDefaultInstance().getError();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1578,8 +1614,8 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         error_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1657,6 +1693,8 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
   }
 
   public static final int OUTPUT_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse.Line>
       output_;
@@ -1751,7 +1789,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
   }
 
   public static final int OUTPUT_END_FIELD_NUMBER = 2;
-  private boolean outputEnd_;
+  private boolean outputEnd_ = false;
   /**
    *
    *
@@ -1824,7 +1862,10 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
   public com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse
           .ExitInfoOrBuilder
       getExitInfoOrBuilder() {
-    return getExitInfo();
+    return exitInfo_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse.ExitInfo
+            .getDefaultInstance()
+        : exitInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2062,6 +2103,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (outputBuilder_ == null) {
         output_ = java.util.Collections.emptyList();
       } else {
@@ -2070,11 +2112,9 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       outputEnd_ = false;
-
-      if (exitInfoBuilder_ == null) {
-        exitInfo_ = null;
-      } else {
-        exitInfo_ = null;
+      exitInfo_ = null;
+      if (exitInfoBuilder_ != null) {
+        exitInfoBuilder_.dispose();
         exitInfoBuilder_ = null;
       }
       return this;
@@ -2110,7 +2150,16 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse(
               this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse result) {
       if (outputBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           output_ = java.util.Collections.unmodifiableList(output_);
@@ -2120,14 +2169,17 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       } else {
         result.output_ = outputBuilder_.build();
       }
-      result.outputEnd_ = outputEnd_;
-      if (exitInfoBuilder_ == null) {
-        result.exitInfo_ = exitInfo_;
-      } else {
-        result.exitInfo_ = exitInfoBuilder_.build();
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputEnd_ = outputEnd_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.exitInfo_ = exitInfoBuilder_ == null ? exitInfo_ : exitInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2261,13 +2313,13 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
             case 16:
               {
                 outputEnd_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getExitInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -2776,6 +2828,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     public Builder setOutputEnd(boolean value) {
 
       outputEnd_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2791,7 +2844,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearOutputEnd() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       outputEnd_ = false;
       onChanged();
       return this;
@@ -2822,7 +2875,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
      * @return Whether the exitInfo field is set.
      */
     public boolean hasExitInfo() {
-      return exitInfoBuilder_ != null || exitInfo_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2868,11 +2921,11 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         exitInfo_ = value;
-        onChanged();
       } else {
         exitInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2892,11 +2945,11 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
             builderForValue) {
       if (exitInfoBuilder_ == null) {
         exitInfo_ = builderForValue.build();
-        onChanged();
       } else {
         exitInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2914,20 +2967,20 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse.ExitInfo
             value) {
       if (exitInfoBuilder_ == null) {
-        if (exitInfo_ != null) {
-          exitInfo_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse
-                  .ExitInfo.newBuilder(exitInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && exitInfo_ != null
+            && exitInfo_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse
+                    .ExitInfo.getDefaultInstance()) {
+          getExitInfoBuilder().mergeFrom(value);
         } else {
           exitInfo_ = value;
         }
-        onChanged();
       } else {
         exitInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2942,14 +2995,13 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearExitInfo() {
-      if (exitInfoBuilder_ == null) {
-        exitInfo_ = null;
-        onChanged();
-      } else {
-        exitInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      exitInfo_ = null;
+      if (exitInfoBuilder_ != null) {
+        exitInfoBuilder_.dispose();
         exitInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2966,7 +3018,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     public com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse
             .ExitInfo.Builder
         getExitInfoBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getExitInfoFieldBuilder().getBuilder();
     }

@@ -231,7 +231,6 @@ public interface PredictResponseOrBuilder
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
    */
-
   /* nullable */
   com.google.protobuf.Value getMetadataOrDefault(
       java.lang.String key,

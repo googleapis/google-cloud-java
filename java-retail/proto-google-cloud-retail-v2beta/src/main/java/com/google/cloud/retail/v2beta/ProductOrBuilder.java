@@ -1000,7 +1000,6 @@ public interface ProductOrBuilder
    *
    * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 12;</code>
    */
-
   /* nullable */
   com.google.cloud.retail.v2beta.CustomAttribute getAttributesOrDefault(
       java.lang.String key,

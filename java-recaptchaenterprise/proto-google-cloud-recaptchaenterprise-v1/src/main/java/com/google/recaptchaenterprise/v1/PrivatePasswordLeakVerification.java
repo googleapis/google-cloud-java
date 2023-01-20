@@ -72,7 +72,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
   }
 
   public static final int LOOKUP_HASH_PREFIX_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString lookupHashPrefix_;
+  private com.google.protobuf.ByteString lookupHashPrefix_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -92,7 +92,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
   }
 
   public static final int ENCRYPTED_USER_CREDENTIALS_HASH_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString encryptedUserCredentialsHash_;
+  private com.google.protobuf.ByteString encryptedUserCredentialsHash_ =
+      com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -113,6 +114,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
   }
 
   public static final int ENCRYPTED_LEAK_MATCH_PREFIXES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.ByteString> encryptedLeakMatchPrefixes_;
   /**
    *
@@ -172,7 +175,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
   }
 
   public static final int REENCRYPTED_USER_CREDENTIALS_HASH_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString reencryptedUserCredentialsHash_;
+  private com.google.protobuf.ByteString reencryptedUserCredentialsHash_ =
+      com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -434,14 +438,11 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       lookupHashPrefix_ = com.google.protobuf.ByteString.EMPTY;
-
       encryptedUserCredentialsHash_ = com.google.protobuf.ByteString.EMPTY;
-
       encryptedLeakMatchPrefixes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       reencryptedUserCredentialsHash_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -470,18 +471,36 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
     public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification buildPartial() {
       com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification result =
           new com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification(this);
-      int from_bitField0_ = bitField0_;
-      result.lookupHashPrefix_ = lookupHashPrefix_;
-      result.encryptedUserCredentialsHash_ = encryptedUserCredentialsHash_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        encryptedLeakMatchPrefixes_ =
-            java.util.Collections.unmodifiableList(encryptedLeakMatchPrefixes_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.encryptedLeakMatchPrefixes_ = encryptedLeakMatchPrefixes_;
-      result.reencryptedUserCredentialsHash_ = reencryptedUserCredentialsHash_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        encryptedLeakMatchPrefixes_ =
+            java.util.Collections.unmodifiableList(encryptedLeakMatchPrefixes_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.encryptedLeakMatchPrefixes_ = encryptedLeakMatchPrefixes_;
+    }
+
+    private void buildPartial0(
+        com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.lookupHashPrefix_ = lookupHashPrefix_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.encryptedUserCredentialsHash_ = encryptedUserCredentialsHash_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.reencryptedUserCredentialsHash_ = reencryptedUserCredentialsHash_;
+      }
     }
 
     @java.lang.Override
@@ -541,7 +560,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
       if (!other.encryptedLeakMatchPrefixes_.isEmpty()) {
         if (encryptedLeakMatchPrefixes_.isEmpty()) {
           encryptedLeakMatchPrefixes_ = other.encryptedLeakMatchPrefixes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureEncryptedLeakMatchPrefixesIsMutable();
           encryptedLeakMatchPrefixes_.addAll(other.encryptedLeakMatchPrefixes_);
@@ -580,13 +599,13 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
             case 10:
               {
                 lookupHashPrefix_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 encryptedUserCredentialsHash_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -599,7 +618,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
             case 34:
               {
                 reencryptedUserCredentialsHash_ = input.readBytes();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -657,8 +676,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       lookupHashPrefix_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,7 +695,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearLookupHashPrefix() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       lookupHashPrefix_ = getDefaultInstance().getLookupHashPrefix();
       onChanged();
       return this;
@@ -721,8 +740,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       encryptedUserCredentialsHash_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -741,7 +760,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearEncryptedUserCredentialsHash() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       encryptedUserCredentialsHash_ = getDefaultInstance().getEncryptedUserCredentialsHash();
       onChanged();
       return this;
@@ -751,10 +770,10 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
         java.util.Collections.emptyList();
 
     private void ensureEncryptedLeakMatchPrefixesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         encryptedLeakMatchPrefixes_ =
             new java.util.ArrayList<com.google.protobuf.ByteString>(encryptedLeakMatchPrefixes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -773,7 +792,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      * @return A list containing the encryptedLeakMatchPrefixes.
      */
     public java.util.List<com.google.protobuf.ByteString> getEncryptedLeakMatchPrefixesList() {
-      return ((bitField0_ & 0x00000001) != 0)
+      return ((bitField0_ & 0x00000004) != 0)
           ? java.util.Collections.unmodifiableList(encryptedLeakMatchPrefixes_)
           : encryptedLeakMatchPrefixes_;
     }
@@ -905,7 +924,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      */
     public Builder clearEncryptedLeakMatchPrefixes() {
       encryptedLeakMatchPrefixes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -951,8 +970,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       reencryptedUserCredentialsHash_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -972,7 +991,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearReencryptedUserCredentialsHash() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       reencryptedUserCredentialsHash_ = getDefaultInstance().getReencryptedUserCredentialsHash();
       onChanged();
       return this;

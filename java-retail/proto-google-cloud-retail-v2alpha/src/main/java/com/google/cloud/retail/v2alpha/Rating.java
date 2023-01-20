@@ -68,7 +68,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RATING_COUNT_FIELD_NUMBER = 1;
-  private int ratingCount_;
+  private int ratingCount_ = 0;
   /**
    *
    *
@@ -89,7 +89,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVERAGE_RATING_FIELD_NUMBER = 2;
-  private float averageRating_;
+  private float averageRating_ = 0F;
   /**
    *
    *
@@ -109,6 +109,8 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RATING_HISTOGRAM_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList ratingHistogram_;
   /**
    *
@@ -404,12 +406,10 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ratingCount_ = 0;
-
       averageRating_ = 0F;
-
       ratingHistogram_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -437,16 +437,30 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Rating buildPartial() {
       com.google.cloud.retail.v2alpha.Rating result =
           new com.google.cloud.retail.v2alpha.Rating(this);
-      int from_bitField0_ = bitField0_;
-      result.ratingCount_ = ratingCount_;
-      result.averageRating_ = averageRating_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        ratingHistogram_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.ratingHistogram_ = ratingHistogram_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.retail.v2alpha.Rating result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        ratingHistogram_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.ratingHistogram_ = ratingHistogram_;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.Rating result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ratingCount_ = ratingCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.averageRating_ = averageRating_;
+      }
     }
 
     @java.lang.Override
@@ -503,7 +517,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
       if (!other.ratingHistogram_.isEmpty()) {
         if (ratingHistogram_.isEmpty()) {
           ratingHistogram_ = other.ratingHistogram_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureRatingHistogramIsMutable();
           ratingHistogram_.addAll(other.ratingHistogram_);
@@ -539,13 +553,13 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 ratingCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 21:
               {
                 averageRating_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 24:
@@ -622,6 +636,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     public Builder setRatingCount(int value) {
 
       ratingCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -640,7 +655,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRatingCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       ratingCount_ = 0;
       onChanged();
       return this;
@@ -681,6 +696,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     public Builder setAverageRating(float value) {
 
       averageRating_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -698,7 +714,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAverageRating() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       averageRating_ = 0F;
       onChanged();
       return this;
@@ -707,9 +723,9 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.Internal.IntList ratingHistogram_ = emptyIntList();
 
     private void ensureRatingHistogramIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         ratingHistogram_ = mutableCopy(ratingHistogram_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -729,7 +745,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ratingHistogram.
      */
     public java.util.List<java.lang.Integer> getRatingHistogramList() {
-      return ((bitField0_ & 0x00000001) != 0)
+      return ((bitField0_ & 0x00000004) != 0)
           ? java.util.Collections.unmodifiableList(ratingHistogram_)
           : ratingHistogram_;
     }
@@ -791,6 +807,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRatingHistogram(int index, int value) {
+
       ensureRatingHistogramIsMutable();
       ratingHistogram_.setInt(index, value);
       onChanged();
@@ -814,6 +831,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addRatingHistogram(int value) {
+
       ensureRatingHistogramIsMutable();
       ratingHistogram_.addInt(value);
       onChanged();
@@ -860,7 +878,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRatingHistogram() {
       ratingHistogram_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

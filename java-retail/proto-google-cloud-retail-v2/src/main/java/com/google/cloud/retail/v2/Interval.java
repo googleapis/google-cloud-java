@@ -579,6 +579,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       minCase_ = 0;
       min_ = null;
       maxCase_ = 0;
@@ -609,22 +610,23 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.retail.v2.Interval buildPartial() {
       com.google.cloud.retail.v2.Interval result = new com.google.cloud.retail.v2.Interval(this);
-      if (minCase_ == 1) {
-        result.min_ = min_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (minCase_ == 2) {
-        result.min_ = min_;
-      }
-      if (maxCase_ == 3) {
-        result.max_ = max_;
-      }
-      if (maxCase_ == 4) {
-        result.max_ = max_;
-      }
-      result.minCase_ = minCase_;
-      result.maxCase_ = maxCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.Interval result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.retail.v2.Interval result) {
+      result.minCase_ = minCase_;
+      result.min_ = this.min_;
+      result.maxCase_ = maxCase_;
+      result.max_ = this.max_;
     }
 
     @java.lang.Override
@@ -799,6 +801,8 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -843,6 +847,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMinimum(double value) {
+
       minCase_ = 1;
       min_ = value;
       onChanged();
@@ -912,6 +917,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExclusiveMinimum(double value) {
+
       minCase_ = 2;
       min_ = value;
       onChanged();
@@ -981,6 +987,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaximum(double value) {
+
       maxCase_ = 3;
       max_ = value;
       onChanged();
@@ -1050,6 +1057,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExclusiveMaximum(double value) {
+
       maxCase_ = 4;
       max_ = value;
       onChanged();

@@ -84,7 +84,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object imageVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageVersion_ = "";
   /**
    *
    *
@@ -183,6 +185,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> airflowConfigOverrides_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -278,8 +281,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; airflow_config_overrides = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getAirflowConfigOverridesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAirflowConfigOverridesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -334,6 +339,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> pypiPackages_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -411,8 +417,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; pypi_packages = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getPypiPackagesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getPypiPackagesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -459,6 +467,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> envVariables_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -575,8 +584,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; env_variables = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getEnvVariablesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getEnvVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -624,7 +635,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PYTHON_VERSION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object pythonVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pythonVersion_ = "";
   /**
    *
    *
@@ -685,7 +698,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCHEDULER_COUNT_FIELD_NUMBER = 7;
-  private int schedulerCount_;
+  private int schedulerCount_ = 0;
   /**
    *
    *
@@ -1003,15 +1016,13 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       imageVersion_ = "";
-
       internalGetMutableAirflowConfigOverrides().clear();
       internalGetMutablePypiPackages().clear();
       internalGetMutableEnvVariables().clear();
       pythonVersion_ = "";
-
       schedulerCount_ = 0;
-
       return this;
     }
 
@@ -1040,18 +1051,37 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig result =
           new com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.imageVersion_ = imageVersion_;
-      result.airflowConfigOverrides_ = internalGetAirflowConfigOverrides();
-      result.airflowConfigOverrides_.makeImmutable();
-      result.pypiPackages_ = internalGetPypiPackages();
-      result.pypiPackages_.makeImmutable();
-      result.envVariables_ = internalGetEnvVariables();
-      result.envVariables_.makeImmutable();
-      result.pythonVersion_ = pythonVersion_;
-      result.schedulerCount_ = schedulerCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.imageVersion_ = imageVersion_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.airflowConfigOverrides_ = internalGetAirflowConfigOverrides();
+        result.airflowConfigOverrides_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pypiPackages_ = internalGetPypiPackages();
+        result.pypiPackages_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.envVariables_ = internalGetEnvVariables();
+        result.envVariables_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pythonVersion_ = pythonVersion_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.schedulerCount_ = schedulerCount_;
+      }
     }
 
     @java.lang.Override
@@ -1104,14 +1134,19 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getImageVersion().isEmpty()) {
         imageVersion_ = other.imageVersion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableAirflowConfigOverrides()
           .mergeFrom(other.internalGetAirflowConfigOverrides());
+      bitField0_ |= 0x00000002;
       internalGetMutablePypiPackages().mergeFrom(other.internalGetPypiPackages());
+      bitField0_ |= 0x00000004;
       internalGetMutableEnvVariables().mergeFrom(other.internalGetEnvVariables());
+      bitField0_ |= 0x00000008;
       if (!other.getPythonVersion().isEmpty()) {
         pythonVersion_ = other.pythonVersion_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getSchedulerCount() != 0) {
@@ -1146,7 +1181,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 imageVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1160,6 +1195,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAirflowConfigOverrides()
                     .getMutableMap()
                     .put(airflowConfigOverrides__.getKey(), airflowConfigOverrides__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1171,6 +1207,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutablePypiPackages()
                     .getMutableMap()
                     .put(pypiPackages__.getKey(), pypiPackages__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1182,18 +1219,19 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableEnvVariables()
                     .getMutableMap()
                     .put(envVariables__.getKey(), envVariables__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
               {
                 pythonVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 56:
               {
                 schedulerCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             default:
@@ -1333,8 +1371,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1369,8 +1407,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImageVersion() {
-
       imageVersion_ = getDefaultInstance().getImageVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1410,8 +1448,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1430,8 +1468,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAirflowConfigOverrides() {
-      onChanged();
-      ;
       if (airflowConfigOverrides_ == null) {
         airflowConfigOverrides_ =
             com.google.protobuf.MapField.newMapField(
@@ -1440,6 +1476,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (!airflowConfigOverrides_.isMutable()) {
         airflowConfigOverrides_ = airflowConfigOverrides_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return airflowConfigOverrides_;
     }
 
@@ -1527,8 +1565,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; airflow_config_overrides = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getAirflowConfigOverridesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAirflowConfigOverridesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1571,6 +1611,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAirflowConfigOverrides() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableAirflowConfigOverrides().getMutableMap().clear();
       return this;
     }
@@ -1605,6 +1646,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAirflowConfigOverrides() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableAirflowConfigOverrides().getMutableMap();
     }
     /**
@@ -1635,8 +1677,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAirflowConfigOverrides().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1663,6 +1705,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllAirflowConfigOverrides(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAirflowConfigOverrides().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1679,8 +1722,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutablePypiPackages() {
-      onChanged();
-      ;
       if (pypiPackages_ == null) {
         pypiPackages_ =
             com.google.protobuf.MapField.newMapField(PypiPackagesDefaultEntryHolder.defaultEntry);
@@ -1688,6 +1729,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (!pypiPackages_.isMutable()) {
         pypiPackages_ = pypiPackages_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return pypiPackages_;
     }
 
@@ -1757,8 +1800,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; pypi_packages = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getPypiPackagesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getPypiPackagesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1793,6 +1838,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearPypiPackages() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutablePypiPackages().getMutableMap().clear();
       return this;
     }
@@ -1821,6 +1867,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutablePypiPackages() {
+      bitField0_ |= 0x00000004;
       return internalGetMutablePypiPackages().getMutableMap();
     }
     /**
@@ -1845,8 +1892,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutablePypiPackages().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1866,6 +1913,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllPypiPackages(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutablePypiPackages().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1882,8 +1930,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableEnvVariables() {
-      onChanged();
-      ;
       if (envVariables_ == null) {
         envVariables_ =
             com.google.protobuf.MapField.newMapField(EnvVariablesDefaultEntryHolder.defaultEntry);
@@ -1891,6 +1937,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (!envVariables_.isMutable()) {
         envVariables_ = envVariables_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return envVariables_;
     }
 
@@ -1999,8 +2047,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; env_variables = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getEnvVariablesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getEnvVariablesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2048,6 +2098,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearEnvVariables() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableEnvVariables().getMutableMap().clear();
       return this;
     }
@@ -2089,6 +2140,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnvVariables() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableEnvVariables().getMutableMap();
     }
     /**
@@ -2126,8 +2178,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableEnvVariables().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2160,6 +2212,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllEnvVariables(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEnvVariables().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -2242,8 +2295,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pythonVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2265,8 +2318,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPythonVersion() {
-
       pythonVersion_ = getDefaultInstance().getPythonVersion();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2293,8 +2346,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pythonVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2334,6 +2387,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setSchedulerCount(int value) {
 
       schedulerCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2351,7 +2405,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSchedulerCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       schedulerCount_ = 0;
       onChanged();
       return this;

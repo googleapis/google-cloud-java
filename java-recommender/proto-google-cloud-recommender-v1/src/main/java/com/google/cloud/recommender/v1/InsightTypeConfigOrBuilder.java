@@ -262,7 +262,6 @@ public interface InsightTypeConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,

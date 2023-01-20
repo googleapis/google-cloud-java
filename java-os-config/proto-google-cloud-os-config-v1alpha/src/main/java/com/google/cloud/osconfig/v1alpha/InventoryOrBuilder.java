@@ -155,7 +155,6 @@ public interface InventoryOrBuilder
    * map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.osconfig.v1alpha.Inventory.Item getItemsOrDefault(
       java.lang.String key,

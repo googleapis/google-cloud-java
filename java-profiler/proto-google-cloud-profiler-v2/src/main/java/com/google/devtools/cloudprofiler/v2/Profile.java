@@ -81,7 +81,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -130,7 +132,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROFILE_TYPE_FIELD_NUMBER = 2;
-  private int profileType_;
+  private int profileType_ = 0;
   /**
    *
    *
@@ -163,9 +165,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.cloudprofiler.v2.ProfileType getProfileType() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.cloudprofiler.v2.ProfileType result =
-        com.google.devtools.cloudprofiler.v2.ProfileType.valueOf(profileType_);
+        com.google.devtools.cloudprofiler.v2.ProfileType.forNumber(profileType_);
     return result == null ? com.google.devtools.cloudprofiler.v2.ProfileType.UNRECOGNIZED : result;
   }
 
@@ -214,7 +215,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.cloudprofiler.v2.DeploymentOrBuilder getDeploymentOrBuilder() {
-    return getDeployment();
+    return deployment_ == null
+        ? com.google.devtools.cloudprofiler.v2.Deployment.getDefaultInstance()
+        : deployment_;
   }
 
   public static final int DURATION_FIELD_NUMBER = 4;
@@ -275,11 +278,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
-    return getDuration();
+    return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
 
   public static final int PROFILE_BYTES_FIELD_NUMBER = 5;
-  private com.google.protobuf.ByteString profileBytes_;
+  private com.google.protobuf.ByteString profileBytes_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -310,6 +313,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -373,7 +377,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -685,24 +692,20 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       profileType_ = 0;
-
-      if (deploymentBuilder_ == null) {
-        deployment_ = null;
-      } else {
-        deployment_ = null;
+      deployment_ = null;
+      if (deploymentBuilder_ != null) {
+        deploymentBuilder_.dispose();
         deploymentBuilder_ = null;
       }
-      if (durationBuilder_ == null) {
-        duration_ = null;
-      } else {
-        duration_ = null;
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
       profileBytes_ = com.google.protobuf.ByteString.EMPTY;
-
       internalGetMutableLabels().clear();
       return this;
     }
@@ -731,24 +734,34 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudprofiler.v2.Profile buildPartial() {
       com.google.devtools.cloudprofiler.v2.Profile result =
           new com.google.devtools.cloudprofiler.v2.Profile(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.profileType_ = profileType_;
-      if (deploymentBuilder_ == null) {
-        result.deployment_ = deployment_;
-      } else {
-        result.deployment_ = deploymentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (durationBuilder_ == null) {
-        result.duration_ = duration_;
-      } else {
-        result.duration_ = durationBuilder_.build();
-      }
-      result.profileBytes_ = profileBytes_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudprofiler.v2.Profile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.profileType_ = profileType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deployment_ = deploymentBuilder_ == null ? deployment_ : deploymentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.profileBytes_ = profileBytes_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -798,6 +811,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.devtools.cloudprofiler.v2.Profile.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.profileType_ != 0) {
@@ -813,6 +827,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         setProfileBytes(other.getProfileBytes());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000020;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -842,31 +857,31 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 profileType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getDeploymentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 profileBytes_ = input.readBytes();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -878,6 +893,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -960,8 +976,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -977,8 +993,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -999,8 +1015,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1038,8 +1054,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProfileTypeValue(int value) {
-
       profileType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1058,9 +1074,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.cloudprofiler.v2.ProfileType getProfileType() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.cloudprofiler.v2.ProfileType result =
-          com.google.devtools.cloudprofiler.v2.ProfileType.valueOf(profileType_);
+          com.google.devtools.cloudprofiler.v2.ProfileType.forNumber(profileType_);
       return result == null
           ? com.google.devtools.cloudprofiler.v2.ProfileType.UNRECOGNIZED
           : result;
@@ -1083,7 +1098,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       profileType_ = value.getNumber();
       onChanged();
       return this;
@@ -1102,7 +1117,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProfileType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       profileType_ = 0;
       onChanged();
       return this;
@@ -1126,7 +1141,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deployment field is set.
      */
     public boolean hasDeployment() {
-      return deploymentBuilder_ != null || deployment_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1163,11 +1178,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deployment_ = value;
-        onChanged();
       } else {
         deploymentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1183,11 +1198,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudprofiler.v2.Deployment.Builder builderForValue) {
       if (deploymentBuilder_ == null) {
         deployment_ = builderForValue.build();
-        onChanged();
       } else {
         deploymentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1201,19 +1216,19 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeployment(com.google.devtools.cloudprofiler.v2.Deployment value) {
       if (deploymentBuilder_ == null) {
-        if (deployment_ != null) {
-          deployment_ =
-              com.google.devtools.cloudprofiler.v2.Deployment.newBuilder(deployment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && deployment_ != null
+            && deployment_
+                != com.google.devtools.cloudprofiler.v2.Deployment.getDefaultInstance()) {
+          getDeploymentBuilder().mergeFrom(value);
         } else {
           deployment_ = value;
         }
-        onChanged();
       } else {
         deploymentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1226,14 +1241,13 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudprofiler.v2.Deployment deployment = 3;</code>
      */
     public Builder clearDeployment() {
-      if (deploymentBuilder_ == null) {
-        deployment_ = null;
-        onChanged();
-      } else {
-        deployment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      deployment_ = null;
+      if (deploymentBuilder_ != null) {
+        deploymentBuilder_.dispose();
         deploymentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1246,7 +1260,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudprofiler.v2.Deployment deployment = 3;</code>
      */
     public com.google.devtools.cloudprofiler.v2.Deployment.Builder getDeploymentBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDeploymentFieldBuilder().getBuilder();
     }
@@ -1317,7 +1331,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
-      return durationBuilder_ != null || duration_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1362,11 +1376,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         duration_ = value;
-        onChanged();
       } else {
         durationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1386,11 +1400,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (durationBuilder_ == null) {
         duration_ = builderForValue.build();
-        onChanged();
       } else {
         durationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1409,17 +1423,18 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDuration(com.google.protobuf.Duration value) {
       if (durationBuilder_ == null) {
-        if (duration_ != null) {
-          duration_ =
-              com.google.protobuf.Duration.newBuilder(duration_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && duration_ != null
+            && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDurationBuilder().mergeFrom(value);
         } else {
           duration_ = value;
         }
-        onChanged();
       } else {
         durationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1437,14 +1452,13 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration duration = 4;</code>
      */
     public Builder clearDuration() {
-      if (durationBuilder_ == null) {
-        duration_ = null;
-        onChanged();
-      } else {
-        duration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1462,7 +1476,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration duration = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getDurationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
@@ -1552,8 +1566,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       profileBytes_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1570,7 +1584,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProfileBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       profileBytes_ = getDefaultInstance().getProfileBytes();
       onChanged();
       return this;
@@ -1587,14 +1601,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return labels_;
     }
 
@@ -1652,8 +1666,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1684,6 +1700,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1708,6 +1725,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1728,8 +1746,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1745,6 +1763,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 

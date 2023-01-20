@@ -68,7 +68,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HEIGHT_FIELD_NUMBER = 2;
-  private int height_;
+  private int height_ = 0;
   /**
    *
    *
@@ -135,7 +137,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WIDTH_FIELD_NUMBER = 3;
-  private int width_;
+  private int width_ = 0;
   /**
    *
    *
@@ -367,12 +369,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uri_ = "";
-
       height_ = 0;
-
       width_ = 0;
-
       return this;
     }
 
@@ -400,11 +400,24 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommendationengine.v1beta1.Image buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.Image result =
           new com.google.cloud.recommendationengine.v1beta1.Image(this);
-      result.uri_ = uri_;
-      result.height_ = height_;
-      result.width_ = width_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommendationengine.v1beta1.Image result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.height_ = height_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.width_ = width_;
+      }
     }
 
     @java.lang.Override
@@ -455,6 +468,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getHeight() != 0) {
@@ -492,19 +506,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 height_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 width_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -523,6 +537,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object uri_ = "";
     /**
@@ -585,8 +601,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -602,8 +618,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -624,8 +640,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -661,6 +677,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public Builder setHeight(int value) {
 
       height_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -676,7 +693,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHeight() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       height_ = 0;
       onChanged();
       return this;
@@ -713,6 +730,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public Builder setWidth(int value) {
 
       width_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -728,7 +746,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWidth() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       width_ = 0;
       onChanged();
       return this;

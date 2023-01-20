@@ -586,7 +586,6 @@ public interface UserEventOrBuilder
    *
    * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 7;</code>
    */
-
   /* nullable */
   com.google.cloud.retail.v2beta.CustomAttribute getAttributesOrDefault(
       java.lang.String key,

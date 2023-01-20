@@ -70,7 +70,9 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object environment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object environment_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int IMAGE_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object imageVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageVersion_ = "";
   /**
    *
    *
@@ -425,10 +429,9 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       environment_ = "";
-
       imageVersion_ = "";
-
       return this;
     }
 
@@ -460,10 +463,22 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
         buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest(this);
-      result.environment_ = environment_;
-      result.imageVersion_ = imageVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.environment_ = environment_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.imageVersion_ = imageVersion_;
+      }
     }
 
     @java.lang.Override
@@ -518,10 +533,12 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
               .getDefaultInstance()) return this;
       if (!other.getEnvironment().isEmpty()) {
         environment_ = other.environment_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getImageVersion().isEmpty()) {
         imageVersion_ = other.imageVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -553,13 +570,13 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 environment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 imageVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -578,6 +595,8 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object environment_ = "";
     /**
@@ -646,8 +665,8 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       environment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,8 +684,8 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEnvironment() {
-
       environment_ = getDefaultInstance().getEnvironment();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -689,8 +708,8 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       environment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,8 +832,8 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -849,8 +868,8 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearImageVersion() {
-
       imageVersion_ = getDefaultInstance().getImageVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -890,8 +909,8 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

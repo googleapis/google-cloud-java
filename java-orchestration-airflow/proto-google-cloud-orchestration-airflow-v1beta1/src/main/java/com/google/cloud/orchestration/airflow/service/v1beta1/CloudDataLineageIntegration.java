@@ -69,7 +69,7 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -297,8 +297,8 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       return this;
     }
 
@@ -332,9 +332,19 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
       com.google.cloud.orchestration.airflow.service.v1beta1.CloudDataLineageIntegration result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.CloudDataLineageIntegration(
               this);
-      result.enabled_ = enabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.CloudDataLineageIntegration result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
     }
 
     @java.lang.Override
@@ -421,7 +431,7 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -440,6 +450,8 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -472,6 +484,7 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -487,7 +500,7 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;

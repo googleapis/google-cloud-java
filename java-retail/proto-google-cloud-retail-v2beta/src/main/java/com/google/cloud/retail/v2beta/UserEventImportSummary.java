@@ -67,7 +67,7 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
   }
 
   public static final int JOINED_EVENTS_COUNT_FIELD_NUMBER = 1;
-  private long joinedEventsCount_;
+  private long joinedEventsCount_ = 0L;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
   }
 
   public static final int UNJOINED_EVENTS_COUNT_FIELD_NUMBER = 2;
-  private long unjoinedEventsCount_;
+  private long unjoinedEventsCount_ = 0L;
   /**
    *
    *
@@ -311,10 +311,9 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       joinedEventsCount_ = 0L;
-
       unjoinedEventsCount_ = 0L;
-
       return this;
     }
 
@@ -342,10 +341,21 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
     public com.google.cloud.retail.v2beta.UserEventImportSummary buildPartial() {
       com.google.cloud.retail.v2beta.UserEventImportSummary result =
           new com.google.cloud.retail.v2beta.UserEventImportSummary(this);
-      result.joinedEventsCount_ = joinedEventsCount_;
-      result.unjoinedEventsCount_ = unjoinedEventsCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.UserEventImportSummary result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.joinedEventsCount_ = joinedEventsCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.unjoinedEventsCount_ = unjoinedEventsCount_;
+      }
     }
 
     @java.lang.Override
@@ -429,13 +439,13 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
             case 8:
               {
                 joinedEventsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 unjoinedEventsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -454,6 +464,8 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long joinedEventsCount_;
     /**
@@ -486,6 +498,7 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
     public Builder setJoinedEventsCount(long value) {
 
       joinedEventsCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -501,7 +514,7 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearJoinedEventsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       joinedEventsCount_ = 0L;
       onChanged();
       return this;
@@ -540,6 +553,7 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
     public Builder setUnjoinedEventsCount(long value) {
 
       unjoinedEventsCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -556,7 +570,7 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearUnjoinedEventsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       unjoinedEventsCount_ = 0L;
       onChanged();
       return this;

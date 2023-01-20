@@ -119,7 +119,9 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.resourcemanager.v3.FolderOrBuilder getFolderOrBuilder() {
-    return getFolder();
+    return folder_ == null
+        ? com.google.cloud.resourcemanager.v3.Folder.getDefaultInstance()
+        : folder_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -325,10 +327,10 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (folderBuilder_ == null) {
-        folder_ = null;
-      } else {
-        folder_ = null;
+      bitField0_ = 0;
+      folder_ = null;
+      if (folderBuilder_ != null) {
+        folderBuilder_.dispose();
         folderBuilder_ = null;
       }
       return this;
@@ -358,13 +360,18 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.resourcemanager.v3.CreateFolderRequest buildPartial() {
       com.google.cloud.resourcemanager.v3.CreateFolderRequest result =
           new com.google.cloud.resourcemanager.v3.CreateFolderRequest(this);
-      if (folderBuilder_ == null) {
-        result.folder_ = folder_;
-      } else {
-        result.folder_ = folderBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcemanager.v3.CreateFolderRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.folder_ = folderBuilder_ == null ? folder_ : folderBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -445,7 +452,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 input.readMessage(getFolderFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -464,6 +471,8 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.resourcemanager.v3.Folder folder_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -486,7 +495,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the folder field is set.
      */
     public boolean hasFolder() {
-      return folderBuilder_ != null || folder_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -529,11 +538,11 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         folder_ = value;
-        onChanged();
       } else {
         folderBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -551,11 +560,11 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
     public Builder setFolder(com.google.cloud.resourcemanager.v3.Folder.Builder builderForValue) {
       if (folderBuilder_ == null) {
         folder_ = builderForValue.build();
-        onChanged();
       } else {
         folderBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -572,19 +581,18 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeFolder(com.google.cloud.resourcemanager.v3.Folder value) {
       if (folderBuilder_ == null) {
-        if (folder_ != null) {
-          folder_ =
-              com.google.cloud.resourcemanager.v3.Folder.newBuilder(folder_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && folder_ != null
+            && folder_ != com.google.cloud.resourcemanager.v3.Folder.getDefaultInstance()) {
+          getFolderBuilder().mergeFrom(value);
         } else {
           folder_ = value;
         }
-        onChanged();
       } else {
         folderBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -600,14 +608,13 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearFolder() {
-      if (folderBuilder_ == null) {
-        folder_ = null;
-        onChanged();
-      } else {
-        folder_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      folder_ = null;
+      if (folderBuilder_ != null) {
+        folderBuilder_.dispose();
         folderBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -623,7 +630,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.resourcemanager.v3.Folder.Builder getFolderBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getFolderFieldBuilder().getBuilder();
     }

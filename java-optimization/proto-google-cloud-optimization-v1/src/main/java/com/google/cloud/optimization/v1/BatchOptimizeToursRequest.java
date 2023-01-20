@@ -257,7 +257,9 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -358,7 +360,9 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.optimization.v1.InputConfigOrBuilder getInputConfigOrBuilder() {
-      return getInputConfig();
+      return inputConfig_ == null
+          ? com.google.cloud.optimization.v1.InputConfig.getDefaultInstance()
+          : inputConfig_;
     }
 
     public static final int OUTPUT_CONFIG_FIELD_NUMBER = 3;
@@ -412,11 +416,13 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.optimization.v1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
-      return getOutputConfig();
+      return outputConfig_ == null
+          ? com.google.cloud.optimization.v1.OutputConfig.getDefaultInstance()
+          : outputConfig_;
     }
 
     public static final int ENABLE_CHECKPOINTS_FIELD_NUMBER = 4;
-    private boolean enableCheckpoints_;
+    private boolean enableCheckpoints_ = false;
     /**
      *
      *
@@ -686,22 +692,19 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         displayName_ = "";
-
-        if (inputConfigBuilder_ == null) {
-          inputConfig_ = null;
-        } else {
-          inputConfig_ = null;
+        inputConfig_ = null;
+        if (inputConfigBuilder_ != null) {
+          inputConfigBuilder_.dispose();
           inputConfigBuilder_ = null;
         }
-        if (outputConfigBuilder_ == null) {
-          outputConfig_ = null;
-        } else {
-          outputConfig_ = null;
+        outputConfig_ = null;
+        if (outputConfigBuilder_ != null) {
+          outputConfigBuilder_.dispose();
           outputConfigBuilder_ = null;
         }
         enableCheckpoints_ = false;
-
         return this;
       }
 
@@ -733,20 +736,30 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           buildPartial() {
         com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig result =
             new com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig(this);
-        result.displayName_ = displayName_;
-        if (inputConfigBuilder_ == null) {
-          result.inputConfig_ = inputConfig_;
-        } else {
-          result.inputConfig_ = inputConfigBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (outputConfigBuilder_ == null) {
-          result.outputConfig_ = outputConfig_;
-        } else {
-          result.outputConfig_ = outputConfigBuilder_.build();
-        }
-        result.enableCheckpoints_ = enableCheckpoints_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.inputConfig_ =
+              inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.outputConfig_ =
+              outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.enableCheckpoints_ = enableCheckpoints_;
+        }
       }
 
       @java.lang.Override
@@ -804,6 +817,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
                 .getDefaultInstance()) return this;
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasInputConfig()) {
@@ -844,25 +858,25 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
               case 10:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 32:
                 {
                   enableCheckpoints_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -881,6 +895,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object displayName_ = "";
       /**
@@ -946,8 +962,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -964,8 +980,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -987,8 +1003,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1013,7 +1029,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
        * @return Whether the inputConfig field is set.
        */
       public boolean hasInputConfig() {
-        return inputConfigBuilder_ != null || inputConfig_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1054,11 +1070,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
             throw new NullPointerException();
           }
           inputConfig_ = value;
-          onChanged();
         } else {
           inputConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1076,11 +1092,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           com.google.cloud.optimization.v1.InputConfig.Builder builderForValue) {
         if (inputConfigBuilder_ == null) {
           inputConfig_ = builderForValue.build();
-          onChanged();
         } else {
           inputConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1096,19 +1112,19 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
        */
       public Builder mergeInputConfig(com.google.cloud.optimization.v1.InputConfig value) {
         if (inputConfigBuilder_ == null) {
-          if (inputConfig_ != null) {
-            inputConfig_ =
-                com.google.cloud.optimization.v1.InputConfig.newBuilder(inputConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && inputConfig_ != null
+              && inputConfig_
+                  != com.google.cloud.optimization.v1.InputConfig.getDefaultInstance()) {
+            getInputConfigBuilder().mergeFrom(value);
           } else {
             inputConfig_ = value;
           }
-          onChanged();
         } else {
           inputConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1123,14 +1139,13 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearInputConfig() {
-        if (inputConfigBuilder_ == null) {
-          inputConfig_ = null;
-          onChanged();
-        } else {
-          inputConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        inputConfig_ = null;
+        if (inputConfigBuilder_ != null) {
+          inputConfigBuilder_.dispose();
           inputConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1145,7 +1160,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
        * </code>
        */
       public com.google.cloud.optimization.v1.InputConfig.Builder getInputConfigBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getInputConfigFieldBuilder().getBuilder();
       }
@@ -1217,7 +1232,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
        * @return Whether the outputConfig field is set.
        */
       public boolean hasOutputConfig() {
-        return outputConfigBuilder_ != null || outputConfig_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1258,11 +1273,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
             throw new NullPointerException();
           }
           outputConfig_ = value;
-          onChanged();
         } else {
           outputConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1280,11 +1295,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           com.google.cloud.optimization.v1.OutputConfig.Builder builderForValue) {
         if (outputConfigBuilder_ == null) {
           outputConfig_ = builderForValue.build();
-          onChanged();
         } else {
           outputConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1300,19 +1315,19 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
        */
       public Builder mergeOutputConfig(com.google.cloud.optimization.v1.OutputConfig value) {
         if (outputConfigBuilder_ == null) {
-          if (outputConfig_ != null) {
-            outputConfig_ =
-                com.google.cloud.optimization.v1.OutputConfig.newBuilder(outputConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && outputConfig_ != null
+              && outputConfig_
+                  != com.google.cloud.optimization.v1.OutputConfig.getDefaultInstance()) {
+            getOutputConfigBuilder().mergeFrom(value);
           } else {
             outputConfig_ = value;
           }
-          onChanged();
         } else {
           outputConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1327,14 +1342,13 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearOutputConfig() {
-        if (outputConfigBuilder_ == null) {
-          outputConfig_ = null;
-          onChanged();
-        } else {
-          outputConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        outputConfig_ = null;
+        if (outputConfigBuilder_ != null) {
+          outputConfigBuilder_.dispose();
           outputConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1349,7 +1363,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
        * </code>
        */
       public com.google.cloud.optimization.v1.OutputConfig.Builder getOutputConfigBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getOutputConfigFieldBuilder().getBuilder();
       }
@@ -1446,6 +1460,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       public Builder setEnableCheckpoints(boolean value) {
 
         enableCheckpoints_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1468,7 +1483,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearEnableCheckpoints() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         enableCheckpoints_ = false;
         onChanged();
         return this;
@@ -1543,7 +1558,9 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -1596,6 +1613,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
   }
 
   public static final int MODEL_CONFIGS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig>
       modelConfigs_;
@@ -1899,15 +1918,15 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (modelConfigsBuilder_ == null) {
         modelConfigs_ = java.util.Collections.emptyList();
       } else {
         modelConfigs_ = null;
         modelConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1935,19 +1954,32 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     public com.google.cloud.optimization.v1.BatchOptimizeToursRequest buildPartial() {
       com.google.cloud.optimization.v1.BatchOptimizeToursRequest result =
           new com.google.cloud.optimization.v1.BatchOptimizeToursRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.optimization.v1.BatchOptimizeToursRequest result) {
       if (modelConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           modelConfigs_ = java.util.Collections.unmodifiableList(modelConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.modelConfigs_ = modelConfigs_;
       } else {
         result.modelConfigs_ = modelConfigsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.BatchOptimizeToursRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -1998,13 +2030,14 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (modelConfigsBuilder_ == null) {
         if (!other.modelConfigs_.isEmpty()) {
           if (modelConfigs_.isEmpty()) {
             modelConfigs_ = other.modelConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureModelConfigsIsMutable();
             modelConfigs_.addAll(other.modelConfigs_);
@@ -2017,7 +2050,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
             modelConfigsBuilder_.dispose();
             modelConfigsBuilder_ = null;
             modelConfigs_ = other.modelConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             modelConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getModelConfigsFieldBuilder()
@@ -2056,7 +2089,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -2160,8 +2193,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2179,8 +2212,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2203,8 +2236,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2214,12 +2247,12 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         modelConfigs_ = java.util.Collections.emptyList();
 
     private void ensureModelConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         modelConfigs_ =
             new java.util.ArrayList<
                 com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig>(
                 modelConfigs_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2484,7 +2517,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     public Builder clearModelConfigs() {
       if (modelConfigsBuilder_ == null) {
         modelConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         modelConfigsBuilder_.clear();
@@ -2641,7 +2674,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
                 com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig.Builder,
                 com.google.cloud.optimization.v1.BatchOptimizeToursRequest
                     .AsyncModelConfigOrBuilder>(
-                modelConfigs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                modelConfigs_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         modelConfigs_ = null;
       }
       return modelConfigsBuilder_;

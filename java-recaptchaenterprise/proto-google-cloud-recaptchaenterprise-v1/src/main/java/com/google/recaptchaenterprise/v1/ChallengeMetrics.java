@@ -66,7 +66,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PAGELOAD_COUNT_FIELD_NUMBER = 1;
-  private long pageloadCount_;
+  private long pageloadCount_ = 0L;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NOCAPTCHA_COUNT_FIELD_NUMBER = 2;
-  private long nocaptchaCount_;
+  private long nocaptchaCount_ = 0L;
   /**
    *
    *
@@ -103,7 +103,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FAILED_COUNT_FIELD_NUMBER = 3;
-  private long failedCount_;
+  private long failedCount_ = 0L;
   /**
    *
    *
@@ -122,7 +122,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PASSED_COUNT_FIELD_NUMBER = 4;
-  private long passedCount_;
+  private long passedCount_ = 0L;
   /**
    *
    *
@@ -365,14 +365,11 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pageloadCount_ = 0L;
-
       nocaptchaCount_ = 0L;
-
       failedCount_ = 0L;
-
       passedCount_ = 0L;
-
       return this;
     }
 
@@ -400,12 +397,27 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     public com.google.recaptchaenterprise.v1.ChallengeMetrics buildPartial() {
       com.google.recaptchaenterprise.v1.ChallengeMetrics result =
           new com.google.recaptchaenterprise.v1.ChallengeMetrics(this);
-      result.pageloadCount_ = pageloadCount_;
-      result.nocaptchaCount_ = nocaptchaCount_;
-      result.failedCount_ = failedCount_;
-      result.passedCount_ = passedCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.ChallengeMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pageloadCount_ = pageloadCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nocaptchaCount_ = nocaptchaCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.failedCount_ = failedCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.passedCount_ = passedCount_;
+      }
     }
 
     @java.lang.Override
@@ -495,25 +507,25 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 pageloadCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 nocaptchaCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 failedCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 passedCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -532,6 +544,8 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long pageloadCount_;
     /**
@@ -566,6 +580,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     public Builder setPageloadCount(long value) {
 
       pageloadCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -582,7 +597,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPageloadCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageloadCount_ = 0L;
       onChanged();
       return this;
@@ -619,6 +634,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     public Builder setNocaptchaCount(long value) {
 
       nocaptchaCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -634,7 +650,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNocaptchaCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       nocaptchaCount_ = 0L;
       onChanged();
       return this;
@@ -673,6 +689,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     public Builder setFailedCount(long value) {
 
       failedCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -689,7 +706,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFailedCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       failedCount_ = 0L;
       onChanged();
       return this;
@@ -730,6 +747,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     public Builder setPassedCount(long value) {
 
       passedCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -747,7 +765,7 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPassedCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       passedCount_ = 0L;
       onChanged();
       return this;

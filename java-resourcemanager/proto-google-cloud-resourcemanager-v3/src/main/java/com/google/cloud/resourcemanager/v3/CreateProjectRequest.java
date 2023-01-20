@@ -136,7 +136,9 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.resourcemanager.v3.ProjectOrBuilder getProjectOrBuilder() {
-    return getProject();
+    return project_ == null
+        ? com.google.cloud.resourcemanager.v3.Project.getDefaultInstance()
+        : project_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -344,10 +346,10 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (projectBuilder_ == null) {
-        project_ = null;
-      } else {
-        project_ = null;
+      bitField0_ = 0;
+      project_ = null;
+      if (projectBuilder_ != null) {
+        projectBuilder_.dispose();
         projectBuilder_ = null;
       }
       return this;
@@ -377,13 +379,18 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.resourcemanager.v3.CreateProjectRequest buildPartial() {
       com.google.cloud.resourcemanager.v3.CreateProjectRequest result =
           new com.google.cloud.resourcemanager.v3.CreateProjectRequest(this);
-      if (projectBuilder_ == null) {
-        result.project_ = project_;
-      } else {
-        result.project_ = projectBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcemanager.v3.CreateProjectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = projectBuilder_ == null ? project_ : projectBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -464,7 +471,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getProjectFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -483,6 +490,8 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.resourcemanager.v3.Project project_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -510,7 +519,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the project field is set.
      */
     public boolean hasProject() {
-      return projectBuilder_ != null || project_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -563,11 +572,11 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         project_ = value;
-        onChanged();
       } else {
         projectBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -590,11 +599,11 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
     public Builder setProject(com.google.cloud.resourcemanager.v3.Project.Builder builderForValue) {
       if (projectBuilder_ == null) {
         project_ = builderForValue.build();
-        onChanged();
       } else {
         projectBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -616,19 +625,18 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeProject(com.google.cloud.resourcemanager.v3.Project value) {
       if (projectBuilder_ == null) {
-        if (project_ != null) {
-          project_ =
-              com.google.cloud.resourcemanager.v3.Project.newBuilder(project_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && project_ != null
+            && project_ != com.google.cloud.resourcemanager.v3.Project.getDefaultInstance()) {
+          getProjectBuilder().mergeFrom(value);
         } else {
           project_ = value;
         }
-        onChanged();
       } else {
         projectBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -649,14 +657,13 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearProject() {
-      if (projectBuilder_ == null) {
-        project_ = null;
-        onChanged();
-      } else {
-        project_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      project_ = null;
+      if (projectBuilder_ != null) {
+        projectBuilder_.dispose();
         projectBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -677,7 +684,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.resourcemanager.v3.Project.Builder getProjectBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getProjectFieldBuilder().getBuilder();
     }

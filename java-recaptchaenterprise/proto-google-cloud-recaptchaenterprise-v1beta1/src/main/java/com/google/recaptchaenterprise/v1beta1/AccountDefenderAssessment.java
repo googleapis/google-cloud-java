@@ -283,7 +283,10 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
   }
 
   public static final int LABELS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> labels_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer,
           com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.AccountDefenderLabel>
@@ -295,11 +298,10 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
             public com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment
                     .AccountDefenderLabel
                 convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.AccountDefenderLabel
                   result =
                       com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment
-                          .AccountDefenderLabel.valueOf(from);
+                          .AccountDefenderLabel.forNumber(from);
               return result == null
                   ? com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment
                       .AccountDefenderLabel.UNRECOGNIZED
@@ -616,6 +618,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       labels_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -646,14 +649,26 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     public com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment buildPartial() {
       com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment result =
           new com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         labels_ = java.util.Collections.unmodifiableList(labels_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.labels_ = labels_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

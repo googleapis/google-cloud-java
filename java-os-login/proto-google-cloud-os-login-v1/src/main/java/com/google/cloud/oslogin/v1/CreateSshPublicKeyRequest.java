@@ -68,7 +68,9 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -172,7 +174,9 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKeyOrBuilder
       getSshPublicKeyOrBuilder() {
-    return getSshPublicKey();
+    return sshPublicKey_ == null
+        ? com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.getDefaultInstance()
+        : sshPublicKey_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,12 +391,11 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (sshPublicKeyBuilder_ == null) {
-        sshPublicKey_ = null;
-      } else {
-        sshPublicKey_ = null;
+      sshPublicKey_ = null;
+      if (sshPublicKeyBuilder_ != null) {
+        sshPublicKeyBuilder_.dispose();
         sshPublicKeyBuilder_ = null;
       }
       return this;
@@ -422,14 +425,22 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
     public com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest buildPartial() {
       com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest result =
           new com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest(this);
-      result.parent_ = parent_;
-      if (sshPublicKeyBuilder_ == null) {
-        result.sshPublicKey_ = sshPublicKey_;
-      } else {
-        result.sshPublicKey_ = sshPublicKeyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sshPublicKey_ =
+            sshPublicKeyBuilder_ == null ? sshPublicKey_ : sshPublicKeyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -480,6 +491,7 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSshPublicKey()) {
@@ -514,13 +526,13 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSshPublicKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -539,6 +551,8 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -607,8 +621,8 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -626,8 +640,8 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -650,8 +664,8 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,7 +690,7 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
      * @return Whether the sshPublicKey field is set.
      */
     public boolean hasSshPublicKey() {
-      return sshPublicKeyBuilder_ != null || sshPublicKey_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -718,11 +732,11 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         sshPublicKey_ = value;
-        onChanged();
       } else {
         sshPublicKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -740,11 +754,11 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
         com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.Builder builderForValue) {
       if (sshPublicKeyBuilder_ == null) {
         sshPublicKey_ = builderForValue.build();
-        onChanged();
       } else {
         sshPublicKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -761,19 +775,19 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
     public Builder mergeSshPublicKey(
         com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey value) {
       if (sshPublicKeyBuilder_ == null) {
-        if (sshPublicKey_ != null) {
-          sshPublicKey_ =
-              com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.newBuilder(sshPublicKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sshPublicKey_ != null
+            && sshPublicKey_
+                != com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.getDefaultInstance()) {
+          getSshPublicKeyBuilder().mergeFrom(value);
         } else {
           sshPublicKey_ = value;
         }
-        onChanged();
       } else {
         sshPublicKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -788,14 +802,13 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearSshPublicKey() {
-      if (sshPublicKeyBuilder_ == null) {
-        sshPublicKey_ = null;
-        onChanged();
-      } else {
-        sshPublicKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sshPublicKey_ = null;
+      if (sshPublicKeyBuilder_ != null) {
+        sshPublicKeyBuilder_.dispose();
         sshPublicKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -811,7 +824,7 @@ public final class CreateSshPublicKeyRequest extends com.google.protobuf.Generat
      */
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.Builder
         getSshPublicKeyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSshPublicKeyFieldBuilder().getBuilder();
     }

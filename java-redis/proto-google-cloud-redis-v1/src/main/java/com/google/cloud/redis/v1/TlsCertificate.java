@@ -70,7 +70,9 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERIAL_NUMBER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serialNumber_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serialNumber_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CERT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cert_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cert_ = "";
   /**
    *
    *
@@ -219,7 +223,7 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 4;
@@ -274,11 +278,13 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   public static final int SHA1_FINGERPRINT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object sha1Fingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sha1Fingerprint_ = "";
   /**
    *
    *
@@ -568,24 +574,20 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serialNumber_ = "";
-
       cert_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       sha1Fingerprint_ = "";
-
       return this;
     }
 
@@ -613,21 +615,30 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.redis.v1.TlsCertificate buildPartial() {
       com.google.cloud.redis.v1.TlsCertificate result =
           new com.google.cloud.redis.v1.TlsCertificate(this);
-      result.serialNumber_ = serialNumber_;
-      result.cert_ = cert_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
-      }
-      result.sha1Fingerprint_ = sha1Fingerprint_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.redis.v1.TlsCertificate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serialNumber_ = serialNumber_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cert_ = cert_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sha1Fingerprint_ = sha1Fingerprint_;
+      }
     }
 
     @java.lang.Override
@@ -677,10 +688,12 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.redis.v1.TlsCertificate.getDefaultInstance()) return this;
       if (!other.getSerialNumber().isEmpty()) {
         serialNumber_ = other.serialNumber_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCert().isEmpty()) {
         cert_ = other.cert_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -691,6 +704,7 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSha1Fingerprint().isEmpty()) {
         sha1Fingerprint_ = other.sha1Fingerprint_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -722,31 +736,31 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 serialNumber_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 cert_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 sha1Fingerprint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -765,6 +779,8 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serialNumber_ = "";
     /**
@@ -827,8 +843,8 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serialNumber_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,8 +860,8 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSerialNumber() {
-
       serialNumber_ = getDefaultInstance().getSerialNumber();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -866,8 +882,8 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serialNumber_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -933,8 +949,8 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cert_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -950,8 +966,8 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCert() {
-
       cert_ = getDefaultInstance().getCert();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -972,8 +988,8 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cert_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1000,7 +1016,7 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1045,11 +1061,11 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1068,11 +1084,11 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1090,17 +1106,18 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1117,14 +1134,13 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1141,7 +1157,7 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1219,7 +1235,7 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1264,11 +1280,11 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1287,11 +1303,11 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1309,17 +1325,18 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1336,14 +1353,13 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1360,7 +1376,7 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -1477,8 +1493,8 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sha1Fingerprint_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1494,8 +1510,8 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSha1Fingerprint() {
-
       sha1Fingerprint_ = getDefaultInstance().getSha1Fingerprint();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1516,8 +1532,8 @@ public final class TlsCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sha1Fingerprint_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

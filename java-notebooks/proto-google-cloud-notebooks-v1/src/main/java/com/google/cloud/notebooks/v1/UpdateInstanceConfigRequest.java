@@ -68,7 +68,9 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -163,7 +165,9 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.InstanceConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null
+        ? com.google.cloud.notebooks.v1.InstanceConfig.getDefaultInstance()
+        : config_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -378,12 +382,11 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
       return this;
@@ -413,14 +416,21 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
     public com.google.cloud.notebooks.v1.UpdateInstanceConfigRequest buildPartial() {
       com.google.cloud.notebooks.v1.UpdateInstanceConfigRequest result =
           new com.google.cloud.notebooks.v1.UpdateInstanceConfigRequest(this);
-      result.name_ = name_;
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.UpdateInstanceConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -471,6 +481,7 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasConfig()) {
@@ -505,13 +516,13 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -530,6 +541,8 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -595,8 +608,8 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -613,8 +626,8 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -636,8 +649,8 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -660,7 +673,7 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -697,11 +710,11 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -716,11 +729,11 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
     public Builder setConfig(com.google.cloud.notebooks.v1.InstanceConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -734,19 +747,18 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
      */
     public Builder mergeConfig(com.google.cloud.notebooks.v1.InstanceConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.cloud.notebooks.v1.InstanceConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && config_ != null
+            && config_ != com.google.cloud.notebooks.v1.InstanceConfig.getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -759,14 +771,13 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
      * <code>.google.cloud.notebooks.v1.InstanceConfig config = 2;</code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -779,7 +790,7 @@ public final class UpdateInstanceConfigRequest extends com.google.protobuf.Gener
      * <code>.google.cloud.notebooks.v1.InstanceConfig config = 2;</code>
      */
     public com.google.cloud.notebooks.v1.InstanceConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }

@@ -160,7 +160,6 @@ public interface SpokeOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

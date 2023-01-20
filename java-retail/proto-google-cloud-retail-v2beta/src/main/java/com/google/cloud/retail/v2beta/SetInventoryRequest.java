@@ -256,7 +256,9 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.ProductOrBuilder getInventoryOrBuilder() {
-    return getInventory();
+    return inventory_ == null
+        ? com.google.cloud.retail.v2beta.Product.getDefaultInstance()
+        : inventory_;
   }
 
   public static final int SET_MASK_FIELD_NUMBER = 2;
@@ -314,7 +316,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getSetMaskOrBuilder() {
-    return getSetMask();
+    return setMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : setMask_;
   }
 
   public static final int SET_TIME_FIELD_NUMBER = 3;
@@ -366,11 +368,11 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSetTimeOrBuilder() {
-    return getSetTime();
+    return setTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : setTime_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -633,26 +635,23 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (inventoryBuilder_ == null) {
-        inventory_ = null;
-      } else {
-        inventory_ = null;
+      bitField0_ = 0;
+      inventory_ = null;
+      if (inventoryBuilder_ != null) {
+        inventoryBuilder_.dispose();
         inventoryBuilder_ = null;
       }
-      if (setMaskBuilder_ == null) {
-        setMask_ = null;
-      } else {
-        setMask_ = null;
+      setMask_ = null;
+      if (setMaskBuilder_ != null) {
+        setMaskBuilder_.dispose();
         setMaskBuilder_ = null;
       }
-      if (setTimeBuilder_ == null) {
-        setTime_ = null;
-      } else {
-        setTime_ = null;
+      setTime_ = null;
+      if (setTimeBuilder_ != null) {
+        setTimeBuilder_.dispose();
         setTimeBuilder_ = null;
       }
       allowMissing_ = false;
-
       return this;
     }
 
@@ -680,24 +679,27 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.retail.v2beta.SetInventoryRequest buildPartial() {
       com.google.cloud.retail.v2beta.SetInventoryRequest result =
           new com.google.cloud.retail.v2beta.SetInventoryRequest(this);
-      if (inventoryBuilder_ == null) {
-        result.inventory_ = inventory_;
-      } else {
-        result.inventory_ = inventoryBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (setMaskBuilder_ == null) {
-        result.setMask_ = setMask_;
-      } else {
-        result.setMask_ = setMaskBuilder_.build();
-      }
-      if (setTimeBuilder_ == null) {
-        result.setTime_ = setTime_;
-      } else {
-        result.setTime_ = setTimeBuilder_.build();
-      }
-      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.SetInventoryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inventory_ = inventoryBuilder_ == null ? inventory_ : inventoryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.setMask_ = setMaskBuilder_ == null ? setMask_ : setMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.setTime_ = setTimeBuilder_ == null ? setTime_ : setTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -787,25 +789,25 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getInventoryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSetMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSetTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -824,6 +826,8 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.retail.v2beta.Product inventory_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -891,7 +895,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the inventory field is set.
      */
     public boolean hasInventory() {
-      return inventoryBuilder_ != null || inventory_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1024,11 +1028,11 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         inventory_ = value;
-        onChanged();
       } else {
         inventoryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1091,11 +1095,11 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     public Builder setInventory(com.google.cloud.retail.v2beta.Product.Builder builderForValue) {
       if (inventoryBuilder_ == null) {
         inventory_ = builderForValue.build();
-        onChanged();
       } else {
         inventoryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1157,19 +1161,18 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeInventory(com.google.cloud.retail.v2beta.Product value) {
       if (inventoryBuilder_ == null) {
-        if (inventory_ != null) {
-          inventory_ =
-              com.google.cloud.retail.v2beta.Product.newBuilder(inventory_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && inventory_ != null
+            && inventory_ != com.google.cloud.retail.v2beta.Product.getDefaultInstance()) {
+          getInventoryBuilder().mergeFrom(value);
         } else {
           inventory_ = value;
         }
-        onChanged();
       } else {
         inventoryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1230,14 +1233,13 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearInventory() {
-      if (inventoryBuilder_ == null) {
-        inventory_ = null;
-        onChanged();
-      } else {
-        inventory_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inventory_ = null;
+      if (inventoryBuilder_ != null) {
+        inventoryBuilder_.dispose();
         inventoryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1298,7 +1300,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.retail.v2beta.Product.Builder getInventoryBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInventoryFieldBuilder().getBuilder();
     }
@@ -1464,7 +1466,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the setMask field is set.
      */
     public boolean hasSetMask() {
-      return setMaskBuilder_ != null || setMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1507,11 +1509,11 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         setMask_ = value;
-        onChanged();
       } else {
         setMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1530,11 +1532,11 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     public Builder setSetMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (setMaskBuilder_ == null) {
         setMask_ = builderForValue.build();
-        onChanged();
       } else {
         setMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1552,17 +1554,18 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSetMask(com.google.protobuf.FieldMask value) {
       if (setMaskBuilder_ == null) {
-        if (setMask_ != null) {
-          setMask_ =
-              com.google.protobuf.FieldMask.newBuilder(setMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && setMask_ != null
+            && setMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getSetMaskBuilder().mergeFrom(value);
         } else {
           setMask_ = value;
         }
-        onChanged();
       } else {
         setMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1579,14 +1582,13 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.FieldMask set_mask = 2;</code>
      */
     public Builder clearSetMask() {
-      if (setMaskBuilder_ == null) {
-        setMask_ = null;
-        onChanged();
-      } else {
-        setMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      setMask_ = null;
+      if (setMaskBuilder_ != null) {
+        setMaskBuilder_.dispose();
         setMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1603,7 +1605,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.FieldMask set_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getSetMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSetMaskFieldBuilder().getBuilder();
     }
@@ -1677,7 +1679,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the setTime field is set.
      */
     public boolean hasSetTime() {
-      return setTimeBuilder_ != null || setTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1716,11 +1718,11 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         setTime_ = value;
-        onChanged();
       } else {
         setTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1737,11 +1739,11 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     public Builder setSetTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (setTimeBuilder_ == null) {
         setTime_ = builderForValue.build();
-        onChanged();
       } else {
         setTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1757,17 +1759,18 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSetTime(com.google.protobuf.Timestamp value) {
       if (setTimeBuilder_ == null) {
-        if (setTime_ != null) {
-          setTime_ =
-              com.google.protobuf.Timestamp.newBuilder(setTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && setTime_ != null
+            && setTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getSetTimeBuilder().mergeFrom(value);
         } else {
           setTime_ = value;
         }
-        onChanged();
       } else {
         setTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1782,14 +1785,13 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp set_time = 3;</code>
      */
     public Builder clearSetTime() {
-      if (setTimeBuilder_ == null) {
-        setTime_ = null;
-        onChanged();
-      } else {
-        setTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      setTime_ = null;
+      if (setTimeBuilder_ != null) {
+        setTimeBuilder_.dispose();
         setTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1804,7 +1806,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp set_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getSetTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSetTimeFieldBuilder().getBuilder();
     }
@@ -1895,6 +1897,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1915,7 +1918,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       allowMissing_ = false;
       onChanged();
       return this;

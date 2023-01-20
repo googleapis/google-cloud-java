@@ -68,7 +68,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -161,7 +163,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.EventOrBuilder getEventOrBuilder() {
-    return getEvent();
+    return event_ == null ? com.google.recaptchaenterprise.v1.Event.getDefaultInstance() : event_;
   }
 
   public static final int RISK_ANALYSIS_FIELD_NUMBER = 3;
@@ -215,7 +217,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.RiskAnalysisOrBuilder getRiskAnalysisOrBuilder() {
-    return getRiskAnalysis();
+    return riskAnalysis_ == null
+        ? com.google.recaptchaenterprise.v1.RiskAnalysis.getDefaultInstance()
+        : riskAnalysis_;
   }
 
   public static final int TOKEN_PROPERTIES_FIELD_NUMBER = 4;
@@ -269,7 +273,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TokenPropertiesOrBuilder getTokenPropertiesOrBuilder() {
-    return getTokenProperties();
+    return tokenProperties_ == null
+        ? com.google.recaptchaenterprise.v1.TokenProperties.getDefaultInstance()
+        : tokenProperties_;
   }
 
   public static final int ACCOUNT_VERIFICATION_FIELD_NUMBER = 5;
@@ -324,7 +330,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.AccountVerificationInfoOrBuilder
       getAccountVerificationOrBuilder() {
-    return getAccountVerification();
+    return accountVerification_ == null
+        ? com.google.recaptchaenterprise.v1.AccountVerificationInfo.getDefaultInstance()
+        : accountVerification_;
   }
 
   public static final int ACCOUNT_DEFENDER_ASSESSMENT_FIELD_NUMBER = 6;
@@ -383,7 +391,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder
       getAccountDefenderAssessmentOrBuilder() {
-    return getAccountDefenderAssessment();
+    return accountDefenderAssessment_ == null
+        ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.getDefaultInstance()
+        : accountDefenderAssessment_;
   }
 
   public static final int PRIVATE_PASSWORD_LEAK_VERIFICATION_FIELD_NUMBER = 8;
@@ -443,7 +453,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder
       getPrivatePasswordLeakVerificationOrBuilder() {
-    return getPrivatePasswordLeakVerification();
+    return privatePasswordLeakVerification_ == null
+        ? com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.getDefaultInstance()
+        : privatePasswordLeakVerification_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -734,42 +746,36 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (eventBuilder_ == null) {
-        event_ = null;
-      } else {
-        event_ = null;
+      event_ = null;
+      if (eventBuilder_ != null) {
+        eventBuilder_.dispose();
         eventBuilder_ = null;
       }
-      if (riskAnalysisBuilder_ == null) {
-        riskAnalysis_ = null;
-      } else {
-        riskAnalysis_ = null;
+      riskAnalysis_ = null;
+      if (riskAnalysisBuilder_ != null) {
+        riskAnalysisBuilder_.dispose();
         riskAnalysisBuilder_ = null;
       }
-      if (tokenPropertiesBuilder_ == null) {
-        tokenProperties_ = null;
-      } else {
-        tokenProperties_ = null;
+      tokenProperties_ = null;
+      if (tokenPropertiesBuilder_ != null) {
+        tokenPropertiesBuilder_.dispose();
         tokenPropertiesBuilder_ = null;
       }
-      if (accountVerificationBuilder_ == null) {
-        accountVerification_ = null;
-      } else {
-        accountVerification_ = null;
+      accountVerification_ = null;
+      if (accountVerificationBuilder_ != null) {
+        accountVerificationBuilder_.dispose();
         accountVerificationBuilder_ = null;
       }
-      if (accountDefenderAssessmentBuilder_ == null) {
-        accountDefenderAssessment_ = null;
-      } else {
-        accountDefenderAssessment_ = null;
+      accountDefenderAssessment_ = null;
+      if (accountDefenderAssessmentBuilder_ != null) {
+        accountDefenderAssessmentBuilder_.dispose();
         accountDefenderAssessmentBuilder_ = null;
       }
-      if (privatePasswordLeakVerificationBuilder_ == null) {
-        privatePasswordLeakVerification_ = null;
-      } else {
-        privatePasswordLeakVerification_ = null;
+      privatePasswordLeakVerification_ = null;
+      if (privatePasswordLeakVerificationBuilder_ != null) {
+        privatePasswordLeakVerificationBuilder_.dispose();
         privatePasswordLeakVerificationBuilder_ = null;
       }
       return this;
@@ -799,39 +805,47 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.Assessment buildPartial() {
       com.google.recaptchaenterprise.v1.Assessment result =
           new com.google.recaptchaenterprise.v1.Assessment(this);
-      result.name_ = name_;
-      if (eventBuilder_ == null) {
-        result.event_ = event_;
-      } else {
-        result.event_ = eventBuilder_.build();
-      }
-      if (riskAnalysisBuilder_ == null) {
-        result.riskAnalysis_ = riskAnalysis_;
-      } else {
-        result.riskAnalysis_ = riskAnalysisBuilder_.build();
-      }
-      if (tokenPropertiesBuilder_ == null) {
-        result.tokenProperties_ = tokenProperties_;
-      } else {
-        result.tokenProperties_ = tokenPropertiesBuilder_.build();
-      }
-      if (accountVerificationBuilder_ == null) {
-        result.accountVerification_ = accountVerification_;
-      } else {
-        result.accountVerification_ = accountVerificationBuilder_.build();
-      }
-      if (accountDefenderAssessmentBuilder_ == null) {
-        result.accountDefenderAssessment_ = accountDefenderAssessment_;
-      } else {
-        result.accountDefenderAssessment_ = accountDefenderAssessmentBuilder_.build();
-      }
-      if (privatePasswordLeakVerificationBuilder_ == null) {
-        result.privatePasswordLeakVerification_ = privatePasswordLeakVerification_;
-      } else {
-        result.privatePasswordLeakVerification_ = privatePasswordLeakVerificationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.Assessment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.event_ = eventBuilder_ == null ? event_ : eventBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.riskAnalysis_ =
+            riskAnalysisBuilder_ == null ? riskAnalysis_ : riskAnalysisBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tokenProperties_ =
+            tokenPropertiesBuilder_ == null ? tokenProperties_ : tokenPropertiesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.accountVerification_ =
+            accountVerificationBuilder_ == null
+                ? accountVerification_
+                : accountVerificationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.accountDefenderAssessment_ =
+            accountDefenderAssessmentBuilder_ == null
+                ? accountDefenderAssessment_
+                : accountDefenderAssessmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.privatePasswordLeakVerification_ =
+            privatePasswordLeakVerificationBuilder_ == null
+                ? privatePasswordLeakVerification_
+                : privatePasswordLeakVerificationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -881,6 +895,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.recaptchaenterprise.v1.Assessment.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEvent()) {
@@ -930,39 +945,39 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEventFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getRiskAnalysisFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getTokenPropertiesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getAccountVerificationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getAccountDefenderAssessmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 66:
@@ -970,7 +985,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getPrivatePasswordLeakVerificationFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             default:
@@ -989,6 +1004,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1054,8 +1071,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1072,8 +1089,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1095,8 +1112,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1119,7 +1136,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the event field is set.
      */
     public boolean hasEvent() {
-      return eventBuilder_ != null || event_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1156,11 +1173,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         event_ = value;
-        onChanged();
       } else {
         eventBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1175,11 +1192,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public Builder setEvent(com.google.recaptchaenterprise.v1.Event.Builder builderForValue) {
       if (eventBuilder_ == null) {
         event_ = builderForValue.build();
-        onChanged();
       } else {
         eventBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1193,19 +1210,18 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEvent(com.google.recaptchaenterprise.v1.Event value) {
       if (eventBuilder_ == null) {
-        if (event_ != null) {
-          event_ =
-              com.google.recaptchaenterprise.v1.Event.newBuilder(event_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && event_ != null
+            && event_ != com.google.recaptchaenterprise.v1.Event.getDefaultInstance()) {
+          getEventBuilder().mergeFrom(value);
         } else {
           event_ = value;
         }
-        onChanged();
       } else {
         eventBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1218,14 +1234,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
      */
     public Builder clearEvent() {
-      if (eventBuilder_ == null) {
-        event_ = null;
-        onChanged();
-      } else {
-        event_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      event_ = null;
+      if (eventBuilder_ != null) {
+        eventBuilder_.dispose();
         eventBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1238,7 +1253,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
      */
     public com.google.recaptchaenterprise.v1.Event.Builder getEventBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEventFieldBuilder().getBuilder();
     }
@@ -1306,7 +1321,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the riskAnalysis field is set.
      */
     public boolean hasRiskAnalysis() {
-      return riskAnalysisBuilder_ != null || riskAnalysis_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1347,11 +1362,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         riskAnalysis_ = value;
-        onChanged();
       } else {
         riskAnalysisBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1369,11 +1384,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         com.google.recaptchaenterprise.v1.RiskAnalysis.Builder builderForValue) {
       if (riskAnalysisBuilder_ == null) {
         riskAnalysis_ = builderForValue.build();
-        onChanged();
       } else {
         riskAnalysisBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1389,19 +1404,19 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRiskAnalysis(com.google.recaptchaenterprise.v1.RiskAnalysis value) {
       if (riskAnalysisBuilder_ == null) {
-        if (riskAnalysis_ != null) {
-          riskAnalysis_ =
-              com.google.recaptchaenterprise.v1.RiskAnalysis.newBuilder(riskAnalysis_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && riskAnalysis_ != null
+            && riskAnalysis_
+                != com.google.recaptchaenterprise.v1.RiskAnalysis.getDefaultInstance()) {
+          getRiskAnalysisBuilder().mergeFrom(value);
         } else {
           riskAnalysis_ = value;
         }
-        onChanged();
       } else {
         riskAnalysisBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1416,14 +1431,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRiskAnalysis() {
-      if (riskAnalysisBuilder_ == null) {
-        riskAnalysis_ = null;
-        onChanged();
-      } else {
-        riskAnalysis_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      riskAnalysis_ = null;
+      if (riskAnalysisBuilder_ != null) {
+        riskAnalysisBuilder_.dispose();
         riskAnalysisBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1438,7 +1452,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.recaptchaenterprise.v1.RiskAnalysis.Builder getRiskAnalysisBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRiskAnalysisFieldBuilder().getBuilder();
     }
@@ -1510,7 +1524,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tokenProperties field is set.
      */
     public boolean hasTokenProperties() {
-      return tokenPropertiesBuilder_ != null || tokenProperties_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1551,11 +1565,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tokenProperties_ = value;
-        onChanged();
       } else {
         tokenPropertiesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1573,11 +1587,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         com.google.recaptchaenterprise.v1.TokenProperties.Builder builderForValue) {
       if (tokenPropertiesBuilder_ == null) {
         tokenProperties_ = builderForValue.build();
-        onChanged();
       } else {
         tokenPropertiesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1593,19 +1607,19 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTokenProperties(com.google.recaptchaenterprise.v1.TokenProperties value) {
       if (tokenPropertiesBuilder_ == null) {
-        if (tokenProperties_ != null) {
-          tokenProperties_ =
-              com.google.recaptchaenterprise.v1.TokenProperties.newBuilder(tokenProperties_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && tokenProperties_ != null
+            && tokenProperties_
+                != com.google.recaptchaenterprise.v1.TokenProperties.getDefaultInstance()) {
+          getTokenPropertiesBuilder().mergeFrom(value);
         } else {
           tokenProperties_ = value;
         }
-        onChanged();
       } else {
         tokenPropertiesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1620,14 +1634,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTokenProperties() {
-      if (tokenPropertiesBuilder_ == null) {
-        tokenProperties_ = null;
-        onChanged();
-      } else {
-        tokenProperties_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      tokenProperties_ = null;
+      if (tokenPropertiesBuilder_ != null) {
+        tokenPropertiesBuilder_.dispose();
         tokenPropertiesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1642,7 +1655,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TokenProperties.Builder getTokenPropertiesBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTokenPropertiesFieldBuilder().getBuilder();
     }
@@ -1715,7 +1728,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the accountVerification field is set.
      */
     public boolean hasAccountVerification() {
-      return accountVerificationBuilder_ != null || accountVerification_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1757,11 +1770,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         accountVerification_ = value;
-        onChanged();
       } else {
         accountVerificationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1779,11 +1792,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         com.google.recaptchaenterprise.v1.AccountVerificationInfo.Builder builderForValue) {
       if (accountVerificationBuilder_ == null) {
         accountVerification_ = builderForValue.build();
-        onChanged();
       } else {
         accountVerificationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1800,20 +1813,19 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAccountVerification(
         com.google.recaptchaenterprise.v1.AccountVerificationInfo value) {
       if (accountVerificationBuilder_ == null) {
-        if (accountVerification_ != null) {
-          accountVerification_ =
-              com.google.recaptchaenterprise.v1.AccountVerificationInfo.newBuilder(
-                      accountVerification_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && accountVerification_ != null
+            && accountVerification_
+                != com.google.recaptchaenterprise.v1.AccountVerificationInfo.getDefaultInstance()) {
+          getAccountVerificationBuilder().mergeFrom(value);
         } else {
           accountVerification_ = value;
         }
-        onChanged();
       } else {
         accountVerificationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1828,14 +1840,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAccountVerification() {
-      if (accountVerificationBuilder_ == null) {
-        accountVerification_ = null;
-        onChanged();
-      } else {
-        accountVerification_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      accountVerification_ = null;
+      if (accountVerificationBuilder_ != null) {
+        accountVerificationBuilder_.dispose();
         accountVerificationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1851,7 +1862,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.recaptchaenterprise.v1.AccountVerificationInfo.Builder
         getAccountVerificationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getAccountVerificationFieldBuilder().getBuilder();
     }
@@ -1925,7 +1936,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the accountDefenderAssessment field is set.
      */
     public boolean hasAccountDefenderAssessment() {
-      return accountDefenderAssessmentBuilder_ != null || accountDefenderAssessment_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1970,11 +1981,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         accountDefenderAssessment_ = value;
-        onChanged();
       } else {
         accountDefenderAssessmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1993,11 +2004,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder builderForValue) {
       if (accountDefenderAssessmentBuilder_ == null) {
         accountDefenderAssessment_ = builderForValue.build();
-        onChanged();
       } else {
         accountDefenderAssessmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2015,20 +2026,20 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAccountDefenderAssessment(
         com.google.recaptchaenterprise.v1.AccountDefenderAssessment value) {
       if (accountDefenderAssessmentBuilder_ == null) {
-        if (accountDefenderAssessment_ != null) {
-          accountDefenderAssessment_ =
-              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.newBuilder(
-                      accountDefenderAssessment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && accountDefenderAssessment_ != null
+            && accountDefenderAssessment_
+                != com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                    .getDefaultInstance()) {
+          getAccountDefenderAssessmentBuilder().mergeFrom(value);
         } else {
           accountDefenderAssessment_ = value;
         }
-        onChanged();
       } else {
         accountDefenderAssessmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2044,14 +2055,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAccountDefenderAssessment() {
-      if (accountDefenderAssessmentBuilder_ == null) {
-        accountDefenderAssessment_ = null;
-        onChanged();
-      } else {
-        accountDefenderAssessment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      accountDefenderAssessment_ = null;
+      if (accountDefenderAssessmentBuilder_ != null) {
+        accountDefenderAssessmentBuilder_.dispose();
         accountDefenderAssessmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2068,7 +2078,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder
         getAccountDefenderAssessmentBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getAccountDefenderAssessmentFieldBuilder().getBuilder();
     }
@@ -2145,8 +2155,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the privatePasswordLeakVerification field is set.
      */
     public boolean hasPrivatePasswordLeakVerification() {
-      return privatePasswordLeakVerificationBuilder_ != null
-          || privatePasswordLeakVerification_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2191,11 +2200,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         privatePasswordLeakVerification_ = value;
-        onChanged();
       } else {
         privatePasswordLeakVerificationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2214,11 +2223,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder builderForValue) {
       if (privatePasswordLeakVerificationBuilder_ == null) {
         privatePasswordLeakVerification_ = builderForValue.build();
-        onChanged();
       } else {
         privatePasswordLeakVerificationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2236,20 +2245,20 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePrivatePasswordLeakVerification(
         com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification value) {
       if (privatePasswordLeakVerificationBuilder_ == null) {
-        if (privatePasswordLeakVerification_ != null) {
-          privatePasswordLeakVerification_ =
-              com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.newBuilder(
-                      privatePasswordLeakVerification_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && privatePasswordLeakVerification_ != null
+            && privatePasswordLeakVerification_
+                != com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification
+                    .getDefaultInstance()) {
+          getPrivatePasswordLeakVerificationBuilder().mergeFrom(value);
         } else {
           privatePasswordLeakVerification_ = value;
         }
-        onChanged();
       } else {
         privatePasswordLeakVerificationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2265,14 +2274,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPrivatePasswordLeakVerification() {
-      if (privatePasswordLeakVerificationBuilder_ == null) {
-        privatePasswordLeakVerification_ = null;
-        onChanged();
-      } else {
-        privatePasswordLeakVerification_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      privatePasswordLeakVerification_ = null;
+      if (privatePasswordLeakVerificationBuilder_ != null) {
+        privatePasswordLeakVerificationBuilder_.dispose();
         privatePasswordLeakVerificationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2289,7 +2297,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder
         getPrivatePasswordLeakVerificationBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getPrivatePasswordLeakVerificationFieldBuilder().getBuilder();
     }

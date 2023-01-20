@@ -114,7 +114,6 @@ public interface ScoreMetricsOrBuilder
    * map&lt;string, .google.cloud.recaptchaenterprise.v1.ScoreDistribution&gt; action_metrics = 2;
    * </code>
    */
-
   /* nullable */
   com.google.recaptchaenterprise.v1.ScoreDistribution getActionMetricsOrDefault(
       java.lang.String key,

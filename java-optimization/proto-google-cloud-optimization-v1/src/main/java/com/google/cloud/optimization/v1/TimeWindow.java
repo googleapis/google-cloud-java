@@ -131,7 +131,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 2;
@@ -180,7 +180,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int SOFT_START_TIME_FIELD_NUMBER = 3;
@@ -228,7 +228,9 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSoftStartTimeOrBuilder() {
-    return getSoftStartTime();
+    return softStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : softStartTime_;
   }
 
   public static final int SOFT_END_TIME_FIELD_NUMBER = 4;
@@ -274,11 +276,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSoftEndTimeOrBuilder() {
-    return getSoftEndTime();
+    return softEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : softEndTime_;
   }
 
   public static final int COST_PER_HOUR_BEFORE_SOFT_START_TIME_FIELD_NUMBER = 5;
-  private double costPerHourBeforeSoftStartTime_;
+  private double costPerHourBeforeSoftStartTime_ = 0D;
   /**
    *
    *
@@ -327,7 +329,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COST_PER_HOUR_AFTER_SOFT_END_TIME_FIELD_NUMBER = 6;
-  private double costPerHourAfterSoftEndTime_;
+  private double costPerHourAfterSoftEndTime_ = 0D;
   /**
    *
    *
@@ -680,34 +682,29 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      bitField0_ = 0;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-      if (softStartTimeBuilder_ == null) {
-        softStartTime_ = null;
-      } else {
-        softStartTime_ = null;
+      softStartTime_ = null;
+      if (softStartTimeBuilder_ != null) {
+        softStartTimeBuilder_.dispose();
         softStartTimeBuilder_ = null;
       }
-      if (softEndTimeBuilder_ == null) {
-        softEndTime_ = null;
-      } else {
-        softEndTime_ = null;
+      softEndTime_ = null;
+      if (softEndTimeBuilder_ != null) {
+        softEndTimeBuilder_.dispose();
         softEndTimeBuilder_ = null;
       }
       costPerHourBeforeSoftStartTime_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000001);
       costPerHourAfterSoftEndTime_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -735,39 +732,39 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.TimeWindow buildPartial() {
       com.google.cloud.optimization.v1.TimeWindow result =
           new com.google.cloud.optimization.v1.TimeWindow(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.TimeWindow result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      if (softStartTimeBuilder_ == null) {
-        result.softStartTime_ = softStartTime_;
-      } else {
-        result.softStartTime_ = softStartTimeBuilder_.build();
-      }
-      if (softEndTimeBuilder_ == null) {
-        result.softEndTime_ = softEndTime_;
-      } else {
-        result.softEndTime_ = softEndTimeBuilder_.build();
-      }
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.softStartTime_ =
+            softStartTimeBuilder_ == null ? softStartTime_ : softStartTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.softEndTime_ =
+            softEndTimeBuilder_ == null ? softEndTime_ : softEndTimeBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.costPerHourBeforeSoftStartTime_ = costPerHourBeforeSoftStartTime_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.costPerHourAfterSoftEndTime_ = costPerHourAfterSoftEndTime_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -862,37 +859,37 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSoftStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getSoftEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 41:
               {
                 costPerHourBeforeSoftStartTime_ = input.readDouble();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 41
             case 49:
               {
                 costPerHourAfterSoftEndTime_ = input.readDouble();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 49
             default:
@@ -933,7 +930,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -970,11 +967,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -990,11 +987,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1009,17 +1006,18 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1033,14 +1031,13 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1054,7 +1051,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -1121,7 +1118,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1158,11 +1155,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1178,11 +1175,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1197,17 +1194,18 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1221,14 +1219,13 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1242,7 +1239,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1308,7 +1305,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the softStartTime field is set.
      */
     public boolean hasSoftStartTime() {
-      return softStartTimeBuilder_ != null || softStartTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1345,11 +1342,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         softStartTime_ = value;
-        onChanged();
       } else {
         softStartTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1364,11 +1361,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public Builder setSoftStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (softStartTimeBuilder_ == null) {
         softStartTime_ = builderForValue.build();
-        onChanged();
       } else {
         softStartTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1382,19 +1379,18 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSoftStartTime(com.google.protobuf.Timestamp value) {
       if (softStartTimeBuilder_ == null) {
-        if (softStartTime_ != null) {
-          softStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(softStartTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && softStartTime_ != null
+            && softStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getSoftStartTimeBuilder().mergeFrom(value);
         } else {
           softStartTime_ = value;
         }
-        onChanged();
       } else {
         softStartTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1407,14 +1403,13 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp soft_start_time = 3;</code>
      */
     public Builder clearSoftStartTime() {
-      if (softStartTimeBuilder_ == null) {
-        softStartTime_ = null;
-        onChanged();
-      } else {
-        softStartTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      softStartTime_ = null;
+      if (softStartTimeBuilder_ != null) {
+        softStartTimeBuilder_.dispose();
         softStartTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1427,7 +1422,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp soft_start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getSoftStartTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSoftStartTimeFieldBuilder().getBuilder();
     }
@@ -1493,7 +1488,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the softEndTime field is set.
      */
     public boolean hasSoftEndTime() {
-      return softEndTimeBuilder_ != null || softEndTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1530,11 +1525,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         softEndTime_ = value;
-        onChanged();
       } else {
         softEndTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1549,11 +1544,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public Builder setSoftEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (softEndTimeBuilder_ == null) {
         softEndTime_ = builderForValue.build();
-        onChanged();
       } else {
         softEndTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1567,19 +1562,18 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSoftEndTime(com.google.protobuf.Timestamp value) {
       if (softEndTimeBuilder_ == null) {
-        if (softEndTime_ != null) {
-          softEndTime_ =
-              com.google.protobuf.Timestamp.newBuilder(softEndTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && softEndTime_ != null
+            && softEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getSoftEndTimeBuilder().mergeFrom(value);
         } else {
           softEndTime_ = value;
         }
-        onChanged();
       } else {
         softEndTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1592,14 +1586,13 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp soft_end_time = 4;</code>
      */
     public Builder clearSoftEndTime() {
-      if (softEndTimeBuilder_ == null) {
-        softEndTime_ = null;
-        onChanged();
-      } else {
-        softEndTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      softEndTime_ = null;
+      if (softEndTimeBuilder_ != null) {
+        softEndTimeBuilder_.dispose();
         softEndTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1612,7 +1605,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp soft_end_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getSoftEndTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSoftEndTimeFieldBuilder().getBuilder();
     }
@@ -1682,7 +1675,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasCostPerHourBeforeSoftStartTime() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1728,8 +1721,9 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCostPerHourBeforeSoftStartTime(double value) {
-      bitField0_ |= 0x00000001;
+
       costPerHourBeforeSoftStartTime_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1753,7 +1747,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCostPerHourBeforeSoftStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       costPerHourBeforeSoftStartTime_ = 0D;
       onChanged();
       return this;
@@ -1781,7 +1775,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasCostPerHourAfterSoftEndTime() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1827,8 +1821,9 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCostPerHourAfterSoftEndTime(double value) {
-      bitField0_ |= 0x00000002;
+
       costPerHourAfterSoftEndTime_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1852,7 +1847,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCostPerHourAfterSoftEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       costPerHourAfterSoftEndTime_ = 0D;
       onChanged();
       return this;

@@ -129,7 +129,6 @@ public interface InstanceOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -582,7 +581,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getRedisConfigsOrDefault(
       java.lang.String key,

@@ -68,6 +68,8 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
   }
 
   public static final int USER_EVENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2alpha.UserEvent> userEvents_;
   /**
    *
@@ -346,6 +348,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (userEventsBuilder_ == null) {
         userEvents_ = java.util.Collections.emptyList();
       } else {
@@ -380,7 +383,16 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
     public com.google.cloud.retail.v2alpha.UserEventInlineSource buildPartial() {
       com.google.cloud.retail.v2alpha.UserEventInlineSource result =
           new com.google.cloud.retail.v2alpha.UserEventInlineSource(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2alpha.UserEventInlineSource result) {
       if (userEventsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           userEvents_ = java.util.Collections.unmodifiableList(userEvents_);
@@ -390,8 +402,10 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       } else {
         result.userEvents_ = userEventsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.UserEventInlineSource result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

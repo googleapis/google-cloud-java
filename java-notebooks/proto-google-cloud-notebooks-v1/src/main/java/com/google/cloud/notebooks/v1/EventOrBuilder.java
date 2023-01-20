@@ -125,7 +125,6 @@ public interface EventOrBuilder
    *
    * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getDetailsOrDefault(
       java.lang.String key,

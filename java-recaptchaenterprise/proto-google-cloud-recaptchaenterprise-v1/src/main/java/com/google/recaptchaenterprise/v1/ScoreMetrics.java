@@ -121,7 +121,9 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.ScoreDistributionOrBuilder getOverallMetricsOrBuilder() {
-    return getOverallMetrics();
+    return overallMetrics_ == null
+        ? com.google.recaptchaenterprise.v1.ScoreDistribution.getDefaultInstance()
+        : overallMetrics_;
   }
 
   public static final int ACTION_METRICS_FIELD_NUMBER = 2;
@@ -141,6 +143,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
                         com.google.recaptchaenterprise.v1.ScoreDistribution.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution>
       actionMetrics_;
@@ -214,8 +217,11 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.recaptchaenterprise.v1.ScoreDistribution getActionMetricsOrDefault(
-      java.lang.String key, com.google.recaptchaenterprise.v1.ScoreDistribution defaultValue) {
+  public /* nullable */ com.google.recaptchaenterprise.v1.ScoreDistribution
+      getActionMetricsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.recaptchaenterprise.v1.ScoreDistribution defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -490,10 +496,10 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (overallMetricsBuilder_ == null) {
-        overallMetrics_ = null;
-      } else {
-        overallMetrics_ = null;
+      bitField0_ = 0;
+      overallMetrics_ = null;
+      if (overallMetricsBuilder_ != null) {
+        overallMetricsBuilder_.dispose();
         overallMetricsBuilder_ = null;
       }
       internalGetMutableActionMetrics().clear();
@@ -524,16 +530,23 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.ScoreMetrics buildPartial() {
       com.google.recaptchaenterprise.v1.ScoreMetrics result =
           new com.google.recaptchaenterprise.v1.ScoreMetrics(this);
-      int from_bitField0_ = bitField0_;
-      if (overallMetricsBuilder_ == null) {
-        result.overallMetrics_ = overallMetrics_;
-      } else {
-        result.overallMetrics_ = overallMetricsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.actionMetrics_ = internalGetActionMetrics();
-      result.actionMetrics_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.ScoreMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.overallMetrics_ =
+            overallMetricsBuilder_ == null ? overallMetrics_ : overallMetricsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.actionMetrics_ = internalGetActionMetrics();
+        result.actionMetrics_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -585,6 +598,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
         mergeOverallMetrics(other.getOverallMetrics());
       }
       internalGetMutableActionMetrics().mergeFrom(other.internalGetActionMetrics());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -614,7 +628,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getOverallMetricsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -628,6 +642,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableActionMetrics()
                     .getMutableMap()
                     .put(actionMetrics__.getKey(), actionMetrics__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -667,7 +682,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the overallMetrics field is set.
      */
     public boolean hasOverallMetrics() {
-      return overallMetricsBuilder_ != null || overallMetrics_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -704,11 +719,11 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         overallMetrics_ = value;
-        onChanged();
       } else {
         overallMetricsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -724,11 +739,11 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
         com.google.recaptchaenterprise.v1.ScoreDistribution.Builder builderForValue) {
       if (overallMetricsBuilder_ == null) {
         overallMetrics_ = builderForValue.build();
-        onChanged();
       } else {
         overallMetricsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -742,19 +757,19 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOverallMetrics(com.google.recaptchaenterprise.v1.ScoreDistribution value) {
       if (overallMetricsBuilder_ == null) {
-        if (overallMetrics_ != null) {
-          overallMetrics_ =
-              com.google.recaptchaenterprise.v1.ScoreDistribution.newBuilder(overallMetrics_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && overallMetrics_ != null
+            && overallMetrics_
+                != com.google.recaptchaenterprise.v1.ScoreDistribution.getDefaultInstance()) {
+          getOverallMetricsBuilder().mergeFrom(value);
         } else {
           overallMetrics_ = value;
         }
-        onChanged();
       } else {
         overallMetricsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -767,14 +782,13 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.recaptchaenterprise.v1.ScoreDistribution overall_metrics = 1;</code>
      */
     public Builder clearOverallMetrics() {
-      if (overallMetricsBuilder_ == null) {
-        overallMetrics_ = null;
-        onChanged();
-      } else {
-        overallMetrics_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      overallMetrics_ = null;
+      if (overallMetricsBuilder_ != null) {
+        overallMetricsBuilder_.dispose();
         overallMetricsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -787,7 +801,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.recaptchaenterprise.v1.ScoreDistribution overall_metrics = 1;</code>
      */
     public com.google.recaptchaenterprise.v1.ScoreDistribution.Builder getOverallMetricsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getOverallMetricsFieldBuilder().getBuilder();
     }
@@ -853,8 +867,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution>
         internalGetMutableActionMetrics() {
-      onChanged();
-      ;
       if (actionMetrics_ == null) {
         actionMetrics_ =
             com.google.protobuf.MapField.newMapField(ActionMetricsDefaultEntryHolder.defaultEntry);
@@ -862,6 +874,8 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       if (!actionMetrics_.isMutable()) {
         actionMetrics_ = actionMetrics_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return actionMetrics_;
     }
 
@@ -924,8 +938,11 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.recaptchaenterprise.v1.ScoreDistribution getActionMetricsOrDefault(
-        java.lang.String key, com.google.recaptchaenterprise.v1.ScoreDistribution defaultValue) {
+    public /* nullable */ com.google.recaptchaenterprise.v1.ScoreDistribution
+        getActionMetricsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.recaptchaenterprise.v1.ScoreDistribution defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -960,6 +977,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearActionMetrics() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableActionMetrics().getMutableMap().clear();
       return this;
     }
@@ -986,6 +1004,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution>
         getMutableActionMetrics() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableActionMetrics().getMutableMap();
     }
     /**
@@ -1008,8 +1027,8 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableActionMetrics().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1028,6 +1047,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution>
             values) {
       internalGetMutableActionMetrics().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

@@ -173,6 +173,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList values_;
     /**
      *
@@ -442,6 +444,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -471,14 +474,25 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.resourcesettings.v1.Value.StringSet buildPartial() {
         com.google.cloud.resourcesettings.v1.Value.StringSet result =
             new com.google.cloud.resourcesettings.v1.Value.StringSet(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.resourcesettings.v1.Value.StringSet result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           values_ = values_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.values_ = values_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.resourcesettings.v1.Value.StringSet result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -905,7 +919,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -1155,8 +1171,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         value_ = "";
-
         return this;
       }
 
@@ -1184,9 +1200,18 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.resourcesettings.v1.Value.EnumValue buildPartial() {
         com.google.cloud.resourcesettings.v1.Value.EnumValue result =
             new com.google.cloud.resourcesettings.v1.Value.EnumValue(this);
-        result.value_ = value_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.resourcesettings.v1.Value.EnumValue result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -1239,6 +1264,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1270,7 +1296,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1289,6 +1315,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object value_ = "";
       /**
@@ -1351,8 +1379,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1368,8 +1396,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1390,8 +1418,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1976,6 +2004,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (stringSetValueBuilder_ != null) {
         stringSetValueBuilder_.clear();
       }
@@ -2011,29 +2040,27 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.resourcesettings.v1.Value buildPartial() {
       com.google.cloud.resourcesettings.v1.Value result =
           new com.google.cloud.resourcesettings.v1.Value(this);
-      if (valueCase_ == 1) {
-        result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valueCase_ == 2) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 3) {
-        if (stringSetValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = stringSetValueBuilder_.build();
-        }
-      }
-      if (valueCase_ == 4) {
-        if (enumValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = enumValueBuilder_.build();
-        }
-      }
-      result.valueCase_ = valueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcesettings.v1.Value result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.resourcesettings.v1.Value result) {
+      result.valueCase_ = valueCase_;
+      result.value_ = this.value_;
+      if (valueCase_ == 3 && stringSetValueBuilder_ != null) {
+        result.value_ = stringSetValueBuilder_.build();
+      }
+      if (valueCase_ == 4 && enumValueBuilder_ != null) {
+        result.value_ = enumValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2191,6 +2218,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -2235,6 +2264,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBooleanValue(boolean value) {
+
       valueCase_ = 1;
       value_ = value;
       onChanged();
@@ -2602,7 +2632,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 3;
       onChanged();
-      ;
       return stringSetValueBuilder_;
     }
 
@@ -2813,7 +2842,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 4;
       onChanged();
-      ;
       return enumValueBuilder_;
     }
 

@@ -236,7 +236,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -295,7 +297,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -400,7 +404,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.ProductInputConfigOrBuilder getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.retail.v2beta.ProductInputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int ERRORS_CONFIG_FIELD_NUMBER = 3;
@@ -448,7 +454,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.ImportErrorsConfigOrBuilder getErrorsConfigOrBuilder() {
-    return getErrorsConfig();
+    return errorsConfig_ == null
+        ? com.google.cloud.retail.v2beta.ImportErrorsConfig.getDefaultInstance()
+        : errorsConfig_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
@@ -497,11 +505,11 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int RECONCILIATION_MODE_FIELD_NUMBER = 5;
-  private int reconciliationMode_;
+  private int reconciliationMode_ = 0;
   /**
    *
    *
@@ -539,9 +547,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode
       getReconciliationMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode result =
-        com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode.valueOf(
+        com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode.forNumber(
             reconciliationMode_);
     return result == null
         ? com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode.UNRECOGNIZED
@@ -549,7 +556,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NOTIFICATION_PUBSUB_TOPIC_FIELD_NUMBER = 7;
-  private volatile java.lang.Object notificationPubsubTopic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object notificationPubsubTopic_ = "";
   /**
    *
    *
@@ -887,32 +896,26 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       requestId_ = "";
-
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-      if (errorsConfigBuilder_ == null) {
-        errorsConfig_ = null;
-      } else {
-        errorsConfig_ = null;
+      errorsConfig_ = null;
+      if (errorsConfigBuilder_ != null) {
+        errorsConfigBuilder_.dispose();
         errorsConfigBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       reconciliationMode_ = 0;
-
       notificationPubsubTopic_ = "";
-
       return this;
     }
 
@@ -940,27 +943,38 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.retail.v2beta.ImportProductsRequest buildPartial() {
       com.google.cloud.retail.v2beta.ImportProductsRequest result =
           new com.google.cloud.retail.v2beta.ImportProductsRequest(this);
-      result.parent_ = parent_;
-      result.requestId_ = requestId_;
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (errorsConfigBuilder_ == null) {
-        result.errorsConfig_ = errorsConfig_;
-      } else {
-        result.errorsConfig_ = errorsConfigBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.reconciliationMode_ = reconciliationMode_;
-      result.notificationPubsubTopic_ = notificationPubsubTopic_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.ImportProductsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.errorsConfig_ =
+            errorsConfigBuilder_ == null ? errorsConfig_ : errorsConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.reconciliationMode_ = reconciliationMode_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.notificationPubsubTopic_ = notificationPubsubTopic_;
+      }
     }
 
     @java.lang.Override
@@ -1011,10 +1025,12 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasInputConfig()) {
@@ -1031,6 +1047,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getNotificationPubsubTopic().isEmpty()) {
         notificationPubsubTopic_ = other.notificationPubsubTopic_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1062,43 +1079,43 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getErrorsConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 reconciliationMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             case 58:
               {
                 notificationPubsubTopic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1117,6 +1134,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -1194,8 +1213,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1216,8 +1235,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1243,8 +1262,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1319,8 +1338,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1339,8 +1358,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Deprecated
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1364,8 +1383,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1390,7 +1409,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1431,11 +1450,11 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1453,11 +1472,11 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.retail.v2beta.ProductInputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1473,19 +1492,19 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeInputConfig(com.google.cloud.retail.v2beta.ProductInputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.retail.v2beta.ProductInputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && inputConfig_ != null
+            && inputConfig_
+                != com.google.cloud.retail.v2beta.ProductInputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1500,14 +1519,13 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1522,7 +1540,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.retail.v2beta.ProductInputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -1592,7 +1610,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the errorsConfig field is set.
      */
     public boolean hasErrorsConfig() {
-      return errorsConfigBuilder_ != null || errorsConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1629,11 +1647,11 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         errorsConfig_ = value;
-        onChanged();
       } else {
         errorsConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1649,11 +1667,11 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.retail.v2beta.ImportErrorsConfig.Builder builderForValue) {
       if (errorsConfigBuilder_ == null) {
         errorsConfig_ = builderForValue.build();
-        onChanged();
       } else {
         errorsConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1667,19 +1685,19 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeErrorsConfig(com.google.cloud.retail.v2beta.ImportErrorsConfig value) {
       if (errorsConfigBuilder_ == null) {
-        if (errorsConfig_ != null) {
-          errorsConfig_ =
-              com.google.cloud.retail.v2beta.ImportErrorsConfig.newBuilder(errorsConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && errorsConfig_ != null
+            && errorsConfig_
+                != com.google.cloud.retail.v2beta.ImportErrorsConfig.getDefaultInstance()) {
+          getErrorsConfigBuilder().mergeFrom(value);
         } else {
           errorsConfig_ = value;
         }
-        onChanged();
       } else {
         errorsConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1692,14 +1710,13 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.retail.v2beta.ImportErrorsConfig errors_config = 3;</code>
      */
     public Builder clearErrorsConfig() {
-      if (errorsConfigBuilder_ == null) {
-        errorsConfig_ = null;
-        onChanged();
-      } else {
-        errorsConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      errorsConfig_ = null;
+      if (errorsConfigBuilder_ != null) {
+        errorsConfigBuilder_.dispose();
         errorsConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1712,7 +1729,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.retail.v2beta.ImportErrorsConfig errors_config = 3;</code>
      */
     public com.google.cloud.retail.v2beta.ImportErrorsConfig.Builder getErrorsConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getErrorsConfigFieldBuilder().getBuilder();
     }
@@ -1779,7 +1796,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1818,11 +1835,11 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1838,11 +1855,11 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1857,17 +1874,18 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1881,14 +1899,13 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1902,7 +1919,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1989,8 +2006,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setReconciliationModeValue(int value) {
-
       reconciliationMode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2012,9 +2029,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode
         getReconciliationMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode result =
-          com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode.valueOf(
+          com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode.forNumber(
               reconciliationMode_);
       return result == null
           ? com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode.UNRECOGNIZED
@@ -2041,7 +2057,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       reconciliationMode_ = value.getNumber();
       onChanged();
       return this;
@@ -2062,7 +2078,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearReconciliationMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       reconciliationMode_ = 0;
       onChanged();
       return this;
@@ -2156,8 +2172,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       notificationPubsubTopic_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2182,8 +2198,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearNotificationPubsubTopic() {
-
       notificationPubsubTopic_ = getDefaultInstance().getNotificationPubsubTopic();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2213,8 +2229,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       notificationPubsubTopic_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

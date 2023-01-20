@@ -719,7 +719,6 @@ public interface InstanceOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 21;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -779,7 +778,6 @@ public interface InstanceOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 22;</code>
    */
-
   /* nullable */
   java.lang.String getMetadataOrDefault(
       java.lang.String key,

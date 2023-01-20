@@ -337,7 +337,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, string&gt; labels = 1;</code>
      */
-
     /* nullable */
     java.lang.String getLabelsOrDefault(
         java.lang.String key,
@@ -435,6 +434,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
               "");
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -498,8 +498,10 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <code>map&lt;string, string&gt; labels = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -765,6 +767,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableLabels().clear();
         return this;
       }
@@ -793,11 +796,19 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet buildPartial() {
         com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet result =
             new com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet(this);
-        int from_bitField0_ = bitField0_;
-        result.labels_ = internalGetLabels();
-        result.labels_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.labels_ = internalGetLabels();
+          result.labels_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -849,6 +860,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         if (other == com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet.getDefaultInstance())
           return this;
         internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+        bitField0_ |= 0x00000001;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -884,6 +896,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
                   internalGetMutableLabels()
                       .getMutableMap()
                       .put(labels__.getKey(), labels__.getValue());
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -916,14 +929,14 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
           internalGetMutableLabels() {
-        onChanged();
-        ;
         if (labels_ == null) {
           labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
         }
         if (!labels_.isMutable()) {
           labels_ = labels_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return labels_;
       }
 
@@ -981,8 +994,10 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
       @java.lang.Override
-      public java.lang.String getLabelsOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getLabelsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1013,6 +1028,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       }
 
       public Builder clearLabels() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableLabels().getMutableMap().clear();
         return this;
       }
@@ -1037,6 +1053,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableLabels().getMutableMap();
       }
       /**
@@ -1057,8 +1074,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableLabels().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1074,6 +1091,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        */
       public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableLabels().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -1543,7 +1561,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int OS_SHORT_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object osShortName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object osShortName_ = "";
       /**
        *
        *
@@ -1592,7 +1612,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int OS_VERSION_FIELD_NUMBER = 2;
-      private volatile java.lang.Object osVersion_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object osVersion_ = "";
       /**
        *
        *
@@ -1868,10 +1890,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           osShortName_ = "";
-
           osVersion_ = "";
-
           return this;
         }
 
@@ -1903,10 +1924,22 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
             buildPartial() {
           com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter.Inventory result =
               new com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter.Inventory(this);
-          result.osShortName_ = osShortName_;
-          result.osVersion_ = osVersion_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter.Inventory result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.osShortName_ = osShortName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.osVersion_ = osVersion_;
+          }
         }
 
         @java.lang.Override
@@ -1963,10 +1996,12 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
                   .getDefaultInstance()) return this;
           if (!other.getOsShortName().isEmpty()) {
             osShortName_ = other.osShortName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getOsVersion().isEmpty()) {
             osVersion_ = other.osVersion_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -1998,13 +2033,13 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
                 case 10:
                   {
                     osShortName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     osVersion_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -2023,6 +2058,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object osShortName_ = "";
         /**
@@ -2085,8 +2122,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           osShortName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2102,8 +2139,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearOsShortName() {
-
           osShortName_ = getDefaultInstance().getOsShortName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -2124,8 +2161,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           osShortName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2203,8 +2240,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           osVersion_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2224,8 +2261,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearOsVersion() {
-
           osVersion_ = getDefaultInstance().getOsVersion();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -2250,8 +2287,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           osVersion_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2325,7 +2362,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int ALL_FIELD_NUMBER = 1;
-    private boolean all_;
+    private boolean all_ = false;
     /**
      *
      *
@@ -2344,6 +2381,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int INCLUSION_LABELS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet>
         inclusionLabels_;
     /**
@@ -2432,6 +2471,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int EXCLUSION_LABELS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet>
         exclusionLabels_;
     /**
@@ -2520,6 +2561,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int INVENTORIES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter.Inventory>
         inventories_;
     /**
@@ -2851,29 +2894,29 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         all_ = false;
-
         if (inclusionLabelsBuilder_ == null) {
           inclusionLabels_ = java.util.Collections.emptyList();
         } else {
           inclusionLabels_ = null;
           inclusionLabelsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (exclusionLabelsBuilder_ == null) {
           exclusionLabels_ = java.util.Collections.emptyList();
         } else {
           exclusionLabels_ = null;
           exclusionLabelsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (inventoriesBuilder_ == null) {
           inventories_ = java.util.Collections.emptyList();
         } else {
           inventories_ = null;
           inventoriesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -2902,37 +2945,51 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter buildPartial() {
         com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter result =
             new com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter(this);
-        int from_bitField0_ = bitField0_;
-        result.all_ = all_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter result) {
         if (inclusionLabelsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             inclusionLabels_ = java.util.Collections.unmodifiableList(inclusionLabels_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.inclusionLabels_ = inclusionLabels_;
         } else {
           result.inclusionLabels_ = inclusionLabelsBuilder_.build();
         }
         if (exclusionLabelsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             exclusionLabels_ = java.util.Collections.unmodifiableList(exclusionLabels_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.exclusionLabels_ = exclusionLabels_;
         } else {
           result.exclusionLabels_ = exclusionLabelsBuilder_.build();
         }
         if (inventoriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             inventories_ = java.util.Collections.unmodifiableList(inventories_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.inventories_ = inventories_;
         } else {
           result.inventories_ = inventoriesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.all_ = all_;
+        }
       }
 
       @java.lang.Override
@@ -2992,7 +3049,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           if (!other.inclusionLabels_.isEmpty()) {
             if (inclusionLabels_.isEmpty()) {
               inclusionLabels_ = other.inclusionLabels_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureInclusionLabelsIsMutable();
               inclusionLabels_.addAll(other.inclusionLabels_);
@@ -3005,7 +3062,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
               inclusionLabelsBuilder_.dispose();
               inclusionLabelsBuilder_ = null;
               inclusionLabels_ = other.inclusionLabels_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               inclusionLabelsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getInclusionLabelsFieldBuilder()
@@ -3019,7 +3076,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           if (!other.exclusionLabels_.isEmpty()) {
             if (exclusionLabels_.isEmpty()) {
               exclusionLabels_ = other.exclusionLabels_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureExclusionLabelsIsMutable();
               exclusionLabels_.addAll(other.exclusionLabels_);
@@ -3032,7 +3089,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
               exclusionLabelsBuilder_.dispose();
               exclusionLabelsBuilder_ = null;
               exclusionLabels_ = other.exclusionLabels_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               exclusionLabelsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getExclusionLabelsFieldBuilder()
@@ -3046,7 +3103,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           if (!other.inventories_.isEmpty()) {
             if (inventories_.isEmpty()) {
               inventories_ = other.inventories_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureInventoriesIsMutable();
               inventories_.addAll(other.inventories_);
@@ -3059,7 +3116,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
               inventoriesBuilder_.dispose();
               inventoriesBuilder_ = null;
               inventories_ = other.inventories_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               inventoriesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getInventoriesFieldBuilder()
@@ -3098,7 +3155,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
               case 8:
                 {
                   all_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
@@ -3196,6 +3253,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       public Builder setAll(boolean value) {
 
         all_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3212,7 +3270,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearAll() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         all_ = false;
         onChanged();
         return this;
@@ -3222,11 +3280,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           inclusionLabels_ = java.util.Collections.emptyList();
 
       private void ensureInclusionLabelsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           inclusionLabels_ =
               new java.util.ArrayList<com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet>(
                   inclusionLabels_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -3483,7 +3541,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       public Builder clearInclusionLabels() {
         if (inclusionLabelsBuilder_ == null) {
           inclusionLabels_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           inclusionLabelsBuilder_.clear();
@@ -3635,7 +3693,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet.Builder,
                   com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSetOrBuilder>(
                   inclusionLabels_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           inclusionLabels_ = null;
@@ -3647,11 +3705,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           exclusionLabels_ = java.util.Collections.emptyList();
 
       private void ensureExclusionLabelsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           exclusionLabels_ =
               new java.util.ArrayList<com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet>(
                   exclusionLabels_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -3908,7 +3966,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       public Builder clearExclusionLabels() {
         if (exclusionLabelsBuilder_ == null) {
           exclusionLabels_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           exclusionLabelsBuilder_.clear();
@@ -4060,7 +4118,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSet.Builder,
                   com.google.cloud.osconfig.v1.OSPolicyAssignment.LabelSetOrBuilder>(
                   exclusionLabels_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           exclusionLabels_ = null;
@@ -4073,12 +4131,12 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           inventories_ = java.util.Collections.emptyList();
 
       private void ensureInventoriesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           inventories_ =
               new java.util.ArrayList<
                   com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter.Inventory>(
                   inventories_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -4354,7 +4412,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       public Builder clearInventories() {
         if (inventoriesBuilder_ == null) {
           inventories_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           inventoriesBuilder_.clear();
@@ -4518,7 +4576,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter
                       .InventoryOrBuilder>(
                   inventories_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           inventories_ = null;
@@ -4798,7 +4856,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.cloud.osconfig.v1.Common.FixedOrPercentOrBuilder
         getDisruptionBudgetOrBuilder() {
-      return getDisruptionBudget();
+      return disruptionBudget_ == null
+          ? com.google.cloud.osconfig.v1.Common.FixedOrPercent.getDefaultInstance()
+          : disruptionBudget_;
     }
 
     public static final int MIN_WAIT_DURATION_FIELD_NUMBER = 2;
@@ -4864,7 +4924,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMinWaitDurationOrBuilder() {
-      return getMinWaitDuration();
+      return minWaitDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : minWaitDuration_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5087,16 +5149,15 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (disruptionBudgetBuilder_ == null) {
-          disruptionBudget_ = null;
-        } else {
-          disruptionBudget_ = null;
+        bitField0_ = 0;
+        disruptionBudget_ = null;
+        if (disruptionBudgetBuilder_ != null) {
+          disruptionBudgetBuilder_.dispose();
           disruptionBudgetBuilder_ = null;
         }
-        if (minWaitDurationBuilder_ == null) {
-          minWaitDuration_ = null;
-        } else {
-          minWaitDuration_ = null;
+        minWaitDuration_ = null;
+        if (minWaitDurationBuilder_ != null) {
+          minWaitDurationBuilder_.dispose();
           minWaitDurationBuilder_ = null;
         }
         return this;
@@ -5126,18 +5187,25 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.osconfig.v1.OSPolicyAssignment.Rollout buildPartial() {
         com.google.cloud.osconfig.v1.OSPolicyAssignment.Rollout result =
             new com.google.cloud.osconfig.v1.OSPolicyAssignment.Rollout(this);
-        if (disruptionBudgetBuilder_ == null) {
-          result.disruptionBudget_ = disruptionBudget_;
-        } else {
-          result.disruptionBudget_ = disruptionBudgetBuilder_.build();
-        }
-        if (minWaitDurationBuilder_ == null) {
-          result.minWaitDuration_ = minWaitDuration_;
-        } else {
-          result.minWaitDuration_ = minWaitDurationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.osconfig.v1.OSPolicyAssignment.Rollout result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.disruptionBudget_ =
+              disruptionBudgetBuilder_ == null
+                  ? disruptionBudget_
+                  : disruptionBudgetBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.minWaitDuration_ =
+              minWaitDurationBuilder_ == null ? minWaitDuration_ : minWaitDurationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -5224,14 +5292,14 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
                 {
                   input.readMessage(
                       getDisruptionBudgetFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getMinWaitDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -5250,6 +5318,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.osconfig.v1.Common.FixedOrPercent disruptionBudget_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5272,7 +5342,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * @return Whether the disruptionBudget field is set.
        */
       public boolean hasDisruptionBudget() {
-        return disruptionBudgetBuilder_ != null || disruptionBudget_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -5315,11 +5385,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           disruptionBudget_ = value;
-          onChanged();
         } else {
           disruptionBudgetBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5338,11 +5408,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           com.google.cloud.osconfig.v1.Common.FixedOrPercent.Builder builderForValue) {
         if (disruptionBudgetBuilder_ == null) {
           disruptionBudget_ = builderForValue.build();
-          onChanged();
         } else {
           disruptionBudgetBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5360,19 +5430,19 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       public Builder mergeDisruptionBudget(
           com.google.cloud.osconfig.v1.Common.FixedOrPercent value) {
         if (disruptionBudgetBuilder_ == null) {
-          if (disruptionBudget_ != null) {
-            disruptionBudget_ =
-                com.google.cloud.osconfig.v1.Common.FixedOrPercent.newBuilder(disruptionBudget_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && disruptionBudget_ != null
+              && disruptionBudget_
+                  != com.google.cloud.osconfig.v1.Common.FixedOrPercent.getDefaultInstance()) {
+            getDisruptionBudgetBuilder().mergeFrom(value);
           } else {
             disruptionBudget_ = value;
           }
-          onChanged();
         } else {
           disruptionBudgetBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5388,14 +5458,13 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * </code>
        */
       public Builder clearDisruptionBudget() {
-        if (disruptionBudgetBuilder_ == null) {
-          disruptionBudget_ = null;
-          onChanged();
-        } else {
-          disruptionBudget_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        disruptionBudget_ = null;
+        if (disruptionBudgetBuilder_ != null) {
+          disruptionBudgetBuilder_.dispose();
           disruptionBudgetBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5412,7 +5481,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        */
       public com.google.cloud.osconfig.v1.Common.FixedOrPercent.Builder
           getDisruptionBudgetBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getDisruptionBudgetFieldBuilder().getBuilder();
       }
@@ -5491,7 +5560,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * @return Whether the minWaitDuration field is set.
        */
       public boolean hasMinWaitDuration() {
-        return minWaitDurationBuilder_ != null || minWaitDuration_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -5540,11 +5609,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           minWaitDuration_ = value;
-          onChanged();
         } else {
           minWaitDurationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -5565,11 +5634,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       public Builder setMinWaitDuration(com.google.protobuf.Duration.Builder builderForValue) {
         if (minWaitDurationBuilder_ == null) {
           minWaitDuration_ = builderForValue.build();
-          onChanged();
         } else {
           minWaitDurationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -5589,19 +5658,18 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeMinWaitDuration(com.google.protobuf.Duration value) {
         if (minWaitDurationBuilder_ == null) {
-          if (minWaitDuration_ != null) {
-            minWaitDuration_ =
-                com.google.protobuf.Duration.newBuilder(minWaitDuration_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && minWaitDuration_ != null
+              && minWaitDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMinWaitDurationBuilder().mergeFrom(value);
           } else {
             minWaitDuration_ = value;
           }
-          onChanged();
         } else {
           minWaitDurationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -5620,14 +5688,13 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * </code>
        */
       public Builder clearMinWaitDuration() {
-        if (minWaitDurationBuilder_ == null) {
-          minWaitDuration_ = null;
-          onChanged();
-        } else {
-          minWaitDuration_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        minWaitDuration_ = null;
+        if (minWaitDurationBuilder_ != null) {
+          minWaitDurationBuilder_.dispose();
           minWaitDurationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5646,7 +5713,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * </code>
        */
       public com.google.protobuf.Duration.Builder getMinWaitDurationBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMinWaitDurationFieldBuilder().getBuilder();
       }
@@ -5771,7 +5838,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -5826,7 +5895,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -5877,6 +5948,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int OS_POLICIES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.osconfig.v1.OSPolicy> osPolicies_;
   /**
    *
@@ -6007,7 +6080,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilterOrBuilder
       getInstanceFilterOrBuilder() {
-    return getInstanceFilter();
+    return instanceFilter_ == null
+        ? com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter.getDefaultInstance()
+        : instanceFilter_;
   }
 
   public static final int ROLLOUT_FIELD_NUMBER = 5;
@@ -6082,11 +6157,15 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutOrBuilder getRolloutOrBuilder() {
-    return getRollout();
+    return rollout_ == null
+        ? com.google.cloud.osconfig.v1.OSPolicyAssignment.Rollout.getDefaultInstance()
+        : rollout_;
   }
 
   public static final int REVISION_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object revisionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revisionId_ = "";
   /**
    *
    *
@@ -6189,11 +6268,15 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRevisionCreateTimeOrBuilder() {
-    return getRevisionCreateTime();
+    return revisionCreateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : revisionCreateTime_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 8;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -6244,7 +6327,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ROLLOUT_STATE_FIELD_NUMBER = 9;
-  private int rolloutState_;
+  private int rolloutState_ = 0;
   /**
    *
    *
@@ -6277,16 +6360,15 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutState getRolloutState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutState result =
-        com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutState.valueOf(rolloutState_);
+        com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutState.forNumber(rolloutState_);
     return result == null
         ? com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutState.UNRECOGNIZED
         : result;
   }
 
   public static final int BASELINE_FIELD_NUMBER = 10;
-  private boolean baseline_;
+  private boolean baseline_ = false;
   /**
    *
    *
@@ -6307,7 +6389,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DELETED_FIELD_NUMBER = 11;
-  private boolean deleted_;
+  private boolean deleted_ = false;
   /**
    *
    *
@@ -6325,7 +6407,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int RECONCILING_FIELD_NUMBER = 12;
-  private boolean reconciling_;
+  private boolean reconciling_ = false;
   /**
    *
    *
@@ -6346,7 +6428,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int UID_FIELD_NUMBER = 13;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -6730,49 +6814,38 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
       if (osPoliciesBuilder_ == null) {
         osPolicies_ = java.util.Collections.emptyList();
       } else {
         osPolicies_ = null;
         osPoliciesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (instanceFilterBuilder_ == null) {
-        instanceFilter_ = null;
-      } else {
-        instanceFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      instanceFilter_ = null;
+      if (instanceFilterBuilder_ != null) {
+        instanceFilterBuilder_.dispose();
         instanceFilterBuilder_ = null;
       }
-      if (rolloutBuilder_ == null) {
-        rollout_ = null;
-      } else {
-        rollout_ = null;
+      rollout_ = null;
+      if (rolloutBuilder_ != null) {
+        rolloutBuilder_.dispose();
         rolloutBuilder_ = null;
       }
       revisionId_ = "";
-
-      if (revisionCreateTimeBuilder_ == null) {
-        revisionCreateTime_ = null;
-      } else {
-        revisionCreateTime_ = null;
+      revisionCreateTime_ = null;
+      if (revisionCreateTimeBuilder_ != null) {
+        revisionCreateTimeBuilder_.dispose();
         revisionCreateTimeBuilder_ = null;
       }
       etag_ = "";
-
       rolloutState_ = 0;
-
       baseline_ = false;
-
       deleted_ = false;
-
       reconciling_ = false;
-
       uid_ = "";
-
       return this;
     }
 
@@ -6800,42 +6873,69 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.osconfig.v1.OSPolicyAssignment buildPartial() {
       com.google.cloud.osconfig.v1.OSPolicyAssignment result =
           new com.google.cloud.osconfig.v1.OSPolicyAssignment(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.description_ = description_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.osconfig.v1.OSPolicyAssignment result) {
       if (osPoliciesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           osPolicies_ = java.util.Collections.unmodifiableList(osPolicies_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.osPolicies_ = osPolicies_;
       } else {
         result.osPolicies_ = osPoliciesBuilder_.build();
       }
-      if (instanceFilterBuilder_ == null) {
-        result.instanceFilter_ = instanceFilter_;
-      } else {
-        result.instanceFilter_ = instanceFilterBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.osconfig.v1.OSPolicyAssignment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (rolloutBuilder_ == null) {
-        result.rollout_ = rollout_;
-      } else {
-        result.rollout_ = rolloutBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
       }
-      result.revisionId_ = revisionId_;
-      if (revisionCreateTimeBuilder_ == null) {
-        result.revisionCreateTime_ = revisionCreateTime_;
-      } else {
-        result.revisionCreateTime_ = revisionCreateTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.instanceFilter_ =
+            instanceFilterBuilder_ == null ? instanceFilter_ : instanceFilterBuilder_.build();
       }
-      result.etag_ = etag_;
-      result.rolloutState_ = rolloutState_;
-      result.baseline_ = baseline_;
-      result.deleted_ = deleted_;
-      result.reconciling_ = reconciling_;
-      result.uid_ = uid_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.rollout_ = rolloutBuilder_ == null ? rollout_ : rolloutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.revisionId_ = revisionId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.revisionCreateTime_ =
+            revisionCreateTimeBuilder_ == null
+                ? revisionCreateTime_
+                : revisionCreateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.rolloutState_ = rolloutState_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.baseline_ = baseline_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.deleted_ = deleted_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.uid_ = uid_;
+      }
     }
 
     @java.lang.Override
@@ -6886,17 +6986,19 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (osPoliciesBuilder_ == null) {
         if (!other.osPolicies_.isEmpty()) {
           if (osPolicies_.isEmpty()) {
             osPolicies_ = other.osPolicies_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureOsPoliciesIsMutable();
             osPolicies_.addAll(other.osPolicies_);
@@ -6909,7 +7011,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
             osPoliciesBuilder_.dispose();
             osPoliciesBuilder_ = null;
             osPolicies_ = other.osPolicies_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             osPoliciesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOsPoliciesFieldBuilder()
@@ -6927,6 +7029,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getRevisionId().isEmpty()) {
         revisionId_ = other.revisionId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasRevisionCreateTime()) {
@@ -6934,6 +7037,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.rolloutState_ != 0) {
@@ -6950,6 +7054,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -6981,13 +7086,13 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -7006,62 +7111,62 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
             case 34:
               {
                 input.readMessage(getInstanceFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getRolloutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 revisionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getRevisionCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 72:
               {
                 rolloutState_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 80:
               {
                 baseline_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 88:
               {
                 deleted_ = input.readBool();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 96:
               {
                 reconciling_ = input.readBool();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 96
             case 106:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             default:
@@ -7153,8 +7258,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7173,8 +7278,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -7198,8 +7303,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7268,8 +7373,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7286,8 +7391,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -7309,8 +7414,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7319,9 +7424,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureOsPoliciesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         osPolicies_ = new java.util.ArrayList<com.google.cloud.osconfig.v1.OSPolicy>(osPolicies_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -7558,7 +7663,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     public Builder clearOsPolicies() {
       if (osPoliciesBuilder_ == null) {
         osPolicies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         osPoliciesBuilder_.clear();
@@ -7694,7 +7799,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.osconfig.v1.OSPolicy,
                 com.google.cloud.osconfig.v1.OSPolicy.Builder,
                 com.google.cloud.osconfig.v1.OSPolicyOrBuilder>(
-                osPolicies_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                osPolicies_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         osPolicies_ = null;
       }
       return osPoliciesBuilder_;
@@ -7720,7 +7825,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return Whether the instanceFilter field is set.
      */
     public boolean hasInstanceFilter() {
-      return instanceFilterBuilder_ != null || instanceFilter_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -7762,11 +7867,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         instanceFilter_ = value;
-        onChanged();
       } else {
         instanceFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7784,11 +7889,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter.Builder builderForValue) {
       if (instanceFilterBuilder_ == null) {
         instanceFilter_ = builderForValue.build();
-        onChanged();
       } else {
         instanceFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7805,20 +7910,20 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     public Builder mergeInstanceFilter(
         com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter value) {
       if (instanceFilterBuilder_ == null) {
-        if (instanceFilter_ != null) {
-          instanceFilter_ =
-              com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter.newBuilder(
-                      instanceFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && instanceFilter_ != null
+            && instanceFilter_
+                != com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter
+                    .getDefaultInstance()) {
+          getInstanceFilterBuilder().mergeFrom(value);
         } else {
           instanceFilter_ = value;
         }
-        onChanged();
       } else {
         instanceFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7833,14 +7938,13 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearInstanceFilter() {
-      if (instanceFilterBuilder_ == null) {
-        instanceFilter_ = null;
-        onChanged();
-      } else {
-        instanceFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      instanceFilter_ = null;
+      if (instanceFilterBuilder_ != null) {
+        instanceFilterBuilder_.dispose();
         instanceFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7856,7 +7960,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.osconfig.v1.OSPolicyAssignment.InstanceFilter.Builder
         getInstanceFilterBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInstanceFilterFieldBuilder().getBuilder();
     }
@@ -7936,7 +8040,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return Whether the rollout field is set.
      */
     public boolean hasRollout() {
-      return rolloutBuilder_ != null || rollout_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -7991,11 +8095,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         rollout_ = value;
-        onChanged();
       } else {
         rolloutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -8020,11 +8124,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         com.google.cloud.osconfig.v1.OSPolicyAssignment.Rollout.Builder builderForValue) {
       if (rolloutBuilder_ == null) {
         rollout_ = builderForValue.build();
-        onChanged();
       } else {
         rolloutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -8047,19 +8151,19 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeRollout(com.google.cloud.osconfig.v1.OSPolicyAssignment.Rollout value) {
       if (rolloutBuilder_ == null) {
-        if (rollout_ != null) {
-          rollout_ =
-              com.google.cloud.osconfig.v1.OSPolicyAssignment.Rollout.newBuilder(rollout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && rollout_ != null
+            && rollout_
+                != com.google.cloud.osconfig.v1.OSPolicyAssignment.Rollout.getDefaultInstance()) {
+          getRolloutBuilder().mergeFrom(value);
         } else {
           rollout_ = value;
         }
-        onChanged();
       } else {
         rolloutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -8081,14 +8185,13 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRollout() {
-      if (rolloutBuilder_ == null) {
-        rollout_ = null;
-        onChanged();
-      } else {
-        rollout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      rollout_ = null;
+      if (rolloutBuilder_ != null) {
+        rolloutBuilder_.dispose();
         rolloutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -8110,7 +8213,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.osconfig.v1.OSPolicyAssignment.Rollout.Builder getRolloutBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRolloutFieldBuilder().getBuilder();
     }
@@ -8243,8 +8346,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       revisionId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -8262,8 +8365,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRevisionId() {
-
       revisionId_ = getDefaultInstance().getRevisionId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -8286,8 +8389,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       revisionId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -8312,7 +8415,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return Whether the revisionCreateTime field is set.
      */
     public boolean hasRevisionCreateTime() {
-      return revisionCreateTimeBuilder_ != null || revisionCreateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -8353,11 +8456,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         revisionCreateTime_ = value;
-        onChanged();
       } else {
         revisionCreateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -8374,11 +8477,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     public Builder setRevisionCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (revisionCreateTimeBuilder_ == null) {
         revisionCreateTime_ = builderForValue.build();
-        onChanged();
       } else {
         revisionCreateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -8394,19 +8497,18 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeRevisionCreateTime(com.google.protobuf.Timestamp value) {
       if (revisionCreateTimeBuilder_ == null) {
-        if (revisionCreateTime_ != null) {
-          revisionCreateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(revisionCreateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && revisionCreateTime_ != null
+            && revisionCreateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRevisionCreateTimeBuilder().mergeFrom(value);
         } else {
           revisionCreateTime_ = value;
         }
-        onChanged();
       } else {
         revisionCreateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -8421,14 +8523,13 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRevisionCreateTime() {
-      if (revisionCreateTimeBuilder_ == null) {
-        revisionCreateTime_ = null;
-        onChanged();
-      } else {
-        revisionCreateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      revisionCreateTime_ = null;
+      if (revisionCreateTimeBuilder_ != null) {
+        revisionCreateTimeBuilder_.dispose();
         revisionCreateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -8443,7 +8544,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getRevisionCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getRevisionCreateTimeFieldBuilder().getBuilder();
     }
@@ -8559,8 +8660,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8577,8 +8678,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -8600,8 +8701,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8639,8 +8740,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setRolloutStateValue(int value) {
-
       rolloutState_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8659,9 +8760,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutState getRolloutState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutState result =
-          com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutState.valueOf(rolloutState_);
+          com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutState.forNumber(rolloutState_);
       return result == null
           ? com.google.cloud.osconfig.v1.OSPolicyAssignment.RolloutState.UNRECOGNIZED
           : result;
@@ -8685,7 +8785,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       rolloutState_ = value.getNumber();
       onChanged();
       return this;
@@ -8704,7 +8804,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRolloutState() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       rolloutState_ = 0;
       onChanged();
       return this;
@@ -8747,6 +8847,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     public Builder setBaseline(boolean value) {
 
       baseline_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8765,7 +8866,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearBaseline() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       baseline_ = false;
       onChanged();
       return this;
@@ -8802,6 +8903,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     public Builder setDeleted(boolean value) {
 
       deleted_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -8817,7 +8919,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDeleted() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       deleted_ = false;
       onChanged();
       return this;
@@ -8860,6 +8962,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -8878,7 +8981,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       reconciling_ = false;
       onChanged();
       return this;
@@ -8948,8 +9051,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8966,8 +9069,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -8989,8 +9092,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

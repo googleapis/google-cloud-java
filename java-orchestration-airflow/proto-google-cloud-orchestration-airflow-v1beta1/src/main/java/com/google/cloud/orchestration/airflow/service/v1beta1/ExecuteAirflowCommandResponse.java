@@ -74,7 +74,9 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
   }
 
   public static final int EXECUTION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object executionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object executionId_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
   }
 
   public static final int POD_FIELD_NUMBER = 2;
-  private volatile java.lang.Object pod_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pod_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
   }
 
   public static final int POD_NAMESPACE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object podNamespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object podNamespace_ = "";
   /**
    *
    *
@@ -221,7 +227,9 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
   }
 
   public static final int ERROR_FIELD_NUMBER = 4;
-  private volatile java.lang.Object error_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object error_ = "";
   /**
    *
    *
@@ -508,14 +516,11 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       executionId_ = "";
-
       pod_ = "";
-
       podNamespace_ = "";
-
       error_ = "";
-
       return this;
     }
 
@@ -549,12 +554,29 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
       com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse(
               this);
-      result.executionId_ = executionId_;
-      result.pod_ = pod_;
-      result.podNamespace_ = podNamespace_;
-      result.error_ = error_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.executionId_ = executionId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pod_ = pod_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.podNamespace_ = podNamespace_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.error_ = error_;
+      }
     }
 
     @java.lang.Override
@@ -612,18 +634,22 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
               .getDefaultInstance()) return this;
       if (!other.getExecutionId().isEmpty()) {
         executionId_ = other.executionId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPod().isEmpty()) {
         pod_ = other.pod_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getPodNamespace().isEmpty()) {
         podNamespace_ = other.podNamespace_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getError().isEmpty()) {
         error_ = other.error_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -655,25 +681,25 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
             case 10:
               {
                 executionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 pod_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 podNamespace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 error_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -692,6 +718,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object executionId_ = "";
     /**
@@ -754,8 +782,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       executionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -771,8 +799,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearExecutionId() {
-
       executionId_ = getDefaultInstance().getExecutionId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -793,8 +821,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       executionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -860,8 +888,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       pod_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -877,8 +905,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPod() {
-
       pod_ = getDefaultInstance().getPod();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -899,8 +927,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pod_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -966,8 +994,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       podNamespace_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -983,8 +1011,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPodNamespace() {
-
       podNamespace_ = getDefaultInstance().getPodNamespace();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1005,8 +1033,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       podNamespace_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1072,8 +1100,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       error_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1089,8 +1117,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearError() {
-
       error_ = getDefaultInstance().getError();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1111,8 +1139,8 @@ public final class ExecuteAirflowCommandResponse extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       error_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

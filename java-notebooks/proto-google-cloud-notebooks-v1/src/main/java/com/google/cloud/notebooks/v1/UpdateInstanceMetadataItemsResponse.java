@@ -91,6 +91,7 @@ public final class UpdateInstanceMetadataItemsResponse
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> items_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetItems() {
@@ -148,7 +149,10 @@ public final class UpdateInstanceMetadataItemsResponse
    * <code>map&lt;string, string&gt; items = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getItemsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getItemsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -404,6 +408,7 @@ public final class UpdateInstanceMetadataItemsResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableItems().clear();
       return this;
     }
@@ -433,11 +438,20 @@ public final class UpdateInstanceMetadataItemsResponse
     public com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse buildPartial() {
       com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse result =
           new com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.items_ = internalGetItems();
-      result.items_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.items_ = internalGetItems();
+        result.items_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -489,6 +503,7 @@ public final class UpdateInstanceMetadataItemsResponse
           == com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse.getDefaultInstance())
         return this;
       internalGetMutableItems().mergeFrom(other.internalGetItems());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -521,6 +536,7 @@ public final class UpdateInstanceMetadataItemsResponse
                     input.readMessage(
                         ItemsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableItems().getMutableMap().put(items__.getKey(), items__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -553,14 +569,14 @@ public final class UpdateInstanceMetadataItemsResponse
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableItems() {
-      onChanged();
-      ;
       if (items_ == null) {
         items_ = com.google.protobuf.MapField.newMapField(ItemsDefaultEntryHolder.defaultEntry);
       }
       if (!items_.isMutable()) {
         items_ = items_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return items_;
     }
 
@@ -612,7 +628,10 @@ public final class UpdateInstanceMetadataItemsResponse
      * <code>map&lt;string, string&gt; items = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getItemsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getItemsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -641,6 +660,7 @@ public final class UpdateInstanceMetadataItemsResponse
     }
 
     public Builder clearItems() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableItems().getMutableMap().clear();
       return this;
     }
@@ -663,6 +683,7 @@ public final class UpdateInstanceMetadataItemsResponse
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableItems() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableItems().getMutableMap();
     }
     /**
@@ -681,8 +702,8 @@ public final class UpdateInstanceMetadataItemsResponse
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableItems().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -696,6 +717,7 @@ public final class UpdateInstanceMetadataItemsResponse
      */
     public Builder putAllItems(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableItems().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

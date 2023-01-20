@@ -70,7 +70,7 @@ public final class PurgeProductsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PURGE_COUNT_FIELD_NUMBER = 1;
-  private long purgeCount_;
+  private long purgeCount_ = 0L;
   /**
    *
    *
@@ -88,6 +88,8 @@ public final class PurgeProductsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PURGE_SAMPLE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList purgeSample_;
   /**
    *
@@ -372,10 +374,10 @@ public final class PurgeProductsResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       purgeCount_ = 0L;
-
       purgeSample_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -403,15 +405,28 @@ public final class PurgeProductsResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.retail.v2alpha.PurgeProductsResponse buildPartial() {
       com.google.cloud.retail.v2alpha.PurgeProductsResponse result =
           new com.google.cloud.retail.v2alpha.PurgeProductsResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.purgeCount_ = purgeCount_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        purgeSample_ = purgeSample_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.purgeSample_ = purgeSample_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2alpha.PurgeProductsResponse result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        purgeSample_ = purgeSample_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.purgeSample_ = purgeSample_;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.PurgeProductsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.purgeCount_ = purgeCount_;
+      }
     }
 
     @java.lang.Override
@@ -466,7 +481,7 @@ public final class PurgeProductsResponse extends com.google.protobuf.GeneratedMe
       if (!other.purgeSample_.isEmpty()) {
         if (purgeSample_.isEmpty()) {
           purgeSample_ = other.purgeSample_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePurgeSampleIsMutable();
           purgeSample_.addAll(other.purgeSample_);
@@ -502,7 +517,7 @@ public final class PurgeProductsResponse extends com.google.protobuf.GeneratedMe
             case 8:
               {
                 purgeCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -562,6 +577,7 @@ public final class PurgeProductsResponse extends com.google.protobuf.GeneratedMe
     public Builder setPurgeCount(long value) {
 
       purgeCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -577,7 +593,7 @@ public final class PurgeProductsResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPurgeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       purgeCount_ = 0L;
       onChanged();
       return this;
@@ -587,9 +603,9 @@ public final class PurgeProductsResponse extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePurgeSampleIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         purgeSample_ = new com.google.protobuf.LazyStringArrayList(purgeSample_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -740,7 +756,7 @@ public final class PurgeProductsResponse extends com.google.protobuf.GeneratedMe
      */
     public Builder clearPurgeSample() {
       purgeSample_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

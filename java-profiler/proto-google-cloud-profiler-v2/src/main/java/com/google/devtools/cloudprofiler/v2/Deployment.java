@@ -80,7 +80,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object target_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
   /**
    *
    *
@@ -202,6 +206,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -289,7 +294,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -570,10 +578,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       target_ = "";
-
       internalGetMutableLabels().clear();
       return this;
     }
@@ -602,13 +609,25 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudprofiler.v2.Deployment buildPartial() {
       com.google.devtools.cloudprofiler.v2.Deployment result =
           new com.google.devtools.cloudprofiler.v2.Deployment(this);
-      int from_bitField0_ = bitField0_;
-      result.projectId_ = projectId_;
-      result.target_ = target_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudprofiler.v2.Deployment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.target_ = target_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -659,13 +678,16 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTarget().isEmpty()) {
         target_ = other.target_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -695,13 +717,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 target_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -713,6 +735,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -798,8 +821,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -816,8 +839,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -839,8 +862,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -921,8 +944,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       target_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -943,8 +966,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
       target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -970,8 +993,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       target_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -987,14 +1010,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return labels_;
     }
 
@@ -1076,8 +1099,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1116,6 +1141,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1148,6 +1174,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1176,8 +1203,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1201,6 +1228,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

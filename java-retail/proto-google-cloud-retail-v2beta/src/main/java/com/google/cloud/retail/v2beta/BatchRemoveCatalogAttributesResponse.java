@@ -72,6 +72,8 @@ public final class BatchRemoveCatalogAttributesResponse
   }
 
   public static final int DELETED_CATALOG_ATTRIBUTES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList deletedCatalogAttributes_;
   /**
    *
@@ -149,6 +151,8 @@ public final class BatchRemoveCatalogAttributesResponse
   }
 
   public static final int RESET_CATALOG_ATTRIBUTES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList resetCatalogAttributes_;
   /**
    *
@@ -453,6 +457,7 @@ public final class BatchRemoveCatalogAttributesResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       deletedCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       resetCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -486,7 +491,16 @@ public final class BatchRemoveCatalogAttributesResponse
     public com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse buildPartial() {
       com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse result =
           new com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         deletedCatalogAttributes_ = deletedCatalogAttributes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -497,8 +511,11 @@ public final class BatchRemoveCatalogAttributesResponse
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.resetCatalogAttributes_ = resetCatalogAttributes_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

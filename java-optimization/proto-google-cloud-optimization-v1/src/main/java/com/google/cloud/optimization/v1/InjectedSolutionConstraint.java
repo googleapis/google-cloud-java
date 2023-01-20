@@ -652,7 +652,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
 
       public static final int LEVEL_FIELD_NUMBER = 1;
-      private int level_;
+      private int level_ = 0;
       /**
        *
        *
@@ -691,12 +691,11 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       public com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
               .Relaxation.Level
           getLevel() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation.Relaxation
                 .Level
             result =
                 com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
-                    .Relaxation.Level.valueOf(level_);
+                    .Relaxation.Level.forNumber(level_);
         return result == null
             ? com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                 .Relaxation.Level.UNRECOGNIZED
@@ -748,11 +747,13 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        */
       @java.lang.Override
       public com.google.protobuf.TimestampOrBuilder getThresholdTimeOrBuilder() {
-        return getThresholdTime();
+        return thresholdTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : thresholdTime_;
       }
 
       public static final int THRESHOLD_VISIT_COUNT_FIELD_NUMBER = 3;
-      private int thresholdVisitCount_;
+      private int thresholdVisitCount_ = 0;
       /**
        *
        *
@@ -1064,16 +1065,14 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           level_ = 0;
-
-          if (thresholdTimeBuilder_ == null) {
-            thresholdTime_ = null;
-          } else {
-            thresholdTime_ = null;
+          thresholdTime_ = null;
+          if (thresholdTimeBuilder_ != null) {
+            thresholdTimeBuilder_.dispose();
             thresholdTimeBuilder_ = null;
           }
           thresholdVisitCount_ = 0;
-
           return this;
         }
 
@@ -1113,15 +1112,28 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
               result =
                   new com.google.cloud.optimization.v1.InjectedSolutionConstraint
                       .ConstraintRelaxation.Relaxation(this);
-          result.level_ = level_;
-          if (thresholdTimeBuilder_ == null) {
-            result.thresholdTime_ = thresholdTime_;
-          } else {
-            result.thresholdTime_ = thresholdTimeBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          result.thresholdVisitCount_ = thresholdVisitCount_;
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
+                    .Relaxation
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.level_ = level_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.thresholdTime_ =
+                thresholdTimeBuilder_ == null ? thresholdTime_ : thresholdTimeBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.thresholdVisitCount_ = thresholdVisitCount_;
+          }
         }
 
         @java.lang.Override
@@ -1220,20 +1232,20 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
                 case 8:
                   {
                     level_ = input.readEnum();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 18:
                   {
                     input.readMessage(
                         getThresholdTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 24:
                   {
                     thresholdVisitCount_ = input.readInt32();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 default:
@@ -1252,6 +1264,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private int level_ = 0;
         /**
@@ -1290,8 +1304,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * @return This builder for chaining.
          */
         public Builder setLevelValue(int value) {
-
           level_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1314,12 +1328,11 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         public com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                 .Relaxation.Level
             getLevel() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                   .Relaxation.Level
               result =
                   com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
-                      .Relaxation.Level.valueOf(level_);
+                      .Relaxation.Level.forNumber(level_);
           return result == null
               ? com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                   .Relaxation.Level.UNRECOGNIZED
@@ -1348,7 +1361,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000001;
           level_ = value.getNumber();
           onChanged();
           return this;
@@ -1369,7 +1382,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * @return This builder for chaining.
          */
         public Builder clearLevel() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           level_ = 0;
           onChanged();
           return this;
@@ -1393,7 +1406,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * @return Whether the thresholdTime field is set.
          */
         public boolean hasThresholdTime() {
-          return thresholdTimeBuilder_ != null || thresholdTime_ != null;
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          *
@@ -1430,11 +1443,11 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
               throw new NullPointerException();
             }
             thresholdTime_ = value;
-            onChanged();
           } else {
             thresholdTimeBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -1449,11 +1462,11 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         public Builder setThresholdTime(com.google.protobuf.Timestamp.Builder builderForValue) {
           if (thresholdTimeBuilder_ == null) {
             thresholdTime_ = builderForValue.build();
-            onChanged();
           } else {
             thresholdTimeBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -1467,19 +1480,18 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          */
         public Builder mergeThresholdTime(com.google.protobuf.Timestamp value) {
           if (thresholdTimeBuilder_ == null) {
-            if (thresholdTime_ != null) {
-              thresholdTime_ =
-                  com.google.protobuf.Timestamp.newBuilder(thresholdTime_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000002) != 0)
+                && thresholdTime_ != null
+                && thresholdTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+              getThresholdTimeBuilder().mergeFrom(value);
             } else {
               thresholdTime_ = value;
             }
-            onChanged();
           } else {
             thresholdTimeBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -1492,14 +1504,13 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <code>.google.protobuf.Timestamp threshold_time = 2;</code>
          */
         public Builder clearThresholdTime() {
-          if (thresholdTimeBuilder_ == null) {
-            thresholdTime_ = null;
-            onChanged();
-          } else {
-            thresholdTime_ = null;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          thresholdTime_ = null;
+          if (thresholdTimeBuilder_ != null) {
+            thresholdTimeBuilder_.dispose();
             thresholdTimeBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -1512,7 +1523,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <code>.google.protobuf.Timestamp threshold_time = 2;</code>
          */
         public com.google.protobuf.Timestamp.Builder getThresholdTimeBuilder() {
-
+          bitField0_ |= 0x00000002;
           onChanged();
           return getThresholdTimeFieldBuilder().getBuilder();
         }
@@ -1601,6 +1612,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         public Builder setThresholdVisitCount(int value) {
 
           thresholdVisitCount_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1621,7 +1633,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * @return This builder for chaining.
          */
         public Builder clearThresholdVisitCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           thresholdVisitCount_ = 0;
           onChanged();
           return this;
@@ -1700,6 +1712,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     }
 
     public static final int RELAXATIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                 .Relaxation>
@@ -1797,6 +1811,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     }
 
     public static final int VEHICLE_INDICES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList vehicleIndices_;
     /**
      *
@@ -2120,6 +2136,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (relaxationsBuilder_ == null) {
           relaxations_ = java.util.Collections.emptyList();
         } else {
@@ -2128,7 +2145,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         vehicleIndices_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -2162,7 +2178,16 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation result =
             new com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation(
                 this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation result) {
         if (relaxationsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             relaxations_ = java.util.Collections.unmodifiableList(relaxations_);
@@ -2177,8 +2202,11 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.vehicleIndices_ = vehicleIndices_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2926,6 +2954,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder setVehicleIndices(int index, int value) {
+
         ensureVehicleIndicesIsMutable();
         vehicleIndices_.setInt(index, value);
         onChanged();
@@ -2954,6 +2983,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder addVehicleIndices(int value) {
+
         ensureVehicleIndicesIsMutable();
         vehicleIndices_.addInt(value);
         onChanged();
@@ -3085,6 +3115,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   }
 
   public static final int ROUTES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.ShipmentRoute> routes_;
   /**
    *
@@ -3164,6 +3196,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   }
 
   public static final int SKIPPED_SHIPMENTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.SkippedShipment> skippedShipments_;
   /**
    *
@@ -3240,6 +3274,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   }
 
   public static final int CONSTRAINT_RELAXATIONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation>
       constraintRelaxations_;
@@ -3562,6 +3598,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (routesBuilder_ == null) {
         routes_ = java.util.Collections.emptyList();
       } else {
@@ -3610,7 +3647,16 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     public com.google.cloud.optimization.v1.InjectedSolutionConstraint buildPartial() {
       com.google.cloud.optimization.v1.InjectedSolutionConstraint result =
           new com.google.cloud.optimization.v1.InjectedSolutionConstraint(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.optimization.v1.InjectedSolutionConstraint result) {
       if (routesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           routes_ = java.util.Collections.unmodifiableList(routes_);
@@ -3638,8 +3684,10 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       } else {
         result.constraintRelaxations_ = constraintRelaxationsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.InjectedSolutionConstraint result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

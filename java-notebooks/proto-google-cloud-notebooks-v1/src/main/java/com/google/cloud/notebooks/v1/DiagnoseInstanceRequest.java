@@ -68,7 +68,9 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.DiagnosticConfigOrBuilder getDiagnosticConfigOrBuilder() {
-    return getDiagnosticConfig();
+    return diagnosticConfig_ == null
+        ? com.google.cloud.notebooks.v1.DiagnosticConfig.getDefaultInstance()
+        : diagnosticConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (diagnosticConfigBuilder_ == null) {
-        diagnosticConfig_ = null;
-      } else {
-        diagnosticConfig_ = null;
+      diagnosticConfig_ = null;
+      if (diagnosticConfigBuilder_ != null) {
+        diagnosticConfigBuilder_.dispose();
         diagnosticConfigBuilder_ = null;
       }
       return this;
@@ -423,14 +426,22 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
     public com.google.cloud.notebooks.v1.DiagnoseInstanceRequest buildPartial() {
       com.google.cloud.notebooks.v1.DiagnoseInstanceRequest result =
           new com.google.cloud.notebooks.v1.DiagnoseInstanceRequest(this);
-      result.name_ = name_;
-      if (diagnosticConfigBuilder_ == null) {
-        result.diagnosticConfig_ = diagnosticConfig_;
-      } else {
-        result.diagnosticConfig_ = diagnosticConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.DiagnoseInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.diagnosticConfig_ =
+            diagnosticConfigBuilder_ == null ? diagnosticConfig_ : diagnosticConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +492,7 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDiagnosticConfig()) {
@@ -515,14 +527,14 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getDiagnosticConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -541,6 +553,8 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -612,8 +626,8 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -632,8 +646,8 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -657,8 +671,8 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,7 +697,7 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
      * @return Whether the diagnosticConfig field is set.
      */
     public boolean hasDiagnosticConfig() {
-      return diagnosticConfigBuilder_ != null || diagnosticConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -724,11 +738,11 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         diagnosticConfig_ = value;
-        onChanged();
       } else {
         diagnosticConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -746,11 +760,11 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
         com.google.cloud.notebooks.v1.DiagnosticConfig.Builder builderForValue) {
       if (diagnosticConfigBuilder_ == null) {
         diagnosticConfig_ = builderForValue.build();
-        onChanged();
       } else {
         diagnosticConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -766,19 +780,19 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
      */
     public Builder mergeDiagnosticConfig(com.google.cloud.notebooks.v1.DiagnosticConfig value) {
       if (diagnosticConfigBuilder_ == null) {
-        if (diagnosticConfig_ != null) {
-          diagnosticConfig_ =
-              com.google.cloud.notebooks.v1.DiagnosticConfig.newBuilder(diagnosticConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && diagnosticConfig_ != null
+            && diagnosticConfig_
+                != com.google.cloud.notebooks.v1.DiagnosticConfig.getDefaultInstance()) {
+          getDiagnosticConfigBuilder().mergeFrom(value);
         } else {
           diagnosticConfig_ = value;
         }
-        onChanged();
       } else {
         diagnosticConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -793,14 +807,13 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearDiagnosticConfig() {
-      if (diagnosticConfigBuilder_ == null) {
-        diagnosticConfig_ = null;
-        onChanged();
-      } else {
-        diagnosticConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      diagnosticConfig_ = null;
+      if (diagnosticConfigBuilder_ != null) {
+        diagnosticConfigBuilder_.dispose();
         diagnosticConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -815,7 +828,7 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.notebooks.v1.DiagnosticConfig.Builder getDiagnosticConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDiagnosticConfigFieldBuilder().getBuilder();
     }

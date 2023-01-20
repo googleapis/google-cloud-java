@@ -116,7 +116,9 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.resourcesettings.v1.SettingOrBuilder getSettingOrBuilder() {
-    return getSetting();
+    return setting_ == null
+        ? com.google.cloud.resourcesettings.v1.Setting.getDefaultInstance()
+        : setting_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -322,10 +324,10 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (settingBuilder_ == null) {
-        setting_ = null;
-      } else {
-        setting_ = null;
+      bitField0_ = 0;
+      setting_ = null;
+      if (settingBuilder_ != null) {
+        settingBuilder_.dispose();
         settingBuilder_ = null;
       }
       return this;
@@ -355,13 +357,18 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.resourcesettings.v1.UpdateSettingRequest buildPartial() {
       com.google.cloud.resourcesettings.v1.UpdateSettingRequest result =
           new com.google.cloud.resourcesettings.v1.UpdateSettingRequest(this);
-      if (settingBuilder_ == null) {
-        result.setting_ = setting_;
-      } else {
-        result.setting_ = settingBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcesettings.v1.UpdateSettingRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.setting_ = settingBuilder_ == null ? setting_ : settingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -442,7 +449,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getSettingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -461,6 +468,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.resourcesettings.v1.Setting setting_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -482,7 +491,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the setting field is set.
      */
     public boolean hasSetting() {
-      return settingBuilder_ != null || setting_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -523,11 +532,11 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         setting_ = value;
-        onChanged();
       } else {
         settingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -545,11 +554,11 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.resourcesettings.v1.Setting.Builder builderForValue) {
       if (settingBuilder_ == null) {
         setting_ = builderForValue.build();
-        onChanged();
       } else {
         settingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -565,19 +574,18 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeSetting(com.google.cloud.resourcesettings.v1.Setting value) {
       if (settingBuilder_ == null) {
-        if (setting_ != null) {
-          setting_ =
-              com.google.cloud.resourcesettings.v1.Setting.newBuilder(setting_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && setting_ != null
+            && setting_ != com.google.cloud.resourcesettings.v1.Setting.getDefaultInstance()) {
+          getSettingBuilder().mergeFrom(value);
         } else {
           setting_ = value;
         }
-        onChanged();
       } else {
         settingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -592,14 +600,13 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearSetting() {
-      if (settingBuilder_ == null) {
-        setting_ = null;
-        onChanged();
-      } else {
-        setting_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      setting_ = null;
+      if (settingBuilder_ != null) {
+        settingBuilder_.dispose();
         settingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -614,7 +621,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.resourcesettings.v1.Setting.Builder getSettingBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSettingFieldBuilder().getBuilder();
     }

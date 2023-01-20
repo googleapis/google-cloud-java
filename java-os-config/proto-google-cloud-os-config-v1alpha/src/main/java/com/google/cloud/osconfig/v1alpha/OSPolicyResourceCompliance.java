@@ -143,7 +143,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     }
 
     public static final int ENFORCEMENT_OUTPUT_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString enforcementOutput_;
+    private com.google.protobuf.ByteString enforcementOutput_ =
+        com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
@@ -373,8 +374,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         enforcementOutput_ = com.google.protobuf.ByteString.EMPTY;
-
         return this;
       }
 
@@ -408,9 +409,19 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput result =
             new com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput(
                 this);
-        result.enforcementOutput_ = enforcementOutput_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enforcementOutput_ = enforcementOutput_;
+        }
       }
 
       @java.lang.Override
@@ -499,7 +510,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
               case 18:
                 {
                   enforcementOutput_ = input.readBytes();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 18
               default:
@@ -518,6 +529,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.ByteString enforcementOutput_ =
           com.google.protobuf.ByteString.EMPTY;
@@ -554,8 +567,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
         enforcementOutput_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -572,7 +585,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearEnforcementOutput() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         enforcementOutput_ = getDefaultInstance().getEnforcementOutput();
         onChanged();
         return this;
@@ -692,7 +705,9 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
   }
 
   public static final int OS_POLICY_RESOURCE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object osPolicyResourceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object osPolicyResourceId_ = "";
   /**
    *
    *
@@ -741,6 +756,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
   }
 
   public static final int CONFIG_STEPS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep> configSteps_;
   /**
    *
@@ -823,7 +840,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
   }
 
   public static final int STATE_FIELD_NUMBER = 3;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -852,9 +869,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState result =
-        com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState.valueOf(state_);
+        com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState.forNumber(state_);
     return result == null
         ? com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState.UNRECOGNIZED
         : result;
@@ -1176,17 +1192,16 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       osPolicyResourceId_ = "";
-
       if (configStepsBuilder_ == null) {
         configSteps_ = java.util.Collections.emptyList();
       } else {
         configSteps_ = null;
         configStepsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
-
       if (execResourceOutputBuilder_ != null) {
         execResourceOutputBuilder_.clear();
       }
@@ -1220,28 +1235,46 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     public com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance buildPartial() {
       com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance result =
           new com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance(this);
-      int from_bitField0_ = bitField0_;
-      result.osPolicyResourceId_ = osPolicyResourceId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance result) {
       if (configStepsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           configSteps_ = java.util.Collections.unmodifiableList(configSteps_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.configSteps_ = configSteps_;
       } else {
         result.configSteps_ = configStepsBuilder_.build();
       }
-      result.state_ = state_;
-      if (outputCase_ == 4) {
-        if (execResourceOutputBuilder_ == null) {
-          result.output_ = output_;
-        } else {
-          result.output_ = execResourceOutputBuilder_.build();
-        }
+    }
+
+    private void buildPartial0(
+        com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.osPolicyResourceId_ = osPolicyResourceId_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance result) {
       result.outputCase_ = outputCase_;
-      onBuilt();
-      return result;
+      result.output_ = this.output_;
+      if (outputCase_ == 4 && execResourceOutputBuilder_ != null) {
+        result.output_ = execResourceOutputBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1293,13 +1326,14 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         return this;
       if (!other.getOsPolicyResourceId().isEmpty()) {
         osPolicyResourceId_ = other.osPolicyResourceId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (configStepsBuilder_ == null) {
         if (!other.configSteps_.isEmpty()) {
           if (configSteps_.isEmpty()) {
             configSteps_ = other.configSteps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureConfigStepsIsMutable();
             configSteps_.addAll(other.configSteps_);
@@ -1312,7 +1346,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
             configStepsBuilder_.dispose();
             configStepsBuilder_ = null;
             configSteps_ = other.configSteps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             configStepsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConfigStepsFieldBuilder()
@@ -1365,7 +1399,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
             case 10:
               {
                 osPolicyResourceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1385,7 +1419,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
             case 24:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -1489,8 +1523,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       osPolicyResourceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1506,8 +1540,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearOsPolicyResourceId() {
-
       osPolicyResourceId_ = getDefaultInstance().getOsPolicyResourceId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1528,8 +1562,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       osPolicyResourceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1538,11 +1572,11 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         configSteps_ = java.util.Collections.emptyList();
 
     private void ensureConfigStepsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         configSteps_ =
             new java.util.ArrayList<com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep>(
                 configSteps_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1787,7 +1821,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     public Builder clearConfigSteps() {
       if (configStepsBuilder_ == null) {
         configSteps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         configStepsBuilder_.clear();
@@ -1931,7 +1965,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
                 com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep,
                 com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Builder,
                 com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStepOrBuilder>(
-                configSteps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                configSteps_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         configSteps_ = null;
       }
       return configStepsBuilder_;
@@ -1966,8 +2000,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1984,9 +2018,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState result =
-          com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState.valueOf(state_);
+          com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState.forNumber(state_);
       return result == null
           ? com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState.UNRECOGNIZED
           : result;
@@ -2007,7 +2040,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2024,7 +2057,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
@@ -2277,7 +2310,6 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       outputCase_ = 4;
       onChanged();
-      ;
       return execResourceOutputBuilder_;
     }
 

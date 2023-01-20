@@ -69,7 +69,7 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
   }
 
   public static final int ACCESS_FIELD_NUMBER = 1;
-  private int access_;
+  private int access_ = 0;
   /**
    *
    *
@@ -100,15 +100,16 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public google.cloud.policytroubleshooter.v1.Explanations.AccessState getAccess() {
-    @SuppressWarnings("deprecation")
     google.cloud.policytroubleshooter.v1.Explanations.AccessState result =
-        google.cloud.policytroubleshooter.v1.Explanations.AccessState.valueOf(access_);
+        google.cloud.policytroubleshooter.v1.Explanations.AccessState.forNumber(access_);
     return result == null
         ? google.cloud.policytroubleshooter.v1.Explanations.AccessState.UNRECOGNIZED
         : result;
   }
 
   public static final int EXPLAINED_POLICIES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<google.cloud.policytroubleshooter.v1.Explanations.ExplainedPolicy>
       explainedPolicies_;
   /**
@@ -438,15 +439,15 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       access_ = 0;
-
       if (explainedPoliciesBuilder_ == null) {
         explainedPolicies_ = java.util.Collections.emptyList();
       } else {
         explainedPolicies_ = null;
         explainedPoliciesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -477,19 +478,33 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
     public com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse buildPartial() {
       com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse result =
           new com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.access_ = access_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse result) {
       if (explainedPoliciesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           explainedPolicies_ = java.util.Collections.unmodifiableList(explainedPolicies_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.explainedPolicies_ = explainedPolicies_;
       } else {
         result.explainedPolicies_ = explainedPoliciesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.access_ = access_;
+      }
     }
 
     @java.lang.Override
@@ -548,7 +563,7 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
         if (!other.explainedPolicies_.isEmpty()) {
           if (explainedPolicies_.isEmpty()) {
             explainedPolicies_ = other.explainedPolicies_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureExplainedPoliciesIsMutable();
             explainedPolicies_.addAll(other.explainedPolicies_);
@@ -561,7 +576,7 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
             explainedPoliciesBuilder_.dispose();
             explainedPoliciesBuilder_ = null;
             explainedPolicies_ = other.explainedPolicies_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             explainedPoliciesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getExplainedPoliciesFieldBuilder()
@@ -600,7 +615,7 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
             case 8:
               {
                 access_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -667,8 +682,8 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setAccessValue(int value) {
-
       access_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,9 +701,8 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public google.cloud.policytroubleshooter.v1.Explanations.AccessState getAccess() {
-      @SuppressWarnings("deprecation")
       google.cloud.policytroubleshooter.v1.Explanations.AccessState result =
-          google.cloud.policytroubleshooter.v1.Explanations.AccessState.valueOf(access_);
+          google.cloud.policytroubleshooter.v1.Explanations.AccessState.forNumber(access_);
       return result == null
           ? google.cloud.policytroubleshooter.v1.Explanations.AccessState.UNRECOGNIZED
           : result;
@@ -710,7 +724,7 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       access_ = value.getNumber();
       onChanged();
       return this;
@@ -728,7 +742,7 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearAccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       access_ = 0;
       onChanged();
       return this;
@@ -738,12 +752,12 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
         explainedPolicies_ = java.util.Collections.emptyList();
 
     private void ensureExplainedPoliciesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         explainedPolicies_ =
             new java.util.ArrayList<
                 google.cloud.policytroubleshooter.v1.Explanations.ExplainedPolicy>(
                 explainedPolicies_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1056,7 +1070,7 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
     public Builder clearExplainedPolicies() {
       if (explainedPoliciesBuilder_ == null) {
         explainedPolicies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         explainedPoliciesBuilder_.clear();
@@ -1245,7 +1259,7 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
                 google.cloud.policytroubleshooter.v1.Explanations.ExplainedPolicy.Builder,
                 google.cloud.policytroubleshooter.v1.Explanations.ExplainedPolicyOrBuilder>(
                 explainedPolicies_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         explainedPolicies_ = null;

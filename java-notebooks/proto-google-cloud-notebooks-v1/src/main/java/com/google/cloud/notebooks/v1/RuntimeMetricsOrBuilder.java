@@ -73,7 +73,6 @@ public interface RuntimeMetricsOrBuilder
    * map&lt;string, string&gt; system_metrics = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   java.lang.String getSystemMetricsOrDefault(
       java.lang.String key,

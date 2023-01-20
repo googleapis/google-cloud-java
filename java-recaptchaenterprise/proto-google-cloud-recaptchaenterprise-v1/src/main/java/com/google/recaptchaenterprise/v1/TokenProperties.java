@@ -313,7 +313,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VALID_FIELD_NUMBER = 1;
-  private boolean valid_;
+  private boolean valid_ = false;
   /**
    *
    *
@@ -335,7 +335,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INVALID_REASON_FIELD_NUMBER = 2;
-  private int invalidReason_;
+  private int invalidReason_ = 0;
   /**
    *
    *
@@ -366,9 +366,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TokenProperties.InvalidReason getInvalidReason() {
-    @SuppressWarnings("deprecation")
     com.google.recaptchaenterprise.v1.TokenProperties.InvalidReason result =
-        com.google.recaptchaenterprise.v1.TokenProperties.InvalidReason.valueOf(invalidReason_);
+        com.google.recaptchaenterprise.v1.TokenProperties.InvalidReason.forNumber(invalidReason_);
     return result == null
         ? com.google.recaptchaenterprise.v1.TokenProperties.InvalidReason.UNRECOGNIZED
         : result;
@@ -417,11 +416,13 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int HOSTNAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object hostname_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hostname_ = "";
   /**
    *
    *
@@ -470,7 +471,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ANDROID_PACKAGE_NAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object androidPackageName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object androidPackageName_ = "";
   /**
    *
    *
@@ -521,7 +524,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IOS_BUNDLE_ID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object iosBundleId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object iosBundleId_ = "";
   /**
    *
    *
@@ -572,7 +577,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ACTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object action_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object action_ = "";
   /**
    *
    *
@@ -874,24 +881,18 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       valid_ = false;
-
       invalidReason_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       hostname_ = "";
-
       androidPackageName_ = "";
-
       iosBundleId_ = "";
-
       action_ = "";
-
       return this;
     }
 
@@ -919,19 +920,36 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     public com.google.recaptchaenterprise.v1.TokenProperties buildPartial() {
       com.google.recaptchaenterprise.v1.TokenProperties result =
           new com.google.recaptchaenterprise.v1.TokenProperties(this);
-      result.valid_ = valid_;
-      result.invalidReason_ = invalidReason_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.hostname_ = hostname_;
-      result.androidPackageName_ = androidPackageName_;
-      result.iosBundleId_ = iosBundleId_;
-      result.action_ = action_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.TokenProperties result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.valid_ = valid_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.invalidReason_ = invalidReason_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.hostname_ = hostname_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.androidPackageName_ = androidPackageName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.iosBundleId_ = iosBundleId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.action_ = action_;
+      }
     }
 
     @java.lang.Override
@@ -991,18 +1009,22 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getHostname().isEmpty()) {
         hostname_ = other.hostname_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getAndroidPackageName().isEmpty()) {
         androidPackageName_ = other.androidPackageName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getIosBundleId().isEmpty()) {
         iosBundleId_ = other.iosBundleId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1034,43 +1056,43 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 valid_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 invalidReason_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 hostname_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 action_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 66:
               {
                 androidPackageName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 74:
               {
                 iosBundleId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 74
             default:
@@ -1089,6 +1111,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean valid_;
     /**
@@ -1129,6 +1153,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     public Builder setValid(boolean value) {
 
       valid_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1148,7 +1173,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearValid() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       valid_ = false;
       onChanged();
       return this;
@@ -1185,8 +1210,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setInvalidReasonValue(int value) {
-
       invalidReason_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1204,9 +1229,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.recaptchaenterprise.v1.TokenProperties.InvalidReason getInvalidReason() {
-      @SuppressWarnings("deprecation")
       com.google.recaptchaenterprise.v1.TokenProperties.InvalidReason result =
-          com.google.recaptchaenterprise.v1.TokenProperties.InvalidReason.valueOf(invalidReason_);
+          com.google.recaptchaenterprise.v1.TokenProperties.InvalidReason.forNumber(invalidReason_);
       return result == null
           ? com.google.recaptchaenterprise.v1.TokenProperties.InvalidReason.UNRECOGNIZED
           : result;
@@ -1229,7 +1253,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       invalidReason_ = value.getNumber();
       onChanged();
       return this;
@@ -1247,7 +1271,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearInvalidReason() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       invalidReason_ = 0;
       onChanged();
       return this;
@@ -1271,7 +1295,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1308,11 +1332,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1327,11 +1351,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1345,17 +1369,18 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1368,14 +1393,13 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1388,7 +1412,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1497,8 +1521,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       hostname_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1514,8 +1538,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearHostname() {
-
       hostname_ = getDefaultInstance().getHostname();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1536,8 +1560,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hostname_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1606,8 +1630,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       androidPackageName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1624,8 +1648,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAndroidPackageName() {
-
       androidPackageName_ = getDefaultInstance().getAndroidPackageName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1647,8 +1671,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       androidPackageName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1717,8 +1741,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       iosBundleId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1735,8 +1759,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIosBundleId() {
-
       iosBundleId_ = getDefaultInstance().getIosBundleId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1758,8 +1782,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       iosBundleId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1825,8 +1849,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       action_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1842,8 +1866,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
       action_ = getDefaultInstance().getAction();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1864,8 +1888,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       action_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

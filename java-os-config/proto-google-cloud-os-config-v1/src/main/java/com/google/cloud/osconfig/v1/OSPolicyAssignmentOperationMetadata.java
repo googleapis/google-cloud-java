@@ -457,7 +457,9 @@ public final class OSPolicyAssignmentOperationMetadata
   }
 
   public static final int OS_POLICY_ASSIGNMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object osPolicyAssignment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object osPolicyAssignment_ = "";
   /**
    *
    *
@@ -510,7 +512,7 @@ public final class OSPolicyAssignmentOperationMetadata
   }
 
   public static final int API_METHOD_FIELD_NUMBER = 2;
-  private int apiMethod_;
+  private int apiMethod_ = 0;
   /**
    *
    *
@@ -541,9 +543,8 @@ public final class OSPolicyAssignmentOperationMetadata
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.APIMethod getApiMethod() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.APIMethod result =
-        com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.APIMethod.valueOf(
+        com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.APIMethod.forNumber(
             apiMethod_);
     return result == null
         ? com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.APIMethod.UNRECOGNIZED
@@ -551,7 +552,7 @@ public final class OSPolicyAssignmentOperationMetadata
   }
 
   public static final int ROLLOUT_STATE_FIELD_NUMBER = 3;
-  private int rolloutState_;
+  private int rolloutState_ = 0;
   /**
    *
    *
@@ -585,9 +586,8 @@ public final class OSPolicyAssignmentOperationMetadata
   @java.lang.Override
   public com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.RolloutState
       getRolloutState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.RolloutState result =
-        com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.RolloutState.valueOf(
+        com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.RolloutState.forNumber(
             rolloutState_);
     return result == null
         ? com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.RolloutState.UNRECOGNIZED
@@ -639,7 +639,9 @@ public final class OSPolicyAssignmentOperationMetadata
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRolloutStartTimeOrBuilder() {
-    return getRolloutStartTime();
+    return rolloutStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : rolloutStartTime_;
   }
 
   public static final int ROLLOUT_UPDATE_TIME_FIELD_NUMBER = 5;
@@ -687,7 +689,9 @@ public final class OSPolicyAssignmentOperationMetadata
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRolloutUpdateTimeOrBuilder() {
-    return getRolloutUpdateTime();
+    return rolloutUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : rolloutUpdateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -947,22 +951,18 @@ public final class OSPolicyAssignmentOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       osPolicyAssignment_ = "";
-
       apiMethod_ = 0;
-
       rolloutState_ = 0;
-
-      if (rolloutStartTimeBuilder_ == null) {
-        rolloutStartTime_ = null;
-      } else {
-        rolloutStartTime_ = null;
+      rolloutStartTime_ = null;
+      if (rolloutStartTimeBuilder_ != null) {
+        rolloutStartTimeBuilder_.dispose();
         rolloutStartTimeBuilder_ = null;
       }
-      if (rolloutUpdateTimeBuilder_ == null) {
-        rolloutUpdateTime_ = null;
-      } else {
-        rolloutUpdateTime_ = null;
+      rolloutUpdateTime_ = null;
+      if (rolloutUpdateTimeBuilder_ != null) {
+        rolloutUpdateTimeBuilder_.dispose();
         rolloutUpdateTimeBuilder_ = null;
       }
       return this;
@@ -993,21 +993,35 @@ public final class OSPolicyAssignmentOperationMetadata
     public com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata buildPartial() {
       com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata result =
           new com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata(this);
-      result.osPolicyAssignment_ = osPolicyAssignment_;
-      result.apiMethod_ = apiMethod_;
-      result.rolloutState_ = rolloutState_;
-      if (rolloutStartTimeBuilder_ == null) {
-        result.rolloutStartTime_ = rolloutStartTime_;
-      } else {
-        result.rolloutStartTime_ = rolloutStartTimeBuilder_.build();
-      }
-      if (rolloutUpdateTimeBuilder_ == null) {
-        result.rolloutUpdateTime_ = rolloutUpdateTime_;
-      } else {
-        result.rolloutUpdateTime_ = rolloutUpdateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.osPolicyAssignment_ = osPolicyAssignment_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.apiMethod_ = apiMethod_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.rolloutState_ = rolloutState_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rolloutStartTime_ =
+            rolloutStartTimeBuilder_ == null ? rolloutStartTime_ : rolloutStartTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.rolloutUpdateTime_ =
+            rolloutUpdateTimeBuilder_ == null
+                ? rolloutUpdateTime_
+                : rolloutUpdateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1060,6 +1074,7 @@ public final class OSPolicyAssignmentOperationMetadata
         return this;
       if (!other.getOsPolicyAssignment().isEmpty()) {
         osPolicyAssignment_ = other.osPolicyAssignment_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.apiMethod_ != 0) {
@@ -1103,33 +1118,33 @@ public final class OSPolicyAssignmentOperationMetadata
             case 10:
               {
                 osPolicyAssignment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 apiMethod_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 rolloutState_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(
                     getRolloutStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getRolloutUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -1148,6 +1163,8 @@ public final class OSPolicyAssignmentOperationMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object osPolicyAssignment_ = "";
     /**
@@ -1216,8 +1233,8 @@ public final class OSPolicyAssignmentOperationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
       osPolicyAssignment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1235,8 +1252,8 @@ public final class OSPolicyAssignmentOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearOsPolicyAssignment() {
-
       osPolicyAssignment_ = getDefaultInstance().getOsPolicyAssignment();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1259,8 +1276,8 @@ public final class OSPolicyAssignmentOperationMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       osPolicyAssignment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1296,8 +1313,8 @@ public final class OSPolicyAssignmentOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setApiMethodValue(int value) {
-
       apiMethod_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1316,9 +1333,8 @@ public final class OSPolicyAssignmentOperationMetadata
     @java.lang.Override
     public com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.APIMethod
         getApiMethod() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.APIMethod result =
-          com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.APIMethod.valueOf(
+          com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.APIMethod.forNumber(
               apiMethod_);
       return result == null
           ? com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.APIMethod.UNRECOGNIZED
@@ -1342,7 +1358,7 @@ public final class OSPolicyAssignmentOperationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       apiMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -1360,7 +1376,7 @@ public final class OSPolicyAssignmentOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearApiMethod() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       apiMethod_ = 0;
       onChanged();
       return this;
@@ -1399,8 +1415,8 @@ public final class OSPolicyAssignmentOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setRolloutStateValue(int value) {
-
       rolloutState_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1420,9 +1436,8 @@ public final class OSPolicyAssignmentOperationMetadata
     @java.lang.Override
     public com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.RolloutState
         getRolloutState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.RolloutState result =
-          com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.RolloutState.valueOf(
+          com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.RolloutState.forNumber(
               rolloutState_);
       return result == null
           ? com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata.RolloutState
@@ -1448,7 +1463,7 @@ public final class OSPolicyAssignmentOperationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       rolloutState_ = value.getNumber();
       onChanged();
       return this;
@@ -1467,7 +1482,7 @@ public final class OSPolicyAssignmentOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearRolloutState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       rolloutState_ = 0;
       onChanged();
       return this;
@@ -1491,7 +1506,7 @@ public final class OSPolicyAssignmentOperationMetadata
      * @return Whether the rolloutStartTime field is set.
      */
     public boolean hasRolloutStartTime() {
-      return rolloutStartTimeBuilder_ != null || rolloutStartTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1528,11 +1543,11 @@ public final class OSPolicyAssignmentOperationMetadata
           throw new NullPointerException();
         }
         rolloutStartTime_ = value;
-        onChanged();
       } else {
         rolloutStartTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1547,11 +1562,11 @@ public final class OSPolicyAssignmentOperationMetadata
     public Builder setRolloutStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (rolloutStartTimeBuilder_ == null) {
         rolloutStartTime_ = builderForValue.build();
-        onChanged();
       } else {
         rolloutStartTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1565,19 +1580,18 @@ public final class OSPolicyAssignmentOperationMetadata
      */
     public Builder mergeRolloutStartTime(com.google.protobuf.Timestamp value) {
       if (rolloutStartTimeBuilder_ == null) {
-        if (rolloutStartTime_ != null) {
-          rolloutStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(rolloutStartTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && rolloutStartTime_ != null
+            && rolloutStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRolloutStartTimeBuilder().mergeFrom(value);
         } else {
           rolloutStartTime_ = value;
         }
-        onChanged();
       } else {
         rolloutStartTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1590,14 +1604,13 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>.google.protobuf.Timestamp rollout_start_time = 4;</code>
      */
     public Builder clearRolloutStartTime() {
-      if (rolloutStartTimeBuilder_ == null) {
-        rolloutStartTime_ = null;
-        onChanged();
-      } else {
-        rolloutStartTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      rolloutStartTime_ = null;
+      if (rolloutStartTimeBuilder_ != null) {
+        rolloutStartTimeBuilder_.dispose();
         rolloutStartTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1610,7 +1623,7 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>.google.protobuf.Timestamp rollout_start_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRolloutStartTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRolloutStartTimeFieldBuilder().getBuilder();
     }
@@ -1676,7 +1689,7 @@ public final class OSPolicyAssignmentOperationMetadata
      * @return Whether the rolloutUpdateTime field is set.
      */
     public boolean hasRolloutUpdateTime() {
-      return rolloutUpdateTimeBuilder_ != null || rolloutUpdateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1713,11 +1726,11 @@ public final class OSPolicyAssignmentOperationMetadata
           throw new NullPointerException();
         }
         rolloutUpdateTime_ = value;
-        onChanged();
       } else {
         rolloutUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1732,11 +1745,11 @@ public final class OSPolicyAssignmentOperationMetadata
     public Builder setRolloutUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (rolloutUpdateTimeBuilder_ == null) {
         rolloutUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         rolloutUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1750,19 +1763,18 @@ public final class OSPolicyAssignmentOperationMetadata
      */
     public Builder mergeRolloutUpdateTime(com.google.protobuf.Timestamp value) {
       if (rolloutUpdateTimeBuilder_ == null) {
-        if (rolloutUpdateTime_ != null) {
-          rolloutUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(rolloutUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && rolloutUpdateTime_ != null
+            && rolloutUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRolloutUpdateTimeBuilder().mergeFrom(value);
         } else {
           rolloutUpdateTime_ = value;
         }
-        onChanged();
       } else {
         rolloutUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1775,14 +1787,13 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>.google.protobuf.Timestamp rollout_update_time = 5;</code>
      */
     public Builder clearRolloutUpdateTime() {
-      if (rolloutUpdateTimeBuilder_ == null) {
-        rolloutUpdateTime_ = null;
-        onChanged();
-      } else {
-        rolloutUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      rolloutUpdateTime_ = null;
+      if (rolloutUpdateTimeBuilder_ != null) {
+        rolloutUpdateTimeBuilder_.dispose();
         rolloutUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1795,7 +1806,7 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>.google.protobuf.Timestamp rollout_update_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRolloutUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRolloutUpdateTimeFieldBuilder().getBuilder();
     }

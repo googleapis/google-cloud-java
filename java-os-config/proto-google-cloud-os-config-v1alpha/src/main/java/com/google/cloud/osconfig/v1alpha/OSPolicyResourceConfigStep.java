@@ -446,7 +446,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -475,16 +475,15 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type result =
-        com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type.valueOf(type_);
+        com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type.forNumber(type_);
     return result == null
         ? com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type.UNRECOGNIZED
         : result;
   }
 
   public static final int OUTCOME_FIELD_NUMBER = 2;
-  private int outcome_;
+  private int outcome_ = 0;
   /**
    *
    *
@@ -513,16 +512,17 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome getOutcome() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome result =
-        com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome.valueOf(outcome_);
+        com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome.forNumber(outcome_);
     return result == null
         ? com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome.UNRECOGNIZED
         : result;
   }
 
   public static final int ERROR_MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object errorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
   /**
    *
    *
@@ -797,12 +797,10 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       outcome_ = 0;
-
       errorMessage_ = "";
-
       return this;
     }
 
@@ -831,11 +829,25 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
     public com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep buildPartial() {
       com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep result =
           new com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep(this);
-      result.type_ = type_;
-      result.outcome_ = outcome_;
-      result.errorMessage_ = errorMessage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outcome_ = outcome_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.errorMessage_ = errorMessage_;
+      }
     }
 
     @java.lang.Override
@@ -893,6 +905,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       }
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -924,19 +937,19 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 outcome_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -955,6 +968,8 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -985,8 +1000,8 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1003,9 +1018,8 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type result =
-          com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type.valueOf(type_);
+          com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type.UNRECOGNIZED
           : result;
@@ -1027,7 +1041,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1044,7 +1058,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -1079,8 +1093,8 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setOutcomeValue(int value) {
-
       outcome_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1097,9 +1111,8 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome getOutcome() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome result =
-          com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome.valueOf(outcome_);
+          com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome.forNumber(outcome_);
       return result == null
           ? com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome.UNRECOGNIZED
           : result;
@@ -1121,7 +1134,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       outcome_ = value.getNumber();
       onChanged();
       return this;
@@ -1138,7 +1151,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearOutcome() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       outcome_ = 0;
       onChanged();
       return this;
@@ -1208,8 +1221,8 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1226,8 +1239,8 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
-
       errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1249,8 +1262,8 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

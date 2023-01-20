@@ -189,7 +189,9 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -250,7 +252,9 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -538,10 +542,9 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         value_ = "";
-
         description_ = "";
-
         return this;
       }
 
@@ -581,10 +584,24 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
             result =
                 new com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl
                     .AllowedIpRange(this);
-        result.value_ = value_;
-        result.description_ = description_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl
+                  .AllowedIpRange
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.description_ = description_;
+        }
       }
 
       @java.lang.Override
@@ -647,10 +664,12 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
                 .AllowedIpRange.getDefaultInstance()) return this;
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -682,13 +701,13 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
               case 10:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -707,6 +726,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object value_ = "";
       /**
@@ -787,8 +808,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -810,8 +831,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -838,8 +859,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -905,8 +926,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -922,8 +943,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -944,8 +965,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1023,6 +1044,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
   }
 
   public static final int ALLOWED_IP_RANGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl
               .AllowedIpRange>
@@ -1325,6 +1348,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (allowedIpRangesBuilder_ == null) {
         allowedIpRanges_ = java.util.Collections.emptyList();
       } else {
@@ -1363,7 +1387,16 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl result =
           new com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl result) {
       if (allowedIpRangesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           allowedIpRanges_ = java.util.Collections.unmodifiableList(allowedIpRanges_);
@@ -1373,8 +1406,11 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       } else {
         result.allowedIpRanges_ = allowedIpRangesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

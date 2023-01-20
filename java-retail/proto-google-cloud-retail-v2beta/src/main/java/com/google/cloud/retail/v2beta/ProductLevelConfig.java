@@ -70,7 +70,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INGESTION_PRODUCT_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object ingestionProductType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ingestionProductType_ = "";
   /**
    *
    *
@@ -161,7 +163,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MERCHANT_CENTER_PRODUCT_ID_FIELD_FIELD_NUMBER = 2;
-  private volatile java.lang.Object merchantCenterProductIdField_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object merchantCenterProductIdField_ = "";
   /**
    *
    *
@@ -449,10 +453,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ingestionProductType_ = "";
-
       merchantCenterProductIdField_ = "";
-
       return this;
     }
 
@@ -480,10 +483,21 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.retail.v2beta.ProductLevelConfig buildPartial() {
       com.google.cloud.retail.v2beta.ProductLevelConfig result =
           new com.google.cloud.retail.v2beta.ProductLevelConfig(this);
-      result.ingestionProductType_ = ingestionProductType_;
-      result.merchantCenterProductIdField_ = merchantCenterProductIdField_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.ProductLevelConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ingestionProductType_ = ingestionProductType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.merchantCenterProductIdField_ = merchantCenterProductIdField_;
+      }
     }
 
     @java.lang.Override
@@ -534,10 +548,12 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getIngestionProductType().isEmpty()) {
         ingestionProductType_ = other.ingestionProductType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMerchantCenterProductIdField().isEmpty()) {
         merchantCenterProductIdField_ = other.merchantCenterProductIdField_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -569,13 +585,13 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 ingestionProductType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 merchantCenterProductIdField_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -594,6 +610,8 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object ingestionProductType_ = "";
     /**
@@ -719,8 +737,8 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       ingestionProductType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,8 +775,8 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIngestionProductType() {
-
       ingestionProductType_ = getDefaultInstance().getIngestionProductType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -800,8 +818,8 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ingestionProductType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -912,8 +930,8 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       merchantCenterProductIdField_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -944,8 +962,8 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMerchantCenterProductIdField() {
-
       merchantCenterProductIdField_ = getDefaultInstance().getMerchantCenterProductIdField();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -981,8 +999,8 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       merchantCenterProductIdField_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

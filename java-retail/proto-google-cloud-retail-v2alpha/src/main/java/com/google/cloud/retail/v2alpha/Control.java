@@ -246,7 +246,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -297,7 +299,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -350,6 +354,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSOCIATED_SERVING_CONFIG_IDS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList associatedServingConfigIds_;
   /**
    *
@@ -443,16 +449,18 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOLUTION_TYPES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> solutionTypes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.retail.v2alpha.SolutionType>
       solutionTypes_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.retail.v2alpha.SolutionType>() {
             public com.google.cloud.retail.v2alpha.SolutionType convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.retail.v2alpha.SolutionType result =
-                  com.google.cloud.retail.v2alpha.SolutionType.valueOf(from);
+                  com.google.cloud.retail.v2alpha.SolutionType.forNumber(from);
               return result == null
                   ? com.google.cloud.retail.v2alpha.SolutionType.UNRECOGNIZED
                   : result;
@@ -571,7 +579,10 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   private int solutionTypesMemoizedSerializedSize;
 
   public static final int SEARCH_SOLUTION_USE_CASE_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> searchSolutionUseCase_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.retail.v2alpha.SearchSolutionUseCase>
       searchSolutionUseCase_converter_ =
@@ -579,9 +590,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.cloud.retail.v2alpha.SearchSolutionUseCase>() {
             public com.google.cloud.retail.v2alpha.SearchSolutionUseCase convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.retail.v2alpha.SearchSolutionUseCase result =
-                  com.google.cloud.retail.v2alpha.SearchSolutionUseCase.valueOf(from);
+                  com.google.cloud.retail.v2alpha.SearchSolutionUseCase.forNumber(from);
               return result == null
                   ? com.google.cloud.retail.v2alpha.SearchSolutionUseCase.UNRECOGNIZED
                   : result;
@@ -1021,6 +1031,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (facetSpecBuilder_ != null) {
         facetSpecBuilder_.clear();
       }
@@ -1028,15 +1039,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         ruleBuilder_.clear();
       }
       name_ = "";
-
       displayName_ = "";
-
       associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       solutionTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       searchSolutionUseCase_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000040);
       controlCase_ = 0;
       control_ = null;
       return this;
@@ -1066,41 +1075,52 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Control buildPartial() {
       com.google.cloud.retail.v2alpha.Control result =
           new com.google.cloud.retail.v2alpha.Control(this);
-      int from_bitField0_ = bitField0_;
-      if (controlCase_ == 3) {
-        if (facetSpecBuilder_ == null) {
-          result.control_ = control_;
-        } else {
-          result.control_ = facetSpecBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (controlCase_ == 4) {
-        if (ruleBuilder_ == null) {
-          result.control_ = control_;
-        } else {
-          result.control_ = ruleBuilder_.build();
-        }
-      }
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        associatedServingConfigIds_ = associatedServingConfigIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.associatedServingConfigIds_ = associatedServingConfigIds_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        solutionTypes_ = java.util.Collections.unmodifiableList(solutionTypes_);
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.solutionTypes_ = solutionTypes_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        searchSolutionUseCase_ = java.util.Collections.unmodifiableList(searchSolutionUseCase_);
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.searchSolutionUseCase_ = searchSolutionUseCase_;
-      result.controlCase_ = controlCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.retail.v2alpha.Control result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        associatedServingConfigIds_ = associatedServingConfigIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.associatedServingConfigIds_ = associatedServingConfigIds_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        solutionTypes_ = java.util.Collections.unmodifiableList(solutionTypes_);
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.solutionTypes_ = solutionTypes_;
+      if (((bitField0_ & 0x00000040) != 0)) {
+        searchSolutionUseCase_ = java.util.Collections.unmodifiableList(searchSolutionUseCase_);
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.searchSolutionUseCase_ = searchSolutionUseCase_;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.Control result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.displayName_ = displayName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.retail.v2alpha.Control result) {
+      result.controlCase_ = controlCase_;
+      result.control_ = this.control_;
+      if (controlCase_ == 3 && facetSpecBuilder_ != null) {
+        result.control_ = facetSpecBuilder_.build();
+      }
+      if (controlCase_ == 4 && ruleBuilder_ != null) {
+        result.control_ = ruleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1150,16 +1170,18 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.retail.v2alpha.Control.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.associatedServingConfigIds_.isEmpty()) {
         if (associatedServingConfigIds_.isEmpty()) {
           associatedServingConfigIds_ = other.associatedServingConfigIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureAssociatedServingConfigIdsIsMutable();
           associatedServingConfigIds_.addAll(other.associatedServingConfigIds_);
@@ -1169,7 +1191,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (!other.solutionTypes_.isEmpty()) {
         if (solutionTypes_.isEmpty()) {
           solutionTypes_ = other.solutionTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureSolutionTypesIsMutable();
           solutionTypes_.addAll(other.solutionTypes_);
@@ -1179,7 +1201,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (!other.searchSolutionUseCase_.isEmpty()) {
         if (searchSolutionUseCase_.isEmpty()) {
           searchSolutionUseCase_ = other.searchSolutionUseCase_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureSearchSolutionUseCaseIsMutable();
           searchSolutionUseCase_.addAll(other.searchSolutionUseCase_);
@@ -1231,13 +1253,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
@@ -1586,7 +1608,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       controlCase_ = 3;
       onChanged();
-      ;
       return facetSpecBuilder_;
     }
 
@@ -1811,7 +1832,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       controlCase_ = 4;
       onChanged();
-      ;
       return ruleBuilder_;
     }
 
@@ -1879,8 +1899,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1897,8 +1917,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1920,8 +1940,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1993,8 +2013,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2012,8 +2032,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2036,8 +2056,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2046,10 +2066,10 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssociatedServingConfigIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         associatedServingConfigIds_ =
             new com.google.protobuf.LazyStringArrayList(associatedServingConfigIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2248,7 +2268,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAssociatedServingConfigIds() {
       associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2286,9 +2306,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> solutionTypes_ = java.util.Collections.emptyList();
 
     private void ensureSolutionTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         solutionTypes_ = new java.util.ArrayList<java.lang.Integer>(solutionTypes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2455,7 +2475,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSolutionTypes() {
       solutionTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2580,9 +2600,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSearchSolutionUseCaseIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         searchSolutionUseCase_ = new java.util.ArrayList<java.lang.Integer>(searchSolutionUseCase_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -2768,7 +2788,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSearchSolutionUseCase() {
       searchSolutionUseCase_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }

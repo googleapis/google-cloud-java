@@ -69,7 +69,9 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -169,11 +171,13 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.retail.v2.ControlOrBuilder getControlOrBuilder() {
-    return getControl();
+    return control_ == null ? com.google.cloud.retail.v2.Control.getDefaultInstance() : control_;
   }
 
   public static final int CONTROL_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object controlId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object controlId_ = "";
   /**
    *
    *
@@ -447,16 +451,14 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (controlBuilder_ == null) {
-        control_ = null;
-      } else {
-        control_ = null;
+      control_ = null;
+      if (controlBuilder_ != null) {
+        controlBuilder_.dispose();
         controlBuilder_ = null;
       }
       controlId_ = "";
-
       return this;
     }
 
@@ -484,15 +486,24 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.retail.v2.CreateControlRequest buildPartial() {
       com.google.cloud.retail.v2.CreateControlRequest result =
           new com.google.cloud.retail.v2.CreateControlRequest(this);
-      result.parent_ = parent_;
-      if (controlBuilder_ == null) {
-        result.control_ = control_;
-      } else {
-        result.control_ = controlBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.controlId_ = controlId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.CreateControlRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.control_ = controlBuilder_ == null ? control_ : controlBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.controlId_ = controlId_;
+      }
     }
 
     @java.lang.Override
@@ -543,6 +554,7 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasControl()) {
@@ -550,6 +562,7 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getControlId().isEmpty()) {
         controlId_ = other.controlId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -581,19 +594,19 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getControlFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 controlId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -612,6 +625,8 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -683,8 +698,8 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -703,8 +718,8 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -728,8 +743,8 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -753,7 +768,7 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the control field is set.
      */
     public boolean hasControl() {
-      return controlBuilder_ != null || control_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -792,11 +807,11 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         control_ = value;
-        onChanged();
       } else {
         controlBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -812,11 +827,11 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
     public Builder setControl(com.google.cloud.retail.v2.Control.Builder builderForValue) {
       if (controlBuilder_ == null) {
         control_ = builderForValue.build();
-        onChanged();
       } else {
         controlBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -831,19 +846,18 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeControl(com.google.cloud.retail.v2.Control value) {
       if (controlBuilder_ == null) {
-        if (control_ != null) {
-          control_ =
-              com.google.cloud.retail.v2.Control.newBuilder(control_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && control_ != null
+            && control_ != com.google.cloud.retail.v2.Control.getDefaultInstance()) {
+          getControlBuilder().mergeFrom(value);
         } else {
           control_ = value;
         }
-        onChanged();
       } else {
         controlBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -857,14 +871,13 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearControl() {
-      if (controlBuilder_ == null) {
-        control_ = null;
-        onChanged();
-      } else {
-        control_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      control_ = null;
+      if (controlBuilder_ != null) {
+        controlBuilder_.dispose();
         controlBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -878,7 +891,7 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.retail.v2.Control.Builder getControlBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getControlFieldBuilder().getBuilder();
     }
@@ -998,8 +1011,8 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       controlId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1018,8 +1031,8 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearControlId() {
-
       controlId_ = getDefaultInstance().getControlId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1043,8 +1056,8 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       controlId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

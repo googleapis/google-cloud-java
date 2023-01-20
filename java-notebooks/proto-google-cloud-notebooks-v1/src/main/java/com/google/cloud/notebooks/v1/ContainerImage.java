@@ -70,7 +70,9 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPOSITORY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object repository_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object repository_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAG_FIELD_NUMBER = 2;
-  private volatile java.lang.Object tag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tag_ = "";
   /**
    *
    *
@@ -378,10 +382,9 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       repository_ = "";
-
       tag_ = "";
-
       return this;
     }
 
@@ -409,10 +412,21 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v1.ContainerImage buildPartial() {
       com.google.cloud.notebooks.v1.ContainerImage result =
           new com.google.cloud.notebooks.v1.ContainerImage(this);
-      result.repository_ = repository_;
-      result.tag_ = tag_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.ContainerImage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.repository_ = repository_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tag_ = tag_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.notebooks.v1.ContainerImage.getDefaultInstance()) return this;
       if (!other.getRepository().isEmpty()) {
         repository_ = other.repository_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTag().isEmpty()) {
         tag_ = other.tag_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 repository_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 tag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +538,8 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object repository_ = "";
     /**
@@ -587,8 +605,8 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       repository_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -605,8 +623,8 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRepository() {
-
       repository_ = getDefaultInstance().getRepository();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -628,8 +646,8 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       repository_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,8 +716,8 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       tag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -716,8 +734,8 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTag() {
-
       tag_ = getDefaultInstance().getTag();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class ContainerImage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -66,7 +66,7 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
   }
 
   public static final int REJOINED_USER_EVENTS_COUNT_FIELD_NUMBER = 1;
-  private long rejoinedUserEventsCount_;
+  private long rejoinedUserEventsCount_ = 0L;
   /**
    *
    *
@@ -280,8 +280,8 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rejoinedUserEventsCount_ = 0L;
-
       return this;
     }
 
@@ -309,9 +309,18 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
     public com.google.cloud.retail.v2.RejoinUserEventsResponse buildPartial() {
       com.google.cloud.retail.v2.RejoinUserEventsResponse result =
           new com.google.cloud.retail.v2.RejoinUserEventsResponse(this);
-      result.rejoinedUserEventsCount_ = rejoinedUserEventsCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.RejoinUserEventsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rejoinedUserEventsCount_ = rejoinedUserEventsCount_;
+      }
     }
 
     @java.lang.Override
@@ -392,7 +401,7 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
             case 8:
               {
                 rejoinedUserEventsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -411,6 +420,8 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long rejoinedUserEventsCount_;
     /**
@@ -443,6 +454,7 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
     public Builder setRejoinedUserEventsCount(long value) {
 
       rejoinedUserEventsCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -458,7 +470,7 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRejoinedUserEventsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rejoinedUserEventsCount_ = 0L;
       onChanged();
       return this;

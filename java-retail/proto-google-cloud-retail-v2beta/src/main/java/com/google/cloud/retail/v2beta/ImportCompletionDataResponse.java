@@ -71,6 +71,8 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
   }
 
   public static final int ERROR_SAMPLES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
   /**
    *
@@ -341,6 +343,7 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorSamplesBuilder_ == null) {
         errorSamples_ = java.util.Collections.emptyList();
       } else {
@@ -375,7 +378,16 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
     public com.google.cloud.retail.v2beta.ImportCompletionDataResponse buildPartial() {
       com.google.cloud.retail.v2beta.ImportCompletionDataResponse result =
           new com.google.cloud.retail.v2beta.ImportCompletionDataResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2beta.ImportCompletionDataResponse result) {
       if (errorSamplesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errorSamples_ = java.util.Collections.unmodifiableList(errorSamples_);
@@ -385,8 +397,10 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       } else {
         result.errorSamples_ = errorSamplesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.ImportCompletionDataResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

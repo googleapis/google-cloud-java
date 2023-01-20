@@ -70,7 +70,9 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
   }
 
   public static final int VM_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object vmId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmId_ = "";
   /**
    *
    *
@@ -380,10 +384,9 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       vmId_ = "";
-
       return this;
     }
 
@@ -412,10 +415,22 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     public com.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest buildPartial() {
       com.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest result =
           new com.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest(this);
-      result.name_ = name_;
-      result.vmId_ = vmId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vmId_ = vmId_;
+      }
     }
 
     @java.lang.Override
@@ -468,10 +483,12 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVmId().isEmpty()) {
         vmId_ = other.vmId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -503,13 +520,13 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 vmId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -528,6 +545,8 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -593,8 +612,8 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -611,8 +630,8 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -634,8 +653,8 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -704,8 +723,8 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -722,8 +741,8 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearVmId() {
-
       vmId_ = getDefaultInstance().getVmId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -745,8 +764,8 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

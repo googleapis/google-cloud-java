@@ -340,7 +340,6 @@ public interface AggregatedMetricsOrBuilder
    * <code>map&lt;string, .google.cloud.optimization.v1.ShipmentRoute.VehicleLoad&gt; max_loads = 9;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad getMaxLoadsOrDefault(
       java.lang.String key,

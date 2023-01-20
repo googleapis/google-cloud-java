@@ -298,7 +298,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCORE_FIELD_NUMBER = 1;
-  private float score_;
+  private float score_ = 0F;
   /**
    *
    *
@@ -318,7 +318,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REASONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> reasons_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason>
       reasons_converter_ =
@@ -327,9 +330,9 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
               com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason>() {
             public com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason result =
-                  com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason.valueOf(from);
+                  com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason.forNumber(
+                      from);
               return result == null
                   ? com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason.UNRECOGNIZED
                   : result;
@@ -651,10 +654,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       score_ = 0F;
-
       reasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -682,15 +685,27 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.RiskAnalysis buildPartial() {
       com.google.recaptchaenterprise.v1.RiskAnalysis result =
           new com.google.recaptchaenterprise.v1.RiskAnalysis(this);
-      int from_bitField0_ = bitField0_;
-      result.score_ = score_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        reasons_ = java.util.Collections.unmodifiableList(reasons_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.reasons_ = reasons_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.recaptchaenterprise.v1.RiskAnalysis result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        reasons_ = java.util.Collections.unmodifiableList(reasons_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.reasons_ = reasons_;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.RiskAnalysis result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.score_ = score_;
+      }
     }
 
     @java.lang.Override
@@ -744,7 +759,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       if (!other.reasons_.isEmpty()) {
         if (reasons_.isEmpty()) {
           reasons_ = other.reasons_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureReasonsIsMutable();
           reasons_.addAll(other.reasons_);
@@ -780,7 +795,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
             case 13:
               {
                 score_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 16:
@@ -856,6 +871,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     public Builder setScore(float value) {
 
       score_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -873,7 +889,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       score_ = 0F;
       onChanged();
       return this;
@@ -882,9 +898,9 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> reasons_ = java.util.Collections.emptyList();
 
     private void ensureReasonsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         reasons_ = new java.util.ArrayList<java.lang.Integer>(reasons_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1029,7 +1045,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearReasons() {
       reasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

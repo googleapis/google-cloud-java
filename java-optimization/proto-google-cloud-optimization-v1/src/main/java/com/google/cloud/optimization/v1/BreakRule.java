@@ -303,7 +303,9 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getEarliestStartTimeOrBuilder() {
-      return getEarliestStartTime();
+      return earliestStartTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : earliestStartTime_;
     }
 
     public static final int LATEST_START_TIME_FIELD_NUMBER = 2;
@@ -357,7 +359,9 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLatestStartTimeOrBuilder() {
-      return getLatestStartTime();
+      return latestStartTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : latestStartTime_;
     }
 
     public static final int MIN_DURATION_FIELD_NUMBER = 3;
@@ -408,7 +412,9 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMinDurationOrBuilder() {
-      return getMinDuration();
+      return minDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : minDuration_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -648,22 +654,20 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (earliestStartTimeBuilder_ == null) {
-          earliestStartTime_ = null;
-        } else {
-          earliestStartTime_ = null;
+        bitField0_ = 0;
+        earliestStartTime_ = null;
+        if (earliestStartTimeBuilder_ != null) {
+          earliestStartTimeBuilder_.dispose();
           earliestStartTimeBuilder_ = null;
         }
-        if (latestStartTimeBuilder_ == null) {
-          latestStartTime_ = null;
-        } else {
-          latestStartTime_ = null;
+        latestStartTime_ = null;
+        if (latestStartTimeBuilder_ != null) {
+          latestStartTimeBuilder_.dispose();
           latestStartTimeBuilder_ = null;
         }
-        if (minDurationBuilder_ == null) {
-          minDuration_ = null;
-        } else {
-          minDuration_ = null;
+        minDuration_ = null;
+        if (minDurationBuilder_ != null) {
+          minDurationBuilder_.dispose();
           minDurationBuilder_ = null;
         }
         return this;
@@ -693,23 +697,29 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.optimization.v1.BreakRule.BreakRequest buildPartial() {
         com.google.cloud.optimization.v1.BreakRule.BreakRequest result =
             new com.google.cloud.optimization.v1.BreakRule.BreakRequest(this);
-        if (earliestStartTimeBuilder_ == null) {
-          result.earliestStartTime_ = earliestStartTime_;
-        } else {
-          result.earliestStartTime_ = earliestStartTimeBuilder_.build();
-        }
-        if (latestStartTimeBuilder_ == null) {
-          result.latestStartTime_ = latestStartTime_;
-        } else {
-          result.latestStartTime_ = latestStartTimeBuilder_.build();
-        }
-        if (minDurationBuilder_ == null) {
-          result.minDuration_ = minDuration_;
-        } else {
-          result.minDuration_ = minDurationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.optimization.v1.BreakRule.BreakRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.earliestStartTime_ =
+              earliestStartTimeBuilder_ == null
+                  ? earliestStartTime_
+                  : earliestStartTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.latestStartTime_ =
+              latestStartTimeBuilder_ == null ? latestStartTime_ : latestStartTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.minDuration_ =
+              minDurationBuilder_ == null ? minDuration_ : minDurationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -799,20 +809,20 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getEarliestStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getLatestStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getMinDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -831,6 +841,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Timestamp earliestStartTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -852,7 +864,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the earliestStartTime field is set.
        */
       public boolean hasEarliestStartTime() {
-        return earliestStartTimeBuilder_ != null || earliestStartTime_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -893,11 +905,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           earliestStartTime_ = value;
-          onChanged();
         } else {
           earliestStartTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -914,11 +926,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public Builder setEarliestStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (earliestStartTimeBuilder_ == null) {
           earliestStartTime_ = builderForValue.build();
-          onChanged();
         } else {
           earliestStartTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -934,19 +946,18 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeEarliestStartTime(com.google.protobuf.Timestamp value) {
         if (earliestStartTimeBuilder_ == null) {
-          if (earliestStartTime_ != null) {
-            earliestStartTime_ =
-                com.google.protobuf.Timestamp.newBuilder(earliestStartTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && earliestStartTime_ != null
+              && earliestStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getEarliestStartTimeBuilder().mergeFrom(value);
           } else {
             earliestStartTime_ = value;
           }
-          onChanged();
         } else {
           earliestStartTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -961,14 +972,13 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearEarliestStartTime() {
-        if (earliestStartTimeBuilder_ == null) {
-          earliestStartTime_ = null;
-          onChanged();
-        } else {
-          earliestStartTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        earliestStartTime_ = null;
+        if (earliestStartTimeBuilder_ != null) {
+          earliestStartTimeBuilder_.dispose();
           earliestStartTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -983,7 +993,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getEarliestStartTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getEarliestStartTimeFieldBuilder().getBuilder();
       }
@@ -1055,7 +1065,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the latestStartTime field is set.
        */
       public boolean hasLatestStartTime() {
-        return latestStartTimeBuilder_ != null || latestStartTime_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1096,11 +1106,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           latestStartTime_ = value;
-          onChanged();
         } else {
           latestStartTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1117,11 +1127,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public Builder setLatestStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (latestStartTimeBuilder_ == null) {
           latestStartTime_ = builderForValue.build();
-          onChanged();
         } else {
           latestStartTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1137,19 +1147,18 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeLatestStartTime(com.google.protobuf.Timestamp value) {
         if (latestStartTimeBuilder_ == null) {
-          if (latestStartTime_ != null) {
-            latestStartTime_ =
-                com.google.protobuf.Timestamp.newBuilder(latestStartTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && latestStartTime_ != null
+              && latestStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLatestStartTimeBuilder().mergeFrom(value);
           } else {
             latestStartTime_ = value;
           }
-          onChanged();
         } else {
           latestStartTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1164,14 +1173,13 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearLatestStartTime() {
-        if (latestStartTimeBuilder_ == null) {
-          latestStartTime_ = null;
-          onChanged();
-        } else {
-          latestStartTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        latestStartTime_ = null;
+        if (latestStartTimeBuilder_ != null) {
+          latestStartTimeBuilder_.dispose();
           latestStartTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1186,7 +1194,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getLatestStartTimeBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getLatestStartTimeFieldBuilder().getBuilder();
       }
@@ -1257,7 +1265,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the minDuration field is set.
        */
       public boolean hasMinDuration() {
-        return minDurationBuilder_ != null || minDuration_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1296,11 +1304,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           minDuration_ = value;
-          onChanged();
         } else {
           minDurationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1316,11 +1324,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public Builder setMinDuration(com.google.protobuf.Duration.Builder builderForValue) {
         if (minDurationBuilder_ == null) {
           minDuration_ = builderForValue.build();
-          onChanged();
         } else {
           minDurationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1335,19 +1343,18 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeMinDuration(com.google.protobuf.Duration value) {
         if (minDurationBuilder_ == null) {
-          if (minDuration_ != null) {
-            minDuration_ =
-                com.google.protobuf.Duration.newBuilder(minDuration_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && minDuration_ != null
+              && minDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMinDurationBuilder().mergeFrom(value);
           } else {
             minDuration_ = value;
           }
-          onChanged();
         } else {
           minDurationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1361,14 +1368,13 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearMinDuration() {
-        if (minDurationBuilder_ == null) {
-          minDuration_ = null;
-          onChanged();
-        } else {
-          minDuration_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        minDuration_ = null;
+        if (minDurationBuilder_ != null) {
+          minDurationBuilder_.dispose();
           minDurationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1382,7 +1388,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.protobuf.Duration.Builder getMinDurationBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getMinDurationFieldBuilder().getBuilder();
       }
@@ -1723,7 +1729,9 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMinBreakDurationOrBuilder() {
-      return getMinBreakDuration();
+      return minBreakDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : minBreakDuration_;
     }
 
     public static final int MAX_INTER_BREAK_DURATION_FIELD_NUMBER = 2;
@@ -1783,7 +1791,9 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMaxInterBreakDurationOrBuilder() {
-      return getMaxInterBreakDuration();
+      return maxInterBreakDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : maxInterBreakDuration_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2036,16 +2046,15 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (minBreakDurationBuilder_ == null) {
-          minBreakDuration_ = null;
-        } else {
-          minBreakDuration_ = null;
+        bitField0_ = 0;
+        minBreakDuration_ = null;
+        if (minBreakDurationBuilder_ != null) {
+          minBreakDurationBuilder_.dispose();
           minBreakDurationBuilder_ = null;
         }
-        if (maxInterBreakDurationBuilder_ == null) {
-          maxInterBreakDuration_ = null;
-        } else {
-          maxInterBreakDuration_ = null;
+        maxInterBreakDuration_ = null;
+        if (maxInterBreakDurationBuilder_ != null) {
+          maxInterBreakDurationBuilder_.dispose();
           maxInterBreakDurationBuilder_ = null;
         }
         return this;
@@ -2076,18 +2085,28 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint buildPartial() {
         com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint result =
             new com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint(this);
-        if (minBreakDurationBuilder_ == null) {
-          result.minBreakDuration_ = minBreakDuration_;
-        } else {
-          result.minBreakDuration_ = minBreakDurationBuilder_.build();
-        }
-        if (maxInterBreakDurationBuilder_ == null) {
-          result.maxInterBreakDuration_ = maxInterBreakDuration_;
-        } else {
-          result.maxInterBreakDuration_ = maxInterBreakDurationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.minBreakDuration_ =
+              minBreakDurationBuilder_ == null
+                  ? minBreakDuration_
+                  : minBreakDurationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxInterBreakDuration_ =
+              maxInterBreakDurationBuilder_ == null
+                  ? maxInterBreakDuration_
+                  : maxInterBreakDurationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2176,14 +2195,14 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getMinBreakDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getMaxInterBreakDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -2202,6 +2221,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Duration minBreakDuration_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2224,7 +2245,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the minBreakDuration field is set.
        */
       public boolean hasMinBreakDuration() {
-        return minBreakDurationBuilder_ != null || minBreakDuration_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -2267,11 +2288,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           minBreakDuration_ = value;
-          onChanged();
         } else {
           minBreakDurationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2289,11 +2310,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public Builder setMinBreakDuration(com.google.protobuf.Duration.Builder builderForValue) {
         if (minBreakDurationBuilder_ == null) {
           minBreakDuration_ = builderForValue.build();
-          onChanged();
         } else {
           minBreakDurationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2310,19 +2331,18 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeMinBreakDuration(com.google.protobuf.Duration value) {
         if (minBreakDurationBuilder_ == null) {
-          if (minBreakDuration_ != null) {
-            minBreakDuration_ =
-                com.google.protobuf.Duration.newBuilder(minBreakDuration_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && minBreakDuration_ != null
+              && minBreakDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMinBreakDurationBuilder().mergeFrom(value);
           } else {
             minBreakDuration_ = value;
           }
-          onChanged();
         } else {
           minBreakDurationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2338,14 +2358,13 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearMinBreakDuration() {
-        if (minBreakDurationBuilder_ == null) {
-          minBreakDuration_ = null;
-          onChanged();
-        } else {
-          minBreakDuration_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        minBreakDuration_ = null;
+        if (minBreakDurationBuilder_ != null) {
+          minBreakDurationBuilder_.dispose();
           minBreakDurationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2361,7 +2380,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.protobuf.Duration.Builder getMinBreakDurationBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getMinBreakDurationFieldBuilder().getBuilder();
       }
@@ -2437,7 +2456,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the maxInterBreakDuration field is set.
        */
       public boolean hasMaxInterBreakDuration() {
-        return maxInterBreakDurationBuilder_ != null || maxInterBreakDuration_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -2482,11 +2501,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           maxInterBreakDuration_ = value;
-          onChanged();
         } else {
           maxInterBreakDurationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2506,11 +2525,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Duration.Builder builderForValue) {
         if (maxInterBreakDurationBuilder_ == null) {
           maxInterBreakDuration_ = builderForValue.build();
-          onChanged();
         } else {
           maxInterBreakDurationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2528,19 +2547,18 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeMaxInterBreakDuration(com.google.protobuf.Duration value) {
         if (maxInterBreakDurationBuilder_ == null) {
-          if (maxInterBreakDuration_ != null) {
-            maxInterBreakDuration_ =
-                com.google.protobuf.Duration.newBuilder(maxInterBreakDuration_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && maxInterBreakDuration_ != null
+              && maxInterBreakDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMaxInterBreakDurationBuilder().mergeFrom(value);
           } else {
             maxInterBreakDuration_ = value;
           }
-          onChanged();
         } else {
           maxInterBreakDurationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2557,14 +2575,13 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearMaxInterBreakDuration() {
-        if (maxInterBreakDurationBuilder_ == null) {
-          maxInterBreakDuration_ = null;
-          onChanged();
-        } else {
-          maxInterBreakDuration_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxInterBreakDuration_ = null;
+        if (maxInterBreakDurationBuilder_ != null) {
+          maxInterBreakDurationBuilder_.dispose();
           maxInterBreakDurationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2581,7 +2598,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.protobuf.Duration.Builder getMaxInterBreakDurationBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMaxInterBreakDurationFieldBuilder().getBuilder();
       }
@@ -2705,6 +2722,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BREAK_REQUESTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.BreakRule.BreakRequest> breakRequests_;
   /**
    *
@@ -2776,6 +2795,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FREQUENCY_CONSTRAINTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint>
       frequencyConstraints_;
   /**
@@ -3083,6 +3104,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (breakRequestsBuilder_ == null) {
         breakRequests_ = java.util.Collections.emptyList();
       } else {
@@ -3124,7 +3146,15 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.BreakRule buildPartial() {
       com.google.cloud.optimization.v1.BreakRule result =
           new com.google.cloud.optimization.v1.BreakRule(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.optimization.v1.BreakRule result) {
       if (breakRequestsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           breakRequests_ = java.util.Collections.unmodifiableList(breakRequests_);
@@ -3143,8 +3173,10 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.frequencyConstraints_ = frequencyConstraintsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.BreakRule result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

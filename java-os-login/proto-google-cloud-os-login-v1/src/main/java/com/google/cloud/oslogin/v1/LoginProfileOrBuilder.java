@@ -145,7 +145,6 @@ public interface LoginProfileOrBuilder
    *
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
-
   /* nullable */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrDefault(
       java.lang.String key,

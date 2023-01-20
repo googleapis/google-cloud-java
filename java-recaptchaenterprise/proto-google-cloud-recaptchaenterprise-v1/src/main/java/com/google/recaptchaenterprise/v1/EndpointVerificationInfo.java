@@ -258,7 +258,9 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
   }
 
   public static final int REQUEST_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestToken_ = "";
   /**
    *
    *
@@ -362,7 +364,9 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastVerificationTimeOrBuilder() {
-    return getLastVerificationTime();
+    return lastVerificationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastVerificationTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -613,12 +617,11 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       requestToken_ = "";
-
-      if (lastVerificationTimeBuilder_ == null) {
-        lastVerificationTime_ = null;
-      } else {
-        lastVerificationTime_ = null;
+      lastVerificationTime_ = null;
+      if (lastVerificationTimeBuilder_ != null) {
+        lastVerificationTimeBuilder_.dispose();
         lastVerificationTimeBuilder_ = null;
       }
       endpointCase_ = 0;
@@ -650,21 +653,31 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     public com.google.recaptchaenterprise.v1.EndpointVerificationInfo buildPartial() {
       com.google.recaptchaenterprise.v1.EndpointVerificationInfo result =
           new com.google.recaptchaenterprise.v1.EndpointVerificationInfo(this);
-      if (endpointCase_ == 1) {
-        result.endpoint_ = endpoint_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endpointCase_ == 2) {
-        result.endpoint_ = endpoint_;
-      }
-      result.requestToken_ = requestToken_;
-      if (lastVerificationTimeBuilder_ == null) {
-        result.lastVerificationTime_ = lastVerificationTime_;
-      } else {
-        result.lastVerificationTime_ = lastVerificationTimeBuilder_.build();
-      }
-      result.endpointCase_ = endpointCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.EndpointVerificationInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestToken_ = requestToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.lastVerificationTime_ =
+            lastVerificationTimeBuilder_ == null
+                ? lastVerificationTime_
+                : lastVerificationTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.recaptchaenterprise.v1.EndpointVerificationInfo result) {
+      result.endpointCase_ = endpointCase_;
+      result.endpoint_ = this.endpoint_;
     }
 
     @java.lang.Override
@@ -715,6 +728,7 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
         return this;
       if (!other.getRequestToken().isEmpty()) {
         requestToken_ = other.requestToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasLastVerificationTime()) {
@@ -783,14 +797,14 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
             case 26:
               {
                 requestToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getLastVerificationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -823,6 +837,8 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1162,8 +1178,8 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1180,8 +1196,8 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRequestToken() {
-
       requestToken_ = getDefaultInstance().getRequestToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1203,8 +1219,8 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1230,7 +1246,7 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
      * @return Whether the lastVerificationTime field is set.
      */
     public boolean hasLastVerificationTime() {
-      return lastVerificationTimeBuilder_ != null || lastVerificationTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1273,11 +1289,11 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         lastVerificationTime_ = value;
-        onChanged();
       } else {
         lastVerificationTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1295,11 +1311,11 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     public Builder setLastVerificationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastVerificationTimeBuilder_ == null) {
         lastVerificationTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastVerificationTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1316,19 +1332,18 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
      */
     public Builder mergeLastVerificationTime(com.google.protobuf.Timestamp value) {
       if (lastVerificationTimeBuilder_ == null) {
-        if (lastVerificationTime_ != null) {
-          lastVerificationTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastVerificationTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && lastVerificationTime_ != null
+            && lastVerificationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastVerificationTimeBuilder().mergeFrom(value);
         } else {
           lastVerificationTime_ = value;
         }
-        onChanged();
       } else {
         lastVerificationTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1344,14 +1359,13 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearLastVerificationTime() {
-      if (lastVerificationTimeBuilder_ == null) {
-        lastVerificationTime_ = null;
-        onChanged();
-      } else {
-        lastVerificationTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      lastVerificationTime_ = null;
+      if (lastVerificationTimeBuilder_ != null) {
+        lastVerificationTimeBuilder_.dispose();
         lastVerificationTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1367,7 +1381,7 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastVerificationTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLastVerificationTimeFieldBuilder().getBuilder();
     }

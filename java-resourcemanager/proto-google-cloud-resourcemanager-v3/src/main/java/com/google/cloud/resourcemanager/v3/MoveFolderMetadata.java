@@ -70,7 +70,9 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SOURCE_PARENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object sourceParent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceParent_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESTINATION_PARENT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object destinationParent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationParent_ = "";
   /**
    *
    *
@@ -432,12 +438,10 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       sourceParent_ = "";
-
       destinationParent_ = "";
-
       return this;
     }
 
@@ -465,11 +469,24 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.resourcemanager.v3.MoveFolderMetadata buildPartial() {
       com.google.cloud.resourcemanager.v3.MoveFolderMetadata result =
           new com.google.cloud.resourcemanager.v3.MoveFolderMetadata(this);
-      result.displayName_ = displayName_;
-      result.sourceParent_ = sourceParent_;
-      result.destinationParent_ = destinationParent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcemanager.v3.MoveFolderMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sourceParent_ = sourceParent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.destinationParent_ = destinationParent_;
+      }
     }
 
     @java.lang.Override
@@ -520,14 +537,17 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSourceParent().isEmpty()) {
         sourceParent_ = other.sourceParent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDestinationParent().isEmpty()) {
         destinationParent_ = other.destinationParent_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -559,19 +579,19 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 sourceParent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 destinationParent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -590,6 +610,8 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object displayName_ = "";
     /**
@@ -652,8 +674,8 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,8 +691,8 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -691,8 +713,8 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -758,8 +780,8 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceParent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -775,8 +797,8 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSourceParent() {
-
       sourceParent_ = getDefaultInstance().getSourceParent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -797,8 +819,8 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceParent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -864,8 +886,8 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       destinationParent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -881,8 +903,8 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDestinationParent() {
-
       destinationParent_ = getDefaultInstance().getDestinationParent();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -903,8 +925,8 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destinationParent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

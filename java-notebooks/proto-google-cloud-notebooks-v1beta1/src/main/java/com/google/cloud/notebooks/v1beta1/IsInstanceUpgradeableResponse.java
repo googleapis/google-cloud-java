@@ -70,7 +70,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
   }
 
   public static final int UPGRADEABLE_FIELD_NUMBER = 1;
-  private boolean upgradeable_;
+  private boolean upgradeable_ = false;
   /**
    *
    *
@@ -88,7 +88,9 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
   }
 
   public static final int UPGRADE_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object upgradeVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object upgradeVersion_ = "";
   /**
    *
    *
@@ -139,7 +141,9 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
   }
 
   public static final int UPGRADE_INFO_FIELD_NUMBER = 3;
-  private volatile java.lang.Object upgradeInfo_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object upgradeInfo_ = "";
   /**
    *
    *
@@ -188,7 +192,9 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
   }
 
   public static final int UPGRADE_IMAGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object upgradeImage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object upgradeImage_ = "";
   /**
    *
    *
@@ -465,14 +471,11 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       upgradeable_ = false;
-
       upgradeVersion_ = "";
-
       upgradeInfo_ = "";
-
       upgradeImage_ = "";
-
       return this;
     }
 
@@ -501,12 +504,28 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     public com.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableResponse buildPartial() {
       com.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableResponse result =
           new com.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableResponse(this);
-      result.upgradeable_ = upgradeable_;
-      result.upgradeVersion_ = upgradeVersion_;
-      result.upgradeInfo_ = upgradeInfo_;
-      result.upgradeImage_ = upgradeImage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.upgradeable_ = upgradeable_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.upgradeVersion_ = upgradeVersion_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.upgradeInfo_ = upgradeInfo_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.upgradeImage_ = upgradeImage_;
+      }
     }
 
     @java.lang.Override
@@ -562,14 +581,17 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       }
       if (!other.getUpgradeVersion().isEmpty()) {
         upgradeVersion_ = other.upgradeVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getUpgradeInfo().isEmpty()) {
         upgradeInfo_ = other.upgradeInfo_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getUpgradeImage().isEmpty()) {
         upgradeImage_ = other.upgradeImage_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -601,25 +623,25 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
             case 8:
               {
                 upgradeable_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 upgradeVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 upgradeInfo_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 upgradeImage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -638,6 +660,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean upgradeable_;
     /**
@@ -670,6 +694,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     public Builder setUpgradeable(boolean value) {
 
       upgradeable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,7 +710,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearUpgradeable() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       upgradeable_ = false;
       onChanged();
       return this;
@@ -755,8 +780,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       upgradeVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -773,8 +798,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearUpgradeVersion() {
-
       upgradeVersion_ = getDefaultInstance().getUpgradeVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -796,8 +821,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       upgradeVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,8 +888,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       upgradeInfo_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -880,8 +905,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearUpgradeInfo() {
-
       upgradeInfo_ = getDefaultInstance().getUpgradeInfo();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -902,8 +927,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       upgradeInfo_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -975,8 +1000,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       upgradeImage_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -994,8 +1019,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearUpgradeImage() {
-
       upgradeImage_ = getDefaultInstance().getUpgradeImage();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1018,8 +1043,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       upgradeImage_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

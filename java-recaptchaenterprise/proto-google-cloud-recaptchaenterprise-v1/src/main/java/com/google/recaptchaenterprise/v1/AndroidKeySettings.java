@@ -68,7 +68,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ALLOW_ALL_PACKAGE_NAMES_FIELD_NUMBER = 2;
-  private boolean allowAllPackageNames_;
+  private boolean allowAllPackageNames_ = false;
   /**
    *
    *
@@ -86,6 +86,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ALLOWED_PACKAGE_NAMES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowedPackageNames_;
   /**
    *
@@ -363,10 +365,10 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allowAllPackageNames_ = false;
-
       allowedPackageNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -394,15 +396,28 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     public com.google.recaptchaenterprise.v1.AndroidKeySettings buildPartial() {
       com.google.recaptchaenterprise.v1.AndroidKeySettings result =
           new com.google.recaptchaenterprise.v1.AndroidKeySettings(this);
-      int from_bitField0_ = bitField0_;
-      result.allowAllPackageNames_ = allowAllPackageNames_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        allowedPackageNames_ = allowedPackageNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.allowedPackageNames_ = allowedPackageNames_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.recaptchaenterprise.v1.AndroidKeySettings result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        allowedPackageNames_ = allowedPackageNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.allowedPackageNames_ = allowedPackageNames_;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.AndroidKeySettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allowAllPackageNames_ = allowAllPackageNames_;
+      }
     }
 
     @java.lang.Override
@@ -457,7 +472,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       if (!other.allowedPackageNames_.isEmpty()) {
         if (allowedPackageNames_.isEmpty()) {
           allowedPackageNames_ = other.allowedPackageNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAllowedPackageNamesIsMutable();
           allowedPackageNames_.addAll(other.allowedPackageNames_);
@@ -500,7 +515,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
             case 16:
               {
                 allowAllPackageNames_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             default:
@@ -553,6 +568,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     public Builder setAllowAllPackageNames(boolean value) {
 
       allowAllPackageNames_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -568,7 +584,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAllowAllPackageNames() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allowAllPackageNames_ = false;
       onChanged();
       return this;
@@ -578,9 +594,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAllowedPackageNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         allowedPackageNames_ = new com.google.protobuf.LazyStringArrayList(allowedPackageNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -723,7 +739,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearAllowedPackageNames() {
       allowedPackageNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

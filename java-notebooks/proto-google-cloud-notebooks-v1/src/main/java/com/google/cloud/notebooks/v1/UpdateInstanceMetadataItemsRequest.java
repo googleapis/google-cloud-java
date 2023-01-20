@@ -80,7 +80,9 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -143,6 +145,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> items_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetItems() {
@@ -200,7 +203,10 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
    * <code>map&lt;string, string&gt; items = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getItemsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getItemsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -463,8 +469,8 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       internalGetMutableItems().clear();
       return this;
     }
@@ -494,12 +500,23 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     public com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest buildPartial() {
       com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest result =
           new com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.items_ = internalGetItems();
-      result.items_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.items_ = internalGetItems();
+        result.items_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -552,9 +569,11 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableItems().mergeFrom(other.internalGetItems());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -584,7 +603,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -593,6 +612,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
                     input.readMessage(
                         ItemsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableItems().getMutableMap().put(items__.getKey(), items__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -678,8 +698,8 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,8 +716,8 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -719,8 +739,8 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -736,14 +756,14 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableItems() {
-      onChanged();
-      ;
       if (items_ == null) {
         items_ = com.google.protobuf.MapField.newMapField(ItemsDefaultEntryHolder.defaultEntry);
       }
       if (!items_.isMutable()) {
         items_ = items_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return items_;
     }
 
@@ -795,7 +815,10 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
      * <code>map&lt;string, string&gt; items = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getItemsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getItemsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -824,6 +847,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     }
 
     public Builder clearItems() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableItems().getMutableMap().clear();
       return this;
     }
@@ -846,6 +870,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableItems() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableItems().getMutableMap();
     }
     /**
@@ -864,8 +889,8 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableItems().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -879,6 +904,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
      */
     public Builder putAllItems(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableItems().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

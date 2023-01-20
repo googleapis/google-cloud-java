@@ -272,6 +272,8 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   }
 
   public static final int REQUIRED_SHIPMENT_TYPE_ALTERNATIVES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList requiredShipmentTypeAlternatives_;
   /**
    *
@@ -337,6 +339,8 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   }
 
   public static final int DEPENDENT_SHIPMENT_TYPES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList dependentShipmentTypes_;
   /**
    *
@@ -414,7 +418,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   }
 
   public static final int REQUIREMENT_MODE_FIELD_NUMBER = 3;
-  private int requirementMode_;
+  private int requirementMode_ = 0;
   /**
    *
    *
@@ -448,9 +452,8 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.optimization.v1.ShipmentTypeRequirement.RequirementMode
       getRequirementMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.optimization.v1.ShipmentTypeRequirement.RequirementMode result =
-        com.google.cloud.optimization.v1.ShipmentTypeRequirement.RequirementMode.valueOf(
+        com.google.cloud.optimization.v1.ShipmentTypeRequirement.RequirementMode.forNumber(
             requirementMode_);
     return result == null
         ? com.google.cloud.optimization.v1.ShipmentTypeRequirement.RequirementMode.UNRECOGNIZED
@@ -698,12 +701,12 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       requiredShipmentTypeAlternatives_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       dependentShipmentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       requirementMode_ = 0;
-
       return this;
     }
 
@@ -731,7 +734,16 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public com.google.cloud.optimization.v1.ShipmentTypeRequirement buildPartial() {
       com.google.cloud.optimization.v1.ShipmentTypeRequirement result =
           new com.google.cloud.optimization.v1.ShipmentTypeRequirement(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.optimization.v1.ShipmentTypeRequirement result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         requiredShipmentTypeAlternatives_ = requiredShipmentTypeAlternatives_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -742,9 +754,13 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.dependentShipmentTypes_ = dependentShipmentTypes_;
-      result.requirementMode_ = requirementMode_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.ShipmentTypeRequirement result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requirementMode_ = requirementMode_;
+      }
     }
 
     @java.lang.Override
@@ -859,7 +875,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
             case 24:
               {
                 requirementMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1299,8 +1315,8 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setRequirementModeValue(int value) {
-
       requirementMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1320,9 +1336,8 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     @java.lang.Override
     public com.google.cloud.optimization.v1.ShipmentTypeRequirement.RequirementMode
         getRequirementMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.optimization.v1.ShipmentTypeRequirement.RequirementMode result =
-          com.google.cloud.optimization.v1.ShipmentTypeRequirement.RequirementMode.valueOf(
+          com.google.cloud.optimization.v1.ShipmentTypeRequirement.RequirementMode.forNumber(
               requirementMode_);
       return result == null
           ? com.google.cloud.optimization.v1.ShipmentTypeRequirement.RequirementMode.UNRECOGNIZED
@@ -1347,7 +1362,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       requirementMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1366,7 +1381,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRequirementMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       requirementMode_ = 0;
       onChanged();
       return this;

@@ -110,11 +110,11 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int GETTABLE_FIELD_NUMBER = 2;
-  private boolean gettable_;
+  private boolean gettable_ = false;
   /**
    *
    *
@@ -134,7 +134,7 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
   }
 
   public static final int READY_FIELD_NUMBER = 3;
-  private boolean ready_;
+  private boolean ready_ = false;
   /**
    *
    *
@@ -374,16 +374,14 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = 0;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       gettable_ = false;
-
       ready_ = false;
-
       return this;
     }
 
@@ -411,15 +409,24 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     public com.google.cloud.resourcemanager.v3.CreateProjectMetadata buildPartial() {
       com.google.cloud.resourcemanager.v3.CreateProjectMetadata result =
           new com.google.cloud.resourcemanager.v3.CreateProjectMetadata(this);
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.gettable_ = gettable_;
-      result.ready_ = ready_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcemanager.v3.CreateProjectMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gettable_ = gettable_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ready_ = ready_;
+      }
     }
 
     @java.lang.Override
@@ -506,19 +513,19 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 gettable_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 ready_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -538,6 +545,8 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -556,7 +565,7 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -593,11 +602,11 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -612,11 +621,11 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -630,17 +639,18 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -653,14 +663,13 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -673,7 +682,7 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -756,6 +765,7 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     public Builder setGettable(boolean value) {
 
       gettable_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -773,7 +783,7 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearGettable() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       gettable_ = false;
       onChanged();
       return this;
@@ -810,6 +820,7 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     public Builder setReady(boolean value) {
 
       ready_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -825,7 +836,7 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearReady() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       ready_ = false;
       onChanged();
       return this;

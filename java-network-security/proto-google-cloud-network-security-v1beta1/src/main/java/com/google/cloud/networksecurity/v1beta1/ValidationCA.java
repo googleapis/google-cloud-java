@@ -465,6 +465,7 @@ public final class ValidationCA extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (grpcEndpointBuilder_ != null) {
         grpcEndpointBuilder_.clear();
       }
@@ -500,23 +501,27 @@ public final class ValidationCA extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networksecurity.v1beta1.ValidationCA buildPartial() {
       com.google.cloud.networksecurity.v1beta1.ValidationCA result =
           new com.google.cloud.networksecurity.v1beta1.ValidationCA(this);
-      if (typeCase_ == 2) {
-        if (grpcEndpointBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = grpcEndpointBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (typeCase_ == 3) {
-        if (certificateProviderInstanceBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = certificateProviderInstanceBuilder_.build();
-        }
-      }
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networksecurity.v1beta1.ValidationCA result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.networksecurity.v1beta1.ValidationCA result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 2 && grpcEndpointBuilder_ != null) {
+        result.type_ = grpcEndpointBuilder_.build();
+      }
+      if (typeCase_ == 3 && certificateProviderInstanceBuilder_ != null) {
+        result.type_ = certificateProviderInstanceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -650,6 +655,8 @@ public final class ValidationCA extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.networksecurity.v1beta1.GrpcEndpoint,
@@ -868,7 +875,6 @@ public final class ValidationCA extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 2;
       onChanged();
-      ;
       return grpcEndpointBuilder_;
     }
 
@@ -1127,7 +1133,6 @@ public final class ValidationCA extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 3;
       onChanged();
-      ;
       return certificateProviderInstanceBuilder_;
     }
 

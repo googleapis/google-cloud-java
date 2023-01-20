@@ -68,7 +68,9 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SKIP_BILLING_CHECK_FIELD_NUMBER = 2;
-  private boolean skipBillingCheck_;
+  private boolean skipBillingCheck_ = false;
   /**
    *
    *
@@ -353,10 +355,9 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       skipBillingCheck_ = false;
-
       return this;
     }
 
@@ -384,10 +385,21 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
     public com.google.recaptchaenterprise.v1.MigrateKeyRequest buildPartial() {
       com.google.recaptchaenterprise.v1.MigrateKeyRequest result =
           new com.google.recaptchaenterprise.v1.MigrateKeyRequest(this);
-      result.name_ = name_;
-      result.skipBillingCheck_ = skipBillingCheck_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.MigrateKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.skipBillingCheck_ = skipBillingCheck_;
+      }
     }
 
     @java.lang.Override
@@ -438,6 +450,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSkipBillingCheck() != false) {
@@ -472,13 +485,13 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 skipBillingCheck_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -497,6 +510,8 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -568,8 +583,8 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -588,8 +603,8 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -613,8 +628,8 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -664,6 +679,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
     public Builder setSkipBillingCheck(boolean value) {
 
       skipBillingCheck_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -686,7 +702,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSkipBillingCheck() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       skipBillingCheck_ = false;
       onChanged();
       return this;

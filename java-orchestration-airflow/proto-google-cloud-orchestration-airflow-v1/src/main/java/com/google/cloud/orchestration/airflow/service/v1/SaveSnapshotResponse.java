@@ -68,7 +68,9 @@ public final class SaveSnapshotResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SNAPSHOT_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object snapshotPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object snapshotPath_ = "";
   /**
    *
    *
@@ -322,8 +324,8 @@ public final class SaveSnapshotResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       snapshotPath_ = "";
-
       return this;
     }
 
@@ -354,9 +356,19 @@ public final class SaveSnapshotResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse result =
           new com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse(this);
-      result.snapshotPath_ = snapshotPath_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.snapshotPath_ = snapshotPath_;
+      }
     }
 
     @java.lang.Override
@@ -410,6 +422,7 @@ public final class SaveSnapshotResponse extends com.google.protobuf.GeneratedMes
               .getDefaultInstance()) return this;
       if (!other.getSnapshotPath().isEmpty()) {
         snapshotPath_ = other.snapshotPath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -441,7 +454,7 @@ public final class SaveSnapshotResponse extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 snapshotPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -460,6 +473,8 @@ public final class SaveSnapshotResponse extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object snapshotPath_ = "";
     /**
@@ -531,8 +546,8 @@ public final class SaveSnapshotResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       snapshotPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -551,8 +566,8 @@ public final class SaveSnapshotResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSnapshotPath() {
-
       snapshotPath_ = getDefaultInstance().getSnapshotPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -576,8 +591,8 @@ public final class SaveSnapshotResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       snapshotPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

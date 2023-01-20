@@ -556,7 +556,9 @@ public final class Explanations {
     }
 
     public static final int PRINCIPAL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object principal_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object principal_ = "";
     /**
      *
      *
@@ -615,7 +617,9 @@ public final class Explanations {
     }
 
     public static final int FULL_RESOURCE_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object fullResourceName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fullResourceName_ = "";
     /**
      *
      *
@@ -670,7 +674,9 @@ public final class Explanations {
     }
 
     public static final int PERMISSION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object permission_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object permission_ = "";
     /**
      *
      *
@@ -944,12 +950,10 @@ public final class Explanations {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         principal_ = "";
-
         fullResourceName_ = "";
-
         permission_ = "";
-
         return this;
       }
 
@@ -978,11 +982,25 @@ public final class Explanations {
       public google.cloud.policytroubleshooter.v1.Explanations.AccessTuple buildPartial() {
         google.cloud.policytroubleshooter.v1.Explanations.AccessTuple result =
             new google.cloud.policytroubleshooter.v1.Explanations.AccessTuple(this);
-        result.principal_ = principal_;
-        result.fullResourceName_ = fullResourceName_;
-        result.permission_ = permission_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          google.cloud.policytroubleshooter.v1.Explanations.AccessTuple result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.principal_ = principal_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fullResourceName_ = fullResourceName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.permission_ = permission_;
+        }
       }
 
       @java.lang.Override
@@ -1037,14 +1055,17 @@ public final class Explanations {
           return this;
         if (!other.getPrincipal().isEmpty()) {
           principal_ = other.principal_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getFullResourceName().isEmpty()) {
           fullResourceName_ = other.fullResourceName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getPermission().isEmpty()) {
           permission_ = other.permission_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1076,19 +1097,19 @@ public final class Explanations {
               case 10:
                 {
                   principal_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   fullResourceName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   permission_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1107,6 +1128,8 @@ public final class Explanations {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object principal_ = "";
       /**
@@ -1184,8 +1207,8 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
         principal_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1206,8 +1229,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearPrincipal() {
-
         principal_ = getDefaultInstance().getPrincipal();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1233,8 +1256,8 @@ public final class Explanations {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         principal_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1309,8 +1332,8 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
         fullResourceName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1329,8 +1352,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearFullResourceName() {
-
         fullResourceName_ = getDefaultInstance().getFullResourceName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1354,8 +1377,8 @@ public final class Explanations {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         fullResourceName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1433,8 +1456,8 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
         permission_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1454,8 +1477,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearPermission() {
-
         permission_ = getDefaultInstance().getPermission();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1480,8 +1503,8 @@ public final class Explanations {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         permission_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1837,7 +1860,7 @@ public final class Explanations {
     }
 
     public static final int ACCESS_FIELD_NUMBER = 1;
-    private int access_;
+    private int access_ = 0;
     /**
      *
      *
@@ -1878,16 +1901,17 @@ public final class Explanations {
      */
     @java.lang.Override
     public google.cloud.policytroubleshooter.v1.Explanations.AccessState getAccess() {
-      @SuppressWarnings("deprecation")
       google.cloud.policytroubleshooter.v1.Explanations.AccessState result =
-          google.cloud.policytroubleshooter.v1.Explanations.AccessState.valueOf(access_);
+          google.cloud.policytroubleshooter.v1.Explanations.AccessState.forNumber(access_);
       return result == null
           ? google.cloud.policytroubleshooter.v1.Explanations.AccessState.UNRECOGNIZED
           : result;
     }
 
     public static final int FULL_RESOURCE_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object fullResourceName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fullResourceName_ = "";
     /**
      *
      *
@@ -1994,10 +2018,12 @@ public final class Explanations {
      */
     @java.lang.Override
     public com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder() {
-      return getPolicy();
+      return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
     }
 
     public static final int BINDING_EXPLANATIONS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation>
         bindingExplanations_;
     /**
@@ -2097,7 +2123,7 @@ public final class Explanations {
     }
 
     public static final int RELEVANCE_FIELD_NUMBER = 5;
-    private int relevance_;
+    private int relevance_ = 0;
     /**
      *
      *
@@ -2132,9 +2158,9 @@ public final class Explanations {
      */
     @java.lang.Override
     public google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance getRelevance() {
-      @SuppressWarnings("deprecation")
       google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance result =
-          google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.valueOf(relevance_);
+          google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.forNumber(
+              relevance_);
       return result == null
           ? google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.UNRECOGNIZED
           : result;
@@ -2398,14 +2424,12 @@ public final class Explanations {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         access_ = 0;
-
         fullResourceName_ = "";
-
-        if (policyBuilder_ == null) {
-          policy_ = null;
-        } else {
-          policy_ = null;
+        policy_ = null;
+        if (policyBuilder_ != null) {
+          policyBuilder_.dispose();
           policyBuilder_ = null;
         }
         if (bindingExplanationsBuilder_ == null) {
@@ -2414,9 +2438,8 @@ public final class Explanations {
           bindingExplanations_ = null;
           bindingExplanationsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         relevance_ = 0;
-
         return this;
       }
 
@@ -2446,26 +2469,42 @@ public final class Explanations {
       public google.cloud.policytroubleshooter.v1.Explanations.ExplainedPolicy buildPartial() {
         google.cloud.policytroubleshooter.v1.Explanations.ExplainedPolicy result =
             new google.cloud.policytroubleshooter.v1.Explanations.ExplainedPolicy(this);
-        int from_bitField0_ = bitField0_;
-        result.access_ = access_;
-        result.fullResourceName_ = fullResourceName_;
-        if (policyBuilder_ == null) {
-          result.policy_ = policy_;
-        } else {
-          result.policy_ = policyBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          google.cloud.policytroubleshooter.v1.Explanations.ExplainedPolicy result) {
         if (bindingExplanationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             bindingExplanations_ = java.util.Collections.unmodifiableList(bindingExplanations_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.bindingExplanations_ = bindingExplanations_;
         } else {
           result.bindingExplanations_ = bindingExplanationsBuilder_.build();
         }
-        result.relevance_ = relevance_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          google.cloud.policytroubleshooter.v1.Explanations.ExplainedPolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.access_ = access_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fullResourceName_ = fullResourceName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.relevance_ = relevance_;
+        }
       }
 
       @java.lang.Override
@@ -2524,6 +2563,7 @@ public final class Explanations {
         }
         if (!other.getFullResourceName().isEmpty()) {
           fullResourceName_ = other.fullResourceName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasPolicy()) {
@@ -2533,7 +2573,7 @@ public final class Explanations {
           if (!other.bindingExplanations_.isEmpty()) {
             if (bindingExplanations_.isEmpty()) {
               bindingExplanations_ = other.bindingExplanations_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureBindingExplanationsIsMutable();
               bindingExplanations_.addAll(other.bindingExplanations_);
@@ -2546,7 +2586,7 @@ public final class Explanations {
               bindingExplanationsBuilder_.dispose();
               bindingExplanationsBuilder_ = null;
               bindingExplanations_ = other.bindingExplanations_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               bindingExplanationsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getBindingExplanationsFieldBuilder()
@@ -2588,19 +2628,19 @@ public final class Explanations {
               case 8:
                 {
                   access_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   fullResourceName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -2621,7 +2661,7 @@ public final class Explanations {
               case 40:
                 {
                   relevance_ = input.readEnum();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               default:
@@ -2684,8 +2724,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder setAccessValue(int value) {
-
         access_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2708,9 +2748,8 @@ public final class Explanations {
        */
       @java.lang.Override
       public google.cloud.policytroubleshooter.v1.Explanations.AccessState getAccess() {
-        @SuppressWarnings("deprecation")
         google.cloud.policytroubleshooter.v1.Explanations.AccessState result =
-            google.cloud.policytroubleshooter.v1.Explanations.AccessState.valueOf(access_);
+            google.cloud.policytroubleshooter.v1.Explanations.AccessState.forNumber(access_);
         return result == null
             ? google.cloud.policytroubleshooter.v1.Explanations.AccessState.UNRECOGNIZED
             : result;
@@ -2738,7 +2777,7 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         access_ = value.getNumber();
         onChanged();
         return this;
@@ -2761,7 +2800,7 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearAccess() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         access_ = 0;
         onChanged();
         return this;
@@ -2843,8 +2882,8 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
         fullResourceName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2865,8 +2904,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearFullResourceName() {
-
         fullResourceName_ = getDefaultInstance().getFullResourceName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2892,8 +2931,8 @@ public final class Explanations {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         fullResourceName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2918,7 +2957,7 @@ public final class Explanations {
        * @return Whether the policy field is set.
        */
       public boolean hasPolicy() {
-        return policyBuilder_ != null || policy_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -2957,11 +2996,11 @@ public final class Explanations {
             throw new NullPointerException();
           }
           policy_ = value;
-          onChanged();
         } else {
           policyBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2978,11 +3017,11 @@ public final class Explanations {
       public Builder setPolicy(com.google.iam.v1.Policy.Builder builderForValue) {
         if (policyBuilder_ == null) {
           policy_ = builderForValue.build();
-          onChanged();
         } else {
           policyBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2998,16 +3037,18 @@ public final class Explanations {
        */
       public Builder mergePolicy(com.google.iam.v1.Policy value) {
         if (policyBuilder_ == null) {
-          if (policy_ != null) {
-            policy_ = com.google.iam.v1.Policy.newBuilder(policy_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && policy_ != null
+              && policy_ != com.google.iam.v1.Policy.getDefaultInstance()) {
+            getPolicyBuilder().mergeFrom(value);
           } else {
             policy_ = value;
           }
-          onChanged();
         } else {
           policyBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3022,14 +3063,13 @@ public final class Explanations {
        * <code>.google.iam.v1.Policy policy = 3;</code>
        */
       public Builder clearPolicy() {
-        if (policyBuilder_ == null) {
-          policy_ = null;
-          onChanged();
-        } else {
-          policy_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        policy_ = null;
+        if (policyBuilder_ != null) {
+          policyBuilder_.dispose();
           policyBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3044,7 +3084,7 @@ public final class Explanations {
        * <code>.google.iam.v1.Policy policy = 3;</code>
        */
       public com.google.iam.v1.Policy.Builder getPolicyBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getPolicyFieldBuilder().getBuilder();
       }
@@ -3098,12 +3138,12 @@ public final class Explanations {
           bindingExplanations_ = java.util.Collections.emptyList();
 
       private void ensureBindingExplanationsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           bindingExplanations_ =
               new java.util.ArrayList<
                   google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation>(
                   bindingExplanations_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -3386,7 +3426,7 @@ public final class Explanations {
       public Builder clearBindingExplanations() {
         if (bindingExplanationsBuilder_ == null) {
           bindingExplanations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           bindingExplanationsBuilder_.clear();
@@ -3556,7 +3596,7 @@ public final class Explanations {
                   google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.Builder,
                   google.cloud.policytroubleshooter.v1.Explanations.BindingExplanationOrBuilder>(
                   bindingExplanations_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           bindingExplanations_ = null;
@@ -3599,8 +3639,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder setRelevanceValue(int value) {
-
         relevance_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3620,9 +3660,8 @@ public final class Explanations {
        */
       @java.lang.Override
       public google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance getRelevance() {
-        @SuppressWarnings("deprecation")
         google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance result =
-            google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.valueOf(
+            google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.forNumber(
                 relevance_);
         return result == null
             ? google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.UNRECOGNIZED
@@ -3648,7 +3687,7 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000010;
         relevance_ = value.getNumber();
         onChanged();
         return this;
@@ -3668,7 +3707,7 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearRelevance() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         relevance_ = 0;
         onChanged();
         return this;
@@ -3994,7 +4033,6 @@ public final class Explanations {
      * map&lt;string, .google.cloud.policytroubleshooter.v1.BindingExplanation.AnnotatedMembership&gt; memberships = 5;
      * </code>
      */
-
     /* nullable */
     google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.AnnotatedMembership
         getMembershipsOrDefault(
@@ -4676,7 +4714,7 @@ public final class Explanations {
       }
 
       public static final int MEMBERSHIP_FIELD_NUMBER = 1;
-      private int membership_;
+      private int membership_ = 0;
       /**
        *
        *
@@ -4708,10 +4746,9 @@ public final class Explanations {
       @java.lang.Override
       public google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.Membership
           getMembership() {
-        @SuppressWarnings("deprecation")
         google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.Membership result =
-            google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.Membership.valueOf(
-                membership_);
+            google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.Membership
+                .forNumber(membership_);
         return result == null
             ? google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.Membership
                 .UNRECOGNIZED
@@ -4719,7 +4756,7 @@ public final class Explanations {
       }
 
       public static final int RELEVANCE_FIELD_NUMBER = 2;
-      private int relevance_;
+      private int relevance_ = 0;
       /**
        *
        *
@@ -4750,9 +4787,8 @@ public final class Explanations {
        */
       @java.lang.Override
       public google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance getRelevance() {
-        @SuppressWarnings("deprecation")
         google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance result =
-            google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.valueOf(
+            google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.forNumber(
                 relevance_);
         return result == null
             ? google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.UNRECOGNIZED
@@ -5012,10 +5048,9 @@ public final class Explanations {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           membership_ = 0;
-
           relevance_ = 0;
-
           return this;
         }
 
@@ -5053,10 +5088,23 @@ public final class Explanations {
               result =
                   new google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation
                       .AnnotatedMembership(this);
-          result.membership_ = membership_;
-          result.relevance_ = relevance_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.AnnotatedMembership
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.membership_ = membership_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.relevance_ = relevance_;
+          }
         }
 
         @java.lang.Override
@@ -5151,13 +5199,13 @@ public final class Explanations {
                 case 8:
                   {
                     membership_ = input.readEnum();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     relevance_ = input.readEnum();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -5176,6 +5224,8 @@ public final class Explanations {
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private int membership_ = 0;
         /**
@@ -5208,8 +5258,8 @@ public final class Explanations {
          * @return This builder for chaining.
          */
         public Builder setMembershipValue(int value) {
-
           membership_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5228,10 +5278,9 @@ public final class Explanations {
         @java.lang.Override
         public google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.Membership
             getMembership() {
-          @SuppressWarnings("deprecation")
           google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.Membership result =
               google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.Membership
-                  .valueOf(membership_);
+                  .forNumber(membership_);
           return result == null
               ? google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.Membership
                   .UNRECOGNIZED
@@ -5255,7 +5304,7 @@ public final class Explanations {
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000001;
           membership_ = value.getNumber();
           onChanged();
           return this;
@@ -5273,7 +5322,7 @@ public final class Explanations {
          * @return This builder for chaining.
          */
         public Builder clearMembership() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           membership_ = 0;
           onChanged();
           return this;
@@ -5310,8 +5359,8 @@ public final class Explanations {
          * @return This builder for chaining.
          */
         public Builder setRelevanceValue(int value) {
-
           relevance_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -5329,9 +5378,8 @@ public final class Explanations {
          */
         @java.lang.Override
         public google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance getRelevance() {
-          @SuppressWarnings("deprecation")
           google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance result =
-              google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.valueOf(
+              google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.forNumber(
                   relevance_);
           return result == null
               ? google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.UNRECOGNIZED
@@ -5355,7 +5403,7 @@ public final class Explanations {
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000002;
           relevance_ = value.getNumber();
           onChanged();
           return this;
@@ -5373,7 +5421,7 @@ public final class Explanations {
          * @return This builder for chaining.
          */
         public Builder clearRelevance() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           relevance_ = 0;
           onChanged();
           return this;
@@ -5452,7 +5500,7 @@ public final class Explanations {
     }
 
     public static final int ACCESS_FIELD_NUMBER = 1;
-    private int access_;
+    private int access_ = 0;
     /**
      *
      *
@@ -5497,16 +5545,17 @@ public final class Explanations {
      */
     @java.lang.Override
     public google.cloud.policytroubleshooter.v1.Explanations.AccessState getAccess() {
-      @SuppressWarnings("deprecation")
       google.cloud.policytroubleshooter.v1.Explanations.AccessState result =
-          google.cloud.policytroubleshooter.v1.Explanations.AccessState.valueOf(access_);
+          google.cloud.policytroubleshooter.v1.Explanations.AccessState.forNumber(access_);
       return result == null
           ? google.cloud.policytroubleshooter.v1.Explanations.AccessState.UNRECOGNIZED
           : result;
     }
 
     public static final int ROLE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object role_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object role_ = "";
     /**
      *
      *
@@ -5561,7 +5610,7 @@ public final class Explanations {
     }
 
     public static final int ROLE_PERMISSION_FIELD_NUMBER = 3;
-    private int rolePermission_;
+    private int rolePermission_ = 0;
     /**
      *
      *
@@ -5597,10 +5646,9 @@ public final class Explanations {
     @java.lang.Override
     public google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.RolePermission
         getRolePermission() {
-      @SuppressWarnings("deprecation")
       google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.RolePermission result =
           google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.RolePermission
-              .valueOf(rolePermission_);
+              .forNumber(rolePermission_);
       return result == null
           ? google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.RolePermission
               .UNRECOGNIZED
@@ -5608,7 +5656,7 @@ public final class Explanations {
     }
 
     public static final int ROLE_PERMISSION_RELEVANCE_FIELD_NUMBER = 4;
-    private int rolePermissionRelevance_;
+    private int rolePermissionRelevance_ = 0;
     /**
      *
      *
@@ -5642,9 +5690,8 @@ public final class Explanations {
     @java.lang.Override
     public google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance
         getRolePermissionRelevance() {
-      @SuppressWarnings("deprecation")
       google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance result =
-          google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.valueOf(
+          google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.forNumber(
               rolePermissionRelevance_);
       return result == null
           ? google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.UNRECOGNIZED
@@ -5673,6 +5720,7 @@ public final class Explanations {
                               .AnnotatedMembership.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String,
             google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation
@@ -5795,9 +5843,11 @@ public final class Explanations {
      * </code>
      */
     @java.lang.Override
-    public google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.AnnotatedMembership
+    public /* nullable */ google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation
+            .AnnotatedMembership
         getMembershipsOrDefault(
             java.lang.String key,
+            /* nullable */
             google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.AnnotatedMembership
                 defaultValue) {
       if (key == null) {
@@ -5853,7 +5903,7 @@ public final class Explanations {
     }
 
     public static final int RELEVANCE_FIELD_NUMBER = 6;
-    private int relevance_;
+    private int relevance_ = 0;
     /**
      *
      *
@@ -5884,9 +5934,9 @@ public final class Explanations {
      */
     @java.lang.Override
     public google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance getRelevance() {
-      @SuppressWarnings("deprecation")
       google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance result =
-          google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.valueOf(relevance_);
+          google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.forNumber(
+              relevance_);
       return result == null
           ? google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.UNRECOGNIZED
           : result;
@@ -5944,7 +5994,7 @@ public final class Explanations {
      */
     @java.lang.Override
     public com.google.type.ExprOrBuilder getConditionOrBuilder() {
-      return getCondition();
+      return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6266,21 +6316,16 @@ public final class Explanations {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         access_ = 0;
-
         role_ = "";
-
         rolePermission_ = 0;
-
         rolePermissionRelevance_ = 0;
-
         internalGetMutableMemberships().clear();
         relevance_ = 0;
-
-        if (conditionBuilder_ == null) {
-          condition_ = null;
-        } else {
-          condition_ = null;
+        condition_ = null;
+        if (conditionBuilder_ != null) {
+          conditionBuilder_.dispose();
           conditionBuilder_ = null;
         }
         return this;
@@ -6313,21 +6358,38 @@ public final class Explanations {
       public google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation buildPartial() {
         google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation result =
             new google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation(this);
-        int from_bitField0_ = bitField0_;
-        result.access_ = access_;
-        result.role_ = role_;
-        result.rolePermission_ = rolePermission_;
-        result.rolePermissionRelevance_ = rolePermissionRelevance_;
-        result.memberships_ = internalGetMemberships();
-        result.memberships_.makeImmutable();
-        result.relevance_ = relevance_;
-        if (conditionBuilder_ == null) {
-          result.condition_ = condition_;
-        } else {
-          result.condition_ = conditionBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.access_ = access_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.role_ = role_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.rolePermission_ = rolePermission_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.rolePermissionRelevance_ = rolePermissionRelevance_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.memberships_ = internalGetMemberships();
+          result.memberships_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.relevance_ = relevance_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -6386,6 +6448,7 @@ public final class Explanations {
         }
         if (!other.getRole().isEmpty()) {
           role_ = other.role_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.rolePermission_ != 0) {
@@ -6395,6 +6458,7 @@ public final class Explanations {
           setRolePermissionRelevanceValue(other.getRolePermissionRelevanceValue());
         }
         internalGetMutableMemberships().mergeFrom(other.internalGetMemberships());
+        bitField0_ |= 0x00000010;
         if (other.relevance_ != 0) {
           setRelevanceValue(other.getRelevanceValue());
         }
@@ -6430,25 +6494,25 @@ public final class Explanations {
               case 8:
                 {
                   access_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   role_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   rolePermission_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   rolePermissionRelevance_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 42:
@@ -6464,18 +6528,19 @@ public final class Explanations {
                   internalGetMutableMemberships()
                       .getMutableMap()
                       .put(memberships__.getKey(), memberships__.getValue());
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 48:
                 {
                   relevance_ = input.readEnum();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               case 58:
                 {
                   input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 58
               default:
@@ -6542,8 +6607,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder setAccessValue(int value) {
-
         access_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6568,9 +6633,8 @@ public final class Explanations {
        */
       @java.lang.Override
       public google.cloud.policytroubleshooter.v1.Explanations.AccessState getAccess() {
-        @SuppressWarnings("deprecation")
         google.cloud.policytroubleshooter.v1.Explanations.AccessState result =
-            google.cloud.policytroubleshooter.v1.Explanations.AccessState.valueOf(access_);
+            google.cloud.policytroubleshooter.v1.Explanations.AccessState.forNumber(access_);
         return result == null
             ? google.cloud.policytroubleshooter.v1.Explanations.AccessState.UNRECOGNIZED
             : result;
@@ -6600,7 +6664,7 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         access_ = value.getNumber();
         onChanged();
         return this;
@@ -6625,7 +6689,7 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearAccess() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         access_ = 0;
         onChanged();
         return this;
@@ -6701,8 +6765,8 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
         role_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6721,8 +6785,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearRole() {
-
         role_ = getDefaultInstance().getRole();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -6746,8 +6810,8 @@ public final class Explanations {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         role_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6787,8 +6851,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder setRolePermissionValue(int value) {
-
         rolePermission_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6809,10 +6873,9 @@ public final class Explanations {
       @java.lang.Override
       public google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.RolePermission
           getRolePermission() {
-        @SuppressWarnings("deprecation")
         google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.RolePermission result =
             google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.RolePermission
-                .valueOf(rolePermission_);
+                .forNumber(rolePermission_);
         return result == null
             ? google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.RolePermission
                 .UNRECOGNIZED
@@ -6839,7 +6902,7 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         rolePermission_ = value.getNumber();
         onChanged();
         return this;
@@ -6859,7 +6922,7 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearRolePermission() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         rolePermission_ = 0;
         onChanged();
         return this;
@@ -6900,8 +6963,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder setRolePermissionRelevanceValue(int value) {
-
         rolePermissionRelevance_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -6922,9 +6985,8 @@ public final class Explanations {
       @java.lang.Override
       public google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance
           getRolePermissionRelevance() {
-        @SuppressWarnings("deprecation")
         google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance result =
-            google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.valueOf(
+            google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.forNumber(
                 rolePermissionRelevance_);
         return result == null
             ? google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.UNRECOGNIZED
@@ -6950,7 +7012,7 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         rolePermissionRelevance_ = value.getNumber();
         onChanged();
         return this;
@@ -6970,7 +7032,7 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearRolePermissionRelevance() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         rolePermissionRelevance_ = 0;
         onChanged();
         return this;
@@ -6999,8 +7061,6 @@ public final class Explanations {
               google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation
                   .AnnotatedMembership>
           internalGetMutableMemberships() {
-        onChanged();
-        ;
         if (memberships_ == null) {
           memberships_ =
               com.google.protobuf.MapField.newMapField(MembershipsDefaultEntryHolder.defaultEntry);
@@ -7008,6 +7068,8 @@ public final class Explanations {
         if (!memberships_.isMutable()) {
           memberships_ = memberships_.copy();
         }
+        bitField0_ |= 0x00000010;
+        onChanged();
         return memberships_;
       }
 
@@ -7115,10 +7177,11 @@ public final class Explanations {
        * </code>
        */
       @java.lang.Override
-      public google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation
+      public /* nullable */ google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation
               .AnnotatedMembership
           getMembershipsOrDefault(
               java.lang.String key,
+              /* nullable */
               google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation
                       .AnnotatedMembership
                   defaultValue) {
@@ -7176,6 +7239,7 @@ public final class Explanations {
       }
 
       public Builder clearMemberships() {
+        bitField0_ = (bitField0_ & ~0x00000010);
         internalGetMutableMemberships().getMutableMap().clear();
         return this;
       }
@@ -7218,6 +7282,7 @@ public final class Explanations {
               google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation
                   .AnnotatedMembership>
           getMutableMemberships() {
+        bitField0_ |= 0x00000010;
         return internalGetMutableMemberships().getMutableMap();
       }
       /**
@@ -7255,8 +7320,8 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableMemberships().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
@@ -7291,6 +7356,7 @@ public final class Explanations {
                       .AnnotatedMembership>
               values) {
         internalGetMutableMemberships().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000010;
         return this;
       }
 
@@ -7325,8 +7391,8 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder setRelevanceValue(int value) {
-
         relevance_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -7344,9 +7410,8 @@ public final class Explanations {
        */
       @java.lang.Override
       public google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance getRelevance() {
-        @SuppressWarnings("deprecation")
         google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance result =
-            google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.valueOf(
+            google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.forNumber(
                 relevance_);
         return result == null
             ? google.cloud.policytroubleshooter.v1.Explanations.HeuristicRelevance.UNRECOGNIZED
@@ -7370,7 +7435,7 @@ public final class Explanations {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000020;
         relevance_ = value.getNumber();
         onChanged();
         return this;
@@ -7388,7 +7453,7 @@ public final class Explanations {
        * @return This builder for chaining.
        */
       public Builder clearRelevance() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         relevance_ = 0;
         onChanged();
         return this;
@@ -7413,7 +7478,7 @@ public final class Explanations {
        * @return Whether the condition field is set.
        */
       public boolean hasCondition() {
-        return conditionBuilder_ != null || condition_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        *
@@ -7454,11 +7519,11 @@ public final class Explanations {
             throw new NullPointerException();
           }
           condition_ = value;
-          onChanged();
         } else {
           conditionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -7476,11 +7541,11 @@ public final class Explanations {
       public Builder setCondition(com.google.type.Expr.Builder builderForValue) {
         if (conditionBuilder_ == null) {
           condition_ = builderForValue.build();
-          onChanged();
         } else {
           conditionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -7497,17 +7562,18 @@ public final class Explanations {
        */
       public Builder mergeCondition(com.google.type.Expr value) {
         if (conditionBuilder_ == null) {
-          if (condition_ != null) {
-            condition_ =
-                com.google.type.Expr.newBuilder(condition_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000040) != 0)
+              && condition_ != null
+              && condition_ != com.google.type.Expr.getDefaultInstance()) {
+            getConditionBuilder().mergeFrom(value);
           } else {
             condition_ = value;
           }
-          onChanged();
         } else {
           conditionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -7523,14 +7589,13 @@ public final class Explanations {
        * <code>.google.type.Expr condition = 7;</code>
        */
       public Builder clearCondition() {
-        if (conditionBuilder_ == null) {
-          condition_ = null;
-          onChanged();
-        } else {
-          condition_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        condition_ = null;
+        if (conditionBuilder_ != null) {
+          conditionBuilder_.dispose();
           conditionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -7546,7 +7611,7 @@ public final class Explanations {
        * <code>.google.type.Expr condition = 7;</code>
        */
       public com.google.type.Expr.Builder getConditionBuilder() {
-
+        bitField0_ |= 0x00000040;
         onChanged();
         return getConditionFieldBuilder().getBuilder();
       }

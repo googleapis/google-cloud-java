@@ -398,6 +398,7 @@ public final class ExportErrorsConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -427,12 +428,21 @@ public final class ExportErrorsConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.retail.v2alpha.ExportErrorsConfig buildPartial() {
       com.google.cloud.retail.v2alpha.ExportErrorsConfig result =
           new com.google.cloud.retail.v2alpha.ExportErrorsConfig(this);
-      if (destinationCase_ == 1) {
-        result.destination_ = destination_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.ExportErrorsConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.retail.v2alpha.ExportErrorsConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
     }
 
     @java.lang.Override
@@ -557,6 +567,8 @@ public final class ExportErrorsConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

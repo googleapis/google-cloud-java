@@ -140,7 +140,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object action_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object action_ = "";
   /**
    *
    *
@@ -193,7 +195,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resourceType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceType_ = "";
   /**
    *
    *
@@ -246,7 +250,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -297,7 +303,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 4;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -348,7 +356,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_RESOURCE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object sourceResource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceResource_ = "";
   /**
    *
    *
@@ -405,7 +415,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_PATH_FIELD_NUMBER = 6;
-  private volatile java.lang.Object sourcePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourcePath_ = "";
   /**
    *
    *
@@ -581,6 +593,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                     com.google.protobuf.Value.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> pathFilters_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -720,8 +733,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.Value getPathFiltersOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue) {
+  public /* nullable */ com.google.protobuf.Value getPathFiltersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -794,6 +809,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.recommender.v1.ValueMatcher.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.recommender.v1.ValueMatcher>
       pathValueMatchers_;
@@ -873,8 +889,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrDefault(
-      java.lang.String key, com.google.cloud.recommender.v1.ValueMatcher defaultValue) {
+  public /* nullable */ com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.recommender.v1.ValueMatcher defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1260,18 +1278,13 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       action_ = "";
-
       resourceType_ = "";
-
       resource_ = "";
-
       path_ = "";
-
       sourceResource_ = "";
-
       sourcePath_ = "";
-
       if (valueBuilder_ != null) {
         valueBuilder_.clear();
       }
@@ -1309,34 +1322,53 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommender.v1.Operation buildPartial() {
       com.google.cloud.recommender.v1.Operation result =
           new com.google.cloud.recommender.v1.Operation(this);
-      int from_bitField0_ = bitField0_;
-      result.action_ = action_;
-      result.resourceType_ = resourceType_;
-      result.resource_ = resource_;
-      result.path_ = path_;
-      result.sourceResource_ = sourceResource_;
-      result.sourcePath_ = sourcePath_;
-      if (pathValueCase_ == 7) {
-        if (valueBuilder_ == null) {
-          result.pathValue_ = pathValue_;
-        } else {
-          result.pathValue_ = valueBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (pathValueCase_ == 10) {
-        if (valueMatcherBuilder_ == null) {
-          result.pathValue_ = pathValue_;
-        } else {
-          result.pathValue_ = valueMatcherBuilder_.build();
-        }
-      }
-      result.pathFilters_ = internalGetPathFilters();
-      result.pathFilters_.makeImmutable();
-      result.pathValueMatchers_ = internalGetPathValueMatchers();
-      result.pathValueMatchers_.makeImmutable();
-      result.pathValueCase_ = pathValueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommender.v1.Operation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.action_ = action_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sourceResource_ = sourceResource_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sourcePath_ = sourcePath_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.pathFilters_ = internalGetPathFilters();
+        result.pathFilters_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.pathValueMatchers_ = internalGetPathValueMatchers();
+        result.pathValueMatchers_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.recommender.v1.Operation result) {
+      result.pathValueCase_ = pathValueCase_;
+      result.pathValue_ = this.pathValue_;
+      if (pathValueCase_ == 7 && valueBuilder_ != null) {
+        result.pathValue_ = valueBuilder_.build();
+      }
+      if (pathValueCase_ == 10 && valueMatcherBuilder_ != null) {
+        result.pathValue_ = valueMatcherBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1386,30 +1418,38 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.recommender.v1.Operation.getDefaultInstance()) return this;
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResourceType().isEmpty()) {
         resourceType_ = other.resourceType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getSourceResource().isEmpty()) {
         sourceResource_ = other.sourceResource_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getSourcePath().isEmpty()) {
         sourcePath_ = other.sourcePath_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       internalGetMutablePathFilters().mergeFrom(other.internalGetPathFilters());
+      bitField0_ |= 0x00000100;
       internalGetMutablePathValueMatchers().mergeFrom(other.internalGetPathValueMatchers());
+      bitField0_ |= 0x00000200;
       switch (other.getPathValueCase()) {
         case VALUE:
           {
@@ -1455,37 +1495,37 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 action_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 resourceType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 sourceResource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 sourcePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -1504,6 +1544,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutablePathFilters()
                     .getMutableMap()
                     .put(pathFilters__.getKey(), pathFilters__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 82:
@@ -1523,6 +1564,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutablePathValueMatchers()
                     .getMutableMap()
                     .put(pathValueMatchers__.getKey(), pathValueMatchers__.getValue());
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             default:
@@ -1625,8 +1667,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1644,8 +1686,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
       action_ = getDefaultInstance().getAction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1668,8 +1710,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1741,8 +1783,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1760,8 +1802,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-
       resourceType_ = getDefaultInstance().getResourceType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1784,8 +1826,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1854,8 +1896,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1872,8 +1914,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1895,8 +1937,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1965,8 +2007,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1983,8 +2025,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2006,8 +2048,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2085,8 +2127,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceResource_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2106,8 +2148,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceResource() {
-
       sourceResource_ = getDefaultInstance().getSourceResource();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2132,8 +2174,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceResource_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2202,8 +2244,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourcePath_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2220,8 +2262,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourcePath() {
-
       sourcePath_ = getDefaultInstance().getSourcePath();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2243,8 +2285,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourcePath_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2468,7 +2510,6 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       pathValueCase_ = 7;
       onChanged();
-      ;
       return valueBuilder_;
     }
 
@@ -2687,7 +2728,6 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       pathValueCase_ = 10;
       onChanged();
-      ;
       return valueMatcherBuilder_;
     }
 
@@ -2704,8 +2744,6 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
         internalGetMutablePathFilters() {
-      onChanged();
-      ;
       if (pathFilters_ == null) {
         pathFilters_ =
             com.google.protobuf.MapField.newMapField(PathFiltersDefaultEntryHolder.defaultEntry);
@@ -2713,6 +2751,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (!pathFilters_.isMutable()) {
         pathFilters_ = pathFilters_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return pathFilters_;
     }
 
@@ -2845,8 +2885,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getPathFiltersOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getPathFiltersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2904,6 +2946,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearPathFilters() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutablePathFilters().getMutableMap().clear();
       return this;
     }
@@ -2953,6 +2996,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutablePathFilters() {
+      bitField0_ |= 0x00000100;
       return internalGetMutablePathFilters().getMutableMap();
     }
     /**
@@ -2998,8 +3042,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutablePathFilters().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -3041,6 +3085,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllPathFilters(
         java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutablePathFilters().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -3061,8 +3106,6 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.recommender.v1.ValueMatcher>
         internalGetMutablePathValueMatchers() {
-      onChanged();
-      ;
       if (pathValueMatchers_ == null) {
         pathValueMatchers_ =
             com.google.protobuf.MapField.newMapField(
@@ -3071,6 +3114,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (!pathValueMatchers_.isMutable()) {
         pathValueMatchers_ = pathValueMatchers_.copy();
       }
+      bitField0_ |= 0x00000200;
+      onChanged();
       return pathValueMatchers_;
     }
 
@@ -3139,8 +3184,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrDefault(
-        java.lang.String key, com.google.cloud.recommender.v1.ValueMatcher defaultValue) {
+    public /* nullable */ com.google.cloud.recommender.v1.ValueMatcher
+        getPathValueMatchersOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.recommender.v1.ValueMatcher defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3177,6 +3225,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearPathValueMatchers() {
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutablePathValueMatchers().getMutableMap().clear();
       return this;
     }
@@ -3205,6 +3254,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher>
         getMutablePathValueMatchers() {
+      bitField0_ |= 0x00000200;
       return internalGetMutablePathValueMatchers().getMutableMap();
     }
     /**
@@ -3229,8 +3279,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutablePathValueMatchers().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -3250,6 +3300,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllPathValueMatchers(
         java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher> values) {
       internalGetMutablePathValueMatchers().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
       return this;
     }
 

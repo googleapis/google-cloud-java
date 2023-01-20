@@ -68,7 +68,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_ALL_BUNDLE_IDS_FIELD_NUMBER = 2;
-  private boolean allowAllBundleIds_;
+  private boolean allowAllBundleIds_ = false;
   /**
    *
    *
@@ -86,6 +86,8 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOWED_BUNDLE_IDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowedBundleIds_;
   /**
    *
@@ -363,10 +365,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allowAllBundleIds_ = false;
-
       allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -394,15 +396,28 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.IOSKeySettings buildPartial() {
       com.google.recaptchaenterprise.v1.IOSKeySettings result =
           new com.google.recaptchaenterprise.v1.IOSKeySettings(this);
-      int from_bitField0_ = bitField0_;
-      result.allowAllBundleIds_ = allowAllBundleIds_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        allowedBundleIds_ = allowedBundleIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.allowedBundleIds_ = allowedBundleIds_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.recaptchaenterprise.v1.IOSKeySettings result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        allowedBundleIds_ = allowedBundleIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.allowedBundleIds_ = allowedBundleIds_;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.IOSKeySettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allowAllBundleIds_ = allowAllBundleIds_;
+      }
     }
 
     @java.lang.Override
@@ -457,7 +472,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowedBundleIds_.isEmpty()) {
         if (allowedBundleIds_.isEmpty()) {
           allowedBundleIds_ = other.allowedBundleIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAllowedBundleIdsIsMutable();
           allowedBundleIds_.addAll(other.allowedBundleIds_);
@@ -500,7 +515,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 allowAllBundleIds_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             default:
@@ -553,6 +568,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowAllBundleIds(boolean value) {
 
       allowAllBundleIds_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -568,7 +584,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowAllBundleIds() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allowAllBundleIds_ = false;
       onChanged();
       return this;
@@ -578,9 +594,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAllowedBundleIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         allowedBundleIds_ = new com.google.protobuf.LazyStringArrayList(allowedBundleIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -723,7 +739,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAllowedBundleIds() {
       allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

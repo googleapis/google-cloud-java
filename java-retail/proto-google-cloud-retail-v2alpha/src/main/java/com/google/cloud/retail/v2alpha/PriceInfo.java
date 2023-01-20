@@ -282,7 +282,9 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.retail.v2alpha.IntervalOrBuilder getPriceOrBuilder() {
-      return getPrice();
+      return price_ == null
+          ? com.google.cloud.retail.v2alpha.Interval.getDefaultInstance()
+          : price_;
     }
 
     public static final int ORIGINAL_PRICE_FIELD_NUMBER = 2;
@@ -345,7 +347,9 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.retail.v2alpha.IntervalOrBuilder getOriginalPriceOrBuilder() {
-      return getOriginalPrice();
+      return originalPrice_ == null
+          ? com.google.cloud.retail.v2alpha.Interval.getDefaultInstance()
+          : originalPrice_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -570,16 +574,15 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (priceBuilder_ == null) {
-          price_ = null;
-        } else {
-          price_ = null;
+        bitField0_ = 0;
+        price_ = null;
+        if (priceBuilder_ != null) {
+          priceBuilder_.dispose();
           priceBuilder_ = null;
         }
-        if (originalPriceBuilder_ == null) {
-          originalPrice_ = null;
-        } else {
-          originalPrice_ = null;
+        originalPrice_ = null;
+        if (originalPriceBuilder_ != null) {
+          originalPriceBuilder_.dispose();
           originalPriceBuilder_ = null;
         }
         return this;
@@ -609,18 +612,22 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2alpha.PriceInfo.PriceRange buildPartial() {
         com.google.cloud.retail.v2alpha.PriceInfo.PriceRange result =
             new com.google.cloud.retail.v2alpha.PriceInfo.PriceRange(this);
-        if (priceBuilder_ == null) {
-          result.price_ = price_;
-        } else {
-          result.price_ = priceBuilder_.build();
-        }
-        if (originalPriceBuilder_ == null) {
-          result.originalPrice_ = originalPrice_;
-        } else {
-          result.originalPrice_ = originalPriceBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.retail.v2alpha.PriceInfo.PriceRange result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.price_ = priceBuilder_ == null ? price_ : priceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.originalPrice_ =
+              originalPriceBuilder_ == null ? originalPrice_ : originalPriceBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -706,13 +713,13 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getPriceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getOriginalPriceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -731,6 +738,8 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.retail.v2alpha.Interval price_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -755,7 +764,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the price field is set.
        */
       public boolean hasPrice() {
-        return priceBuilder_ != null || price_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -802,11 +811,11 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           price_ = value;
-          onChanged();
         } else {
           priceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -826,11 +835,11 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       public Builder setPrice(com.google.cloud.retail.v2alpha.Interval.Builder builderForValue) {
         if (priceBuilder_ == null) {
           price_ = builderForValue.build();
-          onChanged();
         } else {
           priceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -849,19 +858,18 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergePrice(com.google.cloud.retail.v2alpha.Interval value) {
         if (priceBuilder_ == null) {
-          if (price_ != null) {
-            price_ =
-                com.google.cloud.retail.v2alpha.Interval.newBuilder(price_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && price_ != null
+              && price_ != com.google.cloud.retail.v2alpha.Interval.getDefaultInstance()) {
+            getPriceBuilder().mergeFrom(value);
           } else {
             price_ = value;
           }
-          onChanged();
         } else {
           priceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -879,14 +887,13 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.retail.v2alpha.Interval price = 1;</code>
        */
       public Builder clearPrice() {
-        if (priceBuilder_ == null) {
-          price_ = null;
-          onChanged();
-        } else {
-          price_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        price_ = null;
+        if (priceBuilder_ != null) {
+          priceBuilder_.dispose();
           priceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -904,7 +911,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.retail.v2alpha.Interval price = 1;</code>
        */
       public com.google.cloud.retail.v2alpha.Interval.Builder getPriceBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getPriceFieldBuilder().getBuilder();
       }
@@ -985,7 +992,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the originalPrice field is set.
        */
       public boolean hasOriginalPrice() {
-        return originalPriceBuilder_ != null || originalPrice_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1032,11 +1039,11 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           originalPrice_ = value;
-          onChanged();
         } else {
           originalPriceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1057,11 +1064,11 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.retail.v2alpha.Interval.Builder builderForValue) {
         if (originalPriceBuilder_ == null) {
           originalPrice_ = builderForValue.build();
-          onChanged();
         } else {
           originalPriceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1080,19 +1087,18 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeOriginalPrice(com.google.cloud.retail.v2alpha.Interval value) {
         if (originalPriceBuilder_ == null) {
-          if (originalPrice_ != null) {
-            originalPrice_ =
-                com.google.cloud.retail.v2alpha.Interval.newBuilder(originalPrice_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && originalPrice_ != null
+              && originalPrice_ != com.google.cloud.retail.v2alpha.Interval.getDefaultInstance()) {
+            getOriginalPriceBuilder().mergeFrom(value);
           } else {
             originalPrice_ = value;
           }
-          onChanged();
         } else {
           originalPriceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1110,14 +1116,13 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.retail.v2alpha.Interval original_price = 2;</code>
        */
       public Builder clearOriginalPrice() {
-        if (originalPriceBuilder_ == null) {
-          originalPrice_ = null;
-          onChanged();
-        } else {
-          originalPrice_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        originalPrice_ = null;
+        if (originalPriceBuilder_ != null) {
+          originalPriceBuilder_.dispose();
           originalPriceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1135,7 +1140,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.retail.v2alpha.Interval original_price = 2;</code>
        */
       public com.google.cloud.retail.v2alpha.Interval.Builder getOriginalPriceBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getOriginalPriceFieldBuilder().getBuilder();
       }
@@ -1258,7 +1263,9 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CURRENCY_CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object currencyCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currencyCode_ = "";
   /**
    *
    *
@@ -1327,7 +1334,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRICE_FIELD_NUMBER = 2;
-  private float price_;
+  private float price_ = 0F;
   /**
    *
    *
@@ -1348,7 +1355,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORIGINAL_PRICE_FIELD_NUMBER = 3;
-  private float originalPrice_;
+  private float originalPrice_ = 0F;
   /**
    *
    *
@@ -1371,7 +1378,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COST_FIELD_NUMBER = 4;
-  private float cost_;
+  private float cost_ = 0F;
   /**
    *
    *
@@ -1474,7 +1481,9 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPriceEffectiveTimeOrBuilder() {
-    return getPriceEffectiveTime();
+    return priceEffectiveTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : priceEffectiveTime_;
   }
 
   public static final int PRICE_EXPIRE_TIME_FIELD_NUMBER = 6;
@@ -1558,7 +1567,9 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPriceExpireTimeOrBuilder() {
-    return getPriceExpireTime();
+    return priceExpireTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : priceExpireTime_;
   }
 
   public static final int PRICE_RANGE_FIELD_NUMBER = 7;
@@ -1639,7 +1650,9 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.retail.v2alpha.PriceInfo.PriceRangeOrBuilder getPriceRangeOrBuilder() {
-    return getPriceRange();
+    return priceRange_ == null
+        ? com.google.cloud.retail.v2alpha.PriceInfo.PriceRange.getDefaultInstance()
+        : priceRange_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1911,30 +1924,24 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       currencyCode_ = "";
-
       price_ = 0F;
-
       originalPrice_ = 0F;
-
       cost_ = 0F;
-
-      if (priceEffectiveTimeBuilder_ == null) {
-        priceEffectiveTime_ = null;
-      } else {
-        priceEffectiveTime_ = null;
+      priceEffectiveTime_ = null;
+      if (priceEffectiveTimeBuilder_ != null) {
+        priceEffectiveTimeBuilder_.dispose();
         priceEffectiveTimeBuilder_ = null;
       }
-      if (priceExpireTimeBuilder_ == null) {
-        priceExpireTime_ = null;
-      } else {
-        priceExpireTime_ = null;
+      priceExpireTime_ = null;
+      if (priceExpireTimeBuilder_ != null) {
+        priceExpireTimeBuilder_.dispose();
         priceExpireTimeBuilder_ = null;
       }
-      if (priceRangeBuilder_ == null) {
-        priceRange_ = null;
-      } else {
-        priceRange_ = null;
+      priceRange_ = null;
+      if (priceRangeBuilder_ != null) {
+        priceRangeBuilder_.dispose();
         priceRangeBuilder_ = null;
       }
       return this;
@@ -1964,27 +1971,40 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.PriceInfo buildPartial() {
       com.google.cloud.retail.v2alpha.PriceInfo result =
           new com.google.cloud.retail.v2alpha.PriceInfo(this);
-      result.currencyCode_ = currencyCode_;
-      result.price_ = price_;
-      result.originalPrice_ = originalPrice_;
-      result.cost_ = cost_;
-      if (priceEffectiveTimeBuilder_ == null) {
-        result.priceEffectiveTime_ = priceEffectiveTime_;
-      } else {
-        result.priceEffectiveTime_ = priceEffectiveTimeBuilder_.build();
-      }
-      if (priceExpireTimeBuilder_ == null) {
-        result.priceExpireTime_ = priceExpireTime_;
-      } else {
-        result.priceExpireTime_ = priceExpireTimeBuilder_.build();
-      }
-      if (priceRangeBuilder_ == null) {
-        result.priceRange_ = priceRange_;
-      } else {
-        result.priceRange_ = priceRangeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.PriceInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.currencyCode_ = currencyCode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.price_ = price_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.originalPrice_ = originalPrice_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cost_ = cost_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.priceEffectiveTime_ =
+            priceEffectiveTimeBuilder_ == null
+                ? priceEffectiveTime_
+                : priceEffectiveTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.priceExpireTime_ =
+            priceExpireTimeBuilder_ == null ? priceExpireTime_ : priceExpireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.priceRange_ = priceRangeBuilder_ == null ? priceRange_ : priceRangeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2034,6 +2054,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.retail.v2alpha.PriceInfo.getDefaultInstance()) return this;
       if (!other.getCurrencyCode().isEmpty()) {
         currencyCode_ = other.currencyCode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPrice() != 0F) {
@@ -2083,44 +2104,44 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 currencyCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 price_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 originalPrice_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             case 37:
               {
                 cost_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 42:
               {
                 input.readMessage(
                     getPriceEffectiveTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getPriceExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getPriceRangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -2139,6 +2160,8 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object currencyCode_ = "";
     /**
@@ -2231,8 +2254,8 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       currencyCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2258,8 +2281,8 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCurrencyCode() {
-
       currencyCode_ = getDefaultInstance().getCurrencyCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2290,8 +2313,8 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       currencyCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2333,6 +2356,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setPrice(float value) {
 
       price_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2351,7 +2375,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrice() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       price_ = 0F;
       onChanged();
       return this;
@@ -2398,6 +2422,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setOriginalPrice(float value) {
 
       originalPrice_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2418,7 +2443,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOriginalPrice() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       originalPrice_ = 0F;
       onChanged();
       return this;
@@ -2465,6 +2490,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setCost(float value) {
 
       cost_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2485,7 +2511,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCost() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       cost_ = 0F;
       onChanged();
       return this;
@@ -2521,7 +2547,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the priceEffectiveTime field is set.
      */
     public boolean hasPriceEffectiveTime() {
-      return priceEffectiveTimeBuilder_ != null || priceEffectiveTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2582,11 +2608,11 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         priceEffectiveTime_ = value;
-        onChanged();
       } else {
         priceEffectiveTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2613,11 +2639,11 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setPriceEffectiveTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (priceEffectiveTimeBuilder_ == null) {
         priceEffectiveTime_ = builderForValue.build();
-        onChanged();
       } else {
         priceEffectiveTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2643,19 +2669,18 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePriceEffectiveTime(com.google.protobuf.Timestamp value) {
       if (priceEffectiveTimeBuilder_ == null) {
-        if (priceEffectiveTime_ != null) {
-          priceEffectiveTime_ =
-              com.google.protobuf.Timestamp.newBuilder(priceEffectiveTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && priceEffectiveTime_ != null
+            && priceEffectiveTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getPriceEffectiveTimeBuilder().mergeFrom(value);
         } else {
           priceEffectiveTime_ = value;
         }
-        onChanged();
       } else {
         priceEffectiveTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2680,14 +2705,13 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp price_effective_time = 5;</code>
      */
     public Builder clearPriceEffectiveTime() {
-      if (priceEffectiveTimeBuilder_ == null) {
-        priceEffectiveTime_ = null;
-        onChanged();
-      } else {
-        priceEffectiveTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      priceEffectiveTime_ = null;
+      if (priceEffectiveTimeBuilder_ != null) {
+        priceEffectiveTimeBuilder_.dispose();
         priceEffectiveTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2712,7 +2736,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp price_effective_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPriceEffectiveTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getPriceEffectiveTimeFieldBuilder().getBuilder();
     }
@@ -2814,7 +2838,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the priceExpireTime field is set.
      */
     public boolean hasPriceExpireTime() {
-      return priceExpireTimeBuilder_ != null || priceExpireTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2875,11 +2899,11 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         priceExpireTime_ = value;
-        onChanged();
       } else {
         priceExpireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2906,11 +2930,11 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setPriceExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (priceExpireTimeBuilder_ == null) {
         priceExpireTime_ = builderForValue.build();
-        onChanged();
       } else {
         priceExpireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2936,19 +2960,18 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePriceExpireTime(com.google.protobuf.Timestamp value) {
       if (priceExpireTimeBuilder_ == null) {
-        if (priceExpireTime_ != null) {
-          priceExpireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(priceExpireTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && priceExpireTime_ != null
+            && priceExpireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getPriceExpireTimeBuilder().mergeFrom(value);
         } else {
           priceExpireTime_ = value;
         }
-        onChanged();
       } else {
         priceExpireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2973,14 +2996,13 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp price_expire_time = 6;</code>
      */
     public Builder clearPriceExpireTime() {
-      if (priceExpireTimeBuilder_ == null) {
-        priceExpireTime_ = null;
-        onChanged();
-      } else {
-        priceExpireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      priceExpireTime_ = null;
+      if (priceExpireTimeBuilder_ != null) {
+        priceExpireTimeBuilder_.dispose();
         priceExpireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3005,7 +3027,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp price_expire_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPriceExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getPriceExpireTimeFieldBuilder().getBuilder();
     }
@@ -3106,7 +3128,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the priceRange field is set.
      */
     public boolean hasPriceRange() {
-      return priceRangeBuilder_ != null || priceRange_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3165,11 +3187,11 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         priceRange_ = value;
-        onChanged();
       } else {
         priceRangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3196,11 +3218,11 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.retail.v2alpha.PriceInfo.PriceRange.Builder builderForValue) {
       if (priceRangeBuilder_ == null) {
         priceRange_ = builderForValue.build();
-        onChanged();
       } else {
         priceRangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3225,19 +3247,19 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePriceRange(com.google.cloud.retail.v2alpha.PriceInfo.PriceRange value) {
       if (priceRangeBuilder_ == null) {
-        if (priceRange_ != null) {
-          priceRange_ =
-              com.google.cloud.retail.v2alpha.PriceInfo.PriceRange.newBuilder(priceRange_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && priceRange_ != null
+            && priceRange_
+                != com.google.cloud.retail.v2alpha.PriceInfo.PriceRange.getDefaultInstance()) {
+          getPriceRangeBuilder().mergeFrom(value);
         } else {
           priceRange_ = value;
         }
-        onChanged();
       } else {
         priceRangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3261,14 +3283,13 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPriceRange() {
-      if (priceRangeBuilder_ == null) {
-        priceRange_ = null;
-        onChanged();
-      } else {
-        priceRange_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      priceRange_ = null;
+      if (priceRangeBuilder_ != null) {
+        priceRangeBuilder_.dispose();
         priceRangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3292,7 +3313,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.retail.v2alpha.PriceInfo.PriceRange.Builder getPriceRangeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getPriceRangeFieldBuilder().getBuilder();
     }

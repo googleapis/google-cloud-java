@@ -314,7 +314,9 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -521,7 +523,10 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
     @java.lang.Override
     public com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReferenceOrBuilder
         getSubFieldOrBuilder() {
-      return getSubField();
+      return subField_ == null
+          ? com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference
+              .getDefaultInstance()
+          : subField_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -794,12 +799,11 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
-        if (subFieldBuilder_ == null) {
-          subField_ = null;
-        } else {
-          subField_ = null;
+        subField_ = null;
+        if (subFieldBuilder_ != null) {
+          subFieldBuilder_.dispose();
           subFieldBuilder_ = null;
         }
         indexOrKeyCase_ = 0;
@@ -835,21 +839,29 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
           buildPartial() {
         com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference result =
             new com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference(this);
-        result.name_ = name_;
-        if (indexOrKeyCase_ == 2) {
-          result.indexOrKey_ = indexOrKey_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (indexOrKeyCase_ == 4) {
-          result.indexOrKey_ = indexOrKey_;
-        }
-        if (subFieldBuilder_ == null) {
-          result.subField_ = subField_;
-        } else {
-          result.subField_ = subFieldBuilder_.build();
-        }
-        result.indexOrKeyCase_ = indexOrKeyCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.subField_ = subFieldBuilder_ == null ? subField_ : subFieldBuilder_.build();
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference result) {
+        result.indexOrKeyCase_ = indexOrKeyCase_;
+        result.indexOrKey_ = this.indexOrKey_;
       }
 
       @java.lang.Override
@@ -907,6 +919,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasSubField()) {
@@ -959,7 +972,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
@@ -971,7 +984,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
               case 26:
                 {
                   input.readMessage(getSubFieldFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
               case 34:
@@ -1011,6 +1024,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -1073,8 +1088,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1090,8 +1105,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1112,8 +1127,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1162,6 +1177,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder setIndex(int value) {
+
         indexOrKeyCase_ = 2;
         indexOrKey_ = value;
         onChanged();
@@ -1342,7 +1358,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
        * @return Whether the subField field is set.
        */
       public boolean hasSubField() {
-        return subFieldBuilder_ != null || subField_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -1386,11 +1402,11 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
             throw new NullPointerException();
           }
           subField_ = value;
-          onChanged();
         } else {
           subFieldBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1409,11 +1425,11 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
               builderForValue) {
         if (subFieldBuilder_ == null) {
           subField_ = builderForValue.build();
-          onChanged();
         } else {
           subFieldBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1430,20 +1446,20 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
       public Builder mergeSubField(
           com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference value) {
         if (subFieldBuilder_ == null) {
-          if (subField_ != null) {
-            subField_ =
-                com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference
-                    .newBuilder(subField_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && subField_ != null
+              && subField_
+                  != com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference
+                      .getDefaultInstance()) {
+            getSubFieldBuilder().mergeFrom(value);
           } else {
             subField_ = value;
           }
-          onChanged();
         } else {
           subFieldBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1458,14 +1474,13 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
        * </code>
        */
       public Builder clearSubField() {
-        if (subFieldBuilder_ == null) {
-          subField_ = null;
-          onChanged();
-        } else {
-          subField_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        subField_ = null;
+        if (subFieldBuilder_ != null) {
+          subFieldBuilder_.dispose();
           subFieldBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1481,7 +1496,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
        */
       public com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference.Builder
           getSubFieldBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getSubFieldFieldBuilder().getBuilder();
       }
@@ -1606,7 +1621,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -1844,7 +1859,9 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1893,6 +1910,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
   }
 
   public static final int FIELDS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference>
       fields_;
@@ -2020,7 +2039,9 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
   }
 
   public static final int ERROR_MESSAGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object errorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
   /**
    *
    *
@@ -2077,7 +2098,9 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
   }
 
   public static final int OFFENDING_VALUES_FIELD_NUMBER = 5;
-  private volatile java.lang.Object offendingValues_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object offendingValues_ = "";
   /**
    *
    *
@@ -2365,21 +2388,18 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-
       displayName_ = "";
-
       if (fieldsBuilder_ == null) {
         fields_ = java.util.Collections.emptyList();
       } else {
         fields_ = null;
         fieldsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       errorMessage_ = "";
-
       offendingValues_ = "";
-
       return this;
     }
 
@@ -2408,22 +2428,42 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
     public com.google.cloud.optimization.v1.OptimizeToursValidationError buildPartial() {
       com.google.cloud.optimization.v1.OptimizeToursValidationError result =
           new com.google.cloud.optimization.v1.OptimizeToursValidationError(this);
-      int from_bitField0_ = bitField0_;
-      result.code_ = code_;
-      result.displayName_ = displayName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.optimization.v1.OptimizeToursValidationError result) {
       if (fieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.fields_ = fields_;
       } else {
         result.fields_ = fieldsBuilder_.build();
       }
-      result.errorMessage_ = errorMessage_;
-      result.offendingValues_ = offendingValues_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.optimization.v1.OptimizeToursValidationError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.errorMessage_ = errorMessage_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.offendingValues_ = offendingValues_;
+      }
     }
 
     @java.lang.Override
@@ -2478,13 +2518,14 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (fieldsBuilder_ == null) {
         if (!other.fields_.isEmpty()) {
           if (fields_.isEmpty()) {
             fields_ = other.fields_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureFieldsIsMutable();
             fields_.addAll(other.fields_);
@@ -2497,7 +2538,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
             fieldsBuilder_.dispose();
             fieldsBuilder_ = null;
             fields_ = other.fields_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             fieldsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFieldsFieldBuilder()
@@ -2509,10 +2550,12 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
       }
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getOffendingValues().isEmpty()) {
         offendingValues_ = other.offendingValues_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2544,13 +2587,13 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
             case 8:
               {
                 code_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -2571,13 +2614,13 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
             case 34:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 offendingValues_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -3070,6 +3113,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
     public Builder setCode(int value) {
 
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3305,7 +3349,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;
@@ -3372,8 +3416,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3389,8 +3433,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3411,8 +3455,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3422,12 +3466,12 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
         fields_ = java.util.Collections.emptyList();
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         fields_ =
             new java.util.ArrayList<
                 com.google.cloud.optimization.v1.OptimizeToursValidationError.FieldReference>(
                 fields_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3769,7 +3813,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
     public Builder clearFields() {
       if (fieldsBuilder_ == null) {
         fields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         fieldsBuilder_.clear();
@@ -3976,7 +4020,7 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
                     .Builder,
                 com.google.cloud.optimization.v1.OptimizeToursValidationError
                     .FieldReferenceOrBuilder>(
-                fields_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                fields_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         fields_ = null;
       }
       return fieldsBuilder_;
@@ -4055,8 +4099,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4076,8 +4120,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
-
       errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -4102,8 +4146,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4175,8 +4219,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       offendingValues_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4194,8 +4238,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearOffendingValues() {
-
       offendingValues_ = getDefaultInstance().getOffendingValues();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -4218,8 +4262,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       offendingValues_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

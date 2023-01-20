@@ -202,6 +202,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int TAGS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList tags_;
     /**
      *
@@ -481,6 +483,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -514,14 +517,26 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           buildPartial() {
         com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.VirtualMachine result =
             new com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.VirtualMachine(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.VirtualMachine result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           tags_ = tags_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.tags_ = tags_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.VirtualMachine result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -976,7 +991,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int REGION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object region_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object region_ = "";
     /**
      *
      *
@@ -1238,8 +1255,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         region_ = "";
-
         return this;
       }
 
@@ -1273,9 +1290,19 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.InterconnectAttachment result =
             new com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.InterconnectAttachment(
                 this);
-        result.region_ = region_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.InterconnectAttachment result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.region_ = region_;
+        }
       }
 
       @java.lang.Override
@@ -1334,6 +1361,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance()) return this;
         if (!other.getRegion().isEmpty()) {
           region_ = other.region_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1365,7 +1393,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   region_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1384,6 +1412,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object region_ = "";
       /**
@@ -1449,8 +1479,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         region_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1467,8 +1497,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearRegion() {
-
         region_ = getDefaultInstance().getRegion();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1490,8 +1520,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         region_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1877,7 +1907,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int IP_PROTOCOL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ipProtocol_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ipProtocol_ = "";
     /**
      *
      *
@@ -1928,7 +1960,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int SRC_RANGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object srcRange_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object srcRange_ = "";
     /**
      *
      *
@@ -1979,7 +2013,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int DEST_RANGE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object destRange_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object destRange_ = "";
     /**
      *
      *
@@ -2030,7 +2066,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int PROTOCOL_VERSION_FIELD_NUMBER = 6;
-    private int protocolVersion_;
+    private int protocolVersion_ = 0;
     /**
      *
      *
@@ -2066,9 +2102,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.ProtocolVersion
         getProtocolVersion() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.ProtocolVersion result =
-          com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.ProtocolVersion.valueOf(
+          com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.ProtocolVersion.forNumber(
               protocolVersion_);
       return result == null
           ? com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.ProtocolVersion
@@ -2311,14 +2346,11 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         ipProtocol_ = "";
-
         srcRange_ = "";
-
         destRange_ = "";
-
         protocolVersion_ = 0;
-
         return this;
       }
 
@@ -2347,12 +2379,28 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter buildPartial() {
         com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter result =
             new com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter(this);
-        result.ipProtocol_ = ipProtocol_;
-        result.srcRange_ = srcRange_;
-        result.destRange_ = destRange_;
-        result.protocolVersion_ = protocolVersion_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ipProtocol_ = ipProtocol_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.srcRange_ = srcRange_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.destRange_ = destRange_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.protocolVersion_ = protocolVersion_;
+        }
       }
 
       @java.lang.Override
@@ -2407,14 +2455,17 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getIpProtocol().isEmpty()) {
           ipProtocol_ = other.ipProtocol_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getSrcRange().isEmpty()) {
           srcRange_ = other.srcRange_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getDestRange().isEmpty()) {
           destRange_ = other.destRange_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.protocolVersion_ != 0) {
@@ -2449,25 +2500,25 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   ipProtocol_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   srcRange_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   destRange_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 48:
                 {
                   protocolVersion_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 48
               default:
@@ -2486,6 +2537,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object ipProtocol_ = "";
       /**
@@ -2551,8 +2604,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         ipProtocol_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2569,8 +2622,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearIpProtocol() {
-
         ipProtocol_ = getDefaultInstance().getIpProtocol();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2592,8 +2645,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         ipProtocol_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2662,8 +2715,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         srcRange_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2680,8 +2733,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearSrcRange() {
-
         srcRange_ = getDefaultInstance().getSrcRange();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2703,8 +2756,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         srcRange_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2773,8 +2826,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         destRange_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2791,8 +2844,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearDestRange() {
-
         destRange_ = getDefaultInstance().getDestRange();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -2814,8 +2867,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         destRange_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2855,8 +2908,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder setProtocolVersionValue(int value) {
-
         protocolVersion_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2877,10 +2930,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.ProtocolVersion
           getProtocolVersion() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.ProtocolVersion result =
-            com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.ProtocolVersion.valueOf(
-                protocolVersion_);
+            com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.ProtocolVersion
+                .forNumber(protocolVersion_);
         return result == null
             ? com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.ProtocolVersion
                 .UNRECOGNIZED
@@ -2906,7 +2958,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         protocolVersion_ = value.getNumber();
         onChanged();
         return this;
@@ -2926,7 +2978,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearProtocolVersion() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         protocolVersion_ = 0;
         onChanged();
         return this;
@@ -3095,7 +3147,6 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-
     /* nullable */
     java.lang.String getDataOrDefault(
         java.lang.String key,
@@ -3370,7 +3421,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int CODE_FIELD_NUMBER = 1;
-    private int code_;
+    private int code_ = 0;
     /**
      *
      *
@@ -3403,9 +3454,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Code getCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Code result =
-          com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Code.valueOf(code_);
+          com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Code.forNumber(code_);
       return result == null
           ? com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Code.UNRECOGNIZED
           : result;
@@ -3424,6 +3474,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
               "");
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> data_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetData() {
@@ -3496,7 +3547,10 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     @java.lang.Override
-    public java.lang.String getDataOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3530,7 +3584,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int WARNING_MESSAGE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object warningMessage_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object warningMessage_ = "";
     /**
      *
      *
@@ -3832,11 +3888,10 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         code_ = 0;
-
         internalGetMutableData().clear();
         warningMessage_ = "";
-
         return this;
       }
 
@@ -3866,13 +3921,26 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings buildPartial() {
         com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings result =
             new com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings(this);
-        int from_bitField0_ = bitField0_;
-        result.code_ = code_;
-        result.data_ = internalGetData();
-        result.data_.makeImmutable();
-        result.warningMessage_ = warningMessage_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.code_ = code_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.data_ = internalGetData();
+          result.data_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.warningMessage_ = warningMessage_;
+        }
       }
 
       @java.lang.Override
@@ -3930,8 +3998,10 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           setCodeValue(other.getCodeValue());
         }
         internalGetMutableData().mergeFrom(other.internalGetData());
+        bitField0_ |= 0x00000002;
         if (!other.getWarningMessage().isEmpty()) {
           warningMessage_ = other.warningMessage_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3963,7 +4033,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
               case 8:
                 {
                   code_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
@@ -3973,12 +4043,13 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
                           DataDefaultEntryHolder.defaultEntry.getParserForType(),
                           extensionRegistry);
                   internalGetMutableData().getMutableMap().put(data__.getKey(), data__.getValue());
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   warningMessage_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -4033,8 +4104,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder setCodeValue(int value) {
-
         code_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4053,9 +4124,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        */
       @java.lang.Override
       public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Code getCode() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Code result =
-            com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Code.valueOf(code_);
+            com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Code.forNumber(code_);
         return result == null
             ? com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Code.UNRECOGNIZED
             : result;
@@ -4079,7 +4149,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         code_ = value.getNumber();
         onChanged();
         return this;
@@ -4098,7 +4168,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearCode() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         code_ = 0;
         onChanged();
         return this;
@@ -4115,14 +4185,14 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
           internalGetMutableData() {
-        onChanged();
-        ;
         if (data_ == null) {
           data_ = com.google.protobuf.MapField.newMapField(DataDefaultEntryHolder.defaultEntry);
         }
         if (!data_.isMutable()) {
           data_ = data_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return data_;
       }
 
@@ -4192,8 +4262,10 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       @java.lang.Override
-      public java.lang.String getDataOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getDataOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -4228,6 +4300,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       }
 
       public Builder clearData() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableData().getMutableMap().clear();
         return this;
       }
@@ -4256,6 +4329,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableData() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableData().getMutableMap();
       }
       /**
@@ -4280,8 +4354,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableData().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -4301,6 +4375,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        */
       public Builder putAllData(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableData().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -4365,8 +4440,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         warningMessage_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4382,8 +4457,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearWarningMessage() {
-
         warningMessage_ = getDefaultInstance().getWarningMessage();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -4404,8 +4479,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         warningMessage_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4769,7 +4844,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -4865,7 +4942,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -4914,7 +4991,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -4930,6 +5007,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -4987,7 +5065,10 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -5016,7 +5097,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -5067,7 +5150,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NETWORK_FIELD_NUMBER = 6;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -5173,11 +5258,13 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.FilterOrBuilder
       getFilterOrBuilder() {
-    return getFilter();
+    return filter_ == null
+        ? com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.getDefaultInstance()
+        : filter_;
   }
 
   public static final int PRIORITY_FIELD_NUMBER = 11;
-  private int priority_;
+  private int priority_ = 0;
   /**
    *
    *
@@ -5199,6 +5286,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int WARNINGS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings>
       warnings_;
   /**
@@ -5287,7 +5376,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 15;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -5336,7 +5427,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int KIND_FIELD_NUMBER = 16;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -5791,6 +5884,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (virtualMachineBuilder_ != null) {
         virtualMachineBuilder_.clear();
       }
@@ -5798,43 +5892,34 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         interconnectAttachmentBuilder_.clear();
       }
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       description_ = "";
-
       network_ = "";
-
-      if (filterBuilder_ == null) {
-        filter_ = null;
-      } else {
-        filter_ = null;
+      filter_ = null;
+      if (filterBuilder_ != null) {
+        filterBuilder_.dispose();
         filterBuilder_ = null;
       }
       priority_ = 0;
-
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
       } else {
         warnings_ = null;
         warningsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000800);
       selfLink_ = "";
-
       kind_ = "";
-
       targetCase_ = 0;
       target_ = null;
       nextHopCase_ = 0;
@@ -5866,60 +5951,75 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute buildPartial() {
       com.google.cloud.networkconnectivity.v1.PolicyBasedRoute result =
           new com.google.cloud.networkconnectivity.v1.PolicyBasedRoute(this);
-      int from_bitField0_ = bitField0_;
-      if (targetCase_ == 18) {
-        if (virtualMachineBuilder_ == null) {
-          result.target_ = target_;
-        } else {
-          result.target_ = virtualMachineBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (targetCase_ == 9) {
-        if (interconnectAttachmentBuilder_ == null) {
-          result.target_ = target_;
-        } else {
-          result.target_ = interconnectAttachmentBuilder_.build();
-        }
-      }
-      if (nextHopCase_ == 12) {
-        result.nextHop_ = nextHop_;
-      }
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.description_ = description_;
-      result.network_ = network_;
-      if (filterBuilder_ == null) {
-        result.filter_ = filter_;
-      } else {
-        result.filter_ = filterBuilder_.build();
-      }
-      result.priority_ = priority_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkconnectivity.v1.PolicyBasedRoute result) {
       if (warningsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           warnings_ = java.util.Collections.unmodifiableList(warnings_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.warnings_ = warnings_;
       } else {
         result.warnings_ = warningsBuilder_.build();
       }
-      result.selfLink_ = selfLink_;
-      result.kind_ = kind_;
+    }
+
+    private void buildPartial0(com.google.cloud.networkconnectivity.v1.PolicyBasedRoute result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.filter_ = filterBuilder_ == null ? filter_ : filterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.priority_ = priority_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.selfLink_ = selfLink_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.kind_ = kind_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.networkconnectivity.v1.PolicyBasedRoute result) {
       result.targetCase_ = targetCase_;
+      result.target_ = this.target_;
+      if (targetCase_ == 18 && virtualMachineBuilder_ != null) {
+        result.target_ = virtualMachineBuilder_.build();
+      }
+      if (targetCase_ == 9 && interconnectAttachmentBuilder_ != null) {
+        result.target_ = interconnectAttachmentBuilder_.build();
+      }
       result.nextHopCase_ = nextHopCase_;
-      onBuilt();
-      return result;
+      result.nextHop_ = this.nextHop_;
     }
 
     @java.lang.Override
@@ -5970,6 +6070,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -5979,12 +6080,15 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000040;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasFilter()) {
@@ -5997,7 +6101,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         if (!other.warnings_.isEmpty()) {
           if (warnings_.isEmpty()) {
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureWarningsIsMutable();
             warnings_.addAll(other.warnings_);
@@ -6010,7 +6114,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
             warningsBuilder_.dispose();
             warningsBuilder_ = null;
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000800);
             warningsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWarningsFieldBuilder()
@@ -6022,10 +6126,12 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getSelfLink().isEmpty()) {
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getKind().isEmpty()) {
         kind_ = other.kind_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       switch (other.getTargetCase()) {
@@ -6086,19 +6192,19 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
@@ -6110,18 +6216,19 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 50:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 74:
@@ -6134,13 +6241,13 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
             case 82:
               {
                 input.readMessage(getFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
               {
                 priority_ = input.readInt32();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 98:
@@ -6167,13 +6274,13 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
             case 122:
               {
                 selfLink_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 122
             case 130:
               {
                 kind_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 130
             case 146:
@@ -6467,7 +6574,6 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       }
       targetCase_ = 18;
       onChanged();
-      ;
       return virtualMachineBuilder_;
     }
 
@@ -6718,7 +6824,6 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       }
       targetCase_ = 9;
       onChanged();
-      ;
       return interconnectAttachmentBuilder_;
     }
 
@@ -6932,8 +7037,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6950,8 +7055,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -6973,8 +7078,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6999,7 +7104,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -7040,11 +7145,11 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -7061,11 +7166,11 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -7081,17 +7186,18 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -7106,14 +7212,13 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7128,7 +7233,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -7200,7 +7305,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -7241,11 +7346,11 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -7262,11 +7367,11 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -7282,17 +7387,18 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -7307,14 +7413,13 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7329,7 +7434,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -7392,14 +7497,14 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return labels_;
     }
 
@@ -7451,8 +7556,10 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -7481,6 +7588,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -7503,6 +7611,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -7521,8 +7630,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -7536,6 +7645,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -7603,8 +7713,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -7621,8 +7731,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -7644,8 +7754,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -7720,8 +7830,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -7740,8 +7850,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -7765,8 +7875,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -7791,7 +7901,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * @return Whether the filter field is set.
      */
     public boolean hasFilter() {
-      return filterBuilder_ != null || filter_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -7833,11 +7943,11 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         filter_ = value;
-        onChanged();
       } else {
         filterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -7855,11 +7965,11 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.Builder builderForValue) {
       if (filterBuilder_ == null) {
         filter_ = builderForValue.build();
-        onChanged();
       } else {
         filterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -7876,19 +7986,20 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     public Builder mergeFilter(
         com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter value) {
       if (filterBuilder_ == null) {
-        if (filter_ != null) {
-          filter_ =
-              com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.newBuilder(filter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && filter_ != null
+            && filter_
+                != com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter
+                    .getDefaultInstance()) {
+          getFilterBuilder().mergeFrom(value);
         } else {
           filter_ = value;
         }
-        onChanged();
       } else {
         filterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -7903,14 +8014,13 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearFilter() {
-      if (filterBuilder_ == null) {
-        filter_ = null;
-        onChanged();
-      } else {
-        filter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      filter_ = null;
+      if (filterBuilder_ != null) {
+        filterBuilder_.dispose();
         filterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7926,7 +8036,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter.Builder
         getFilterBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getFilterFieldBuilder().getBuilder();
     }
@@ -8018,6 +8128,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     public Builder setPriority(int value) {
 
       priority_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -8037,7 +8148,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       priority_ = 0;
       onChanged();
       return this;
@@ -8047,11 +8158,11 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         warnings_ = java.util.Collections.emptyList();
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         warnings_ =
             new java.util.ArrayList<
                 com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings>(warnings_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -8309,7 +8420,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
     public Builder clearWarnings() {
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         warningsBuilder_.clear();
@@ -8462,7 +8573,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings,
                 com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings.Builder,
                 com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.WarningsOrBuilder>(
-                warnings_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                warnings_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         warnings_ = null;
       }
       return warningsBuilder_;
@@ -8529,8 +8640,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       selfLink_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8546,8 +8657,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -8568,8 +8679,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       selfLink_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8638,8 +8749,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       kind_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -8656,8 +8767,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -8679,8 +8790,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kind_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

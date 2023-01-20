@@ -72,6 +72,8 @@ public final class ListOSPolicyAssignmentRevisionsResponse
   }
 
   public static final int OS_POLICY_ASSIGNMENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicyAssignment> osPolicyAssignments_;
   /**
    *
@@ -148,7 +150,9 @@ public final class ListOSPolicyAssignmentRevisionsResponse
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -412,6 +416,7 @@ public final class ListOSPolicyAssignmentRevisionsResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (osPolicyAssignmentsBuilder_ == null) {
         osPolicyAssignments_ = java.util.Collections.emptyList();
       } else {
@@ -420,7 +425,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -452,7 +456,16 @@ public final class ListOSPolicyAssignmentRevisionsResponse
         buildPartial() {
       com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsResponse result =
           new com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsResponse result) {
       if (osPolicyAssignmentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           osPolicyAssignments_ = java.util.Collections.unmodifiableList(osPolicyAssignments_);
@@ -462,9 +475,14 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       } else {
         result.osPolicyAssignments_ = osPolicyAssignmentsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -546,6 +564,7 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -591,7 +610,7 @@ public final class ListOSPolicyAssignmentRevisionsResponse
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1059,8 +1078,8 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1077,8 +1096,8 @@ public final class ListOSPolicyAssignmentRevisionsResponse
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1100,8 +1119,8 @@ public final class ListOSPolicyAssignmentRevisionsResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

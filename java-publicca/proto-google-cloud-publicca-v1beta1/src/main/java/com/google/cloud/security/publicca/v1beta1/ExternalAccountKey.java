@@ -71,7 +71,9 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KEY_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object keyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyId_ = "";
   /**
    *
    *
@@ -175,7 +179,7 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int B64_MAC_KEY_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString b64MacKey_;
+  private com.google.protobuf.ByteString b64MacKey_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -411,12 +415,10 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       keyId_ = "";
-
       b64MacKey_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -445,11 +447,25 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.security.publicca.v1beta1.ExternalAccountKey buildPartial() {
       com.google.cloud.security.publicca.v1beta1.ExternalAccountKey result =
           new com.google.cloud.security.publicca.v1beta1.ExternalAccountKey(this);
-      result.name_ = name_;
-      result.keyId_ = keyId_;
-      result.b64MacKey_ = b64MacKey_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.publicca.v1beta1.ExternalAccountKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.keyId_ = keyId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.b64MacKey_ = b64MacKey_;
+      }
     }
 
     @java.lang.Override
@@ -501,10 +517,12 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getKeyId().isEmpty()) {
         keyId_ = other.keyId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getB64MacKey() != com.google.protobuf.ByteString.EMPTY) {
@@ -539,19 +557,19 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 keyId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 b64MacKey_ = input.readBytes();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -570,6 +588,8 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -635,8 +655,8 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -653,8 +673,8 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -676,8 +696,8 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,8 +769,8 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -768,8 +788,8 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKeyId() {
-
       keyId_ = getDefaultInstance().getKeyId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -792,8 +812,8 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -834,8 +854,8 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       b64MacKey_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -853,7 +873,7 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearB64MacKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       b64MacKey_ = getDefaultInstance().getB64MacKey();
       onChanged();
       return this;

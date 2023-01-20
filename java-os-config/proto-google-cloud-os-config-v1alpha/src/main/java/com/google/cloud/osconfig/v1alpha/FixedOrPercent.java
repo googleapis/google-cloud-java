@@ -413,6 +413,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       modeCase_ = 0;
       mode_ = null;
       return this;
@@ -442,15 +443,21 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.osconfig.v1alpha.FixedOrPercent buildPartial() {
       com.google.cloud.osconfig.v1alpha.FixedOrPercent result =
           new com.google.cloud.osconfig.v1alpha.FixedOrPercent(this);
-      if (modeCase_ == 1) {
-        result.mode_ = mode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (modeCase_ == 2) {
-        result.mode_ = mode_;
-      }
-      result.modeCase_ = modeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.osconfig.v1alpha.FixedOrPercent result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.osconfig.v1alpha.FixedOrPercent result) {
+      result.modeCase_ = modeCase_;
+      result.mode_ = this.mode_;
     }
 
     @java.lang.Override
@@ -584,6 +591,8 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -628,6 +637,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFixed(int value) {
+
       modeCase_ = 1;
       mode_ = value;
       onChanged();
@@ -700,6 +710,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPercent(int value) {
+
       modeCase_ = 2;
       mode_ = value;
       onChanged();

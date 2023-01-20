@@ -256,7 +256,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int GKE_CLUSTER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object gkeCluster_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gkeCluster_ = "";
   /**
    *
    *
@@ -305,7 +307,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DAG_GCS_PREFIX_FIELD_NUMBER = 2;
-  private volatile java.lang.Object dagGcsPrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dagGcsPrefix_ = "";
   /**
    *
    *
@@ -360,7 +364,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NODE_COUNT_FIELD_NUMBER = 3;
-  private int nodeCount_;
+  private int nodeCount_ = 0;
   /**
    *
    *
@@ -429,7 +433,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfigOrBuilder
       getSoftwareConfigOrBuilder() {
-    return getSoftwareConfig();
+    return softwareConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.getDefaultInstance()
+        : softwareConfig_;
   }
 
   public static final int NODE_CONFIG_FIELD_NUMBER = 5;
@@ -478,7 +484,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfigOrBuilder
       getNodeConfigOrBuilder() {
-    return getNodeConfig();
+    return nodeConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig.getDefaultInstance()
+        : nodeConfig_;
   }
 
   public static final int PRIVATE_ENVIRONMENT_CONFIG_FIELD_NUMBER = 7;
@@ -536,7 +544,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfigOrBuilder
       getPrivateEnvironmentConfigOrBuilder() {
-    return getPrivateEnvironmentConfig();
+    return privateEnvironmentConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig
+            .getDefaultInstance()
+        : privateEnvironmentConfig_;
   }
 
   public static final int WEB_SERVER_NETWORK_ACCESS_CONTROL_FIELD_NUMBER = 9;
@@ -598,7 +609,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.orchestration.airflow.service.v1beta1
           .WebServerNetworkAccessControlOrBuilder
       getWebServerNetworkAccessControlOrBuilder() {
-    return getWebServerNetworkAccessControl();
+    return webServerNetworkAccessControl_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.WebServerNetworkAccessControl
+            .getDefaultInstance()
+        : webServerNetworkAccessControl_;
   }
 
   public static final int DATABASE_CONFIG_FIELD_NUMBER = 10;
@@ -656,7 +670,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfigOrBuilder
       getDatabaseConfigOrBuilder() {
-    return getDatabaseConfig();
+    return databaseConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfig.getDefaultInstance()
+        : databaseConfig_;
   }
 
   public static final int WEB_SERVER_CONFIG_FIELD_NUMBER = 11;
@@ -719,11 +735,16 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfigOrBuilder
       getWebServerConfigOrBuilder() {
-    return getWebServerConfig();
+    return webServerConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfig
+            .getDefaultInstance()
+        : webServerConfig_;
   }
 
   public static final int AIRFLOW_URI_FIELD_NUMBER = 6;
-  private volatile java.lang.Object airflowUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object airflowUri_ = "";
   /**
    *
    *
@@ -832,7 +853,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfigOrBuilder
       getEncryptionConfigOrBuilder() {
-    return getEncryptionConfig();
+    return encryptionConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig
+            .getDefaultInstance()
+        : encryptionConfig_;
   }
 
   public static final int MAINTENANCE_WINDOW_FIELD_NUMBER = 13;
@@ -920,7 +944,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindowOrBuilder
       getMaintenanceWindowOrBuilder() {
-    return getMaintenanceWindow();
+    return maintenanceWindow_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow
+            .getDefaultInstance()
+        : maintenanceWindow_;
   }
 
   public static final int WORKLOADS_CONFIG_FIELD_NUMBER = 15;
@@ -989,11 +1016,14 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfigOrBuilder
       getWorkloadsConfigOrBuilder() {
-    return getWorkloadsConfig();
+    return workloadsConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig
+            .getDefaultInstance()
+        : workloadsConfig_;
   }
 
   public static final int ENVIRONMENT_SIZE_FIELD_NUMBER = 16;
-  private int environmentSize_;
+  private int environmentSize_ = 0;
   /**
    *
    *
@@ -1031,11 +1061,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig.EnvironmentSize
       getEnvironmentSize() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig.EnvironmentSize
         result =
             com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig.EnvironmentSize
-                .valueOf(environmentSize_);
+                .forNumber(environmentSize_);
     return result == null
         ? com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig.EnvironmentSize
             .UNRECOGNIZED
@@ -1110,7 +1139,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.orchestration.airflow.service.v1beta1
           .MasterAuthorizedNetworksConfigOrBuilder
       getMasterAuthorizedNetworksConfigOrBuilder() {
-    return getMasterAuthorizedNetworksConfig();
+    return masterAuthorizedNetworksConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+            .getDefaultInstance()
+        : masterAuthorizedNetworksConfig_;
   }
 
   public static final int RECOVERY_CONFIG_FIELD_NUMBER = 18;
@@ -1171,7 +1203,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfigOrBuilder
       getRecoveryConfigOrBuilder() {
-    return getRecoveryConfig();
+    return recoveryConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.getDefaultInstance()
+        : recoveryConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1582,80 +1616,65 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       gkeCluster_ = "";
-
       dagGcsPrefix_ = "";
-
       nodeCount_ = 0;
-
-      if (softwareConfigBuilder_ == null) {
-        softwareConfig_ = null;
-      } else {
-        softwareConfig_ = null;
+      softwareConfig_ = null;
+      if (softwareConfigBuilder_ != null) {
+        softwareConfigBuilder_.dispose();
         softwareConfigBuilder_ = null;
       }
-      if (nodeConfigBuilder_ == null) {
-        nodeConfig_ = null;
-      } else {
-        nodeConfig_ = null;
+      nodeConfig_ = null;
+      if (nodeConfigBuilder_ != null) {
+        nodeConfigBuilder_.dispose();
         nodeConfigBuilder_ = null;
       }
-      if (privateEnvironmentConfigBuilder_ == null) {
-        privateEnvironmentConfig_ = null;
-      } else {
-        privateEnvironmentConfig_ = null;
+      privateEnvironmentConfig_ = null;
+      if (privateEnvironmentConfigBuilder_ != null) {
+        privateEnvironmentConfigBuilder_.dispose();
         privateEnvironmentConfigBuilder_ = null;
       }
-      if (webServerNetworkAccessControlBuilder_ == null) {
-        webServerNetworkAccessControl_ = null;
-      } else {
-        webServerNetworkAccessControl_ = null;
+      webServerNetworkAccessControl_ = null;
+      if (webServerNetworkAccessControlBuilder_ != null) {
+        webServerNetworkAccessControlBuilder_.dispose();
         webServerNetworkAccessControlBuilder_ = null;
       }
-      if (databaseConfigBuilder_ == null) {
-        databaseConfig_ = null;
-      } else {
-        databaseConfig_ = null;
+      databaseConfig_ = null;
+      if (databaseConfigBuilder_ != null) {
+        databaseConfigBuilder_.dispose();
         databaseConfigBuilder_ = null;
       }
-      if (webServerConfigBuilder_ == null) {
-        webServerConfig_ = null;
-      } else {
-        webServerConfig_ = null;
+      webServerConfig_ = null;
+      if (webServerConfigBuilder_ != null) {
+        webServerConfigBuilder_.dispose();
         webServerConfigBuilder_ = null;
       }
       airflowUri_ = "";
-
-      if (encryptionConfigBuilder_ == null) {
-        encryptionConfig_ = null;
-      } else {
-        encryptionConfig_ = null;
+      encryptionConfig_ = null;
+      if (encryptionConfigBuilder_ != null) {
+        encryptionConfigBuilder_.dispose();
         encryptionConfigBuilder_ = null;
       }
-      if (maintenanceWindowBuilder_ == null) {
-        maintenanceWindow_ = null;
-      } else {
-        maintenanceWindow_ = null;
+      maintenanceWindow_ = null;
+      if (maintenanceWindowBuilder_ != null) {
+        maintenanceWindowBuilder_.dispose();
         maintenanceWindowBuilder_ = null;
       }
-      if (workloadsConfigBuilder_ == null) {
-        workloadsConfig_ = null;
-      } else {
-        workloadsConfig_ = null;
+      workloadsConfig_ = null;
+      if (workloadsConfigBuilder_ != null) {
+        workloadsConfigBuilder_.dispose();
         workloadsConfigBuilder_ = null;
       }
       environmentSize_ = 0;
-
-      if (masterAuthorizedNetworksConfigBuilder_ == null) {
-        masterAuthorizedNetworksConfig_ = null;
-      } else {
-        masterAuthorizedNetworksConfig_ = null;
+      masterAuthorizedNetworksConfig_ = null;
+      if (masterAuthorizedNetworksConfigBuilder_ != null) {
+        masterAuthorizedNetworksConfigBuilder_.dispose();
         masterAuthorizedNetworksConfigBuilder_ = null;
       }
-      if (recoveryConfigBuilder_ == null) {
-        recoveryConfig_ = null;
-      } else {
-        recoveryConfig_ = null;
+      recoveryConfig_ = null;
+      if (recoveryConfigBuilder_ != null) {
+        recoveryConfigBuilder_.dispose();
         recoveryConfigBuilder_ = null;
       }
       return this;
@@ -1688,68 +1707,82 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig(this);
-      result.gkeCluster_ = gkeCluster_;
-      result.dagGcsPrefix_ = dagGcsPrefix_;
-      result.nodeCount_ = nodeCount_;
-      if (softwareConfigBuilder_ == null) {
-        result.softwareConfig_ = softwareConfig_;
-      } else {
-        result.softwareConfig_ = softwareConfigBuilder_.build();
-      }
-      if (nodeConfigBuilder_ == null) {
-        result.nodeConfig_ = nodeConfig_;
-      } else {
-        result.nodeConfig_ = nodeConfigBuilder_.build();
-      }
-      if (privateEnvironmentConfigBuilder_ == null) {
-        result.privateEnvironmentConfig_ = privateEnvironmentConfig_;
-      } else {
-        result.privateEnvironmentConfig_ = privateEnvironmentConfigBuilder_.build();
-      }
-      if (webServerNetworkAccessControlBuilder_ == null) {
-        result.webServerNetworkAccessControl_ = webServerNetworkAccessControl_;
-      } else {
-        result.webServerNetworkAccessControl_ = webServerNetworkAccessControlBuilder_.build();
-      }
-      if (databaseConfigBuilder_ == null) {
-        result.databaseConfig_ = databaseConfig_;
-      } else {
-        result.databaseConfig_ = databaseConfigBuilder_.build();
-      }
-      if (webServerConfigBuilder_ == null) {
-        result.webServerConfig_ = webServerConfig_;
-      } else {
-        result.webServerConfig_ = webServerConfigBuilder_.build();
-      }
-      result.airflowUri_ = airflowUri_;
-      if (encryptionConfigBuilder_ == null) {
-        result.encryptionConfig_ = encryptionConfig_;
-      } else {
-        result.encryptionConfig_ = encryptionConfigBuilder_.build();
-      }
-      if (maintenanceWindowBuilder_ == null) {
-        result.maintenanceWindow_ = maintenanceWindow_;
-      } else {
-        result.maintenanceWindow_ = maintenanceWindowBuilder_.build();
-      }
-      if (workloadsConfigBuilder_ == null) {
-        result.workloadsConfig_ = workloadsConfig_;
-      } else {
-        result.workloadsConfig_ = workloadsConfigBuilder_.build();
-      }
-      result.environmentSize_ = environmentSize_;
-      if (masterAuthorizedNetworksConfigBuilder_ == null) {
-        result.masterAuthorizedNetworksConfig_ = masterAuthorizedNetworksConfig_;
-      } else {
-        result.masterAuthorizedNetworksConfig_ = masterAuthorizedNetworksConfigBuilder_.build();
-      }
-      if (recoveryConfigBuilder_ == null) {
-        result.recoveryConfig_ = recoveryConfig_;
-      } else {
-        result.recoveryConfig_ = recoveryConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gkeCluster_ = gkeCluster_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dagGcsPrefix_ = dagGcsPrefix_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nodeCount_ = nodeCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.softwareConfig_ =
+            softwareConfigBuilder_ == null ? softwareConfig_ : softwareConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nodeConfig_ = nodeConfigBuilder_ == null ? nodeConfig_ : nodeConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.privateEnvironmentConfig_ =
+            privateEnvironmentConfigBuilder_ == null
+                ? privateEnvironmentConfig_
+                : privateEnvironmentConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.webServerNetworkAccessControl_ =
+            webServerNetworkAccessControlBuilder_ == null
+                ? webServerNetworkAccessControl_
+                : webServerNetworkAccessControlBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.databaseConfig_ =
+            databaseConfigBuilder_ == null ? databaseConfig_ : databaseConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.webServerConfig_ =
+            webServerConfigBuilder_ == null ? webServerConfig_ : webServerConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.airflowUri_ = airflowUri_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.encryptionConfig_ =
+            encryptionConfigBuilder_ == null ? encryptionConfig_ : encryptionConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.maintenanceWindow_ =
+            maintenanceWindowBuilder_ == null
+                ? maintenanceWindow_
+                : maintenanceWindowBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.workloadsConfig_ =
+            workloadsConfigBuilder_ == null ? workloadsConfig_ : workloadsConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.environmentSize_ = environmentSize_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.masterAuthorizedNetworksConfig_ =
+            masterAuthorizedNetworksConfigBuilder_ == null
+                ? masterAuthorizedNetworksConfig_
+                : masterAuthorizedNetworksConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.recoveryConfig_ =
+            recoveryConfigBuilder_ == null ? recoveryConfig_ : recoveryConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1804,10 +1837,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
               .getDefaultInstance()) return this;
       if (!other.getGkeCluster().isEmpty()) {
         gkeCluster_ = other.gkeCluster_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDagGcsPrefix().isEmpty()) {
         dagGcsPrefix_ = other.dagGcsPrefix_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getNodeCount() != 0) {
@@ -1833,6 +1868,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getAirflowUri().isEmpty()) {
         airflowUri_ = other.airflowUri_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasEncryptionConfig()) {
@@ -1882,89 +1918,89 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 gkeCluster_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 dagGcsPrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 nodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getSoftwareConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 airflowUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getPrivateEnvironmentConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 74:
               {
                 input.readMessage(
                     getWebServerNetworkAccessControlFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getDatabaseConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getWebServerConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     getEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     getMaintenanceWindowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 106
             case 122:
               {
                 input.readMessage(getWorkloadsConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 122
             case 128:
               {
                 environmentSize_ = input.readEnum();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 128
             case 138:
@@ -1972,13 +2008,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
                 input.readMessage(
                     getMasterAuthorizedNetworksConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(getRecoveryConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 146
             default:
@@ -1997,6 +2033,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object gkeCluster_ = "";
     /**
@@ -2059,8 +2097,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       gkeCluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2076,8 +2114,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearGkeCluster() {
-
       gkeCluster_ = getDefaultInstance().getGkeCluster();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2098,8 +2136,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gkeCluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2174,8 +2212,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       dagGcsPrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2194,8 +2232,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDagGcsPrefix() {
-
       dagGcsPrefix_ = getDefaultInstance().getDagGcsPrefix();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2219,8 +2257,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dagGcsPrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2262,6 +2300,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder setNodeCount(int value) {
 
       nodeCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2280,7 +2319,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       nodeCount_ = 0;
       onChanged();
       return this;
@@ -2305,7 +2344,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the softwareConfig field is set.
      */
     public boolean hasSoftwareConfig() {
-      return softwareConfigBuilder_ != null || softwareConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2347,11 +2386,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         softwareConfig_ = value;
-        onChanged();
       } else {
         softwareConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2369,11 +2408,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (softwareConfigBuilder_ == null) {
         softwareConfig_ = builderForValue.build();
-        onChanged();
       } else {
         softwareConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2389,20 +2428,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeSoftwareConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig value) {
       if (softwareConfigBuilder_ == null) {
-        if (softwareConfig_ != null) {
-          softwareConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.newBuilder(
-                      softwareConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && softwareConfig_ != null
+            && softwareConfig_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig
+                    .getDefaultInstance()) {
+          getSoftwareConfigBuilder().mergeFrom(value);
         } else {
           softwareConfig_ = value;
         }
-        onChanged();
       } else {
         softwareConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2416,14 +2455,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearSoftwareConfig() {
-      if (softwareConfigBuilder_ == null) {
-        softwareConfig_ = null;
-        onChanged();
-      } else {
-        softwareConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      softwareConfig_ = null;
+      if (softwareConfigBuilder_ != null) {
+        softwareConfigBuilder_.dispose();
         softwareConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2438,7 +2476,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.Builder
         getSoftwareConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSoftwareConfigFieldBuilder().getBuilder();
     }
@@ -2508,7 +2546,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the nodeConfig field is set.
      */
     public boolean hasNodeConfig() {
-      return nodeConfigBuilder_ != null || nodeConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2546,11 +2584,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         nodeConfig_ = value;
-        onChanged();
       } else {
         nodeConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2566,11 +2604,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig.Builder builderForValue) {
       if (nodeConfigBuilder_ == null) {
         nodeConfig_ = builderForValue.build();
-        onChanged();
       } else {
         nodeConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2585,20 +2623,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeNodeConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig value) {
       if (nodeConfigBuilder_ == null) {
-        if (nodeConfig_ != null) {
-          nodeConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig.newBuilder(
-                      nodeConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && nodeConfig_ != null
+            && nodeConfig_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig
+                    .getDefaultInstance()) {
+          getNodeConfigBuilder().mergeFrom(value);
         } else {
           nodeConfig_ = value;
         }
-        onChanged();
       } else {
         nodeConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2611,14 +2649,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
      */
     public Builder clearNodeConfig() {
-      if (nodeConfigBuilder_ == null) {
-        nodeConfig_ = null;
-        onChanged();
-      } else {
-        nodeConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      nodeConfig_ = null;
+      if (nodeConfigBuilder_ != null) {
+        nodeConfigBuilder_.dispose();
         nodeConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2632,7 +2669,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig.Builder
         getNodeConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getNodeConfigFieldBuilder().getBuilder();
     }
@@ -2703,7 +2740,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the privateEnvironmentConfig field is set.
      */
     public boolean hasPrivateEnvironmentConfig() {
-      return privateEnvironmentConfigBuilder_ != null || privateEnvironmentConfig_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2747,11 +2784,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         privateEnvironmentConfig_ = value;
-        onChanged();
       } else {
         privateEnvironmentConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2770,11 +2807,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (privateEnvironmentConfigBuilder_ == null) {
         privateEnvironmentConfig_ = builderForValue.build();
-        onChanged();
       } else {
         privateEnvironmentConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2791,20 +2828,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergePrivateEnvironmentConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig value) {
       if (privateEnvironmentConfigBuilder_ == null) {
-        if (privateEnvironmentConfig_ != null) {
-          privateEnvironmentConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig
-                  .newBuilder(privateEnvironmentConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && privateEnvironmentConfig_ != null
+            && privateEnvironmentConfig_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig
+                    .getDefaultInstance()) {
+          getPrivateEnvironmentConfigBuilder().mergeFrom(value);
         } else {
           privateEnvironmentConfig_ = value;
         }
-        onChanged();
       } else {
         privateEnvironmentConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2819,14 +2856,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearPrivateEnvironmentConfig() {
-      if (privateEnvironmentConfigBuilder_ == null) {
-        privateEnvironmentConfig_ = null;
-        onChanged();
-      } else {
-        privateEnvironmentConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      privateEnvironmentConfig_ = null;
+      if (privateEnvironmentConfigBuilder_ != null) {
+        privateEnvironmentConfigBuilder_.dispose();
         privateEnvironmentConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2842,7 +2878,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig.Builder
         getPrivateEnvironmentConfigBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getPrivateEnvironmentConfigFieldBuilder().getBuilder();
     }
@@ -2923,8 +2959,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the webServerNetworkAccessControl field is set.
      */
     public boolean hasWebServerNetworkAccessControl() {
-      return webServerNetworkAccessControlBuilder_ != null
-          || webServerNetworkAccessControl_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2971,11 +3006,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         webServerNetworkAccessControl_ = value;
-        onChanged();
       } else {
         webServerNetworkAccessControlBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2995,11 +3030,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (webServerNetworkAccessControlBuilder_ == null) {
         webServerNetworkAccessControl_ = builderForValue.build();
-        onChanged();
       } else {
         webServerNetworkAccessControlBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3018,20 +3053,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.orchestration.airflow.service.v1beta1.WebServerNetworkAccessControl
             value) {
       if (webServerNetworkAccessControlBuilder_ == null) {
-        if (webServerNetworkAccessControl_ != null) {
-          webServerNetworkAccessControl_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.WebServerNetworkAccessControl
-                  .newBuilder(webServerNetworkAccessControl_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && webServerNetworkAccessControl_ != null
+            && webServerNetworkAccessControl_
+                != com.google.cloud.orchestration.airflow.service.v1beta1
+                    .WebServerNetworkAccessControl.getDefaultInstance()) {
+          getWebServerNetworkAccessControlBuilder().mergeFrom(value);
         } else {
           webServerNetworkAccessControl_ = value;
         }
-        onChanged();
       } else {
         webServerNetworkAccessControlBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3047,14 +3082,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearWebServerNetworkAccessControl() {
-      if (webServerNetworkAccessControlBuilder_ == null) {
-        webServerNetworkAccessControl_ = null;
-        onChanged();
-      } else {
-        webServerNetworkAccessControl_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      webServerNetworkAccessControl_ = null;
+      if (webServerNetworkAccessControlBuilder_ != null) {
+        webServerNetworkAccessControlBuilder_.dispose();
         webServerNetworkAccessControlBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3072,7 +3106,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.orchestration.airflow.service.v1beta1.WebServerNetworkAccessControl
             .Builder
         getWebServerNetworkAccessControlBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getWebServerNetworkAccessControlFieldBuilder().getBuilder();
     }
@@ -3155,7 +3189,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the databaseConfig field is set.
      */
     public boolean hasDatabaseConfig() {
-      return databaseConfigBuilder_ != null || databaseConfig_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3201,11 +3235,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         databaseConfig_ = value;
-        onChanged();
       } else {
         databaseConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3225,11 +3259,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (databaseConfigBuilder_ == null) {
         databaseConfig_ = builderForValue.build();
-        onChanged();
       } else {
         databaseConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3247,20 +3281,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeDatabaseConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfig value) {
       if (databaseConfigBuilder_ == null) {
-        if (databaseConfig_ != null) {
-          databaseConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfig.newBuilder(
-                      databaseConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && databaseConfig_ != null
+            && databaseConfig_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfig
+                    .getDefaultInstance()) {
+          getDatabaseConfigBuilder().mergeFrom(value);
         } else {
           databaseConfig_ = value;
         }
-        onChanged();
       } else {
         databaseConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3276,14 +3310,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearDatabaseConfig() {
-      if (databaseConfigBuilder_ == null) {
-        databaseConfig_ = null;
-        onChanged();
-      } else {
-        databaseConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      databaseConfig_ = null;
+      if (databaseConfigBuilder_ != null) {
+        databaseConfigBuilder_.dispose();
         databaseConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3300,7 +3333,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfig.Builder
         getDatabaseConfigBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getDatabaseConfigFieldBuilder().getBuilder();
     }
@@ -3378,7 +3411,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the webServerConfig field is set.
      */
     public boolean hasWebServerConfig() {
-      return webServerConfigBuilder_ != null || webServerConfig_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3426,11 +3459,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         webServerConfig_ = value;
-        onChanged();
       } else {
         webServerConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3451,11 +3484,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (webServerConfigBuilder_ == null) {
         webServerConfig_ = builderForValue.build();
-        onChanged();
       } else {
         webServerConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3474,20 +3507,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeWebServerConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfig value) {
       if (webServerConfigBuilder_ == null) {
-        if (webServerConfig_ != null) {
-          webServerConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfig.newBuilder(
-                      webServerConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && webServerConfig_ != null
+            && webServerConfig_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfig
+                    .getDefaultInstance()) {
+          getWebServerConfigBuilder().mergeFrom(value);
         } else {
           webServerConfig_ = value;
         }
-        onChanged();
       } else {
         webServerConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3504,14 +3537,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearWebServerConfig() {
-      if (webServerConfigBuilder_ == null) {
-        webServerConfig_ = null;
-        onChanged();
-      } else {
-        webServerConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      webServerConfig_ = null;
+      if (webServerConfigBuilder_ != null) {
+        webServerConfigBuilder_.dispose();
         webServerConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3529,7 +3561,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfig.Builder
         getWebServerConfigBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getWebServerConfigFieldBuilder().getBuilder();
     }
@@ -3654,8 +3686,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       airflowUri_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3673,8 +3705,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAirflowUri() {
-
       airflowUri_ = getDefaultInstance().getAirflowUri();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3697,8 +3729,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       airflowUri_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3725,7 +3757,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the encryptionConfig field is set.
      */
     public boolean hasEncryptionConfig() {
-      return encryptionConfigBuilder_ != null || encryptionConfig_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3771,11 +3803,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         encryptionConfig_ = value;
-        onChanged();
       } else {
         encryptionConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3795,11 +3827,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (encryptionConfigBuilder_ == null) {
         encryptionConfig_ = builderForValue.build();
-        onChanged();
       } else {
         encryptionConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3817,20 +3849,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeEncryptionConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig value) {
       if (encryptionConfigBuilder_ == null) {
-        if (encryptionConfig_ != null) {
-          encryptionConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig.newBuilder(
-                      encryptionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && encryptionConfig_ != null
+            && encryptionConfig_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig
+                    .getDefaultInstance()) {
+          getEncryptionConfigBuilder().mergeFrom(value);
         } else {
           encryptionConfig_ = value;
         }
-        onChanged();
       } else {
         encryptionConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3846,14 +3878,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearEncryptionConfig() {
-      if (encryptionConfigBuilder_ == null) {
-        encryptionConfig_ = null;
-        onChanged();
-      } else {
-        encryptionConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      encryptionConfig_ = null;
+      if (encryptionConfigBuilder_ != null) {
+        encryptionConfigBuilder_.dispose();
         encryptionConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3870,7 +3901,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig.Builder
         getEncryptionConfigBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
@@ -3957,7 +3988,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the maintenanceWindow field is set.
      */
     public boolean hasMaintenanceWindow() {
-      return maintenanceWindowBuilder_ != null || maintenanceWindow_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4021,11 +4052,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         maintenanceWindow_ = value;
-        onChanged();
       } else {
         maintenanceWindowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4054,11 +4085,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (maintenanceWindowBuilder_ == null) {
         maintenanceWindow_ = builderForValue.build();
-        onChanged();
       } else {
         maintenanceWindowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4085,20 +4116,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeMaintenanceWindow(
         com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow value) {
       if (maintenanceWindowBuilder_ == null) {
-        if (maintenanceWindow_ != null) {
-          maintenanceWindow_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow.newBuilder(
-                      maintenanceWindow_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && maintenanceWindow_ != null
+            && maintenanceWindow_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow
+                    .getDefaultInstance()) {
+          getMaintenanceWindowBuilder().mergeFrom(value);
         } else {
           maintenanceWindow_ = value;
         }
-        onChanged();
       } else {
         maintenanceWindowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4123,14 +4154,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearMaintenanceWindow() {
-      if (maintenanceWindowBuilder_ == null) {
-        maintenanceWindow_ = null;
-        onChanged();
-      } else {
-        maintenanceWindow_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      maintenanceWindow_ = null;
+      if (maintenanceWindowBuilder_ != null) {
+        maintenanceWindowBuilder_.dispose();
         maintenanceWindowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4156,7 +4186,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow.Builder
         getMaintenanceWindowBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getMaintenanceWindowFieldBuilder().getBuilder();
     }
@@ -4254,7 +4284,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the workloadsConfig field is set.
      */
     public boolean hasWorkloadsConfig() {
-      return workloadsConfigBuilder_ != null || workloadsConfig_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4306,11 +4336,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         workloadsConfig_ = value;
-        onChanged();
       } else {
         workloadsConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4333,11 +4363,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (workloadsConfigBuilder_ == null) {
         workloadsConfig_ = builderForValue.build();
-        onChanged();
       } else {
         workloadsConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4358,20 +4388,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeWorkloadsConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig value) {
       if (workloadsConfigBuilder_ == null) {
-        if (workloadsConfig_ != null) {
-          workloadsConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.newBuilder(
-                      workloadsConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && workloadsConfig_ != null
+            && workloadsConfig_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig
+                    .getDefaultInstance()) {
+          getWorkloadsConfigBuilder().mergeFrom(value);
         } else {
           workloadsConfig_ = value;
         }
-        onChanged();
       } else {
         workloadsConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4390,14 +4420,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearWorkloadsConfig() {
-      if (workloadsConfigBuilder_ == null) {
-        workloadsConfig_ = null;
-        onChanged();
-      } else {
-        workloadsConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      workloadsConfig_ = null;
+      if (workloadsConfigBuilder_ != null) {
+        workloadsConfigBuilder_.dispose();
         workloadsConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4417,7 +4446,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.Builder
         getWorkloadsConfigBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getWorkloadsConfigFieldBuilder().getBuilder();
     }
@@ -4516,8 +4545,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setEnvironmentSizeValue(int value) {
-
       environmentSize_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4539,11 +4568,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig.EnvironmentSize
         getEnvironmentSize() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig.EnvironmentSize
           result =
               com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig
-                  .EnvironmentSize.valueOf(environmentSize_);
+                  .EnvironmentSize.forNumber(environmentSize_);
       return result == null
           ? com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig.EnvironmentSize
               .UNRECOGNIZED
@@ -4571,7 +4599,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00002000;
       environmentSize_ = value.getNumber();
       onChanged();
       return this;
@@ -4592,7 +4620,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnvironmentSize() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       environmentSize_ = 0;
       onChanged();
       return this;
@@ -4625,8 +4653,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the masterAuthorizedNetworksConfig field is set.
      */
     public boolean hasMasterAuthorizedNetworksConfig() {
-      return masterAuthorizedNetworksConfigBuilder_ != null
-          || masterAuthorizedNetworksConfig_ != null;
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4679,11 +4706,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         masterAuthorizedNetworksConfig_ = value;
-        onChanged();
       } else {
         masterAuthorizedNetworksConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4707,11 +4734,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
         masterAuthorizedNetworksConfig_ = builderForValue.build();
-        onChanged();
       } else {
         masterAuthorizedNetworksConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4733,20 +4760,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
             value) {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
-        if (masterAuthorizedNetworksConfig_ != null) {
-          masterAuthorizedNetworksConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
-                  .newBuilder(masterAuthorizedNetworksConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00004000) != 0)
+            && masterAuthorizedNetworksConfig_ != null
+            && masterAuthorizedNetworksConfig_
+                != com.google.cloud.orchestration.airflow.service.v1beta1
+                    .MasterAuthorizedNetworksConfig.getDefaultInstance()) {
+          getMasterAuthorizedNetworksConfigBuilder().mergeFrom(value);
         } else {
           masterAuthorizedNetworksConfig_ = value;
         }
-        onChanged();
       } else {
         masterAuthorizedNetworksConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4765,14 +4792,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearMasterAuthorizedNetworksConfig() {
-      if (masterAuthorizedNetworksConfigBuilder_ == null) {
-        masterAuthorizedNetworksConfig_ = null;
-        onChanged();
-      } else {
-        masterAuthorizedNetworksConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00004000);
+      masterAuthorizedNetworksConfig_ = null;
+      if (masterAuthorizedNetworksConfigBuilder_ != null) {
+        masterAuthorizedNetworksConfigBuilder_.dispose();
         masterAuthorizedNetworksConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4793,7 +4819,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
             .Builder
         getMasterAuthorizedNetworksConfigBuilder() {
-
+      bitField0_ |= 0x00004000;
       onChanged();
       return getMasterAuthorizedNetworksConfigFieldBuilder().getBuilder();
     }
@@ -4883,7 +4909,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the recoveryConfig field is set.
      */
     public boolean hasRecoveryConfig() {
-      return recoveryConfigBuilder_ != null || recoveryConfig_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4931,11 +4957,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         recoveryConfig_ = value;
-        onChanged();
       } else {
         recoveryConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4956,11 +4982,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (recoveryConfigBuilder_ == null) {
         recoveryConfig_ = builderForValue.build();
-        onChanged();
       } else {
         recoveryConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4979,20 +5005,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeRecoveryConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig value) {
       if (recoveryConfigBuilder_ == null) {
-        if (recoveryConfig_ != null) {
-          recoveryConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.newBuilder(
-                      recoveryConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00008000) != 0)
+            && recoveryConfig_ != null
+            && recoveryConfig_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig
+                    .getDefaultInstance()) {
+          getRecoveryConfigBuilder().mergeFrom(value);
         } else {
           recoveryConfig_ = value;
         }
-        onChanged();
       } else {
         recoveryConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -5009,14 +5035,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearRecoveryConfig() {
-      if (recoveryConfigBuilder_ == null) {
-        recoveryConfig_ = null;
-        onChanged();
-      } else {
-        recoveryConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      recoveryConfig_ = null;
+      if (recoveryConfigBuilder_ != null) {
+        recoveryConfigBuilder_.dispose();
         recoveryConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5034,7 +5059,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.Builder
         getRecoveryConfigBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getRecoveryConfigFieldBuilder().getBuilder();
     }

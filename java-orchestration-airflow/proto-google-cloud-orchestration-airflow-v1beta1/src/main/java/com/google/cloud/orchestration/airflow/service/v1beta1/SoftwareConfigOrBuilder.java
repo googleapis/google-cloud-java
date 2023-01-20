@@ -184,7 +184,6 @@ public interface SoftwareConfigOrBuilder
    * map&lt;string, string&gt; airflow_config_overrides = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getAirflowConfigOverridesOrDefault(
       java.lang.String key,
@@ -285,7 +284,6 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; pypi_packages = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getPypiPackagesOrDefault(
       java.lang.String key,
@@ -431,7 +429,6 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; env_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getEnvVariablesOrDefault(
       java.lang.String key,

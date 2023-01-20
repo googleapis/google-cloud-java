@@ -72,7 +72,9 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REFERRER_URI_FIELD_NUMBER = 6;
-  private volatile java.lang.Object referrerUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object referrerUri_ = "";
   /**
    *
    *
@@ -176,7 +180,9 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAGE_VIEW_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object pageViewId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageViewId_ = "";
   /**
    *
    *
@@ -237,6 +243,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPERIMENT_IDS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList experimentIds_;
   /**
    *
@@ -310,7 +318,9 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RECOMMENDATION_TOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object recommendationToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object recommendationToken_ = "";
   /**
    *
    *
@@ -447,7 +457,9 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMapOrBuilder
       getEventAttributesOrBuilder() {
-    return getEventAttributes();
+    return eventAttributes_ == null
+        ? com.google.cloud.recommendationengine.v1beta1.FeatureMap.getDefaultInstance()
+        : eventAttributes_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -705,20 +717,16 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uri_ = "";
-
       referrerUri_ = "";
-
       pageViewId_ = "";
-
       experimentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       recommendationToken_ = "";
-
-      if (eventAttributesBuilder_ == null) {
-        eventAttributes_ = null;
-      } else {
-        eventAttributes_ = null;
+      eventAttributes_ = null;
+      if (eventAttributesBuilder_ != null) {
+        eventAttributesBuilder_.dispose();
         eventAttributesBuilder_ = null;
       }
       return this;
@@ -748,23 +756,41 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommendationengine.v1beta1.EventDetail buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.EventDetail result =
           new com.google.cloud.recommendationengine.v1beta1.EventDetail(this);
-      int from_bitField0_ = bitField0_;
-      result.uri_ = uri_;
-      result.referrerUri_ = referrerUri_;
-      result.pageViewId_ = pageViewId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        experimentIds_ = experimentIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.experimentIds_ = experimentIds_;
-      result.recommendationToken_ = recommendationToken_;
-      if (eventAttributesBuilder_ == null) {
-        result.eventAttributes_ = eventAttributes_;
-      } else {
-        result.eventAttributes_ = eventAttributesBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.recommendationengine.v1beta1.EventDetail result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        experimentIds_ = experimentIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.experimentIds_ = experimentIds_;
+    }
+
+    private void buildPartial0(com.google.cloud.recommendationengine.v1beta1.EventDetail result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.referrerUri_ = referrerUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageViewId_ = pageViewId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.recommendationToken_ = recommendationToken_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.eventAttributes_ =
+            eventAttributesBuilder_ == null ? eventAttributes_ : eventAttributesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -815,20 +841,23 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getReferrerUri().isEmpty()) {
         referrerUri_ = other.referrerUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getPageViewId().isEmpty()) {
         pageViewId_ = other.pageViewId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.experimentIds_.isEmpty()) {
         if (experimentIds_.isEmpty()) {
           experimentIds_ = other.experimentIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureExperimentIdsIsMutable();
           experimentIds_.addAll(other.experimentIds_);
@@ -837,6 +866,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRecommendationToken().isEmpty()) {
         recommendationToken_ = other.recommendationToken_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasEventAttributes()) {
@@ -871,13 +901,13 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 pageViewId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -890,19 +920,19 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 recommendationToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getEventAttributesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 referrerUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             default:
@@ -991,8 +1021,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1010,8 +1040,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1034,8 +1064,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1104,8 +1134,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       referrerUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1122,8 +1152,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReferrerUri() {
-
       referrerUri_ = getDefaultInstance().getReferrerUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1145,8 +1175,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       referrerUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1230,8 +1260,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageViewId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1253,8 +1283,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPageViewId() {
-
       pageViewId_ = getDefaultInstance().getPageViewId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1281,8 +1311,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageViewId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1291,9 +1321,9 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExperimentIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         experimentIds_ = new com.google.protobuf.LazyStringArrayList(experimentIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1452,7 +1482,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExperimentIds() {
       experimentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1576,8 +1606,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       recommendationToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1604,8 +1634,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRecommendationToken() {
-
       recommendationToken_ = getDefaultInstance().getRecommendationToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1637,8 +1667,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       recommendationToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1668,7 +1698,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the eventAttributes field is set.
      */
     public boolean hasEventAttributes() {
-      return eventAttributesBuilder_ != null || eventAttributes_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1720,11 +1750,11 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         eventAttributes_ = value;
-        onChanged();
       } else {
         eventAttributesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1747,11 +1777,11 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.recommendationengine.v1beta1.FeatureMap.Builder builderForValue) {
       if (eventAttributesBuilder_ == null) {
         eventAttributes_ = builderForValue.build();
-        onChanged();
       } else {
         eventAttributesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1773,19 +1803,19 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeEventAttributes(
         com.google.cloud.recommendationengine.v1beta1.FeatureMap value) {
       if (eventAttributesBuilder_ == null) {
-        if (eventAttributes_ != null) {
-          eventAttributes_ =
-              com.google.cloud.recommendationengine.v1beta1.FeatureMap.newBuilder(eventAttributes_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && eventAttributes_ != null
+            && eventAttributes_
+                != com.google.cloud.recommendationengine.v1beta1.FeatureMap.getDefaultInstance()) {
+          getEventAttributesBuilder().mergeFrom(value);
         } else {
           eventAttributes_ = value;
         }
-        onChanged();
       } else {
         eventAttributesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1805,14 +1835,13 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEventAttributes() {
-      if (eventAttributesBuilder_ == null) {
-        eventAttributes_ = null;
-        onChanged();
-      } else {
-        eventAttributes_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      eventAttributes_ = null;
+      if (eventAttributesBuilder_ != null) {
+        eventAttributesBuilder_.dispose();
         eventAttributesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1833,7 +1862,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.recommendationengine.v1beta1.FeatureMap.Builder
         getEventAttributesBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getEventAttributesFieldBuilder().getBuilder();
     }

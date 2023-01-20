@@ -241,7 +241,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   public static final int NOTEBOOK_UPGRADE_SCHEDULE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object notebookUpgradeSchedule_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object notebookUpgradeSchedule_ = "";
   /**
    *
    *
@@ -292,7 +294,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ENABLE_HEALTH_MONITORING_FIELD_NUMBER = 2;
-  private boolean enableHealthMonitoring_;
+  private boolean enableHealthMonitoring_ = false;
   /**
    *
    *
@@ -327,7 +329,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int IDLE_SHUTDOWN_FIELD_NUMBER = 3;
-  private boolean idleShutdown_;
+  private boolean idleShutdown_ = false;
   /**
    *
    *
@@ -362,7 +364,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int IDLE_SHUTDOWN_TIMEOUT_FIELD_NUMBER = 4;
-  private int idleShutdownTimeout_;
+  private int idleShutdownTimeout_ = 0;
   /**
    *
    *
@@ -380,7 +382,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int INSTALL_GPU_DRIVER_FIELD_NUMBER = 5;
-  private boolean installGpuDriver_;
+  private boolean installGpuDriver_ = false;
   /**
    *
    *
@@ -399,7 +401,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CUSTOM_GPU_DRIVER_PATH_FIELD_NUMBER = 6;
-  private volatile java.lang.Object customGpuDriverPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customGpuDriverPath_ = "";
   /**
    *
    *
@@ -450,7 +454,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int POST_STARTUP_SCRIPT_FIELD_NUMBER = 7;
-  private volatile java.lang.Object postStartupScript_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object postStartupScript_ = "";
   /**
    *
    *
@@ -503,6 +509,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int KERNELS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.notebooks.v1.ContainerImage> kernels_;
   /**
    *
@@ -582,7 +590,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int UPGRADEABLE_FIELD_NUMBER = 9;
-  private boolean upgradeable_;
+  private boolean upgradeable_ = false;
   /**
    *
    *
@@ -615,7 +623,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int POST_STARTUP_SCRIPT_BEHAVIOR_FIELD_NUMBER = 10;
-  private int postStartupScriptBehavior_;
+  private int postStartupScriptBehavior_ = 0;
   /**
    *
    *
@@ -649,9 +657,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior
       getPostStartupScriptBehavior() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior result =
-        com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior.valueOf(
+        com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior.forNumber(
             postStartupScriptBehavior_);
     return result == null
         ? com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior.UNRECOGNIZED
@@ -659,7 +666,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DISABLE_TERMINAL_FIELD_NUMBER = 11;
-  private boolean disableTerminal_;
+  private boolean disableTerminal_ = false;
   /**
    *
    *
@@ -694,7 +701,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int VERSION_FIELD_NUMBER = 12;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -1091,35 +1100,25 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       notebookUpgradeSchedule_ = "";
-
       enableHealthMonitoring_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       idleShutdown_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       idleShutdownTimeout_ = 0;
-
       installGpuDriver_ = false;
-
       customGpuDriverPath_ = "";
-
       postStartupScript_ = "";
-
       if (kernelsBuilder_ == null) {
         kernels_ = java.util.Collections.emptyList();
       } else {
         kernels_ = null;
         kernelsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       upgradeable_ = false;
-      bitField0_ = (bitField0_ & ~0x00000008);
       postStartupScriptBehavior_ = 0;
-
       disableTerminal_ = false;
-      bitField0_ = (bitField0_ & ~0x00000010);
       version_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -1147,46 +1146,69 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloud.notebooks.v1.RuntimeSoftwareConfig buildPartial() {
       com.google.cloud.notebooks.v1.RuntimeSoftwareConfig result =
           new com.google.cloud.notebooks.v1.RuntimeSoftwareConfig(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.notebookUpgradeSchedule_ = notebookUpgradeSchedule_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.enableHealthMonitoring_ = enableHealthMonitoring_;
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.idleShutdown_ = idleShutdown_;
-        to_bitField0_ |= 0x00000002;
-      }
-      result.idleShutdownTimeout_ = idleShutdownTimeout_;
-      result.installGpuDriver_ = installGpuDriver_;
-      result.customGpuDriverPath_ = customGpuDriverPath_;
-      result.postStartupScript_ = postStartupScript_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.notebooks.v1.RuntimeSoftwareConfig result) {
       if (kernelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           kernels_ = java.util.Collections.unmodifiableList(kernels_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.kernels_ = kernels_;
       } else {
         result.kernels_ = kernelsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.RuntimeSoftwareConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.notebookUpgradeSchedule_ = notebookUpgradeSchedule_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enableHealthMonitoring_ = enableHealthMonitoring_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.idleShutdown_ = idleShutdown_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.idleShutdownTimeout_ = idleShutdownTimeout_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.installGpuDriver_ = installGpuDriver_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.customGpuDriverPath_ = customGpuDriverPath_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.postStartupScript_ = postStartupScript_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.upgradeable_ = upgradeable_;
         to_bitField0_ |= 0x00000004;
       }
-      result.postStartupScriptBehavior_ = postStartupScriptBehavior_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.postStartupScriptBehavior_ = postStartupScriptBehavior_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.disableTerminal_ = disableTerminal_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.version_ = version_;
         to_bitField0_ |= 0x00000010;
       }
-      result.version_ = version_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1237,6 +1259,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getNotebookUpgradeSchedule().isEmpty()) {
         notebookUpgradeSchedule_ = other.notebookUpgradeSchedule_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEnableHealthMonitoring()) {
@@ -1253,17 +1276,19 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       }
       if (!other.getCustomGpuDriverPath().isEmpty()) {
         customGpuDriverPath_ = other.customGpuDriverPath_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getPostStartupScript().isEmpty()) {
         postStartupScript_ = other.postStartupScript_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (kernelsBuilder_ == null) {
         if (!other.kernels_.isEmpty()) {
           if (kernels_.isEmpty()) {
             kernels_ = other.kernels_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureKernelsIsMutable();
             kernels_.addAll(other.kernels_);
@@ -1276,7 +1301,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
             kernelsBuilder_.dispose();
             kernelsBuilder_ = null;
             kernels_ = other.kernels_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000080);
             kernelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getKernelsFieldBuilder()
@@ -1296,8 +1321,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         setDisableTerminal(other.getDisableTerminal());
       }
       if (other.hasVersion()) {
-        bitField0_ |= 0x00000020;
         version_ = other.version_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1329,43 +1354,43 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 notebookUpgradeSchedule_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 enableHealthMonitoring_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 idleShutdown_ = input.readBool();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 idleShutdownTimeout_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 installGpuDriver_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 customGpuDriverPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 postStartupScript_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1384,25 +1409,25 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
             case 72:
               {
                 upgradeable_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 80:
               {
                 postStartupScriptBehavior_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 88:
               {
                 disableTerminal_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 98:
               {
                 version_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             default:
@@ -1488,8 +1513,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       notebookUpgradeSchedule_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1506,8 +1531,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearNotebookUpgradeSchedule() {
-
       notebookUpgradeSchedule_ = getDefaultInstance().getNotebookUpgradeSchedule();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1529,8 +1554,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       notebookUpgradeSchedule_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1550,7 +1575,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public boolean hasEnableHealthMonitoring() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1582,8 +1607,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setEnableHealthMonitoring(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enableHealthMonitoring_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1600,7 +1626,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearEnableHealthMonitoring() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       enableHealthMonitoring_ = false;
       onChanged();
       return this;
@@ -1621,7 +1647,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public boolean hasIdleShutdown() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1653,8 +1679,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setIdleShutdown(boolean value) {
-      bitField0_ |= 0x00000002;
+
       idleShutdown_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1671,7 +1698,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearIdleShutdown() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       idleShutdown_ = false;
       onChanged();
       return this;
@@ -1708,6 +1735,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public Builder setIdleShutdownTimeout(int value) {
 
       idleShutdownTimeout_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1723,7 +1751,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearIdleShutdownTimeout() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       idleShutdownTimeout_ = 0;
       onChanged();
       return this;
@@ -1762,6 +1790,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public Builder setInstallGpuDriver(boolean value) {
 
       installGpuDriver_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1778,7 +1807,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearInstallGpuDriver() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       installGpuDriver_ = false;
       onChanged();
       return this;
@@ -1848,8 +1877,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       customGpuDriverPath_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1866,8 +1895,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearCustomGpuDriverPath() {
-
       customGpuDriverPath_ = getDefaultInstance().getCustomGpuDriverPath();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1889,8 +1918,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       customGpuDriverPath_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1962,8 +1991,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       postStartupScript_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1981,8 +2010,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPostStartupScript() {
-
       postStartupScript_ = getDefaultInstance().getPostStartupScript();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2005,8 +2034,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       postStartupScript_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2015,9 +2044,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureKernelsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         kernels_ = new java.util.ArrayList<com.google.cloud.notebooks.v1.ContainerImage>(kernels_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2255,7 +2284,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public Builder clearKernels() {
       if (kernelsBuilder_ == null) {
         kernels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         kernelsBuilder_.clear();
@@ -2391,7 +2420,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
                 com.google.cloud.notebooks.v1.ContainerImage,
                 com.google.cloud.notebooks.v1.ContainerImage.Builder,
                 com.google.cloud.notebooks.v1.ContainerImageOrBuilder>(
-                kernels_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                kernels_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         kernels_ = null;
       }
       return kernelsBuilder_;
@@ -2411,7 +2440,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public boolean hasUpgradeable() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2441,8 +2470,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setUpgradeable(boolean value) {
-      bitField0_ |= 0x00000008;
+
       upgradeable_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2458,7 +2488,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearUpgradeable() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       upgradeable_ = false;
       onChanged();
       return this;
@@ -2497,8 +2527,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setPostStartupScriptBehaviorValue(int value) {
-
       postStartupScriptBehavior_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2518,9 +2548,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior
         getPostStartupScriptBehavior() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior result =
-          com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior.valueOf(
+          com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior.forNumber(
               postStartupScriptBehavior_);
       return result == null
           ? com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior
@@ -2546,7 +2575,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       postStartupScriptBehavior_ = value.getNumber();
       onChanged();
       return this;
@@ -2565,7 +2594,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPostStartupScriptBehavior() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       postStartupScriptBehavior_ = 0;
       onChanged();
       return this;
@@ -2586,7 +2615,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public boolean hasDisableTerminal() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2618,8 +2647,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setDisableTerminal(boolean value) {
-      bitField0_ |= 0x00000010;
+
       disableTerminal_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2636,7 +2666,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDisableTerminal() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000400);
       disableTerminal_ = false;
       onChanged();
       return this;
@@ -2655,7 +2685,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -2717,8 +2747,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       version_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2734,8 +2764,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2756,8 +2786,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       version_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

@@ -71,7 +71,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -89,7 +89,9 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
   }
 
   public static final int SNAPSHOT_LOCATION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object snapshotLocation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object snapshotLocation_ = "";
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
   }
 
   public static final int SNAPSHOT_CREATION_SCHEDULE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object snapshotCreationSchedule_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object snapshotCreationSchedule_ = "";
   /**
    *
    *
@@ -191,7 +195,9 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object timeZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
   /**
    *
    *
@@ -476,14 +482,11 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       snapshotLocation_ = "";
-
       snapshotCreationSchedule_ = "";
-
       timeZone_ = "";
-
       return this;
     }
 
@@ -515,12 +518,28 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
         buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfig result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfig(this);
-      result.enabled_ = enabled_;
-      result.snapshotLocation_ = snapshotLocation_;
-      result.snapshotCreationSchedule_ = snapshotCreationSchedule_;
-      result.timeZone_ = timeZone_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.snapshotLocation_ = snapshotLocation_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.snapshotCreationSchedule_ = snapshotCreationSchedule_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.timeZone_ = timeZone_;
+      }
     }
 
     @java.lang.Override
@@ -580,14 +599,17 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       }
       if (!other.getSnapshotLocation().isEmpty()) {
         snapshotLocation_ = other.snapshotLocation_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSnapshotCreationSchedule().isEmpty()) {
         snapshotCreationSchedule_ = other.snapshotCreationSchedule_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTimeZone().isEmpty()) {
         timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -619,25 +641,25 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 26:
               {
                 snapshotCreationSchedule_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 timeZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 snapshotLocation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             default:
@@ -656,6 +678,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -688,6 +712,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -703,7 +728,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -770,8 +795,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       snapshotLocation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -787,8 +812,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearSnapshotLocation() {
-
       snapshotLocation_ = getDefaultInstance().getSnapshotLocation();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -809,8 +834,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       snapshotLocation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -882,8 +907,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       snapshotCreationSchedule_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -901,8 +926,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearSnapshotCreationSchedule() {
-
       snapshotCreationSchedule_ = getDefaultInstance().getSnapshotCreationSchedule();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -925,8 +950,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       snapshotCreationSchedule_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -992,8 +1017,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeZone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1009,8 +1034,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
-
       timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1031,8 +1056,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeZone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -175,7 +175,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int CPU_FIELD_NUMBER = 1;
-    private float cpu_;
+    private float cpu_ = 0F;
     /**
      *
      *
@@ -193,7 +193,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int MEMORY_GB_FIELD_NUMBER = 2;
-    private float memoryGb_;
+    private float memoryGb_ = 0F;
     /**
      *
      *
@@ -211,7 +211,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int STORAGE_GB_FIELD_NUMBER = 3;
-    private float storageGb_;
+    private float storageGb_ = 0F;
     /**
      *
      *
@@ -229,7 +229,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int COUNT_FIELD_NUMBER = 4;
-    private int count_;
+    private int count_ = 0;
     /**
      *
      *
@@ -502,14 +502,11 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cpu_ = 0F;
-
         memoryGb_ = 0F;
-
         storageGb_ = 0F;
-
         count_ = 0;
-
         return this;
       }
 
@@ -543,12 +540,29 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.SchedulerResource result =
             new com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.SchedulerResource(
                 this);
-        result.cpu_ = cpu_;
-        result.memoryGb_ = memoryGb_;
-        result.storageGb_ = storageGb_;
-        result.count_ = count_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.SchedulerResource
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cpu_ = cpu_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.memoryGb_ = memoryGb_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.storageGb_ = storageGb_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.count_ = count_;
+        }
       }
 
       @java.lang.Override
@@ -647,25 +661,25 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
               case 13:
                 {
                   cpu_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   memoryGb_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 29:
                 {
                   storageGb_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 29
               case 32:
                 {
                   count_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -684,6 +698,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float cpu_;
       /**
@@ -716,6 +732,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setCpu(float value) {
 
         cpu_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -731,7 +748,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearCpu() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         cpu_ = 0F;
         onChanged();
         return this;
@@ -768,6 +785,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setMemoryGb(float value) {
 
         memoryGb_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -783,7 +801,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearMemoryGb() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         memoryGb_ = 0F;
         onChanged();
         return this;
@@ -820,6 +838,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setStorageGb(float value) {
 
         storageGb_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -835,7 +854,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearStorageGb() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         storageGb_ = 0F;
         onChanged();
         return this;
@@ -872,6 +891,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setCount(int value) {
 
         count_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -887,7 +907,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         count_ = 0;
         onChanged();
         return this;
@@ -1058,7 +1078,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int CPU_FIELD_NUMBER = 1;
-    private float cpu_;
+    private float cpu_ = 0F;
     /**
      *
      *
@@ -1076,7 +1096,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int MEMORY_GB_FIELD_NUMBER = 2;
-    private float memoryGb_;
+    private float memoryGb_ = 0F;
     /**
      *
      *
@@ -1094,7 +1114,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int STORAGE_GB_FIELD_NUMBER = 3;
-    private float storageGb_;
+    private float storageGb_ = 0F;
     /**
      *
      *
@@ -1358,12 +1378,10 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cpu_ = 0F;
-
         memoryGb_ = 0F;
-
         storageGb_ = 0F;
-
         return this;
       }
 
@@ -1397,11 +1415,26 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WebServerResource result =
             new com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WebServerResource(
                 this);
-        result.cpu_ = cpu_;
-        result.memoryGb_ = memoryGb_;
-        result.storageGb_ = storageGb_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WebServerResource
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cpu_ = cpu_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.memoryGb_ = memoryGb_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.storageGb_ = storageGb_;
+        }
       }
 
       @java.lang.Override
@@ -1497,19 +1530,19 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
               case 13:
                 {
                   cpu_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   memoryGb_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 29:
                 {
                   storageGb_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 29
               default:
@@ -1528,6 +1561,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float cpu_;
       /**
@@ -1560,6 +1595,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setCpu(float value) {
 
         cpu_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1575,7 +1611,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearCpu() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         cpu_ = 0F;
         onChanged();
         return this;
@@ -1612,6 +1648,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setMemoryGb(float value) {
 
         memoryGb_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1627,7 +1664,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearMemoryGb() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         memoryGb_ = 0F;
         onChanged();
         return this;
@@ -1664,6 +1701,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setStorageGb(float value) {
 
         storageGb_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1679,7 +1717,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearStorageGb() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         storageGb_ = 0F;
         onChanged();
         return this;
@@ -1876,7 +1914,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int CPU_FIELD_NUMBER = 1;
-    private float cpu_;
+    private float cpu_ = 0F;
     /**
      *
      *
@@ -1894,7 +1932,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int MEMORY_GB_FIELD_NUMBER = 2;
-    private float memoryGb_;
+    private float memoryGb_ = 0F;
     /**
      *
      *
@@ -1912,7 +1950,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int STORAGE_GB_FIELD_NUMBER = 3;
-    private float storageGb_;
+    private float storageGb_ = 0F;
     /**
      *
      *
@@ -1930,7 +1968,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int MIN_COUNT_FIELD_NUMBER = 4;
-    private int minCount_;
+    private int minCount_ = 0;
     /**
      *
      *
@@ -1948,7 +1986,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int MAX_COUNT_FIELD_NUMBER = 5;
-    private int maxCount_;
+    private int maxCount_ = 0;
     /**
      *
      *
@@ -2217,16 +2255,12 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cpu_ = 0F;
-
         memoryGb_ = 0F;
-
         storageGb_ = 0F;
-
         minCount_ = 0;
-
         maxCount_ = 0;
-
         return this;
       }
 
@@ -2260,13 +2294,31 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WorkerResource result =
             new com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WorkerResource(
                 this);
-        result.cpu_ = cpu_;
-        result.memoryGb_ = memoryGb_;
-        result.storageGb_ = storageGb_;
-        result.minCount_ = minCount_;
-        result.maxCount_ = maxCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WorkerResource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cpu_ = cpu_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.memoryGb_ = memoryGb_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.storageGb_ = storageGb_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.minCount_ = minCount_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.maxCount_ = maxCount_;
+        }
       }
 
       @java.lang.Override
@@ -2367,31 +2419,31 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
               case 13:
                 {
                   cpu_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   memoryGb_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 29:
                 {
                   storageGb_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 29
               case 32:
                 {
                   minCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 40:
                 {
                   maxCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               default:
@@ -2410,6 +2462,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float cpu_;
       /**
@@ -2442,6 +2496,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setCpu(float value) {
 
         cpu_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2457,7 +2512,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearCpu() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         cpu_ = 0F;
         onChanged();
         return this;
@@ -2494,6 +2549,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setMemoryGb(float value) {
 
         memoryGb_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2509,7 +2565,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearMemoryGb() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         memoryGb_ = 0F;
         onChanged();
         return this;
@@ -2546,6 +2602,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setStorageGb(float value) {
 
         storageGb_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2561,7 +2618,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearStorageGb() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         storageGb_ = 0F;
         onChanged();
         return this;
@@ -2598,6 +2655,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setMinCount(int value) {
 
         minCount_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2613,7 +2671,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearMinCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         minCount_ = 0;
         onChanged();
         return this;
@@ -2650,6 +2708,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setMaxCount(int value) {
 
         maxCount_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2665,7 +2724,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearMaxCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         maxCount_ = 0;
         onChanged();
         return this;
@@ -2796,7 +2855,10 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig
           .SchedulerResourceOrBuilder
       getSchedulerOrBuilder() {
-    return getScheduler();
+    return scheduler_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.SchedulerResource
+            .getDefaultInstance()
+        : scheduler_;
   }
 
   public static final int WEB_SERVER_FIELD_NUMBER = 2;
@@ -2855,7 +2917,10 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig
           .WebServerResourceOrBuilder
       getWebServerOrBuilder() {
-    return getWebServer();
+    return webServer_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WebServerResource
+            .getDefaultInstance()
+        : webServer_;
   }
 
   public static final int WORKER_FIELD_NUMBER = 3;
@@ -2912,7 +2977,10 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WorkerResourceOrBuilder
       getWorkerOrBuilder() {
-    return getWorker();
+    return worker_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WorkerResource
+            .getDefaultInstance()
+        : worker_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3150,22 +3218,20 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (schedulerBuilder_ == null) {
-        scheduler_ = null;
-      } else {
-        scheduler_ = null;
+      bitField0_ = 0;
+      scheduler_ = null;
+      if (schedulerBuilder_ != null) {
+        schedulerBuilder_.dispose();
         schedulerBuilder_ = null;
       }
-      if (webServerBuilder_ == null) {
-        webServer_ = null;
-      } else {
-        webServer_ = null;
+      webServer_ = null;
+      if (webServerBuilder_ != null) {
+        webServerBuilder_.dispose();
         webServerBuilder_ = null;
       }
-      if (workerBuilder_ == null) {
-        worker_ = null;
-      } else {
-        worker_ = null;
+      worker_ = null;
+      if (workerBuilder_ != null) {
+        workerBuilder_.dispose();
         workerBuilder_ = null;
       }
       return this;
@@ -3196,23 +3262,25 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig result =
           new com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig(this);
-      if (schedulerBuilder_ == null) {
-        result.scheduler_ = scheduler_;
-      } else {
-        result.scheduler_ = schedulerBuilder_.build();
-      }
-      if (webServerBuilder_ == null) {
-        result.webServer_ = webServer_;
-      } else {
-        result.webServer_ = webServerBuilder_.build();
-      }
-      if (workerBuilder_ == null) {
-        result.worker_ = worker_;
-      } else {
-        result.worker_ = workerBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scheduler_ = schedulerBuilder_ == null ? scheduler_ : schedulerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.webServer_ = webServerBuilder_ == null ? webServer_ : webServerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.worker_ = workerBuilder_ == null ? worker_ : workerBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3301,19 +3369,19 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getSchedulerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getWebServerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getWorkerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -3332,6 +3400,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.SchedulerResource
         scheduler_;
@@ -3356,7 +3426,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the scheduler field is set.
      */
     public boolean hasScheduler() {
-      return schedulerBuilder_ != null || scheduler_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -3400,11 +3470,11 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         scheduler_ = value;
-        onChanged();
       } else {
         schedulerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3423,11 +3493,11 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
             builderForValue) {
       if (schedulerBuilder_ == null) {
         scheduler_ = builderForValue.build();
-        onChanged();
       } else {
         schedulerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3444,20 +3514,20 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     public Builder mergeScheduler(
         com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.SchedulerResource value) {
       if (schedulerBuilder_ == null) {
-        if (scheduler_ != null) {
-          scheduler_ =
-              com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.SchedulerResource
-                  .newBuilder(scheduler_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && scheduler_ != null
+            && scheduler_
+                != com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig
+                    .SchedulerResource.getDefaultInstance()) {
+          getSchedulerBuilder().mergeFrom(value);
         } else {
           scheduler_ = value;
         }
-        onChanged();
       } else {
         schedulerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3472,14 +3542,13 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearScheduler() {
-      if (schedulerBuilder_ == null) {
-        scheduler_ = null;
-        onChanged();
-      } else {
-        scheduler_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      scheduler_ = null;
+      if (schedulerBuilder_ != null) {
+        schedulerBuilder_.dispose();
         schedulerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3496,7 +3565,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.SchedulerResource
             .Builder
         getSchedulerBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSchedulerFieldBuilder().getBuilder();
     }
@@ -3577,7 +3646,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the webServer field is set.
      */
     public boolean hasWebServer() {
-      return webServerBuilder_ != null || webServer_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3621,11 +3690,11 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         webServer_ = value;
-        onChanged();
       } else {
         webServerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3644,11 +3713,11 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
             builderForValue) {
       if (webServerBuilder_ == null) {
         webServer_ = builderForValue.build();
-        onChanged();
       } else {
         webServerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3665,20 +3734,20 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     public Builder mergeWebServer(
         com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WebServerResource value) {
       if (webServerBuilder_ == null) {
-        if (webServer_ != null) {
-          webServer_ =
-              com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WebServerResource
-                  .newBuilder(webServer_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && webServer_ != null
+            && webServer_
+                != com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig
+                    .WebServerResource.getDefaultInstance()) {
+          getWebServerBuilder().mergeFrom(value);
         } else {
           webServer_ = value;
         }
-        onChanged();
       } else {
         webServerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3693,14 +3762,13 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearWebServer() {
-      if (webServerBuilder_ == null) {
-        webServer_ = null;
-        onChanged();
-      } else {
-        webServer_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      webServer_ = null;
+      if (webServerBuilder_ != null) {
+        webServerBuilder_.dispose();
         webServerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3717,7 +3785,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WebServerResource
             .Builder
         getWebServerBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWebServerFieldBuilder().getBuilder();
     }
@@ -3798,7 +3866,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the worker field is set.
      */
     public boolean hasWorker() {
-      return workerBuilder_ != null || worker_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3842,11 +3910,11 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         worker_ = value;
-        onChanged();
       } else {
         workerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3865,11 +3933,11 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
             builderForValue) {
       if (workerBuilder_ == null) {
         worker_ = builderForValue.build();
-        onChanged();
       } else {
         workerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3886,20 +3954,20 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     public Builder mergeWorker(
         com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WorkerResource value) {
       if (workerBuilder_ == null) {
-        if (worker_ != null) {
-          worker_ =
-              com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WorkerResource
-                  .newBuilder(worker_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && worker_ != null
+            && worker_
+                != com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WorkerResource
+                    .getDefaultInstance()) {
+          getWorkerBuilder().mergeFrom(value);
         } else {
           worker_ = value;
         }
-        onChanged();
       } else {
         workerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3914,14 +3982,13 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearWorker() {
-      if (workerBuilder_ == null) {
-        worker_ = null;
-        onChanged();
-      } else {
-        worker_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      worker_ = null;
+      if (workerBuilder_ != null) {
+        workerBuilder_.dispose();
         workerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3937,7 +4004,7 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.WorkerResource.Builder
         getWorkerBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getWorkerFieldBuilder().getBuilder();
     }

@@ -618,7 +618,9 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -722,7 +724,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 3;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -755,14 +757,13 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.Runtime.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.notebooks.v1.Runtime.State result =
-        com.google.cloud.notebooks.v1.Runtime.State.valueOf(state_);
+        com.google.cloud.notebooks.v1.Runtime.State.forNumber(state_);
     return result == null ? com.google.cloud.notebooks.v1.Runtime.State.UNRECOGNIZED : result;
   }
 
   public static final int HEALTH_STATE_FIELD_NUMBER = 4;
-  private int healthState_;
+  private int healthState_ = 0;
   /**
    *
    *
@@ -795,9 +796,8 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.Runtime.HealthState getHealthState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.notebooks.v1.Runtime.HealthState result =
-        com.google.cloud.notebooks.v1.Runtime.HealthState.valueOf(healthState_);
+        com.google.cloud.notebooks.v1.Runtime.HealthState.forNumber(healthState_);
     return result == null ? com.google.cloud.notebooks.v1.Runtime.HealthState.UNRECOGNIZED : result;
   }
 
@@ -846,7 +846,9 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.RuntimeAccessConfigOrBuilder getAccessConfigOrBuilder() {
-    return getAccessConfig();
+    return accessConfig_ == null
+        ? com.google.cloud.notebooks.v1.RuntimeAccessConfig.getDefaultInstance()
+        : accessConfig_;
   }
 
   public static final int SOFTWARE_CONFIG_FIELD_NUMBER = 6;
@@ -894,7 +896,9 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.RuntimeSoftwareConfigOrBuilder getSoftwareConfigOrBuilder() {
-    return getSoftwareConfig();
+    return softwareConfig_ == null
+        ? com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.getDefaultInstance()
+        : softwareConfig_;
   }
 
   public static final int METRICS_FIELD_NUMBER = 7;
@@ -951,7 +955,9 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.RuntimeMetricsOrBuilder getMetricsOrBuilder() {
-    return getMetrics();
+    return metrics_ == null
+        ? com.google.cloud.notebooks.v1.RuntimeMetrics.getDefaultInstance()
+        : metrics_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 20;
@@ -1000,7 +1006,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 21;
@@ -1049,7 +1055,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1361,43 +1367,36 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (virtualMachineBuilder_ != null) {
         virtualMachineBuilder_.clear();
       }
       state_ = 0;
-
       healthState_ = 0;
-
-      if (accessConfigBuilder_ == null) {
-        accessConfig_ = null;
-      } else {
-        accessConfig_ = null;
+      accessConfig_ = null;
+      if (accessConfigBuilder_ != null) {
+        accessConfigBuilder_.dispose();
         accessConfigBuilder_ = null;
       }
-      if (softwareConfigBuilder_ == null) {
-        softwareConfig_ = null;
-      } else {
-        softwareConfig_ = null;
+      softwareConfig_ = null;
+      if (softwareConfigBuilder_ != null) {
+        softwareConfigBuilder_.dispose();
         softwareConfigBuilder_ = null;
       }
-      if (metricsBuilder_ == null) {
-        metrics_ = null;
-      } else {
-        metrics_ = null;
+      metrics_ = null;
+      if (metricsBuilder_ != null) {
+        metricsBuilder_.dispose();
         metricsBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       runtimeTypeCase_ = 0;
@@ -1429,44 +1428,50 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v1.Runtime buildPartial() {
       com.google.cloud.notebooks.v1.Runtime result =
           new com.google.cloud.notebooks.v1.Runtime(this);
-      result.name_ = name_;
-      if (runtimeTypeCase_ == 2) {
-        if (virtualMachineBuilder_ == null) {
-          result.runtimeType_ = runtimeType_;
-        } else {
-          result.runtimeType_ = virtualMachineBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.state_ = state_;
-      result.healthState_ = healthState_;
-      if (accessConfigBuilder_ == null) {
-        result.accessConfig_ = accessConfig_;
-      } else {
-        result.accessConfig_ = accessConfigBuilder_.build();
-      }
-      if (softwareConfigBuilder_ == null) {
-        result.softwareConfig_ = softwareConfig_;
-      } else {
-        result.softwareConfig_ = softwareConfigBuilder_.build();
-      }
-      if (metricsBuilder_ == null) {
-        result.metrics_ = metrics_;
-      } else {
-        result.metrics_ = metricsBuilder_.build();
-      }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.runtimeTypeCase_ = runtimeTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.Runtime result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.healthState_ = healthState_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.accessConfig_ =
+            accessConfigBuilder_ == null ? accessConfig_ : accessConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.softwareConfig_ =
+            softwareConfigBuilder_ == null ? softwareConfig_ : softwareConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.metrics_ = metricsBuilder_ == null ? metrics_ : metricsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.notebooks.v1.Runtime result) {
+      result.runtimeTypeCase_ = runtimeTypeCase_;
+      result.runtimeType_ = this.runtimeType_;
+      if (runtimeTypeCase_ == 2 && virtualMachineBuilder_ != null) {
+        result.runtimeType_ = virtualMachineBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1516,6 +1521,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.notebooks.v1.Runtime.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1579,7 +1585,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1591,43 +1597,43 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 healthState_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getAccessConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getSoftwareConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getMetricsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 162:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 162
             case 170:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 170
             default:
@@ -1660,6 +1666,8 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1728,8 +1736,8 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1747,8 +1755,8 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1771,8 +1779,8 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1983,7 +1991,6 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       }
       runtimeTypeCase_ = 2;
       onChanged();
-      ;
       return virtualMachineBuilder_;
     }
 
@@ -2020,8 +2027,8 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2040,9 +2047,8 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.notebooks.v1.Runtime.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.notebooks.v1.Runtime.State result =
-          com.google.cloud.notebooks.v1.Runtime.State.valueOf(state_);
+          com.google.cloud.notebooks.v1.Runtime.State.forNumber(state_);
       return result == null ? com.google.cloud.notebooks.v1.Runtime.State.UNRECOGNIZED : result;
     }
     /**
@@ -2063,7 +2069,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2082,7 +2088,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
@@ -2121,8 +2127,8 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setHealthStateValue(int value) {
-
       healthState_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2141,9 +2147,8 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.notebooks.v1.Runtime.HealthState getHealthState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.notebooks.v1.Runtime.HealthState result =
-          com.google.cloud.notebooks.v1.Runtime.HealthState.valueOf(healthState_);
+          com.google.cloud.notebooks.v1.Runtime.HealthState.forNumber(healthState_);
       return result == null
           ? com.google.cloud.notebooks.v1.Runtime.HealthState.UNRECOGNIZED
           : result;
@@ -2166,7 +2171,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       healthState_ = value.getNumber();
       onChanged();
       return this;
@@ -2185,7 +2190,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHealthState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       healthState_ = 0;
       onChanged();
       return this;
@@ -2209,7 +2214,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the accessConfig field is set.
      */
     public boolean hasAccessConfig() {
-      return accessConfigBuilder_ != null || accessConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2246,11 +2251,11 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         accessConfig_ = value;
-        onChanged();
       } else {
         accessConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2266,11 +2271,11 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.notebooks.v1.RuntimeAccessConfig.Builder builderForValue) {
       if (accessConfigBuilder_ == null) {
         accessConfig_ = builderForValue.build();
-        onChanged();
       } else {
         accessConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2284,19 +2289,19 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAccessConfig(com.google.cloud.notebooks.v1.RuntimeAccessConfig value) {
       if (accessConfigBuilder_ == null) {
-        if (accessConfig_ != null) {
-          accessConfig_ =
-              com.google.cloud.notebooks.v1.RuntimeAccessConfig.newBuilder(accessConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && accessConfig_ != null
+            && accessConfig_
+                != com.google.cloud.notebooks.v1.RuntimeAccessConfig.getDefaultInstance()) {
+          getAccessConfigBuilder().mergeFrom(value);
         } else {
           accessConfig_ = value;
         }
-        onChanged();
       } else {
         accessConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2309,14 +2314,13 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.notebooks.v1.RuntimeAccessConfig access_config = 5;</code>
      */
     public Builder clearAccessConfig() {
-      if (accessConfigBuilder_ == null) {
-        accessConfig_ = null;
-        onChanged();
-      } else {
-        accessConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      accessConfig_ = null;
+      if (accessConfigBuilder_ != null) {
+        accessConfigBuilder_.dispose();
         accessConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2329,7 +2333,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.notebooks.v1.RuntimeAccessConfig access_config = 5;</code>
      */
     public com.google.cloud.notebooks.v1.RuntimeAccessConfig.Builder getAccessConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getAccessConfigFieldBuilder().getBuilder();
     }
@@ -2395,7 +2399,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the softwareConfig field is set.
      */
     public boolean hasSoftwareConfig() {
-      return softwareConfigBuilder_ != null || softwareConfig_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2432,11 +2436,11 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         softwareConfig_ = value;
-        onChanged();
       } else {
         softwareConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2452,11 +2456,11 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.Builder builderForValue) {
       if (softwareConfigBuilder_ == null) {
         softwareConfig_ = builderForValue.build();
-        onChanged();
       } else {
         softwareConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2470,19 +2474,19 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSoftwareConfig(com.google.cloud.notebooks.v1.RuntimeSoftwareConfig value) {
       if (softwareConfigBuilder_ == null) {
-        if (softwareConfig_ != null) {
-          softwareConfig_ =
-              com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.newBuilder(softwareConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && softwareConfig_ != null
+            && softwareConfig_
+                != com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.getDefaultInstance()) {
+          getSoftwareConfigBuilder().mergeFrom(value);
         } else {
           softwareConfig_ = value;
         }
-        onChanged();
       } else {
         softwareConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2495,14 +2499,13 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.notebooks.v1.RuntimeSoftwareConfig software_config = 6;</code>
      */
     public Builder clearSoftwareConfig() {
-      if (softwareConfigBuilder_ == null) {
-        softwareConfig_ = null;
-        onChanged();
-      } else {
-        softwareConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      softwareConfig_ = null;
+      if (softwareConfigBuilder_ != null) {
+        softwareConfigBuilder_.dispose();
         softwareConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2515,7 +2518,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.notebooks.v1.RuntimeSoftwareConfig software_config = 6;</code>
      */
     public com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.Builder getSoftwareConfigBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getSoftwareConfigFieldBuilder().getBuilder();
     }
@@ -2585,7 +2588,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metrics field is set.
      */
     public boolean hasMetrics() {
-      return metricsBuilder_ != null || metrics_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2628,11 +2631,11 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         metrics_ = value;
-        onChanged();
       } else {
         metricsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2651,11 +2654,11 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.notebooks.v1.RuntimeMetrics.Builder builderForValue) {
       if (metricsBuilder_ == null) {
         metrics_ = builderForValue.build();
-        onChanged();
       } else {
         metricsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2672,19 +2675,18 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMetrics(com.google.cloud.notebooks.v1.RuntimeMetrics value) {
       if (metricsBuilder_ == null) {
-        if (metrics_ != null) {
-          metrics_ =
-              com.google.cloud.notebooks.v1.RuntimeMetrics.newBuilder(metrics_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && metrics_ != null
+            && metrics_ != com.google.cloud.notebooks.v1.RuntimeMetrics.getDefaultInstance()) {
+          getMetricsBuilder().mergeFrom(value);
         } else {
           metrics_ = value;
         }
-        onChanged();
       } else {
         metricsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2700,14 +2702,13 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMetrics() {
-      if (metricsBuilder_ == null) {
-        metrics_ = null;
-        onChanged();
-      } else {
-        metrics_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      metrics_ = null;
+      if (metricsBuilder_ != null) {
+        metricsBuilder_.dispose();
         metricsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2723,7 +2724,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.notebooks.v1.RuntimeMetrics.Builder getMetricsBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getMetricsFieldBuilder().getBuilder();
     }
@@ -2797,7 +2798,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2838,11 +2839,11 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2859,11 +2860,11 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2879,17 +2880,18 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2904,14 +2906,13 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2926,7 +2927,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2998,7 +2999,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3039,11 +3040,11 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3060,11 +3061,11 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3080,17 +3081,18 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3105,14 +3107,13 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3127,7 +3128,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

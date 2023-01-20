@@ -69,6 +69,8 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TAG_KEYS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.resourcemanager.v3.TagKey> tagKeys_;
   /**
    *
@@ -138,7 +140,9 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -397,6 +401,7 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (tagKeysBuilder_ == null) {
         tagKeys_ = java.util.Collections.emptyList();
       } else {
@@ -405,7 +410,6 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -433,7 +437,16 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.resourcemanager.v3.ListTagKeysResponse buildPartial() {
       com.google.cloud.resourcemanager.v3.ListTagKeysResponse result =
           new com.google.cloud.resourcemanager.v3.ListTagKeysResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.resourcemanager.v3.ListTagKeysResponse result) {
       if (tagKeysBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           tagKeys_ = java.util.Collections.unmodifiableList(tagKeys_);
@@ -443,9 +456,13 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
       } else {
         result.tagKeys_ = tagKeysBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcemanager.v3.ListTagKeysResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -523,6 +540,7 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -567,7 +585,7 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1002,8 +1020,8 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1020,8 +1038,8 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1043,8 +1061,8 @@ public final class ListTagKeysResponse extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

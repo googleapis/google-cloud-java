@@ -69,7 +69,9 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GCS_BUCKET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object gcsBucket_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gcsBucket_ = "";
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RELATIVE_PATH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object relativePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object relativePath_ = "";
   /**
    *
    *
@@ -197,7 +201,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REPAIR_FLAG_ENABLED_FIELD_NUMBER = 3;
-  private boolean repairFlagEnabled_;
+  private boolean repairFlagEnabled_ = false;
   /**
    *
    *
@@ -215,7 +219,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PACKET_CAPTURE_FLAG_ENABLED_FIELD_NUMBER = 4;
-  private boolean packetCaptureFlagEnabled_;
+  private boolean packetCaptureFlagEnabled_ = false;
   /**
    *
    *
@@ -233,7 +237,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int COPY_HOME_FILES_FLAG_ENABLED_FIELD_NUMBER = 5;
-  private boolean copyHomeFilesFlagEnabled_;
+  private boolean copyHomeFilesFlagEnabled_ = false;
   /**
    *
    *
@@ -483,16 +487,12 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       gcsBucket_ = "";
-
       relativePath_ = "";
-
       repairFlagEnabled_ = false;
-
       packetCaptureFlagEnabled_ = false;
-
       copyHomeFilesFlagEnabled_ = false;
-
       return this;
     }
 
@@ -520,13 +520,30 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.notebooks.v1.DiagnosticConfig buildPartial() {
       com.google.cloud.notebooks.v1.DiagnosticConfig result =
           new com.google.cloud.notebooks.v1.DiagnosticConfig(this);
-      result.gcsBucket_ = gcsBucket_;
-      result.relativePath_ = relativePath_;
-      result.repairFlagEnabled_ = repairFlagEnabled_;
-      result.packetCaptureFlagEnabled_ = packetCaptureFlagEnabled_;
-      result.copyHomeFilesFlagEnabled_ = copyHomeFilesFlagEnabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.DiagnosticConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gcsBucket_ = gcsBucket_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.relativePath_ = relativePath_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.repairFlagEnabled_ = repairFlagEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.packetCaptureFlagEnabled_ = packetCaptureFlagEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.copyHomeFilesFlagEnabled_ = copyHomeFilesFlagEnabled_;
+      }
     }
 
     @java.lang.Override
@@ -576,10 +593,12 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.notebooks.v1.DiagnosticConfig.getDefaultInstance()) return this;
       if (!other.getGcsBucket().isEmpty()) {
         gcsBucket_ = other.gcsBucket_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRelativePath().isEmpty()) {
         relativePath_ = other.relativePath_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getRepairFlagEnabled() != false) {
@@ -620,31 +639,31 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 gcsBucket_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 relativePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 repairFlagEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 packetCaptureFlagEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 copyHomeFilesFlagEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -663,6 +682,8 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object gcsBucket_ = "";
     /**
@@ -755,8 +776,8 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       gcsBucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -782,8 +803,8 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGcsBucket() {
-
       gcsBucket_ = getDefaultInstance().getGcsBucket();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -814,8 +835,8 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gcsBucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -896,8 +917,8 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       relativePath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -918,8 +939,8 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRelativePath() {
-
       relativePath_ = getDefaultInstance().getRelativePath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -945,8 +966,8 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       relativePath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -982,6 +1003,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     public Builder setRepairFlagEnabled(boolean value) {
 
       repairFlagEnabled_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -997,7 +1019,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRepairFlagEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       repairFlagEnabled_ = false;
       onChanged();
       return this;
@@ -1034,6 +1056,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     public Builder setPacketCaptureFlagEnabled(boolean value) {
 
       packetCaptureFlagEnabled_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1049,7 +1072,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPacketCaptureFlagEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       packetCaptureFlagEnabled_ = false;
       onChanged();
       return this;
@@ -1086,6 +1109,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     public Builder setCopyHomeFilesFlagEnabled(boolean value) {
 
       copyHomeFilesFlagEnabled_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1101,7 +1125,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCopyHomeFilesFlagEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       copyHomeFilesFlagEnabled_ = false;
       onChanged();
       return this;

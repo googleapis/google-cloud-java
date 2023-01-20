@@ -72,7 +72,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object assetType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetType_ = "";
   /**
    *
    *
@@ -677,11 +681,15 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getDisplayMetadataOrBuilder() {
-    return getDisplayMetadata();
+    return displayMetadata_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : displayMetadata_;
   }
 
   public static final int ICON_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object iconUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object iconUri_ = "";
   /**
    *
    *
@@ -730,6 +738,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_REFERENCES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.privatecatalog.v1beta1.AssetReference> assetReferences_;
   /**
    *
@@ -861,7 +871,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
@@ -910,7 +920,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1182,35 +1192,30 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       assetType_ = "";
-
-      if (displayMetadataBuilder_ == null) {
-        displayMetadata_ = null;
-      } else {
-        displayMetadata_ = null;
+      displayMetadata_ = null;
+      if (displayMetadataBuilder_ != null) {
+        displayMetadataBuilder_.dispose();
         displayMetadataBuilder_ = null;
       }
       iconUri_ = "";
-
       if (assetReferencesBuilder_ == null) {
         assetReferences_ = java.util.Collections.emptyList();
       } else {
         assetReferences_ = null;
         assetReferencesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       return this;
@@ -1240,36 +1245,48 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.privatecatalog.v1beta1.Product buildPartial() {
       com.google.cloud.privatecatalog.v1beta1.Product result =
           new com.google.cloud.privatecatalog.v1beta1.Product(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.assetType_ = assetType_;
-      if (displayMetadataBuilder_ == null) {
-        result.displayMetadata_ = displayMetadata_;
-      } else {
-        result.displayMetadata_ = displayMetadataBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.iconUri_ = iconUri_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.privatecatalog.v1beta1.Product result) {
       if (assetReferencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           assetReferences_ = java.util.Collections.unmodifiableList(assetReferences_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.assetReferences_ = assetReferences_;
       } else {
         result.assetReferences_ = assetReferencesBuilder_.build();
       }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.privatecatalog.v1beta1.Product result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.assetType_ = assetType_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayMetadata_ =
+            displayMetadataBuilder_ == null ? displayMetadata_ : displayMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.iconUri_ = iconUri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1320,10 +1337,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAssetType().isEmpty()) {
         assetType_ = other.assetType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDisplayMetadata()) {
@@ -1331,13 +1350,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getIconUri().isEmpty()) {
         iconUri_ = other.iconUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (assetReferencesBuilder_ == null) {
         if (!other.assetReferences_.isEmpty()) {
           if (assetReferences_.isEmpty()) {
             assetReferences_ = other.assetReferences_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAssetReferencesIsMutable();
             assetReferences_.addAll(other.assetReferences_);
@@ -1350,7 +1370,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             assetReferencesBuilder_.dispose();
             assetReferencesBuilder_ = null;
             assetReferences_ = other.assetReferences_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             assetReferencesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAssetReferencesFieldBuilder()
@@ -1395,37 +1415,37 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 assetType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDisplayMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 iconUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 82:
@@ -1528,8 +1548,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1547,8 +1567,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1571,8 +1591,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1647,8 +1667,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1667,8 +1687,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssetType() {
-
       assetType_ = getDefaultInstance().getAssetType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1692,8 +1712,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1867,7 +1887,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the displayMetadata field is set.
      */
     public boolean hasDisplayMetadata() {
-      return displayMetadataBuilder_ != null || displayMetadata_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2206,11 +2226,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         displayMetadata_ = value;
-        onChanged();
       } else {
         displayMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2376,11 +2396,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisplayMetadata(com.google.protobuf.Struct.Builder builderForValue) {
       if (displayMetadataBuilder_ == null) {
         displayMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         displayMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2545,19 +2565,18 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDisplayMetadata(com.google.protobuf.Struct value) {
       if (displayMetadataBuilder_ == null) {
-        if (displayMetadata_ != null) {
-          displayMetadata_ =
-              com.google.protobuf.Struct.newBuilder(displayMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && displayMetadata_ != null
+            && displayMetadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getDisplayMetadataBuilder().mergeFrom(value);
         } else {
           displayMetadata_ = value;
         }
-        onChanged();
       } else {
         displayMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2721,14 +2740,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDisplayMetadata() {
-      if (displayMetadataBuilder_ == null) {
-        displayMetadata_ = null;
-        onChanged();
-      } else {
-        displayMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      displayMetadata_ = null;
+      if (displayMetadataBuilder_ != null) {
+        displayMetadataBuilder_.dispose();
         displayMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2892,7 +2910,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Struct.Builder getDisplayMetadataBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDisplayMetadataFieldBuilder().getBuilder();
     }
@@ -3303,8 +3321,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       iconUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3320,8 +3338,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIconUri() {
-
       iconUri_ = getDefaultInstance().getIconUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3342,8 +3360,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       iconUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3352,11 +3370,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         assetReferences_ = java.util.Collections.emptyList();
 
     private void ensureAssetReferencesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         assetReferences_ =
             new java.util.ArrayList<com.google.cloud.privatecatalog.v1beta1.AssetReference>(
                 assetReferences_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3610,7 +3628,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAssetReferences() {
       if (assetReferencesBuilder_ == null) {
         assetReferences_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         assetReferencesBuilder_.clear();
@@ -3759,7 +3777,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privatecatalog.v1beta1.AssetReference.Builder,
                 com.google.cloud.privatecatalog.v1beta1.AssetReferenceOrBuilder>(
                 assetReferences_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         assetReferences_ = null;
@@ -3787,7 +3805,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3828,11 +3846,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3849,11 +3867,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3869,17 +3887,18 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3894,14 +3913,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3916,7 +3934,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3988,7 +4006,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -4029,11 +4047,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4050,11 +4068,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4070,17 +4088,18 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4095,14 +4114,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4117,7 +4135,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

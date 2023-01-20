@@ -395,6 +395,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       matchVariantCase_ = 0;
       matchVariant_ = null;
       return this;
@@ -424,12 +425,21 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommender.v1beta1.ValueMatcher buildPartial() {
       com.google.cloud.recommender.v1beta1.ValueMatcher result =
           new com.google.cloud.recommender.v1beta1.ValueMatcher(this);
-      if (matchVariantCase_ == 1) {
-        result.matchVariant_ = matchVariant_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.matchVariantCase_ = matchVariantCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommender.v1beta1.ValueMatcher result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.recommender.v1beta1.ValueMatcher result) {
+      result.matchVariantCase_ = matchVariantCase_;
+      result.matchVariant_ = this.matchVariant_;
     }
 
     @java.lang.Override
@@ -554,6 +564,8 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

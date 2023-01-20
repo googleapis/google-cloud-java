@@ -71,7 +71,9 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
   }
 
   public static final int PRODUCT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object product_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object product_ = "";
   /**
    *
    *
@@ -134,6 +136,8 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
   }
 
   public static final int LOCAL_INVENTORIES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.LocalInventory> localInventories_;
   /**
    *
@@ -296,7 +300,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getAddMaskOrBuilder() {
-    return getAddMask();
+    return addMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : addMask_;
   }
 
   public static final int ADD_TIME_FIELD_NUMBER = 5;
@@ -348,11 +352,11 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getAddTimeOrBuilder() {
-    return getAddTime();
+    return addTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : addTime_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 6;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -622,29 +626,26 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       product_ = "";
-
       if (localInventoriesBuilder_ == null) {
         localInventories_ = java.util.Collections.emptyList();
       } else {
         localInventories_ = null;
         localInventoriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (addMaskBuilder_ == null) {
-        addMask_ = null;
-      } else {
-        addMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      addMask_ = null;
+      if (addMaskBuilder_ != null) {
+        addMaskBuilder_.dispose();
         addMaskBuilder_ = null;
       }
-      if (addTimeBuilder_ == null) {
-        addTime_ = null;
-      } else {
-        addTime_ = null;
+      addTime_ = null;
+      if (addTimeBuilder_ != null) {
+        addTimeBuilder_.dispose();
         addTimeBuilder_ = null;
       }
       allowMissing_ = false;
-
       return this;
     }
 
@@ -672,30 +673,41 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     public com.google.cloud.retail.v2beta.AddLocalInventoriesRequest buildPartial() {
       com.google.cloud.retail.v2beta.AddLocalInventoriesRequest result =
           new com.google.cloud.retail.v2beta.AddLocalInventoriesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.product_ = product_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2beta.AddLocalInventoriesRequest result) {
       if (localInventoriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           localInventories_ = java.util.Collections.unmodifiableList(localInventories_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.localInventories_ = localInventories_;
       } else {
         result.localInventories_ = localInventoriesBuilder_.build();
       }
-      if (addMaskBuilder_ == null) {
-        result.addMask_ = addMask_;
-      } else {
-        result.addMask_ = addMaskBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.AddLocalInventoriesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.product_ = product_;
       }
-      if (addTimeBuilder_ == null) {
-        result.addTime_ = addTime_;
-      } else {
-        result.addTime_ = addTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.addMask_ = addMaskBuilder_ == null ? addMask_ : addMaskBuilder_.build();
       }
-      result.allowMissing_ = allowMissing_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.addTime_ = addTimeBuilder_ == null ? addTime_ : addTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -746,13 +758,14 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getProduct().isEmpty()) {
         product_ = other.product_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (localInventoriesBuilder_ == null) {
         if (!other.localInventories_.isEmpty()) {
           if (localInventories_.isEmpty()) {
             localInventories_ = other.localInventories_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureLocalInventoriesIsMutable();
             localInventories_.addAll(other.localInventories_);
@@ -765,7 +778,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
             localInventoriesBuilder_.dispose();
             localInventoriesBuilder_ = null;
             localInventories_ = other.localInventories_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             localInventoriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocalInventoriesFieldBuilder()
@@ -813,7 +826,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
             case 10:
               {
                 product_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -832,19 +845,19 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
             case 34:
               {
                 input.readMessage(getAddMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getAddTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 48:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             default:
@@ -948,8 +961,8 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       product_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -972,8 +985,8 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearProduct() {
-
       product_ = getDefaultInstance().getProduct();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1001,8 +1014,8 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       product_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1011,11 +1024,11 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         java.util.Collections.emptyList();
 
     private void ensureLocalInventoriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         localInventories_ =
             new java.util.ArrayList<com.google.cloud.retail.v2beta.LocalInventory>(
                 localInventories_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1277,7 +1290,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     public Builder clearLocalInventories() {
       if (localInventoriesBuilder_ == null) {
         localInventories_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         localInventoriesBuilder_.clear();
@@ -1431,7 +1444,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
                 com.google.cloud.retail.v2beta.LocalInventory.Builder,
                 com.google.cloud.retail.v2beta.LocalInventoryOrBuilder>(
                 localInventories_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         localInventories_ = null;
@@ -1467,7 +1480,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * @return Whether the addMask field is set.
      */
     public boolean hasAddMask() {
-      return addMaskBuilder_ != null || addMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1522,11 +1535,11 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         addMask_ = value;
-        onChanged();
       } else {
         addMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1551,11 +1564,11 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     public Builder setAddMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (addMaskBuilder_ == null) {
         addMask_ = builderForValue.build();
-        onChanged();
       } else {
         addMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1579,17 +1592,18 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      */
     public Builder mergeAddMask(com.google.protobuf.FieldMask value) {
       if (addMaskBuilder_ == null) {
-        if (addMask_ != null) {
-          addMask_ =
-              com.google.protobuf.FieldMask.newBuilder(addMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && addMask_ != null
+            && addMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getAddMaskBuilder().mergeFrom(value);
         } else {
           addMask_ = value;
         }
-        onChanged();
       } else {
         addMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1612,14 +1626,13 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.FieldMask add_mask = 4;</code>
      */
     public Builder clearAddMask() {
-      if (addMaskBuilder_ == null) {
-        addMask_ = null;
-        onChanged();
-      } else {
-        addMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      addMask_ = null;
+      if (addMaskBuilder_ != null) {
+        addMaskBuilder_.dispose();
         addMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1642,7 +1655,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.FieldMask add_mask = 4;</code>
      */
     public com.google.protobuf.FieldMask.Builder getAddMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAddMaskFieldBuilder().getBuilder();
     }
@@ -1728,7 +1741,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * @return Whether the addTime field is set.
      */
     public boolean hasAddTime() {
-      return addTimeBuilder_ != null || addTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1767,11 +1780,11 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         addTime_ = value;
-        onChanged();
       } else {
         addTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1788,11 +1801,11 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     public Builder setAddTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (addTimeBuilder_ == null) {
         addTime_ = builderForValue.build();
-        onChanged();
       } else {
         addTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1808,17 +1821,18 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      */
     public Builder mergeAddTime(com.google.protobuf.Timestamp value) {
       if (addTimeBuilder_ == null) {
-        if (addTime_ != null) {
-          addTime_ =
-              com.google.protobuf.Timestamp.newBuilder(addTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && addTime_ != null
+            && addTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getAddTimeBuilder().mergeFrom(value);
         } else {
           addTime_ = value;
         }
-        onChanged();
       } else {
         addTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1833,14 +1847,13 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.Timestamp add_time = 5;</code>
      */
     public Builder clearAddTime() {
-      if (addTimeBuilder_ == null) {
-        addTime_ = null;
-        onChanged();
-      } else {
-        addTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      addTime_ = null;
+      if (addTimeBuilder_ != null) {
+        addTimeBuilder_.dispose();
         addTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1855,7 +1868,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.Timestamp add_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getAddTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAddTimeFieldBuilder().getBuilder();
     }
@@ -1946,6 +1959,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1966,7 +1980,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       allowMissing_ = false;
       onChanged();
       return this;

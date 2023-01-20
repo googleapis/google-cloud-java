@@ -436,11 +436,15 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.ExecutionTemplateOrBuilder getExecutionTemplateOrBuilder() {
-    return getExecutionTemplate();
+    return executionTemplate_ == null
+        ? com.google.cloud.notebooks.v1.ExecutionTemplate.getDefaultInstance()
+        : executionTemplate_;
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -491,7 +495,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -542,7 +548,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -636,7 +644,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
@@ -685,11 +693,11 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 7;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -722,14 +730,15 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.Execution.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.notebooks.v1.Execution.State result =
-        com.google.cloud.notebooks.v1.Execution.State.valueOf(state_);
+        com.google.cloud.notebooks.v1.Execution.State.forNumber(state_);
     return result == null ? com.google.cloud.notebooks.v1.Execution.State.UNRECOGNIZED : result;
   }
 
   public static final int OUTPUT_NOTEBOOK_FILE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object outputNotebookFile_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputNotebookFile_ = "";
   /**
    *
    *
@@ -778,7 +787,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JOB_URI_FIELD_NUMBER = 9;
-  private volatile java.lang.Object jobUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jobUri_ = "";
   /**
    *
    *
@@ -1109,36 +1120,28 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (executionTemplateBuilder_ == null) {
-        executionTemplate_ = null;
-      } else {
-        executionTemplate_ = null;
+      bitField0_ = 0;
+      executionTemplate_ = null;
+      if (executionTemplateBuilder_ != null) {
+        executionTemplateBuilder_.dispose();
         executionTemplateBuilder_ = null;
       }
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       state_ = 0;
-
       outputNotebookFile_ = "";
-
       jobUri_ = "";
-
       return this;
     }
 
@@ -1166,29 +1169,45 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v1.Execution buildPartial() {
       com.google.cloud.notebooks.v1.Execution result =
           new com.google.cloud.notebooks.v1.Execution(this);
-      if (executionTemplateBuilder_ == null) {
-        result.executionTemplate_ = executionTemplate_;
-      } else {
-        result.executionTemplate_ = executionTemplateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      result.outputNotebookFile_ = outputNotebookFile_;
-      result.jobUri_ = jobUri_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.Execution result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.executionTemplate_ =
+            executionTemplateBuilder_ == null
+                ? executionTemplate_
+                : executionTemplateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.outputNotebookFile_ = outputNotebookFile_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.jobUri_ = jobUri_;
+      }
     }
 
     @java.lang.Override
@@ -1241,14 +1260,17 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1262,10 +1284,12 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOutputNotebookFile().isEmpty()) {
         outputNotebookFile_ = other.outputNotebookFile_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getJobUri().isEmpty()) {
         jobUri_ = other.jobUri_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1298,55 +1322,55 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getExecutionTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 outputNotebookFile_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 jobUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             default:
@@ -1366,6 +1390,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.notebooks.v1.ExecutionTemplate executionTemplate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.notebooks.v1.ExecutionTemplate,
@@ -1384,7 +1410,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the executionTemplate field is set.
      */
     public boolean hasExecutionTemplate() {
-      return executionTemplateBuilder_ != null || executionTemplate_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1421,11 +1447,11 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         executionTemplate_ = value;
-        onChanged();
       } else {
         executionTemplateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1441,11 +1467,11 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.notebooks.v1.ExecutionTemplate.Builder builderForValue) {
       if (executionTemplateBuilder_ == null) {
         executionTemplate_ = builderForValue.build();
-        onChanged();
       } else {
         executionTemplateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1459,19 +1485,19 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExecutionTemplate(com.google.cloud.notebooks.v1.ExecutionTemplate value) {
       if (executionTemplateBuilder_ == null) {
-        if (executionTemplate_ != null) {
-          executionTemplate_ =
-              com.google.cloud.notebooks.v1.ExecutionTemplate.newBuilder(executionTemplate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && executionTemplate_ != null
+            && executionTemplate_
+                != com.google.cloud.notebooks.v1.ExecutionTemplate.getDefaultInstance()) {
+          getExecutionTemplateBuilder().mergeFrom(value);
         } else {
           executionTemplate_ = value;
         }
-        onChanged();
       } else {
         executionTemplateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1484,14 +1510,13 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.notebooks.v1.ExecutionTemplate execution_template = 1;</code>
      */
     public Builder clearExecutionTemplate() {
-      if (executionTemplateBuilder_ == null) {
-        executionTemplate_ = null;
-        onChanged();
-      } else {
-        executionTemplate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      executionTemplate_ = null;
+      if (executionTemplateBuilder_ != null) {
+        executionTemplateBuilder_.dispose();
         executionTemplateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1504,7 +1529,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.notebooks.v1.ExecutionTemplate execution_template = 1;</code>
      */
     public com.google.cloud.notebooks.v1.ExecutionTemplate.Builder getExecutionTemplateBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getExecutionTemplateFieldBuilder().getBuilder();
     }
@@ -1617,8 +1642,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1635,8 +1660,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1658,8 +1683,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1728,8 +1753,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1746,8 +1771,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1769,8 +1794,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1836,8 +1861,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1853,8 +1878,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1875,8 +1900,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1901,7 +1926,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1942,11 +1967,11 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1963,11 +1988,11 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1983,17 +2008,18 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2008,14 +2034,13 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2030,7 +2055,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2102,7 +2127,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2143,11 +2168,11 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2164,11 +2189,11 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2184,17 +2209,18 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2209,14 +2235,13 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2231,7 +2256,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2316,8 +2341,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2336,9 +2361,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.notebooks.v1.Execution.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.notebooks.v1.Execution.State result =
-          com.google.cloud.notebooks.v1.Execution.State.valueOf(state_);
+          com.google.cloud.notebooks.v1.Execution.State.forNumber(state_);
       return result == null ? com.google.cloud.notebooks.v1.Execution.State.UNRECOGNIZED : result;
     }
     /**
@@ -2359,7 +2383,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2378,7 +2402,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;
@@ -2445,8 +2469,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputNotebookFile_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2462,8 +2486,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOutputNotebookFile() {
-
       outputNotebookFile_ = getDefaultInstance().getOutputNotebookFile();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2484,8 +2508,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputNotebookFile_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2551,8 +2575,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       jobUri_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2568,8 +2592,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearJobUri() {
-
       jobUri_ = getDefaultInstance().getJobUri();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2590,8 +2614,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       jobUri_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

@@ -72,7 +72,9 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int HUB_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object hubId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hubId_ = "";
   /**
    *
    *
@@ -222,11 +226,13 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.networkconnectivity.v1.HubOrBuilder getHubOrBuilder() {
-    return getHub();
+    return hub_ == null ? com.google.cloud.networkconnectivity.v1.Hub.getDefaultInstance() : hub_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -528,18 +534,15 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       hubId_ = "";
-
-      if (hubBuilder_ == null) {
-        hub_ = null;
-      } else {
-        hub_ = null;
+      hub_ = null;
+      if (hubBuilder_ != null) {
+        hubBuilder_.dispose();
         hubBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -567,16 +570,27 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.networkconnectivity.v1.CreateHubRequest buildPartial() {
       com.google.cloud.networkconnectivity.v1.CreateHubRequest result =
           new com.google.cloud.networkconnectivity.v1.CreateHubRequest(this);
-      result.parent_ = parent_;
-      result.hubId_ = hubId_;
-      if (hubBuilder_ == null) {
-        result.hub_ = hub_;
-      } else {
-        result.hub_ = hubBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkconnectivity.v1.CreateHubRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.hubId_ = hubId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.hub_ = hubBuilder_ == null ? hub_ : hubBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -627,10 +641,12 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getHubId().isEmpty()) {
         hubId_ = other.hubId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasHub()) {
@@ -638,6 +654,7 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -669,25 +686,25 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 hubId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getHubFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -706,6 +723,8 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -774,8 +793,8 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -793,8 +812,8 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -817,8 +836,8 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -884,8 +903,8 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       hubId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -901,8 +920,8 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearHubId() {
-
       hubId_ = getDefaultInstance().getHubId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -923,8 +942,8 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hubId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -949,7 +968,7 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the hub field is set.
      */
     public boolean hasHub() {
-      return hubBuilder_ != null || hub_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -990,11 +1009,11 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         hub_ = value;
-        onChanged();
       } else {
         hubBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1011,11 +1030,11 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
     public Builder setHub(com.google.cloud.networkconnectivity.v1.Hub.Builder builderForValue) {
       if (hubBuilder_ == null) {
         hub_ = builderForValue.build();
-        onChanged();
       } else {
         hubBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1031,19 +1050,18 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeHub(com.google.cloud.networkconnectivity.v1.Hub value) {
       if (hubBuilder_ == null) {
-        if (hub_ != null) {
-          hub_ =
-              com.google.cloud.networkconnectivity.v1.Hub.newBuilder(hub_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && hub_ != null
+            && hub_ != com.google.cloud.networkconnectivity.v1.Hub.getDefaultInstance()) {
+          getHubBuilder().mergeFrom(value);
         } else {
           hub_ = value;
         }
-        onChanged();
       } else {
         hubBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1058,14 +1076,13 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearHub() {
-      if (hubBuilder_ == null) {
-        hub_ = null;
-        onChanged();
-      } else {
-        hub_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      hub_ = null;
+      if (hubBuilder_ != null) {
+        hubBuilder_.dispose();
         hubBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1080,7 +1097,7 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.networkconnectivity.v1.Hub.Builder getHubBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getHubFieldBuilder().getBuilder();
     }
@@ -1226,8 +1243,8 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1254,8 +1271,8 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1287,8 +1304,8 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

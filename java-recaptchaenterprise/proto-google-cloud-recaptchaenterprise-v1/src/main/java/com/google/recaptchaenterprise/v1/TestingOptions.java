@@ -234,7 +234,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TESTING_SCORE_FIELD_NUMBER = 1;
-  private float testingScore_;
+  private float testingScore_ = 0F;
   /**
    *
    *
@@ -253,7 +253,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TESTING_CHALLENGE_FIELD_NUMBER = 2;
-  private int testingChallenge_;
+  private int testingChallenge_ = 0;
   /**
    *
    *
@@ -290,9 +290,8 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge getTestingChallenge() {
-    @SuppressWarnings("deprecation")
     com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge result =
-        com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge.valueOf(
+        com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge.forNumber(
             testingChallenge_);
     return result == null
         ? com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge.UNRECOGNIZED
@@ -512,10 +511,9 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       testingScore_ = 0F;
-
       testingChallenge_ = 0;
-
       return this;
     }
 
@@ -543,10 +541,21 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.TestingOptions buildPartial() {
       com.google.recaptchaenterprise.v1.TestingOptions result =
           new com.google.recaptchaenterprise.v1.TestingOptions(this);
-      result.testingScore_ = testingScore_;
-      result.testingChallenge_ = testingChallenge_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.TestingOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.testingScore_ = testingScore_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.testingChallenge_ = testingChallenge_;
+      }
     }
 
     @java.lang.Override
@@ -630,13 +639,13 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
             case 13:
               {
                 testingScore_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 16:
               {
                 testingChallenge_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -655,6 +664,8 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float testingScore_;
     /**
@@ -689,6 +700,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder setTestingScore(float value) {
 
       testingScore_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,7 +717,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTestingScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       testingScore_ = 0F;
       onChanged();
       return this;
@@ -748,8 +760,8 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTestingChallengeValue(int value) {
-
       testingChallenge_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -770,9 +782,8 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge getTestingChallenge() {
-      @SuppressWarnings("deprecation")
       com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge result =
-          com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge.valueOf(
+          com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge.forNumber(
               testingChallenge_);
       return result == null
           ? com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge.UNRECOGNIZED
@@ -799,7 +810,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       testingChallenge_ = value.getNumber();
       onChanged();
       return this;
@@ -820,7 +831,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTestingChallenge() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       testingChallenge_ = 0;
       onChanged();
       return this;

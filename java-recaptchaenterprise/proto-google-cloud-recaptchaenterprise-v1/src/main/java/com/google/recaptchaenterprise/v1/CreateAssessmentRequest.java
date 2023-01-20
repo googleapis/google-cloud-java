@@ -68,7 +68,9 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.AssessmentOrBuilder getAssessmentOrBuilder() {
-    return getAssessment();
+    return assessment_ == null
+        ? com.google.recaptchaenterprise.v1.Assessment.getDefaultInstance()
+        : assessment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (assessmentBuilder_ == null) {
-        assessment_ = null;
-      } else {
-        assessment_ = null;
+      assessment_ = null;
+      if (assessmentBuilder_ != null) {
+        assessmentBuilder_.dispose();
         assessmentBuilder_ = null;
       }
       return this;
@@ -423,14 +426,21 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
     public com.google.recaptchaenterprise.v1.CreateAssessmentRequest buildPartial() {
       com.google.recaptchaenterprise.v1.CreateAssessmentRequest result =
           new com.google.recaptchaenterprise.v1.CreateAssessmentRequest(this);
-      result.parent_ = parent_;
-      if (assessmentBuilder_ == null) {
-        result.assessment_ = assessment_;
-      } else {
-        result.assessment_ = assessmentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.CreateAssessmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.assessment_ = assessmentBuilder_ == null ? assessment_ : assessmentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +491,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAssessment()) {
@@ -515,13 +526,13 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAssessmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +551,8 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -611,8 +624,8 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +644,8 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +669,8 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,7 +695,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      * @return Whether the assessment field is set.
      */
     public boolean hasAssessment() {
-      return assessmentBuilder_ != null || assessment_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -723,11 +736,11 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         assessment_ = value;
-        onChanged();
       } else {
         assessmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -745,11 +758,11 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
         com.google.recaptchaenterprise.v1.Assessment.Builder builderForValue) {
       if (assessmentBuilder_ == null) {
         assessment_ = builderForValue.build();
-        onChanged();
       } else {
         assessmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -765,19 +778,18 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      */
     public Builder mergeAssessment(com.google.recaptchaenterprise.v1.Assessment value) {
       if (assessmentBuilder_ == null) {
-        if (assessment_ != null) {
-          assessment_ =
-              com.google.recaptchaenterprise.v1.Assessment.newBuilder(assessment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && assessment_ != null
+            && assessment_ != com.google.recaptchaenterprise.v1.Assessment.getDefaultInstance()) {
+          getAssessmentBuilder().mergeFrom(value);
         } else {
           assessment_ = value;
         }
-        onChanged();
       } else {
         assessmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -792,14 +804,13 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearAssessment() {
-      if (assessmentBuilder_ == null) {
-        assessment_ = null;
-        onChanged();
-      } else {
-        assessment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      assessment_ = null;
+      if (assessmentBuilder_ != null) {
+        assessmentBuilder_.dispose();
         assessmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -814,7 +825,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.recaptchaenterprise.v1.Assessment.Builder getAssessmentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAssessmentFieldBuilder().getBuilder();
     }

@@ -70,7 +70,9 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    * <code>string type = 1;</code>
    *
@@ -107,7 +109,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VALUE_FIELD_NUMBER = 2;
-  private long value_;
+  private long value_ = 0L;
   /**
    * <code>int64 value = 2;</code>
    *
@@ -325,10 +327,9 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       value_ = 0L;
-
       return this;
     }
 
@@ -356,10 +357,21 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.optimization.v1.CapacityQuantity buildPartial() {
       com.google.cloud.optimization.v1.CapacityQuantity result =
           new com.google.cloud.optimization.v1.CapacityQuantity(this);
-      result.type_ = type_;
-      result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.CapacityQuantity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.value_ = value_;
+      }
     }
 
     @java.lang.Override
@@ -410,6 +422,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getValue() != 0L) {
@@ -444,13 +457,13 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 value_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -469,6 +482,8 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object type_ = "";
     /**
@@ -513,8 +528,8 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -524,8 +539,8 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -540,8 +555,8 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -565,6 +580,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
     public Builder setValue(long value) {
 
       value_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -574,7 +590,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       value_ = 0L;
       onChanged();
       return this;

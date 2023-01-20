@@ -334,11 +334,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReportTimeOrBuilder() {
-    return getReportTime();
+    return reportTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : reportTime_;
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -367,9 +367,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.Event.EventType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.notebooks.v1.Event.EventType result =
-        com.google.cloud.notebooks.v1.Event.EventType.valueOf(type_);
+        com.google.cloud.notebooks.v1.Event.EventType.forNumber(type_);
     return result == null ? com.google.cloud.notebooks.v1.Event.EventType.UNRECOGNIZED : result;
   }
 
@@ -386,6 +385,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> details_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDetails() {
@@ -443,7 +443,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getDetailsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getDetailsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -717,14 +720,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (reportTimeBuilder_ == null) {
-        reportTime_ = null;
-      } else {
-        reportTime_ = null;
+      bitField0_ = 0;
+      reportTime_ = null;
+      if (reportTimeBuilder_ != null) {
+        reportTimeBuilder_.dispose();
         reportTimeBuilder_ = null;
       }
       type_ = 0;
-
       internalGetMutableDetails().clear();
       return this;
     }
@@ -752,17 +754,25 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.notebooks.v1.Event buildPartial() {
       com.google.cloud.notebooks.v1.Event result = new com.google.cloud.notebooks.v1.Event(this);
-      int from_bitField0_ = bitField0_;
-      if (reportTimeBuilder_ == null) {
-        result.reportTime_ = reportTime_;
-      } else {
-        result.reportTime_ = reportTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.type_ = type_;
-      result.details_ = internalGetDetails();
-      result.details_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.Event result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.reportTime_ = reportTimeBuilder_ == null ? reportTime_ : reportTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.details_ = internalGetDetails();
+        result.details_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -817,6 +827,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         setTypeValue(other.getTypeValue());
       }
       internalGetMutableDetails().mergeFrom(other.internalGetDetails());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -846,13 +857,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getReportTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -864,6 +875,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableDetails()
                     .getMutableMap()
                     .put(details__.getKey(), details__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -903,7 +915,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the reportTime field is set.
      */
     public boolean hasReportTime() {
-      return reportTimeBuilder_ != null || reportTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -940,11 +952,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         reportTime_ = value;
-        onChanged();
       } else {
         reportTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -959,11 +971,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public Builder setReportTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (reportTimeBuilder_ == null) {
         reportTime_ = builderForValue.build();
-        onChanged();
       } else {
         reportTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -977,17 +989,18 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeReportTime(com.google.protobuf.Timestamp value) {
       if (reportTimeBuilder_ == null) {
-        if (reportTime_ != null) {
-          reportTime_ =
-              com.google.protobuf.Timestamp.newBuilder(reportTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && reportTime_ != null
+            && reportTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getReportTimeBuilder().mergeFrom(value);
         } else {
           reportTime_ = value;
         }
-        onChanged();
       } else {
         reportTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1000,14 +1013,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp report_time = 1;</code>
      */
     public Builder clearReportTime() {
-      if (reportTimeBuilder_ == null) {
-        reportTime_ = null;
-        onChanged();
-      } else {
-        reportTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      reportTime_ = null;
+      if (reportTimeBuilder_ != null) {
+        reportTimeBuilder_.dispose();
         reportTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1020,7 +1032,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp report_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReportTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getReportTimeFieldBuilder().getBuilder();
     }
@@ -1097,8 +1109,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1115,9 +1127,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.notebooks.v1.Event.EventType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.notebooks.v1.Event.EventType result =
-          com.google.cloud.notebooks.v1.Event.EventType.valueOf(type_);
+          com.google.cloud.notebooks.v1.Event.EventType.forNumber(type_);
       return result == null ? com.google.cloud.notebooks.v1.Event.EventType.UNRECOGNIZED : result;
     }
     /**
@@ -1136,7 +1147,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1153,7 +1164,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;
@@ -1170,14 +1181,14 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableDetails() {
-      onChanged();
-      ;
       if (details_ == null) {
         details_ = com.google.protobuf.MapField.newMapField(DetailsDefaultEntryHolder.defaultEntry);
       }
       if (!details_.isMutable()) {
         details_ = details_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return details_;
     }
 
@@ -1229,8 +1240,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getDetailsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDetailsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1259,6 +1272,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDetails() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableDetails().getMutableMap().clear();
       return this;
     }
@@ -1281,6 +1295,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDetails() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableDetails().getMutableMap();
     }
     /**
@@ -1299,8 +1314,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDetails().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1314,6 +1329,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllDetails(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDetails().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

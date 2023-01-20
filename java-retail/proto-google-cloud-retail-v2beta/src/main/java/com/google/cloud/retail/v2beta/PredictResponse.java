@@ -161,7 +161,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 2;</code>
      */
-
     /* nullable */
     com.google.protobuf.Value getMetadataOrDefault(
         java.lang.String key,
@@ -244,7 +243,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      *
      *
@@ -307,6 +308,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
                       com.google.protobuf.Value.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> metadata_;
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -380,8 +382,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 2;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getMetadataOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -655,8 +659,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         internalGetMutableMetadata().clear();
         return this;
       }
@@ -686,12 +690,23 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.retail.v2beta.PredictResponse.PredictionResult buildPartial() {
         com.google.cloud.retail.v2beta.PredictResponse.PredictionResult result =
             new com.google.cloud.retail.v2beta.PredictResponse.PredictionResult(this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
-        result.metadata_ = internalGetMetadata();
-        result.metadata_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2beta.PredictResponse.PredictionResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.metadata_ = internalGetMetadata();
+          result.metadata_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -746,9 +761,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
           return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+        bitField0_ |= 0x00000002;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -778,7 +795,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -791,6 +808,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
                   internalGetMutableMetadata()
                       .getMutableMap()
                       .put(metadata__.getKey(), metadata__.getValue());
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -873,8 +891,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -890,8 +908,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -912,8 +930,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -931,8 +949,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
       private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
           internalGetMutableMetadata() {
-        onChanged();
-        ;
         if (metadata_ == null) {
           metadata_ =
               com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -940,6 +956,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         if (!metadata_.isMutable()) {
           metadata_ = metadata_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return metadata_;
       }
 
@@ -1006,8 +1024,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 2;</code>
        */
       @java.lang.Override
-      public com.google.protobuf.Value getMetadataOrDefault(
-          java.lang.String key, com.google.protobuf.Value defaultValue) {
+      public /* nullable */ com.google.protobuf.Value getMetadataOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.protobuf.Value defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1043,6 +1063,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
 
       public Builder clearMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableMetadata().getMutableMap().clear();
         return this;
       }
@@ -1070,6 +1091,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableMetadata() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableMetadata().getMutableMap();
       }
       /**
@@ -1093,8 +1115,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableMetadata().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1114,6 +1136,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       public Builder putAllMetadata(
           java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
         internalGetMutableMetadata().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1185,6 +1208,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.PredictResponse.PredictionResult> results_;
   /**
    *
@@ -1262,7 +1287,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ATTRIBUTION_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object attributionToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attributionToken_ = "";
   /**
    *
    *
@@ -1317,6 +1344,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MISSING_IDS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList missingIds_;
   /**
    *
@@ -1378,7 +1407,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -1628,6 +1657,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
       } else {
@@ -1636,11 +1666,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       attributionToken_ = "";
-
       missingIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;
-
       return this;
     }
 
@@ -1668,7 +1696,15 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.retail.v2beta.PredictResponse buildPartial() {
       com.google.cloud.retail.v2beta.PredictResponse result =
           new com.google.cloud.retail.v2beta.PredictResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.retail.v2beta.PredictResponse result) {
       if (resultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
@@ -1678,15 +1714,21 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       } else {
         result.results_ = resultsBuilder_.build();
       }
-      result.attributionToken_ = attributionToken_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         missingIds_ = missingIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.missingIds_ = missingIds_;
-      result.validateOnly_ = validateOnly_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.PredictResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.attributionToken_ = attributionToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -1763,12 +1805,13 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getAttributionToken().isEmpty()) {
         attributionToken_ = other.attributionToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.missingIds_.isEmpty()) {
         if (missingIds_.isEmpty()) {
           missingIds_ = other.missingIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureMissingIdsIsMutable();
           missingIds_.addAll(other.missingIds_);
@@ -1821,7 +1864,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             case 18:
               {
                 attributionToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1834,7 +1877,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -2330,8 +2373,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       attributionToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2350,8 +2393,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAttributionToken() {
-
       attributionToken_ = getDefaultInstance().getAttributionToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2375,8 +2418,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       attributionToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2385,9 +2428,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMissingIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         missingIds_ = new com.google.protobuf.LazyStringArrayList(missingIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2522,7 +2565,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearMissingIds() {
       missingIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2580,6 +2623,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2595,7 +2639,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

@@ -186,6 +186,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList value_;
     /**
      *
@@ -455,6 +457,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         value_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -486,14 +489,26 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList buildPartial() {
         com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList result =
             new com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           value_ = value_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.value_ = value_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -937,6 +952,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.FloatList value_;
     /**
      *
@@ -1201,8 +1218,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         value_ = emptyFloatList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1232,14 +1249,26 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList buildPartial() {
         com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList result =
             new com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           value_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.value_ = value_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1433,6 +1462,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setValue(int index, float value) {
+
         ensureValueIsMutable();
         value_.setFloat(index, value);
         onChanged();
@@ -1451,6 +1481,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder addValue(float value) {
+
         ensureValueIsMutable();
         value_.addFloat(value);
         onChanged();
@@ -1578,6 +1609,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
       categoricalFeatures_;
@@ -1665,9 +1697,10 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
+  public /* nullable */ com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
       getCategoricalFeaturesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -1727,6 +1760,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
       numericalFeatures_;
@@ -1811,9 +1845,10 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList
+  public /* nullable */ com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList
       getNumericalFeaturesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -2115,6 +2150,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableCategoricalFeatures().clear();
       internalGetMutableNumericalFeatures().clear();
       return this;
@@ -2144,13 +2180,23 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommendationengine.v1beta1.FeatureMap buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.FeatureMap result =
           new com.google.cloud.recommendationengine.v1beta1.FeatureMap(this);
-      int from_bitField0_ = bitField0_;
-      result.categoricalFeatures_ = internalGetCategoricalFeatures();
-      result.categoricalFeatures_.makeImmutable();
-      result.numericalFeatures_ = internalGetNumericalFeatures();
-      result.numericalFeatures_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommendationengine.v1beta1.FeatureMap result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.categoricalFeatures_ = internalGetCategoricalFeatures();
+        result.categoricalFeatures_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.numericalFeatures_ = internalGetNumericalFeatures();
+        result.numericalFeatures_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -2200,7 +2246,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.recommendationengine.v1beta1.FeatureMap.getDefaultInstance())
         return this;
       internalGetMutableCategoricalFeatures().mergeFrom(other.internalGetCategoricalFeatures());
+      bitField0_ |= 0x00000001;
       internalGetMutableNumericalFeatures().mergeFrom(other.internalGetNumericalFeatures());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2239,6 +2287,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableCategoricalFeatures()
                     .getMutableMap()
                     .put(categoricalFeatures__.getKey(), categoricalFeatures__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -2253,6 +2302,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableNumericalFeatures()
                     .getMutableMap()
                     .put(numericalFeatures__.getKey(), numericalFeatures__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -2291,8 +2341,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
         internalGetMutableCategoricalFeatures() {
-      onChanged();
-      ;
       if (categoricalFeatures_ == null) {
         categoricalFeatures_ =
             com.google.protobuf.MapField.newMapField(
@@ -2301,6 +2349,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       if (!categoricalFeatures_.isMutable()) {
         categoricalFeatures_ = categoricalFeatures_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return categoricalFeatures_;
     }
 
@@ -2377,9 +2427,10 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
+    public /* nullable */ com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
         getCategoricalFeaturesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -2421,6 +2472,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearCategoricalFeatures() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableCategoricalFeatures().getMutableMap().clear();
       return this;
     }
@@ -2452,6 +2504,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
         getMutableCategoricalFeatures() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableCategoricalFeatures().getMutableMap();
     }
     /**
@@ -2479,8 +2532,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableCategoricalFeatures().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -2505,6 +2558,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
             values) {
       internalGetMutableCategoricalFeatures().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -2525,8 +2579,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
         internalGetMutableNumericalFeatures() {
-      onChanged();
-      ;
       if (numericalFeatures_ == null) {
         numericalFeatures_ =
             com.google.protobuf.MapField.newMapField(
@@ -2535,6 +2587,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       if (!numericalFeatures_.isMutable()) {
         numericalFeatures_ = numericalFeatures_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return numericalFeatures_;
     }
 
@@ -2608,9 +2662,10 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList
+    public /* nullable */ com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList
         getNumericalFeaturesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -2651,6 +2706,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearNumericalFeatures() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableNumericalFeatures().getMutableMap().clear();
       return this;
     }
@@ -2681,6 +2737,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
         getMutableNumericalFeatures() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableNumericalFeatures().getMutableMap();
     }
     /**
@@ -2707,8 +2764,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableNumericalFeatures().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2732,6 +2789,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
             values) {
       internalGetMutableNumericalFeatures().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

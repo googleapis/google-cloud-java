@@ -113,7 +113,7 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getParamsOrBuilder() {
-    return getParams();
+    return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -321,10 +321,10 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (paramsBuilder_ == null) {
-        params_ = null;
-      } else {
-        params_ = null;
+      bitField0_ = 0;
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
         paramsBuilder_ = null;
       }
       return this;
@@ -355,13 +355,19 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
     public com.google.cloud.recommender.v1beta1.InsightTypeGenerationConfig buildPartial() {
       com.google.cloud.recommender.v1beta1.InsightTypeGenerationConfig result =
           new com.google.cloud.recommender.v1beta1.InsightTypeGenerationConfig(this);
-      if (paramsBuilder_ == null) {
-        result.params_ = params_;
-      } else {
-        result.params_ = paramsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommender.v1beta1.InsightTypeGenerationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -444,7 +450,7 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getParamsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -463,6 +469,8 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Struct params_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -483,7 +491,7 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
      * @return Whether the params field is set.
      */
     public boolean hasParams() {
-      return paramsBuilder_ != null || params_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -520,11 +528,11 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         params_ = value;
-        onChanged();
       } else {
         paramsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -540,11 +548,11 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
     public Builder setParams(com.google.protobuf.Struct.Builder builderForValue) {
       if (paramsBuilder_ == null) {
         params_ = builderForValue.build();
-        onChanged();
       } else {
         paramsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -559,16 +567,18 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
      */
     public Builder mergeParams(com.google.protobuf.Struct value) {
       if (paramsBuilder_ == null) {
-        if (params_ != null) {
-          params_ = com.google.protobuf.Struct.newBuilder(params_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && params_ != null
+            && params_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getParamsBuilder().mergeFrom(value);
         } else {
           params_ = value;
         }
-        onChanged();
       } else {
         paramsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -582,14 +592,13 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
      * <code>.google.protobuf.Struct params = 1;</code>
      */
     public Builder clearParams() {
-      if (paramsBuilder_ == null) {
-        params_ = null;
-        onChanged();
-      } else {
-        params_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
         paramsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -603,7 +612,7 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
      * <code>.google.protobuf.Struct params = 1;</code>
      */
     public com.google.protobuf.Struct.Builder getParamsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getParamsFieldBuilder().getBuilder();
     }

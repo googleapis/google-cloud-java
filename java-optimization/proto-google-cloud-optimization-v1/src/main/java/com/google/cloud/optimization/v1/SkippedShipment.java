@@ -532,7 +532,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
 
     private int bitField0_;
     public static final int CODE_FIELD_NUMBER = 1;
-    private int code_;
+    private int code_ = 0;
     /**
      *
      *
@@ -561,16 +561,15 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.optimization.v1.SkippedShipment.Reason.Code getCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.optimization.v1.SkippedShipment.Reason.Code result =
-          com.google.cloud.optimization.v1.SkippedShipment.Reason.Code.valueOf(code_);
+          com.google.cloud.optimization.v1.SkippedShipment.Reason.Code.forNumber(code_);
       return result == null
           ? com.google.cloud.optimization.v1.SkippedShipment.Reason.Code.UNRECOGNIZED
           : result;
     }
 
     public static final int EXAMPLE_VEHICLE_INDEX_FIELD_NUMBER = 2;
-    private int exampleVehicleIndex_;
+    private int exampleVehicleIndex_ = 0;
     /**
      *
      *
@@ -605,7 +604,9 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int EXAMPLE_EXCEEDED_CAPACITY_TYPE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object exampleExceededCapacityType_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object exampleExceededCapacityType_ = "";
     /**
      *
      *
@@ -910,12 +911,10 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         code_ = 0;
-
         exampleVehicleIndex_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
         exampleExceededCapacityType_ = "";
-
         return this;
       }
 
@@ -943,17 +942,27 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.optimization.v1.SkippedShipment.Reason buildPartial() {
         com.google.cloud.optimization.v1.SkippedShipment.Reason result =
             new com.google.cloud.optimization.v1.SkippedShipment.Reason(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.optimization.v1.SkippedShipment.Reason result) {
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.code_ = code_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.code_ = code_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.exampleVehicleIndex_ = exampleVehicleIndex_;
           to_bitField0_ |= 0x00000001;
         }
-        result.exampleExceededCapacityType_ = exampleExceededCapacityType_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.exampleExceededCapacityType_ = exampleExceededCapacityType_;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1012,6 +1021,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         }
         if (!other.getExampleExceededCapacityType().isEmpty()) {
           exampleExceededCapacityType_ = other.exampleExceededCapacityType_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1043,19 +1053,19 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
               case 8:
                 {
                   code_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   exampleVehicleIndex_ = input.readInt32();
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   exampleExceededCapacityType_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1106,8 +1116,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder setCodeValue(int value) {
-
         code_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1124,9 +1134,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        */
       @java.lang.Override
       public com.google.cloud.optimization.v1.SkippedShipment.Reason.Code getCode() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.optimization.v1.SkippedShipment.Reason.Code result =
-            com.google.cloud.optimization.v1.SkippedShipment.Reason.Code.valueOf(code_);
+            com.google.cloud.optimization.v1.SkippedShipment.Reason.Code.forNumber(code_);
         return result == null
             ? com.google.cloud.optimization.v1.SkippedShipment.Reason.Code.UNRECOGNIZED
             : result;
@@ -1147,7 +1156,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         code_ = value.getNumber();
         onChanged();
         return this;
@@ -1164,7 +1173,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearCode() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         code_ = 0;
         onChanged();
         return this;
@@ -1185,7 +1194,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        */
       @java.lang.Override
       public boolean hasExampleVehicleIndex() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1217,8 +1226,9 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder setExampleVehicleIndex(int value) {
-        bitField0_ |= 0x00000001;
+
         exampleVehicleIndex_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1235,7 +1245,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearExampleVehicleIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         exampleVehicleIndex_ = 0;
         onChanged();
         return this;
@@ -1305,8 +1315,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         exampleExceededCapacityType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1323,8 +1333,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearExampleExceededCapacityType() {
-
         exampleExceededCapacityType_ = getDefaultInstance().getExampleExceededCapacityType();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1346,8 +1356,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         exampleExceededCapacityType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1417,7 +1427,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INDEX_FIELD_NUMBER = 1;
-  private int index_;
+  private int index_ = 0;
   /**
    *
    *
@@ -1436,7 +1446,9 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LABEL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object label_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object label_ = "";
   /**
    *
    *
@@ -1489,6 +1501,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int REASONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.SkippedShipment.Reason> reasons_;
   /**
    *
@@ -1782,17 +1796,16 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       index_ = 0;
-
       label_ = "";
-
       if (reasonsBuilder_ == null) {
         reasons_ = java.util.Collections.emptyList();
       } else {
         reasons_ = null;
         reasonsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1820,20 +1833,35 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.optimization.v1.SkippedShipment buildPartial() {
       com.google.cloud.optimization.v1.SkippedShipment result =
           new com.google.cloud.optimization.v1.SkippedShipment(this);
-      int from_bitField0_ = bitField0_;
-      result.index_ = index_;
-      result.label_ = label_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.optimization.v1.SkippedShipment result) {
       if (reasonsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           reasons_ = java.util.Collections.unmodifiableList(reasons_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.reasons_ = reasons_;
       } else {
         result.reasons_ = reasonsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.SkippedShipment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.index_ = index_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.label_ = label_;
+      }
     }
 
     @java.lang.Override
@@ -1887,13 +1915,14 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getLabel().isEmpty()) {
         label_ = other.label_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (reasonsBuilder_ == null) {
         if (!other.reasons_.isEmpty()) {
           if (reasons_.isEmpty()) {
             reasons_ = other.reasons_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureReasonsIsMutable();
             reasons_.addAll(other.reasons_);
@@ -1906,7 +1935,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
             reasonsBuilder_.dispose();
             reasonsBuilder_ = null;
             reasons_ = other.reasons_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             reasonsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getReasonsFieldBuilder()
@@ -1945,13 +1974,13 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 index_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 label_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -2020,6 +2049,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     public Builder setIndex(int value) {
 
       index_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2036,7 +2066,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIndex() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       index_ = 0;
       onChanged();
       return this;
@@ -2109,8 +2139,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       label_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2128,8 +2158,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearLabel() {
-
       label_ = getDefaultInstance().getLabel();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2152,8 +2182,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       label_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2162,11 +2192,11 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureReasonsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         reasons_ =
             new java.util.ArrayList<com.google.cloud.optimization.v1.SkippedShipment.Reason>(
                 reasons_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2399,7 +2429,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     public Builder clearReasons() {
       if (reasonsBuilder_ == null) {
         reasons_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         reasonsBuilder_.clear();
@@ -2533,7 +2563,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.optimization.v1.SkippedShipment.Reason,
                 com.google.cloud.optimization.v1.SkippedShipment.Reason.Builder,
                 com.google.cloud.optimization.v1.SkippedShipment.ReasonOrBuilder>(
-                reasons_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                reasons_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         reasons_ = null;
       }
       return reasonsBuilder_;

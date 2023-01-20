@@ -273,7 +273,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.FieldMask&gt; matching_variant_fields = 4;</code>
      */
-
     /* nullable */
     com.google.protobuf.FieldMask getMatchingVariantFieldsOrDefault(
         java.lang.String key,
@@ -450,7 +449,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; variant_rollup_values = 5;</code>
      */
-
     /* nullable */
     com.google.protobuf.Value getVariantRollupValuesOrDefault(
         java.lang.String key,
@@ -645,7 +643,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      *
      *
@@ -773,11 +773,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.ProductOrBuilder getProductOrBuilder() {
-      return getProduct();
+      return product_ == null
+          ? com.google.cloud.retail.v2beta.Product.getDefaultInstance()
+          : product_;
     }
 
     public static final int MATCHING_VARIANT_COUNT_FIELD_NUMBER = 3;
-    private int matchingVariantCount_;
+    private int matchingVariantCount_ = 0;
     /**
      *
      *
@@ -811,6 +813,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                       com.google.protobuf.FieldMask.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.FieldMask>
         matchingVariantFields_;
 
@@ -903,8 +906,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.protobuf.FieldMask&gt; matching_variant_fields = 4;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.FieldMask getMatchingVariantFieldsOrDefault(
-        java.lang.String key, com.google.protobuf.FieldMask defaultValue) {
+    public /* nullable */ com.google.protobuf.FieldMask getMatchingVariantFieldsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.FieldMask defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -959,6 +964,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                       com.google.protobuf.Value.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
         variantRollupValues_;
 
@@ -1100,8 +1106,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.protobuf.Value&gt; variant_rollup_values = 5;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getVariantRollupValuesOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getVariantRollupValuesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1159,6 +1167,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PERSONAL_LABELS_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList personalLabels_;
     /**
      *
@@ -1563,20 +1573,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
-        if (productBuilder_ == null) {
-          product_ = null;
-        } else {
-          product_ = null;
+        product_ = null;
+        if (productBuilder_ != null) {
+          productBuilder_.dispose();
           productBuilder_ = null;
         }
         matchingVariantCount_ = 0;
-
         internalGetMutableMatchingVariantFields().clear();
         internalGetMutableVariantRollupValues().clear();
         personalLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -1605,25 +1613,43 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2beta.SearchResponse.SearchResult buildPartial() {
         com.google.cloud.retail.v2beta.SearchResponse.SearchResult result =
             new com.google.cloud.retail.v2beta.SearchResponse.SearchResult(this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
-        if (productBuilder_ == null) {
-          result.product_ = product_;
-        } else {
-          result.product_ = productBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.matchingVariantCount_ = matchingVariantCount_;
-        result.matchingVariantFields_ = internalGetMatchingVariantFields();
-        result.matchingVariantFields_.makeImmutable();
-        result.variantRollupValues_ = internalGetVariantRollupValues();
-        result.variantRollupValues_.makeImmutable();
-        if (((bitField0_ & 0x00000004) != 0)) {
-          personalLabels_ = personalLabels_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.personalLabels_ = personalLabels_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.retail.v2beta.SearchResponse.SearchResult result) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          personalLabels_ = personalLabels_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.personalLabels_ = personalLabels_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2beta.SearchResponse.SearchResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.product_ = productBuilder_ == null ? product_ : productBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.matchingVariantCount_ = matchingVariantCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.matchingVariantFields_ = internalGetMatchingVariantFields();
+          result.matchingVariantFields_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.variantRollupValues_ = internalGetVariantRollupValues();
+          result.variantRollupValues_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -1677,6 +1703,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasProduct()) {
@@ -1687,11 +1714,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
         internalGetMutableMatchingVariantFields()
             .mergeFrom(other.internalGetMatchingVariantFields());
+        bitField0_ |= 0x00000008;
         internalGetMutableVariantRollupValues().mergeFrom(other.internalGetVariantRollupValues());
+        bitField0_ |= 0x00000010;
         if (!other.personalLabels_.isEmpty()) {
           if (personalLabels_.isEmpty()) {
             personalLabels_ = other.personalLabels_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensurePersonalLabelsIsMutable();
             personalLabels_.addAll(other.personalLabels_);
@@ -1727,19 +1756,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getProductFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   matchingVariantCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
@@ -1753,6 +1782,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableMatchingVariantFields()
                       .getMutableMap()
                       .put(matchingVariantFields__.getKey(), matchingVariantFields__.getValue());
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
@@ -1765,6 +1795,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableVariantRollupValues()
                       .getMutableMap()
                       .put(variantRollupValues__.getKey(), variantRollupValues__.getValue());
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 58:
@@ -1857,8 +1888,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1875,8 +1906,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1898,8 +1929,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1933,7 +1964,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the product field is set.
        */
       public boolean hasProduct() {
-        return productBuilder_ != null || product_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1992,11 +2023,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           product_ = value;
-          onChanged();
         } else {
           productBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2022,11 +2053,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder setProduct(com.google.cloud.retail.v2beta.Product.Builder builderForValue) {
         if (productBuilder_ == null) {
           product_ = builderForValue.build();
-          onChanged();
         } else {
           productBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2051,19 +2082,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeProduct(com.google.cloud.retail.v2beta.Product value) {
         if (productBuilder_ == null) {
-          if (product_ != null) {
-            product_ =
-                com.google.cloud.retail.v2beta.Product.newBuilder(product_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && product_ != null
+              && product_ != com.google.cloud.retail.v2beta.Product.getDefaultInstance()) {
+            getProductBuilder().mergeFrom(value);
           } else {
             product_ = value;
           }
-          onChanged();
         } else {
           productBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2087,14 +2117,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.retail.v2beta.Product product = 2;</code>
        */
       public Builder clearProduct() {
-        if (productBuilder_ == null) {
-          product_ = null;
-          onChanged();
-        } else {
-          product_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        product_ = null;
+        if (productBuilder_ != null) {
+          productBuilder_.dispose();
           productBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2118,7 +2147,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.retail.v2beta.Product product = 2;</code>
        */
       public com.google.cloud.retail.v2beta.Product.Builder getProductBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getProductFieldBuilder().getBuilder();
       }
@@ -2223,6 +2252,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder setMatchingVariantCount(int value) {
 
         matchingVariantCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2240,7 +2270,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMatchingVariantCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         matchingVariantCount_ = 0;
         onChanged();
         return this;
@@ -2260,8 +2290,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
       private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.FieldMask>
           internalGetMutableMatchingVariantFields() {
-        onChanged();
-        ;
         if (matchingVariantFields_ == null) {
           matchingVariantFields_ =
               com.google.protobuf.MapField.newMapField(
@@ -2270,6 +2298,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (!matchingVariantFields_.isMutable()) {
           matchingVariantFields_ = matchingVariantFields_.copy();
         }
+        bitField0_ |= 0x00000008;
+        onChanged();
         return matchingVariantFields_;
       }
 
@@ -2353,8 +2383,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>map&lt;string, .google.protobuf.FieldMask&gt; matching_variant_fields = 4;</code>
        */
       @java.lang.Override
-      public com.google.protobuf.FieldMask getMatchingVariantFieldsOrDefault(
-          java.lang.String key, com.google.protobuf.FieldMask defaultValue) {
+      public /* nullable */ com.google.protobuf.FieldMask getMatchingVariantFieldsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.protobuf.FieldMask defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -2395,6 +2427,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearMatchingVariantFields() {
+        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableMatchingVariantFields().getMutableMap().clear();
         return this;
       }
@@ -2428,6 +2461,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.FieldMask>
           getMutableMatchingVariantFields() {
+        bitField0_ |= 0x00000008;
         return internalGetMutableMatchingVariantFields().getMutableMap();
       }
       /**
@@ -2457,8 +2491,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableMatchingVariantFields().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -2483,6 +2517,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder putAllMatchingVariantFields(
           java.util.Map<java.lang.String, com.google.protobuf.FieldMask> values) {
         internalGetMutableMatchingVariantFields().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000008;
         return this;
       }
 
@@ -2500,8 +2535,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
       private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
           internalGetMutableVariantRollupValues() {
-        onChanged();
-        ;
         if (variantRollupValues_ == null) {
           variantRollupValues_ =
               com.google.protobuf.MapField.newMapField(
@@ -2510,6 +2543,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (!variantRollupValues_.isMutable()) {
           variantRollupValues_ = variantRollupValues_.copy();
         }
+        bitField0_ |= 0x00000010;
+        onChanged();
         return variantRollupValues_;
       }
 
@@ -2643,8 +2678,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>map&lt;string, .google.protobuf.Value&gt; variant_rollup_values = 5;</code>
        */
       @java.lang.Override
-      public com.google.protobuf.Value getVariantRollupValuesOrDefault(
-          java.lang.String key, com.google.protobuf.Value defaultValue) {
+      public /* nullable */ com.google.protobuf.Value getVariantRollupValuesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.protobuf.Value defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -2702,6 +2739,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearVariantRollupValues() {
+        bitField0_ = (bitField0_ & ~0x00000010);
         internalGetMutableVariantRollupValues().getMutableMap().clear();
         return this;
       }
@@ -2752,6 +2790,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value>
           getMutableVariantRollupValues() {
+        bitField0_ |= 0x00000010;
         return internalGetMutableVariantRollupValues().getMutableMap();
       }
       /**
@@ -2797,8 +2836,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableVariantRollupValues().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
@@ -2840,6 +2879,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder putAllVariantRollupValues(
           java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
         internalGetMutableVariantRollupValues().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000010;
         return this;
       }
 
@@ -2847,9 +2887,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePersonalLabelsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           personalLabels_ = new com.google.protobuf.LazyStringArrayList(personalLabels_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000020;
         }
       }
       /**
@@ -3056,7 +3096,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPersonalLabels() {
         personalLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -3649,7 +3689,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int COUNT_FIELD_NUMBER = 3;
-      private long count_;
+      private long count_ = 0L;
       /**
        *
        *
@@ -3667,7 +3707,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int MIN_VALUE_FIELD_NUMBER = 5;
-      private double minValue_;
+      private double minValue_ = 0D;
       /**
        *
        *
@@ -3689,7 +3729,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int MAX_VALUE_FIELD_NUMBER = 6;
-      private double maxValue_;
+      private double maxValue_ = 0D;
       /**
        *
        *
@@ -3976,15 +4016,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (intervalBuilder_ != null) {
             intervalBuilder_.clear();
           }
           count_ = 0L;
-
           minValue_ = 0D;
-
           maxValue_ = 0D;
-
           facetValueCase_ = 0;
           facetValue_ = null;
           return this;
@@ -4016,22 +4054,35 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue buildPartial() {
           com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue result =
               new com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue(this);
-          if (facetValueCase_ == 1) {
-            result.facetValue_ = facetValue_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (facetValueCase_ == 2) {
-            if (intervalBuilder_ == null) {
-              result.facetValue_ = facetValue_;
-            } else {
-              result.facetValue_ = intervalBuilder_.build();
-            }
-          }
-          result.count_ = count_;
-          result.minValue_ = minValue_;
-          result.maxValue_ = maxValue_;
-          result.facetValueCase_ = facetValueCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.count_ = count_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.minValue_ = minValue_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.maxValue_ = maxValue_;
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue result) {
+          result.facetValueCase_ = facetValueCase_;
+          result.facetValue_ = this.facetValue_;
+          if (facetValueCase_ == 2 && intervalBuilder_ != null) {
+            result.facetValue_ = intervalBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -4154,19 +4205,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 case 24:
                   {
                     count_ = input.readInt64();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 case 41:
                   {
                     minValue_ = input.readDouble();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 41
                 case 49:
                   {
                     maxValue_ = input.readDouble();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 49
                 default:
@@ -4199,6 +4250,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         /**
          *
@@ -4540,7 +4593,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
           facetValueCase_ = 2;
           onChanged();
-          ;
           return intervalBuilder_;
         }
 
@@ -4575,6 +4627,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         public Builder setCount(long value) {
 
           count_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4590,7 +4643,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           count_ = 0L;
           onChanged();
           return this;
@@ -4635,6 +4688,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         public Builder setMinValue(double value) {
 
           minValue_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -4654,7 +4708,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearMinValue() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           minValue_ = 0D;
           onChanged();
           return this;
@@ -4699,6 +4753,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         public Builder setMaxValue(double value) {
 
           maxValue_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -4718,7 +4773,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearMaxValue() {
-
+          bitField0_ = (bitField0_ & ~0x00000010);
           maxValue_ = 0D;
           onChanged();
           return this;
@@ -4792,7 +4847,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object key_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object key_ = "";
     /**
      *
      *
@@ -4843,6 +4900,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue> values_;
     /**
      *
@@ -4915,7 +4974,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DYNAMIC_FACET_FIELD_NUMBER = 3;
-    private boolean dynamicFacet_;
+    private boolean dynamicFacet_ = false;
     /**
      *
      *
@@ -5152,17 +5211,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         key_ = "";
-
         if (valuesBuilder_ == null) {
           values_ = java.util.Collections.emptyList();
         } else {
           values_ = null;
           valuesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         dynamicFacet_ = false;
-
         return this;
       }
 
@@ -5190,20 +5248,35 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2beta.SearchResponse.Facet buildPartial() {
         com.google.cloud.retail.v2beta.SearchResponse.Facet result =
             new com.google.cloud.retail.v2beta.SearchResponse.Facet(this);
-        int from_bitField0_ = bitField0_;
-        result.key_ = key_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.retail.v2beta.SearchResponse.Facet result) {
         if (valuesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             values_ = java.util.Collections.unmodifiableList(values_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.values_ = values_;
         } else {
           result.values_ = valuesBuilder_.build();
         }
-        result.dynamicFacet_ = dynamicFacet_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.retail.v2beta.SearchResponse.Facet result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.key_ = key_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.dynamicFacet_ = dynamicFacet_;
+        }
       }
 
       @java.lang.Override
@@ -5256,13 +5329,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (valuesBuilder_ == null) {
           if (!other.values_.isEmpty()) {
             if (values_.isEmpty()) {
               values_ = other.values_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureValuesIsMutable();
               values_.addAll(other.values_);
@@ -5275,7 +5349,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               valuesBuilder_.dispose();
               valuesBuilder_ = null;
               values_ = other.values_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               valuesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getValuesFieldBuilder()
@@ -5317,7 +5391,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   key_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -5337,7 +5411,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               case 24:
                 {
                   dynamicFacet_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -5423,8 +5497,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5441,8 +5515,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-
         key_ = getDefaultInstance().getKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -5464,8 +5538,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5474,11 +5548,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           values_ = java.util.Collections.emptyList();
 
       private void ensureValuesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           values_ =
               new java.util.ArrayList<
                   com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue>(values_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -5713,7 +5787,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder clearValues() {
         if (valuesBuilder_ == null) {
           values_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           valuesBuilder_.clear();
@@ -5852,7 +5926,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue,
                   com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.Builder,
                   com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValueOrBuilder>(
-                  values_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  values_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           values_ = null;
         }
         return valuesBuilder_;
@@ -5889,6 +5963,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder setDynamicFacet(boolean value) {
 
         dynamicFacet_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5904,7 +5979,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDynamicFacet() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         dynamicFacet_ = false;
         onChanged();
         return this;
@@ -6057,7 +6132,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int EXPANDED_QUERY_FIELD_NUMBER = 1;
-    private boolean expandedQuery_;
+    private boolean expandedQuery_ = false;
     /**
      *
      *
@@ -6075,7 +6150,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PINNED_RESULT_COUNT_FIELD_NUMBER = 2;
-    private long pinnedResultCount_;
+    private long pinnedResultCount_ = 0L;
     /**
      *
      *
@@ -6307,10 +6382,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         expandedQuery_ = false;
-
         pinnedResultCount_ = 0L;
-
         return this;
       }
 
@@ -6340,10 +6414,22 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfo buildPartial() {
         com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfo result =
             new com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfo(this);
-        result.expandedQuery_ = expandedQuery_;
-        result.pinnedResultCount_ = pinnedResultCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.expandedQuery_ = expandedQuery_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pinnedResultCount_ = pinnedResultCount_;
+        }
       }
 
       @java.lang.Override
@@ -6432,13 +6518,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   expandedQuery_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   pinnedResultCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -6457,6 +6543,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean expandedQuery_;
       /**
@@ -6489,6 +6577,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder setExpandedQuery(boolean value) {
 
         expandedQuery_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6504,7 +6593,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearExpandedQuery() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         expandedQuery_ = false;
         onChanged();
         return this;
@@ -6547,6 +6636,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder setPinnedResultCount(long value) {
 
         pinnedResultCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6565,7 +6655,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPinnedResultCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         pinnedResultCount_ = 0L;
         onChanged();
         return this;
@@ -6639,6 +6729,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.SearchResponse.SearchResult> results_;
   /**
    *
@@ -6711,6 +6803,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FACETS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.SearchResponse.Facet> facets_;
   /**
    *
@@ -6781,7 +6875,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
-  private int totalSize_;
+  private int totalSize_ = 0;
   /**
    *
    *
@@ -6803,7 +6897,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CORRECTED_QUERY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object correctedQuery_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object correctedQuery_ = "";
   /**
    *
    *
@@ -6856,7 +6952,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ATTRIBUTION_TOKEN_FIELD_NUMBER = 5;
-  private volatile java.lang.Object attributionToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attributionToken_ = "";
   /**
    *
    *
@@ -6909,7 +7007,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -7012,11 +7112,15 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfoOrBuilder
       getQueryExpansionInfoOrBuilder() {
-    return getQueryExpansionInfo();
+    return queryExpansionInfo_ == null
+        ? com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfo.getDefaultInstance()
+        : queryExpansionInfo_;
   }
 
   public static final int REDIRECT_URI_FIELD_NUMBER = 10;
-  private volatile java.lang.Object redirectUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redirectUri_ = "";
   /**
    *
    *
@@ -7073,6 +7177,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int APPLIED_CONTROLS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList appliedControls_;
   /**
    *
@@ -7138,6 +7244,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INVALID_CONDITION_BOOST_SPECS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.SearchRequest.BoostSpec.ConditionBoostSpec>
       invalidConditionBoostSpecs_;
   /**
@@ -7533,6 +7641,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
       } else {
@@ -7548,30 +7657,24 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       totalSize_ = 0;
-
       correctedQuery_ = "";
-
       attributionToken_ = "";
-
       nextPageToken_ = "";
-
-      if (queryExpansionInfoBuilder_ == null) {
-        queryExpansionInfo_ = null;
-      } else {
-        queryExpansionInfo_ = null;
+      queryExpansionInfo_ = null;
+      if (queryExpansionInfoBuilder_ != null) {
+        queryExpansionInfoBuilder_.dispose();
         queryExpansionInfoBuilder_ = null;
       }
       redirectUri_ = "";
-
       appliedControls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (invalidConditionBoostSpecsBuilder_ == null) {
         invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
       } else {
         invalidConditionBoostSpecs_ = null;
         invalidConditionBoostSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -7599,7 +7702,15 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2beta.SearchResponse buildPartial() {
       com.google.cloud.retail.v2beta.SearchResponse result =
           new com.google.cloud.retail.v2beta.SearchResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.retail.v2beta.SearchResponse result) {
       if (resultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
@@ -7618,33 +7729,46 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.facets_ = facetsBuilder_.build();
       }
-      result.totalSize_ = totalSize_;
-      result.correctedQuery_ = correctedQuery_;
-      result.attributionToken_ = attributionToken_;
-      result.nextPageToken_ = nextPageToken_;
-      if (queryExpansionInfoBuilder_ == null) {
-        result.queryExpansionInfo_ = queryExpansionInfo_;
-      } else {
-        result.queryExpansionInfo_ = queryExpansionInfoBuilder_.build();
-      }
-      result.redirectUri_ = redirectUri_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         appliedControls_ = appliedControls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.appliedControls_ = appliedControls_;
       if (invalidConditionBoostSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           invalidConditionBoostSpecs_ =
               java.util.Collections.unmodifiableList(invalidConditionBoostSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.invalidConditionBoostSpecs_ = invalidConditionBoostSpecs_;
       } else {
         result.invalidConditionBoostSpecs_ = invalidConditionBoostSpecsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.SearchResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.totalSize_ = totalSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.correctedQuery_ = correctedQuery_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.attributionToken_ = attributionToken_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.queryExpansionInfo_ =
+            queryExpansionInfoBuilder_ == null
+                ? queryExpansionInfo_
+                : queryExpansionInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.redirectUri_ = redirectUri_;
+      }
     }
 
     @java.lang.Override
@@ -7751,14 +7875,17 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCorrectedQuery().isEmpty()) {
         correctedQuery_ = other.correctedQuery_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getAttributionToken().isEmpty()) {
         attributionToken_ = other.attributionToken_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasQueryExpansionInfo()) {
@@ -7766,12 +7893,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRedirectUri().isEmpty()) {
         redirectUri_ = other.redirectUri_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.appliedControls_.isEmpty()) {
         if (appliedControls_.isEmpty()) {
           appliedControls_ = other.appliedControls_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureAppliedControlsIsMutable();
           appliedControls_.addAll(other.appliedControls_);
@@ -7782,7 +7910,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (!other.invalidConditionBoostSpecs_.isEmpty()) {
           if (invalidConditionBoostSpecs_.isEmpty()) {
             invalidConditionBoostSpecs_ = other.invalidConditionBoostSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureInvalidConditionBoostSpecsIsMutable();
             invalidConditionBoostSpecs_.addAll(other.invalidConditionBoostSpecs_);
@@ -7795,7 +7923,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             invalidConditionBoostSpecsBuilder_.dispose();
             invalidConditionBoostSpecsBuilder_ = null;
             invalidConditionBoostSpecs_ = other.invalidConditionBoostSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000200);
             invalidConditionBoostSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInvalidConditionBoostSpecsFieldBuilder()
@@ -7862,38 +7990,38 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 totalSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 correctedQuery_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 attributionToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getQueryExpansionInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 82:
               {
                 redirectUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 98:
@@ -8694,6 +8822,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder setTotalSize(int value) {
 
       totalSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -8713,7 +8842,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       totalSize_ = 0;
       onChanged();
       return this;
@@ -8786,8 +8915,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       correctedQuery_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -8805,8 +8934,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCorrectedQuery() {
-
       correctedQuery_ = getDefaultInstance().getCorrectedQuery();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -8829,8 +8958,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       correctedQuery_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -8902,8 +9031,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       attributionToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -8921,8 +9050,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAttributionToken() {
-
       attributionToken_ = getDefaultInstance().getAttributionToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -8945,8 +9074,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       attributionToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9021,8 +9150,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -9041,8 +9170,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -9066,8 +9195,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -9091,7 +9220,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the queryExpansionInfo field is set.
      */
     public boolean hasQueryExpansionInfo() {
-      return queryExpansionInfoBuilder_ != null || queryExpansionInfo_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -9132,11 +9261,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         queryExpansionInfo_ = value;
-        onChanged();
       } else {
         queryExpansionInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -9153,11 +9282,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfo.Builder builderForValue) {
       if (queryExpansionInfoBuilder_ == null) {
         queryExpansionInfo_ = builderForValue.build();
-        onChanged();
       } else {
         queryExpansionInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -9173,20 +9302,20 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeQueryExpansionInfo(
         com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfo value) {
       if (queryExpansionInfoBuilder_ == null) {
-        if (queryExpansionInfo_ != null) {
-          queryExpansionInfo_ =
-              com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfo.newBuilder(
-                      queryExpansionInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && queryExpansionInfo_ != null
+            && queryExpansionInfo_
+                != com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfo
+                    .getDefaultInstance()) {
+          getQueryExpansionInfoBuilder().mergeFrom(value);
         } else {
           queryExpansionInfo_ = value;
         }
-        onChanged();
       } else {
         queryExpansionInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -9200,14 +9329,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearQueryExpansionInfo() {
-      if (queryExpansionInfoBuilder_ == null) {
-        queryExpansionInfo_ = null;
-        onChanged();
-      } else {
-        queryExpansionInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      queryExpansionInfo_ = null;
+      if (queryExpansionInfoBuilder_ != null) {
+        queryExpansionInfoBuilder_.dispose();
         queryExpansionInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9222,7 +9350,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.retail.v2beta.SearchResponse.QueryExpansionInfo.Builder
         getQueryExpansionInfoBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getQueryExpansionInfoFieldBuilder().getBuilder();
     }
@@ -9346,8 +9474,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       redirectUri_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9367,8 +9495,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRedirectUri() {
-
       redirectUri_ = getDefaultInstance().getRedirectUri();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -9393,8 +9521,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       redirectUri_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9403,9 +9531,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAppliedControlsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         appliedControls_ = new com.google.protobuf.LazyStringArrayList(appliedControls_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -9548,7 +9676,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAppliedControls() {
       appliedControls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -9581,12 +9709,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
 
     private void ensureInvalidConditionBoostSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         invalidConditionBoostSpecs_ =
             new java.util.ArrayList<
                 com.google.cloud.retail.v2beta.SearchRequest.BoostSpec.ConditionBoostSpec>(
                 invalidConditionBoostSpecs_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -9860,7 +9988,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInvalidConditionBoostSpecs() {
       if (invalidConditionBoostSpecsBuilder_ == null) {
         invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         invalidConditionBoostSpecsBuilder_.clear();
@@ -10023,7 +10151,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2beta.SearchRequest.BoostSpec.ConditionBoostSpec.Builder,
                 com.google.cloud.retail.v2beta.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder>(
                 invalidConditionBoostSpecs_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         invalidConditionBoostSpecs_ = null;

@@ -70,7 +70,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENABLE_PRIVATE_ENDPOINT_FIELD_NUMBER = 1;
-  private boolean enablePrivateEndpoint_;
+  private boolean enablePrivateEndpoint_ = false;
   /**
    *
    *
@@ -89,7 +89,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MASTER_IPV4_CIDR_BLOCK_FIELD_NUMBER = 2;
-  private volatile java.lang.Object masterIpv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object masterIpv4CidrBlock_ = "";
   /**
    *
    *
@@ -140,7 +142,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MASTER_IPV4_RESERVED_RANGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object masterIpv4ReservedRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object masterIpv4ReservedRange_ = "";
   /**
    *
    *
@@ -417,12 +421,10 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enablePrivateEndpoint_ = false;
-
       masterIpv4CidrBlock_ = "";
-
       masterIpv4ReservedRange_ = "";
-
       return this;
     }
 
@@ -453,11 +455,25 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfig buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfig result =
           new com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfig(this);
-      result.enablePrivateEndpoint_ = enablePrivateEndpoint_;
-      result.masterIpv4CidrBlock_ = masterIpv4CidrBlock_;
-      result.masterIpv4ReservedRange_ = masterIpv4ReservedRange_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enablePrivateEndpoint_ = enablePrivateEndpoint_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.masterIpv4CidrBlock_ = masterIpv4CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.masterIpv4ReservedRange_ = masterIpv4ReservedRange_;
+      }
     }
 
     @java.lang.Override
@@ -514,10 +530,12 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       }
       if (!other.getMasterIpv4CidrBlock().isEmpty()) {
         masterIpv4CidrBlock_ = other.masterIpv4CidrBlock_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMasterIpv4ReservedRange().isEmpty()) {
         masterIpv4ReservedRange_ = other.masterIpv4ReservedRange_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -549,19 +567,19 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 enablePrivateEndpoint_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 masterIpv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 masterIpv4ReservedRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -580,6 +598,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enablePrivateEndpoint_;
     /**
@@ -614,6 +634,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     public Builder setEnablePrivateEndpoint(boolean value) {
 
       enablePrivateEndpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -630,7 +651,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEnablePrivateEndpoint() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enablePrivateEndpoint_ = false;
       onChanged();
       return this;
@@ -700,8 +721,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       masterIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -718,8 +739,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMasterIpv4CidrBlock() {
-
       masterIpv4CidrBlock_ = getDefaultInstance().getMasterIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -741,8 +762,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       masterIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -823,8 +844,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       masterIpv4ReservedRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -845,8 +866,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMasterIpv4ReservedRange() {
-
       masterIpv4ReservedRange_ = getDefaultInstance().getMasterIpv4ReservedRange();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -872,8 +893,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       masterIpv4ReservedRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

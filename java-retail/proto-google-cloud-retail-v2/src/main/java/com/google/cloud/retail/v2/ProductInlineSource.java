@@ -68,6 +68,8 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PRODUCTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2.Product> products_;
   /**
    *
@@ -355,6 +357,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (productsBuilder_ == null) {
         products_ = java.util.Collections.emptyList();
       } else {
@@ -389,7 +392,15 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
     public com.google.cloud.retail.v2.ProductInlineSource buildPartial() {
       com.google.cloud.retail.v2.ProductInlineSource result =
           new com.google.cloud.retail.v2.ProductInlineSource(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.retail.v2.ProductInlineSource result) {
       if (productsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           products_ = java.util.Collections.unmodifiableList(products_);
@@ -399,8 +410,10 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       } else {
         result.products_ = productsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.ProductInlineSource result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

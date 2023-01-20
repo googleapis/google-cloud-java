@@ -70,7 +70,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -187,7 +189,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.security.publicca.v1beta1.ExternalAccountKeyOrBuilder
       getExternalAccountKeyOrBuilder() {
-    return getExternalAccountKey();
+    return externalAccountKey_ == null
+        ? com.google.cloud.security.publicca.v1beta1.ExternalAccountKey.getDefaultInstance()
+        : externalAccountKey_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -411,12 +415,11 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (externalAccountKeyBuilder_ == null) {
-        externalAccountKey_ = null;
-      } else {
-        externalAccountKey_ = null;
+      externalAccountKey_ = null;
+      if (externalAccountKeyBuilder_ != null) {
+        externalAccountKeyBuilder_.dispose();
         externalAccountKeyBuilder_ = null;
       }
       return this;
@@ -450,14 +453,25 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
         buildPartial() {
       com.google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest result =
           new com.google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest(this);
-      result.parent_ = parent_;
-      if (externalAccountKeyBuilder_ == null) {
-        result.externalAccountKey_ = externalAccountKey_;
-      } else {
-        result.externalAccountKey_ = externalAccountKeyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.externalAccountKey_ =
+            externalAccountKeyBuilder_ == null
+                ? externalAccountKey_
+                : externalAccountKeyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -512,6 +526,7 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExternalAccountKey()) {
@@ -546,14 +561,14 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getExternalAccountKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -572,6 +587,8 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -646,8 +663,8 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -667,8 +684,8 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -693,8 +710,8 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -722,7 +739,7 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      * @return Whether the externalAccountKey field is set.
      */
     public boolean hasExternalAccountKey() {
-      return externalAccountKeyBuilder_ != null || externalAccountKey_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -770,11 +787,11 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         externalAccountKey_ = value;
-        onChanged();
       } else {
         externalAccountKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -795,11 +812,11 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
         com.google.cloud.security.publicca.v1beta1.ExternalAccountKey.Builder builderForValue) {
       if (externalAccountKeyBuilder_ == null) {
         externalAccountKey_ = builderForValue.build();
-        onChanged();
       } else {
         externalAccountKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,20 +836,20 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
     public Builder mergeExternalAccountKey(
         com.google.cloud.security.publicca.v1beta1.ExternalAccountKey value) {
       if (externalAccountKeyBuilder_ == null) {
-        if (externalAccountKey_ != null) {
-          externalAccountKey_ =
-              com.google.cloud.security.publicca.v1beta1.ExternalAccountKey.newBuilder(
-                      externalAccountKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && externalAccountKey_ != null
+            && externalAccountKey_
+                != com.google.cloud.security.publicca.v1beta1.ExternalAccountKey
+                    .getDefaultInstance()) {
+          getExternalAccountKeyBuilder().mergeFrom(value);
         } else {
           externalAccountKey_ = value;
         }
-        onChanged();
       } else {
         externalAccountKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -850,14 +867,13 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearExternalAccountKey() {
-      if (externalAccountKeyBuilder_ == null) {
-        externalAccountKey_ = null;
-        onChanged();
-      } else {
-        externalAccountKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      externalAccountKey_ = null;
+      if (externalAccountKeyBuilder_ != null) {
+        externalAccountKeyBuilder_.dispose();
         externalAccountKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -876,7 +892,7 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      */
     public com.google.cloud.security.publicca.v1beta1.ExternalAccountKey.Builder
         getExternalAccountKeyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExternalAccountKeyFieldBuilder().getBuilder();
     }

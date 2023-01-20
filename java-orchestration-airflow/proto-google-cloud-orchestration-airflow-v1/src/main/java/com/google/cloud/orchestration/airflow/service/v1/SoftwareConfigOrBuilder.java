@@ -176,7 +176,6 @@ public interface SoftwareConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; airflow_config_overrides = 2;</code>
    */
-
   /* nullable */
   java.lang.String getAirflowConfigOverridesOrDefault(
       java.lang.String key,
@@ -271,7 +270,6 @@ public interface SoftwareConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; pypi_packages = 3;</code>
    */
-
   /* nullable */
   java.lang.String getPypiPackagesOrDefault(
       java.lang.String key,
@@ -412,7 +410,6 @@ public interface SoftwareConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; env_variables = 4;</code>
    */
-
   /* nullable */
   java.lang.String getEnvVariablesOrDefault(
       java.lang.String key,

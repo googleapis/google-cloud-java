@@ -70,6 +70,8 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int ERROR_SAMPLES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
   /**
    *
@@ -182,7 +184,9 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.retail.v2alpha.ExportErrorsConfigOrBuilder getErrorsConfigOrBuilder() {
-    return getErrorsConfig();
+    return errorsConfig_ == null
+        ? com.google.cloud.retail.v2alpha.ExportErrorsConfig.getDefaultInstance()
+        : errorsConfig_;
   }
 
   public static final int OUTPUT_RESULT_FIELD_NUMBER = 3;
@@ -230,7 +234,9 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.retail.v2alpha.OutputResultOrBuilder getOutputResultOrBuilder() {
-    return getOutputResult();
+    return outputResult_ == null
+        ? com.google.cloud.retail.v2alpha.OutputResult.getDefaultInstance()
+        : outputResult_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -463,6 +469,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorSamplesBuilder_ == null) {
         errorSamples_ = java.util.Collections.emptyList();
       } else {
@@ -470,16 +477,14 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
         errorSamplesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (errorsConfigBuilder_ == null) {
-        errorsConfig_ = null;
-      } else {
-        errorsConfig_ = null;
+      errorsConfig_ = null;
+      if (errorsConfigBuilder_ != null) {
+        errorsConfigBuilder_.dispose();
         errorsConfigBuilder_ = null;
       }
-      if (outputResultBuilder_ == null) {
-        outputResult_ = null;
-      } else {
-        outputResult_ = null;
+      outputResult_ = null;
+      if (outputResultBuilder_ != null) {
+        outputResultBuilder_.dispose();
         outputResultBuilder_ = null;
       }
       return this;
@@ -509,7 +514,16 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.retail.v2alpha.ExportProductsResponse buildPartial() {
       com.google.cloud.retail.v2alpha.ExportProductsResponse result =
           new com.google.cloud.retail.v2alpha.ExportProductsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2alpha.ExportProductsResponse result) {
       if (errorSamplesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errorSamples_ = java.util.Collections.unmodifiableList(errorSamples_);
@@ -519,18 +533,18 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
       } else {
         result.errorSamples_ = errorSamplesBuilder_.build();
       }
-      if (errorsConfigBuilder_ == null) {
-        result.errorsConfig_ = errorsConfig_;
-      } else {
-        result.errorsConfig_ = errorsConfigBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.ExportProductsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorsConfig_ =
+            errorsConfigBuilder_ == null ? errorsConfig_ : errorsConfigBuilder_.build();
       }
-      if (outputResultBuilder_ == null) {
-        result.outputResult_ = outputResult_;
-      } else {
-        result.outputResult_ = outputResultBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputResult_ =
+            outputResultBuilder_ == null ? outputResult_ : outputResultBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -653,13 +667,13 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
             case 18:
               {
                 input.readMessage(getErrorsConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getOutputResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1037,7 +1051,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      * @return Whether the errorsConfig field is set.
      */
     public boolean hasErrorsConfig() {
-      return errorsConfigBuilder_ != null || errorsConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1074,11 +1088,11 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         errorsConfig_ = value;
-        onChanged();
       } else {
         errorsConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1094,11 +1108,11 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
         com.google.cloud.retail.v2alpha.ExportErrorsConfig.Builder builderForValue) {
       if (errorsConfigBuilder_ == null) {
         errorsConfig_ = builderForValue.build();
-        onChanged();
       } else {
         errorsConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1112,19 +1126,19 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeErrorsConfig(com.google.cloud.retail.v2alpha.ExportErrorsConfig value) {
       if (errorsConfigBuilder_ == null) {
-        if (errorsConfig_ != null) {
-          errorsConfig_ =
-              com.google.cloud.retail.v2alpha.ExportErrorsConfig.newBuilder(errorsConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && errorsConfig_ != null
+            && errorsConfig_
+                != com.google.cloud.retail.v2alpha.ExportErrorsConfig.getDefaultInstance()) {
+          getErrorsConfigBuilder().mergeFrom(value);
         } else {
           errorsConfig_ = value;
         }
-        onChanged();
       } else {
         errorsConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1137,14 +1151,13 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
      */
     public Builder clearErrorsConfig() {
-      if (errorsConfigBuilder_ == null) {
-        errorsConfig_ = null;
-        onChanged();
-      } else {
-        errorsConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      errorsConfig_ = null;
+      if (errorsConfigBuilder_ != null) {
+        errorsConfigBuilder_.dispose();
         errorsConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1157,7 +1170,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
      */
     public com.google.cloud.retail.v2alpha.ExportErrorsConfig.Builder getErrorsConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getErrorsConfigFieldBuilder().getBuilder();
     }
@@ -1223,7 +1236,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      * @return Whether the outputResult field is set.
      */
     public boolean hasOutputResult() {
-      return outputResultBuilder_ != null || outputResult_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1260,11 +1273,11 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         outputResult_ = value;
-        onChanged();
       } else {
         outputResultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1280,11 +1293,11 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
         com.google.cloud.retail.v2alpha.OutputResult.Builder builderForValue) {
       if (outputResultBuilder_ == null) {
         outputResult_ = builderForValue.build();
-        onChanged();
       } else {
         outputResultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1298,19 +1311,18 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeOutputResult(com.google.cloud.retail.v2alpha.OutputResult value) {
       if (outputResultBuilder_ == null) {
-        if (outputResult_ != null) {
-          outputResult_ =
-              com.google.cloud.retail.v2alpha.OutputResult.newBuilder(outputResult_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && outputResult_ != null
+            && outputResult_ != com.google.cloud.retail.v2alpha.OutputResult.getDefaultInstance()) {
+          getOutputResultBuilder().mergeFrom(value);
         } else {
           outputResult_ = value;
         }
-        onChanged();
       } else {
         outputResultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1323,14 +1335,13 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
      */
     public Builder clearOutputResult() {
-      if (outputResultBuilder_ == null) {
-        outputResult_ = null;
-        onChanged();
-      } else {
-        outputResult_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      outputResult_ = null;
+      if (outputResultBuilder_ != null) {
+        outputResultBuilder_.dispose();
         outputResultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1343,7 +1354,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
      */
     public com.google.cloud.retail.v2alpha.OutputResult.Builder getOutputResultBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOutputResultFieldBuilder().getBuilder();
     }

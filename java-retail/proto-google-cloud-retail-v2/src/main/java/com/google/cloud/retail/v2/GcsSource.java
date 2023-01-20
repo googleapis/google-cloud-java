@@ -69,6 +69,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INPUT_URIS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList inputUris_;
   /**
    *
@@ -158,7 +160,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_SCHEMA_FIELD_NUMBER = 2;
-  private volatile java.lang.Object dataSchema_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataSchema_ = "";
   /**
    *
    *
@@ -451,10 +455,10 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       inputUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       dataSchema_ = "";
-
       return this;
     }
 
@@ -481,15 +485,27 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.retail.v2.GcsSource buildPartial() {
       com.google.cloud.retail.v2.GcsSource result = new com.google.cloud.retail.v2.GcsSource(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.retail.v2.GcsSource result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         inputUris_ = inputUris_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.inputUris_ = inputUris_;
-      result.dataSchema_ = dataSchema_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.GcsSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataSchema_ = dataSchema_;
+      }
     }
 
     @java.lang.Override
@@ -549,6 +565,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDataSchema().isEmpty()) {
         dataSchema_ = other.dataSchema_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -587,7 +604,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 dataSchema_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -952,8 +969,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataSchema_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -986,8 +1003,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataSchema() {
-
       dataSchema_ = getDefaultInstance().getDataSchema();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1025,8 +1042,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataSchema_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

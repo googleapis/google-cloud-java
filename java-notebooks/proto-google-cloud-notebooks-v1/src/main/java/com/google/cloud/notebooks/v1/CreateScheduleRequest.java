@@ -69,7 +69,9 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SCHEDULE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object scheduleId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object scheduleId_ = "";
   /**
    *
    *
@@ -223,7 +227,9 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.ScheduleOrBuilder getScheduleOrBuilder() {
-    return getSchedule();
+    return schedule_ == null
+        ? com.google.cloud.notebooks.v1.Schedule.getDefaultInstance()
+        : schedule_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -446,14 +452,12 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       scheduleId_ = "";
-
-      if (scheduleBuilder_ == null) {
-        schedule_ = null;
-      } else {
-        schedule_ = null;
+      schedule_ = null;
+      if (scheduleBuilder_ != null) {
+        scheduleBuilder_.dispose();
         scheduleBuilder_ = null;
       }
       return this;
@@ -483,15 +487,24 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.notebooks.v1.CreateScheduleRequest buildPartial() {
       com.google.cloud.notebooks.v1.CreateScheduleRequest result =
           new com.google.cloud.notebooks.v1.CreateScheduleRequest(this);
-      result.parent_ = parent_;
-      result.scheduleId_ = scheduleId_;
-      if (scheduleBuilder_ == null) {
-        result.schedule_ = schedule_;
-      } else {
-        result.schedule_ = scheduleBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.CreateScheduleRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.scheduleId_ = scheduleId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.schedule_ = scheduleBuilder_ == null ? schedule_ : scheduleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -542,10 +555,12 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getScheduleId().isEmpty()) {
         scheduleId_ = other.scheduleId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSchedule()) {
@@ -580,19 +595,19 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 scheduleId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getScheduleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -611,6 +626,8 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -682,8 +699,8 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -702,8 +719,8 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -727,8 +744,8 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -794,8 +811,8 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       scheduleId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -811,8 +828,8 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearScheduleId() {
-
       scheduleId_ = getDefaultInstance().getScheduleId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -833,8 +850,8 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       scheduleId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -859,7 +876,7 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the schedule field is set.
      */
     public boolean hasSchedule() {
-      return scheduleBuilder_ != null || schedule_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -900,11 +917,11 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         schedule_ = value;
-        onChanged();
       } else {
         scheduleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -921,11 +938,11 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
     public Builder setSchedule(com.google.cloud.notebooks.v1.Schedule.Builder builderForValue) {
       if (scheduleBuilder_ == null) {
         schedule_ = builderForValue.build();
-        onChanged();
       } else {
         scheduleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -941,19 +958,18 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeSchedule(com.google.cloud.notebooks.v1.Schedule value) {
       if (scheduleBuilder_ == null) {
-        if (schedule_ != null) {
-          schedule_ =
-              com.google.cloud.notebooks.v1.Schedule.newBuilder(schedule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && schedule_ != null
+            && schedule_ != com.google.cloud.notebooks.v1.Schedule.getDefaultInstance()) {
+          getScheduleBuilder().mergeFrom(value);
         } else {
           schedule_ = value;
         }
-        onChanged();
       } else {
         scheduleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -968,14 +984,13 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearSchedule() {
-      if (scheduleBuilder_ == null) {
-        schedule_ = null;
-        onChanged();
-      } else {
-        schedule_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      schedule_ = null;
+      if (scheduleBuilder_ != null) {
+        scheduleBuilder_.dispose();
         scheduleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -990,7 +1005,7 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.notebooks.v1.Schedule.Builder getScheduleBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getScheduleFieldBuilder().getBuilder();
     }

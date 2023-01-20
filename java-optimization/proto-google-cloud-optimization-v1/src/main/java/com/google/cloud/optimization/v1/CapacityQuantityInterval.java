@@ -70,7 +70,9 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    * <code>string type = 1;</code>
    *
@@ -107,7 +109,7 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
   }
 
   public static final int MIN_VALUE_FIELD_NUMBER = 2;
-  private long minValue_;
+  private long minValue_ = 0L;
   /**
    * <code>optional int64 min_value = 2;</code>
    *
@@ -128,7 +130,7 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
   }
 
   public static final int MAX_VALUE_FIELD_NUMBER = 3;
-  private long maxValue_;
+  private long maxValue_ = 0L;
   /**
    * <code>optional int64 max_value = 3;</code>
    *
@@ -374,12 +376,10 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       minValue_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       maxValue_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -407,20 +407,28 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
     public com.google.cloud.optimization.v1.CapacityQuantityInterval buildPartial() {
       com.google.cloud.optimization.v1.CapacityQuantityInterval result =
           new com.google.cloud.optimization.v1.CapacityQuantityInterval(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.CapacityQuantityInterval result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.type_ = type_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.minValue_ = minValue_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maxValue_ = maxValue_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -471,6 +479,7 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
         return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMinValue()) {
@@ -508,19 +517,19 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 minValue_ = input.readInt64();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 maxValue_ = input.readInt64();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -585,8 +594,8 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -596,8 +605,8 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -612,8 +621,8 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -626,7 +635,7 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
      */
     @java.lang.Override
     public boolean hasMinValue() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional int64 min_value = 2;</code>
@@ -644,8 +653,9 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setMinValue(long value) {
-      bitField0_ |= 0x00000001;
+
       minValue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -655,7 +665,7 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMinValue() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       minValue_ = 0L;
       onChanged();
       return this;
@@ -669,7 +679,7 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
      */
     @java.lang.Override
     public boolean hasMaxValue() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional int64 max_value = 3;</code>
@@ -687,8 +697,9 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setMaxValue(long value) {
-      bitField0_ |= 0x00000002;
+
       maxValue_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -698,7 +709,7 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMaxValue() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxValue_ = 0L;
       onChanged();
       return this;

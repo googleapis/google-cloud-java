@@ -245,7 +245,9 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int BUILD_LOG_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object buildLogUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object buildLogUri_ = "";
   /**
    *
    *
@@ -294,7 +296,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CONTAINS_PYPI_MODULES_CONFLICT_FIELD_NUMBER = 4;
-  private int containsPypiModulesConflict_;
+  private int containsPypiModulesConflict_ = 0;
   /**
    *
    *
@@ -328,11 +330,10 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse.ConflictResult
       getContainsPypiModulesConflict() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse.ConflictResult
         result =
             com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse
-                .ConflictResult.valueOf(containsPypiModulesConflict_);
+                .ConflictResult.forNumber(containsPypiModulesConflict_);
     return result == null
         ? com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse.ConflictResult
             .UNRECOGNIZED
@@ -340,7 +341,9 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PYPI_CONFLICT_BUILD_LOG_EXTRACT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pypiConflictBuildLogExtract_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pypiConflictBuildLogExtract_ = "";
   /**
    *
    *
@@ -393,7 +396,9 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int IMAGE_VERSION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object imageVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageVersion_ = "";
   /**
    *
    *
@@ -454,6 +459,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> pypiDependencies_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -516,8 +522,10 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; pypi_dependencies = 6;</code>
    */
   @java.lang.Override
-  public java.lang.String getPypiDependenciesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getPypiDependenciesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -827,14 +835,11 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       buildLogUri_ = "";
-
       containsPypiModulesConflict_ = 0;
-
       pypiConflictBuildLogExtract_ = "";
-
       imageVersion_ = "";
-
       internalGetMutablePypiDependencies().clear();
       return this;
     }
@@ -867,15 +872,32 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
         buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.buildLogUri_ = buildLogUri_;
-      result.containsPypiModulesConflict_ = containsPypiModulesConflict_;
-      result.pypiConflictBuildLogExtract_ = pypiConflictBuildLogExtract_;
-      result.imageVersion_ = imageVersion_;
-      result.pypiDependencies_ = internalGetPypiDependencies();
-      result.pypiDependencies_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.buildLogUri_ = buildLogUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.containsPypiModulesConflict_ = containsPypiModulesConflict_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pypiConflictBuildLogExtract_ = pypiConflictBuildLogExtract_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.imageVersion_ = imageVersion_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pypiDependencies_ = internalGetPypiDependencies();
+        result.pypiDependencies_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -930,6 +952,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
               .getDefaultInstance()) return this;
       if (!other.getBuildLogUri().isEmpty()) {
         buildLogUri_ = other.buildLogUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.containsPypiModulesConflict_ != 0) {
@@ -937,13 +960,16 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       }
       if (!other.getPypiConflictBuildLogExtract().isEmpty()) {
         pypiConflictBuildLogExtract_ = other.pypiConflictBuildLogExtract_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getImageVersion().isEmpty()) {
         imageVersion_ = other.imageVersion_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       internalGetMutablePypiDependencies().mergeFrom(other.internalGetPypiDependencies());
+      bitField0_ |= 0x00000010;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -973,25 +999,25 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 buildLogUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 pypiConflictBuildLogExtract_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 containsPypiModulesConflict_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 32
             case 42:
               {
                 imageVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
@@ -1004,6 +1030,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
                 internalGetMutablePypiDependencies()
                     .getMutableMap()
                     .put(pypiDependencies__.getKey(), pypiDependencies__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -1086,8 +1113,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       buildLogUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1103,8 +1130,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearBuildLogUri() {
-
       buildLogUri_ = getDefaultInstance().getBuildLogUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1125,8 +1152,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       buildLogUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1164,8 +1191,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setContainsPypiModulesConflictValue(int value) {
-
       containsPypiModulesConflict_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1186,11 +1213,10 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse
             .ConflictResult
         getContainsPypiModulesConflict() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse.ConflictResult
           result =
               com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse
-                  .ConflictResult.valueOf(containsPypiModulesConflict_);
+                  .ConflictResult.forNumber(containsPypiModulesConflict_);
       return result == null
           ? com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse
               .ConflictResult.UNRECOGNIZED
@@ -1216,7 +1242,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       containsPypiModulesConflict_ = value.getNumber();
       onChanged();
       return this;
@@ -1235,7 +1261,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearContainsPypiModulesConflict() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       containsPypiModulesConflict_ = 0;
       onChanged();
       return this;
@@ -1311,8 +1337,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       pypiConflictBuildLogExtract_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1331,8 +1357,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPypiConflictBuildLogExtract() {
-
       pypiConflictBuildLogExtract_ = getDefaultInstance().getPypiConflictBuildLogExtract();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1356,8 +1382,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pypiConflictBuildLogExtract_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1423,8 +1449,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1440,8 +1466,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearImageVersion() {
-
       imageVersion_ = getDefaultInstance().getImageVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1462,8 +1488,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1481,8 +1507,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutablePypiDependencies() {
-      onChanged();
-      ;
       if (pypiDependencies_ == null) {
         pypiDependencies_ =
             com.google.protobuf.MapField.newMapField(
@@ -1491,6 +1515,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       if (!pypiDependencies_.isMutable()) {
         pypiDependencies_ = pypiDependencies_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return pypiDependencies_;
     }
 
@@ -1545,8 +1571,10 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, string&gt; pypi_dependencies = 6;</code>
      */
     @java.lang.Override
-    public java.lang.String getPypiDependenciesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getPypiDependenciesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1578,6 +1606,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearPypiDependencies() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutablePypiDependencies().getMutableMap().clear();
       return this;
     }
@@ -1601,6 +1630,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutablePypiDependencies() {
+      bitField0_ |= 0x00000010;
       return internalGetMutablePypiDependencies().getMutableMap();
     }
     /**
@@ -1620,8 +1650,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutablePypiDependencies().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1637,6 +1667,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     public Builder putAllPypiDependencies(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutablePypiDependencies().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 

@@ -72,6 +72,8 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int URIS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList uris_;
   /**
    *
@@ -133,7 +135,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SITE_TO_SITE_DATA_TRANSFER_FIELD_NUMBER = 2;
-  private boolean siteToSiteDataTransfer_;
+  private boolean siteToSiteDataTransfer_ = false;
   /**
    *
    *
@@ -153,7 +155,9 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VPC_NETWORK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object vpcNetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpcNetwork_ = "";
   /**
    *
    *
@@ -431,12 +435,11 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       siteToSiteDataTransfer_ = false;
-
       vpcNetwork_ = "";
-
       return this;
     }
 
@@ -464,16 +467,31 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels buildPartial() {
       com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels result =
           new com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         uris_ = uris_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.uris_ = uris_;
-      result.siteToSiteDataTransfer_ = siteToSiteDataTransfer_;
-      result.vpcNetwork_ = vpcNetwork_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.siteToSiteDataTransfer_ = siteToSiteDataTransfer_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.vpcNetwork_ = vpcNetwork_;
+      }
     }
 
     @java.lang.Override
@@ -537,6 +555,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getVpcNetwork().isEmpty()) {
         vpcNetwork_ = other.vpcNetwork_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -575,13 +594,13 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
             case 16:
               {
                 siteToSiteDataTransfer_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 vpcNetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -806,6 +825,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     public Builder setSiteToSiteDataTransfer(boolean value) {
 
       siteToSiteDataTransfer_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -823,7 +843,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSiteToSiteDataTransfer() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       siteToSiteDataTransfer_ = false;
       onChanged();
       return this;
@@ -896,8 +916,8 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpcNetwork_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -915,8 +935,8 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVpcNetwork() {
-
       vpcNetwork_ = getDefaultInstance().getVpcNetwork();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -939,8 +959,8 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpcNetwork_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -118,7 +118,9 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.recommender.v1.RecommenderConfigOrBuilder
       getRecommenderConfigOrBuilder() {
-    return getRecommenderConfig();
+    return recommenderConfig_ == null
+        ? com.google.cloud.recommender.v1.RecommenderConfig.getDefaultInstance()
+        : recommenderConfig_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -164,11 +166,11 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -412,20 +414,18 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (recommenderConfigBuilder_ == null) {
-        recommenderConfig_ = null;
-      } else {
-        recommenderConfig_ = null;
+      bitField0_ = 0;
+      recommenderConfig_ = null;
+      if (recommenderConfigBuilder_ != null) {
+        recommenderConfigBuilder_.dispose();
         recommenderConfigBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -454,19 +454,28 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
     public com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest buildPartial() {
       com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest result =
           new com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest(this);
-      if (recommenderConfigBuilder_ == null) {
-        result.recommenderConfig_ = recommenderConfig_;
-      } else {
-        result.recommenderConfig_ = recommenderConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.recommenderConfig_ =
+            recommenderConfigBuilder_ == null
+                ? recommenderConfig_
+                : recommenderConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -555,19 +564,19 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
               {
                 input.readMessage(
                     getRecommenderConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -586,6 +595,8 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.recommender.v1.RecommenderConfig recommenderConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -607,7 +618,7 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
      * @return Whether the recommenderConfig field is set.
      */
     public boolean hasRecommenderConfig() {
-      return recommenderConfigBuilder_ != null || recommenderConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -648,11 +659,11 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         recommenderConfig_ = value;
-        onChanged();
       } else {
         recommenderConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -670,11 +681,11 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
         com.google.cloud.recommender.v1.RecommenderConfig.Builder builderForValue) {
       if (recommenderConfigBuilder_ == null) {
         recommenderConfig_ = builderForValue.build();
-        onChanged();
       } else {
         recommenderConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -690,19 +701,19 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
      */
     public Builder mergeRecommenderConfig(com.google.cloud.recommender.v1.RecommenderConfig value) {
       if (recommenderConfigBuilder_ == null) {
-        if (recommenderConfig_ != null) {
-          recommenderConfig_ =
-              com.google.cloud.recommender.v1.RecommenderConfig.newBuilder(recommenderConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && recommenderConfig_ != null
+            && recommenderConfig_
+                != com.google.cloud.recommender.v1.RecommenderConfig.getDefaultInstance()) {
+          getRecommenderConfigBuilder().mergeFrom(value);
         } else {
           recommenderConfig_ = value;
         }
-        onChanged();
       } else {
         recommenderConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -717,14 +728,13 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearRecommenderConfig() {
-      if (recommenderConfigBuilder_ == null) {
-        recommenderConfig_ = null;
-        onChanged();
-      } else {
-        recommenderConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      recommenderConfig_ = null;
+      if (recommenderConfigBuilder_ != null) {
+        recommenderConfigBuilder_.dispose();
         recommenderConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -739,7 +749,7 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
      * </code>
      */
     public com.google.cloud.recommender.v1.RecommenderConfig.Builder getRecommenderConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRecommenderConfigFieldBuilder().getBuilder();
     }
@@ -810,7 +820,7 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -847,11 +857,11 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -866,11 +876,11 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -884,17 +894,18 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -907,14 +918,13 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -927,7 +937,7 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1008,6 +1018,7 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1024,7 +1035,7 @@ public final class UpdateRecommenderConfigRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;
       onChanged();
       return this;

@@ -72,7 +72,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -165,11 +167,16 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.devtools.cloudprofiler.v2.DeploymentOrBuilder getDeploymentOrBuilder() {
-    return getDeployment();
+    return deployment_ == null
+        ? com.google.devtools.cloudprofiler.v2.Deployment.getDefaultInstance()
+        : deployment_;
   }
 
   public static final int PROFILE_TYPE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> profileType_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.devtools.cloudprofiler.v2.ProfileType>
       profileType_converter_ =
@@ -177,9 +184,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
               java.lang.Integer, com.google.devtools.cloudprofiler.v2.ProfileType>() {
             public com.google.devtools.cloudprofiler.v2.ProfileType convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.devtools.cloudprofiler.v2.ProfileType result =
-                  com.google.devtools.cloudprofiler.v2.ProfileType.valueOf(from);
+                  com.google.devtools.cloudprofiler.v2.ProfileType.forNumber(from);
               return result == null
                   ? com.google.devtools.cloudprofiler.v2.ProfileType.UNRECOGNIZED
                   : result;
@@ -507,16 +513,15 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (deploymentBuilder_ == null) {
-        deployment_ = null;
-      } else {
-        deployment_ = null;
+      deployment_ = null;
+      if (deploymentBuilder_ != null) {
+        deploymentBuilder_.dispose();
         deploymentBuilder_ = null;
       }
       profileType_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -544,20 +549,31 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
     public com.google.devtools.cloudprofiler.v2.CreateProfileRequest buildPartial() {
       com.google.devtools.cloudprofiler.v2.CreateProfileRequest result =
           new com.google.devtools.cloudprofiler.v2.CreateProfileRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (deploymentBuilder_ == null) {
-        result.deployment_ = deployment_;
-      } else {
-        result.deployment_ = deploymentBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        profileType_ = java.util.Collections.unmodifiableList(profileType_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.profileType_ = profileType_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.cloudprofiler.v2.CreateProfileRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        profileType_ = java.util.Collections.unmodifiableList(profileType_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.profileType_ = profileType_;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudprofiler.v2.CreateProfileRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deployment_ = deploymentBuilder_ == null ? deployment_ : deploymentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -608,6 +624,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDeployment()) {
@@ -616,7 +633,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
       if (!other.profileType_.isEmpty()) {
         if (profileType_.isEmpty()) {
           profileType_ = other.profileType_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureProfileTypeIsMutable();
           profileType_.addAll(other.profileType_);
@@ -652,7 +669,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getDeploymentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 16:
@@ -677,7 +694,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
             case 34:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             default:
@@ -760,8 +777,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,8 +794,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -799,8 +816,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -823,7 +840,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the deployment field is set.
      */
     public boolean hasDeployment() {
-      return deploymentBuilder_ != null || deployment_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -860,11 +877,11 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         deployment_ = value;
-        onChanged();
       } else {
         deploymentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -880,11 +897,11 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
         com.google.devtools.cloudprofiler.v2.Deployment.Builder builderForValue) {
       if (deploymentBuilder_ == null) {
         deployment_ = builderForValue.build();
-        onChanged();
       } else {
         deploymentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -898,19 +915,19 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeDeployment(com.google.devtools.cloudprofiler.v2.Deployment value) {
       if (deploymentBuilder_ == null) {
-        if (deployment_ != null) {
-          deployment_ =
-              com.google.devtools.cloudprofiler.v2.Deployment.newBuilder(deployment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && deployment_ != null
+            && deployment_
+                != com.google.devtools.cloudprofiler.v2.Deployment.getDefaultInstance()) {
+          getDeploymentBuilder().mergeFrom(value);
         } else {
           deployment_ = value;
         }
-        onChanged();
       } else {
         deploymentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -923,14 +940,13 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.devtools.cloudprofiler.v2.Deployment deployment = 1;</code>
      */
     public Builder clearDeployment() {
-      if (deploymentBuilder_ == null) {
-        deployment_ = null;
-        onChanged();
-      } else {
-        deployment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deployment_ = null;
+      if (deploymentBuilder_ != null) {
+        deploymentBuilder_.dispose();
         deploymentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -943,7 +959,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.devtools.cloudprofiler.v2.Deployment deployment = 1;</code>
      */
     public com.google.devtools.cloudprofiler.v2.Deployment.Builder getDeploymentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeploymentFieldBuilder().getBuilder();
     }
@@ -994,9 +1010,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
     private java.util.List<java.lang.Integer> profileType_ = java.util.Collections.emptyList();
 
     private void ensureProfileTypeIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         profileType_ = new java.util.ArrayList<java.lang.Integer>(profileType_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1122,7 +1138,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearProfileType() {
       profileType_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

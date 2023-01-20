@@ -65,7 +65,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOKEN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object token_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object token_ = "";
   /**
    *
    *
@@ -116,7 +118,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SITE_KEY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object siteKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object siteKey_ = "";
   /**
    *
    *
@@ -167,7 +171,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_AGENT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object userAgent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userAgent_ = "";
   /**
    *
    *
@@ -218,7 +224,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_IP_ADDRESS_FIELD_NUMBER = 4;
-  private volatile java.lang.Object userIpAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userIpAddress_ = "";
   /**
    *
    *
@@ -267,7 +275,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPECTED_ACTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object expectedAction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object expectedAction_ = "";
   /**
    *
    *
@@ -320,7 +330,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HASHED_ACCOUNT_ID_FIELD_NUMBER = 6;
-  private com.google.protobuf.ByteString hashedAccountId_;
+  private com.google.protobuf.ByteString hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -572,18 +582,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       token_ = "";
-
       siteKey_ = "";
-
       userAgent_ = "";
-
       userIpAddress_ = "";
-
       expectedAction_ = "";
-
       hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -611,14 +616,33 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1beta1.Event buildPartial() {
       com.google.recaptchaenterprise.v1beta1.Event result =
           new com.google.recaptchaenterprise.v1beta1.Event(this);
-      result.token_ = token_;
-      result.siteKey_ = siteKey_;
-      result.userAgent_ = userAgent_;
-      result.userIpAddress_ = userIpAddress_;
-      result.expectedAction_ = expectedAction_;
-      result.hashedAccountId_ = hashedAccountId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1beta1.Event result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.token_ = token_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.siteKey_ = siteKey_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.userAgent_ = userAgent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.userIpAddress_ = userIpAddress_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.expectedAction_ = expectedAction_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.hashedAccountId_ = hashedAccountId_;
+      }
     }
 
     @java.lang.Override
@@ -668,22 +692,27 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.recaptchaenterprise.v1beta1.Event.getDefaultInstance()) return this;
       if (!other.getToken().isEmpty()) {
         token_ = other.token_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSiteKey().isEmpty()) {
         siteKey_ = other.siteKey_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getUserAgent().isEmpty()) {
         userAgent_ = other.userAgent_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getUserIpAddress().isEmpty()) {
         userIpAddress_ = other.userIpAddress_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getExpectedAction().isEmpty()) {
         expectedAction_ = other.expectedAction_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getHashedAccountId() != com.google.protobuf.ByteString.EMPTY) {
@@ -718,37 +747,37 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 token_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 siteKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 userAgent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 userIpAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 expectedAction_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 hashedAccountId_ = input.readBytes();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -767,6 +796,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object token_ = "";
     /**
@@ -832,8 +863,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       token_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,8 +881,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearToken() {
-
       token_ = getDefaultInstance().getToken();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -873,8 +904,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       token_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -943,8 +974,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       siteKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -961,8 +992,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSiteKey() {
-
       siteKey_ = getDefaultInstance().getSiteKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -984,8 +1015,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       siteKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1054,8 +1085,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       userAgent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1072,8 +1103,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserAgent() {
-
       userAgent_ = getDefaultInstance().getUserAgent();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1095,8 +1126,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userAgent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1162,8 +1193,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       userIpAddress_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1179,8 +1210,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserIpAddress() {
-
       userIpAddress_ = getDefaultInstance().getUserIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1201,8 +1232,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userIpAddress_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1274,8 +1305,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       expectedAction_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1293,8 +1324,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExpectedAction() {
-
       expectedAction_ = getDefaultInstance().getExpectedAction();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1317,8 +1348,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       expectedAction_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1357,8 +1388,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       hashedAccountId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1375,7 +1406,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHashedAccountId() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       hashedAccountId_ = getDefaultInstance().getHashedAccountId();
       onChanged();
       return this;

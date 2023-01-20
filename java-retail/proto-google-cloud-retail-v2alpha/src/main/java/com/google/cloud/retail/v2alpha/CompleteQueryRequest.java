@@ -73,7 +73,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CATALOG_FIELD_NUMBER = 1;
-  private volatile java.lang.Object catalog_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object catalog_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int QUERY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -181,7 +185,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VISITOR_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object visitorId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object visitorId_ = "";
   /**
    *
    *
@@ -240,6 +246,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LANGUAGE_CODES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList languageCodes_;
   /**
    *
@@ -329,7 +337,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DEVICE_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object deviceType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deviceType_ = "";
   /**
    *
    *
@@ -396,7 +406,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DATASET_FIELD_NUMBER = 6;
-  private volatile java.lang.Object dataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataset_ = "";
   /**
    *
    *
@@ -463,7 +475,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MAX_SUGGESTIONS_FIELD_NUMBER = 5;
-  private int maxSuggestions_;
+  private int maxSuggestions_ = 0;
   /**
    *
    *
@@ -485,7 +497,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENABLE_ATTRIBUTE_SUGGESTIONS_FIELD_NUMBER = 9;
-  private boolean enableAttributeSuggestions_;
+  private boolean enableAttributeSuggestions_ = false;
   /**
    *
    *
@@ -770,22 +782,16 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       catalog_ = "";
-
       query_ = "";
-
       visitorId_ = "";
-
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       deviceType_ = "";
-
       dataset_ = "";
-
       maxSuggestions_ = 0;
-
       enableAttributeSuggestions_ = false;
-
       return this;
     }
 
@@ -813,21 +819,46 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.retail.v2alpha.CompleteQueryRequest buildPartial() {
       com.google.cloud.retail.v2alpha.CompleteQueryRequest result =
           new com.google.cloud.retail.v2alpha.CompleteQueryRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.catalog_ = catalog_;
-      result.query_ = query_;
-      result.visitorId_ = visitorId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        languageCodes_ = languageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.languageCodes_ = languageCodes_;
-      result.deviceType_ = deviceType_;
-      result.dataset_ = dataset_;
-      result.maxSuggestions_ = maxSuggestions_;
-      result.enableAttributeSuggestions_ = enableAttributeSuggestions_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2alpha.CompleteQueryRequest result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        languageCodes_ = languageCodes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.languageCodes_ = languageCodes_;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.CompleteQueryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.catalog_ = catalog_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.visitorId_ = visitorId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.deviceType_ = deviceType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.dataset_ = dataset_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.maxSuggestions_ = maxSuggestions_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enableAttributeSuggestions_ = enableAttributeSuggestions_;
+      }
     }
 
     @java.lang.Override
@@ -878,20 +909,23 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getCatalog().isEmpty()) {
         catalog_ = other.catalog_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getVisitorId().isEmpty()) {
         visitorId_ = other.visitorId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.languageCodes_.isEmpty()) {
         if (languageCodes_.isEmpty()) {
           languageCodes_ = other.languageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureLanguageCodesIsMutable();
           languageCodes_.addAll(other.languageCodes_);
@@ -900,10 +934,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getDeviceType().isEmpty()) {
         deviceType_ = other.deviceType_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDataset().isEmpty()) {
         dataset_ = other.dataset_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getMaxSuggestions() != 0) {
@@ -941,13 +977,13 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 catalog_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -960,31 +996,31 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
             case 34:
               {
                 deviceType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 maxSuggestions_ = input.readInt32();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 50:
               {
                 dataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 visitorId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 58
             case 72:
               {
                 enableAttributeSuggestions_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 72
             default:
@@ -1079,8 +1115,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       catalog_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1100,8 +1136,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCatalog() {
-
       catalog_ = getDefaultInstance().getCatalog();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1126,8 +1162,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       catalog_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1196,8 +1232,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1214,8 +1250,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1237,8 +1273,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1319,8 +1355,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       visitorId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1341,8 +1377,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearVisitorId() {
-
       visitorId_ = getDefaultInstance().getVisitorId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1368,8 +1404,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       visitorId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1378,9 +1414,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1571,7 +1607,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearLanguageCodes() {
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1693,8 +1729,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       deviceType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1719,8 +1755,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDeviceType() {
-
       deviceType_ = getDefaultInstance().getDeviceType();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1750,8 +1786,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deviceType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1844,8 +1880,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataset_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1870,8 +1906,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDataset() {
-
       dataset_ = getDefaultInstance().getDataset();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1901,8 +1937,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataset_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1946,6 +1982,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public Builder setMaxSuggestions(int value) {
 
       maxSuggestions_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1965,7 +2002,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMaxSuggestions() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       maxSuggestions_ = 0;
       onChanged();
       return this;
@@ -2004,6 +2041,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public Builder setEnableAttributeSuggestions(boolean value) {
 
       enableAttributeSuggestions_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2020,7 +2058,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEnableAttributeSuggestions() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       enableAttributeSuggestions_ = false;
       onChanged();
       return this;

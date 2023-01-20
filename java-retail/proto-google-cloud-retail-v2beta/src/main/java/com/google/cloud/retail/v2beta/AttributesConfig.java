@@ -80,7 +80,9 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -151,6 +153,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
                         com.google.cloud.retail.v2beta.CatalogAttribute.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.retail.v2beta.CatalogAttribute>
       catalogAttributes_;
@@ -236,8 +239,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.retail.v2beta.CatalogAttribute getCatalogAttributesOrDefault(
-      java.lang.String key, com.google.cloud.retail.v2beta.CatalogAttribute defaultValue) {
+  public /* nullable */ com.google.cloud.retail.v2beta.CatalogAttribute
+      getCatalogAttributesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.retail.v2beta.CatalogAttribute defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -276,7 +282,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ATTRIBUTE_CONFIG_LEVEL_FIELD_NUMBER = 3;
-  private int attributeConfigLevel_;
+  private int attributeConfigLevel_ = 0;
   /**
    *
    *
@@ -313,9 +319,8 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.AttributeConfigLevel getAttributeConfigLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.AttributeConfigLevel result =
-        com.google.cloud.retail.v2beta.AttributeConfigLevel.valueOf(attributeConfigLevel_);
+        com.google.cloud.retail.v2beta.AttributeConfigLevel.forNumber(attributeConfigLevel_);
     return result == null
         ? com.google.cloud.retail.v2beta.AttributeConfigLevel.UNRECOGNIZED
         : result;
@@ -573,11 +578,10 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       internalGetMutableCatalogAttributes().clear();
       attributeConfigLevel_ = 0;
-
       return this;
     }
 
@@ -605,13 +609,25 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.retail.v2beta.AttributesConfig buildPartial() {
       com.google.cloud.retail.v2beta.AttributesConfig result =
           new com.google.cloud.retail.v2beta.AttributesConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.catalogAttributes_ = internalGetCatalogAttributes();
-      result.catalogAttributes_.makeImmutable();
-      result.attributeConfigLevel_ = attributeConfigLevel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.AttributesConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.catalogAttributes_ = internalGetCatalogAttributes();
+        result.catalogAttributes_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.attributeConfigLevel_ = attributeConfigLevel_;
+      }
     }
 
     @java.lang.Override
@@ -662,9 +678,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableCatalogAttributes().mergeFrom(other.internalGetCatalogAttributes());
+      bitField0_ |= 0x00000002;
       if (other.attributeConfigLevel_ != 0) {
         setAttributeConfigLevelValue(other.getAttributeConfigLevelValue());
       }
@@ -697,7 +715,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -711,12 +729,13 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
                 internalGetMutableCatalogAttributes()
                     .getMutableMap()
                     .put(catalogAttributes__.getKey(), catalogAttributes__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 attributeConfigLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -808,8 +827,8 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -828,8 +847,8 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -853,8 +872,8 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -876,8 +895,6 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.retail.v2beta.CatalogAttribute>
         internalGetMutableCatalogAttributes() {
-      onChanged();
-      ;
       if (catalogAttributes_ == null) {
         catalogAttributes_ =
             com.google.protobuf.MapField.newMapField(
@@ -886,6 +903,8 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       if (!catalogAttributes_.isMutable()) {
         catalogAttributes_ = catalogAttributes_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return catalogAttributes_;
     }
 
@@ -960,8 +979,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.retail.v2beta.CatalogAttribute getCatalogAttributesOrDefault(
-        java.lang.String key, com.google.cloud.retail.v2beta.CatalogAttribute defaultValue) {
+    public /* nullable */ com.google.cloud.retail.v2beta.CatalogAttribute
+        getCatalogAttributesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.retail.v2beta.CatalogAttribute defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1000,6 +1022,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearCatalogAttributes() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableCatalogAttributes().getMutableMap().clear();
       return this;
     }
@@ -1030,6 +1053,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.retail.v2beta.CatalogAttribute>
         getMutableCatalogAttributes() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableCatalogAttributes().getMutableMap();
     }
     /**
@@ -1056,8 +1080,8 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableCatalogAttributes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1079,6 +1103,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     public Builder putAllCatalogAttributes(
         java.util.Map<java.lang.String, com.google.cloud.retail.v2beta.CatalogAttribute> values) {
       internalGetMutableCatalogAttributes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1119,8 +1144,8 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAttributeConfigLevelValue(int value) {
-
       attributeConfigLevel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1141,9 +1166,8 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.AttributeConfigLevel getAttributeConfigLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.AttributeConfigLevel result =
-          com.google.cloud.retail.v2beta.AttributeConfigLevel.valueOf(attributeConfigLevel_);
+          com.google.cloud.retail.v2beta.AttributeConfigLevel.forNumber(attributeConfigLevel_);
       return result == null
           ? com.google.cloud.retail.v2beta.AttributeConfigLevel.UNRECOGNIZED
           : result;
@@ -1169,7 +1193,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       attributeConfigLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -1190,7 +1214,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAttributeConfigLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       attributeConfigLevel_ = 0;
       onChanged();
       return this;

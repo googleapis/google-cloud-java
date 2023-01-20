@@ -74,6 +74,8 @@ public final class ListPredictionApiKeyRegistrationsResponse
   }
 
   public static final int PREDICTION_API_KEY_REGISTRATIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration>
       predictionApiKeyRegistrations_;
   /**
@@ -159,7 +161,9 @@ public final class ListPredictionApiKeyRegistrationsResponse
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -448,6 +452,7 @@ public final class ListPredictionApiKeyRegistrationsResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (predictionApiKeyRegistrationsBuilder_ == null) {
         predictionApiKeyRegistrations_ = java.util.Collections.emptyList();
       } else {
@@ -456,7 +461,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -491,7 +495,17 @@ public final class ListPredictionApiKeyRegistrationsResponse
           result =
               new com.google.cloud.recommendationengine.v1beta1
                   .ListPredictionApiKeyRegistrationsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsResponse
+            result) {
       if (predictionApiKeyRegistrationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           predictionApiKeyRegistrations_ =
@@ -502,9 +516,15 @@ public final class ListPredictionApiKeyRegistrationsResponse
       } else {
         result.predictionApiKeyRegistrations_ = predictionApiKeyRegistrationsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsResponse
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -591,6 +611,7 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -637,7 +658,7 @@ public final class ListPredictionApiKeyRegistrationsResponse
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1146,8 +1167,8 @@ public final class ListPredictionApiKeyRegistrationsResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1164,8 +1185,8 @@ public final class ListPredictionApiKeyRegistrationsResponse
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1187,8 +1208,8 @@ public final class ListPredictionApiKeyRegistrationsResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

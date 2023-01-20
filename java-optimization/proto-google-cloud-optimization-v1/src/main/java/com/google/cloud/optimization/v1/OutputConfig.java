@@ -163,7 +163,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_FORMAT_FIELD_NUMBER = 2;
-  private int dataFormat_;
+  private int dataFormat_ = 0;
   /**
    *
    *
@@ -192,9 +192,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.optimization.v1.DataFormat getDataFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.optimization.v1.DataFormat result =
-        com.google.cloud.optimization.v1.DataFormat.valueOf(dataFormat_);
+        com.google.cloud.optimization.v1.DataFormat.forNumber(dataFormat_);
     return result == null ? com.google.cloud.optimization.v1.DataFormat.UNRECOGNIZED : result;
   }
 
@@ -421,11 +420,11 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
       dataFormat_ = 0;
-
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -455,17 +454,27 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.OutputConfig buildPartial() {
       com.google.cloud.optimization.v1.OutputConfig result =
           new com.google.cloud.optimization.v1.OutputConfig(this);
-      if (destinationCase_ == 1) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.dataFormat_ = dataFormat_;
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.OutputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataFormat_ = dataFormat_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.optimization.v1.OutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -562,7 +571,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 dataFormat_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -595,6 +604,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.optimization.v1.GcsDestination,
@@ -803,7 +814,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 
@@ -836,8 +846,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataFormatValue(int value) {
-
       dataFormat_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -854,9 +864,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.optimization.v1.DataFormat getDataFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.optimization.v1.DataFormat result =
-          com.google.cloud.optimization.v1.DataFormat.valueOf(dataFormat_);
+          com.google.cloud.optimization.v1.DataFormat.forNumber(dataFormat_);
       return result == null ? com.google.cloud.optimization.v1.DataFormat.UNRECOGNIZED : result;
     }
     /**
@@ -875,7 +884,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       dataFormat_ = value.getNumber();
       onChanged();
       return this;
@@ -892,7 +901,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       dataFormat_ = 0;
       onChanged();
       return this;

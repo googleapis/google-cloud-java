@@ -89,6 +89,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> systemMetrics_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -154,8 +155,10 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getSystemMetricsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getSystemMetricsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -410,6 +413,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableSystemMetrics().clear();
       return this;
     }
@@ -438,11 +442,19 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v1.RuntimeMetrics buildPartial() {
       com.google.cloud.notebooks.v1.RuntimeMetrics result =
           new com.google.cloud.notebooks.v1.RuntimeMetrics(this);
-      int from_bitField0_ = bitField0_;
-      result.systemMetrics_ = internalGetSystemMetrics();
-      result.systemMetrics_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.RuntimeMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.systemMetrics_ = internalGetSystemMetrics();
+        result.systemMetrics_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -491,6 +503,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.notebooks.v1.RuntimeMetrics other) {
       if (other == com.google.cloud.notebooks.v1.RuntimeMetrics.getDefaultInstance()) return this;
       internalGetMutableSystemMetrics().mergeFrom(other.internalGetSystemMetrics());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -526,6 +539,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableSystemMetrics()
                     .getMutableMap()
                     .put(systemMetrics__.getKey(), systemMetrics__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -560,8 +574,6 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableSystemMetrics() {
-      onChanged();
-      ;
       if (systemMetrics_ == null) {
         systemMetrics_ =
             com.google.protobuf.MapField.newMapField(SystemMetricsDefaultEntryHolder.defaultEntry);
@@ -569,6 +581,8 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
       if (!systemMetrics_.isMutable()) {
         systemMetrics_ = systemMetrics_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return systemMetrics_;
     }
 
@@ -626,8 +640,10 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getSystemMetricsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getSystemMetricsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -658,6 +674,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearSystemMetrics() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableSystemMetrics().getMutableMap().clear();
       return this;
     }
@@ -682,6 +699,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSystemMetrics() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableSystemMetrics().getMutableMap();
     }
     /**
@@ -702,8 +720,8 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableSystemMetrics().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -719,6 +737,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllSystemMetrics(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSystemMetrics().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

@@ -80,7 +80,9 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
   }
 
   public static final int VM_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object vmId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmId_ = "";
   /**
    *
    *
@@ -194,6 +198,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -254,8 +259,10 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -528,10 +535,9 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       vmId_ = "";
-
       internalGetMutableMetadata().clear();
       return this;
     }
@@ -560,13 +566,25 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     public com.google.cloud.notebooks.v1.ReportInstanceInfoRequest buildPartial() {
       com.google.cloud.notebooks.v1.ReportInstanceInfoRequest result =
           new com.google.cloud.notebooks.v1.ReportInstanceInfoRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.vmId_ = vmId_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.ReportInstanceInfoRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vmId_ = vmId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -617,13 +635,16 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVmId().isEmpty()) {
         vmId_ = other.vmId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -653,13 +674,13 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 vmId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -671,6 +692,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -756,8 +778,8 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -774,8 +796,8 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -797,8 +819,8 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -867,8 +889,8 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -885,8 +907,8 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearVmId() {
-
       vmId_ = getDefaultInstance().getVmId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -908,8 +930,8 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -925,8 +947,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -934,6 +954,8 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return metadata_;
     }
 
@@ -988,8 +1010,10 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1019,6 +1043,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1042,6 +1067,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1061,8 +1087,8 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1077,6 +1103,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

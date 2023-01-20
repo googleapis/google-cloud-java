@@ -178,7 +178,6 @@ public interface CheckUpgradeResponseOrBuilder
    *
    * <code>map&lt;string, string&gt; pypi_dependencies = 6;</code>
    */
-
   /* nullable */
   java.lang.String getPypiDependenciesOrDefault(
       java.lang.String key,

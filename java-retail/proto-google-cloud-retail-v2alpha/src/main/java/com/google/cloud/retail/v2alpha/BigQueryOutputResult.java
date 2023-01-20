@@ -69,7 +69,9 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DATASET_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object datasetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object datasetId_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TABLE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object tableId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tableId_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       datasetId_ = "";
-
       tableId_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.retail.v2alpha.BigQueryOutputResult buildPartial() {
       com.google.cloud.retail.v2alpha.BigQueryOutputResult result =
           new com.google.cloud.retail.v2alpha.BigQueryOutputResult(this);
-      result.datasetId_ = datasetId_;
-      result.tableId_ = tableId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.BigQueryOutputResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.datasetId_ = datasetId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tableId_ = tableId_;
+      }
     }
 
     @java.lang.Override
@@ -457,10 +471,12 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getDatasetId().isEmpty()) {
         datasetId_ = other.datasetId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTableId().isEmpty()) {
         tableId_ = other.tableId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -492,13 +508,13 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 datasetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 tableId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -517,6 +533,8 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object datasetId_ = "";
     /**
@@ -579,8 +597,8 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       datasetId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -596,8 +614,8 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDatasetId() {
-
       datasetId_ = getDefaultInstance().getDatasetId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -618,8 +636,8 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       datasetId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,8 +703,8 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       tableId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -702,8 +720,8 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTableId() {
-
       tableId_ = getDefaultInstance().getTableId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class BigQueryOutputResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tableId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

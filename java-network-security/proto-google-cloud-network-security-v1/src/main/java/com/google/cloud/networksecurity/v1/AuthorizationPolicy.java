@@ -663,6 +663,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
 
       public static final int PRINCIPALS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList principals_;
       /**
        *
@@ -744,6 +746,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
 
       public static final int IP_BLOCKS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList ipBlocks_;
       /**
        *
@@ -1047,6 +1051,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           principals_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
           ipBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1081,7 +1086,16 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source buildPartial() {
           com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source result =
               new com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source result) {
           if (((bitField0_ & 0x00000001) != 0)) {
             principals_ = principals_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
@@ -1092,8 +1106,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.ipBlocks_ = ipBlocks_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -2261,7 +2278,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
 
         public static final int HEADER_NAME_FIELD_NUMBER = 1;
-        private volatile java.lang.Object headerName_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object headerName_ = "";
         /**
          *
          *
@@ -2572,8 +2591,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             headerName_ = "";
-
             typeCase_ = 0;
             type_ = null;
             return this;
@@ -2613,13 +2632,30 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 result =
                     new com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
                         .HttpHeaderMatch(this);
-            if (typeCase_ == 2) {
-              result.type_ = type_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            result.headerName_ = headerName_;
-            result.typeCase_ = typeCase_;
+            buildPartialOneofs(result);
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
+                      .HttpHeaderMatch
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.headerName_ = headerName_;
+            }
+          }
+
+          private void buildPartialOneofs(
+              com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
+                      .HttpHeaderMatch
+                  result) {
+            result.typeCase_ = typeCase_;
+            result.type_ = this.type_;
           }
 
           @java.lang.Override
@@ -2682,6 +2718,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                     .HttpHeaderMatch.getDefaultInstance()) return this;
             if (!other.getHeaderName().isEmpty()) {
               headerName_ = other.headerName_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             switch (other.getTypeCase()) {
@@ -2726,7 +2763,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                   case 10:
                     {
                       headerName_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 10
                   case 18:
@@ -2766,6 +2803,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             onChanged();
             return this;
           }
+
+          private int bitField0_;
 
           /**
            *
@@ -3007,8 +3046,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             if (value == null) {
               throw new NullPointerException();
             }
-
             headerName_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -3027,8 +3066,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
            * @return This builder for chaining.
            */
           public Builder clearHeaderName() {
-
             headerName_ = getDefaultInstance().getHeaderName();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -3052,8 +3091,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             headerName_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -3131,6 +3170,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
 
       public static final int HOSTS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList hosts_;
       /**
        *
@@ -3204,6 +3245,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
 
       public static final int PORTS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.Internal.IntList ports_;
       /**
        *
@@ -3253,6 +3296,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       private int portsMemoizedSerializedSize = -1;
 
       public static final int METHODS_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList methods_;
       /**
        *
@@ -3387,7 +3432,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
               .HttpHeaderMatchOrBuilder
           getHttpHeaderMatchOrBuilder() {
-        return getHttpHeaderMatch();
+        return httpHeaderMatch_ == null
+            ? com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
+                .HttpHeaderMatch.getDefaultInstance()
+            : httpHeaderMatch_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -3664,16 +3712,15 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
           ports_ = emptyIntList();
-          bitField0_ = (bitField0_ & ~0x00000002);
           methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000004);
-          if (httpHeaderMatchBuilder_ == null) {
-            httpHeaderMatch_ = null;
-          } else {
-            httpHeaderMatch_ = null;
+          httpHeaderMatch_ = null;
+          if (httpHeaderMatchBuilder_ != null) {
+            httpHeaderMatchBuilder_.dispose();
             httpHeaderMatchBuilder_ = null;
           }
           return this;
@@ -3707,7 +3754,16 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             buildPartial() {
           com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination result =
               new com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination result) {
           if (((bitField0_ & 0x00000001) != 0)) {
             hosts_ = hosts_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
@@ -3723,13 +3779,17 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.methods_ = methods_;
-          if (httpHeaderMatchBuilder_ == null) {
-            result.httpHeaderMatch_ = httpHeaderMatch_;
-          } else {
-            result.httpHeaderMatch_ = httpHeaderMatchBuilder_.build();
+        }
+
+        private void buildPartial0(
+            com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.httpHeaderMatch_ =
+                httpHeaderMatchBuilder_ == null
+                    ? httpHeaderMatch_
+                    : httpHeaderMatchBuilder_.build();
           }
-          onBuilt();
-          return result;
         }
 
         @java.lang.Override
@@ -3879,7 +3939,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                   {
                     input.readMessage(
                         getHttpHeaderMatchFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 42
                 default:
@@ -4163,6 +4223,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder setPorts(int index, int value) {
+
           ensurePortsIsMutable();
           ports_.setInt(index, value);
           onChanged();
@@ -4181,6 +4242,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder addPorts(int value) {
+
           ensurePortsIsMutable();
           ports_.addInt(value);
           onChanged();
@@ -4428,7 +4490,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return Whether the httpHeaderMatch field is set.
          */
         public boolean hasHttpHeaderMatch() {
-          return httpHeaderMatchBuilder_ != null || httpHeaderMatch_ != null;
+          return ((bitField0_ & 0x00000008) != 0);
         }
         /**
          *
@@ -4482,11 +4544,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
               throw new NullPointerException();
             }
             httpHeaderMatch_ = value;
-            onChanged();
           } else {
             httpHeaderMatchBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -4510,11 +4572,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 builderForValue) {
           if (httpHeaderMatchBuilder_ == null) {
             httpHeaderMatch_ = builderForValue.build();
-            onChanged();
           } else {
             httpHeaderMatchBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -4536,20 +4598,20 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination.HttpHeaderMatch
                 value) {
           if (httpHeaderMatchBuilder_ == null) {
-            if (httpHeaderMatch_ != null) {
-              httpHeaderMatch_ =
-                  com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
-                      .HttpHeaderMatch.newBuilder(httpHeaderMatch_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000008) != 0)
+                && httpHeaderMatch_ != null
+                && httpHeaderMatch_
+                    != com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
+                        .HttpHeaderMatch.getDefaultInstance()) {
+              getHttpHeaderMatchBuilder().mergeFrom(value);
             } else {
               httpHeaderMatch_ = value;
             }
-            onChanged();
           } else {
             httpHeaderMatchBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -4568,14 +4630,13 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * </code>
          */
         public Builder clearHttpHeaderMatch() {
-          if (httpHeaderMatchBuilder_ == null) {
-            httpHeaderMatch_ = null;
-            onChanged();
-          } else {
-            httpHeaderMatch_ = null;
+          bitField0_ = (bitField0_ & ~0x00000008);
+          httpHeaderMatch_ = null;
+          if (httpHeaderMatchBuilder_ != null) {
+            httpHeaderMatchBuilder_.dispose();
             httpHeaderMatchBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -4596,7 +4657,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
                 .HttpHeaderMatch.Builder
             getHttpHeaderMatchBuilder() {
-
+          bitField0_ |= 0x00000008;
           onChanged();
           return getHttpHeaderMatchFieldBuilder().getBuilder();
         }
@@ -4734,6 +4795,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     }
 
     public static final int SOURCES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source>
         sources_;
     /**
@@ -4833,6 +4896,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DESTINATIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination>
         destinations_;
     /**
@@ -5150,6 +5215,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (sourcesBuilder_ == null) {
           sources_ = java.util.Collections.emptyList();
         } else {
@@ -5192,7 +5258,16 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule buildPartial() {
         com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule result =
             new com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule result) {
         if (sourcesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             sources_ = java.util.Collections.unmodifiableList(sources_);
@@ -5211,8 +5286,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         } else {
           result.destinations_ = destinationsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -6421,7 +6499,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -6472,7 +6552,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -6566,7 +6648,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
@@ -6615,7 +6697,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 5;
@@ -6631,6 +6713,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -6688,7 +6771,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -6717,7 +6803,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ACTION_FIELD_NUMBER = 6;
-  private int action_;
+  private int action_ = 0;
   /**
    *
    *
@@ -6752,15 +6838,16 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action getAction() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action result =
-        com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action.valueOf(action_);
+        com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action.forNumber(action_);
     return result == null
         ? com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action.UNRECOGNIZED
         : result;
   }
 
   public static final int RULES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule> rules_;
   /**
    *
@@ -7156,32 +7243,28 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       action_ = 0;
-
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
       } else {
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -7209,33 +7292,48 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public com.google.cloud.networksecurity.v1.AuthorizationPolicy buildPartial() {
       com.google.cloud.networksecurity.v1.AuthorizationPolicy result =
           new com.google.cloud.networksecurity.v1.AuthorizationPolicy(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.description_ = description_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.action_ = action_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networksecurity.v1.AuthorizationPolicy result) {
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networksecurity.v1.AuthorizationPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.action_ = action_;
+      }
     }
 
     @java.lang.Override
@@ -7286,10 +7384,12 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -7299,6 +7399,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000010;
       if (other.action_ != 0) {
         setActionValue(other.getActionValue());
       }
@@ -7306,7 +7407,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -7319,7 +7420,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -7358,25 +7459,25 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -7388,12 +7489,13 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 action_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
@@ -7493,8 +7595,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7511,8 +7613,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -7534,8 +7636,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7601,8 +7703,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7618,8 +7720,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -7640,8 +7742,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7666,7 +7768,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -7707,11 +7809,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -7728,11 +7830,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -7748,17 +7850,18 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -7773,14 +7876,13 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7795,7 +7897,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -7867,7 +7969,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -7908,11 +8010,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7929,11 +8031,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7949,17 +8051,18 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7974,14 +8077,13 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7996,7 +8098,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -8059,14 +8161,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return labels_;
     }
 
@@ -8118,8 +8220,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -8148,6 +8252,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -8170,6 +8275,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -8188,8 +8294,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -8203,6 +8309,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -8241,8 +8348,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
-
       action_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -8262,9 +8369,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action getAction() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action result =
-          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action.valueOf(action_);
+          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action.forNumber(action_);
       return result == null
           ? com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action.UNRECOGNIZED
           : result;
@@ -8288,7 +8394,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       action_ = value.getNumber();
       onChanged();
       return this;
@@ -8308,7 +8414,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       action_ = 0;
       onChanged();
       return this;
@@ -8318,11 +8424,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         rules_ =
             new java.util.ArrayList<com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule>(
                 rules_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -8599,7 +8705,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -8763,7 +8869,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule,
                 com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Builder,
                 com.google.cloud.networksecurity.v1.AuthorizationPolicy.RuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;

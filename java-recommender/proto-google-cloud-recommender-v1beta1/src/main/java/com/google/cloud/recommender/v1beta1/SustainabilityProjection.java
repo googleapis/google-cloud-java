@@ -67,7 +67,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
   }
 
   public static final int KG_C_O2E_FIELD_NUMBER = 1;
-  private double kgCO2E_;
+  private double kgCO2E_ = 0D;
   /**
    *
    *
@@ -128,7 +128,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
-    return getDuration();
+    return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -347,12 +347,11 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kgCO2E_ = 0D;
-
-      if (durationBuilder_ == null) {
-        duration_ = null;
-      } else {
-        duration_ = null;
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
       return this;
@@ -383,14 +382,22 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
     public com.google.cloud.recommender.v1beta1.SustainabilityProjection buildPartial() {
       com.google.cloud.recommender.v1beta1.SustainabilityProjection result =
           new com.google.cloud.recommender.v1beta1.SustainabilityProjection(this);
-      result.kgCO2E_ = kgCO2E_;
-      if (durationBuilder_ == null) {
-        result.duration_ = duration_;
-      } else {
-        result.duration_ = durationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommender.v1beta1.SustainabilityProjection result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kgCO2E_ = kgCO2E_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -475,13 +482,13 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
             case 9:
               {
                 kgCO2E_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 18:
               {
                 input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -500,6 +507,8 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double kgCO2E_;
     /**
@@ -534,6 +543,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
     public Builder setKgCO2E(double value) {
 
       kgCO2E_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -550,7 +560,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearKgCO2E() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       kgCO2E_ = 0D;
       onChanged();
       return this;
@@ -574,7 +584,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
      * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
-      return durationBuilder_ != null || duration_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -609,11 +619,11 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         duration_ = value;
-        onChanged();
       } else {
         durationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -628,11 +638,11 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
     public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (durationBuilder_ == null) {
         duration_ = builderForValue.build();
-        onChanged();
       } else {
         durationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -646,17 +656,18 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
      */
     public Builder mergeDuration(com.google.protobuf.Duration value) {
       if (durationBuilder_ == null) {
-        if (duration_ != null) {
-          duration_ =
-              com.google.protobuf.Duration.newBuilder(duration_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && duration_ != null
+            && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDurationBuilder().mergeFrom(value);
         } else {
           duration_ = value;
         }
-        onChanged();
       } else {
         durationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -669,14 +680,13 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
      * <code>.google.protobuf.Duration duration = 2;</code>
      */
     public Builder clearDuration() {
-      if (durationBuilder_ == null) {
-        duration_ = null;
-        onChanged();
-      } else {
-        duration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -689,7 +699,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
      * <code>.google.protobuf.Duration duration = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getDurationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }

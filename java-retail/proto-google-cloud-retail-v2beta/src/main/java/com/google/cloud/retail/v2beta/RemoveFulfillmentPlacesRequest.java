@@ -73,7 +73,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   }
 
   public static final int PRODUCT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object product_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object product_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -215,6 +219,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   }
 
   public static final int PLACE_IDS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList placeIds_;
   /**
    *
@@ -356,11 +362,11 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRemoveTimeOrBuilder() {
-    return getRemoveTime();
+    return removeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : removeTime_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 5;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -630,20 +636,17 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       product_ = "";
-
       type_ = "";
-
       placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (removeTimeBuilder_ == null) {
-        removeTime_ = null;
-      } else {
-        removeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      removeTime_ = null;
+      if (removeTimeBuilder_ != null) {
+        removeTimeBuilder_.dispose();
         removeTimeBuilder_ = null;
       }
       allowMissing_ = false;
-
       return this;
     }
 
@@ -672,22 +675,38 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     public com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest buildPartial() {
       com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest result =
           new com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.product_ = product_;
-      result.type_ = type_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        placeIds_ = placeIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.placeIds_ = placeIds_;
-      if (removeTimeBuilder_ == null) {
-        result.removeTime_ = removeTime_;
-      } else {
-        result.removeTime_ = removeTimeBuilder_.build();
-      }
-      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        placeIds_ = placeIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.placeIds_ = placeIds_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.product_ = product_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.removeTime_ = removeTimeBuilder_ == null ? removeTime_ : removeTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -739,16 +758,18 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getProduct().isEmpty()) {
         product_ = other.product_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.placeIds_.isEmpty()) {
         if (placeIds_.isEmpty()) {
           placeIds_ = other.placeIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensurePlaceIdsIsMutable();
           placeIds_.addAll(other.placeIds_);
@@ -790,13 +811,13 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
             case 10:
               {
                 product_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -809,13 +830,13 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
             case 34:
               {
                 input.readMessage(getRemoveTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -919,8 +940,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       product_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -943,8 +964,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearProduct() {
-
       product_ = getDefaultInstance().getProduct();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -972,8 +993,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       product_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1084,8 +1105,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1116,8 +1137,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1153,8 +1174,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1163,9 +1184,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePlaceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         placeIds_ = new com.google.protobuf.LazyStringArrayList(placeIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1364,7 +1385,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      */
     public Builder clearPlaceIds() {
       placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1419,7 +1440,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * @return Whether the removeTime field is set.
      */
     public boolean hasRemoveTime() {
-      return removeTimeBuilder_ != null || removeTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1460,11 +1481,11 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         removeTime_ = value;
-        onChanged();
       } else {
         removeTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1481,11 +1502,11 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     public Builder setRemoveTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (removeTimeBuilder_ == null) {
         removeTime_ = builderForValue.build();
-        onChanged();
       } else {
         removeTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1501,17 +1522,18 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      */
     public Builder mergeRemoveTime(com.google.protobuf.Timestamp value) {
       if (removeTimeBuilder_ == null) {
-        if (removeTime_ != null) {
-          removeTime_ =
-              com.google.protobuf.Timestamp.newBuilder(removeTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && removeTime_ != null
+            && removeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRemoveTimeBuilder().mergeFrom(value);
         } else {
           removeTime_ = value;
         }
-        onChanged();
       } else {
         removeTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1526,14 +1548,13 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.Timestamp remove_time = 4;</code>
      */
     public Builder clearRemoveTime() {
-      if (removeTimeBuilder_ == null) {
-        removeTime_ = null;
-        onChanged();
-      } else {
-        removeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      removeTime_ = null;
+      if (removeTimeBuilder_ != null) {
+        removeTimeBuilder_.dispose();
         removeTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1548,7 +1569,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.Timestamp remove_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRemoveTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRemoveTimeFieldBuilder().getBuilder();
     }
@@ -1641,6 +1662,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1661,7 +1683,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       allowMissing_ = false;
       onChanged();
       return this;

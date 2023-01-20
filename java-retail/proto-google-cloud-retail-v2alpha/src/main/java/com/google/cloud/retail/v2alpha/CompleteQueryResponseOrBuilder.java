@@ -332,7 +332,6 @@ public interface CompleteQueryResponseOrBuilder
    * map&lt;string, .google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult
       getAttributeResultsOrDefault(

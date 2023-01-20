@@ -70,7 +70,9 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
   }
 
   public static final int POLICY_BASED_ROUTE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object policyBasedRouteId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object policyBasedRouteId_ = "";
   /**
    *
    *
@@ -223,11 +227,15 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.cloud.networkconnectivity.v1.PolicyBasedRouteOrBuilder
       getPolicyBasedRouteOrBuilder() {
-    return getPolicyBasedRoute();
+    return policyBasedRoute_ == null
+        ? com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.getDefaultInstance()
+        : policyBasedRoute_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -527,18 +535,15 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       policyBasedRouteId_ = "";
-
-      if (policyBasedRouteBuilder_ == null) {
-        policyBasedRoute_ = null;
-      } else {
-        policyBasedRoute_ = null;
+      policyBasedRoute_ = null;
+      if (policyBasedRouteBuilder_ != null) {
+        policyBasedRouteBuilder_.dispose();
         policyBasedRouteBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -568,16 +573,29 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
     public com.google.cloud.networkconnectivity.v1.CreatePolicyBasedRouteRequest buildPartial() {
       com.google.cloud.networkconnectivity.v1.CreatePolicyBasedRouteRequest result =
           new com.google.cloud.networkconnectivity.v1.CreatePolicyBasedRouteRequest(this);
-      result.parent_ = parent_;
-      result.policyBasedRouteId_ = policyBasedRouteId_;
-      if (policyBasedRouteBuilder_ == null) {
-        result.policyBasedRoute_ = policyBasedRoute_;
-      } else {
-        result.policyBasedRoute_ = policyBasedRouteBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networkconnectivity.v1.CreatePolicyBasedRouteRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.policyBasedRouteId_ = policyBasedRouteId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.policyBasedRoute_ =
+            policyBasedRouteBuilder_ == null ? policyBasedRoute_ : policyBasedRouteBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -631,10 +649,12 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPolicyBasedRouteId().isEmpty()) {
         policyBasedRouteId_ = other.policyBasedRouteId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPolicyBasedRoute()) {
@@ -642,6 +662,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -673,26 +694,26 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 policyBasedRouteId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getPolicyBasedRouteFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -711,6 +732,8 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -779,8 +802,8 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,8 +821,8 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -822,8 +845,8 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -889,8 +912,8 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       policyBasedRouteId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -906,8 +929,8 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPolicyBasedRouteId() {
-
       policyBasedRouteId_ = getDefaultInstance().getPolicyBasedRouteId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -928,8 +951,8 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       policyBasedRouteId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -954,7 +977,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      * @return Whether the policyBasedRoute field is set.
      */
     public boolean hasPolicyBasedRoute() {
-      return policyBasedRouteBuilder_ != null || policyBasedRoute_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -996,11 +1019,11 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         policyBasedRoute_ = value;
-        onChanged();
       } else {
         policyBasedRouteBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1018,11 +1041,11 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
         com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Builder builderForValue) {
       if (policyBasedRouteBuilder_ == null) {
         policyBasedRoute_ = builderForValue.build();
-        onChanged();
       } else {
         policyBasedRouteBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1039,19 +1062,19 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
     public Builder mergePolicyBasedRoute(
         com.google.cloud.networkconnectivity.v1.PolicyBasedRoute value) {
       if (policyBasedRouteBuilder_ == null) {
-        if (policyBasedRoute_ != null) {
-          policyBasedRoute_ =
-              com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.newBuilder(policyBasedRoute_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && policyBasedRoute_ != null
+            && policyBasedRoute_
+                != com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.getDefaultInstance()) {
+          getPolicyBasedRouteBuilder().mergeFrom(value);
         } else {
           policyBasedRoute_ = value;
         }
-        onChanged();
       } else {
         policyBasedRouteBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1066,14 +1089,13 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearPolicyBasedRoute() {
-      if (policyBasedRouteBuilder_ == null) {
-        policyBasedRoute_ = null;
-        onChanged();
-      } else {
-        policyBasedRoute_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      policyBasedRoute_ = null;
+      if (policyBasedRouteBuilder_ != null) {
+        policyBasedRouteBuilder_.dispose();
         policyBasedRouteBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1089,7 +1111,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      */
     public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Builder
         getPolicyBasedRouteBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPolicyBasedRouteFieldBuilder().getBuilder();
     }
@@ -1233,8 +1255,8 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1260,8 +1282,8 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1292,8 +1314,8 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

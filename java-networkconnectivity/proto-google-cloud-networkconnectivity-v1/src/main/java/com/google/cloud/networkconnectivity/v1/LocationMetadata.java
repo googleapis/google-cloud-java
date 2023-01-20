@@ -68,7 +68,10 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int LOCATION_FEATURES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> locationFeatures_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.networkconnectivity.v1.LocationFeature>
       locationFeatures_converter_ =
@@ -76,9 +79,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
               java.lang.Integer, com.google.cloud.networkconnectivity.v1.LocationFeature>() {
             public com.google.cloud.networkconnectivity.v1.LocationFeature convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.networkconnectivity.v1.LocationFeature result =
-                  com.google.cloud.networkconnectivity.v1.LocationFeature.valueOf(from);
+                  com.google.cloud.networkconnectivity.v1.LocationFeature.forNumber(from);
               return result == null
                   ? com.google.cloud.networkconnectivity.v1.LocationFeature.UNRECOGNIZED
                   : result;
@@ -387,6 +389,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       locationFeatures_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -416,14 +419,25 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.networkconnectivity.v1.LocationMetadata buildPartial() {
       com.google.cloud.networkconnectivity.v1.LocationMetadata result =
           new com.google.cloud.networkconnectivity.v1.LocationMetadata(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkconnectivity.v1.LocationMetadata result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         locationFeatures_ = java.util.Collections.unmodifiableList(locationFeatures_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.locationFeatures_ = locationFeatures_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkconnectivity.v1.LocationMetadata result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -69,7 +69,8 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
   }
 
   public static final int HASHED_USER_CREDENTIALS_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString hashedUserCredentials_;
+  private com.google.protobuf.ByteString hashedUserCredentials_ =
+      com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -88,7 +89,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
   }
 
   public static final int CREDENTIALS_LEAKED_FIELD_NUMBER = 2;
-  private boolean credentialsLeaked_;
+  private boolean credentialsLeaked_ = false;
   /**
    *
    *
@@ -106,7 +107,9 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
   }
 
   public static final int CANONICALIZED_USERNAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object canonicalizedUsername_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object canonicalizedUsername_ = "";
   /**
    *
    *
@@ -374,12 +377,10 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hashedUserCredentials_ = com.google.protobuf.ByteString.EMPTY;
-
       credentialsLeaked_ = false;
-
       canonicalizedUsername_ = "";
-
       return this;
     }
 
@@ -408,11 +409,25 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
     public com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification buildPartial() {
       com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification result =
           new com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification(this);
-      result.hashedUserCredentials_ = hashedUserCredentials_;
-      result.credentialsLeaked_ = credentialsLeaked_;
-      result.canonicalizedUsername_ = canonicalizedUsername_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hashedUserCredentials_ = hashedUserCredentials_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.credentialsLeaked_ = credentialsLeaked_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.canonicalizedUsername_ = canonicalizedUsername_;
+      }
     }
 
     @java.lang.Override
@@ -471,6 +486,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
       }
       if (!other.getCanonicalizedUsername().isEmpty()) {
         canonicalizedUsername_ = other.canonicalizedUsername_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -502,19 +518,19 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
             case 10:
               {
                 hashedUserCredentials_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 credentialsLeaked_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 canonicalizedUsername_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -533,6 +549,8 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString hashedUserCredentials_ =
         com.google.protobuf.ByteString.EMPTY;
@@ -569,8 +587,8 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       hashedUserCredentials_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -587,7 +605,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearHashedUserCredentials() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       hashedUserCredentials_ = getDefaultInstance().getHashedUserCredentials();
       onChanged();
       return this;
@@ -624,6 +642,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
     public Builder setCredentialsLeaked(boolean value) {
 
       credentialsLeaked_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -639,7 +658,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearCredentialsLeaked() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       credentialsLeaked_ = false;
       onChanged();
       return this;
@@ -712,8 +731,8 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       canonicalizedUsername_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -731,8 +750,8 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearCanonicalizedUsername() {
-
       canonicalizedUsername_ = getDefaultInstance().getCanonicalizedUsername();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -755,8 +774,8 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       canonicalizedUsername_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

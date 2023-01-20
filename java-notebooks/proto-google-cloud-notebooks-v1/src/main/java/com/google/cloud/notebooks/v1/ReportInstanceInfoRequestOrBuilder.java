@@ -123,7 +123,6 @@ public interface ReportInstanceInfoRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-
   /* nullable */
   java.lang.String getMetadataOrDefault(
       java.lang.String key,

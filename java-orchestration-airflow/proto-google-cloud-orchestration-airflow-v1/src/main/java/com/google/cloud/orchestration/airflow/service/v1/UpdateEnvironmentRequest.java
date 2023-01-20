@@ -69,7 +69,9 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -168,7 +170,9 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1.EnvironmentOrBuilder
       getEnvironmentOrBuilder() {
-    return getEnvironment();
+    return environment_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.Environment.getDefaultInstance()
+        : environment_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -553,7 +557,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -791,18 +795,16 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-      } else {
-        environment_ = null;
+      environment_ = null;
+      if (environmentBuilder_ != null) {
+        environmentBuilder_.dispose();
         environmentBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -836,19 +838,26 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
         buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest result =
           new com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest(this);
-      result.name_ = name_;
-      if (environmentBuilder_ == null) {
-        result.environment_ = environment_;
-      } else {
-        result.environment_ = environmentBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.environment_ =
+            environmentBuilder_ == null ? environment_ : environmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -903,6 +912,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEnvironment()) {
@@ -940,19 +950,19 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -971,6 +981,8 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1036,8 +1048,8 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1054,8 +1066,8 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1077,8 +1089,8 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1102,7 +1114,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * @return Whether the environment field is set.
      */
     public boolean hasEnvironment() {
-      return environmentBuilder_ != null || environment_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1142,11 +1154,11 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         environment_ = value;
-        onChanged();
       } else {
         environmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1163,11 +1175,11 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
         com.google.cloud.orchestration.airflow.service.v1.Environment.Builder builderForValue) {
       if (environmentBuilder_ == null) {
         environment_ = builderForValue.build();
-        onChanged();
       } else {
         environmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1183,19 +1195,20 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     public Builder mergeEnvironment(
         com.google.cloud.orchestration.airflow.service.v1.Environment value) {
       if (environmentBuilder_ == null) {
-        if (environment_ != null) {
-          environment_ =
-              com.google.cloud.orchestration.airflow.service.v1.Environment.newBuilder(environment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && environment_ != null
+            && environment_
+                != com.google.cloud.orchestration.airflow.service.v1.Environment
+                    .getDefaultInstance()) {
+          getEnvironmentBuilder().mergeFrom(value);
         } else {
           environment_ = value;
         }
-        onChanged();
       } else {
         environmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1209,14 +1222,13 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * <code>.google.cloud.orchestration.airflow.service.v1.Environment environment = 1;</code>
      */
     public Builder clearEnvironment() {
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-        onChanged();
-      } else {
-        environment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      environment_ = null;
+      if (environmentBuilder_ != null) {
+        environmentBuilder_.dispose();
         environmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1231,7 +1243,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.orchestration.airflow.service.v1.Environment.Builder
         getEnvironmentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
@@ -1413,7 +1425,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1676,11 +1688,11 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1808,11 +1820,11 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1939,17 +1951,18 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2075,14 +2088,13 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2208,7 +2220,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

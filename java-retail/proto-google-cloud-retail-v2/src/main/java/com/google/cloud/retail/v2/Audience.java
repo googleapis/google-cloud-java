@@ -70,6 +70,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GENDERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList genders_;
   /**
    *
@@ -163,6 +165,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AGE_GROUPS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ageGroups_;
   /**
    *
@@ -486,6 +490,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       genders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       ageGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -516,7 +521,15 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.retail.v2.Audience buildPartial() {
       com.google.cloud.retail.v2.Audience result = new com.google.cloud.retail.v2.Audience(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.retail.v2.Audience result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         genders_ = genders_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -527,8 +540,10 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.ageGroups_ = ageGroups_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.Audience result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -133,7 +133,9 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.retail.v2alpha.CatalogOrBuilder getCatalogOrBuilder() {
-    return getCatalog();
+    return catalog_ == null
+        ? com.google.cloud.retail.v2alpha.Catalog.getDefaultInstance()
+        : catalog_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -188,7 +190,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -409,16 +411,15 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (catalogBuilder_ == null) {
-        catalog_ = null;
-      } else {
-        catalog_ = null;
+      bitField0_ = 0;
+      catalog_ = null;
+      if (catalogBuilder_ != null) {
+        catalogBuilder_.dispose();
         catalogBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -448,18 +449,21 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.retail.v2alpha.UpdateCatalogRequest buildPartial() {
       com.google.cloud.retail.v2alpha.UpdateCatalogRequest result =
           new com.google.cloud.retail.v2alpha.UpdateCatalogRequest(this);
-      if (catalogBuilder_ == null) {
-        result.catalog_ = catalog_;
-      } else {
-        result.catalog_ = catalogBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.UpdateCatalogRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.catalog_ = catalogBuilder_ == null ? catalog_ : catalogBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -543,13 +547,13 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getCatalogFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -568,6 +572,8 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.retail.v2alpha.Catalog catalog_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -594,7 +600,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the catalog field is set.
      */
     public boolean hasCatalog() {
-      return catalogBuilder_ != null || catalog_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -645,11 +651,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         catalog_ = value;
-        onChanged();
       } else {
         catalogBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -671,11 +677,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
     public Builder setCatalog(com.google.cloud.retail.v2alpha.Catalog.Builder builderForValue) {
       if (catalogBuilder_ == null) {
         catalog_ = builderForValue.build();
-        onChanged();
       } else {
         catalogBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -696,19 +702,18 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCatalog(com.google.cloud.retail.v2alpha.Catalog value) {
       if (catalogBuilder_ == null) {
-        if (catalog_ != null) {
-          catalog_ =
-              com.google.cloud.retail.v2alpha.Catalog.newBuilder(catalog_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && catalog_ != null
+            && catalog_ != com.google.cloud.retail.v2alpha.Catalog.getDefaultInstance()) {
+          getCatalogBuilder().mergeFrom(value);
         } else {
           catalog_ = value;
         }
-        onChanged();
       } else {
         catalogBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -728,14 +733,13 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCatalog() {
-      if (catalogBuilder_ == null) {
-        catalog_ = null;
-        onChanged();
-      } else {
-        catalog_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      catalog_ = null;
+      if (catalogBuilder_ != null) {
+        catalogBuilder_.dispose();
         catalogBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -755,7 +759,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.retail.v2alpha.Catalog.Builder getCatalogBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCatalogFieldBuilder().getBuilder();
     }
@@ -838,7 +842,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -881,11 +885,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -903,11 +907,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -924,17 +928,18 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -950,14 +955,13 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -973,7 +977,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

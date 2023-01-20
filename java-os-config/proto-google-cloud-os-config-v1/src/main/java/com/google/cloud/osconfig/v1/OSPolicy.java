@@ -347,7 +347,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int OS_SHORT_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object osShortName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object osShortName_ = "";
     /**
      *
      *
@@ -396,7 +398,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int OS_VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object osVersion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object osVersion_ = "";
     /**
      *
      *
@@ -661,10 +665,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         osShortName_ = "";
-
         osVersion_ = "";
-
         return this;
       }
 
@@ -692,10 +695,21 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1.OSPolicy.InventoryFilter buildPartial() {
         com.google.cloud.osconfig.v1.OSPolicy.InventoryFilter result =
             new com.google.cloud.osconfig.v1.OSPolicy.InventoryFilter(this);
-        result.osShortName_ = osShortName_;
-        result.osVersion_ = osVersion_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.osconfig.v1.OSPolicy.InventoryFilter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.osShortName_ = osShortName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.osVersion_ = osVersion_;
+        }
       }
 
       @java.lang.Override
@@ -748,10 +762,12 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getOsShortName().isEmpty()) {
           osShortName_ = other.osShortName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getOsVersion().isEmpty()) {
           osVersion_ = other.osVersion_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -783,13 +799,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   osShortName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   osVersion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -808,6 +824,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object osShortName_ = "";
       /**
@@ -870,8 +888,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         osShortName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -887,8 +905,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOsShortName() {
-
         osShortName_ = getDefaultInstance().getOsShortName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -909,8 +927,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         osShortName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -988,8 +1006,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         osVersion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1009,8 +1027,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOsVersion() {
-
         osVersion_ = getDefaultInstance().getOsVersion();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1035,8 +1053,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         osVersion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1626,7 +1644,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int URI_FIELD_NUMBER = 1;
-        private volatile java.lang.Object uri_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object uri_ = "";
         /**
          *
          *
@@ -1677,7 +1697,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int SHA256_CHECKSUM_FIELD_NUMBER = 2;
-        private volatile java.lang.Object sha256Checksum_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object sha256Checksum_ = "";
         /**
          *
          *
@@ -1936,10 +1958,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             uri_ = "";
-
             sha256Checksum_ = "";
-
             return this;
           }
 
@@ -1968,10 +1989,22 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Remote buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Remote result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Remote(this);
-            result.uri_ = uri_;
-            result.sha256Checksum_ = sha256Checksum_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Remote result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.uri_ = uri_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.sha256Checksum_ = sha256Checksum_;
+            }
           }
 
           @java.lang.Override
@@ -2026,10 +2059,12 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               return this;
             if (!other.getUri().isEmpty()) {
               uri_ = other.uri_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getSha256Checksum().isEmpty()) {
               sha256Checksum_ = other.sha256Checksum_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -2061,13 +2096,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       uri_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       sha256Checksum_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   default:
@@ -2086,6 +2121,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object uri_ = "";
           /**
@@ -2151,8 +2188,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             uri_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -2169,8 +2206,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearUri() {
-
             uri_ = getDefaultInstance().getUri();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -2192,8 +2229,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             uri_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -2259,8 +2296,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             sha256Checksum_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -2276,8 +2313,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearSha256Checksum() {
-
             sha256Checksum_ = getDefaultInstance().getSha256Checksum();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -2298,8 +2335,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             sha256Checksum_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -2490,7 +2527,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int BUCKET_FIELD_NUMBER = 1;
-        private volatile java.lang.Object bucket_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object bucket_ = "";
         /**
          *
          *
@@ -2539,7 +2578,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int OBJECT_FIELD_NUMBER = 2;
-        private volatile java.lang.Object object_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object object_ = "";
         /**
          *
          *
@@ -2588,7 +2629,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int GENERATION_FIELD_NUMBER = 3;
-        private long generation_;
+        private long generation_ = 0L;
         /**
          *
          *
@@ -2825,12 +2866,10 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             bucket_ = "";
-
             object_ = "";
-
             generation_ = 0L;
-
             return this;
           }
 
@@ -2859,11 +2898,25 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Gcs buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Gcs result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Gcs(this);
-            result.bucket_ = bucket_;
-            result.object_ = object_;
-            result.generation_ = generation_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Gcs result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.bucket_ = bucket_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.object_ = object_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.generation_ = generation_;
+            }
           }
 
           @java.lang.Override
@@ -2917,10 +2970,12 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               return this;
             if (!other.getBucket().isEmpty()) {
               bucket_ = other.bucket_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getObject().isEmpty()) {
               object_ = other.object_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (other.getGeneration() != 0L) {
@@ -2955,19 +3010,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       bucket_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       object_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 24:
                     {
                       generation_ = input.readInt64();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 24
                   default:
@@ -2986,6 +3041,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object bucket_ = "";
           /**
@@ -3048,8 +3105,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             bucket_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -3065,8 +3122,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearBucket() {
-
             bucket_ = getDefaultInstance().getBucket();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -3087,8 +3144,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             bucket_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -3154,8 +3211,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             object_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -3171,8 +3228,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearObject() {
-
             object_ = getDefaultInstance().getObject();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -3193,8 +3250,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             object_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -3230,6 +3287,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public Builder setGeneration(long value) {
 
             generation_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -3245,7 +3303,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearGeneration() {
-
+            bitField0_ = (bitField0_ & ~0x00000004);
             generation_ = 0L;
             onChanged();
             return this;
@@ -3540,7 +3598,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ALLOW_INSECURE_FIELD_NUMBER = 4;
-      private boolean allowInsecure_;
+      private boolean allowInsecure_ = false;
       /**
        *
        *
@@ -3813,6 +3871,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (remoteBuilder_ != null) {
             remoteBuilder_.clear();
           }
@@ -3820,7 +3879,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             gcsBuilder_.clear();
           }
           allowInsecure_ = false;
-
           typeCase_ = 0;
           type_ = null;
           return this;
@@ -3850,27 +3908,31 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.File buildPartial() {
           com.google.cloud.osconfig.v1.OSPolicy.Resource.File result =
               new com.google.cloud.osconfig.v1.OSPolicy.Resource.File(this);
-          if (typeCase_ == 1) {
-            if (remoteBuilder_ == null) {
-              result.type_ = type_;
-            } else {
-              result.type_ = remoteBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (typeCase_ == 2) {
-            if (gcsBuilder_ == null) {
-              result.type_ = type_;
-            } else {
-              result.type_ = gcsBuilder_.build();
-            }
-          }
-          if (typeCase_ == 3) {
-            result.type_ = type_;
-          }
-          result.allowInsecure_ = allowInsecure_;
-          result.typeCase_ = typeCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(com.google.cloud.osconfig.v1.OSPolicy.Resource.File result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.allowInsecure_ = allowInsecure_;
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.osconfig.v1.OSPolicy.Resource.File result) {
+          result.typeCase_ = typeCase_;
+          result.type_ = this.type_;
+          if (typeCase_ == 1 && remoteBuilder_ != null) {
+            result.type_ = remoteBuilder_.build();
+          }
+          if (typeCase_ == 2 && gcsBuilder_ != null) {
+            result.type_ = gcsBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -3995,7 +4057,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 case 32:
                   {
                     allowInsecure_ = input.readBool();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 32
                 default:
@@ -4028,6 +4090,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Remote,
@@ -4241,7 +4305,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           typeCase_ = 1;
           onChanged();
-          ;
           return remoteBuilder_;
         }
 
@@ -4453,7 +4516,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           typeCase_ = 2;
           onChanged();
-          ;
           return gcsBuilder_;
         }
 
@@ -4628,6 +4690,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public Builder setAllowInsecure(boolean value) {
 
           allowInsecure_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -4646,7 +4709,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearAllowInsecure() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           allowInsecure_ = false;
           onChanged();
           return this;
@@ -5374,11 +5437,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Override
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.FileOrBuilder getSourceOrBuilder() {
-          return getSource();
+          return source_ == null
+              ? com.google.cloud.osconfig.v1.OSPolicy.Resource.File.getDefaultInstance()
+              : source_;
         }
 
         public static final int PULL_DEPS_FIELD_NUMBER = 2;
-        private boolean pullDeps_;
+        private boolean pullDeps_ = false;
         /**
          *
          *
@@ -5619,14 +5684,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
-            if (sourceBuilder_ == null) {
-              source_ = null;
-            } else {
-              source_ = null;
+            bitField0_ = 0;
+            source_ = null;
+            if (sourceBuilder_ != null) {
+              sourceBuilder_.dispose();
               sourceBuilder_ = null;
             }
             pullDeps_ = false;
-
             return this;
           }
 
@@ -5657,14 +5721,22 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.Deb buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.Deb result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.Deb(this);
-            if (sourceBuilder_ == null) {
-              result.source_ = source_;
-            } else {
-              result.source_ = sourceBuilder_.build();
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            result.pullDeps_ = pullDeps_;
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.Deb result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.pullDeps_ = pullDeps_;
+            }
           }
 
           @java.lang.Override
@@ -5754,13 +5826,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 16:
                     {
                       pullDeps_ = input.readBool();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 16
                   default:
@@ -5779,6 +5851,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private com.google.cloud.osconfig.v1.OSPolicy.Resource.File source_;
           private com.google.protobuf.SingleFieldBuilderV3<
@@ -5800,7 +5874,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return Whether the source field is set.
            */
           public boolean hasSource() {
-            return sourceBuilder_ != null || source_ != null;
+            return ((bitField0_ & 0x00000001) != 0);
           }
           /**
            *
@@ -5841,11 +5915,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               source_ = value;
-              onChanged();
             } else {
               sourceBuilder_.setMessage(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -5863,11 +5937,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Builder builderForValue) {
             if (sourceBuilder_ == null) {
               source_ = builderForValue.build();
-              onChanged();
             } else {
               sourceBuilder_.setMessage(builderForValue.build());
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -5883,19 +5957,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            */
           public Builder mergeSource(com.google.cloud.osconfig.v1.OSPolicy.Resource.File value) {
             if (sourceBuilder_ == null) {
-              if (source_ != null) {
-                source_ =
-                    com.google.cloud.osconfig.v1.OSPolicy.Resource.File.newBuilder(source_)
-                        .mergeFrom(value)
-                        .buildPartial();
+              if (((bitField0_ & 0x00000001) != 0)
+                  && source_ != null
+                  && source_
+                      != com.google.cloud.osconfig.v1.OSPolicy.Resource.File.getDefaultInstance()) {
+                getSourceBuilder().mergeFrom(value);
               } else {
                 source_ = value;
               }
-              onChanged();
             } else {
               sourceBuilder_.mergeFrom(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -5910,14 +5984,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * </code>
            */
           public Builder clearSource() {
-            if (sourceBuilder_ == null) {
-              source_ = null;
-              onChanged();
-            } else {
-              source_ = null;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            source_ = null;
+            if (sourceBuilder_ != null) {
+              sourceBuilder_.dispose();
               sourceBuilder_ = null;
             }
-
+            onChanged();
             return this;
           }
           /**
@@ -5932,7 +6005,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * </code>
            */
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Builder getSourceBuilder() {
-
+            bitField0_ |= 0x00000001;
             onChanged();
             return getSourceFieldBuilder().getBuilder();
           }
@@ -6021,6 +6094,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public Builder setPullDeps(boolean value) {
 
             pullDeps_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -6039,7 +6113,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearPullDeps() {
-
+            bitField0_ = (bitField0_ & ~0x00000002);
             pullDeps_ = false;
             onChanged();
             return this;
@@ -6195,7 +6269,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int NAME_FIELD_NUMBER = 1;
-        private volatile java.lang.Object name_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object name_ = "";
         /**
          *
          *
@@ -6453,8 +6529,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             name_ = "";
-
             return this;
           }
 
@@ -6485,9 +6561,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.APT buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.APT result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.APT(this);
-            result.name_ = name_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.APT result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.name_ = name_;
+            }
           }
 
           @java.lang.Override
@@ -6544,6 +6630,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance()) return this;
             if (!other.getName().isEmpty()) {
               name_ = other.name_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -6575,7 +6662,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       name_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   default:
@@ -6594,6 +6681,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object name_ = "";
           /**
@@ -6656,8 +6745,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -6673,8 +6762,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearName() {
-
             name_ = getDefaultInstance().getName();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -6695,8 +6784,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -6929,11 +7018,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Override
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.FileOrBuilder getSourceOrBuilder() {
-          return getSource();
+          return source_ == null
+              ? com.google.cloud.osconfig.v1.OSPolicy.Resource.File.getDefaultInstance()
+              : source_;
         }
 
         public static final int PULL_DEPS_FIELD_NUMBER = 2;
-        private boolean pullDeps_;
+        private boolean pullDeps_ = false;
         /**
          *
          *
@@ -7175,14 +7266,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
-            if (sourceBuilder_ == null) {
-              source_ = null;
-            } else {
-              source_ = null;
+            bitField0_ = 0;
+            source_ = null;
+            if (sourceBuilder_ != null) {
+              sourceBuilder_.dispose();
               sourceBuilder_ = null;
             }
             pullDeps_ = false;
-
             return this;
           }
 
@@ -7213,14 +7303,22 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.RPM buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.RPM result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.RPM(this);
-            if (sourceBuilder_ == null) {
-              result.source_ = source_;
-            } else {
-              result.source_ = sourceBuilder_.build();
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            result.pullDeps_ = pullDeps_;
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.RPM result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.pullDeps_ = pullDeps_;
+            }
           }
 
           @java.lang.Override
@@ -7310,13 +7408,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 16:
                     {
                       pullDeps_ = input.readBool();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 16
                   default:
@@ -7335,6 +7433,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private com.google.cloud.osconfig.v1.OSPolicy.Resource.File source_;
           private com.google.protobuf.SingleFieldBuilderV3<
@@ -7356,7 +7456,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return Whether the source field is set.
            */
           public boolean hasSource() {
-            return sourceBuilder_ != null || source_ != null;
+            return ((bitField0_ & 0x00000001) != 0);
           }
           /**
            *
@@ -7397,11 +7497,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               source_ = value;
-              onChanged();
             } else {
               sourceBuilder_.setMessage(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -7419,11 +7519,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Builder builderForValue) {
             if (sourceBuilder_ == null) {
               source_ = builderForValue.build();
-              onChanged();
             } else {
               sourceBuilder_.setMessage(builderForValue.build());
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -7439,19 +7539,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            */
           public Builder mergeSource(com.google.cloud.osconfig.v1.OSPolicy.Resource.File value) {
             if (sourceBuilder_ == null) {
-              if (source_ != null) {
-                source_ =
-                    com.google.cloud.osconfig.v1.OSPolicy.Resource.File.newBuilder(source_)
-                        .mergeFrom(value)
-                        .buildPartial();
+              if (((bitField0_ & 0x00000001) != 0)
+                  && source_ != null
+                  && source_
+                      != com.google.cloud.osconfig.v1.OSPolicy.Resource.File.getDefaultInstance()) {
+                getSourceBuilder().mergeFrom(value);
               } else {
                 source_ = value;
               }
-              onChanged();
             } else {
               sourceBuilder_.mergeFrom(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -7466,14 +7566,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * </code>
            */
           public Builder clearSource() {
-            if (sourceBuilder_ == null) {
-              source_ = null;
-              onChanged();
-            } else {
-              source_ = null;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            source_ = null;
+            if (sourceBuilder_ != null) {
+              sourceBuilder_.dispose();
               sourceBuilder_ = null;
             }
-
+            onChanged();
             return this;
           }
           /**
@@ -7488,7 +7587,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * </code>
            */
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Builder getSourceBuilder() {
-
+            bitField0_ |= 0x00000001;
             onChanged();
             return getSourceFieldBuilder().getBuilder();
           }
@@ -7577,6 +7676,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public Builder setPullDeps(boolean value) {
 
             pullDeps_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -7595,7 +7695,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearPullDeps() {
-
+            bitField0_ = (bitField0_ & ~0x00000002);
             pullDeps_ = false;
             onChanged();
             return this;
@@ -7751,7 +7851,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int NAME_FIELD_NUMBER = 1;
-        private volatile java.lang.Object name_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object name_ = "";
         /**
          *
          *
@@ -8009,8 +8111,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             name_ = "";
-
             return this;
           }
 
@@ -8041,9 +8143,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.YUM buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.YUM result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.YUM(this);
-            result.name_ = name_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.YUM result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.name_ = name_;
+            }
           }
 
           @java.lang.Override
@@ -8100,6 +8212,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance()) return this;
             if (!other.getName().isEmpty()) {
               name_ = other.name_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -8131,7 +8244,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       name_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   default:
@@ -8150,6 +8263,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object name_ = "";
           /**
@@ -8212,8 +8327,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -8229,8 +8344,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearName() {
-
             name_ = getDefaultInstance().getName();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -8251,8 +8366,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -8408,7 +8523,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int NAME_FIELD_NUMBER = 1;
-        private volatile java.lang.Object name_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object name_ = "";
         /**
          *
          *
@@ -8672,8 +8789,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             name_ = "";
-
             return this;
           }
 
@@ -8705,9 +8822,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.Zypper result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.Zypper(this);
-            result.name_ = name_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.Zypper result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.name_ = name_;
+            }
           }
 
           @java.lang.Override
@@ -8764,6 +8891,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance()) return this;
             if (!other.getName().isEmpty()) {
               name_ = other.name_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -8795,7 +8923,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       name_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   default:
@@ -8814,6 +8942,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object name_ = "";
           /**
@@ -8876,8 +9006,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -8893,8 +9023,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearName() {
-
             name_ = getDefaultInstance().getName();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -8915,8 +9045,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -9072,7 +9202,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int NAME_FIELD_NUMBER = 1;
-        private volatile java.lang.Object name_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object name_ = "";
         /**
          *
          *
@@ -9336,8 +9468,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             name_ = "";
-
             return this;
           }
 
@@ -9369,9 +9501,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.GooGet result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.GooGet(this);
-            result.name_ = name_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.GooGet result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.name_ = name_;
+            }
           }
 
           @java.lang.Override
@@ -9428,6 +9570,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance()) return this;
             if (!other.getName().isEmpty()) {
               name_ = other.name_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -9459,7 +9602,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       name_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   default:
@@ -9478,6 +9621,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object name_ = "";
           /**
@@ -9540,8 +9685,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -9557,8 +9702,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearName() {
-
             name_ = getDefaultInstance().getName();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -9579,8 +9724,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -9862,10 +10007,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Override
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.FileOrBuilder getSourceOrBuilder() {
-          return getSource();
+          return source_ == null
+              ? com.google.cloud.osconfig.v1.OSPolicy.Resource.File.getDefaultInstance()
+              : source_;
         }
 
         public static final int PROPERTIES_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList properties_;
         /**
          *
@@ -10167,14 +10316,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
-            if (sourceBuilder_ == null) {
-              source_ = null;
-            } else {
-              source_ = null;
+            bitField0_ = 0;
+            source_ = null;
+            if (sourceBuilder_ != null) {
+              sourceBuilder_.dispose();
               sourceBuilder_ = null;
             }
             properties_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             return this;
           }
 
@@ -10205,19 +10354,29 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSI buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSI result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSI(this);
-            int from_bitField0_ = bitField0_;
-            if (sourceBuilder_ == null) {
-              result.source_ = source_;
-            } else {
-              result.source_ = sourceBuilder_.build();
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            if (((bitField0_ & 0x00000001) != 0)) {
-              properties_ = properties_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000001);
-            }
-            result.properties_ = properties_;
             onBuilt();
             return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSI result) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              properties_ = properties_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.properties_ = properties_;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSI result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+            }
           }
 
           @java.lang.Override
@@ -10278,7 +10437,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.properties_.isEmpty()) {
               if (properties_.isEmpty()) {
                 properties_ = other.properties_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensurePropertiesIsMutable();
                 properties_.addAll(other.properties_);
@@ -10314,7 +10473,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
@@ -10363,7 +10522,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return Whether the source field is set.
            */
           public boolean hasSource() {
-            return sourceBuilder_ != null || source_ != null;
+            return ((bitField0_ & 0x00000001) != 0);
           }
           /**
            *
@@ -10404,11 +10563,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               source_ = value;
-              onChanged();
             } else {
               sourceBuilder_.setMessage(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -10426,11 +10585,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Builder builderForValue) {
             if (sourceBuilder_ == null) {
               source_ = builderForValue.build();
-              onChanged();
             } else {
               sourceBuilder_.setMessage(builderForValue.build());
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -10446,19 +10605,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            */
           public Builder mergeSource(com.google.cloud.osconfig.v1.OSPolicy.Resource.File value) {
             if (sourceBuilder_ == null) {
-              if (source_ != null) {
-                source_ =
-                    com.google.cloud.osconfig.v1.OSPolicy.Resource.File.newBuilder(source_)
-                        .mergeFrom(value)
-                        .buildPartial();
+              if (((bitField0_ & 0x00000001) != 0)
+                  && source_ != null
+                  && source_
+                      != com.google.cloud.osconfig.v1.OSPolicy.Resource.File.getDefaultInstance()) {
+                getSourceBuilder().mergeFrom(value);
               } else {
                 source_ = value;
               }
-              onChanged();
             } else {
               sourceBuilder_.mergeFrom(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -10473,14 +10632,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * </code>
            */
           public Builder clearSource() {
-            if (sourceBuilder_ == null) {
-              source_ = null;
-              onChanged();
-            } else {
-              source_ = null;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            source_ = null;
+            if (sourceBuilder_ != null) {
+              sourceBuilder_.dispose();
               sourceBuilder_ = null;
             }
-
+            onChanged();
             return this;
           }
           /**
@@ -10495,7 +10653,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * </code>
            */
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.File.Builder getSourceBuilder() {
-
+            bitField0_ |= 0x00000001;
             onChanged();
             return getSourceFieldBuilder().getBuilder();
           }
@@ -10551,9 +10709,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.LazyStringArrayList.EMPTY;
 
           private void ensurePropertiesIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!((bitField0_ & 0x00000002) != 0)) {
               properties_ = new com.google.protobuf.LazyStringArrayList(properties_);
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
             }
           }
           /**
@@ -10712,7 +10870,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            */
           public Builder clearProperties() {
             properties_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -10873,7 +11031,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DESIRED_STATE_FIELD_NUMBER = 1;
-      private int desiredState_;
+      private int desiredState_ = 0;
       /**
        *
        *
@@ -10907,9 +11065,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.DesiredState
           getDesiredState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.DesiredState result =
-            com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.DesiredState.valueOf(
+            com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.DesiredState.forNumber(
                 desiredState_);
         return result == null
             ? com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.DesiredState
@@ -11662,8 +11819,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           desiredState_ = 0;
-
           if (aptBuilder_ != null) {
             aptBuilder_.clear();
           }
@@ -11716,59 +11873,47 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource buildPartial() {
           com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource result =
               new com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource(this);
-          result.desiredState_ = desiredState_;
-          if (systemPackageCase_ == 2) {
-            if (aptBuilder_ == null) {
-              result.systemPackage_ = systemPackage_;
-            } else {
-              result.systemPackage_ = aptBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (systemPackageCase_ == 3) {
-            if (debBuilder_ == null) {
-              result.systemPackage_ = systemPackage_;
-            } else {
-              result.systemPackage_ = debBuilder_.build();
-            }
-          }
-          if (systemPackageCase_ == 4) {
-            if (yumBuilder_ == null) {
-              result.systemPackage_ = systemPackage_;
-            } else {
-              result.systemPackage_ = yumBuilder_.build();
-            }
-          }
-          if (systemPackageCase_ == 5) {
-            if (zypperBuilder_ == null) {
-              result.systemPackage_ = systemPackage_;
-            } else {
-              result.systemPackage_ = zypperBuilder_.build();
-            }
-          }
-          if (systemPackageCase_ == 6) {
-            if (rpmBuilder_ == null) {
-              result.systemPackage_ = systemPackage_;
-            } else {
-              result.systemPackage_ = rpmBuilder_.build();
-            }
-          }
-          if (systemPackageCase_ == 7) {
-            if (googetBuilder_ == null) {
-              result.systemPackage_ = systemPackage_;
-            } else {
-              result.systemPackage_ = googetBuilder_.build();
-            }
-          }
-          if (systemPackageCase_ == 8) {
-            if (msiBuilder_ == null) {
-              result.systemPackage_ = systemPackage_;
-            } else {
-              result.systemPackage_ = msiBuilder_.build();
-            }
-          }
-          result.systemPackageCase_ = systemPackageCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.desiredState_ = desiredState_;
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource result) {
+          result.systemPackageCase_ = systemPackageCase_;
+          result.systemPackage_ = this.systemPackage_;
+          if (systemPackageCase_ == 2 && aptBuilder_ != null) {
+            result.systemPackage_ = aptBuilder_.build();
+          }
+          if (systemPackageCase_ == 3 && debBuilder_ != null) {
+            result.systemPackage_ = debBuilder_.build();
+          }
+          if (systemPackageCase_ == 4 && yumBuilder_ != null) {
+            result.systemPackage_ = yumBuilder_.build();
+          }
+          if (systemPackageCase_ == 5 && zypperBuilder_ != null) {
+            result.systemPackage_ = zypperBuilder_.build();
+          }
+          if (systemPackageCase_ == 6 && rpmBuilder_ != null) {
+            result.systemPackage_ = rpmBuilder_.build();
+          }
+          if (systemPackageCase_ == 7 && googetBuilder_ != null) {
+            result.systemPackage_ = googetBuilder_.build();
+          }
+          if (systemPackageCase_ == 8 && msiBuilder_ != null) {
+            result.systemPackage_ = msiBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -11895,7 +12040,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     desiredState_ = input.readEnum();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 18:
@@ -11971,6 +12116,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private int bitField0_;
+
         private int desiredState_ = 0;
         /**
          *
@@ -12004,8 +12151,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setDesiredStateValue(int value) {
-
           desiredState_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -12025,9 +12172,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.DesiredState
             getDesiredState() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.DesiredState result =
-              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.DesiredState.valueOf(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.DesiredState.forNumber(
                   desiredState_);
           return result == null
               ? com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.DesiredState
@@ -12053,7 +12199,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000001;
           desiredState_ = value.getNumber();
           onChanged();
           return this;
@@ -12072,7 +12218,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDesiredState() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           desiredState_ = 0;
           onChanged();
           return this;
@@ -12301,7 +12447,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           systemPackageCase_ = 2;
           onChanged();
-          ;
           return aptBuilder_;
         }
 
@@ -12527,7 +12672,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           systemPackageCase_ = 3;
           onChanged();
-          ;
           return debBuilder_;
         }
 
@@ -12754,7 +12898,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           systemPackageCase_ = 4;
           onChanged();
-          ;
           return yumBuilder_;
         }
 
@@ -12989,7 +13132,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           systemPackageCase_ = 5;
           onChanged();
-          ;
           return zypperBuilder_;
         }
 
@@ -13216,7 +13358,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           systemPackageCase_ = 6;
           onChanged();
-          ;
           return rpmBuilder_;
         }
 
@@ -13451,7 +13592,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           systemPackageCase_ = 7;
           onChanged();
-          ;
           return googetBuilder_;
         }
 
@@ -13678,7 +13818,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           systemPackageCase_ = 8;
           onChanged();
-          ;
           return msiBuilder_;
         }
 
@@ -14355,7 +14494,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int ARCHIVE_TYPE_FIELD_NUMBER = 1;
-        private int archiveType_;
+        private int archiveType_ = 0;
         /**
          *
          *
@@ -14390,12 +14529,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
                 .ArchiveType
             getArchiveType() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
                   .ArchiveType
               result =
                   com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
-                      .ArchiveType.valueOf(archiveType_);
+                      .ArchiveType.forNumber(archiveType_);
           return result == null
               ? com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
                   .ArchiveType.UNRECOGNIZED
@@ -14403,7 +14541,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int URI_FIELD_NUMBER = 2;
-        private volatile java.lang.Object uri_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object uri_ = "";
         /**
          *
          *
@@ -14452,7 +14592,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int DISTRIBUTION_FIELD_NUMBER = 3;
-        private volatile java.lang.Object distribution_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object distribution_ = "";
         /**
          *
          *
@@ -14501,6 +14643,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int COMPONENTS_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList components_;
         /**
          *
@@ -14566,7 +14710,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int GPG_KEY_FIELD_NUMBER = 5;
-        private volatile java.lang.Object gpgKey_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object gpgKey_ = "";
         /**
          *
          *
@@ -14898,16 +15044,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             archiveType_ = 0;
-
             uri_ = "";
-
             distribution_ = "";
-
             components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             gpgKey_ = "";
-
             return this;
           }
 
@@ -14941,18 +15084,40 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository(
                     this);
-            int from_bitField0_ = bitField0_;
-            result.archiveType_ = archiveType_;
-            result.uri_ = uri_;
-            result.distribution_ = distribution_;
-            if (((bitField0_ & 0x00000001) != 0)) {
-              components_ = components_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000001);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            result.components_ = components_;
-            result.gpgKey_ = gpgKey_;
             onBuilt();
             return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
+                  result) {
+            if (((bitField0_ & 0x00000008) != 0)) {
+              components_ = components_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.components_ = components_;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.archiveType_ = archiveType_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.uri_ = uri_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.distribution_ = distribution_;
+            }
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.gpgKey_ = gpgKey_;
+            }
           }
 
           @java.lang.Override
@@ -15015,16 +15180,18 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             if (!other.getUri().isEmpty()) {
               uri_ = other.uri_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (!other.getDistribution().isEmpty()) {
               distribution_ = other.distribution_;
+              bitField0_ |= 0x00000004;
               onChanged();
             }
             if (!other.components_.isEmpty()) {
               if (components_.isEmpty()) {
                 components_ = other.components_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureComponentsIsMutable();
                 components_.addAll(other.components_);
@@ -15033,6 +15200,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             if (!other.getGpgKey().isEmpty()) {
               gpgKey_ = other.gpgKey_;
+              bitField0_ |= 0x00000010;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -15064,19 +15232,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 8:
                     {
                       archiveType_ = input.readEnum();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 8
                   case 18:
                     {
                       uri_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 26:
                     {
                       distribution_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 26
                   case 34:
@@ -15089,7 +15257,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 42:
                     {
                       gpgKey_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000010;
                       break;
                     } // case 42
                   default:
@@ -15144,8 +15312,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder setArchiveTypeValue(int value) {
-
             archiveType_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -15166,12 +15334,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
                   .ArchiveType
               getArchiveType() {
-            @SuppressWarnings("deprecation")
             com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
                     .ArchiveType
                 result =
                     com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
-                        .ArchiveType.valueOf(archiveType_);
+                        .ArchiveType.forNumber(archiveType_);
             return result == null
                 ? com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
                     .ArchiveType.UNRECOGNIZED
@@ -15198,7 +15365,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
+            bitField0_ |= 0x00000001;
             archiveType_ = value.getNumber();
             onChanged();
             return this;
@@ -15217,7 +15384,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearArchiveType() {
-
+            bitField0_ = (bitField0_ & ~0x00000001);
             archiveType_ = 0;
             onChanged();
             return this;
@@ -15284,8 +15451,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             uri_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -15301,8 +15468,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearUri() {
-
             uri_ = getDefaultInstance().getUri();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -15323,8 +15490,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             uri_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -15390,8 +15557,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             distribution_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -15407,8 +15574,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearDistribution() {
-
             distribution_ = getDefaultInstance().getDistribution();
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -15429,8 +15596,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             distribution_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -15439,9 +15606,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.LazyStringArrayList.EMPTY;
 
           private void ensureComponentsIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!((bitField0_ & 0x00000008) != 0)) {
               components_ = new com.google.protobuf.LazyStringArrayList(components_);
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000008;
             }
           }
           /**
@@ -15584,7 +15751,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            */
           public Builder clearComponents() {
             components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
             return this;
           }
@@ -15676,8 +15843,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             gpgKey_ = value;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -15694,8 +15861,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearGpgKey() {
-
             gpgKey_ = getDefaultInstance().getGpgKey();
+            bitField0_ = (bitField0_ & ~0x00000010);
             onChanged();
             return this;
           }
@@ -15717,8 +15884,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             gpgKey_ = value;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -15988,7 +16155,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int ID_FIELD_NUMBER = 1;
-        private volatile java.lang.Object id_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object id_ = "";
         /**
          *
          *
@@ -16043,7 +16212,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-        private volatile java.lang.Object displayName_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object displayName_ = "";
         /**
          *
          *
@@ -16092,7 +16263,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int BASE_URL_FIELD_NUMBER = 3;
-        private volatile java.lang.Object baseUrl_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object baseUrl_ = "";
         /**
          *
          *
@@ -16141,6 +16314,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int GPG_KEYS_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList gpgKeys_;
         /**
          *
@@ -16468,14 +16643,12 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             id_ = "";
-
             displayName_ = "";
-
             baseUrl_ = "";
-
             gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             return this;
           }
 
@@ -16509,17 +16682,37 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.YumRepository result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.YumRepository(
                     this);
-            int from_bitField0_ = bitField0_;
-            result.id_ = id_;
-            result.displayName_ = displayName_;
-            result.baseUrl_ = baseUrl_;
-            if (((bitField0_ & 0x00000001) != 0)) {
-              gpgKeys_ = gpgKeys_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000001);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            result.gpgKeys_ = gpgKeys_;
             onBuilt();
             return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.YumRepository
+                  result) {
+            if (((bitField0_ & 0x00000008) != 0)) {
+              gpgKeys_ = gpgKeys_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.gpgKeys_ = gpgKeys_;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.YumRepository
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.id_ = id_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.displayName_ = displayName_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.baseUrl_ = baseUrl_;
+            }
           }
 
           @java.lang.Override
@@ -16579,20 +16772,23 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance()) return this;
             if (!other.getId().isEmpty()) {
               id_ = other.id_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getDisplayName().isEmpty()) {
               displayName_ = other.displayName_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (!other.getBaseUrl().isEmpty()) {
               baseUrl_ = other.baseUrl_;
+              bitField0_ |= 0x00000004;
               onChanged();
             }
             if (!other.gpgKeys_.isEmpty()) {
               if (gpgKeys_.isEmpty()) {
                 gpgKeys_ = other.gpgKeys_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureGpgKeysIsMutable();
                 gpgKeys_.addAll(other.gpgKeys_);
@@ -16628,19 +16824,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       id_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       displayName_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 26:
                     {
                       baseUrl_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 26
                   case 34:
@@ -16739,8 +16935,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             id_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -16759,8 +16955,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearId() {
-
             id_ = getDefaultInstance().getId();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -16784,8 +16980,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             id_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -16851,8 +17047,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             displayName_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -16868,8 +17064,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearDisplayName() {
-
             displayName_ = getDefaultInstance().getDisplayName();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -16890,8 +17086,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             displayName_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -16957,8 +17153,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             baseUrl_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -16974,8 +17170,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearBaseUrl() {
-
             baseUrl_ = getDefaultInstance().getBaseUrl();
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -16996,8 +17192,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             baseUrl_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -17006,9 +17202,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.LazyStringArrayList.EMPTY;
 
           private void ensureGpgKeysIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!((bitField0_ & 0x00000008) != 0)) {
               gpgKeys_ = new com.google.protobuf.LazyStringArrayList(gpgKeys_);
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000008;
             }
           }
           /**
@@ -17143,7 +17339,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            */
           public Builder clearGpgKeys() {
             gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
             return this;
           }
@@ -17435,7 +17631,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int ID_FIELD_NUMBER = 1;
-        private volatile java.lang.Object id_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object id_ = "";
         /**
          *
          *
@@ -17490,7 +17688,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-        private volatile java.lang.Object displayName_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object displayName_ = "";
         /**
          *
          *
@@ -17539,7 +17739,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int BASE_URL_FIELD_NUMBER = 3;
-        private volatile java.lang.Object baseUrl_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object baseUrl_ = "";
         /**
          *
          *
@@ -17588,6 +17790,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int GPG_KEYS_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList gpgKeys_;
         /**
          *
@@ -17916,14 +18120,12 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             id_ = "";
-
             displayName_ = "";
-
             baseUrl_ = "";
-
             gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             return this;
           }
 
@@ -17958,17 +18160,37 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource
                         .ZypperRepository(this);
-            int from_bitField0_ = bitField0_;
-            result.id_ = id_;
-            result.displayName_ = displayName_;
-            result.baseUrl_ = baseUrl_;
-            if (((bitField0_ & 0x00000001) != 0)) {
-              gpgKeys_ = gpgKeys_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000001);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            result.gpgKeys_ = gpgKeys_;
             onBuilt();
             return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.ZypperRepository
+                  result) {
+            if (((bitField0_ & 0x00000008) != 0)) {
+              gpgKeys_ = gpgKeys_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.gpgKeys_ = gpgKeys_;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.ZypperRepository
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.id_ = id_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.displayName_ = displayName_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.baseUrl_ = baseUrl_;
+            }
           }
 
           @java.lang.Override
@@ -18030,20 +18252,23 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                     .ZypperRepository.getDefaultInstance()) return this;
             if (!other.getId().isEmpty()) {
               id_ = other.id_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getDisplayName().isEmpty()) {
               displayName_ = other.displayName_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (!other.getBaseUrl().isEmpty()) {
               baseUrl_ = other.baseUrl_;
+              bitField0_ |= 0x00000004;
               onChanged();
             }
             if (!other.gpgKeys_.isEmpty()) {
               if (gpgKeys_.isEmpty()) {
                 gpgKeys_ = other.gpgKeys_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureGpgKeysIsMutable();
                 gpgKeys_.addAll(other.gpgKeys_);
@@ -18079,19 +18304,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       id_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       displayName_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 26:
                     {
                       baseUrl_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 26
                   case 34:
@@ -18190,8 +18415,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             id_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -18210,8 +18435,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearId() {
-
             id_ = getDefaultInstance().getId();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -18235,8 +18460,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             id_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -18302,8 +18527,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             displayName_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -18319,8 +18544,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearDisplayName() {
-
             displayName_ = getDefaultInstance().getDisplayName();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -18341,8 +18566,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             displayName_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -18408,8 +18633,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             baseUrl_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -18425,8 +18650,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearBaseUrl() {
-
             baseUrl_ = getDefaultInstance().getBaseUrl();
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -18447,8 +18672,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             baseUrl_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -18457,9 +18682,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.LazyStringArrayList.EMPTY;
 
           private void ensureGpgKeysIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!((bitField0_ & 0x00000008) != 0)) {
               gpgKeys_ = new com.google.protobuf.LazyStringArrayList(gpgKeys_);
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000008;
             }
           }
           /**
@@ -18594,7 +18819,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            */
           public Builder clearGpgKeys() {
             gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
             return this;
           }
@@ -18803,7 +19028,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int NAME_FIELD_NUMBER = 1;
-        private volatile java.lang.Object name_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object name_ = "";
         /**
          *
          *
@@ -18852,7 +19079,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int URL_FIELD_NUMBER = 2;
-        private volatile java.lang.Object url_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object url_ = "";
         /**
          *
          *
@@ -19142,10 +19371,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             name_ = "";
-
             url_ = "";
-
             return this;
           }
 
@@ -19179,10 +19407,23 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.GooRepository result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.GooRepository(
                     this);
-            result.name_ = name_;
-            result.url_ = url_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.GooRepository
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.name_ = name_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.url_ = url_;
+            }
           }
 
           @java.lang.Override
@@ -19242,10 +19483,12 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance()) return this;
             if (!other.getName().isEmpty()) {
               name_ = other.name_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getUrl().isEmpty()) {
               url_ = other.url_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -19277,13 +19520,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       name_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       url_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   default:
@@ -19302,6 +19545,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object name_ = "";
           /**
@@ -19364,8 +19609,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -19381,8 +19626,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearName() {
-
             name_ = getDefaultInstance().getName();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -19403,8 +19648,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -19470,8 +19715,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             url_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -19487,8 +19732,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearUrl() {
-
             url_ = getDefaultInstance().getUrl();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -19509,8 +19754,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             url_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -20171,6 +20416,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (aptBuilder_ != null) {
             aptBuilder_.clear();
           }
@@ -20214,37 +20460,35 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource buildPartial() {
           com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource result =
               new com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource(this);
-          if (repositoryCase_ == 1) {
-            if (aptBuilder_ == null) {
-              result.repository_ = repository_;
-            } else {
-              result.repository_ = aptBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (repositoryCase_ == 2) {
-            if (yumBuilder_ == null) {
-              result.repository_ = repository_;
-            } else {
-              result.repository_ = yumBuilder_.build();
-            }
-          }
-          if (repositoryCase_ == 3) {
-            if (zypperBuilder_ == null) {
-              result.repository_ = repository_;
-            } else {
-              result.repository_ = zypperBuilder_.build();
-            }
-          }
-          if (repositoryCase_ == 4) {
-            if (gooBuilder_ == null) {
-              result.repository_ = repository_;
-            } else {
-              result.repository_ = gooBuilder_.build();
-            }
-          }
-          result.repositoryCase_ = repositoryCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource result) {
+          result.repositoryCase_ = repositoryCase_;
+          result.repository_ = this.repository_;
+          if (repositoryCase_ == 1 && aptBuilder_ != null) {
+            result.repository_ = aptBuilder_.build();
+          }
+          if (repositoryCase_ == 2 && yumBuilder_ != null) {
+            result.repository_ = yumBuilder_.build();
+          }
+          if (repositoryCase_ == 3 && zypperBuilder_ != null) {
+            result.repository_ = zypperBuilder_.build();
+          }
+          if (repositoryCase_ == 4 && gooBuilder_ != null) {
+            result.repository_ = gooBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -20404,6 +20648,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository,
@@ -20659,7 +20905,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           repositoryCase_ = 1;
           onChanged();
-          ;
           return aptBuilder_;
         }
 
@@ -20917,7 +21162,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           repositoryCase_ = 2;
           onChanged();
-          ;
           return yumBuilder_;
         }
 
@@ -21179,7 +21423,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           repositoryCase_ = 3;
           onChanged();
-          ;
           return zypperBuilder_;
         }
 
@@ -21437,7 +21680,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           repositoryCase_ = 4;
           onChanged();
-          ;
           return gooBuilder_;
         }
 
@@ -22292,6 +22534,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int ARGS_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList args_;
         /**
          *
@@ -22353,7 +22597,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int INTERPRETER_FIELD_NUMBER = 4;
-        private int interpreter_;
+        private int interpreter_ = 0;
         /**
          *
          *
@@ -22387,10 +22631,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Interpreter
             getInterpreter() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Interpreter result =
-              com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Interpreter.valueOf(
-                  interpreter_);
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Interpreter
+                  .forNumber(interpreter_);
           return result == null
               ? com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Interpreter
                   .UNRECOGNIZED
@@ -22398,7 +22641,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int OUTPUT_FILE_PATH_FIELD_NUMBER = 5;
-        private volatile java.lang.Object outputFilePath_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object outputFilePath_ = "";
         /**
          *
          *
@@ -22729,15 +22974,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             if (fileBuilder_ != null) {
               fileBuilder_.clear();
             }
             args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             interpreter_ = 0;
-
             outputFilePath_ = "";
-
             sourceCase_ = 0;
             source_ = null;
             return this;
@@ -22770,27 +23014,42 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec(this);
-            int from_bitField0_ = bitField0_;
-            if (sourceCase_ == 1) {
-              if (fileBuilder_ == null) {
-                result.source_ = source_;
-              } else {
-                result.source_ = fileBuilder_.build();
-              }
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            if (sourceCase_ == 2) {
-              result.source_ = source_;
-            }
-            if (((bitField0_ & 0x00000001) != 0)) {
-              args_ = args_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000001);
-            }
-            result.args_ = args_;
-            result.interpreter_ = interpreter_;
-            result.outputFilePath_ = outputFilePath_;
-            result.sourceCase_ = sourceCase_;
+            buildPartialOneofs(result);
             onBuilt();
             return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec result) {
+            if (((bitField0_ & 0x00000004) != 0)) {
+              args_ = args_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000004);
+            }
+            result.args_ = args_;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.interpreter_ = interpreter_;
+            }
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.outputFilePath_ = outputFilePath_;
+            }
+          }
+
+          private void buildPartialOneofs(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec result) {
+            result.sourceCase_ = sourceCase_;
+            result.source_ = this.source_;
+            if (sourceCase_ == 1 && fileBuilder_ != null) {
+              result.source_ = fileBuilder_.build();
+            }
           }
 
           @java.lang.Override
@@ -22847,7 +23106,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.args_.isEmpty()) {
               if (args_.isEmpty()) {
                 args_ = other.args_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000004);
               } else {
                 ensureArgsIsMutable();
                 args_.addAll(other.args_);
@@ -22859,6 +23118,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             if (!other.getOutputFilePath().isEmpty()) {
               outputFilePath_ = other.outputFilePath_;
+              bitField0_ |= 0x00000010;
               onChanged();
             }
             switch (other.getSourceCase()) {
@@ -22928,13 +23188,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   case 32:
                     {
                       interpreter_ = input.readEnum();
-
+                      bitField0_ |= 0x00000008;
                       break;
                     } // case 32
                   case 42:
                     {
                       outputFilePath_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000010;
                       break;
                     } // case 42
                   default:
@@ -23177,7 +23437,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             sourceCase_ = 1;
             onChanged();
-            ;
             return fileBuilder_;
           }
 
@@ -23325,9 +23584,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.LazyStringArrayList.EMPTY;
 
           private void ensureArgsIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!((bitField0_ & 0x00000004) != 0)) {
               args_ = new com.google.protobuf.LazyStringArrayList(args_);
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000004;
             }
           }
           /**
@@ -23462,7 +23721,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            */
           public Builder clearArgs() {
             args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -23522,8 +23781,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder setInterpreterValue(int value) {
-
             interpreter_ = value;
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -23543,10 +23802,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Interpreter
               getInterpreter() {
-            @SuppressWarnings("deprecation")
             com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Interpreter result =
                 com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Interpreter
-                    .valueOf(interpreter_);
+                    .forNumber(interpreter_);
             return result == null
                 ? com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Interpreter
                     .UNRECOGNIZED
@@ -23571,7 +23829,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
+            bitField0_ |= 0x00000008;
             interpreter_ = value.getNumber();
             onChanged();
             return this;
@@ -23590,7 +23848,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearInterpreter() {
-
+            bitField0_ = (bitField0_ & ~0x00000008);
             interpreter_ = 0;
             onChanged();
             return this;
@@ -23672,8 +23930,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             outputFilePath_ = value;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -23694,8 +23952,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearOutputFilePath() {
-
             outputFilePath_ = getDefaultInstance().getOutputFilePath();
+            bitField0_ = (bitField0_ & ~0x00000010);
             onChanged();
             return this;
           }
@@ -23721,8 +23979,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             outputFilePath_ = value;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -23855,7 +24113,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.ExecOrBuilder
           getValidateOrBuilder() {
-        return getValidate();
+        return validate_ == null
+            ? com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.getDefaultInstance()
+            : validate_;
       }
 
       public static final int ENFORCE_FIELD_NUMBER = 2;
@@ -23910,7 +24170,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.ExecOrBuilder
           getEnforceOrBuilder() {
-        return getEnforce();
+        return enforce_ == null
+            ? com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.getDefaultInstance()
+            : enforce_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -24153,16 +24415,15 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          if (validateBuilder_ == null) {
-            validate_ = null;
-          } else {
-            validate_ = null;
+          bitField0_ = 0;
+          validate_ = null;
+          if (validateBuilder_ != null) {
+            validateBuilder_.dispose();
             validateBuilder_ = null;
           }
-          if (enforceBuilder_ == null) {
-            enforce_ = null;
-          } else {
-            enforce_ = null;
+          enforce_ = null;
+          if (enforceBuilder_ != null) {
+            enforceBuilder_.dispose();
             enforceBuilder_ = null;
           }
           return this;
@@ -24193,18 +24454,22 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource buildPartial() {
           com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource result =
               new com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource(this);
-          if (validateBuilder_ == null) {
-            result.validate_ = validate_;
-          } else {
-            result.validate_ = validateBuilder_.build();
-          }
-          if (enforceBuilder_ == null) {
-            result.enforce_ = enforce_;
-          } else {
-            result.enforce_ = enforceBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.validate_ = validateBuilder_ == null ? validate_ : validateBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.enforce_ = enforceBuilder_ == null ? enforce_ : enforceBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -24292,13 +24557,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     input.readMessage(getValidateFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     input.readMessage(getEnforceFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -24317,6 +24582,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec validate_;
         private com.google.protobuf.SingleFieldBuilderV3<
@@ -24341,7 +24608,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the validate field is set.
          */
         public boolean hasValidate() {
-          return validateBuilder_ != null || validate_ != null;
+          return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          *
@@ -24390,11 +24657,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             validate_ = value;
-            onChanged();
           } else {
             validateBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -24416,11 +24683,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 builderForValue) {
           if (validateBuilder_ == null) {
             validate_ = builderForValue.build();
-            onChanged();
           } else {
             validateBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -24440,20 +24707,20 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeValidate(
             com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec value) {
           if (validateBuilder_ == null) {
-            if (validate_ != null) {
-              validate_ =
-                  com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.newBuilder(
-                          validate_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000001) != 0)
+                && validate_ != null
+                && validate_
+                    != com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec
+                        .getDefaultInstance()) {
+              getValidateBuilder().mergeFrom(value);
             } else {
               validate_ = value;
             }
-            onChanged();
           } else {
             validateBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -24471,14 +24738,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearValidate() {
-          if (validateBuilder_ == null) {
-            validate_ = null;
-            onChanged();
-          } else {
-            validate_ = null;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          validate_ = null;
+          if (validateBuilder_ != null) {
+            validateBuilder_.dispose();
             validateBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -24497,7 +24763,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          */
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Builder
             getValidateBuilder() {
-
+          bitField0_ |= 0x00000001;
           onChanged();
           return getValidateFieldBuilder().getBuilder();
         }
@@ -24577,7 +24843,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the enforce field is set.
          */
         public boolean hasEnforce() {
-          return enforceBuilder_ != null || enforce_ != null;
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          *
@@ -24620,11 +24886,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             enforce_ = value;
-            onChanged();
           } else {
             enforceBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -24643,11 +24909,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 builderForValue) {
           if (enforceBuilder_ == null) {
             enforce_ = builderForValue.build();
-            onChanged();
           } else {
             enforceBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -24664,20 +24930,20 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeEnforce(
             com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec value) {
           if (enforceBuilder_ == null) {
-            if (enforce_ != null) {
-              enforce_ =
-                  com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.newBuilder(
-                          enforce_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000002) != 0)
+                && enforce_ != null
+                && enforce_
+                    != com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec
+                        .getDefaultInstance()) {
+              getEnforceBuilder().mergeFrom(value);
             } else {
               enforce_ = value;
             }
-            onChanged();
           } else {
             enforceBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -24692,14 +24958,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec enforce = 2;</code>
          */
         public Builder clearEnforce() {
-          if (enforceBuilder_ == null) {
-            enforce_ = null;
-            onChanged();
-          } else {
-            enforce_ = null;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          enforce_ = null;
+          if (enforceBuilder_ != null) {
+            enforceBuilder_.dispose();
             enforceBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -24715,7 +24980,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          */
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.Builder
             getEnforceBuilder() {
-
+          bitField0_ |= 0x00000002;
           onChanged();
           return getEnforceFieldBuilder().getBuilder();
         }
@@ -25428,7 +25693,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int PATH_FIELD_NUMBER = 3;
-      private volatile java.lang.Object path_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object path_ = "";
       /**
        *
        *
@@ -25477,7 +25744,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int STATE_FIELD_NUMBER = 4;
-      private int state_;
+      private int state_ = 0;
       /**
        *
        *
@@ -25510,9 +25777,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.DesiredState getState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.DesiredState result =
-            com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.DesiredState.valueOf(
+            com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.DesiredState.forNumber(
                 state_);
         return result == null
             ? com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.DesiredState.UNRECOGNIZED
@@ -25520,7 +25786,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int PERMISSIONS_FIELD_NUMBER = 5;
-      private volatile java.lang.Object permissions_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object permissions_ = "";
       /**
        *
        *
@@ -25851,15 +26119,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (fileBuilder_ != null) {
             fileBuilder_.clear();
           }
           path_ = "";
-
           state_ = 0;
-
           permissions_ = "";
-
           sourceCase_ = 0;
           source_ = null;
           return this;
@@ -25890,22 +26156,35 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource buildPartial() {
           com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource result =
               new com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource(this);
-          if (sourceCase_ == 1) {
-            if (fileBuilder_ == null) {
-              result.source_ = source_;
-            } else {
-              result.source_ = fileBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (sourceCase_ == 2) {
-            result.source_ = source_;
-          }
-          result.path_ = path_;
-          result.state_ = state_;
-          result.permissions_ = permissions_;
-          result.sourceCase_ = sourceCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.path_ = path_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.state_ = state_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.permissions_ = permissions_;
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource result) {
+          result.sourceCase_ = sourceCase_;
+          result.source_ = this.source_;
+          if (sourceCase_ == 1 && fileBuilder_ != null) {
+            result.source_ = fileBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -25960,6 +26239,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             return this;
           if (!other.getPath().isEmpty()) {
             path_ = other.path_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           if (other.state_ != 0) {
@@ -25967,6 +26247,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           if (!other.getPermissions().isEmpty()) {
             permissions_ = other.permissions_;
+            bitField0_ |= 0x00000010;
             onChanged();
           }
           switch (other.getSourceCase()) {
@@ -26029,19 +26310,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 case 26:
                   {
                     path_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 case 32:
                   {
                     state_ = input.readEnum();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 32
                 case 42:
                   {
                     permissions_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 42
                 default:
@@ -26074,6 +26355,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.osconfig.v1.OSPolicy.Resource.File,
@@ -26282,7 +26565,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           sourceCase_ = 1;
           onChanged();
-          ;
           return fileBuilder_;
         }
 
@@ -26487,8 +26769,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           path_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -26504,8 +26786,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPath() {
-
           path_ = getDefaultInstance().getPath();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -26526,8 +26808,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           path_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -26565,8 +26847,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setStateValue(int value) {
-
           state_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -26585,9 +26867,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Override
         public com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.DesiredState getState() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.DesiredState result =
-              com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.DesiredState.valueOf(
+              com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.DesiredState.forNumber(
                   state_);
           return result == null
               ? com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.DesiredState
@@ -26613,7 +26894,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000008;
           state_ = value.getNumber();
           onChanged();
           return this;
@@ -26632,7 +26913,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearState() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           state_ = 0;
           onChanged();
           return this;
@@ -26732,8 +27013,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           permissions_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -26760,8 +27041,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPermissions() {
-
           permissions_ = getDefaultInstance().getPermissions();
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
@@ -26793,8 +27074,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           permissions_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -26920,7 +27201,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      *
      *
@@ -27461,8 +27744,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         if (pkgBuilder_ != null) {
           pkgBuilder_.clear();
         }
@@ -27504,38 +27787,36 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1.OSPolicy.Resource buildPartial() {
         com.google.cloud.osconfig.v1.OSPolicy.Resource result =
             new com.google.cloud.osconfig.v1.OSPolicy.Resource(this);
-        result.id_ = id_;
-        if (resourceTypeCase_ == 2) {
-          if (pkgBuilder_ == null) {
-            result.resourceType_ = resourceType_;
-          } else {
-            result.resourceType_ = pkgBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (resourceTypeCase_ == 3) {
-          if (repositoryBuilder_ == null) {
-            result.resourceType_ = resourceType_;
-          } else {
-            result.resourceType_ = repositoryBuilder_.build();
-          }
-        }
-        if (resourceTypeCase_ == 4) {
-          if (execBuilder_ == null) {
-            result.resourceType_ = resourceType_;
-          } else {
-            result.resourceType_ = execBuilder_.build();
-          }
-        }
-        if (resourceTypeCase_ == 5) {
-          if (fileBuilder_ == null) {
-            result.resourceType_ = resourceType_;
-          } else {
-            result.resourceType_ = fileBuilder_.build();
-          }
-        }
-        result.resourceTypeCase_ = resourceTypeCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.osconfig.v1.OSPolicy.Resource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+      }
+
+      private void buildPartialOneofs(com.google.cloud.osconfig.v1.OSPolicy.Resource result) {
+        result.resourceTypeCase_ = resourceTypeCase_;
+        result.resourceType_ = this.resourceType_;
+        if (resourceTypeCase_ == 2 && pkgBuilder_ != null) {
+          result.resourceType_ = pkgBuilder_.build();
+        }
+        if (resourceTypeCase_ == 3 && repositoryBuilder_ != null) {
+          result.resourceType_ = repositoryBuilder_.build();
+        }
+        if (resourceTypeCase_ == 4 && execBuilder_ != null) {
+          result.resourceType_ = execBuilder_.build();
+        }
+        if (resourceTypeCase_ == 5 && fileBuilder_ != null) {
+          result.resourceType_ = fileBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -27588,6 +27869,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         switch (other.getResourceTypeCase()) {
@@ -27645,7 +27927,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -27702,6 +27984,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -27779,8 +28063,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -27801,8 +28085,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -27828,8 +28112,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -28050,7 +28334,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
         resourceTypeCase_ = 2;
         onChanged();
-        ;
         return pkgBuilder_;
       }
 
@@ -28275,7 +28558,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
         resourceTypeCase_ = 3;
         onChanged();
-        ;
         return repositoryBuilder_;
       }
 
@@ -28489,7 +28771,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
         resourceTypeCase_ = 4;
         onChanged();
-        ;
         return execBuilder_;
       }
 
@@ -28703,7 +28984,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
         resourceTypeCase_ = 5;
         onChanged();
-        ;
         return fileBuilder_;
       }
 
@@ -29002,6 +29282,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INVENTORY_FILTERS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1.OSPolicy.InventoryFilter> inventoryFilters_;
     /**
      *
@@ -29123,6 +29405,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESOURCES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1.OSPolicy.Resource> resources_;
     /**
      *
@@ -29426,6 +29710,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (inventoryFiltersBuilder_ == null) {
           inventoryFilters_ = java.util.Collections.emptyList();
         } else {
@@ -29467,7 +29752,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1.OSPolicy.ResourceGroup buildPartial() {
         com.google.cloud.osconfig.v1.OSPolicy.ResourceGroup result =
             new com.google.cloud.osconfig.v1.OSPolicy.ResourceGroup(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1.OSPolicy.ResourceGroup result) {
         if (inventoryFiltersBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             inventoryFilters_ = java.util.Collections.unmodifiableList(inventoryFilters_);
@@ -29486,8 +29780,10 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.resources_ = resourcesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.osconfig.v1.OSPolicy.ResourceGroup result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -30684,7 +30980,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -30743,7 +31041,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -30794,7 +31094,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODE_FIELD_NUMBER = 3;
-  private int mode_;
+  private int mode_ = 0;
   /**
    *
    *
@@ -30827,13 +31127,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.OSPolicy.Mode getMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.OSPolicy.Mode result =
-        com.google.cloud.osconfig.v1.OSPolicy.Mode.valueOf(mode_);
+        com.google.cloud.osconfig.v1.OSPolicy.Mode.forNumber(mode_);
     return result == null ? com.google.cloud.osconfig.v1.OSPolicy.Mode.UNRECOGNIZED : result;
   }
 
   public static final int RESOURCE_GROUPS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.osconfig.v1.OSPolicy.ResourceGroup> resourceGroups_;
   /**
    *
@@ -30945,7 +31246,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_NO_RESOURCE_GROUP_MATCH_FIELD_NUMBER = 5;
-  private boolean allowNoResourceGroupMatch_;
+  private boolean allowNoResourceGroupMatch_ = false;
   /**
    *
    *
@@ -31198,21 +31499,18 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       description_ = "";
-
       mode_ = 0;
-
       if (resourceGroupsBuilder_ == null) {
         resourceGroups_ = java.util.Collections.emptyList();
       } else {
         resourceGroups_ = null;
         resourceGroupsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       allowNoResourceGroupMatch_ = false;
-
       return this;
     }
 
@@ -31240,22 +31538,40 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.osconfig.v1.OSPolicy buildPartial() {
       com.google.cloud.osconfig.v1.OSPolicy result =
           new com.google.cloud.osconfig.v1.OSPolicy(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      result.description_ = description_;
-      result.mode_ = mode_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.osconfig.v1.OSPolicy result) {
       if (resourceGroupsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           resourceGroups_ = java.util.Collections.unmodifiableList(resourceGroups_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.resourceGroups_ = resourceGroups_;
       } else {
         result.resourceGroups_ = resourceGroupsBuilder_.build();
       }
-      result.allowNoResourceGroupMatch_ = allowNoResourceGroupMatch_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.osconfig.v1.OSPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mode_ = mode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.allowNoResourceGroupMatch_ = allowNoResourceGroupMatch_;
+      }
     }
 
     @java.lang.Override
@@ -31305,10 +31621,12 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.osconfig.v1.OSPolicy.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.mode_ != 0) {
@@ -31318,7 +31636,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         if (!other.resourceGroups_.isEmpty()) {
           if (resourceGroups_.isEmpty()) {
             resourceGroups_ = other.resourceGroups_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureResourceGroupsIsMutable();
             resourceGroups_.addAll(other.resourceGroups_);
@@ -31331,7 +31649,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             resourceGroupsBuilder_.dispose();
             resourceGroupsBuilder_ = null;
             resourceGroups_ = other.resourceGroups_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             resourceGroupsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResourceGroupsFieldBuilder()
@@ -31373,19 +31691,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 mode_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -31405,7 +31723,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 allowNoResourceGroupMatch_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -31503,8 +31821,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -31525,8 +31843,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -31552,8 +31870,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -31622,8 +31940,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -31640,8 +31958,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -31663,8 +31981,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -31702,8 +32020,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
-
       mode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -31722,9 +32040,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1.OSPolicy.Mode getMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.OSPolicy.Mode result =
-          com.google.cloud.osconfig.v1.OSPolicy.Mode.valueOf(mode_);
+          com.google.cloud.osconfig.v1.OSPolicy.Mode.forNumber(mode_);
       return result == null ? com.google.cloud.osconfig.v1.OSPolicy.Mode.UNRECOGNIZED : result;
     }
     /**
@@ -31745,7 +32062,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       mode_ = value.getNumber();
       onChanged();
       return this;
@@ -31764,7 +32081,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       mode_ = 0;
       onChanged();
       return this;
@@ -31774,11 +32091,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureResourceGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         resourceGroups_ =
             new java.util.ArrayList<com.google.cloud.osconfig.v1.OSPolicy.ResourceGroup>(
                 resourceGroups_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -32085,7 +32402,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearResourceGroups() {
       if (resourceGroupsBuilder_ == null) {
         resourceGroups_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         resourceGroupsBuilder_.clear();
@@ -32268,7 +32585,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.osconfig.v1.OSPolicy.ResourceGroup.Builder,
                 com.google.cloud.osconfig.v1.OSPolicy.ResourceGroupOrBuilder>(
                 resourceGroups_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         resourceGroups_ = null;
@@ -32313,6 +32630,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowNoResourceGroupMatch(boolean value) {
 
       allowNoResourceGroupMatch_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -32331,7 +32649,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowNoResourceGroupMatch() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       allowNoResourceGroupMatch_ = false;
       onChanged();
       return this;

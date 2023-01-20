@@ -69,7 +69,9 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -153,16 +155,15 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.Instance.AcceleratorType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.notebooks.v1.Instance.AcceleratorType result =
-        com.google.cloud.notebooks.v1.Instance.AcceleratorType.valueOf(type_);
+        com.google.cloud.notebooks.v1.Instance.AcceleratorType.forNumber(type_);
     return result == null
         ? com.google.cloud.notebooks.v1.Instance.AcceleratorType.UNRECOGNIZED
         : result;
   }
 
   public static final int CORE_COUNT_FIELD_NUMBER = 3;
-  private long coreCount_;
+  private long coreCount_ = 0L;
   /**
    *
    *
@@ -402,12 +403,10 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       type_ = 0;
-
       coreCount_ = 0L;
-
       return this;
     }
 
@@ -435,11 +434,24 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
     public com.google.cloud.notebooks.v1.SetInstanceAcceleratorRequest buildPartial() {
       com.google.cloud.notebooks.v1.SetInstanceAcceleratorRequest result =
           new com.google.cloud.notebooks.v1.SetInstanceAcceleratorRequest(this);
-      result.name_ = name_;
-      result.type_ = type_;
-      result.coreCount_ = coreCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.SetInstanceAcceleratorRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.coreCount_ = coreCount_;
+      }
     }
 
     @java.lang.Override
@@ -490,6 +502,7 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -527,19 +540,19 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 coreCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -558,6 +571,8 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -623,8 +638,8 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,8 +656,8 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -664,8 +679,8 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -703,8 +718,8 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -723,9 +738,8 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public com.google.cloud.notebooks.v1.Instance.AcceleratorType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.notebooks.v1.Instance.AcceleratorType result =
-          com.google.cloud.notebooks.v1.Instance.AcceleratorType.valueOf(type_);
+          com.google.cloud.notebooks.v1.Instance.AcceleratorType.forNumber(type_);
       return result == null
           ? com.google.cloud.notebooks.v1.Instance.AcceleratorType.UNRECOGNIZED
           : result;
@@ -748,7 +762,7 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -767,7 +781,7 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;
@@ -810,6 +824,7 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
     public Builder setCoreCount(long value) {
 
       coreCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -828,7 +843,7 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearCoreCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       coreCount_ = 0L;
       onChanged();
       return this;

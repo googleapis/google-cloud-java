@@ -111,7 +111,7 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
-    return getParameters();
+    return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -316,10 +316,10 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (parametersBuilder_ == null) {
-        parameters_ = null;
-      } else {
-        parameters_ = null;
+      bitField0_ = 0;
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
       return this;
@@ -349,13 +349,18 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.privatecatalog.v1beta1.Inputs buildPartial() {
       com.google.cloud.privatecatalog.v1beta1.Inputs result =
           new com.google.cloud.privatecatalog.v1beta1.Inputs(this);
-      if (parametersBuilder_ == null) {
-        result.parameters_ = parameters_;
-      } else {
-        result.parameters_ = parametersBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.privatecatalog.v1beta1.Inputs result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parameters_ = parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -435,7 +440,7 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -454,6 +459,8 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Struct parameters_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -474,7 +481,7 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the parameters field is set.
      */
     public boolean hasParameters() {
-      return parametersBuilder_ != null || parameters_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -511,11 +518,11 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         parameters_ = value;
-        onChanged();
       } else {
         parametersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -531,11 +538,11 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
     public Builder setParameters(com.google.protobuf.Struct.Builder builderForValue) {
       if (parametersBuilder_ == null) {
         parameters_ = builderForValue.build();
-        onChanged();
       } else {
         parametersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -550,17 +557,18 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeParameters(com.google.protobuf.Struct value) {
       if (parametersBuilder_ == null) {
-        if (parameters_ != null) {
-          parameters_ =
-              com.google.protobuf.Struct.newBuilder(parameters_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && parameters_ != null
+            && parameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getParametersBuilder().mergeFrom(value);
         } else {
           parameters_ = value;
         }
-        onChanged();
       } else {
         parametersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -574,14 +582,13 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearParameters() {
-      if (parametersBuilder_ == null) {
-        parameters_ = null;
-        onChanged();
-      } else {
-        parameters_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -595,7 +602,7 @@ public final class Inputs extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Struct.Builder getParametersBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }

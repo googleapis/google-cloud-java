@@ -680,7 +680,9 @@ public final class GuestPolicies {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -733,7 +735,9 @@ public final class GuestPolicies {
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -832,7 +836,7 @@ public final class GuestPolicies {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-      return getCreateTime();
+      return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 4;
@@ -884,7 +888,7 @@ public final class GuestPolicies {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-      return getUpdateTime();
+      return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
 
     public static final int ASSIGNMENT_FIELD_NUMBER = 6;
@@ -960,10 +964,14 @@ public final class GuestPolicies {
     @java.lang.Override
     public com.google.cloud.osconfig.v1beta.GuestPolicies.AssignmentOrBuilder
         getAssignmentOrBuilder() {
-      return getAssignment();
+      return assignment_ == null
+          ? com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.getDefaultInstance()
+          : assignment_;
     }
 
     public static final int PACKAGES_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1beta.GuestPolicies.Package> packages_;
     /**
      *
@@ -1035,6 +1043,8 @@ public final class GuestPolicies {
     }
 
     public static final int PACKAGE_REPOSITORIES_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository>
         packageRepositories_;
     /**
@@ -1129,6 +1139,8 @@ public final class GuestPolicies {
     }
 
     public static final int RECIPES_FIELD_NUMBER = 9;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe> recipes_;
     /**
      *
@@ -1201,7 +1213,9 @@ public final class GuestPolicies {
     }
 
     public static final int ETAG_FIELD_NUMBER = 10;
-    private volatile java.lang.Object etag_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object etag_ = "";
     /**
      *
      *
@@ -1549,26 +1563,22 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         description_ = "";
-
-        if (createTimeBuilder_ == null) {
-          createTime_ = null;
-        } else {
-          createTime_ = null;
+        createTime_ = null;
+        if (createTimeBuilder_ != null) {
+          createTimeBuilder_.dispose();
           createTimeBuilder_ = null;
         }
-        if (updateTimeBuilder_ == null) {
-          updateTime_ = null;
-        } else {
-          updateTime_ = null;
+        updateTime_ = null;
+        if (updateTimeBuilder_ != null) {
+          updateTimeBuilder_.dispose();
           updateTimeBuilder_ = null;
         }
-        if (assignmentBuilder_ == null) {
-          assignment_ = null;
-        } else {
-          assignment_ = null;
+        assignment_ = null;
+        if (assignmentBuilder_ != null) {
+          assignmentBuilder_.dispose();
           assignmentBuilder_ = null;
         }
         if (packagesBuilder_ == null) {
@@ -1577,23 +1587,22 @@ public final class GuestPolicies {
           packages_ = null;
           packagesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (packageRepositoriesBuilder_ == null) {
           packageRepositories_ = java.util.Collections.emptyList();
         } else {
           packageRepositories_ = null;
           packageRepositoriesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (recipesBuilder_ == null) {
           recipes_ = java.util.Collections.emptyList();
         } else {
           recipes_ = null;
           recipesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000080);
         etag_ = "";
-
         return this;
       }
 
@@ -1622,54 +1631,69 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy(this);
-        int from_bitField0_ = bitField0_;
-        result.name_ = name_;
-        result.description_ = description_;
-        if (createTimeBuilder_ == null) {
-          result.createTime_ = createTime_;
-        } else {
-          result.createTime_ = createTimeBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (updateTimeBuilder_ == null) {
-          result.updateTime_ = updateTime_;
-        } else {
-          result.updateTime_ = updateTimeBuilder_.build();
-        }
-        if (assignmentBuilder_ == null) {
-          result.assignment_ = assignment_;
-        } else {
-          result.assignment_ = assignmentBuilder_.build();
-        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy result) {
         if (packagesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             packages_ = java.util.Collections.unmodifiableList(packages_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.packages_ = packages_;
         } else {
           result.packages_ = packagesBuilder_.build();
         }
         if (packageRepositoriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             packageRepositories_ = java.util.Collections.unmodifiableList(packageRepositories_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.packageRepositories_ = packageRepositories_;
         } else {
           result.packageRepositories_ = packageRepositoriesBuilder_.build();
         }
         if (recipesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             recipes_ = java.util.Collections.unmodifiableList(recipes_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.recipes_ = recipes_;
         } else {
           result.recipes_ = recipesBuilder_.build();
         }
-        result.etag_ = etag_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.createTime_ =
+              createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.updateTime_ =
+              updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.assignment_ =
+              assignmentBuilder_ == null ? assignment_ : assignmentBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.etag_ = etag_;
+        }
       }
 
       @java.lang.Override
@@ -1723,10 +1747,12 @@ public final class GuestPolicies {
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasCreateTime()) {
@@ -1742,7 +1768,7 @@ public final class GuestPolicies {
           if (!other.packages_.isEmpty()) {
             if (packages_.isEmpty()) {
               packages_ = other.packages_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensurePackagesIsMutable();
               packages_.addAll(other.packages_);
@@ -1755,7 +1781,7 @@ public final class GuestPolicies {
               packagesBuilder_.dispose();
               packagesBuilder_ = null;
               packages_ = other.packages_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000020);
               packagesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPackagesFieldBuilder()
@@ -1769,7 +1795,7 @@ public final class GuestPolicies {
           if (!other.packageRepositories_.isEmpty()) {
             if (packageRepositories_.isEmpty()) {
               packageRepositories_ = other.packageRepositories_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensurePackageRepositoriesIsMutable();
               packageRepositories_.addAll(other.packageRepositories_);
@@ -1782,7 +1808,7 @@ public final class GuestPolicies {
               packageRepositoriesBuilder_.dispose();
               packageRepositoriesBuilder_ = null;
               packageRepositories_ = other.packageRepositories_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000040);
               packageRepositoriesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPackageRepositoriesFieldBuilder()
@@ -1796,7 +1822,7 @@ public final class GuestPolicies {
           if (!other.recipes_.isEmpty()) {
             if (recipes_.isEmpty()) {
               recipes_ = other.recipes_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureRecipesIsMutable();
               recipes_.addAll(other.recipes_);
@@ -1809,7 +1835,7 @@ public final class GuestPolicies {
               recipesBuilder_.dispose();
               recipesBuilder_ = null;
               recipes_ = other.recipes_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000080);
               recipesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getRecipesFieldBuilder()
@@ -1821,6 +1847,7 @@ public final class GuestPolicies {
         }
         if (!other.getEtag().isEmpty()) {
           etag_ = other.etag_;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1852,31 +1879,31 @@ public final class GuestPolicies {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 50:
                 {
                   input.readMessage(getAssignmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 50
               case 58:
@@ -1924,7 +1951,7 @@ public final class GuestPolicies {
               case 82:
                 {
                   etag_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 82
               default:
@@ -2013,8 +2040,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2032,8 +2059,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2056,8 +2083,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2126,8 +2153,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2144,8 +2171,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2167,8 +2194,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2193,7 +2220,7 @@ public final class GuestPolicies {
        * @return Whether the createTime field is set.
        */
       public boolean hasCreateTime() {
-        return createTimeBuilder_ != null || createTime_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -2234,11 +2261,11 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           createTime_ = value;
-          onChanged();
         } else {
           createTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2255,11 +2282,11 @@ public final class GuestPolicies {
       public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (createTimeBuilder_ == null) {
           createTime_ = builderForValue.build();
-          onChanged();
         } else {
           createTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2275,19 +2302,18 @@ public final class GuestPolicies {
        */
       public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
         if (createTimeBuilder_ == null) {
-          if (createTime_ != null) {
-            createTime_ =
-                com.google.protobuf.Timestamp.newBuilder(createTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && createTime_ != null
+              && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateTimeBuilder().mergeFrom(value);
           } else {
             createTime_ = value;
           }
-          onChanged();
         } else {
           createTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2302,14 +2328,13 @@ public final class GuestPolicies {
        * </code>
        */
       public Builder clearCreateTime() {
-        if (createTimeBuilder_ == null) {
-          createTime_ = null;
-          onChanged();
-        } else {
-          createTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        createTime_ = null;
+        if (createTimeBuilder_ != null) {
+          createTimeBuilder_.dispose();
           createTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2324,7 +2349,7 @@ public final class GuestPolicies {
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getCreateTimeFieldBuilder().getBuilder();
       }
@@ -2396,7 +2421,7 @@ public final class GuestPolicies {
        * @return Whether the updateTime field is set.
        */
       public boolean hasUpdateTime() {
-        return updateTimeBuilder_ != null || updateTime_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -2437,11 +2462,11 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           updateTime_ = value;
-          onChanged();
         } else {
           updateTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -2458,11 +2483,11 @@ public final class GuestPolicies {
       public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (updateTimeBuilder_ == null) {
           updateTime_ = builderForValue.build();
-          onChanged();
         } else {
           updateTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -2478,19 +2503,18 @@ public final class GuestPolicies {
        */
       public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
         if (updateTimeBuilder_ == null) {
-          if (updateTime_ != null) {
-            updateTime_ =
-                com.google.protobuf.Timestamp.newBuilder(updateTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && updateTime_ != null
+              && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdateTimeBuilder().mergeFrom(value);
           } else {
             updateTime_ = value;
           }
-          onChanged();
         } else {
           updateTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -2505,14 +2529,13 @@ public final class GuestPolicies {
        * </code>
        */
       public Builder clearUpdateTime() {
-        if (updateTimeBuilder_ == null) {
-          updateTime_ = null;
-          onChanged();
-        } else {
-          updateTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        updateTime_ = null;
+        if (updateTimeBuilder_ != null) {
+          updateTimeBuilder_.dispose();
           updateTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2527,7 +2550,7 @@ public final class GuestPolicies {
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
@@ -2606,7 +2629,7 @@ public final class GuestPolicies {
        * @return Whether the assignment field is set.
        */
       public boolean hasAssignment() {
-        return assignmentBuilder_ != null || assignment_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -2662,11 +2685,11 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           assignment_ = value;
-          onChanged();
         } else {
           assignmentBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -2691,11 +2714,11 @@ public final class GuestPolicies {
           com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.Builder builderForValue) {
         if (assignmentBuilder_ == null) {
           assignment_ = builderForValue.build();
-          onChanged();
         } else {
           assignmentBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -2719,19 +2742,20 @@ public final class GuestPolicies {
       public Builder mergeAssignment(
           com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment value) {
         if (assignmentBuilder_ == null) {
-          if (assignment_ != null) {
-            assignment_ =
-                com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.newBuilder(assignment_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && assignment_ != null
+              && assignment_
+                  != com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment
+                      .getDefaultInstance()) {
+            getAssignmentBuilder().mergeFrom(value);
           } else {
             assignment_ = value;
           }
-          onChanged();
         } else {
           assignmentBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -2753,14 +2777,13 @@ public final class GuestPolicies {
        * </code>
        */
       public Builder clearAssignment() {
-        if (assignmentBuilder_ == null) {
-          assignment_ = null;
-          onChanged();
-        } else {
-          assignment_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        assignment_ = null;
+        if (assignmentBuilder_ != null) {
+          assignmentBuilder_.dispose();
           assignmentBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2783,7 +2806,7 @@ public final class GuestPolicies {
        */
       public com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.Builder
           getAssignmentBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getAssignmentFieldBuilder().getBuilder();
       }
@@ -2854,11 +2877,11 @@ public final class GuestPolicies {
           java.util.Collections.emptyList();
 
       private void ensurePackagesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           packages_ =
               new java.util.ArrayList<com.google.cloud.osconfig.v1beta.GuestPolicies.Package>(
                   packages_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000020;
         }
       }
 
@@ -3080,7 +3103,7 @@ public final class GuestPolicies {
       public Builder clearPackages() {
         if (packagesBuilder_ == null) {
           packages_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           packagesBuilder_.clear();
@@ -3208,7 +3231,7 @@ public final class GuestPolicies {
                   com.google.cloud.osconfig.v1beta.GuestPolicies.Package,
                   com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Builder,
                   com.google.cloud.osconfig.v1beta.GuestPolicies.PackageOrBuilder>(
-                  packages_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  packages_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
           packages_ = null;
         }
         return packagesBuilder_;
@@ -3218,12 +3241,12 @@ public final class GuestPolicies {
           packageRepositories_ = java.util.Collections.emptyList();
 
       private void ensurePackageRepositoriesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           packageRepositories_ =
               new java.util.ArrayList<
                   com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository>(
                   packageRepositories_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000040;
         }
       }
 
@@ -3495,7 +3518,7 @@ public final class GuestPolicies {
       public Builder clearPackageRepositories() {
         if (packageRepositoriesBuilder_ == null) {
           packageRepositories_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           packageRepositoriesBuilder_.clear();
@@ -3657,7 +3680,7 @@ public final class GuestPolicies {
                   com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository.Builder,
                   com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepositoryOrBuilder>(
                   packageRepositories_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           packageRepositories_ = null;
@@ -3669,11 +3692,11 @@ public final class GuestPolicies {
           recipes_ = java.util.Collections.emptyList();
 
       private void ensureRecipesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           recipes_ =
               new java.util.ArrayList<
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe>(recipes_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000080;
         }
       }
 
@@ -3897,7 +3920,7 @@ public final class GuestPolicies {
       public Builder clearRecipes() {
         if (recipesBuilder_ == null) {
           recipes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           recipesBuilder_.clear();
@@ -4027,7 +4050,7 @@ public final class GuestPolicies {
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe,
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Builder,
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipeOrBuilder>(
-                  recipes_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                  recipes_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
           recipes_ = null;
         }
         return recipesBuilder_;
@@ -4097,8 +4120,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         etag_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4115,8 +4138,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearEtag() {
-
         etag_ = getDefaultInstance().getEtag();
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
@@ -4138,8 +4161,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         etag_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4654,7 +4677,6 @@ public final class GuestPolicies {
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
-
       /* nullable */
       java.lang.String getLabelsOrDefault(
           java.lang.String key,
@@ -4744,6 +4766,7 @@ public final class GuestPolicies {
                 "");
       }
 
+      @SuppressWarnings("serial")
       private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -4804,8 +4827,10 @@ public final class GuestPolicies {
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
       @java.lang.Override
-      public java.lang.String getLabelsOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getLabelsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -5068,6 +5093,7 @@ public final class GuestPolicies {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           internalGetMutableLabels().clear();
           return this;
         }
@@ -5099,11 +5125,20 @@ public final class GuestPolicies {
         public com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.GroupLabel buildPartial() {
           com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.GroupLabel result =
               new com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.GroupLabel(this);
-          int from_bitField0_ = bitField0_;
-          result.labels_ = internalGetLabels();
-          result.labels_.makeImmutable();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.GroupLabel result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.labels_ = internalGetLabels();
+            result.labels_.makeImmutable();
+          }
         }
 
         @java.lang.Override
@@ -5159,6 +5194,7 @@ public final class GuestPolicies {
               == com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.GroupLabel
                   .getDefaultInstance()) return this;
           internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+          bitField0_ |= 0x00000001;
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -5194,6 +5230,7 @@ public final class GuestPolicies {
                     internalGetMutableLabels()
                         .getMutableMap()
                         .put(labels__.getKey(), labels__.getValue());
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -5228,8 +5265,6 @@ public final class GuestPolicies {
 
         private com.google.protobuf.MapField<java.lang.String, java.lang.String>
             internalGetMutableLabels() {
-          onChanged();
-          ;
           if (labels_ == null) {
             labels_ =
                 com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
@@ -5237,6 +5272,8 @@ public final class GuestPolicies {
           if (!labels_.isMutable()) {
             labels_ = labels_.copy();
           }
+          bitField0_ |= 0x00000001;
+          onChanged();
           return labels_;
         }
 
@@ -5291,8 +5328,10 @@ public final class GuestPolicies {
          * <code>map&lt;string, string&gt; labels = 1;</code>
          */
         @java.lang.Override
-        public java.lang.String getLabelsOrDefault(
-            java.lang.String key, java.lang.String defaultValue) {
+        public /* nullable */ java.lang.String getLabelsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            java.lang.String defaultValue) {
           if (key == null) {
             throw new NullPointerException("map key");
           }
@@ -5322,6 +5361,7 @@ public final class GuestPolicies {
         }
 
         public Builder clearLabels() {
+          bitField0_ = (bitField0_ & ~0x00000001);
           internalGetMutableLabels().getMutableMap().clear();
           return this;
         }
@@ -5345,6 +5385,7 @@ public final class GuestPolicies {
         /** Use alternate mutation accessors instead. */
         @java.lang.Deprecated
         public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+          bitField0_ |= 0x00000001;
           return internalGetMutableLabels().getMutableMap();
         }
         /**
@@ -5364,8 +5405,8 @@ public final class GuestPolicies {
           if (value == null) {
             throw new NullPointerException("map value");
           }
-
           internalGetMutableLabels().getMutableMap().put(key, value);
+          bitField0_ |= 0x00000001;
           return this;
         }
         /**
@@ -5380,6 +5421,7 @@ public final class GuestPolicies {
          */
         public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
           internalGetMutableLabels().getMutableMap().putAll(values);
+          bitField0_ |= 0x00000001;
           return this;
         }
 
@@ -5589,7 +5631,9 @@ public final class GuestPolicies {
       }
 
       public static final int OS_SHORT_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object osShortName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object osShortName_ = "";
       /**
        *
        *
@@ -5640,7 +5684,9 @@ public final class GuestPolicies {
       }
 
       public static final int OS_VERSION_FIELD_NUMBER = 2;
-      private volatile java.lang.Object osVersion_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object osVersion_ = "";
       /**
        *
        *
@@ -5691,7 +5737,9 @@ public final class GuestPolicies {
       }
 
       public static final int OS_ARCHITECTURE_FIELD_NUMBER = 3;
-      private volatile java.lang.Object osArchitecture_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object osArchitecture_ = "";
       /**
        *
        *
@@ -5962,12 +6010,10 @@ public final class GuestPolicies {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           osShortName_ = "";
-
           osVersion_ = "";
-
           osArchitecture_ = "";
-
           return this;
         }
 
@@ -5997,11 +6043,25 @@ public final class GuestPolicies {
         public com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.OsType buildPartial() {
           com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.OsType result =
               new com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.OsType(this);
-          result.osShortName_ = osShortName_;
-          result.osVersion_ = osVersion_;
-          result.osArchitecture_ = osArchitecture_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.OsType result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.osShortName_ = osShortName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.osVersion_ = osVersion_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.osArchitecture_ = osArchitecture_;
+          }
         }
 
         @java.lang.Override
@@ -6057,14 +6117,17 @@ public final class GuestPolicies {
                   .getDefaultInstance()) return this;
           if (!other.getOsShortName().isEmpty()) {
             osShortName_ = other.osShortName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getOsVersion().isEmpty()) {
             osVersion_ = other.osVersion_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (!other.getOsArchitecture().isEmpty()) {
             osArchitecture_ = other.osArchitecture_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -6096,19 +6159,19 @@ public final class GuestPolicies {
                 case 10:
                   {
                     osShortName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     osVersion_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     osArchitecture_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 default:
@@ -6127,6 +6190,8 @@ public final class GuestPolicies {
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object osShortName_ = "";
         /**
@@ -6192,8 +6257,8 @@ public final class GuestPolicies {
           if (value == null) {
             throw new NullPointerException();
           }
-
           osShortName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -6210,8 +6275,8 @@ public final class GuestPolicies {
          * @return This builder for chaining.
          */
         public Builder clearOsShortName() {
-
           osShortName_ = getDefaultInstance().getOsShortName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -6233,8 +6298,8 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           osShortName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -6303,8 +6368,8 @@ public final class GuestPolicies {
           if (value == null) {
             throw new NullPointerException();
           }
-
           osVersion_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -6321,8 +6386,8 @@ public final class GuestPolicies {
          * @return This builder for chaining.
          */
         public Builder clearOsVersion() {
-
           osVersion_ = getDefaultInstance().getOsVersion();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -6344,8 +6409,8 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           osVersion_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -6414,8 +6479,8 @@ public final class GuestPolicies {
           if (value == null) {
             throw new NullPointerException();
           }
-
           osArchitecture_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -6432,8 +6497,8 @@ public final class GuestPolicies {
          * @return This builder for chaining.
          */
         public Builder clearOsArchitecture() {
-
           osArchitecture_ = getDefaultInstance().getOsArchitecture();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -6455,8 +6520,8 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           osArchitecture_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -6529,6 +6594,8 @@ public final class GuestPolicies {
     }
 
     public static final int GROUP_LABELS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.GroupLabel>
         groupLabels_;
     /**
@@ -6613,6 +6680,8 @@ public final class GuestPolicies {
     }
 
     public static final int ZONES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList zones_;
     /**
      *
@@ -6686,6 +6755,8 @@ public final class GuestPolicies {
     }
 
     public static final int INSTANCES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList instances_;
     /**
      *
@@ -6771,6 +6842,8 @@ public final class GuestPolicies {
     }
 
     public static final int INSTANCE_NAME_PREFIXES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList instanceNamePrefixes_;
     /**
      *
@@ -6844,6 +6917,8 @@ public final class GuestPolicies {
     }
 
     public static final int OS_TYPES_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment.OsType>
         osTypes_;
     /**
@@ -7193,6 +7268,7 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (groupLabelsBuilder_ == null) {
           groupLabels_ = java.util.Collections.emptyList();
         } else {
@@ -7240,7 +7316,16 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment result) {
         if (groupLabelsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             groupLabels_ = java.util.Collections.unmodifiableList(groupLabels_);
@@ -7274,8 +7359,10 @@ public final class GuestPolicies {
         } else {
           result.osTypes_ = osTypesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -9402,7 +9489,9 @@ public final class GuestPolicies {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -9455,7 +9544,7 @@ public final class GuestPolicies {
     }
 
     public static final int DESIRED_STATE_FIELD_NUMBER = 2;
-    private int desiredState_;
+    private int desiredState_ = 0;
     /**
      *
      *
@@ -9486,16 +9575,15 @@ public final class GuestPolicies {
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState getDesiredState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState result =
-          com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.valueOf(desiredState_);
+          com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.forNumber(desiredState_);
       return result == null
           ? com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.UNRECOGNIZED
           : result;
     }
 
     public static final int MANAGER_FIELD_NUMBER = 3;
-    private int manager_;
+    private int manager_ = 0;
     /**
      *
      *
@@ -9538,9 +9626,8 @@ public final class GuestPolicies {
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Manager getManager() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Manager result =
-          com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Manager.valueOf(manager_);
+          com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Manager.forNumber(manager_);
       return result == null
           ? com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Manager.UNRECOGNIZED
           : result;
@@ -9788,12 +9875,10 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         desiredState_ = 0;
-
         manager_ = 0;
-
         return this;
       }
 
@@ -9821,11 +9906,24 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.Package buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.Package result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.Package(this);
-        result.name_ = name_;
-        result.desiredState_ = desiredState_;
-        result.manager_ = manager_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.osconfig.v1beta.GuestPolicies.Package result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.desiredState_ = desiredState_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.manager_ = manager_;
+        }
       }
 
       @java.lang.Override
@@ -9878,6 +9976,7 @@ public final class GuestPolicies {
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.desiredState_ != 0) {
@@ -9915,19 +10014,19 @@ public final class GuestPolicies {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   desiredState_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   manager_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -9946,6 +10045,8 @@ public final class GuestPolicies {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -10014,8 +10115,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10033,8 +10134,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -10057,8 +10158,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10094,8 +10195,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder setDesiredStateValue(int value) {
-
         desiredState_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -10113,9 +10214,8 @@ public final class GuestPolicies {
        */
       @java.lang.Override
       public com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState getDesiredState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState result =
-            com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.valueOf(desiredState_);
+            com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.forNumber(desiredState_);
         return result == null
             ? com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.UNRECOGNIZED
             : result;
@@ -10138,7 +10238,7 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         desiredState_ = value.getNumber();
         onChanged();
         return this;
@@ -10156,7 +10256,7 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearDesiredState() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         desiredState_ = 0;
         onChanged();
         return this;
@@ -10205,8 +10305,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder setManagerValue(int value) {
-
         manager_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -10230,9 +10330,8 @@ public final class GuestPolicies {
        */
       @java.lang.Override
       public com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Manager getManager() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Manager result =
-            com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Manager.valueOf(manager_);
+            com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Manager.forNumber(manager_);
         return result == null
             ? com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Manager.UNRECOGNIZED
             : result;
@@ -10261,7 +10360,7 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         manager_ = value.getNumber();
         onChanged();
         return this;
@@ -10285,7 +10384,7 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearManager() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         manager_ = 0;
         onChanged();
         return this;
@@ -10730,7 +10829,7 @@ public final class GuestPolicies {
     }
 
     public static final int ARCHIVE_TYPE_FIELD_NUMBER = 1;
-    private int archiveType_;
+    private int archiveType_ = 0;
     /**
      *
      *
@@ -10760,9 +10859,8 @@ public final class GuestPolicies {
     @java.lang.Override
     public com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository.ArchiveType
         getArchiveType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository.ArchiveType result =
-          com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository.ArchiveType.valueOf(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository.ArchiveType.forNumber(
               archiveType_);
       return result == null
           ? com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository.ArchiveType.UNRECOGNIZED
@@ -10770,7 +10868,9 @@ public final class GuestPolicies {
     }
 
     public static final int URI_FIELD_NUMBER = 2;
-    private volatile java.lang.Object uri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
     /**
      *
      *
@@ -10819,7 +10919,9 @@ public final class GuestPolicies {
     }
 
     public static final int DISTRIBUTION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object distribution_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object distribution_ = "";
     /**
      *
      *
@@ -10868,6 +10970,8 @@ public final class GuestPolicies {
     }
 
     public static final int COMPONENTS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList components_;
     /**
      *
@@ -10929,7 +11033,9 @@ public final class GuestPolicies {
     }
 
     public static final int GPG_KEY_FIELD_NUMBER = 5;
-    private volatile java.lang.Object gpgKey_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gpgKey_ = "";
     /**
      *
      *
@@ -11232,16 +11338,13 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         archiveType_ = 0;
-
         uri_ = "";
-
         distribution_ = "";
-
         components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         gpgKey_ = "";
-
         return this;
       }
 
@@ -11270,18 +11373,38 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository(this);
-        int from_bitField0_ = bitField0_;
-        result.archiveType_ = archiveType_;
-        result.uri_ = uri_;
-        result.distribution_ = distribution_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          components_ = components_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.components_ = components_;
-        result.gpgKey_ = gpgKey_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          components_ = components_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.components_ = components_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.archiveType_ = archiveType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.distribution_ = distribution_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.gpgKey_ = gpgKey_;
+        }
       }
 
       @java.lang.Override
@@ -11338,16 +11461,18 @@ public final class GuestPolicies {
         }
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getDistribution().isEmpty()) {
           distribution_ = other.distribution_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.components_.isEmpty()) {
           if (components_.isEmpty()) {
             components_ = other.components_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureComponentsIsMutable();
             components_.addAll(other.components_);
@@ -11356,6 +11481,7 @@ public final class GuestPolicies {
         }
         if (!other.getGpgKey().isEmpty()) {
           gpgKey_ = other.gpgKey_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -11387,19 +11513,19 @@ public final class GuestPolicies {
               case 8:
                 {
                   archiveType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   uri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   distribution_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -11412,7 +11538,7 @@ public final class GuestPolicies {
               case 42:
                 {
                   gpgKey_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -11463,8 +11589,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder setArchiveTypeValue(int value) {
-
         archiveType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -11482,9 +11608,8 @@ public final class GuestPolicies {
       @java.lang.Override
       public com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository.ArchiveType
           getArchiveType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository.ArchiveType result =
-            com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository.ArchiveType.valueOf(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository.ArchiveType.forNumber(
                 archiveType_);
         return result == null
             ? com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository.ArchiveType.UNRECOGNIZED
@@ -11507,7 +11632,7 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         archiveType_ = value.getNumber();
         onChanged();
         return this;
@@ -11524,7 +11649,7 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearArchiveType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         archiveType_ = 0;
         onChanged();
         return this;
@@ -11591,8 +11716,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         uri_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -11608,8 +11733,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearUri() {
-
         uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -11630,8 +11755,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         uri_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -11697,8 +11822,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         distribution_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -11714,8 +11839,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearDistribution() {
-
         distribution_ = getDefaultInstance().getDistribution();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -11736,8 +11861,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         distribution_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -11746,9 +11871,9 @@ public final class GuestPolicies {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureComponentsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           components_ = new com.google.protobuf.LazyStringArrayList(components_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -11883,7 +12008,7 @@ public final class GuestPolicies {
        */
       public Builder clearComponents() {
         components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -11977,8 +12102,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         gpgKey_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -11996,8 +12121,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearGpgKey() {
-
         gpgKey_ = getDefaultInstance().getGpgKey();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -12020,8 +12145,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         gpgKey_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -12284,7 +12409,9 @@ public final class GuestPolicies {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      *
      *
@@ -12339,7 +12466,9 @@ public final class GuestPolicies {
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -12388,7 +12517,9 @@ public final class GuestPolicies {
     }
 
     public static final int BASE_URL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object baseUrl_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object baseUrl_ = "";
     /**
      *
      *
@@ -12437,6 +12568,8 @@ public final class GuestPolicies {
     }
 
     public static final int GPG_KEYS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList gpgKeys_;
     /**
      *
@@ -12732,14 +12865,12 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         displayName_ = "";
-
         baseUrl_ = "";
-
         gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -12768,17 +12899,35 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.YumRepository buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.YumRepository result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.YumRepository(this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
-        result.displayName_ = displayName_;
-        result.baseUrl_ = baseUrl_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          gpgKeys_ = gpgKeys_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.gpgKeys_ = gpgKeys_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.YumRepository result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          gpgKeys_ = gpgKeys_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.gpgKeys_ = gpgKeys_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.YumRepository result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.baseUrl_ = baseUrl_;
+        }
       }
 
       @java.lang.Override
@@ -12832,20 +12981,23 @@ public final class GuestPolicies {
           return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getBaseUrl().isEmpty()) {
           baseUrl_ = other.baseUrl_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.gpgKeys_.isEmpty()) {
           if (gpgKeys_.isEmpty()) {
             gpgKeys_ = other.gpgKeys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureGpgKeysIsMutable();
             gpgKeys_.addAll(other.gpgKeys_);
@@ -12881,19 +13033,19 @@ public final class GuestPolicies {
               case 10:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   baseUrl_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -12992,8 +13144,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -13012,8 +13164,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -13037,8 +13189,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -13104,8 +13256,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -13121,8 +13273,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -13143,8 +13295,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -13210,8 +13362,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         baseUrl_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -13227,8 +13379,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearBaseUrl() {
-
         baseUrl_ = getDefaultInstance().getBaseUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -13249,8 +13401,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         baseUrl_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -13259,9 +13411,9 @@ public final class GuestPolicies {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureGpgKeysIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           gpgKeys_ = new com.google.protobuf.LazyStringArrayList(gpgKeys_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -13396,7 +13548,7 @@ public final class GuestPolicies {
        */
       public Builder clearGpgKeys() {
         gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -13681,7 +13833,9 @@ public final class GuestPolicies {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      *
      *
@@ -13736,7 +13890,9 @@ public final class GuestPolicies {
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -13785,7 +13941,9 @@ public final class GuestPolicies {
     }
 
     public static final int BASE_URL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object baseUrl_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object baseUrl_ = "";
     /**
      *
      *
@@ -13834,6 +13992,8 @@ public final class GuestPolicies {
     }
 
     public static final int GPG_KEYS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList gpgKeys_;
     /**
      *
@@ -14131,14 +14291,12 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         displayName_ = "";
-
         baseUrl_ = "";
-
         gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -14167,17 +14325,35 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.ZypperRepository buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.ZypperRepository result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.ZypperRepository(this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
-        result.displayName_ = displayName_;
-        result.baseUrl_ = baseUrl_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          gpgKeys_ = gpgKeys_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.gpgKeys_ = gpgKeys_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.ZypperRepository result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          gpgKeys_ = gpgKeys_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.gpgKeys_ = gpgKeys_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.ZypperRepository result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.baseUrl_ = baseUrl_;
+        }
       }
 
       @java.lang.Override
@@ -14232,20 +14408,23 @@ public final class GuestPolicies {
           return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getBaseUrl().isEmpty()) {
           baseUrl_ = other.baseUrl_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.gpgKeys_.isEmpty()) {
           if (gpgKeys_.isEmpty()) {
             gpgKeys_ = other.gpgKeys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureGpgKeysIsMutable();
             gpgKeys_.addAll(other.gpgKeys_);
@@ -14281,19 +14460,19 @@ public final class GuestPolicies {
               case 10:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   baseUrl_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -14392,8 +14571,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -14412,8 +14591,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -14437,8 +14616,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -14504,8 +14683,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -14521,8 +14700,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -14543,8 +14722,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -14610,8 +14789,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         baseUrl_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -14627,8 +14806,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearBaseUrl() {
-
         baseUrl_ = getDefaultInstance().getBaseUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -14649,8 +14828,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         baseUrl_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -14659,9 +14838,9 @@ public final class GuestPolicies {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureGpgKeysIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           gpgKeys_ = new com.google.protobuf.LazyStringArrayList(gpgKeys_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -14796,7 +14975,7 @@ public final class GuestPolicies {
        */
       public Builder clearGpgKeys() {
         gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -14997,7 +15176,9 @@ public final class GuestPolicies {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -15046,7 +15227,9 @@ public final class GuestPolicies {
     }
 
     public static final int URL_FIELD_NUMBER = 2;
-    private volatile java.lang.Object url_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
     /**
      *
      *
@@ -15304,10 +15487,9 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         url_ = "";
-
         return this;
       }
 
@@ -15336,10 +15518,22 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.GooRepository buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.GooRepository result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.GooRepository(this);
-        result.name_ = name_;
-        result.url_ = url_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.GooRepository result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.url_ = url_;
+        }
       }
 
       @java.lang.Override
@@ -15393,10 +15587,12 @@ public final class GuestPolicies {
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -15428,13 +15624,13 @@ public final class GuestPolicies {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   url_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -15453,6 +15649,8 @@ public final class GuestPolicies {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -15515,8 +15713,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -15532,8 +15730,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -15554,8 +15752,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -15621,8 +15819,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         url_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -15638,8 +15836,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearUrl() {
-
         url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -15660,8 +15858,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         url_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -16452,6 +16650,7 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (aptBuilder_ != null) {
           aptBuilder_.clear();
         }
@@ -16495,37 +16694,35 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository(this);
-        if (repositoryCase_ == 1) {
-          if (aptBuilder_ == null) {
-            result.repository_ = repository_;
-          } else {
-            result.repository_ = aptBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (repositoryCase_ == 2) {
-          if (yumBuilder_ == null) {
-            result.repository_ = repository_;
-          } else {
-            result.repository_ = yumBuilder_.build();
-          }
-        }
-        if (repositoryCase_ == 3) {
-          if (zypperBuilder_ == null) {
-            result.repository_ = repository_;
-          } else {
-            result.repository_ = zypperBuilder_.build();
-          }
-        }
-        if (repositoryCase_ == 4) {
-          if (gooBuilder_ == null) {
-            result.repository_ = repository_;
-          } else {
-            result.repository_ = gooBuilder_.build();
-          }
-        }
-        result.repositoryCase_ = repositoryCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository result) {
+        result.repositoryCase_ = repositoryCase_;
+        result.repository_ = this.repository_;
+        if (repositoryCase_ == 1 && aptBuilder_ != null) {
+          result.repository_ = aptBuilder_.build();
+        }
+        if (repositoryCase_ == 2 && yumBuilder_ != null) {
+          result.repository_ = yumBuilder_.build();
+        }
+        if (repositoryCase_ == 3 && zypperBuilder_ != null) {
+          result.repository_ = zypperBuilder_.build();
+        }
+        if (repositoryCase_ == 4 && gooBuilder_ != null) {
+          result.repository_ = gooBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -16685,6 +16882,8 @@ public final class GuestPolicies {
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository,
@@ -16896,7 +17095,6 @@ public final class GuestPolicies {
         }
         repositoryCase_ = 1;
         onChanged();
-        ;
         return aptBuilder_;
       }
 
@@ -17110,7 +17308,6 @@ public final class GuestPolicies {
         }
         repositoryCase_ = 2;
         onChanged();
-        ;
         return yumBuilder_;
       }
 
@@ -17332,7 +17529,6 @@ public final class GuestPolicies {
         }
         repositoryCase_ = 3;
         onChanged();
-        ;
         return zypperBuilder_;
       }
 
@@ -17546,7 +17742,6 @@ public final class GuestPolicies {
         }
         repositoryCase_ = 4;
         onChanged();
-        ;
         return gooBuilder_;
       }
 
@@ -18273,7 +18468,9 @@ public final class GuestPolicies {
         }
 
         public static final int URI_FIELD_NUMBER = 1;
-        private volatile java.lang.Object uri_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object uri_ = "";
         /**
          *
          *
@@ -18324,7 +18521,9 @@ public final class GuestPolicies {
         }
 
         public static final int CHECKSUM_FIELD_NUMBER = 2;
-        private volatile java.lang.Object checksum_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object checksum_ = "";
         /**
          *
          *
@@ -18606,10 +18805,9 @@ public final class GuestPolicies {
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             uri_ = "";
-
             checksum_ = "";
-
             return this;
           }
 
@@ -18643,10 +18841,23 @@ public final class GuestPolicies {
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact.Remote result =
                 new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact.Remote(
                     this);
-            result.uri_ = uri_;
-            result.checksum_ = checksum_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact.Remote
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.uri_ = uri_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.checksum_ = checksum_;
+            }
           }
 
           @java.lang.Override
@@ -18705,10 +18916,12 @@ public final class GuestPolicies {
                     .getDefaultInstance()) return this;
             if (!other.getUri().isEmpty()) {
               uri_ = other.uri_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getChecksum().isEmpty()) {
               checksum_ = other.checksum_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -18740,13 +18953,13 @@ public final class GuestPolicies {
                   case 10:
                     {
                       uri_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       checksum_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   default:
@@ -18765,6 +18978,8 @@ public final class GuestPolicies {
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object uri_ = "";
           /**
@@ -18830,8 +19045,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             uri_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -18848,8 +19063,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearUri() {
-
             uri_ = getDefaultInstance().getUri();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -18871,8 +19086,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             uri_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -18950,8 +19165,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             checksum_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -18971,8 +19186,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearChecksum() {
-
             checksum_ = getDefaultInstance().getChecksum();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -18997,8 +19212,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             checksum_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -19211,7 +19426,9 @@ public final class GuestPolicies {
         }
 
         public static final int BUCKET_FIELD_NUMBER = 1;
-        private volatile java.lang.Object bucket_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object bucket_ = "";
         /**
          *
          *
@@ -19266,7 +19483,9 @@ public final class GuestPolicies {
         }
 
         public static final int OBJECT_FIELD_NUMBER = 2;
-        private volatile java.lang.Object object_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object object_ = "";
         /**
          *
          *
@@ -19325,7 +19544,7 @@ public final class GuestPolicies {
         }
 
         public static final int GENERATION_FIELD_NUMBER = 3;
-        private long generation_;
+        private long generation_ = 0L;
         /**
          *
          *
@@ -19579,12 +19798,10 @@ public final class GuestPolicies {
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             bucket_ = "";
-
             object_ = "";
-
             generation_ = 0L;
-
             return this;
           }
 
@@ -19618,11 +19835,25 @@ public final class GuestPolicies {
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact.Gcs result =
                 new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact.Gcs(
                     this);
-            result.bucket_ = bucket_;
-            result.object_ = object_;
-            result.generation_ = generation_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact.Gcs result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.bucket_ = bucket_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.object_ = object_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.generation_ = generation_;
+            }
           }
 
           @java.lang.Override
@@ -19681,10 +19912,12 @@ public final class GuestPolicies {
                     .getDefaultInstance()) return this;
             if (!other.getBucket().isEmpty()) {
               bucket_ = other.bucket_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getObject().isEmpty()) {
               object_ = other.object_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (other.getGeneration() != 0L) {
@@ -19719,19 +19952,19 @@ public final class GuestPolicies {
                   case 10:
                     {
                       bucket_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       object_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 24:
                     {
                       generation_ = input.readInt64();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 24
                   default:
@@ -19750,6 +19983,8 @@ public final class GuestPolicies {
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object bucket_ = "";
           /**
@@ -19821,8 +20056,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             bucket_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -19841,8 +20076,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearBucket() {
-
             bucket_ = getDefaultInstance().getBucket();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -19866,8 +20101,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             bucket_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -19948,8 +20183,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             object_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -19970,8 +20205,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearObject() {
-
             object_ = getDefaultInstance().getObject();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -19997,8 +20232,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             object_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -20040,6 +20275,7 @@ public final class GuestPolicies {
           public Builder setGeneration(long value) {
 
             generation_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -20058,7 +20294,7 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearGeneration() {
-
+            bitField0_ = (bitField0_ & ~0x00000004);
             generation_ = 0L;
             onChanged();
             return this;
@@ -20181,7 +20417,9 @@ public final class GuestPolicies {
       }
 
       public static final int ID_FIELD_NUMBER = 1;
-      private volatile java.lang.Object id_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object id_ = "";
       /**
        *
        *
@@ -20345,7 +20583,7 @@ public final class GuestPolicies {
       }
 
       public static final int ALLOW_INSECURE_FIELD_NUMBER = 4;
-      private boolean allowInsecure_;
+      private boolean allowInsecure_ = false;
       /**
        *
        *
@@ -20635,8 +20873,8 @@ public final class GuestPolicies {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           id_ = "";
-
           if (remoteBuilder_ != null) {
             remoteBuilder_.clear();
           }
@@ -20644,7 +20882,6 @@ public final class GuestPolicies {
             gcsBuilder_.clear();
           }
           allowInsecure_ = false;
-
           artifactCase_ = 0;
           artifact_ = null;
           return this;
@@ -20678,25 +20915,35 @@ public final class GuestPolicies {
             buildPartial() {
           com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact result =
               new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact(this);
-          result.id_ = id_;
-          if (artifactCase_ == 2) {
-            if (remoteBuilder_ == null) {
-              result.artifact_ = artifact_;
-            } else {
-              result.artifact_ = remoteBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (artifactCase_ == 3) {
-            if (gcsBuilder_ == null) {
-              result.artifact_ = artifact_;
-            } else {
-              result.artifact_ = gcsBuilder_.build();
-            }
-          }
-          result.allowInsecure_ = allowInsecure_;
-          result.artifactCase_ = artifactCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.id_ = id_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.allowInsecure_ = allowInsecure_;
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact result) {
+          result.artifactCase_ = artifactCase_;
+          result.artifact_ = this.artifact_;
+          if (artifactCase_ == 2 && remoteBuilder_ != null) {
+            result.artifact_ = remoteBuilder_.build();
+          }
+          if (artifactCase_ == 3 && gcsBuilder_ != null) {
+            result.artifact_ = gcsBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -20753,6 +21000,7 @@ public final class GuestPolicies {
                   .getDefaultInstance()) return this;
           if (!other.getId().isEmpty()) {
             id_ = other.id_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.getAllowInsecure() != false) {
@@ -20803,7 +21051,7 @@ public final class GuestPolicies {
                 case 10:
                   {
                     id_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
@@ -20821,7 +21069,7 @@ public final class GuestPolicies {
                 case 32:
                   {
                     allowInsecure_ = input.readBool();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 32
                 default:
@@ -20854,6 +21102,8 @@ public final class GuestPolicies {
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object id_ = "";
         /**
@@ -20919,8 +21169,8 @@ public final class GuestPolicies {
           if (value == null) {
             throw new NullPointerException();
           }
-
           id_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -20937,8 +21187,8 @@ public final class GuestPolicies {
          * @return This builder for chaining.
          */
         public Builder clearId() {
-
           id_ = getDefaultInstance().getId();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -20960,8 +21210,8 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           id_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -21198,7 +21448,6 @@ public final class GuestPolicies {
           }
           artifactCase_ = 2;
           onChanged();
-          ;
           return remoteBuilder_;
         }
 
@@ -21428,7 +21677,6 @@ public final class GuestPolicies {
           }
           artifactCase_ = 3;
           onChanged();
-          ;
           return gcsBuilder_;
         }
 
@@ -21471,6 +21719,7 @@ public final class GuestPolicies {
         public Builder setAllowInsecure(boolean value) {
 
           allowInsecure_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -21490,7 +21739,7 @@ public final class GuestPolicies {
          * @return This builder for chaining.
          */
         public Builder clearAllowInsecure() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           allowInsecure_ = false;
           onChanged();
           return this;
@@ -22060,7 +22309,9 @@ public final class GuestPolicies {
         }
 
         public static final int ARTIFACT_ID_FIELD_NUMBER = 1;
-        private volatile java.lang.Object artifactId_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object artifactId_ = "";
         /**
          *
          *
@@ -22109,7 +22360,9 @@ public final class GuestPolicies {
         }
 
         public static final int DESTINATION_FIELD_NUMBER = 2;
-        private volatile java.lang.Object destination_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object destination_ = "";
         /**
          *
          *
@@ -22158,7 +22411,7 @@ public final class GuestPolicies {
         }
 
         public static final int OVERWRITE_FIELD_NUMBER = 3;
-        private boolean overwrite_;
+        private boolean overwrite_ = false;
         /**
          *
          *
@@ -22178,7 +22431,9 @@ public final class GuestPolicies {
         }
 
         public static final int PERMISSIONS_FIELD_NUMBER = 4;
-        private volatile java.lang.Object permissions_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object permissions_ = "";
         /**
          *
          *
@@ -22491,14 +22746,11 @@ public final class GuestPolicies {
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             artifactId_ = "";
-
             destination_ = "";
-
             overwrite_ = false;
-
             permissions_ = "";
-
             return this;
           }
 
@@ -22532,12 +22784,28 @@ public final class GuestPolicies {
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.CopyFile result =
                 new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.CopyFile(
                     this);
-            result.artifactId_ = artifactId_;
-            result.destination_ = destination_;
-            result.overwrite_ = overwrite_;
-            result.permissions_ = permissions_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.CopyFile result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.artifactId_ = artifactId_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.destination_ = destination_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.overwrite_ = overwrite_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.permissions_ = permissions_;
+            }
           }
 
           @java.lang.Override
@@ -22596,10 +22864,12 @@ public final class GuestPolicies {
                     .getDefaultInstance()) return this;
             if (!other.getArtifactId().isEmpty()) {
               artifactId_ = other.artifactId_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getDestination().isEmpty()) {
               destination_ = other.destination_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (other.getOverwrite() != false) {
@@ -22607,6 +22877,7 @@ public final class GuestPolicies {
             }
             if (!other.getPermissions().isEmpty()) {
               permissions_ = other.permissions_;
+              bitField0_ |= 0x00000008;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -22638,25 +22909,25 @@ public final class GuestPolicies {
                   case 10:
                     {
                       artifactId_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       destination_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 24:
                     {
                       overwrite_ = input.readBool();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 24
                   case 34:
                     {
                       permissions_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000008;
                       break;
                     } // case 34
                   default:
@@ -22675,6 +22946,8 @@ public final class GuestPolicies {
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object artifactId_ = "";
           /**
@@ -22737,8 +23010,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             artifactId_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -22754,8 +23027,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearArtifactId() {
-
             artifactId_ = getDefaultInstance().getArtifactId();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -22776,8 +23049,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             artifactId_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -22843,8 +23116,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             destination_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -22860,8 +23133,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearDestination() {
-
             destination_ = getDefaultInstance().getDestination();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -22882,8 +23155,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             destination_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -22923,6 +23196,7 @@ public final class GuestPolicies {
           public Builder setOverwrite(boolean value) {
 
             overwrite_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -22940,7 +23214,7 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearOverwrite() {
-
+            bitField0_ = (bitField0_ & ~0x00000004);
             overwrite_ = false;
             onChanged();
             return this;
@@ -23040,8 +23314,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             permissions_ = value;
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -23068,8 +23342,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearPermissions() {
-
             permissions_ = getDefaultInstance().getPermissions();
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
             return this;
           }
@@ -23101,8 +23375,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             permissions_ = value;
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -23571,7 +23845,9 @@ public final class GuestPolicies {
         }
 
         public static final int ARTIFACT_ID_FIELD_NUMBER = 1;
-        private volatile java.lang.Object artifactId_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object artifactId_ = "";
         /**
          *
          *
@@ -23620,7 +23896,9 @@ public final class GuestPolicies {
         }
 
         public static final int DESTINATION_FIELD_NUMBER = 2;
-        private volatile java.lang.Object destination_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object destination_ = "";
         /**
          *
          *
@@ -23671,7 +23949,7 @@ public final class GuestPolicies {
         }
 
         public static final int TYPE_FIELD_NUMBER = 3;
-        private int type_;
+        private int type_ = 0;
         /**
          *
          *
@@ -23706,12 +23984,11 @@ public final class GuestPolicies {
         public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExtractArchive
                 .ArchiveType
             getType() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExtractArchive
                   .ArchiveType
               result =
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExtractArchive
-                      .ArchiveType.valueOf(type_);
+                      .ArchiveType.forNumber(type_);
           return result == null
               ? com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExtractArchive
                   .ArchiveType.UNRECOGNIZED
@@ -23973,12 +24250,10 @@ public final class GuestPolicies {
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             artifactId_ = "";
-
             destination_ = "";
-
             type_ = 0;
-
             return this;
           }
 
@@ -24013,11 +24288,26 @@ public final class GuestPolicies {
                 result =
                     new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step
                         .ExtractArchive(this);
-            result.artifactId_ = artifactId_;
-            result.destination_ = destination_;
-            result.type_ = type_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExtractArchive
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.artifactId_ = artifactId_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.destination_ = destination_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.type_ = type_;
+            }
           }
 
           @java.lang.Override
@@ -24078,10 +24368,12 @@ public final class GuestPolicies {
                     .getDefaultInstance()) return this;
             if (!other.getArtifactId().isEmpty()) {
               artifactId_ = other.artifactId_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getDestination().isEmpty()) {
               destination_ = other.destination_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (other.type_ != 0) {
@@ -24116,19 +24408,19 @@ public final class GuestPolicies {
                   case 10:
                     {
                       artifactId_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       destination_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 24:
                     {
                       type_ = input.readEnum();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 24
                   default:
@@ -24147,6 +24439,8 @@ public final class GuestPolicies {
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object artifactId_ = "";
           /**
@@ -24209,8 +24503,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             artifactId_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -24226,8 +24520,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearArtifactId() {
-
             artifactId_ = getDefaultInstance().getArtifactId();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -24248,8 +24542,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             artifactId_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -24318,8 +24612,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             destination_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -24336,8 +24630,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearDestination() {
-
             destination_ = getDefaultInstance().getDestination();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -24359,8 +24653,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             destination_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -24398,8 +24692,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder setTypeValue(int value) {
-
             type_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -24420,12 +24714,11 @@ public final class GuestPolicies {
           public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExtractArchive
                   .ArchiveType
               getType() {
-            @SuppressWarnings("deprecation")
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExtractArchive
                     .ArchiveType
                 result =
                     com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step
-                        .ExtractArchive.ArchiveType.valueOf(type_);
+                        .ExtractArchive.ArchiveType.forNumber(type_);
             return result == null
                 ? com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExtractArchive
                     .ArchiveType.UNRECOGNIZED
@@ -24452,7 +24745,7 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
+            bitField0_ |= 0x00000004;
             type_ = value.getNumber();
             onChanged();
             return this;
@@ -24471,7 +24764,7 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearType() {
-
+            bitField0_ = (bitField0_ & ~0x00000004);
             type_ = 0;
             onChanged();
             return this;
@@ -24728,7 +25021,9 @@ public final class GuestPolicies {
         }
 
         public static final int ARTIFACT_ID_FIELD_NUMBER = 1;
-        private volatile java.lang.Object artifactId_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object artifactId_ = "";
         /**
          *
          *
@@ -24777,6 +25072,8 @@ public final class GuestPolicies {
         }
 
         public static final int FLAGS_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList flags_;
         /**
          *
@@ -24842,6 +25139,8 @@ public final class GuestPolicies {
         }
 
         public static final int ALLOWED_EXIT_CODES_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.Internal.IntList allowedExitCodes_;
         /**
          *
@@ -25153,12 +25452,11 @@ public final class GuestPolicies {
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             artifactId_ = "";
-
             flags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            allowedExitCodes_ = emptyIntList();
             bitField0_ = (bitField0_ & ~0x00000002);
+            allowedExitCodes_ = emptyIntList();
             return this;
           }
 
@@ -25192,20 +25490,36 @@ public final class GuestPolicies {
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallMsi result =
                 new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallMsi(
                     this);
-            int from_bitField0_ = bitField0_;
-            result.artifactId_ = artifactId_;
-            if (((bitField0_ & 0x00000001) != 0)) {
-              flags_ = flags_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000001);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            result.flags_ = flags_;
-            if (((bitField0_ & 0x00000002) != 0)) {
-              allowedExitCodes_.makeImmutable();
-              bitField0_ = (bitField0_ & ~0x00000002);
-            }
-            result.allowedExitCodes_ = allowedExitCodes_;
             onBuilt();
             return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallMsi
+                  result) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              flags_ = flags_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.flags_ = flags_;
+            if (((bitField0_ & 0x00000004) != 0)) {
+              allowedExitCodes_.makeImmutable();
+              bitField0_ = (bitField0_ & ~0x00000004);
+            }
+            result.allowedExitCodes_ = allowedExitCodes_;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallMsi
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.artifactId_ = artifactId_;
+            }
           }
 
           @java.lang.Override
@@ -25264,12 +25578,13 @@ public final class GuestPolicies {
                     .getDefaultInstance()) return this;
             if (!other.getArtifactId().isEmpty()) {
               artifactId_ = other.artifactId_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.flags_.isEmpty()) {
               if (flags_.isEmpty()) {
                 flags_ = other.flags_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureFlagsIsMutable();
                 flags_.addAll(other.flags_);
@@ -25279,7 +25594,7 @@ public final class GuestPolicies {
             if (!other.allowedExitCodes_.isEmpty()) {
               if (allowedExitCodes_.isEmpty()) {
                 allowedExitCodes_ = other.allowedExitCodes_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000004);
               } else {
                 ensureAllowedExitCodesIsMutable();
                 allowedExitCodes_.addAll(other.allowedExitCodes_);
@@ -25315,7 +25630,7 @@ public final class GuestPolicies {
                   case 10:
                     {
                       artifactId_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
@@ -25423,8 +25738,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             artifactId_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -25440,8 +25755,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearArtifactId() {
-
             artifactId_ = getDefaultInstance().getArtifactId();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -25462,8 +25777,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             artifactId_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -25472,9 +25787,9 @@ public final class GuestPolicies {
               com.google.protobuf.LazyStringArrayList.EMPTY;
 
           private void ensureFlagsIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!((bitField0_ & 0x00000002) != 0)) {
               flags_ = new com.google.protobuf.LazyStringArrayList(flags_);
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
             }
           }
           /**
@@ -25617,7 +25932,7 @@ public final class GuestPolicies {
            */
           public Builder clearFlags() {
             flags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -25648,9 +25963,9 @@ public final class GuestPolicies {
           private com.google.protobuf.Internal.IntList allowedExitCodes_ = emptyIntList();
 
           private void ensureAllowedExitCodesIsMutable() {
-            if (!((bitField0_ & 0x00000002) != 0)) {
+            if (!((bitField0_ & 0x00000004) != 0)) {
               allowedExitCodes_ = mutableCopy(allowedExitCodes_);
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
             }
           }
           /**
@@ -25666,7 +25981,7 @@ public final class GuestPolicies {
            * @return A list containing the allowedExitCodes.
            */
           public java.util.List<java.lang.Integer> getAllowedExitCodesList() {
-            return ((bitField0_ & 0x00000002) != 0)
+            return ((bitField0_ & 0x00000004) != 0)
                 ? java.util.Collections.unmodifiableList(allowedExitCodes_)
                 : allowedExitCodes_;
           }
@@ -25716,6 +26031,7 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder setAllowedExitCodes(int index, int value) {
+
             ensureAllowedExitCodesIsMutable();
             allowedExitCodes_.setInt(index, value);
             onChanged();
@@ -25735,6 +26051,7 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder addAllowedExitCodes(int value) {
+
             ensureAllowedExitCodesIsMutable();
             allowedExitCodes_.addInt(value);
             onChanged();
@@ -25774,7 +26091,7 @@ public final class GuestPolicies {
            */
           public Builder clearAllowedExitCodes() {
             allowedExitCodes_ = emptyIntList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -25930,7 +26247,9 @@ public final class GuestPolicies {
         }
 
         public static final int ARTIFACT_ID_FIELD_NUMBER = 1;
-        private volatile java.lang.Object artifactId_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object artifactId_ = "";
         /**
          *
          *
@@ -26196,8 +26515,8 @@ public final class GuestPolicies {
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             artifactId_ = "";
-
             return this;
           }
 
@@ -26231,9 +26550,20 @@ public final class GuestPolicies {
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallDpkg result =
                 new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallDpkg(
                     this);
-            result.artifactId_ = artifactId_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallDpkg
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.artifactId_ = artifactId_;
+            }
           }
 
           @java.lang.Override
@@ -26293,6 +26623,7 @@ public final class GuestPolicies {
                     .getDefaultInstance()) return this;
             if (!other.getArtifactId().isEmpty()) {
               artifactId_ = other.artifactId_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -26324,7 +26655,7 @@ public final class GuestPolicies {
                   case 10:
                     {
                       artifactId_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   default:
@@ -26343,6 +26674,8 @@ public final class GuestPolicies {
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object artifactId_ = "";
           /**
@@ -26405,8 +26738,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             artifactId_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -26422,8 +26755,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearArtifactId() {
-
             artifactId_ = getDefaultInstance().getArtifactId();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -26444,8 +26777,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             artifactId_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -26601,7 +26934,9 @@ public final class GuestPolicies {
         }
 
         public static final int ARTIFACT_ID_FIELD_NUMBER = 1;
-        private volatile java.lang.Object artifactId_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object artifactId_ = "";
         /**
          *
          *
@@ -26866,8 +27201,8 @@ public final class GuestPolicies {
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             artifactId_ = "";
-
             return this;
           }
 
@@ -26901,9 +27236,20 @@ public final class GuestPolicies {
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallRpm result =
                 new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallRpm(
                     this);
-            result.artifactId_ = artifactId_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallRpm
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.artifactId_ = artifactId_;
+            }
           }
 
           @java.lang.Override
@@ -26962,6 +27308,7 @@ public final class GuestPolicies {
                     .getDefaultInstance()) return this;
             if (!other.getArtifactId().isEmpty()) {
               artifactId_ = other.artifactId_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -26993,7 +27340,7 @@ public final class GuestPolicies {
                   case 10:
                     {
                       artifactId_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   default:
@@ -27012,6 +27359,8 @@ public final class GuestPolicies {
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object artifactId_ = "";
           /**
@@ -27074,8 +27423,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             artifactId_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -27091,8 +27440,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearArtifactId() {
-
             artifactId_ = getDefaultInstance().getArtifactId();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -27113,8 +27462,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             artifactId_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -27602,6 +27951,8 @@ public final class GuestPolicies {
         }
 
         public static final int ARGS_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList args_;
         /**
          *
@@ -27663,6 +28014,8 @@ public final class GuestPolicies {
         }
 
         public static final int ALLOWED_EXIT_CODES_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.Internal.IntList allowedExitCodes_;
         /**
          *
@@ -27999,10 +28352,10 @@ public final class GuestPolicies {
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             allowedExitCodes_ = emptyIntList();
-            bitField0_ = (bitField0_ & ~0x00000002);
             locationTypeCase_ = 0;
             locationType_ = null;
             return this;
@@ -28038,26 +28391,38 @@ public final class GuestPolicies {
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExecFile result =
                 new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExecFile(
                     this);
-            int from_bitField0_ = bitField0_;
-            if (locationTypeCase_ == 1) {
-              result.locationType_ = locationType_;
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            if (locationTypeCase_ == 2) {
-              result.locationType_ = locationType_;
-            }
-            if (((bitField0_ & 0x00000001) != 0)) {
-              args_ = args_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000001);
-            }
-            result.args_ = args_;
-            if (((bitField0_ & 0x00000002) != 0)) {
-              allowedExitCodes_.makeImmutable();
-              bitField0_ = (bitField0_ & ~0x00000002);
-            }
-            result.allowedExitCodes_ = allowedExitCodes_;
-            result.locationTypeCase_ = locationTypeCase_;
+            buildPartialOneofs(result);
             onBuilt();
             return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExecFile result) {
+            if (((bitField0_ & 0x00000004) != 0)) {
+              args_ = args_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000004);
+            }
+            result.args_ = args_;
+            if (((bitField0_ & 0x00000008) != 0)) {
+              allowedExitCodes_.makeImmutable();
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.allowedExitCodes_ = allowedExitCodes_;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExecFile result) {
+            int from_bitField0_ = bitField0_;
+          }
+
+          private void buildPartialOneofs(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExecFile result) {
+            result.locationTypeCase_ = locationTypeCase_;
+            result.locationType_ = this.locationType_;
           }
 
           @java.lang.Override
@@ -28117,7 +28482,7 @@ public final class GuestPolicies {
             if (!other.args_.isEmpty()) {
               if (args_.isEmpty()) {
                 args_ = other.args_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000004);
               } else {
                 ensureArgsIsMutable();
                 args_.addAll(other.args_);
@@ -28127,7 +28492,7 @@ public final class GuestPolicies {
             if (!other.allowedExitCodes_.isEmpty()) {
               if (allowedExitCodes_.isEmpty()) {
                 allowedExitCodes_ = other.allowedExitCodes_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureAllowedExitCodesIsMutable();
                 allowedExitCodes_.addAll(other.allowedExitCodes_);
@@ -28524,9 +28889,9 @@ public final class GuestPolicies {
               com.google.protobuf.LazyStringArrayList.EMPTY;
 
           private void ensureArgsIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!((bitField0_ & 0x00000004) != 0)) {
               args_ = new com.google.protobuf.LazyStringArrayList(args_);
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000004;
             }
           }
           /**
@@ -28661,7 +29026,7 @@ public final class GuestPolicies {
            */
           public Builder clearArgs() {
             args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -28691,9 +29056,9 @@ public final class GuestPolicies {
           private com.google.protobuf.Internal.IntList allowedExitCodes_ = emptyIntList();
 
           private void ensureAllowedExitCodesIsMutable() {
-            if (!((bitField0_ & 0x00000002) != 0)) {
+            if (!((bitField0_ & 0x00000008) != 0)) {
               allowedExitCodes_ = mutableCopy(allowedExitCodes_);
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000008;
             }
           }
           /**
@@ -28709,7 +29074,7 @@ public final class GuestPolicies {
            * @return A list containing the allowedExitCodes.
            */
           public java.util.List<java.lang.Integer> getAllowedExitCodesList() {
-            return ((bitField0_ & 0x00000002) != 0)
+            return ((bitField0_ & 0x00000008) != 0)
                 ? java.util.Collections.unmodifiableList(allowedExitCodes_)
                 : allowedExitCodes_;
           }
@@ -28759,6 +29124,7 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder setAllowedExitCodes(int index, int value) {
+
             ensureAllowedExitCodesIsMutable();
             allowedExitCodes_.setInt(index, value);
             onChanged();
@@ -28778,6 +29144,7 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder addAllowedExitCodes(int value) {
+
             ensureAllowedExitCodesIsMutable();
             allowedExitCodes_.addInt(value);
             onChanged();
@@ -28817,7 +29184,7 @@ public final class GuestPolicies {
            */
           public Builder clearAllowedExitCodes() {
             allowedExitCodes_ = emptyIntList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
             return this;
           }
@@ -29219,7 +29586,9 @@ public final class GuestPolicies {
         }
 
         public static final int SCRIPT_FIELD_NUMBER = 1;
-        private volatile java.lang.Object script_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object script_ = "";
         /**
          *
          *
@@ -29268,6 +29637,8 @@ public final class GuestPolicies {
         }
 
         public static final int ALLOWED_EXIT_CODES_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.Internal.IntList allowedExitCodes_;
         /**
          *
@@ -29320,7 +29691,7 @@ public final class GuestPolicies {
         private int allowedExitCodesMemoizedSerializedSize = -1;
 
         public static final int INTERPRETER_FIELD_NUMBER = 3;
-        private int interpreter_;
+        private int interpreter_ = 0;
         /**
          *
          *
@@ -29361,11 +29732,10 @@ public final class GuestPolicies {
         public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript
                 .Interpreter
             getInterpreter() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript.Interpreter
               result =
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript
-                      .Interpreter.valueOf(interpreter_);
+                      .Interpreter.forNumber(interpreter_);
           return result == null
               ? com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript
                   .Interpreter.UNRECOGNIZED
@@ -29631,12 +30001,10 @@ public final class GuestPolicies {
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             script_ = "";
-
             allowedExitCodes_ = emptyIntList();
-            bitField0_ = (bitField0_ & ~0x00000001);
             interpreter_ = 0;
-
             return this;
           }
 
@@ -29670,16 +30038,32 @@ public final class GuestPolicies {
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript result =
                 new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript(
                     this);
-            int from_bitField0_ = bitField0_;
-            result.script_ = script_;
-            if (((bitField0_ & 0x00000001) != 0)) {
-              allowedExitCodes_.makeImmutable();
-              bitField0_ = (bitField0_ & ~0x00000001);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            result.allowedExitCodes_ = allowedExitCodes_;
-            result.interpreter_ = interpreter_;
             onBuilt();
             return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript result) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              allowedExitCodes_.makeImmutable();
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.allowedExitCodes_ = allowedExitCodes_;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.script_ = script_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.interpreter_ = interpreter_;
+            }
           }
 
           @java.lang.Override
@@ -29738,12 +30122,13 @@ public final class GuestPolicies {
                     .getDefaultInstance()) return this;
             if (!other.getScript().isEmpty()) {
               script_ = other.script_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.allowedExitCodes_.isEmpty()) {
               if (allowedExitCodes_.isEmpty()) {
                 allowedExitCodes_ = other.allowedExitCodes_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureAllowedExitCodesIsMutable();
                 allowedExitCodes_.addAll(other.allowedExitCodes_);
@@ -29782,7 +30167,7 @@ public final class GuestPolicies {
                   case 10:
                     {
                       script_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 16:
@@ -29806,7 +30191,7 @@ public final class GuestPolicies {
                   case 24:
                     {
                       interpreter_ = input.readEnum();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 24
                   default:
@@ -29889,8 +30274,8 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
             script_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -29906,8 +30291,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearScript() {
-
             script_ = getDefaultInstance().getScript();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -29928,8 +30313,8 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             script_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -29937,9 +30322,9 @@ public final class GuestPolicies {
           private com.google.protobuf.Internal.IntList allowedExitCodes_ = emptyIntList();
 
           private void ensureAllowedExitCodesIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!((bitField0_ & 0x00000002) != 0)) {
               allowedExitCodes_ = mutableCopy(allowedExitCodes_);
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
             }
           }
           /**
@@ -29955,7 +30340,7 @@ public final class GuestPolicies {
            * @return A list containing the allowedExitCodes.
            */
           public java.util.List<java.lang.Integer> getAllowedExitCodesList() {
-            return ((bitField0_ & 0x00000001) != 0)
+            return ((bitField0_ & 0x00000002) != 0)
                 ? java.util.Collections.unmodifiableList(allowedExitCodes_)
                 : allowedExitCodes_;
           }
@@ -30005,6 +30390,7 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder setAllowedExitCodes(int index, int value) {
+
             ensureAllowedExitCodesIsMutable();
             allowedExitCodes_.setInt(index, value);
             onChanged();
@@ -30024,6 +30410,7 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder addAllowedExitCodes(int value) {
+
             ensureAllowedExitCodesIsMutable();
             allowedExitCodes_.addInt(value);
             onChanged();
@@ -30063,7 +30450,7 @@ public final class GuestPolicies {
            */
           public Builder clearAllowedExitCodes() {
             allowedExitCodes_ = emptyIntList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -30107,8 +30494,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder setInterpreterValue(int value) {
-
             interpreter_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -30132,11 +30519,10 @@ public final class GuestPolicies {
           public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript
                   .Interpreter
               getInterpreter() {
-            @SuppressWarnings("deprecation")
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript.Interpreter
                 result =
                     com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript
-                        .Interpreter.valueOf(interpreter_);
+                        .Interpreter.forNumber(interpreter_);
             return result == null
                 ? com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScript
                     .Interpreter.UNRECOGNIZED
@@ -30166,7 +30552,7 @@ public final class GuestPolicies {
             if (value == null) {
               throw new NullPointerException();
             }
-
+            bitField0_ |= 0x00000004;
             interpreter_ = value.getNumber();
             onChanged();
             return this;
@@ -30188,7 +30574,7 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearInterpreter() {
-
+            bitField0_ = (bitField0_ & ~0x00000004);
             interpreter_ = 0;
             onChanged();
             return this;
@@ -31081,6 +31467,7 @@ public final class GuestPolicies {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (fileCopyBuilder_ != null) {
             fileCopyBuilder_.clear();
           }
@@ -31134,58 +31521,44 @@ public final class GuestPolicies {
         public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step buildPartial() {
           com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step result =
               new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step(this);
-          if (stepCase_ == 1) {
-            if (fileCopyBuilder_ == null) {
-              result.step_ = step_;
-            } else {
-              result.step_ = fileCopyBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (stepCase_ == 2) {
-            if (archiveExtractionBuilder_ == null) {
-              result.step_ = step_;
-            } else {
-              result.step_ = archiveExtractionBuilder_.build();
-            }
-          }
-          if (stepCase_ == 3) {
-            if (msiInstallationBuilder_ == null) {
-              result.step_ = step_;
-            } else {
-              result.step_ = msiInstallationBuilder_.build();
-            }
-          }
-          if (stepCase_ == 4) {
-            if (dpkgInstallationBuilder_ == null) {
-              result.step_ = step_;
-            } else {
-              result.step_ = dpkgInstallationBuilder_.build();
-            }
-          }
-          if (stepCase_ == 5) {
-            if (rpmInstallationBuilder_ == null) {
-              result.step_ = step_;
-            } else {
-              result.step_ = rpmInstallationBuilder_.build();
-            }
-          }
-          if (stepCase_ == 6) {
-            if (fileExecBuilder_ == null) {
-              result.step_ = step_;
-            } else {
-              result.step_ = fileExecBuilder_.build();
-            }
-          }
-          if (stepCase_ == 7) {
-            if (scriptRunBuilder_ == null) {
-              result.step_ = step_;
-            } else {
-              result.step_ = scriptRunBuilder_.build();
-            }
-          }
-          result.stepCase_ = stepCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step result) {
+          result.stepCase_ = stepCase_;
+          result.step_ = this.step_;
+          if (stepCase_ == 1 && fileCopyBuilder_ != null) {
+            result.step_ = fileCopyBuilder_.build();
+          }
+          if (stepCase_ == 2 && archiveExtractionBuilder_ != null) {
+            result.step_ = archiveExtractionBuilder_.build();
+          }
+          if (stepCase_ == 3 && msiInstallationBuilder_ != null) {
+            result.step_ = msiInstallationBuilder_.build();
+          }
+          if (stepCase_ == 4 && dpkgInstallationBuilder_ != null) {
+            result.step_ = dpkgInstallationBuilder_.build();
+          }
+          if (stepCase_ == 5 && rpmInstallationBuilder_ != null) {
+            result.step_ = rpmInstallationBuilder_.build();
+          }
+          if (stepCase_ == 6 && fileExecBuilder_ != null) {
+            result.step_ = fileExecBuilder_.build();
+          }
+          if (stepCase_ == 7 && scriptRunBuilder_ != null) {
+            result.step_ = scriptRunBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -31382,6 +31755,8 @@ public final class GuestPolicies {
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.CopyFile,
@@ -31612,7 +31987,6 @@ public final class GuestPolicies {
           }
           stepCase_ = 1;
           onChanged();
-          ;
           return fileCopyBuilder_;
         }
 
@@ -31874,7 +32248,6 @@ public final class GuestPolicies {
           }
           stepCase_ = 2;
           onChanged();
-          ;
           return archiveExtractionBuilder_;
         }
 
@@ -32119,7 +32492,6 @@ public final class GuestPolicies {
           }
           stepCase_ = 3;
           onChanged();
-          ;
           return msiInstallationBuilder_;
         }
 
@@ -32376,7 +32748,6 @@ public final class GuestPolicies {
           }
           stepCase_ = 4;
           onChanged();
-          ;
           return dpkgInstallationBuilder_;
         }
 
@@ -32621,7 +32992,6 @@ public final class GuestPolicies {
           }
           stepCase_ = 5;
           onChanged();
-          ;
           return rpmInstallationBuilder_;
         }
 
@@ -32854,7 +33224,6 @@ public final class GuestPolicies {
           }
           stepCase_ = 6;
           onChanged();
-          ;
           return fileExecBuilder_;
         }
 
@@ -33089,7 +33458,6 @@ public final class GuestPolicies {
           }
           stepCase_ = 7;
           onChanged();
-          ;
           return scriptRunBuilder_;
         }
 
@@ -33161,7 +33529,9 @@ public final class GuestPolicies {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -33220,7 +33590,9 @@ public final class GuestPolicies {
     }
 
     public static final int VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object version_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object version_ = "";
     /**
      *
      *
@@ -33271,6 +33643,8 @@ public final class GuestPolicies {
     }
 
     public static final int ARTIFACTS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact>
         artifacts_;
     /**
@@ -33346,6 +33720,8 @@ public final class GuestPolicies {
     }
 
     public static final int INSTALL_STEPS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step>
         installSteps_;
     /**
@@ -33430,6 +33806,8 @@ public final class GuestPolicies {
     }
 
     public static final int UPDATE_STEPS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step>
         updateSteps_;
     /**
@@ -33514,7 +33892,7 @@ public final class GuestPolicies {
     }
 
     public static final int DESIRED_STATE_FIELD_NUMBER = 6;
-    private int desiredState_;
+    private int desiredState_ = 0;
     /**
      *
      *
@@ -33559,9 +33937,8 @@ public final class GuestPolicies {
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState getDesiredState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState result =
-          com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.valueOf(desiredState_);
+          com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.forNumber(desiredState_);
       return result == null
           ? com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.UNRECOGNIZED
           : result;
@@ -33838,33 +34215,31 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         version_ = "";
-
         if (artifactsBuilder_ == null) {
           artifacts_ = java.util.Collections.emptyList();
         } else {
           artifacts_ = null;
           artifactsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (installStepsBuilder_ == null) {
           installSteps_ = java.util.Collections.emptyList();
         } else {
           installSteps_ = null;
           installStepsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (updateStepsBuilder_ == null) {
           updateSteps_ = java.util.Collections.emptyList();
         } else {
           updateSteps_ = null;
           updateStepsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         desiredState_ = 0;
-
         return this;
       }
 
@@ -33893,39 +34268,57 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe(this);
-        int from_bitField0_ = bitField0_;
-        result.name_ = name_;
-        result.version_ = version_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe result) {
         if (artifactsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             artifacts_ = java.util.Collections.unmodifiableList(artifacts_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.artifacts_ = artifacts_;
         } else {
           result.artifacts_ = artifactsBuilder_.build();
         }
         if (installStepsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             installSteps_ = java.util.Collections.unmodifiableList(installSteps_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.installSteps_ = installSteps_;
         } else {
           result.installSteps_ = installStepsBuilder_.build();
         }
         if (updateStepsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             updateSteps_ = java.util.Collections.unmodifiableList(updateSteps_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.updateSteps_ = updateSteps_;
         } else {
           result.updateSteps_ = updateStepsBuilder_.build();
         }
-        result.desiredState_ = desiredState_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.version_ = version_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.desiredState_ = desiredState_;
+        }
       }
 
       @java.lang.Override
@@ -33980,17 +34373,19 @@ public final class GuestPolicies {
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (artifactsBuilder_ == null) {
           if (!other.artifacts_.isEmpty()) {
             if (artifacts_.isEmpty()) {
               artifacts_ = other.artifacts_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureArtifactsIsMutable();
               artifacts_.addAll(other.artifacts_);
@@ -34003,7 +34398,7 @@ public final class GuestPolicies {
               artifactsBuilder_.dispose();
               artifactsBuilder_ = null;
               artifacts_ = other.artifacts_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               artifactsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getArtifactsFieldBuilder()
@@ -34017,7 +34412,7 @@ public final class GuestPolicies {
           if (!other.installSteps_.isEmpty()) {
             if (installSteps_.isEmpty()) {
               installSteps_ = other.installSteps_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureInstallStepsIsMutable();
               installSteps_.addAll(other.installSteps_);
@@ -34030,7 +34425,7 @@ public final class GuestPolicies {
               installStepsBuilder_.dispose();
               installStepsBuilder_ = null;
               installSteps_ = other.installSteps_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               installStepsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getInstallStepsFieldBuilder()
@@ -34044,7 +34439,7 @@ public final class GuestPolicies {
           if (!other.updateSteps_.isEmpty()) {
             if (updateSteps_.isEmpty()) {
               updateSteps_ = other.updateSteps_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureUpdateStepsIsMutable();
               updateSteps_.addAll(other.updateSteps_);
@@ -34057,7 +34452,7 @@ public final class GuestPolicies {
               updateStepsBuilder_.dispose();
               updateStepsBuilder_ = null;
               updateSteps_ = other.updateSteps_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000010);
               updateStepsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getUpdateStepsFieldBuilder()
@@ -34099,13 +34494,13 @@ public final class GuestPolicies {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   version_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
@@ -34156,7 +34551,7 @@ public final class GuestPolicies {
               case 48:
                 {
                   desiredState_ = input.readEnum();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               default:
@@ -34254,8 +34649,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -34276,8 +34671,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -34303,8 +34698,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -34373,8 +34768,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         version_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -34391,8 +34786,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-
         version_ = getDefaultInstance().getVersion();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -34414,8 +34809,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         version_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -34424,12 +34819,12 @@ public final class GuestPolicies {
           artifacts_ = java.util.Collections.emptyList();
 
       private void ensureArtifactsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           artifacts_ =
               new java.util.ArrayList<
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact>(
                   artifacts_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -34657,7 +35052,7 @@ public final class GuestPolicies {
       public Builder clearArtifacts() {
         if (artifactsBuilder_ == null) {
           artifacts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           artifactsBuilder_.clear();
@@ -34791,7 +35186,7 @@ public final class GuestPolicies {
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact,
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact.Builder,
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.ArtifactOrBuilder>(
-                  artifacts_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  artifacts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
           artifacts_ = null;
         }
         return artifactsBuilder_;
@@ -34801,12 +35196,12 @@ public final class GuestPolicies {
           installSteps_ = java.util.Collections.emptyList();
 
       private void ensureInstallStepsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           installSteps_ =
               new java.util.ArrayList<
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step>(
                   installSteps_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -35056,7 +35451,7 @@ public final class GuestPolicies {
       public Builder clearInstallSteps() {
         if (installStepsBuilder_ == null) {
           installSteps_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           installStepsBuilder_.clear();
@@ -35204,7 +35599,7 @@ public final class GuestPolicies {
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.Builder,
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.StepOrBuilder>(
                   installSteps_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           installSteps_ = null;
@@ -35216,11 +35611,11 @@ public final class GuestPolicies {
           updateSteps_ = java.util.Collections.emptyList();
 
       private void ensureUpdateStepsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           updateSteps_ =
               new java.util.ArrayList<
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step>(updateSteps_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000010;
         }
       }
 
@@ -35470,7 +35865,7 @@ public final class GuestPolicies {
       public Builder clearUpdateSteps() {
         if (updateStepsBuilder_ == null) {
           updateSteps_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           updateStepsBuilder_.clear();
@@ -35618,7 +36013,7 @@ public final class GuestPolicies {
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.Builder,
                   com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.StepOrBuilder>(
                   updateSteps_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           updateSteps_ = null;
@@ -35671,8 +36066,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder setDesiredStateValue(int value) {
-
         desiredState_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -35697,9 +36092,8 @@ public final class GuestPolicies {
        */
       @java.lang.Override
       public com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState getDesiredState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState result =
-            com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.valueOf(desiredState_);
+            com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.forNumber(desiredState_);
         return result == null
             ? com.google.cloud.osconfig.v1beta.GuestPolicies.DesiredState.UNRECOGNIZED
             : result;
@@ -35729,7 +36123,7 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000020;
         desiredState_ = value.getNumber();
         onChanged();
         return this;
@@ -35754,7 +36148,7 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearDesiredState() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         desiredState_ = 0;
         onChanged();
         return this;
@@ -35993,7 +36387,9 @@ public final class GuestPolicies {
     }
 
     public static final int PARENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object parent_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parent_ = "";
     /**
      *
      *
@@ -36048,7 +36444,9 @@ public final class GuestPolicies {
     }
 
     public static final int GUEST_POLICY_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object guestPolicyId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object guestPolicyId_ = "";
     /**
      *
      *
@@ -36160,7 +36558,9 @@ public final class GuestPolicies {
     @java.lang.Override
     public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicyOrBuilder
         getGuestPolicyOrBuilder() {
-      return getGuestPolicy();
+      return guestPolicy_ == null
+          ? com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy.getDefaultInstance()
+          : guestPolicy_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -36390,14 +36790,12 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parent_ = "";
-
         guestPolicyId_ = "";
-
-        if (guestPolicyBuilder_ == null) {
-          guestPolicy_ = null;
-        } else {
-          guestPolicy_ = null;
+        guestPolicy_ = null;
+        if (guestPolicyBuilder_ != null) {
+          guestPolicyBuilder_.dispose();
           guestPolicyBuilder_ = null;
         }
         return this;
@@ -36431,15 +36829,26 @@ public final class GuestPolicies {
           buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.CreateGuestPolicyRequest result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.CreateGuestPolicyRequest(this);
-        result.parent_ = parent_;
-        result.guestPolicyId_ = guestPolicyId_;
-        if (guestPolicyBuilder_ == null) {
-          result.guestPolicy_ = guestPolicy_;
-        } else {
-          result.guestPolicy_ = guestPolicyBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.CreateGuestPolicyRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parent_ = parent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.guestPolicyId_ = guestPolicyId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.guestPolicy_ =
+              guestPolicyBuilder_ == null ? guestPolicy_ : guestPolicyBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -36496,10 +36905,12 @@ public final class GuestPolicies {
                 .getDefaultInstance()) return this;
         if (!other.getParent().isEmpty()) {
           parent_ = other.parent_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getGuestPolicyId().isEmpty()) {
           guestPolicyId_ = other.guestPolicyId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasGuestPolicy()) {
@@ -36534,19 +36945,19 @@ public final class GuestPolicies {
               case 10:
                 {
                   parent_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   guestPolicyId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getGuestPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -36565,6 +36976,8 @@ public final class GuestPolicies {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object parent_ = "";
       /**
@@ -36636,8 +37049,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -36656,8 +37069,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearParent() {
-
         parent_ = getDefaultInstance().getParent();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -36681,8 +37094,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -36766,8 +37179,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         guestPolicyId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -36789,8 +37202,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearGuestPolicyId() {
-
         guestPolicyId_ = getDefaultInstance().getGuestPolicyId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -36817,8 +37230,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         guestPolicyId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -36843,7 +37256,7 @@ public final class GuestPolicies {
        * @return Whether the guestPolicy field is set.
        */
       public boolean hasGuestPolicy() {
-        return guestPolicyBuilder_ != null || guestPolicy_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -36885,11 +37298,11 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           guestPolicy_ = value;
-          onChanged();
         } else {
           guestPolicyBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -36907,11 +37320,11 @@ public final class GuestPolicies {
           com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy.Builder builderForValue) {
         if (guestPolicyBuilder_ == null) {
           guestPolicy_ = builderForValue.build();
-          onChanged();
         } else {
           guestPolicyBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -36928,19 +37341,20 @@ public final class GuestPolicies {
       public Builder mergeGuestPolicy(
           com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy value) {
         if (guestPolicyBuilder_ == null) {
-          if (guestPolicy_ != null) {
-            guestPolicy_ =
-                com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy.newBuilder(guestPolicy_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && guestPolicy_ != null
+              && guestPolicy_
+                  != com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy
+                      .getDefaultInstance()) {
+            getGuestPolicyBuilder().mergeFrom(value);
           } else {
             guestPolicy_ = value;
           }
-          onChanged();
         } else {
           guestPolicyBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -36955,14 +37369,13 @@ public final class GuestPolicies {
        * </code>
        */
       public Builder clearGuestPolicy() {
-        if (guestPolicyBuilder_ == null) {
-          guestPolicy_ = null;
-          onChanged();
-        } else {
-          guestPolicy_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        guestPolicy_ = null;
+        if (guestPolicyBuilder_ != null) {
+          guestPolicyBuilder_.dispose();
           guestPolicyBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -36978,7 +37391,7 @@ public final class GuestPolicies {
        */
       public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy.Builder
           getGuestPolicyBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getGuestPolicyFieldBuilder().getBuilder();
       }
@@ -37185,7 +37598,9 @@ public final class GuestPolicies {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -37441,8 +37856,8 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -37473,9 +37888,19 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.GetGuestPolicyRequest buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.GetGuestPolicyRequest result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.GetGuestPolicyRequest(this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.GetGuestPolicyRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -37531,6 +37956,7 @@ public final class GuestPolicies {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -37562,7 +37988,7 @@ public final class GuestPolicies {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -37581,6 +38007,8 @@ public final class GuestPolicies {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -37652,8 +38080,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -37672,8 +38100,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -37697,8 +38125,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -37898,7 +38326,9 @@ public final class GuestPolicies {
     }
 
     public static final int PARENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object parent_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parent_ = "";
     /**
      *
      *
@@ -37953,7 +38383,7 @@ public final class GuestPolicies {
     }
 
     public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-    private int pageSize_;
+    private int pageSize_ = 0;
     /**
      *
      *
@@ -37971,7 +38401,9 @@ public final class GuestPolicies {
     }
 
     public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-    private volatile java.lang.Object pageToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pageToken_ = "";
     /**
      *
      *
@@ -38243,12 +38675,10 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parent_ = "";
-
         pageSize_ = 0;
-
         pageToken_ = "";
-
         return this;
       }
 
@@ -38280,11 +38710,25 @@ public final class GuestPolicies {
           buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesRequest result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesRequest(this);
-        result.parent_ = parent_;
-        result.pageSize_ = pageSize_;
-        result.pageToken_ = pageToken_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parent_ = parent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pageSize_ = pageSize_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pageToken_ = pageToken_;
+        }
       }
 
       @java.lang.Override
@@ -38341,6 +38785,7 @@ public final class GuestPolicies {
                 .getDefaultInstance()) return this;
         if (!other.getParent().isEmpty()) {
           parent_ = other.parent_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getPageSize() != 0) {
@@ -38348,6 +38793,7 @@ public final class GuestPolicies {
         }
         if (!other.getPageToken().isEmpty()) {
           pageToken_ = other.pageToken_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -38379,19 +38825,19 @@ public final class GuestPolicies {
               case 10:
                 {
                   parent_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   pageSize_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   pageToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -38410,6 +38856,8 @@ public final class GuestPolicies {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object parent_ = "";
       /**
@@ -38481,8 +38929,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -38501,8 +38949,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearParent() {
-
         parent_ = getDefaultInstance().getParent();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -38526,8 +38974,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -38563,6 +39011,7 @@ public final class GuestPolicies {
       public Builder setPageSize(int value) {
 
         pageSize_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -38578,7 +39027,7 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearPageSize() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         pageSize_ = 0;
         onChanged();
         return this;
@@ -38648,8 +39097,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         pageToken_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -38666,8 +39115,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearPageToken() {
-
         pageToken_ = getDefaultInstance().getPageToken();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -38689,8 +39138,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         pageToken_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -38901,6 +39350,8 @@ public final class GuestPolicies {
     }
 
     public static final int GUEST_POLICIES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>
         guestPolicies_;
     /**
@@ -38974,7 +39425,9 @@ public final class GuestPolicies {
     }
 
     public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object nextPageToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nextPageToken_ = "";
     /**
      *
      *
@@ -39244,6 +39697,7 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (guestPoliciesBuilder_ == null) {
           guestPolicies_ = java.util.Collections.emptyList();
         } else {
@@ -39252,7 +39706,6 @@ public final class GuestPolicies {
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         nextPageToken_ = "";
-
         return this;
       }
 
@@ -39284,7 +39737,16 @@ public final class GuestPolicies {
           buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesResponse result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesResponse(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesResponse result) {
         if (guestPoliciesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             guestPolicies_ = java.util.Collections.unmodifiableList(guestPolicies_);
@@ -39294,9 +39756,14 @@ public final class GuestPolicies {
         } else {
           result.guestPolicies_ = guestPoliciesBuilder_.build();
         }
-        result.nextPageToken_ = nextPageToken_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nextPageToken_ = nextPageToken_;
+        }
       }
 
       @java.lang.Override
@@ -39380,6 +39847,7 @@ public final class GuestPolicies {
         }
         if (!other.getNextPageToken().isEmpty()) {
           nextPageToken_ = other.nextPageToken_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -39425,7 +39893,7 @@ public final class GuestPolicies {
               case 18:
                 {
                   nextPageToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -39882,8 +40350,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         nextPageToken_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -39900,8 +40368,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearNextPageToken() {
-
         nextPageToken_ = getDefaultInstance().getNextPageToken();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -39923,8 +40391,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         nextPageToken_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -40181,7 +40649,9 @@ public final class GuestPolicies {
     @java.lang.Override
     public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicyOrBuilder
         getGuestPolicyOrBuilder() {
-      return getGuestPolicy();
+      return guestPolicy_ == null
+          ? com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy.getDefaultInstance()
+          : guestPolicy_;
     }
 
     public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -40230,7 +40700,7 @@ public final class GuestPolicies {
      */
     @java.lang.Override
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-      return getUpdateMask();
+      return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -40456,16 +40926,15 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (guestPolicyBuilder_ == null) {
-          guestPolicy_ = null;
-        } else {
-          guestPolicy_ = null;
+        bitField0_ = 0;
+        guestPolicy_ = null;
+        if (guestPolicyBuilder_ != null) {
+          guestPolicyBuilder_.dispose();
           guestPolicyBuilder_ = null;
         }
-        if (updateMaskBuilder_ == null) {
-          updateMask_ = null;
-        } else {
-          updateMask_ = null;
+        updateMask_ = null;
+        if (updateMaskBuilder_ != null) {
+          updateMaskBuilder_.dispose();
           updateMaskBuilder_ = null;
         }
         return this;
@@ -40499,18 +40968,24 @@ public final class GuestPolicies {
           buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.UpdateGuestPolicyRequest result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.UpdateGuestPolicyRequest(this);
-        if (guestPolicyBuilder_ == null) {
-          result.guestPolicy_ = guestPolicy_;
-        } else {
-          result.guestPolicy_ = guestPolicyBuilder_.build();
-        }
-        if (updateMaskBuilder_ == null) {
-          result.updateMask_ = updateMask_;
-        } else {
-          result.updateMask_ = updateMaskBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.UpdateGuestPolicyRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.guestPolicy_ =
+              guestPolicyBuilder_ == null ? guestPolicy_ : guestPolicyBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.updateMask_ =
+              updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -40600,13 +41075,13 @@ public final class GuestPolicies {
               case 10:
                 {
                   input.readMessage(getGuestPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -40625,6 +41100,8 @@ public final class GuestPolicies {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy guestPolicy_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -40646,7 +41123,7 @@ public final class GuestPolicies {
        * @return Whether the guestPolicy field is set.
        */
       public boolean hasGuestPolicy() {
-        return guestPolicyBuilder_ != null || guestPolicy_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -40688,11 +41165,11 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           guestPolicy_ = value;
-          onChanged();
         } else {
           guestPolicyBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -40710,11 +41187,11 @@ public final class GuestPolicies {
           com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy.Builder builderForValue) {
         if (guestPolicyBuilder_ == null) {
           guestPolicy_ = builderForValue.build();
-          onChanged();
         } else {
           guestPolicyBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -40731,19 +41208,20 @@ public final class GuestPolicies {
       public Builder mergeGuestPolicy(
           com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy value) {
         if (guestPolicyBuilder_ == null) {
-          if (guestPolicy_ != null) {
-            guestPolicy_ =
-                com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy.newBuilder(guestPolicy_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && guestPolicy_ != null
+              && guestPolicy_
+                  != com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy
+                      .getDefaultInstance()) {
+            getGuestPolicyBuilder().mergeFrom(value);
           } else {
             guestPolicy_ = value;
           }
-          onChanged();
         } else {
           guestPolicyBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -40758,14 +41236,13 @@ public final class GuestPolicies {
        * </code>
        */
       public Builder clearGuestPolicy() {
-        if (guestPolicyBuilder_ == null) {
-          guestPolicy_ = null;
-          onChanged();
-        } else {
-          guestPolicy_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        guestPolicy_ = null;
+        if (guestPolicyBuilder_ != null) {
+          guestPolicyBuilder_.dispose();
           guestPolicyBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -40781,7 +41258,7 @@ public final class GuestPolicies {
        */
       public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy.Builder
           getGuestPolicyBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getGuestPolicyFieldBuilder().getBuilder();
       }
@@ -40853,7 +41330,7 @@ public final class GuestPolicies {
        * @return Whether the updateMask field is set.
        */
       public boolean hasUpdateMask() {
-        return updateMaskBuilder_ != null || updateMask_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -40892,11 +41369,11 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           updateMask_ = value;
-          onChanged();
         } else {
           updateMaskBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -40912,11 +41389,11 @@ public final class GuestPolicies {
       public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
         if (updateMaskBuilder_ == null) {
           updateMask_ = builderForValue.build();
-          onChanged();
         } else {
           updateMaskBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -40931,19 +41408,18 @@ public final class GuestPolicies {
        */
       public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
         if (updateMaskBuilder_ == null) {
-          if (updateMask_ != null) {
-            updateMask_ =
-                com.google.protobuf.FieldMask.newBuilder(updateMask_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && updateMask_ != null
+              && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+            getUpdateMaskBuilder().mergeFrom(value);
           } else {
             updateMask_ = value;
           }
-          onChanged();
         } else {
           updateMaskBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -40957,14 +41433,13 @@ public final class GuestPolicies {
        * <code>.google.protobuf.FieldMask update_mask = 2;</code>
        */
       public Builder clearUpdateMask() {
-        if (updateMaskBuilder_ == null) {
-          updateMask_ = null;
-          onChanged();
-        } else {
-          updateMask_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        updateMask_ = null;
+        if (updateMaskBuilder_ != null) {
+          updateMaskBuilder_.dispose();
           updateMaskBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -40978,7 +41453,7 @@ public final class GuestPolicies {
        * <code>.google.protobuf.FieldMask update_mask = 2;</code>
        */
       public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getUpdateMaskFieldBuilder().getBuilder();
       }
@@ -41183,7 +41658,9 @@ public final class GuestPolicies {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -41441,8 +41918,8 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -41474,9 +41951,19 @@ public final class GuestPolicies {
           buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.DeleteGuestPolicyRequest result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.DeleteGuestPolicyRequest(this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.DeleteGuestPolicyRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -41533,6 +42020,7 @@ public final class GuestPolicies {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -41564,7 +42052,7 @@ public final class GuestPolicies {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -41583,6 +42071,8 @@ public final class GuestPolicies {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -41654,8 +42144,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -41674,8 +42164,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -41699,8 +42189,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -41948,7 +42438,9 @@ public final class GuestPolicies {
     }
 
     public static final int INSTANCE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object instance_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object instance_ = "";
     /**
      *
      *
@@ -41997,7 +42489,9 @@ public final class GuestPolicies {
     }
 
     public static final int OS_SHORT_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object osShortName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object osShortName_ = "";
     /**
      *
      *
@@ -42050,7 +42544,9 @@ public final class GuestPolicies {
     }
 
     public static final int OS_VERSION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object osVersion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object osVersion_ = "";
     /**
      *
      *
@@ -42103,7 +42599,9 @@ public final class GuestPolicies {
     }
 
     public static final int OS_ARCHITECTURE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object osArchitecture_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object osArchitecture_ = "";
     /**
      *
      *
@@ -42395,14 +42893,11 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         instance_ = "";
-
         osShortName_ = "";
-
         osVersion_ = "";
-
         osArchitecture_ = "";
-
         return this;
       }
 
@@ -42436,12 +42931,28 @@ public final class GuestPolicies {
         com.google.cloud.osconfig.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest(
                 this);
-        result.instance_ = instance_;
-        result.osShortName_ = osShortName_;
-        result.osVersion_ = osVersion_;
-        result.osArchitecture_ = osArchitecture_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.instance_ = instance_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.osShortName_ = osShortName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.osVersion_ = osVersion_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.osArchitecture_ = osArchitecture_;
+        }
       }
 
       @java.lang.Override
@@ -42500,18 +43011,22 @@ public final class GuestPolicies {
                 .getDefaultInstance()) return this;
         if (!other.getInstance().isEmpty()) {
           instance_ = other.instance_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getOsShortName().isEmpty()) {
           osShortName_ = other.osShortName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getOsVersion().isEmpty()) {
           osVersion_ = other.osVersion_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getOsArchitecture().isEmpty()) {
           osArchitecture_ = other.osArchitecture_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -42543,25 +43058,25 @@ public final class GuestPolicies {
               case 10:
                 {
                   instance_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   osShortName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   osVersion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   osArchitecture_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -42580,6 +43095,8 @@ public final class GuestPolicies {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object instance_ = "";
       /**
@@ -42642,8 +43159,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         instance_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -42659,8 +43176,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearInstance() {
-
         instance_ = getDefaultInstance().getInstance();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -42681,8 +43198,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         instance_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -42754,8 +43271,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         osShortName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -42773,8 +43290,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearOsShortName() {
-
         osShortName_ = getDefaultInstance().getOsShortName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -42797,8 +43314,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         osShortName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -42870,8 +43387,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         osVersion_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -42889,8 +43406,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearOsVersion() {
-
         osVersion_ = getDefaultInstance().getOsVersion();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -42913,8 +43430,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         osVersion_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -42986,8 +43503,8 @@ public final class GuestPolicies {
         if (value == null) {
           throw new NullPointerException();
         }
-
         osArchitecture_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -43005,8 +43522,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearOsArchitecture() {
-
         osArchitecture_ = getDefaultInstance().getOsArchitecture();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -43029,8 +43546,8 @@ public final class GuestPolicies {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         osArchitecture_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -43488,7 +44005,9 @@ public final class GuestPolicies {
       }
 
       public static final int SOURCE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object source_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object source_ = "";
       /**
        *
        *
@@ -43581,7 +44100,9 @@ public final class GuestPolicies {
        */
       @java.lang.Override
       public com.google.cloud.osconfig.v1beta.GuestPolicies.PackageOrBuilder getPackageOrBuilder() {
-        return getPackage();
+        return package_ == null
+            ? com.google.cloud.osconfig.v1beta.GuestPolicies.Package.getDefaultInstance()
+            : package_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -43826,12 +44347,11 @@ public final class GuestPolicies {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           source_ = "";
-
-          if (packageBuilder_ == null) {
-            package_ = null;
-          } else {
-            package_ = null;
+          package_ = null;
+          if (packageBuilder_ != null) {
+            packageBuilder_.dispose();
             packageBuilder_ = null;
           }
           return this;
@@ -43868,14 +44388,23 @@ public final class GuestPolicies {
               result =
                   new com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy
                       .SourcedPackage(this);
-          result.source_ = source_;
-          if (packageBuilder_ == null) {
-            result.package_ = package_;
-          } else {
-            result.package_ = packageBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy.SourcedPackage
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.source_ = source_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.package_ = packageBuilder_ == null ? package_ : packageBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -43935,6 +44464,7 @@ public final class GuestPolicies {
                   .getDefaultInstance()) return this;
           if (!other.getSource().isEmpty()) {
             source_ = other.source_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.hasPackage()) {
@@ -43969,13 +44499,13 @@ public final class GuestPolicies {
                 case 10:
                   {
                     source_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     input.readMessage(getPackageFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -43994,6 +44524,8 @@ public final class GuestPolicies {
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object source_ = "";
         /**
@@ -44056,8 +44588,8 @@ public final class GuestPolicies {
           if (value == null) {
             throw new NullPointerException();
           }
-
           source_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -44073,8 +44605,8 @@ public final class GuestPolicies {
          * @return This builder for chaining.
          */
         public Builder clearSource() {
-
           source_ = getDefaultInstance().getSource();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -44095,8 +44627,8 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           source_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -44119,7 +44651,7 @@ public final class GuestPolicies {
          * @return Whether the package field is set.
          */
         public boolean hasPackage() {
-          return packageBuilder_ != null || package_ != null;
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          *
@@ -44156,11 +44688,11 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             package_ = value;
-            onChanged();
           } else {
             packageBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -44176,11 +44708,11 @@ public final class GuestPolicies {
             com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Builder builderForValue) {
           if (packageBuilder_ == null) {
             package_ = builderForValue.build();
-            onChanged();
           } else {
             packageBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -44194,19 +44726,20 @@ public final class GuestPolicies {
          */
         public Builder mergePackage(com.google.cloud.osconfig.v1beta.GuestPolicies.Package value) {
           if (packageBuilder_ == null) {
-            if (package_ != null) {
-              package_ =
-                  com.google.cloud.osconfig.v1beta.GuestPolicies.Package.newBuilder(package_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000002) != 0)
+                && package_ != null
+                && package_
+                    != com.google.cloud.osconfig.v1beta.GuestPolicies.Package
+                        .getDefaultInstance()) {
+              getPackageBuilder().mergeFrom(value);
             } else {
               package_ = value;
             }
-            onChanged();
           } else {
             packageBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -44219,14 +44752,13 @@ public final class GuestPolicies {
          * <code>.google.cloud.osconfig.v1beta.Package package = 2;</code>
          */
         public Builder clearPackage() {
-          if (packageBuilder_ == null) {
-            package_ = null;
-            onChanged();
-          } else {
-            package_ = null;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          package_ = null;
+          if (packageBuilder_ != null) {
+            packageBuilder_.dispose();
             packageBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -44239,7 +44771,7 @@ public final class GuestPolicies {
          * <code>.google.cloud.osconfig.v1beta.Package package = 2;</code>
          */
         public com.google.cloud.osconfig.v1beta.GuestPolicies.Package.Builder getPackageBuilder() {
-
+          bitField0_ |= 0x00000002;
           onChanged();
           return getPackageFieldBuilder().getBuilder();
         }
@@ -44479,7 +45011,9 @@ public final class GuestPolicies {
       }
 
       public static final int SOURCE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object source_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object source_ = "";
       /**
        *
        *
@@ -44574,7 +45108,9 @@ public final class GuestPolicies {
       @java.lang.Override
       public com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepositoryOrBuilder
           getPackageRepositoryOrBuilder() {
-        return getPackageRepository();
+        return packageRepository_ == null
+            ? com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository.getDefaultInstance()
+            : packageRepository_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -44825,12 +45361,11 @@ public final class GuestPolicies {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           source_ = "";
-
-          if (packageRepositoryBuilder_ == null) {
-            packageRepository_ = null;
-          } else {
-            packageRepository_ = null;
+          packageRepository_ = null;
+          if (packageRepositoryBuilder_ != null) {
+            packageRepositoryBuilder_.dispose();
             packageRepositoryBuilder_ = null;
           }
           return this;
@@ -44872,14 +45407,27 @@ public final class GuestPolicies {
               result =
                   new com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy
                       .SourcedPackageRepository(this);
-          result.source_ = source_;
-          if (packageRepositoryBuilder_ == null) {
-            result.packageRepository_ = packageRepository_;
-          } else {
-            result.packageRepository_ = packageRepositoryBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy
+                    .SourcedPackageRepository
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.source_ = source_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.packageRepository_ =
+                packageRepositoryBuilder_ == null
+                    ? packageRepository_
+                    : packageRepositoryBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -44942,6 +45490,7 @@ public final class GuestPolicies {
                   .SourcedPackageRepository.getDefaultInstance()) return this;
           if (!other.getSource().isEmpty()) {
             source_ = other.source_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.hasPackageRepository()) {
@@ -44976,14 +45525,14 @@ public final class GuestPolicies {
                 case 10:
                   {
                     source_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     input.readMessage(
                         getPackageRepositoryFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -45002,6 +45551,8 @@ public final class GuestPolicies {
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object source_ = "";
         /**
@@ -45064,8 +45615,8 @@ public final class GuestPolicies {
           if (value == null) {
             throw new NullPointerException();
           }
-
           source_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -45081,8 +45632,8 @@ public final class GuestPolicies {
          * @return This builder for chaining.
          */
         public Builder clearSource() {
-
           source_ = getDefaultInstance().getSource();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -45103,8 +45654,8 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           source_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -45127,7 +45678,7 @@ public final class GuestPolicies {
          * @return Whether the packageRepository field is set.
          */
         public boolean hasPackageRepository() {
-          return packageRepositoryBuilder_ != null || packageRepository_ != null;
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          *
@@ -45167,11 +45718,11 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             packageRepository_ = value;
-            onChanged();
           } else {
             packageRepositoryBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -45188,11 +45739,11 @@ public final class GuestPolicies {
                 builderForValue) {
           if (packageRepositoryBuilder_ == null) {
             packageRepository_ = builderForValue.build();
-            onChanged();
           } else {
             packageRepositoryBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -45207,20 +45758,20 @@ public final class GuestPolicies {
         public Builder mergePackageRepository(
             com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository value) {
           if (packageRepositoryBuilder_ == null) {
-            if (packageRepository_ != null) {
-              packageRepository_ =
-                  com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository.newBuilder(
-                          packageRepository_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000002) != 0)
+                && packageRepository_ != null
+                && packageRepository_
+                    != com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository
+                        .getDefaultInstance()) {
+              getPackageRepositoryBuilder().mergeFrom(value);
             } else {
               packageRepository_ = value;
             }
-            onChanged();
           } else {
             packageRepositoryBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -45233,14 +45784,13 @@ public final class GuestPolicies {
          * <code>.google.cloud.osconfig.v1beta.PackageRepository package_repository = 2;</code>
          */
         public Builder clearPackageRepository() {
-          if (packageRepositoryBuilder_ == null) {
-            packageRepository_ = null;
-            onChanged();
-          } else {
-            packageRepository_ = null;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          packageRepository_ = null;
+          if (packageRepositoryBuilder_ != null) {
+            packageRepositoryBuilder_.dispose();
             packageRepositoryBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -45254,7 +45804,7 @@ public final class GuestPolicies {
          */
         public com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository.Builder
             getPackageRepositoryBuilder() {
-
+          bitField0_ |= 0x00000002;
           onChanged();
           return getPackageRepositoryFieldBuilder().getBuilder();
         }
@@ -45494,7 +46044,9 @@ public final class GuestPolicies {
       }
 
       public static final int SOURCE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object source_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object source_ = "";
       /**
        *
        *
@@ -45588,7 +46140,9 @@ public final class GuestPolicies {
       @java.lang.Override
       public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipeOrBuilder
           getSoftwareRecipeOrBuilder() {
-        return getSoftwareRecipe();
+        return softwareRecipe_ == null
+            ? com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.getDefaultInstance()
+            : softwareRecipe_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -45837,12 +46391,11 @@ public final class GuestPolicies {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           source_ = "";
-
-          if (softwareRecipeBuilder_ == null) {
-            softwareRecipe_ = null;
-          } else {
-            softwareRecipe_ = null;
+          softwareRecipe_ = null;
+          if (softwareRecipeBuilder_ != null) {
+            softwareRecipeBuilder_.dispose();
             softwareRecipeBuilder_ = null;
           }
           return this;
@@ -45882,14 +46435,25 @@ public final class GuestPolicies {
               result =
                   new com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy
                       .SourcedSoftwareRecipe(this);
-          result.source_ = source_;
-          if (softwareRecipeBuilder_ == null) {
-            result.softwareRecipe_ = softwareRecipe_;
-          } else {
-            result.softwareRecipe_ = softwareRecipeBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy
+                    .SourcedSoftwareRecipe
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.source_ = source_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.softwareRecipe_ =
+                softwareRecipeBuilder_ == null ? softwareRecipe_ : softwareRecipeBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -45952,6 +46516,7 @@ public final class GuestPolicies {
                   .SourcedSoftwareRecipe.getDefaultInstance()) return this;
           if (!other.getSource().isEmpty()) {
             source_ = other.source_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.hasSoftwareRecipe()) {
@@ -45986,14 +46551,14 @@ public final class GuestPolicies {
                 case 10:
                   {
                     source_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     input.readMessage(
                         getSoftwareRecipeFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -46012,6 +46577,8 @@ public final class GuestPolicies {
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object source_ = "";
         /**
@@ -46074,8 +46641,8 @@ public final class GuestPolicies {
           if (value == null) {
             throw new NullPointerException();
           }
-
           source_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -46091,8 +46658,8 @@ public final class GuestPolicies {
          * @return This builder for chaining.
          */
         public Builder clearSource() {
-
           source_ = getDefaultInstance().getSource();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -46113,8 +46680,8 @@ public final class GuestPolicies {
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           source_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -46137,7 +46704,7 @@ public final class GuestPolicies {
          * @return Whether the softwareRecipe field is set.
          */
         public boolean hasSoftwareRecipe() {
-          return softwareRecipeBuilder_ != null || softwareRecipe_ != null;
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          *
@@ -46175,11 +46742,11 @@ public final class GuestPolicies {
               throw new NullPointerException();
             }
             softwareRecipe_ = value;
-            onChanged();
           } else {
             softwareRecipeBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -46195,11 +46762,11 @@ public final class GuestPolicies {
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Builder builderForValue) {
           if (softwareRecipeBuilder_ == null) {
             softwareRecipe_ = builderForValue.build();
-            onChanged();
           } else {
             softwareRecipeBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -46214,20 +46781,20 @@ public final class GuestPolicies {
         public Builder mergeSoftwareRecipe(
             com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe value) {
           if (softwareRecipeBuilder_ == null) {
-            if (softwareRecipe_ != null) {
-              softwareRecipe_ =
-                  com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.newBuilder(
-                          softwareRecipe_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000002) != 0)
+                && softwareRecipe_ != null
+                && softwareRecipe_
+                    != com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe
+                        .getDefaultInstance()) {
+              getSoftwareRecipeBuilder().mergeFrom(value);
             } else {
               softwareRecipe_ = value;
             }
-            onChanged();
           } else {
             softwareRecipeBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -46240,14 +46807,13 @@ public final class GuestPolicies {
          * <code>.google.cloud.osconfig.v1beta.SoftwareRecipe software_recipe = 2;</code>
          */
         public Builder clearSoftwareRecipe() {
-          if (softwareRecipeBuilder_ == null) {
-            softwareRecipe_ = null;
-            onChanged();
-          } else {
-            softwareRecipe_ = null;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          softwareRecipe_ = null;
+          if (softwareRecipeBuilder_ != null) {
+            softwareRecipeBuilder_.dispose();
             softwareRecipeBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -46261,7 +46827,7 @@ public final class GuestPolicies {
          */
         public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Builder
             getSoftwareRecipeBuilder() {
-
+          bitField0_ |= 0x00000002;
           onChanged();
           return getSoftwareRecipeFieldBuilder().getBuilder();
         }
@@ -46383,6 +46949,8 @@ public final class GuestPolicies {
     }
 
     public static final int PACKAGES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy.SourcedPackage>
         packages_;
@@ -46472,6 +47040,8 @@ public final class GuestPolicies {
     }
 
     public static final int PACKAGE_REPOSITORIES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy
                 .SourcedPackageRepository>
@@ -46564,6 +47134,8 @@ public final class GuestPolicies {
     }
 
     public static final int SOFTWARE_RECIPES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy
                 .SourcedSoftwareRecipe>
@@ -46883,6 +47455,7 @@ public final class GuestPolicies {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (packagesBuilder_ == null) {
           packages_ = java.util.Collections.emptyList();
         } else {
@@ -46933,7 +47506,16 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy result) {
         if (packagesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             packages_ = java.util.Collections.unmodifiableList(packages_);
@@ -46961,8 +47543,11 @@ public final class GuestPolicies {
         } else {
           result.softwareRecipes_ = softwareRecipesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override

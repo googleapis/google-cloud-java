@@ -68,6 +68,8 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CATALOG_ITEMS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommendationengine.v1beta1.CatalogItem> catalogItems_;
   /**
    *
@@ -356,6 +358,7 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (catalogItemsBuilder_ == null) {
         catalogItems_ = java.util.Collections.emptyList();
       } else {
@@ -391,7 +394,16 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
     public com.google.cloud.recommendationengine.v1beta1.CatalogInlineSource buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.CatalogInlineSource result =
           new com.google.cloud.recommendationengine.v1beta1.CatalogInlineSource(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.recommendationengine.v1beta1.CatalogInlineSource result) {
       if (catalogItemsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           catalogItems_ = java.util.Collections.unmodifiableList(catalogItems_);
@@ -401,8 +413,11 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       } else {
         result.catalogItems_ = catalogItemsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommendationengine.v1beta1.CatalogInlineSource result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

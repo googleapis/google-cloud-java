@@ -294,7 +294,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
   }
 
   public static final int HEALTH_STATE_FIELD_NUMBER = 1;
-  private int healthState_;
+  private int healthState_ = 0;
   /**
    *
    *
@@ -327,9 +327,8 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState getHealthState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState result =
-        com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState.valueOf(healthState_);
+        com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState.forNumber(healthState_);
     return result == null
         ? com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState.UNRECOGNIZED
         : result;
@@ -348,6 +347,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> healthInfo_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHealthInfo() {
@@ -432,8 +432,10 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getHealthInfoOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getHealthInfoOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -711,8 +713,8 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       healthState_ = 0;
-
       internalGetMutableHealthInfo().clear();
       return this;
     }
@@ -741,12 +743,22 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     public com.google.cloud.notebooks.v1.GetInstanceHealthResponse buildPartial() {
       com.google.cloud.notebooks.v1.GetInstanceHealthResponse result =
           new com.google.cloud.notebooks.v1.GetInstanceHealthResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.healthState_ = healthState_;
-      result.healthInfo_ = internalGetHealthInfo();
-      result.healthInfo_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.GetInstanceHealthResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.healthState_ = healthState_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.healthInfo_ = internalGetHealthInfo();
+        result.healthInfo_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -799,6 +811,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
         setHealthStateValue(other.getHealthStateValue());
       }
       internalGetMutableHealthInfo().mergeFrom(other.internalGetHealthInfo());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -828,7 +841,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
             case 8:
               {
                 healthState_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -840,6 +853,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
                 internalGetMutableHealthInfo()
                     .getMutableMap()
                     .put(healthInfo__.getKey(), healthInfo__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -894,8 +908,8 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setHealthStateValue(int value) {
-
       healthState_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -914,9 +928,9 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState getHealthState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState result =
-          com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState.valueOf(healthState_);
+          com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState.forNumber(
+              healthState_);
       return result == null
           ? com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState.UNRECOGNIZED
           : result;
@@ -940,7 +954,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       healthState_ = value.getNumber();
       onChanged();
       return this;
@@ -959,7 +973,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearHealthState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       healthState_ = 0;
       onChanged();
       return this;
@@ -978,8 +992,6 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableHealthInfo() {
-      onChanged();
-      ;
       if (healthInfo_ == null) {
         healthInfo_ =
             com.google.protobuf.MapField.newMapField(HealthInfoDefaultEntryHolder.defaultEntry);
@@ -987,6 +999,8 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
       if (!healthInfo_.isMutable()) {
         healthInfo_ = healthInfo_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return healthInfo_;
     }
 
@@ -1065,8 +1079,10 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getHealthInfoOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getHealthInfoOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1104,6 +1120,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     }
 
     public Builder clearHealthInfo() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableHealthInfo().getMutableMap().clear();
       return this;
     }
@@ -1135,6 +1152,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHealthInfo() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableHealthInfo().getMutableMap();
     }
     /**
@@ -1162,8 +1180,8 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableHealthInfo().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1186,6 +1204,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      */
     public Builder putAllHealthInfo(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableHealthInfo().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

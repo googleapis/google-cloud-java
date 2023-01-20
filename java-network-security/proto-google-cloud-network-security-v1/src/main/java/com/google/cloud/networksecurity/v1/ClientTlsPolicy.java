@@ -84,7 +84,9 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -229,7 +233,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
@@ -278,7 +282,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 5;
@@ -294,6 +298,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -351,7 +356,10 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -380,7 +388,9 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SNI_FIELD_NUMBER = 6;
-  private volatile java.lang.Object sni_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sni_ = "";
   /**
    *
    *
@@ -485,10 +495,14 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.networksecurity.v1.CertificateProviderOrBuilder
       getClientCertificateOrBuilder() {
-    return getClientCertificate();
+    return clientCertificate_ == null
+        ? com.google.cloud.networksecurity.v1.CertificateProvider.getDefaultInstance()
+        : clientCertificate_;
   }
 
   public static final int SERVER_VALIDATION_CA_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networksecurity.v1.ValidationCA> serverValidationCa_;
   /**
    *
@@ -887,29 +901,24 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       sni_ = "";
-
-      if (clientCertificateBuilder_ == null) {
-        clientCertificate_ = null;
-      } else {
-        clientCertificate_ = null;
+      clientCertificate_ = null;
+      if (clientCertificateBuilder_ != null) {
+        clientCertificateBuilder_.dispose();
         clientCertificateBuilder_ = null;
       }
       if (serverValidationCaBuilder_ == null) {
@@ -918,7 +927,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         serverValidationCa_ = null;
         serverValidationCaBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -946,38 +955,54 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.networksecurity.v1.ClientTlsPolicy buildPartial() {
       com.google.cloud.networksecurity.v1.ClientTlsPolicy result =
           new com.google.cloud.networksecurity.v1.ClientTlsPolicy(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.description_ = description_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.sni_ = sni_;
-      if (clientCertificateBuilder_ == null) {
-        result.clientCertificate_ = clientCertificate_;
-      } else {
-        result.clientCertificate_ = clientCertificateBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networksecurity.v1.ClientTlsPolicy result) {
       if (serverValidationCaBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           serverValidationCa_ = java.util.Collections.unmodifiableList(serverValidationCa_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.serverValidationCa_ = serverValidationCa_;
       } else {
         result.serverValidationCa_ = serverValidationCaBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networksecurity.v1.ClientTlsPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sni_ = sni_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.clientCertificate_ =
+            clientCertificateBuilder_ == null
+                ? clientCertificate_
+                : clientCertificateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1028,10 +1053,12 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1041,8 +1068,10 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000010;
       if (!other.getSni().isEmpty()) {
         sni_ = other.sni_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasClientCertificate()) {
@@ -1052,7 +1081,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         if (!other.serverValidationCa_.isEmpty()) {
           if (serverValidationCa_.isEmpty()) {
             serverValidationCa_ = other.serverValidationCa_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureServerValidationCaIsMutable();
             serverValidationCa_.addAll(other.serverValidationCa_);
@@ -1065,7 +1094,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
             serverValidationCaBuilder_.dispose();
             serverValidationCaBuilder_ = null;
             serverValidationCa_ = other.serverValidationCa_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000080);
             serverValidationCaBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServerValidationCaFieldBuilder()
@@ -1104,25 +1133,25 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1134,19 +1163,20 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 sni_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getClientCertificateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1246,8 +1276,8 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1264,8 +1294,8 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1287,8 +1317,8 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1354,8 +1384,8 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1371,8 +1401,8 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1393,8 +1423,8 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1419,7 +1449,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1460,11 +1490,11 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1481,11 +1511,11 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1501,17 +1531,18 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1526,14 +1557,13 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1548,7 +1578,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1620,7 +1650,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1661,11 +1691,11 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1682,11 +1712,11 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1702,17 +1732,18 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1727,14 +1758,13 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1749,7 +1779,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1812,14 +1842,14 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return labels_;
     }
 
@@ -1871,8 +1901,10 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1901,6 +1933,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1923,6 +1956,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1941,8 +1975,8 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1956,6 +1990,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -2023,8 +2058,8 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       sni_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2041,8 +2076,8 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSni() {
-
       sni_ = getDefaultInstance().getSni();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2064,8 +2099,8 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sni_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2091,7 +2126,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * @return Whether the clientCertificate field is set.
      */
     public boolean hasClientCertificate() {
-      return clientCertificateBuilder_ != null || clientCertificate_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2135,11 +2170,11 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         clientCertificate_ = value;
-        onChanged();
       } else {
         clientCertificateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2158,11 +2193,11 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.networksecurity.v1.CertificateProvider.Builder builderForValue) {
       if (clientCertificateBuilder_ == null) {
         clientCertificate_ = builderForValue.build();
-        onChanged();
       } else {
         clientCertificateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2180,19 +2215,19 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     public Builder mergeClientCertificate(
         com.google.cloud.networksecurity.v1.CertificateProvider value) {
       if (clientCertificateBuilder_ == null) {
-        if (clientCertificate_ != null) {
-          clientCertificate_ =
-              com.google.cloud.networksecurity.v1.CertificateProvider.newBuilder(clientCertificate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && clientCertificate_ != null
+            && clientCertificate_
+                != com.google.cloud.networksecurity.v1.CertificateProvider.getDefaultInstance()) {
+          getClientCertificateBuilder().mergeFrom(value);
         } else {
           clientCertificate_ = value;
         }
-        onChanged();
       } else {
         clientCertificateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2208,14 +2243,13 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearClientCertificate() {
-      if (clientCertificateBuilder_ == null) {
-        clientCertificate_ = null;
-        onChanged();
-      } else {
-        clientCertificate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      clientCertificate_ = null;
+      if (clientCertificateBuilder_ != null) {
+        clientCertificateBuilder_.dispose();
         clientCertificateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2232,7 +2266,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.networksecurity.v1.CertificateProvider.Builder
         getClientCertificateBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getClientCertificateFieldBuilder().getBuilder();
     }
@@ -2291,11 +2325,11 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureServerValidationCaIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         serverValidationCa_ =
             new java.util.ArrayList<com.google.cloud.networksecurity.v1.ValidationCA>(
                 serverValidationCa_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2558,7 +2592,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     public Builder clearServerValidationCa() {
       if (serverValidationCaBuilder_ == null) {
         serverValidationCa_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         serverValidationCaBuilder_.clear();
@@ -2712,7 +2746,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.networksecurity.v1.ValidationCA.Builder,
                 com.google.cloud.networksecurity.v1.ValidationCAOrBuilder>(
                 serverValidationCa_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         serverValidationCa_ = null;

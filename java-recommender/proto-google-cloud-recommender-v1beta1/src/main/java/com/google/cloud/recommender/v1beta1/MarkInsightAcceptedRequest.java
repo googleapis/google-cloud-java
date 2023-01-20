@@ -80,7 +80,9 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -145,6 +147,7 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> stateMetadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -210,8 +213,10 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getStateMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getStateMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -242,7 +247,9 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
   }
 
   public static final int ETAG_FIELD_NUMBER = 3;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -534,11 +541,10 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       internalGetMutableStateMetadata().clear();
       etag_ = "";
-
       return this;
     }
 
@@ -567,13 +573,26 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
     public com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest buildPartial() {
       com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest result =
           new com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.stateMetadata_ = internalGetStateMetadata();
-      result.stateMetadata_.makeImmutable();
-      result.etag_ = etag_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stateMetadata_ = internalGetStateMetadata();
+        result.stateMetadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -626,11 +645,14 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableStateMetadata().mergeFrom(other.internalGetStateMetadata());
+      bitField0_ |= 0x00000002;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -662,7 +684,7 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -674,12 +696,13 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
                 internalGetMutableStateMetadata()
                     .getMutableMap()
                     .put(stateMetadata__.getKey(), stateMetadata__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -768,8 +791,8 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -787,8 +810,8 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -811,8 +834,8 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -830,8 +853,6 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableStateMetadata() {
-      onChanged();
-      ;
       if (stateMetadata_ == null) {
         stateMetadata_ =
             com.google.protobuf.MapField.newMapField(StateMetadataDefaultEntryHolder.defaultEntry);
@@ -839,6 +860,8 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
       if (!stateMetadata_.isMutable()) {
         stateMetadata_ = stateMetadata_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return stateMetadata_;
     }
 
@@ -896,8 +919,10 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getStateMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getStateMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -928,6 +953,7 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
     }
 
     public Builder clearStateMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableStateMetadata().getMutableMap().clear();
       return this;
     }
@@ -952,6 +978,7 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableStateMetadata() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableStateMetadata().getMutableMap();
     }
     /**
@@ -972,8 +999,8 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableStateMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -989,6 +1016,7 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
      */
     public Builder putAllStateMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableStateMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1053,8 +1081,8 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1070,8 +1098,8 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1092,8 +1120,8 @@ public final class MarkInsightAcceptedRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

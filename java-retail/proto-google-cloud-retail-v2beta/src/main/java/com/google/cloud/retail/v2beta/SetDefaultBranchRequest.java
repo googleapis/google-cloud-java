@@ -70,7 +70,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
   }
 
   public static final int CATALOG_FIELD_NUMBER = 1;
-  private volatile java.lang.Object catalog_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object catalog_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
   }
 
   public static final int BRANCH_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object branchId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object branchId_ = "";
   /**
    *
    *
@@ -180,7 +184,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
   }
 
   public static final int NOTE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object note_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object note_ = "";
   /**
    *
    *
@@ -237,7 +243,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
   }
 
   public static final int FORCE_FIELD_NUMBER = 4;
-  private boolean force_;
+  private boolean force_ = false;
   /**
    *
    *
@@ -481,14 +487,11 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       catalog_ = "";
-
       branchId_ = "";
-
       note_ = "";
-
       force_ = false;
-
       return this;
     }
 
@@ -516,12 +519,27 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     public com.google.cloud.retail.v2beta.SetDefaultBranchRequest buildPartial() {
       com.google.cloud.retail.v2beta.SetDefaultBranchRequest result =
           new com.google.cloud.retail.v2beta.SetDefaultBranchRequest(this);
-      result.catalog_ = catalog_;
-      result.branchId_ = branchId_;
-      result.note_ = note_;
-      result.force_ = force_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.SetDefaultBranchRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.catalog_ = catalog_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.branchId_ = branchId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.note_ = note_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.force_ = force_;
+      }
     }
 
     @java.lang.Override
@@ -572,14 +590,17 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getCatalog().isEmpty()) {
         catalog_ = other.catalog_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getBranchId().isEmpty()) {
         branchId_ = other.branchId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getNote().isEmpty()) {
         note_ = other.note_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getForce() != false) {
@@ -614,25 +635,25 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
             case 10:
               {
                 catalog_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 branchId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 note_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 force_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -651,6 +672,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object catalog_ = "";
     /**
@@ -716,8 +739,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       catalog_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -734,8 +757,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearCatalog() {
-
       catalog_ = getDefaultInstance().getCatalog();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -757,8 +780,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       catalog_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -839,8 +862,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       branchId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -861,8 +884,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearBranchId() {
-
       branchId_ = getDefaultInstance().getBranchId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -888,8 +911,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       branchId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -967,8 +990,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       note_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -988,8 +1011,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearNote() {
-
       note_ = getDefaultInstance().getNote();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1014,8 +1037,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       note_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1055,6 +1078,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     public Builder setForce(boolean value) {
 
       force_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1072,7 +1096,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       force_ = false;
       onChanged();
       return this;

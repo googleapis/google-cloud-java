@@ -71,7 +71,9 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int QUERY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -186,7 +188,9 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -239,7 +243,7 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -476,12 +480,10 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       query_ = "";
-
       pageToken_ = "";
-
       pageSize_ = 0;
-
       return this;
     }
 
@@ -509,11 +511,24 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.resourcemanager.v3.SearchProjectsRequest buildPartial() {
       com.google.cloud.resourcemanager.v3.SearchProjectsRequest result =
           new com.google.cloud.resourcemanager.v3.SearchProjectsRequest(this);
-      result.query_ = query_;
-      result.pageToken_ = pageToken_;
-      result.pageSize_ = pageSize_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcemanager.v3.SearchProjectsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
     }
 
     @java.lang.Override
@@ -564,10 +579,12 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -602,19 +619,19 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -633,6 +650,8 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object query_ = "";
     /**
@@ -794,8 +813,8 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,8 +863,8 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -899,8 +918,8 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -972,8 +991,8 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -991,8 +1010,8 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1015,8 +1034,8 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1056,6 +1075,7 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1073,7 +1093,7 @@ public final class SearchProjectsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;

@@ -70,7 +70,9 @@ public final class WebServerConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object machineType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
   /**
    *
    *
@@ -330,8 +332,8 @@ public final class WebServerConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       machineType_ = "";
-
       return this;
     }
 
@@ -360,9 +362,19 @@ public final class WebServerConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.orchestration.airflow.service.v1.WebServerConfig buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.WebServerConfig result =
           new com.google.cloud.orchestration.airflow.service.v1.WebServerConfig(this);
-      result.machineType_ = machineType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.WebServerConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.machineType_ = machineType_;
+      }
     }
 
     @java.lang.Override
@@ -415,6 +427,7 @@ public final class WebServerConfig extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -446,7 +459,7 @@ public final class WebServerConfig extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 machineType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -465,6 +478,8 @@ public final class WebServerConfig extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object machineType_ = "";
     /**
@@ -542,8 +557,8 @@ public final class WebServerConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -564,8 +579,8 @@ public final class WebServerConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
       machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -591,8 +606,8 @@ public final class WebServerConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

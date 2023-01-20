@@ -68,6 +68,8 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int OPERATION_GROUPS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommender.v1beta1.OperationGroup> operationGroups_;
   /**
    *
@@ -191,7 +193,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getOverviewOrBuilder() {
-    return getOverview();
+    return overview_ == null ? com.google.protobuf.Struct.getDefaultInstance() : overview_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -408,6 +410,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (operationGroupsBuilder_ == null) {
         operationGroups_ = java.util.Collections.emptyList();
       } else {
@@ -415,10 +418,9 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         operationGroupsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (overviewBuilder_ == null) {
-        overview_ = null;
-      } else {
-        overview_ = null;
+      overview_ = null;
+      if (overviewBuilder_ != null) {
+        overviewBuilder_.dispose();
         overviewBuilder_ = null;
       }
       return this;
@@ -448,7 +450,16 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     public com.google.cloud.recommender.v1beta1.RecommendationContent buildPartial() {
       com.google.cloud.recommender.v1beta1.RecommendationContent result =
           new com.google.cloud.recommender.v1beta1.RecommendationContent(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.recommender.v1beta1.RecommendationContent result) {
       if (operationGroupsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           operationGroups_ = java.util.Collections.unmodifiableList(operationGroups_);
@@ -458,13 +469,13 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       } else {
         result.operationGroups_ = operationGroupsBuilder_.build();
       }
-      if (overviewBuilder_ == null) {
-        result.overview_ = overview_;
-      } else {
-        result.overview_ = overviewBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.recommender.v1beta1.RecommendationContent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.overview_ = overviewBuilder_ == null ? overview_ : overviewBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -586,7 +597,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
             case 26:
               {
                 input.readMessage(getOverviewFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -1024,7 +1035,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
      * @return Whether the overview field is set.
      */
     public boolean hasOverview() {
-      return overviewBuilder_ != null || overview_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1059,11 +1070,11 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         overview_ = value;
-        onChanged();
       } else {
         overviewBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1078,11 +1089,11 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     public Builder setOverview(com.google.protobuf.Struct.Builder builderForValue) {
       if (overviewBuilder_ == null) {
         overview_ = builderForValue.build();
-        onChanged();
       } else {
         overviewBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1096,17 +1107,18 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeOverview(com.google.protobuf.Struct value) {
       if (overviewBuilder_ == null) {
-        if (overview_ != null) {
-          overview_ =
-              com.google.protobuf.Struct.newBuilder(overview_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && overview_ != null
+            && overview_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getOverviewBuilder().mergeFrom(value);
         } else {
           overview_ = value;
         }
-        onChanged();
       } else {
         overviewBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1119,14 +1131,13 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Struct overview = 3;</code>
      */
     public Builder clearOverview() {
-      if (overviewBuilder_ == null) {
-        overview_ = null;
-        onChanged();
-      } else {
-        overview_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      overview_ = null;
+      if (overviewBuilder_ != null) {
+        overviewBuilder_.dispose();
         overviewBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1139,7 +1150,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Struct overview = 3;</code>
      */
     public com.google.protobuf.Struct.Builder getOverviewBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOverviewFieldBuilder().getBuilder();
     }

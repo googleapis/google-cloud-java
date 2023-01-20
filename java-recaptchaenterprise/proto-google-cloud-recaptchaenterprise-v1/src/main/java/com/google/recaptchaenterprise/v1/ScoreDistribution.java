@@ -89,6 +89,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
             0L);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long> scoreBuckets_;
 
   private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
@@ -403,6 +404,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableScoreBuckets().clear();
       return this;
     }
@@ -431,11 +433,19 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
     public com.google.recaptchaenterprise.v1.ScoreDistribution buildPartial() {
       com.google.recaptchaenterprise.v1.ScoreDistribution result =
           new com.google.recaptchaenterprise.v1.ScoreDistribution(this);
-      int from_bitField0_ = bitField0_;
-      result.scoreBuckets_ = internalGetScoreBuckets();
-      result.scoreBuckets_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.ScoreDistribution result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scoreBuckets_ = internalGetScoreBuckets();
+        result.scoreBuckets_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -485,6 +495,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
       if (other == com.google.recaptchaenterprise.v1.ScoreDistribution.getDefaultInstance())
         return this;
       internalGetMutableScoreBuckets().mergeFrom(other.internalGetScoreBuckets());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -520,6 +531,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
                 internalGetMutableScoreBuckets()
                     .getMutableMap()
                     .put(scoreBuckets__.getKey(), scoreBuckets__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -554,8 +566,6 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
 
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
         internalGetMutableScoreBuckets() {
-      onChanged();
-      ;
       if (scoreBuckets_ == null) {
         scoreBuckets_ =
             com.google.protobuf.MapField.newMapField(ScoreBucketsDefaultEntryHolder.defaultEntry);
@@ -563,6 +573,8 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
       if (!scoreBuckets_.isMutable()) {
         scoreBuckets_ = scoreBuckets_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return scoreBuckets_;
     }
 
@@ -645,6 +657,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearScoreBuckets() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableScoreBuckets().getMutableMap().clear();
       return this;
     }
@@ -667,6 +680,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.Integer, java.lang.Long> getMutableScoreBuckets() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableScoreBuckets().getMutableMap();
     }
     /**
@@ -683,6 +697,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
     public Builder putScoreBuckets(int key, long value) {
 
       internalGetMutableScoreBuckets().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -698,6 +713,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
      */
     public Builder putAllScoreBuckets(java.util.Map<java.lang.Integer, java.lang.Long> values) {
       internalGetMutableScoreBuckets().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

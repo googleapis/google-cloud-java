@@ -274,7 +274,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -323,7 +325,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -372,7 +376,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int READ_ONLY_FIELD_NUMBER = 3;
-  private boolean readOnly_;
+  private boolean readOnly_ = false;
   /**
    *
    *
@@ -391,7 +395,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DATA_TYPE_FIELD_NUMBER = 4;
-  private int dataType_;
+  private int dataType_ = 0;
   /**
    *
    *
@@ -420,9 +424,8 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.resourcesettings.v1.SettingMetadata.DataType getDataType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.resourcesettings.v1.SettingMetadata.DataType result =
-        com.google.cloud.resourcesettings.v1.SettingMetadata.DataType.valueOf(dataType_);
+        com.google.cloud.resourcesettings.v1.SettingMetadata.DataType.forNumber(dataType_);
     return result == null
         ? com.google.cloud.resourcesettings.v1.SettingMetadata.DataType.UNRECOGNIZED
         : result;
@@ -479,7 +482,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.resourcesettings.v1.ValueOrBuilder getDefaultValueOrBuilder() {
-    return getDefaultValue();
+    return defaultValue_ == null
+        ? com.google.cloud.resourcesettings.v1.Value.getDefaultInstance()
+        : defaultValue_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -724,18 +729,14 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       description_ = "";
-
       readOnly_ = false;
-
       dataType_ = 0;
-
-      if (defaultValueBuilder_ == null) {
-        defaultValue_ = null;
-      } else {
-        defaultValue_ = null;
+      defaultValue_ = null;
+      if (defaultValueBuilder_ != null) {
+        defaultValueBuilder_.dispose();
         defaultValueBuilder_ = null;
       }
       return this;
@@ -765,17 +766,31 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.resourcesettings.v1.SettingMetadata buildPartial() {
       com.google.cloud.resourcesettings.v1.SettingMetadata result =
           new com.google.cloud.resourcesettings.v1.SettingMetadata(this);
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.readOnly_ = readOnly_;
-      result.dataType_ = dataType_;
-      if (defaultValueBuilder_ == null) {
-        result.defaultValue_ = defaultValue_;
-      } else {
-        result.defaultValue_ = defaultValueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcesettings.v1.SettingMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.readOnly_ = readOnly_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dataType_ = dataType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.defaultValue_ =
+            defaultValueBuilder_ == null ? defaultValue_ : defaultValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -826,10 +841,12 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getReadOnly() != false) {
@@ -870,31 +887,31 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 readOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 dataType_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getDefaultValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -913,6 +930,8 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object displayName_ = "";
     /**
@@ -975,8 +994,8 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -992,8 +1011,8 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1014,8 +1033,8 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1081,8 +1100,8 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1098,8 +1117,8 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1120,8 +1139,8 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1159,6 +1178,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     public Builder setReadOnly(boolean value) {
 
       readOnly_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1175,7 +1195,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearReadOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       readOnly_ = false;
       onChanged();
       return this;
@@ -1210,8 +1230,8 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setDataTypeValue(int value) {
-
       dataType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1228,9 +1248,8 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.resourcesettings.v1.SettingMetadata.DataType getDataType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.resourcesettings.v1.SettingMetadata.DataType result =
-          com.google.cloud.resourcesettings.v1.SettingMetadata.DataType.valueOf(dataType_);
+          com.google.cloud.resourcesettings.v1.SettingMetadata.DataType.forNumber(dataType_);
       return result == null
           ? com.google.cloud.resourcesettings.v1.SettingMetadata.DataType.UNRECOGNIZED
           : result;
@@ -1252,7 +1271,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       dataType_ = value.getNumber();
       onChanged();
       return this;
@@ -1269,7 +1288,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDataType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       dataType_ = 0;
       onChanged();
       return this;
@@ -1295,7 +1314,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * @return Whether the defaultValue field is set.
      */
     public boolean hasDefaultValue() {
-      return defaultValueBuilder_ != null || defaultValue_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1336,11 +1355,11 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         defaultValue_ = value;
-        onChanged();
       } else {
         defaultValueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1358,11 +1377,11 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.resourcesettings.v1.Value.Builder builderForValue) {
       if (defaultValueBuilder_ == null) {
         defaultValue_ = builderForValue.build();
-        onChanged();
       } else {
         defaultValueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1378,19 +1397,18 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeDefaultValue(com.google.cloud.resourcesettings.v1.Value value) {
       if (defaultValueBuilder_ == null) {
-        if (defaultValue_ != null) {
-          defaultValue_ =
-              com.google.cloud.resourcesettings.v1.Value.newBuilder(defaultValue_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && defaultValue_ != null
+            && defaultValue_ != com.google.cloud.resourcesettings.v1.Value.getDefaultInstance()) {
+          getDefaultValueBuilder().mergeFrom(value);
         } else {
           defaultValue_ = value;
         }
-        onChanged();
       } else {
         defaultValueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1405,14 +1423,13 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.resourcesettings.v1.Value default_value = 5;</code>
      */
     public Builder clearDefaultValue() {
-      if (defaultValueBuilder_ == null) {
-        defaultValue_ = null;
-        onChanged();
-      } else {
-        defaultValue_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      defaultValue_ = null;
+      if (defaultValueBuilder_ != null) {
+        defaultValueBuilder_.dispose();
         defaultValueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1427,7 +1444,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.resourcesettings.v1.Value default_value = 5;</code>
      */
     public com.google.cloud.resourcesettings.v1.Value.Builder getDefaultValueBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDefaultValueFieldBuilder().getBuilder();
     }

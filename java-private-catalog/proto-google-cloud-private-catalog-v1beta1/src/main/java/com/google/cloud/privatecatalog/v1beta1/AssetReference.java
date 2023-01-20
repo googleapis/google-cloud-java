@@ -306,7 +306,9 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -355,7 +357,9 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -456,11 +460,13 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.privatecatalog.v1beta1.InputsOrBuilder getInputsOrBuilder() {
-    return getInputs();
+    return inputs_ == null
+        ? com.google.cloud.privatecatalog.v1beta1.Inputs.getDefaultInstance()
+        : inputs_;
   }
 
   public static final int VALIDATION_STATUS_FIELD_NUMBER = 7;
-  private int validationStatus_;
+  private int validationStatus_ = 0;
   /**
    *
    *
@@ -494,9 +500,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.privatecatalog.v1beta1.AssetReference.AssetValidationState
       getValidationStatus() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.privatecatalog.v1beta1.AssetReference.AssetValidationState result =
-        com.google.cloud.privatecatalog.v1beta1.AssetReference.AssetValidationState.valueOf(
+        com.google.cloud.privatecatalog.v1beta1.AssetReference.AssetValidationState.forNumber(
             validationStatus_);
     return result == null
         ? com.google.cloud.privatecatalog.v1beta1.AssetReference.AssetValidationState.UNRECOGNIZED
@@ -554,7 +559,9 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.longrunning.OperationOrBuilder getValidationOperationOrBuilder() {
-    return getValidationOperation();
+    return validationOperation_ == null
+        ? com.google.longrunning.Operation.getDefaultInstance()
+        : validationOperation_;
   }
 
   public static final int ASSET_FIELD_NUMBER = 10;
@@ -817,7 +824,9 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.privatecatalog.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
-    return getGcsSource();
+    return gcsSource_ == null
+        ? com.google.cloud.privatecatalog.v1beta1.GcsSource.getDefaultInstance()
+        : gcsSource_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 12;
@@ -866,7 +875,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 13;
@@ -915,11 +924,13 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int VERSION_FIELD_NUMBER = 14;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -1324,47 +1335,39 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       description_ = "";
-
-      if (inputsBuilder_ == null) {
-        inputs_ = null;
-      } else {
-        inputs_ = null;
+      inputs_ = null;
+      if (inputsBuilder_ != null) {
+        inputsBuilder_.dispose();
         inputsBuilder_ = null;
       }
       validationStatus_ = 0;
-
-      if (validationOperationBuilder_ == null) {
-        validationOperation_ = null;
-      } else {
-        validationOperation_ = null;
+      validationOperation_ = null;
+      if (validationOperationBuilder_ != null) {
+        validationOperationBuilder_.dispose();
         validationOperationBuilder_ = null;
       }
       if (gitSourceBuilder_ != null) {
         gitSourceBuilder_.clear();
       }
-      if (gcsSourceBuilder_ == null) {
-        gcsSource_ = null;
-      } else {
-        gcsSource_ = null;
+      gcsSource_ = null;
+      if (gcsSourceBuilder_ != null) {
+        gcsSourceBuilder_.dispose();
         gcsSourceBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       version_ = "";
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -1394,51 +1397,54 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.privatecatalog.v1beta1.AssetReference buildPartial() {
       com.google.cloud.privatecatalog.v1beta1.AssetReference result =
           new com.google.cloud.privatecatalog.v1beta1.AssetReference(this);
-      result.id_ = id_;
-      result.description_ = description_;
-      if (inputsBuilder_ == null) {
-        result.inputs_ = inputs_;
-      } else {
-        result.inputs_ = inputsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validationStatus_ = validationStatus_;
-      if (validationOperationBuilder_ == null) {
-        result.validationOperation_ = validationOperation_;
-      } else {
-        result.validationOperation_ = validationOperationBuilder_.build();
-      }
-      if (sourceCase_ == 10) {
-        result.source_ = source_;
-      }
-      if (sourceCase_ == 11) {
-        result.source_ = source_;
-      }
-      if (sourceCase_ == 15) {
-        if (gitSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gitSourceBuilder_.build();
-        }
-      }
-      if (gcsSourceBuilder_ == null) {
-        result.gcsSource_ = gcsSource_;
-      } else {
-        result.gcsSource_ = gcsSourceBuilder_.build();
-      }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.version_ = version_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.privatecatalog.v1beta1.AssetReference result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.inputs_ = inputsBuilder_ == null ? inputs_ : inputsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validationStatus_ = validationStatus_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validationOperation_ =
+            validationOperationBuilder_ == null
+                ? validationOperation_
+                : validationOperationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.gcsSource_ = gcsSourceBuilder_ == null ? gcsSource_ : gcsSourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.version_ = version_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.privatecatalog.v1beta1.AssetReference result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 15 && gitSourceBuilder_ != null) {
+        result.source_ = gitSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1489,10 +1495,12 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasInputs()) {
@@ -1515,6 +1523,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -1571,32 +1580,32 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 50:
               {
                 input.readMessage(getInputsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             case 56:
               {
                 validationStatus_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(
                     getValidationOperationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 82:
@@ -1616,19 +1625,19 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
             case 98:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 106
             case 114:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 114
             case 122:
@@ -1640,7 +1649,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
             case 130:
               {
                 input.readMessage(getGcsSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 130
             default:
@@ -1673,6 +1682,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1735,8 +1746,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1752,8 +1763,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1774,8 +1785,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1844,8 +1855,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1862,8 +1873,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1885,8 +1896,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1911,7 +1922,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inputs field is set.
      */
     public boolean hasInputs() {
-      return inputsBuilder_ != null || inputs_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1952,11 +1963,11 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         inputs_ = value;
-        onChanged();
       } else {
         inputsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1974,11 +1985,11 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.privatecatalog.v1beta1.Inputs.Builder builderForValue) {
       if (inputsBuilder_ == null) {
         inputs_ = builderForValue.build();
-        onChanged();
       } else {
         inputsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1994,19 +2005,18 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInputs(com.google.cloud.privatecatalog.v1beta1.Inputs value) {
       if (inputsBuilder_ == null) {
-        if (inputs_ != null) {
-          inputs_ =
-              com.google.cloud.privatecatalog.v1beta1.Inputs.newBuilder(inputs_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && inputs_ != null
+            && inputs_ != com.google.cloud.privatecatalog.v1beta1.Inputs.getDefaultInstance()) {
+          getInputsBuilder().mergeFrom(value);
         } else {
           inputs_ = value;
         }
-        onChanged();
       } else {
         inputsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2021,14 +2031,13 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInputs() {
-      if (inputsBuilder_ == null) {
-        inputs_ = null;
-        onChanged();
-      } else {
-        inputs_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      inputs_ = null;
+      if (inputsBuilder_ != null) {
+        inputsBuilder_.dispose();
         inputsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2043,7 +2052,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.privatecatalog.v1beta1.Inputs.Builder getInputsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
@@ -2128,8 +2137,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setValidationStatusValue(int value) {
-
       validationStatus_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2149,9 +2158,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.privatecatalog.v1beta1.AssetReference.AssetValidationState
         getValidationStatus() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.privatecatalog.v1beta1.AssetReference.AssetValidationState result =
-          com.google.cloud.privatecatalog.v1beta1.AssetReference.AssetValidationState.valueOf(
+          com.google.cloud.privatecatalog.v1beta1.AssetReference.AssetValidationState.forNumber(
               validationStatus_);
       return result == null
           ? com.google.cloud.privatecatalog.v1beta1.AssetReference.AssetValidationState.UNRECOGNIZED
@@ -2176,7 +2184,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       validationStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -2195,7 +2203,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValidationStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validationStatus_ = 0;
       onChanged();
       return this;
@@ -2221,7 +2229,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the validationOperation field is set.
      */
     public boolean hasValidationOperation() {
-      return validationOperationBuilder_ != null || validationOperation_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2262,11 +2270,11 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         validationOperation_ = value;
-        onChanged();
       } else {
         validationOperationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2284,11 +2292,11 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
         com.google.longrunning.Operation.Builder builderForValue) {
       if (validationOperationBuilder_ == null) {
         validationOperation_ = builderForValue.build();
-        onChanged();
       } else {
         validationOperationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2304,19 +2312,18 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeValidationOperation(com.google.longrunning.Operation value) {
       if (validationOperationBuilder_ == null) {
-        if (validationOperation_ != null) {
-          validationOperation_ =
-              com.google.longrunning.Operation.newBuilder(validationOperation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && validationOperation_ != null
+            && validationOperation_ != com.google.longrunning.Operation.getDefaultInstance()) {
+          getValidationOperationBuilder().mergeFrom(value);
         } else {
           validationOperation_ = value;
         }
-        onChanged();
       } else {
         validationOperationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2331,14 +2338,13 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearValidationOperation() {
-      if (validationOperationBuilder_ == null) {
-        validationOperation_ = null;
-        onChanged();
-      } else {
-        validationOperation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      validationOperation_ = null;
+      if (validationOperationBuilder_ != null) {
+        validationOperationBuilder_.dispose();
         validationOperationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2353,7 +2359,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.longrunning.Operation.Builder getValidationOperationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getValidationOperationFieldBuilder().getBuilder();
     }
@@ -2921,7 +2927,6 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 15;
       onChanged();
-      ;
       return gitSourceBuilder_;
     }
 
@@ -2945,7 +2950,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gcsSource field is set.
      */
     public boolean hasGcsSource() {
-      return gcsSourceBuilder_ != null || gcsSource_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2986,11 +2991,11 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         gcsSource_ = value;
-        onChanged();
       } else {
         gcsSourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3008,11 +3013,11 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.privatecatalog.v1beta1.GcsSource.Builder builderForValue) {
       if (gcsSourceBuilder_ == null) {
         gcsSource_ = builderForValue.build();
-        onChanged();
       } else {
         gcsSourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3028,19 +3033,19 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGcsSource(com.google.cloud.privatecatalog.v1beta1.GcsSource value) {
       if (gcsSourceBuilder_ == null) {
-        if (gcsSource_ != null) {
-          gcsSource_ =
-              com.google.cloud.privatecatalog.v1beta1.GcsSource.newBuilder(gcsSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && gcsSource_ != null
+            && gcsSource_
+                != com.google.cloud.privatecatalog.v1beta1.GcsSource.getDefaultInstance()) {
+          getGcsSourceBuilder().mergeFrom(value);
         } else {
           gcsSource_ = value;
         }
-        onChanged();
       } else {
         gcsSourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3055,14 +3060,13 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGcsSource() {
-      if (gcsSourceBuilder_ == null) {
-        gcsSource_ = null;
-        onChanged();
-      } else {
-        gcsSource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      gcsSource_ = null;
+      if (gcsSourceBuilder_ != null) {
+        gcsSourceBuilder_.dispose();
         gcsSourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3077,7 +3081,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.privatecatalog.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getGcsSourceFieldBuilder().getBuilder();
     }
@@ -3149,7 +3153,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3190,11 +3194,11 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3211,11 +3215,11 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3231,17 +3235,18 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3256,14 +3261,13 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3278,7 +3282,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3350,7 +3354,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3391,11 +3395,11 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3412,11 +3416,11 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3432,17 +3436,18 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3457,14 +3462,13 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3479,7 +3483,7 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3601,8 +3605,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3621,8 +3625,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3646,8 +3650,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

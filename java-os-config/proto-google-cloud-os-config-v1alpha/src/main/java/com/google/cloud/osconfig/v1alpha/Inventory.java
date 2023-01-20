@@ -350,7 +350,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int HOSTNAME_FIELD_NUMBER = 9;
-    private volatile java.lang.Object hostname_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object hostname_ = "";
     /**
      *
      *
@@ -399,7 +401,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LONG_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object longName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object longName_ = "";
     /**
      *
      *
@@ -452,7 +456,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SHORT_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object shortName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object shortName_ = "";
     /**
      *
      *
@@ -503,7 +509,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VERSION_FIELD_NUMBER = 4;
-    private volatile java.lang.Object version_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object version_ = "";
     /**
      *
      *
@@ -552,7 +560,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ARCHITECTURE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object architecture_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object architecture_ = "";
     /**
      *
      *
@@ -601,7 +611,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KERNEL_VERSION_FIELD_NUMBER = 6;
-    private volatile java.lang.Object kernelVersion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kernelVersion_ = "";
     /**
      *
      *
@@ -650,7 +662,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KERNEL_RELEASE_FIELD_NUMBER = 7;
-    private volatile java.lang.Object kernelRelease_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kernelRelease_ = "";
     /**
      *
      *
@@ -699,7 +713,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int OSCONFIG_AGENT_VERSION_FIELD_NUMBER = 8;
-    private volatile java.lang.Object osconfigAgentVersion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object osconfigAgentVersion_ = "";
     /**
      *
      *
@@ -1009,22 +1025,15 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         hostname_ = "";
-
         longName_ = "";
-
         shortName_ = "";
-
         version_ = "";
-
         architecture_ = "";
-
         kernelVersion_ = "";
-
         kernelRelease_ = "";
-
         osconfigAgentVersion_ = "";
-
         return this;
       }
 
@@ -1052,16 +1061,39 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1alpha.Inventory.OsInfo buildPartial() {
         com.google.cloud.osconfig.v1alpha.Inventory.OsInfo result =
             new com.google.cloud.osconfig.v1alpha.Inventory.OsInfo(this);
-        result.hostname_ = hostname_;
-        result.longName_ = longName_;
-        result.shortName_ = shortName_;
-        result.version_ = version_;
-        result.architecture_ = architecture_;
-        result.kernelVersion_ = kernelVersion_;
-        result.kernelRelease_ = kernelRelease_;
-        result.osconfigAgentVersion_ = osconfigAgentVersion_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.osconfig.v1alpha.Inventory.OsInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.hostname_ = hostname_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.longName_ = longName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.shortName_ = shortName_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.version_ = version_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.architecture_ = architecture_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.kernelVersion_ = kernelVersion_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.kernelRelease_ = kernelRelease_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.osconfigAgentVersion_ = osconfigAgentVersion_;
+        }
       }
 
       @java.lang.Override
@@ -1114,34 +1146,42 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getHostname().isEmpty()) {
           hostname_ = other.hostname_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getLongName().isEmpty()) {
           longName_ = other.longName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getShortName().isEmpty()) {
           shortName_ = other.shortName_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getArchitecture().isEmpty()) {
           architecture_ = other.architecture_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (!other.getKernelVersion().isEmpty()) {
           kernelVersion_ = other.kernelVersion_;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getKernelRelease().isEmpty()) {
           kernelRelease_ = other.kernelRelease_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (!other.getOsconfigAgentVersion().isEmpty()) {
           osconfigAgentVersion_ = other.osconfigAgentVersion_;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1173,49 +1213,49 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   longName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   shortName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   version_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   architecture_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 50:
                 {
                   kernelVersion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 50
               case 58:
                 {
                   kernelRelease_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 58
               case 66:
                 {
                   osconfigAgentVersion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 66
               case 74:
                 {
                   hostname_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 74
               default:
@@ -1234,6 +1274,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object hostname_ = "";
       /**
@@ -1296,8 +1338,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         hostname_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1313,8 +1355,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearHostname() {
-
         hostname_ = getDefaultInstance().getHostname();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1335,8 +1377,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         hostname_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1408,8 +1450,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         longName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1427,8 +1469,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLongName() {
-
         longName_ = getDefaultInstance().getLongName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1451,8 +1493,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         longName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1521,8 +1563,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         shortName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1539,8 +1581,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearShortName() {
-
         shortName_ = getDefaultInstance().getShortName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1562,8 +1604,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         shortName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1629,8 +1671,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         version_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1646,8 +1688,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-
         version_ = getDefaultInstance().getVersion();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1668,8 +1710,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         version_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1735,8 +1777,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         architecture_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1752,8 +1794,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearArchitecture() {
-
         architecture_ = getDefaultInstance().getArchitecture();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1774,8 +1816,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         architecture_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1841,8 +1883,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         kernelVersion_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1858,8 +1900,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKernelVersion() {
-
         kernelVersion_ = getDefaultInstance().getKernelVersion();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1880,8 +1922,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         kernelVersion_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1947,8 +1989,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         kernelRelease_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1964,8 +2006,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKernelRelease() {
-
         kernelRelease_ = getDefaultInstance().getKernelRelease();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -1986,8 +2028,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         kernelRelease_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2053,8 +2095,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         osconfigAgentVersion_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2070,8 +2112,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOsconfigAgentVersion() {
-
         osconfigAgentVersion_ = getDefaultInstance().getOsconfigAgentVersion();
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -2092,8 +2134,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         osconfigAgentVersion_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2783,7 +2825,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      *
      *
@@ -2832,7 +2876,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ORIGIN_TYPE_FIELD_NUMBER = 2;
-    private int originType_;
+    private int originType_ = 0;
     /**
      *
      *
@@ -2861,9 +2905,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1alpha.Inventory.Item.OriginType getOriginType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1alpha.Inventory.Item.OriginType result =
-          com.google.cloud.osconfig.v1alpha.Inventory.Item.OriginType.valueOf(originType_);
+          com.google.cloud.osconfig.v1alpha.Inventory.Item.OriginType.forNumber(originType_);
       return result == null
           ? com.google.cloud.osconfig.v1alpha.Inventory.Item.OriginType.UNRECOGNIZED
           : result;
@@ -2912,7 +2955,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-      return getCreateTime();
+      return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 9;
@@ -2958,11 +3001,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-      return getUpdateTime();
+      return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
 
     public static final int TYPE_FIELD_NUMBER = 5;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -2991,9 +3034,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1alpha.Inventory.Item.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1alpha.Inventory.Item.Type result =
-          com.google.cloud.osconfig.v1alpha.Inventory.Item.Type.valueOf(type_);
+          com.google.cloud.osconfig.v1alpha.Inventory.Item.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.osconfig.v1alpha.Inventory.Item.Type.UNRECOGNIZED
           : result;
@@ -3395,24 +3437,20 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         originType_ = 0;
-
-        if (createTimeBuilder_ == null) {
-          createTime_ = null;
-        } else {
-          createTime_ = null;
+        createTime_ = null;
+        if (createTimeBuilder_ != null) {
+          createTimeBuilder_.dispose();
           createTimeBuilder_ = null;
         }
-        if (updateTimeBuilder_ == null) {
-          updateTime_ = null;
-        } else {
-          updateTime_ = null;
+        updateTime_ = null;
+        if (updateTimeBuilder_ != null) {
+          updateTimeBuilder_.dispose();
           updateTimeBuilder_ = null;
         }
         type_ = 0;
-
         if (installedPackageBuilder_ != null) {
           installedPackageBuilder_.clear();
         }
@@ -3448,36 +3486,44 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1alpha.Inventory.Item buildPartial() {
         com.google.cloud.osconfig.v1alpha.Inventory.Item result =
             new com.google.cloud.osconfig.v1alpha.Inventory.Item(this);
-        result.id_ = id_;
-        result.originType_ = originType_;
-        if (createTimeBuilder_ == null) {
-          result.createTime_ = createTime_;
-        } else {
-          result.createTime_ = createTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (updateTimeBuilder_ == null) {
-          result.updateTime_ = updateTime_;
-        } else {
-          result.updateTime_ = updateTimeBuilder_.build();
-        }
-        result.type_ = type_;
-        if (detailsCase_ == 6) {
-          if (installedPackageBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = installedPackageBuilder_.build();
-          }
-        }
-        if (detailsCase_ == 7) {
-          if (availablePackageBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = availablePackageBuilder_.build();
-          }
-        }
-        result.detailsCase_ = detailsCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.osconfig.v1alpha.Inventory.Item result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.originType_ = originType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.createTime_ =
+              createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.updateTime_ =
+              updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.type_ = type_;
+        }
+      }
+
+      private void buildPartialOneofs(com.google.cloud.osconfig.v1alpha.Inventory.Item result) {
+        result.detailsCase_ = detailsCase_;
+        result.details_ = this.details_;
+        if (detailsCase_ == 6 && installedPackageBuilder_ != null) {
+          result.details_ = installedPackageBuilder_.build();
+        }
+        if (detailsCase_ == 7 && availablePackageBuilder_ != null) {
+          result.details_ = availablePackageBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3530,6 +3576,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.originType_ != 0) {
@@ -3589,19 +3636,19 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   originType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 40:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 50:
@@ -3621,13 +3668,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               case 66:
                 {
                   input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 66
               case 74:
                 {
                   input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 74
               default:
@@ -3660,6 +3707,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -3722,8 +3771,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3739,8 +3788,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3761,8 +3810,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3796,8 +3845,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setOriginTypeValue(int value) {
-
         originType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3814,9 +3863,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.osconfig.v1alpha.Inventory.Item.OriginType getOriginType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1alpha.Inventory.Item.OriginType result =
-            com.google.cloud.osconfig.v1alpha.Inventory.Item.OriginType.valueOf(originType_);
+            com.google.cloud.osconfig.v1alpha.Inventory.Item.OriginType.forNumber(originType_);
         return result == null
             ? com.google.cloud.osconfig.v1alpha.Inventory.Item.OriginType.UNRECOGNIZED
             : result;
@@ -3838,7 +3886,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         originType_ = value.getNumber();
         onChanged();
         return this;
@@ -3855,7 +3903,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOriginType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         originType_ = 0;
         onChanged();
         return this;
@@ -3879,7 +3927,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the createTime field is set.
        */
       public boolean hasCreateTime() {
-        return createTimeBuilder_ != null || createTime_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -3916,11 +3964,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           createTime_ = value;
-          onChanged();
         } else {
           createTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3935,11 +3983,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (createTimeBuilder_ == null) {
           createTime_ = builderForValue.build();
-          onChanged();
         } else {
           createTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3953,19 +4001,18 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
         if (createTimeBuilder_ == null) {
-          if (createTime_ != null) {
-            createTime_ =
-                com.google.protobuf.Timestamp.newBuilder(createTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && createTime_ != null
+              && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateTimeBuilder().mergeFrom(value);
           } else {
             createTime_ = value;
           }
-          onChanged();
         } else {
           createTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3978,14 +4025,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp create_time = 8;</code>
        */
       public Builder clearCreateTime() {
-        if (createTimeBuilder_ == null) {
-          createTime_ = null;
-          onChanged();
-        } else {
-          createTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        createTime_ = null;
+        if (createTimeBuilder_ != null) {
+          createTimeBuilder_.dispose();
           createTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3998,7 +4044,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp create_time = 8;</code>
        */
       public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getCreateTimeFieldBuilder().getBuilder();
       }
@@ -4064,7 +4110,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the updateTime field is set.
        */
       public boolean hasUpdateTime() {
-        return updateTimeBuilder_ != null || updateTime_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -4101,11 +4147,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           updateTime_ = value;
-          onChanged();
         } else {
           updateTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -4120,11 +4166,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (updateTimeBuilder_ == null) {
           updateTime_ = builderForValue.build();
-          onChanged();
         } else {
           updateTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -4138,19 +4184,18 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
         if (updateTimeBuilder_ == null) {
-          if (updateTime_ != null) {
-            updateTime_ =
-                com.google.protobuf.Timestamp.newBuilder(updateTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && updateTime_ != null
+              && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdateTimeBuilder().mergeFrom(value);
           } else {
             updateTime_ = value;
           }
-          onChanged();
         } else {
           updateTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -4163,14 +4208,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp update_time = 9;</code>
        */
       public Builder clearUpdateTime() {
-        if (updateTimeBuilder_ == null) {
-          updateTime_ = null;
-          onChanged();
-        } else {
-          updateTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        updateTime_ = null;
+        if (updateTimeBuilder_ != null) {
+          updateTimeBuilder_.dispose();
           updateTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4183,7 +4227,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp update_time = 9;</code>
        */
       public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
@@ -4260,8 +4304,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -4278,9 +4322,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.osconfig.v1alpha.Inventory.Item.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1alpha.Inventory.Item.Type result =
-            com.google.cloud.osconfig.v1alpha.Inventory.Item.Type.valueOf(type_);
+            com.google.cloud.osconfig.v1alpha.Inventory.Item.Type.forNumber(type_);
         return result == null
             ? com.google.cloud.osconfig.v1alpha.Inventory.Item.Type.UNRECOGNIZED
             : result;
@@ -4301,7 +4344,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000010;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -4318,7 +4361,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         type_ = 0;
         onChanged();
         return this;
@@ -4546,7 +4589,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 6;
         onChanged();
-        ;
         return installedPackageBuilder_;
       }
 
@@ -4772,7 +4814,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 7;
         onChanged();
-        ;
         return availablePackageBuilder_;
       }
 
@@ -6210,6 +6251,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (yumPackageBuilder_ != null) {
           yumPackageBuilder_.clear();
         }
@@ -6267,72 +6309,50 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1alpha.Inventory.SoftwarePackage buildPartial() {
         com.google.cloud.osconfig.v1alpha.Inventory.SoftwarePackage result =
             new com.google.cloud.osconfig.v1alpha.Inventory.SoftwarePackage(this);
-        if (detailsCase_ == 1) {
-          if (yumPackageBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = yumPackageBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (detailsCase_ == 2) {
-          if (aptPackageBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = aptPackageBuilder_.build();
-          }
-        }
-        if (detailsCase_ == 3) {
-          if (zypperPackageBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = zypperPackageBuilder_.build();
-          }
-        }
-        if (detailsCase_ == 4) {
-          if (googetPackageBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = googetPackageBuilder_.build();
-          }
-        }
-        if (detailsCase_ == 5) {
-          if (zypperPatchBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = zypperPatchBuilder_.build();
-          }
-        }
-        if (detailsCase_ == 6) {
-          if (wuaPackageBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = wuaPackageBuilder_.build();
-          }
-        }
-        if (detailsCase_ == 7) {
-          if (qfePackageBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = qfePackageBuilder_.build();
-          }
-        }
-        if (detailsCase_ == 8) {
-          if (cosPackageBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = cosPackageBuilder_.build();
-          }
-        }
-        if (detailsCase_ == 9) {
-          if (windowsApplicationBuilder_ == null) {
-            result.details_ = details_;
-          } else {
-            result.details_ = windowsApplicationBuilder_.build();
-          }
-        }
-        result.detailsCase_ = detailsCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1alpha.Inventory.SoftwarePackage result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.osconfig.v1alpha.Inventory.SoftwarePackage result) {
+        result.detailsCase_ = detailsCase_;
+        result.details_ = this.details_;
+        if (detailsCase_ == 1 && yumPackageBuilder_ != null) {
+          result.details_ = yumPackageBuilder_.build();
+        }
+        if (detailsCase_ == 2 && aptPackageBuilder_ != null) {
+          result.details_ = aptPackageBuilder_.build();
+        }
+        if (detailsCase_ == 3 && zypperPackageBuilder_ != null) {
+          result.details_ = zypperPackageBuilder_.build();
+        }
+        if (detailsCase_ == 4 && googetPackageBuilder_ != null) {
+          result.details_ = googetPackageBuilder_.build();
+        }
+        if (detailsCase_ == 5 && zypperPatchBuilder_ != null) {
+          result.details_ = zypperPatchBuilder_.build();
+        }
+        if (detailsCase_ == 6 && wuaPackageBuilder_ != null) {
+          result.details_ = wuaPackageBuilder_.build();
+        }
+        if (detailsCase_ == 7 && qfePackageBuilder_ != null) {
+          result.details_ = qfePackageBuilder_.build();
+        }
+        if (detailsCase_ == 8 && cosPackageBuilder_ != null) {
+          result.details_ = cosPackageBuilder_.build();
+        }
+        if (detailsCase_ == 9 && windowsApplicationBuilder_ != null) {
+          result.details_ = windowsApplicationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -6546,6 +6566,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.osconfig.v1alpha.Inventory.VersionedPackage,
@@ -6778,7 +6800,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 1;
         onChanged();
-        ;
         return yumPackageBuilder_;
       }
 
@@ -7013,7 +7034,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 2;
         onChanged();
-        ;
         return aptPackageBuilder_;
       }
 
@@ -7248,7 +7268,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 3;
         onChanged();
-        ;
         return zypperPackageBuilder_;
       }
 
@@ -7483,7 +7502,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 4;
         onChanged();
-        ;
         return googetPackageBuilder_;
       }
 
@@ -7715,7 +7733,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 5;
         onChanged();
-        ;
         return zypperPatchBuilder_;
       }
 
@@ -7955,7 +7972,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 6;
         onChanged();
-        ;
         return wuaPackageBuilder_;
       }
 
@@ -8233,7 +8249,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 7;
         onChanged();
-        ;
         return qfePackageBuilder_;
       }
 
@@ -8450,7 +8465,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 8;
         onChanged();
-        ;
         return cosPackageBuilder_;
       }
 
@@ -8680,7 +8694,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         detailsCase_ = 9;
         onChanged();
-        ;
         return windowsApplicationBuilder_;
       }
 
@@ -8882,7 +8895,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PACKAGE_NAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object packageName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object packageName_ = "";
     /**
      *
      *
@@ -8931,7 +8946,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ARCHITECTURE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object architecture_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object architecture_ = "";
     /**
      *
      *
@@ -8980,7 +8997,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VERSION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object version_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object version_ = "";
     /**
      *
      *
@@ -9247,12 +9266,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         packageName_ = "";
-
         architecture_ = "";
-
         version_ = "";
-
         return this;
       }
 
@@ -9281,11 +9298,25 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1alpha.Inventory.VersionedPackage buildPartial() {
         com.google.cloud.osconfig.v1alpha.Inventory.VersionedPackage result =
             new com.google.cloud.osconfig.v1alpha.Inventory.VersionedPackage(this);
-        result.packageName_ = packageName_;
-        result.architecture_ = architecture_;
-        result.version_ = version_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1alpha.Inventory.VersionedPackage result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.packageName_ = packageName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.architecture_ = architecture_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.version_ = version_;
+        }
       }
 
       @java.lang.Override
@@ -9339,14 +9370,17 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getPackageName().isEmpty()) {
           packageName_ = other.packageName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getArchitecture().isEmpty()) {
           architecture_ = other.architecture_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -9378,19 +9412,19 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   architecture_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   version_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   packageName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 34
               default:
@@ -9409,6 +9443,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object packageName_ = "";
       /**
@@ -9471,8 +9507,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         packageName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9488,8 +9524,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPackageName() {
-
         packageName_ = getDefaultInstance().getPackageName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -9510,8 +9546,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         packageName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9577,8 +9613,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         architecture_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9594,8 +9630,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearArchitecture() {
-
         architecture_ = getDefaultInstance().getArchitecture();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -9616,8 +9652,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         architecture_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9683,8 +9719,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         version_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9700,8 +9736,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-
         version_ = getDefaultInstance().getVersion();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -9722,8 +9758,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         version_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9953,7 +9989,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PATCH_NAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object patchName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object patchName_ = "";
     /**
      *
      *
@@ -10002,7 +10040,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CATEGORY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object category_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object category_ = "";
     /**
      *
      *
@@ -10051,7 +10091,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SEVERITY_FIELD_NUMBER = 3;
-    private volatile java.lang.Object severity_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object severity_ = "";
     /**
      *
      *
@@ -10100,7 +10142,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SUMMARY_FIELD_NUMBER = 4;
-    private volatile java.lang.Object summary_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object summary_ = "";
     /**
      *
      *
@@ -10375,14 +10419,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         patchName_ = "";
-
         category_ = "";
-
         severity_ = "";
-
         summary_ = "";
-
         return this;
       }
 
@@ -10410,12 +10451,27 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1alpha.Inventory.ZypperPatch buildPartial() {
         com.google.cloud.osconfig.v1alpha.Inventory.ZypperPatch result =
             new com.google.cloud.osconfig.v1alpha.Inventory.ZypperPatch(this);
-        result.patchName_ = patchName_;
-        result.category_ = category_;
-        result.severity_ = severity_;
-        result.summary_ = summary_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.osconfig.v1alpha.Inventory.ZypperPatch result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.patchName_ = patchName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.category_ = category_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.severity_ = severity_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.summary_ = summary_;
+        }
       }
 
       @java.lang.Override
@@ -10468,18 +10524,22 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getPatchName().isEmpty()) {
           patchName_ = other.patchName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getCategory().isEmpty()) {
           category_ = other.category_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getSeverity().isEmpty()) {
           severity_ = other.severity_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getSummary().isEmpty()) {
           summary_ = other.summary_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -10511,25 +10571,25 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   category_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   severity_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   summary_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   patchName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 42
               default:
@@ -10548,6 +10608,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object patchName_ = "";
       /**
@@ -10610,8 +10672,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         patchName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10627,8 +10689,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPatchName() {
-
         patchName_ = getDefaultInstance().getPatchName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -10649,8 +10711,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         patchName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10716,8 +10778,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         category_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -10733,8 +10795,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCategory() {
-
         category_ = getDefaultInstance().getCategory();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -10755,8 +10817,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         category_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -10822,8 +10884,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         severity_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -10839,8 +10901,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSeverity() {
-
         severity_ = getDefaultInstance().getSeverity();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -10861,8 +10923,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         severity_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -10928,8 +10990,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         summary_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -10945,8 +11007,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSummary() {
-
         summary_ = getDefaultInstance().getSummary();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -10967,8 +11029,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         summary_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -11539,7 +11601,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ID_FIELD_NUMBER = 1;
-      private volatile java.lang.Object id_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object id_ = "";
       /**
        *
        *
@@ -11588,7 +11652,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int NAME_FIELD_NUMBER = 2;
-      private volatile java.lang.Object name_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object name_ = "";
       /**
        *
        *
@@ -11877,10 +11943,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           id_ = "";
-
           name_ = "";
-
           return this;
         }
 
@@ -11918,10 +11983,23 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               result =
                   new com.google.cloud.osconfig.v1alpha.Inventory.WindowsUpdatePackage
                       .WindowsUpdateCategory(this);
-          result.id_ = id_;
-          result.name_ = name_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.osconfig.v1alpha.Inventory.WindowsUpdatePackage.WindowsUpdateCategory
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.id_ = id_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.name_ = name_;
+          }
         }
 
         @java.lang.Override
@@ -11983,10 +12061,12 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                   .WindowsUpdateCategory.getDefaultInstance()) return this;
           if (!other.getId().isEmpty()) {
             id_ = other.id_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getName().isEmpty()) {
             name_ = other.name_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -12018,13 +12098,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     id_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     name_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -12043,6 +12123,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object id_ = "";
         /**
@@ -12105,8 +12187,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           id_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -12122,8 +12204,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearId() {
-
           id_ = getDefaultInstance().getId();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -12144,8 +12226,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           id_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -12211,8 +12293,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           name_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -12228,8 +12310,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearName() {
-
           name_ = getDefaultInstance().getName();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -12250,8 +12332,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           name_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -12328,7 +12410,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TITLE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object title_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object title_ = "";
     /**
      *
      *
@@ -12377,7 +12461,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -12426,6 +12512,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CATEGORIES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.osconfig.v1alpha.Inventory.WindowsUpdatePackage.WindowsUpdateCategory>
         categories_;
@@ -12515,6 +12603,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KB_ARTICLE_IDS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList kbArticleIds_;
     /**
      *
@@ -12580,7 +12670,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SUPPORT_URL_FIELD_NUMBER = 11;
-    private volatile java.lang.Object supportUrl_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object supportUrl_ = "";
     /**
      *
      *
@@ -12629,6 +12721,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MORE_INFO_URLS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList moreInfoUrls_;
     /**
      *
@@ -12694,7 +12788,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int UPDATE_ID_FIELD_NUMBER = 6;
-    private volatile java.lang.Object updateId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object updateId_ = "";
     /**
      *
      *
@@ -12745,7 +12841,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int REVISION_NUMBER_FIELD_NUMBER = 7;
-    private int revisionNumber_;
+    private int revisionNumber_ = 0;
     /**
      *
      *
@@ -12807,7 +12903,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLastDeploymentChangeTimeOrBuilder() {
-      return getLastDeploymentChangeTime();
+      return lastDeploymentChangeTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastDeploymentChangeTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -13112,31 +13210,26 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         title_ = "";
-
         description_ = "";
-
         if (categoriesBuilder_ == null) {
           categories_ = java.util.Collections.emptyList();
         } else {
           categories_ = null;
           categoriesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        supportUrl_ = "";
-
-        moreInfoUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
+        kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        supportUrl_ = "";
+        moreInfoUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
         updateId_ = "";
-
         revisionNumber_ = 0;
-
-        if (lastDeploymentChangeTimeBuilder_ == null) {
-          lastDeploymentChangeTime_ = null;
-        } else {
-          lastDeploymentChangeTime_ = null;
+        lastDeploymentChangeTime_ = null;
+        if (lastDeploymentChangeTimeBuilder_ != null) {
+          lastDeploymentChangeTimeBuilder_.dispose();
           lastDeploymentChangeTimeBuilder_ = null;
         }
         return this;
@@ -13168,38 +13261,61 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1alpha.Inventory.WindowsUpdatePackage buildPartial() {
         com.google.cloud.osconfig.v1alpha.Inventory.WindowsUpdatePackage result =
             new com.google.cloud.osconfig.v1alpha.Inventory.WindowsUpdatePackage(this);
-        int from_bitField0_ = bitField0_;
-        result.title_ = title_;
-        result.description_ = description_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1alpha.Inventory.WindowsUpdatePackage result) {
         if (categoriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             categories_ = java.util.Collections.unmodifiableList(categories_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.categories_ = categories_;
         } else {
           result.categories_ = categoriesBuilder_.build();
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           kbArticleIds_ = kbArticleIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.kbArticleIds_ = kbArticleIds_;
-        result.supportUrl_ = supportUrl_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           moreInfoUrls_ = moreInfoUrls_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.moreInfoUrls_ = moreInfoUrls_;
-        result.updateId_ = updateId_;
-        result.revisionNumber_ = revisionNumber_;
-        if (lastDeploymentChangeTimeBuilder_ == null) {
-          result.lastDeploymentChangeTime_ = lastDeploymentChangeTime_;
-        } else {
-          result.lastDeploymentChangeTime_ = lastDeploymentChangeTimeBuilder_.build();
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1alpha.Inventory.WindowsUpdatePackage result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.title_ = title_;
         }
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.supportUrl_ = supportUrl_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.updateId_ = updateId_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.revisionNumber_ = revisionNumber_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.lastDeploymentChangeTime_ =
+              lastDeploymentChangeTimeBuilder_ == null
+                  ? lastDeploymentChangeTime_
+                  : lastDeploymentChangeTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -13255,17 +13371,19 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getTitle().isEmpty()) {
           title_ = other.title_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (categoriesBuilder_ == null) {
           if (!other.categories_.isEmpty()) {
             if (categories_.isEmpty()) {
               categories_ = other.categories_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureCategoriesIsMutable();
               categories_.addAll(other.categories_);
@@ -13278,7 +13396,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               categoriesBuilder_.dispose();
               categoriesBuilder_ = null;
               categories_ = other.categories_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               categoriesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getCategoriesFieldBuilder()
@@ -13291,7 +13409,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (!other.kbArticleIds_.isEmpty()) {
           if (kbArticleIds_.isEmpty()) {
             kbArticleIds_ = other.kbArticleIds_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureKbArticleIdsIsMutable();
             kbArticleIds_.addAll(other.kbArticleIds_);
@@ -13300,12 +13418,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getSupportUrl().isEmpty()) {
           supportUrl_ = other.supportUrl_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (!other.moreInfoUrls_.isEmpty()) {
           if (moreInfoUrls_.isEmpty()) {
             moreInfoUrls_ = other.moreInfoUrls_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureMoreInfoUrlsIsMutable();
             moreInfoUrls_.addAll(other.moreInfoUrls_);
@@ -13314,6 +13433,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getUpdateId().isEmpty()) {
           updateId_ = other.updateId_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.getRevisionNumber() != 0) {
@@ -13351,13 +13471,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   title_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
@@ -13394,26 +13514,26 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               case 50:
                 {
                   updateId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 50
               case 56:
                 {
                   revisionNumber_ = input.readInt32();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 56
               case 82:
                 {
                   input.readMessage(
                       getLastDeploymentChangeTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 82
               case 90:
                 {
                   supportUrl_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 90
               default:
@@ -13496,8 +13616,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         title_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -13513,8 +13633,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTitle() {
-
         title_ = getDefaultInstance().getTitle();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -13535,8 +13655,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         title_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -13602,8 +13722,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -13619,8 +13739,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -13641,8 +13761,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -13653,12 +13773,12 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           categories_ = java.util.Collections.emptyList();
 
       private void ensureCategoriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           categories_ =
               new java.util.ArrayList<
                   com.google.cloud.osconfig.v1alpha.Inventory.WindowsUpdatePackage
                       .WindowsUpdateCategory>(categories_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -13923,7 +14043,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public Builder clearCategories() {
         if (categoriesBuilder_ == null) {
           categories_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           categoriesBuilder_.clear();
@@ -14083,7 +14203,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                       .WindowsUpdateCategory.Builder,
                   com.google.cloud.osconfig.v1alpha.Inventory.WindowsUpdatePackage
                       .WindowsUpdateCategoryOrBuilder>(
-                  categories_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  categories_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
           categories_ = null;
         }
         return categoriesBuilder_;
@@ -14093,9 +14213,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureKbArticleIdsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           kbArticleIds_ = new com.google.protobuf.LazyStringArrayList(kbArticleIds_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -14238,7 +14358,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearKbArticleIds() {
         kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -14327,8 +14447,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         supportUrl_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -14344,8 +14464,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSupportUrl() {
-
         supportUrl_ = getDefaultInstance().getSupportUrl();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -14366,8 +14486,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         supportUrl_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -14376,9 +14496,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureMoreInfoUrlsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           moreInfoUrls_ = new com.google.protobuf.LazyStringArrayList(moreInfoUrls_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000020;
         }
       }
       /**
@@ -14521,7 +14641,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearMoreInfoUrls() {
         moreInfoUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -14613,8 +14733,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         updateId_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -14631,8 +14751,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUpdateId() {
-
         updateId_ = getDefaultInstance().getUpdateId();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -14654,8 +14774,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         updateId_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -14691,6 +14811,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public Builder setRevisionNumber(int value) {
 
         revisionNumber_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -14706,7 +14827,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRevisionNumber() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         revisionNumber_ = 0;
         onChanged();
         return this;
@@ -14730,7 +14851,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the lastDeploymentChangeTime field is set.
        */
       public boolean hasLastDeploymentChangeTime() {
-        return lastDeploymentChangeTimeBuilder_ != null || lastDeploymentChangeTime_ != null;
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        *
@@ -14767,11 +14888,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           lastDeploymentChangeTime_ = value;
-          onChanged();
         } else {
           lastDeploymentChangeTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -14787,11 +14908,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (lastDeploymentChangeTimeBuilder_ == null) {
           lastDeploymentChangeTime_ = builderForValue.build();
-          onChanged();
         } else {
           lastDeploymentChangeTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -14805,19 +14926,18 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeLastDeploymentChangeTime(com.google.protobuf.Timestamp value) {
         if (lastDeploymentChangeTimeBuilder_ == null) {
-          if (lastDeploymentChangeTime_ != null) {
-            lastDeploymentChangeTime_ =
-                com.google.protobuf.Timestamp.newBuilder(lastDeploymentChangeTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000100) != 0)
+              && lastDeploymentChangeTime_ != null
+              && lastDeploymentChangeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLastDeploymentChangeTimeBuilder().mergeFrom(value);
           } else {
             lastDeploymentChangeTime_ = value;
           }
-          onChanged();
         } else {
           lastDeploymentChangeTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -14830,14 +14950,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp last_deployment_change_time = 10;</code>
        */
       public Builder clearLastDeploymentChangeTime() {
-        if (lastDeploymentChangeTimeBuilder_ == null) {
-          lastDeploymentChangeTime_ = null;
-          onChanged();
-        } else {
-          lastDeploymentChangeTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        lastDeploymentChangeTime_ = null;
+        if (lastDeploymentChangeTimeBuilder_ != null) {
+          lastDeploymentChangeTimeBuilder_.dispose();
           lastDeploymentChangeTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -14850,7 +14969,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp last_deployment_change_time = 10;</code>
        */
       public com.google.protobuf.Timestamp.Builder getLastDeploymentChangeTimeBuilder() {
-
+        bitField0_ |= 0x00000100;
         onChanged();
         return getLastDeploymentChangeTimeFieldBuilder().getBuilder();
       }
@@ -15138,7 +15257,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CAPTION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object caption_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object caption_ = "";
     /**
      *
      *
@@ -15187,7 +15308,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -15236,7 +15359,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int HOT_FIX_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object hotFixId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object hotFixId_ = "";
     /**
      *
      *
@@ -15329,7 +15454,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getInstallTimeOrBuilder() {
-      return getInstallTime();
+      return installTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : installTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -15578,16 +15705,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         caption_ = "";
-
         description_ = "";
-
         hotFixId_ = "";
-
-        if (installTimeBuilder_ == null) {
-          installTime_ = null;
-        } else {
-          installTime_ = null;
+        installTime_ = null;
+        if (installTimeBuilder_ != null) {
+          installTimeBuilder_.dispose();
           installTimeBuilder_ = null;
         }
         return this;
@@ -15621,16 +15745,29 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.osconfig.v1alpha.Inventory.WindowsQuickFixEngineeringPackage result =
             new com.google.cloud.osconfig.v1alpha.Inventory.WindowsQuickFixEngineeringPackage(this);
-        result.caption_ = caption_;
-        result.description_ = description_;
-        result.hotFixId_ = hotFixId_;
-        if (installTimeBuilder_ == null) {
-          result.installTime_ = installTime_;
-        } else {
-          result.installTime_ = installTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1alpha.Inventory.WindowsQuickFixEngineeringPackage result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.caption_ = caption_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.hotFixId_ = hotFixId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.installTime_ =
+              installTimeBuilder_ == null ? installTime_ : installTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -15689,14 +15826,17 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getCaption().isEmpty()) {
           caption_ = other.caption_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getHotFixId().isEmpty()) {
           hotFixId_ = other.hotFixId_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.hasInstallTime()) {
@@ -15731,25 +15871,25 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   caption_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   hotFixId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 42:
                 {
                   input.readMessage(getInstallTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 42
               default:
@@ -15768,6 +15908,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object caption_ = "";
       /**
@@ -15830,8 +15972,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         caption_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -15847,8 +15989,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCaption() {
-
         caption_ = getDefaultInstance().getCaption();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -15869,8 +16011,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         caption_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -15936,8 +16078,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -15953,8 +16095,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -15975,8 +16117,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -16042,8 +16184,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         hotFixId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -16059,8 +16201,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearHotFixId() {
-
         hotFixId_ = getDefaultInstance().getHotFixId();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -16081,8 +16223,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         hotFixId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -16105,7 +16247,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the installTime field is set.
        */
       public boolean hasInstallTime() {
-        return installTimeBuilder_ != null || installTime_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -16142,11 +16284,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           installTime_ = value;
-          onChanged();
         } else {
           installTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -16161,11 +16303,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public Builder setInstallTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (installTimeBuilder_ == null) {
           installTime_ = builderForValue.build();
-          onChanged();
         } else {
           installTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -16179,19 +16321,18 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeInstallTime(com.google.protobuf.Timestamp value) {
         if (installTimeBuilder_ == null) {
-          if (installTime_ != null) {
-            installTime_ =
-                com.google.protobuf.Timestamp.newBuilder(installTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && installTime_ != null
+              && installTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getInstallTimeBuilder().mergeFrom(value);
           } else {
             installTime_ = value;
           }
-          onChanged();
         } else {
           installTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -16204,14 +16345,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp install_time = 5;</code>
        */
       public Builder clearInstallTime() {
-        if (installTimeBuilder_ == null) {
-          installTime_ = null;
-          onChanged();
-        } else {
-          installTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        installTime_ = null;
+        if (installTimeBuilder_ != null) {
+          installTimeBuilder_.dispose();
           installTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -16224,7 +16364,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp install_time = 5;</code>
        */
       public com.google.protobuf.Timestamp.Builder getInstallTimeBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getInstallTimeFieldBuilder().getBuilder();
       }
@@ -16542,7 +16682,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -16591,7 +16733,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISPLAY_VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object displayVersion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayVersion_ = "";
     /**
      *
      *
@@ -16640,7 +16784,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PUBLISHER_FIELD_NUMBER = 3;
-    private volatile java.lang.Object publisher_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object publisher_ = "";
     /**
      *
      *
@@ -16737,11 +16883,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.type.DateOrBuilder getInstallDateOrBuilder() {
-      return getInstallDate();
+      return installDate_ == null ? com.google.type.Date.getDefaultInstance() : installDate_;
     }
 
     public static final int HELP_LINK_FIELD_NUMBER = 5;
-    private volatile java.lang.Object helpLink_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object helpLink_ = "";
     /**
      *
      *
@@ -17032,20 +17180,16 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         displayName_ = "";
-
         displayVersion_ = "";
-
         publisher_ = "";
-
-        if (installDateBuilder_ == null) {
-          installDate_ = null;
-        } else {
-          installDate_ = null;
+        installDate_ = null;
+        if (installDateBuilder_ != null) {
+          installDateBuilder_.dispose();
           installDateBuilder_ = null;
         }
         helpLink_ = "";
-
         return this;
       }
 
@@ -17074,17 +17218,32 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1alpha.Inventory.WindowsApplication buildPartial() {
         com.google.cloud.osconfig.v1alpha.Inventory.WindowsApplication result =
             new com.google.cloud.osconfig.v1alpha.Inventory.WindowsApplication(this);
-        result.displayName_ = displayName_;
-        result.displayVersion_ = displayVersion_;
-        result.publisher_ = publisher_;
-        if (installDateBuilder_ == null) {
-          result.installDate_ = installDate_;
-        } else {
-          result.installDate_ = installDateBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.helpLink_ = helpLink_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.osconfig.v1alpha.Inventory.WindowsApplication result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayVersion_ = displayVersion_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.publisher_ = publisher_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.installDate_ =
+              installDateBuilder_ == null ? installDate_ : installDateBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.helpLink_ = helpLink_;
+        }
       }
 
       @java.lang.Override
@@ -17139,14 +17298,17 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDisplayVersion().isEmpty()) {
           displayVersion_ = other.displayVersion_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getPublisher().isEmpty()) {
           publisher_ = other.publisher_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.hasInstallDate()) {
@@ -17154,6 +17316,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getHelpLink().isEmpty()) {
           helpLink_ = other.helpLink_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -17185,31 +17348,31 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   displayVersion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   publisher_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(getInstallDateFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   helpLink_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -17228,6 +17391,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object displayName_ = "";
       /**
@@ -17290,8 +17455,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -17307,8 +17472,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -17329,8 +17494,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -17396,8 +17561,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayVersion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -17413,8 +17578,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisplayVersion() {
-
         displayVersion_ = getDefaultInstance().getDisplayVersion();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -17435,8 +17600,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayVersion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -17502,8 +17667,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         publisher_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -17519,8 +17684,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPublisher() {
-
         publisher_ = getDefaultInstance().getPublisher();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -17541,8 +17706,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         publisher_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -17565,7 +17730,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the installDate field is set.
        */
       public boolean hasInstallDate() {
-        return installDateBuilder_ != null || installDate_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -17604,11 +17769,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           installDate_ = value;
-          onChanged();
         } else {
           installDateBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -17625,11 +17790,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public Builder setInstallDate(com.google.type.Date.Builder builderForValue) {
         if (installDateBuilder_ == null) {
           installDate_ = builderForValue.build();
-          onChanged();
         } else {
           installDateBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -17645,17 +17810,18 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeInstallDate(com.google.type.Date value) {
         if (installDateBuilder_ == null) {
-          if (installDate_ != null) {
-            installDate_ =
-                com.google.type.Date.newBuilder(installDate_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && installDate_ != null
+              && installDate_ != com.google.type.Date.getDefaultInstance()) {
+            getInstallDateBuilder().mergeFrom(value);
           } else {
             installDate_ = value;
           }
-          onChanged();
         } else {
           installDateBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -17670,14 +17836,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.type.Date install_date = 4;</code>
        */
       public Builder clearInstallDate() {
-        if (installDateBuilder_ == null) {
-          installDate_ = null;
-          onChanged();
-        } else {
-          installDate_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        installDate_ = null;
+        if (installDateBuilder_ != null) {
+          installDateBuilder_.dispose();
           installDateBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -17692,7 +17857,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.type.Date install_date = 4;</code>
        */
       public com.google.type.Date.Builder getInstallDateBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getInstallDateFieldBuilder().getBuilder();
       }
@@ -17801,8 +17966,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         helpLink_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -17818,8 +17983,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearHelpLink() {
-
         helpLink_ = getDefaultInstance().getHelpLink();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -17840,8 +18005,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         helpLink_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -17914,7 +18079,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -18017,7 +18184,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1alpha.Inventory.OsInfoOrBuilder getOsInfoOrBuilder() {
-    return getOsInfo();
+    return osInfo_ == null
+        ? com.google.cloud.osconfig.v1alpha.Inventory.OsInfo.getDefaultInstance()
+        : osInfo_;
   }
 
   public static final int ITEMS_FIELD_NUMBER = 2;
@@ -18037,6 +18206,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                         com.google.cloud.osconfig.v1alpha.Inventory.Item.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.osconfig.v1alpha.Inventory.Item>
       items_;
@@ -18115,8 +18285,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.osconfig.v1alpha.Inventory.Item getItemsOrDefault(
-      java.lang.String key, com.google.cloud.osconfig.v1alpha.Inventory.Item defaultValue) {
+  public /* nullable */ com.google.cloud.osconfig.v1alpha.Inventory.Item getItemsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.osconfig.v1alpha.Inventory.Item defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -18197,7 +18369,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -18468,19 +18640,17 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (osInfoBuilder_ == null) {
-        osInfo_ = null;
-      } else {
-        osInfo_ = null;
+      osInfo_ = null;
+      if (osInfoBuilder_ != null) {
+        osInfoBuilder_.dispose();
         osInfoBuilder_ = null;
       }
       internalGetMutableItems().clear();
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       return this;
@@ -18510,22 +18680,28 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.osconfig.v1alpha.Inventory buildPartial() {
       com.google.cloud.osconfig.v1alpha.Inventory result =
           new com.google.cloud.osconfig.v1alpha.Inventory(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (osInfoBuilder_ == null) {
-        result.osInfo_ = osInfo_;
-      } else {
-        result.osInfo_ = osInfoBuilder_.build();
-      }
-      result.items_ = internalGetItems();
-      result.items_.makeImmutable();
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.osconfig.v1alpha.Inventory result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.osInfo_ = osInfoBuilder_ == null ? osInfo_ : osInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.items_ = internalGetItems();
+        result.items_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -18575,12 +18751,14 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.osconfig.v1alpha.Inventory.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasOsInfo()) {
         mergeOsInfo(other.getOsInfo());
       }
       internalGetMutableItems().mergeFrom(other.internalGetItems());
+      bitField0_ |= 0x00000004;
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
@@ -18613,7 +18791,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getOsInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
@@ -18625,18 +18803,19 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                             ItemsDefaultEntryHolder.defaultEntry.getParserForType(),
                             extensionRegistry);
                 internalGetMutableItems().getMutableMap().put(items__.getKey(), items__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -18725,8 +18904,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -18744,8 +18923,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -18768,8 +18947,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -18794,7 +18973,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the osInfo field is set.
      */
     public boolean hasOsInfo() {
-      return osInfoBuilder_ != null || osInfo_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -18835,11 +19014,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         osInfo_ = value;
-        onChanged();
       } else {
         osInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -18857,11 +19036,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.osconfig.v1alpha.Inventory.OsInfo.Builder builderForValue) {
       if (osInfoBuilder_ == null) {
         osInfo_ = builderForValue.build();
-        onChanged();
       } else {
         osInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -18877,19 +19056,18 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOsInfo(com.google.cloud.osconfig.v1alpha.Inventory.OsInfo value) {
       if (osInfoBuilder_ == null) {
-        if (osInfo_ != null) {
-          osInfo_ =
-              com.google.cloud.osconfig.v1alpha.Inventory.OsInfo.newBuilder(osInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && osInfo_ != null
+            && osInfo_ != com.google.cloud.osconfig.v1alpha.Inventory.OsInfo.getDefaultInstance()) {
+          getOsInfoBuilder().mergeFrom(value);
         } else {
           osInfo_ = value;
         }
-        onChanged();
       } else {
         osInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -18904,14 +19082,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOsInfo() {
-      if (osInfoBuilder_ == null) {
-        osInfo_ = null;
-        onChanged();
-      } else {
-        osInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      osInfo_ = null;
+      if (osInfoBuilder_ != null) {
+        osInfoBuilder_.dispose();
         osInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -18926,7 +19103,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.osconfig.v1alpha.Inventory.OsInfo.Builder getOsInfoBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOsInfoFieldBuilder().getBuilder();
     }
@@ -18994,14 +19171,14 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.osconfig.v1alpha.Inventory.Item>
         internalGetMutableItems() {
-      onChanged();
-      ;
       if (items_ == null) {
         items_ = com.google.protobuf.MapField.newMapField(ItemsDefaultEntryHolder.defaultEntry);
       }
       if (!items_.isMutable()) {
         items_ = items_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return items_;
     }
 
@@ -19070,8 +19247,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.osconfig.v1alpha.Inventory.Item getItemsOrDefault(
-        java.lang.String key, com.google.cloud.osconfig.v1alpha.Inventory.Item defaultValue) {
+    public /* nullable */ com.google.cloud.osconfig.v1alpha.Inventory.Item getItemsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.osconfig.v1alpha.Inventory.Item defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -19107,6 +19286,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearItems() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableItems().getMutableMap().clear();
       return this;
     }
@@ -19135,6 +19315,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.osconfig.v1alpha.Inventory.Item>
         getMutableItems() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableItems().getMutableMap();
     }
     /**
@@ -19159,8 +19340,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableItems().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -19180,6 +19361,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllItems(
         java.util.Map<java.lang.String, com.google.cloud.osconfig.v1alpha.Inventory.Item> values) {
       internalGetMutableItems().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -19203,7 +19385,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -19244,11 +19426,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -19265,11 +19447,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -19285,17 +19467,18 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -19310,14 +19493,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -19332,7 +19514,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

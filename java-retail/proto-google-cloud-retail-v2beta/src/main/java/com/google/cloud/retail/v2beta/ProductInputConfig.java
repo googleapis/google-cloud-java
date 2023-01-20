@@ -511,6 +511,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (productInlineSourceBuilder_ != null) {
         productInlineSourceBuilder_.clear();
       }
@@ -549,30 +550,30 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.retail.v2beta.ProductInputConfig buildPartial() {
       com.google.cloud.retail.v2beta.ProductInputConfig result =
           new com.google.cloud.retail.v2beta.ProductInputConfig(this);
-      if (sourceCase_ == 1) {
-        if (productInlineSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = productInlineSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 2) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 3) {
-        if (bigQuerySourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = bigQuerySourceBuilder_.build();
-        }
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.ProductInputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.retail.v2beta.ProductInputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && productInlineSourceBuilder_ != null) {
+        result.source_ = productInlineSourceBuilder_.build();
+      }
+      if (sourceCase_ == 2 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 3 && bigQuerySourceBuilder_ != null) {
+        result.source_ = bigQuerySourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -717,6 +718,8 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.retail.v2beta.ProductInlineSource,
@@ -928,7 +931,6 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return productInlineSourceBuilder_;
     }
 
@@ -1137,7 +1139,6 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -1347,7 +1348,6 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return bigQuerySourceBuilder_;
     }
 

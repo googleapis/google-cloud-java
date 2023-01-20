@@ -424,7 +424,6 @@ public interface OperationOrBuilder
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
    */
-
   /* nullable */
   com.google.protobuf.Value getPathFiltersOrDefault(
       java.lang.String key,
@@ -536,7 +535,6 @@ public interface OperationOrBuilder
    * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.recommender.v1beta1.ValueMatcher getPathValueMatchersOrDefault(
       java.lang.String key,

@@ -68,7 +68,9 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AUTH_STRING_FIELD_NUMBER = 1;
-  private volatile java.lang.Object authString_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authString_ = "";
   /**
    *
    *
@@ -313,8 +315,8 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       authString_ = "";
-
       return this;
     }
 
@@ -342,9 +344,18 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.redis.v1.InstanceAuthString buildPartial() {
       com.google.cloud.redis.v1.InstanceAuthString result =
           new com.google.cloud.redis.v1.InstanceAuthString(this);
-      result.authString_ = authString_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.redis.v1.InstanceAuthString result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.authString_ = authString_;
+      }
     }
 
     @java.lang.Override
@@ -394,6 +405,7 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.redis.v1.InstanceAuthString.getDefaultInstance()) return this;
       if (!other.getAuthString().isEmpty()) {
         authString_ = other.authString_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -425,7 +437,7 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 authString_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -444,6 +456,8 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object authString_ = "";
     /**
@@ -506,8 +520,8 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       authString_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -523,8 +537,8 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAuthString() {
-
       authString_ = getDefaultInstance().getAuthString();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -545,8 +559,8 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       authString_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

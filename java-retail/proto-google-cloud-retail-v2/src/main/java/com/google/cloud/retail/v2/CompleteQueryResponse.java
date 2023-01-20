@@ -165,7 +165,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
      */
-
     /* nullable */
     com.google.cloud.retail.v2.CustomAttribute getAttributesOrDefault(
         java.lang.String key,
@@ -249,7 +248,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
 
     public static final int SUGGESTION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object suggestion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object suggestion_ = "";
     /**
      *
      *
@@ -313,6 +314,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                       com.google.cloud.retail.v2.CustomAttribute.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.retail.v2.CustomAttribute>
         attributes_;
@@ -395,8 +397,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
      */
     @java.lang.Override
-    public com.google.cloud.retail.v2.CustomAttribute getAttributesOrDefault(
-        java.lang.String key, com.google.cloud.retail.v2.CustomAttribute defaultValue) {
+    public /* nullable */ com.google.cloud.retail.v2.CustomAttribute getAttributesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.retail.v2.CustomAttribute defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -672,8 +676,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         suggestion_ = "";
-
         internalGetMutableAttributes().clear();
         return this;
       }
@@ -704,12 +708,23 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public com.google.cloud.retail.v2.CompleteQueryResponse.CompletionResult buildPartial() {
         com.google.cloud.retail.v2.CompleteQueryResponse.CompletionResult result =
             new com.google.cloud.retail.v2.CompleteQueryResponse.CompletionResult(this);
-        int from_bitField0_ = bitField0_;
-        result.suggestion_ = suggestion_;
-        result.attributes_ = internalGetAttributes();
-        result.attributes_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2.CompleteQueryResponse.CompletionResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.suggestion_ = suggestion_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.attributes_ = internalGetAttributes();
+          result.attributes_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -765,9 +780,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                 .getDefaultInstance()) return this;
         if (!other.getSuggestion().isEmpty()) {
           suggestion_ = other.suggestion_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
+        bitField0_ |= 0x00000002;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -797,7 +814,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   suggestion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -811,6 +828,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                   internalGetMutableAttributes()
                       .getMutableMap()
                       .put(attributes__.getKey(), attributes__.getValue());
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -893,8 +911,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         suggestion_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -910,8 +928,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearSuggestion() {
-
         suggestion_ = getDefaultInstance().getSuggestion();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -932,8 +950,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         suggestion_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -955,8 +973,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       private com.google.protobuf.MapField<
               java.lang.String, com.google.cloud.retail.v2.CustomAttribute>
           internalGetMutableAttributes() {
-        onChanged();
-        ;
         if (attributes_ == null) {
           attributes_ =
               com.google.protobuf.MapField.newMapField(AttributesDefaultEntryHolder.defaultEntry);
@@ -964,6 +980,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         if (!attributes_.isMutable()) {
           attributes_ = attributes_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return attributes_;
       }
 
@@ -1035,8 +1053,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
        */
       @java.lang.Override
-      public com.google.cloud.retail.v2.CustomAttribute getAttributesOrDefault(
-          java.lang.String key, com.google.cloud.retail.v2.CustomAttribute defaultValue) {
+      public /* nullable */ com.google.cloud.retail.v2.CustomAttribute getAttributesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.retail.v2.CustomAttribute defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1073,6 +1093,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       public Builder clearAttributes() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableAttributes().getMutableMap().clear();
         return this;
       }
@@ -1102,6 +1123,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute>
           getMutableAttributes() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableAttributes().getMutableMap();
       }
       /**
@@ -1127,8 +1149,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableAttributes().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1149,6 +1171,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public Builder putAllAttributes(
           java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> values) {
         internalGetMutableAttributes().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1299,7 +1322,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
 
     public static final int RECENT_SEARCH_FIELD_NUMBER = 1;
-    private volatile java.lang.Object recentSearch_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object recentSearch_ = "";
     /**
      *
      *
@@ -1549,8 +1574,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         recentSearch_ = "";
-
         return this;
       }
 
@@ -1580,9 +1605,19 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult buildPartial() {
         com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult result =
             new com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult(this);
-        result.recentSearch_ = recentSearch_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recentSearch_ = recentSearch_;
+        }
       }
 
       @java.lang.Override
@@ -1638,6 +1673,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                 .getDefaultInstance()) return this;
         if (!other.getRecentSearch().isEmpty()) {
           recentSearch_ = other.recentSearch_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1669,7 +1705,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   recentSearch_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1688,6 +1724,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object recentSearch_ = "";
       /**
@@ -1750,8 +1788,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         recentSearch_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1767,8 +1805,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearRecentSearch() {
-
         recentSearch_ = getDefaultInstance().getRecentSearch();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1789,8 +1827,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         recentSearch_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1863,6 +1901,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int COMPLETION_RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2.CompleteQueryResponse.CompletionResult>
       completionResults_;
   /**
@@ -1952,7 +1992,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ATTRIBUTION_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object attributionToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attributionToken_ = "";
   /**
    *
    *
@@ -2007,6 +2049,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RECENT_SEARCH_RESULTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult>
       recentSearchResults_;
   /**
@@ -2381,6 +2425,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (completionResultsBuilder_ == null) {
         completionResults_ = java.util.Collections.emptyList();
       } else {
@@ -2389,14 +2434,13 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       attributionToken_ = "";
-
       if (recentSearchResultsBuilder_ == null) {
         recentSearchResults_ = java.util.Collections.emptyList();
       } else {
         recentSearchResults_ = null;
         recentSearchResultsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -2424,7 +2468,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.retail.v2.CompleteQueryResponse buildPartial() {
       com.google.cloud.retail.v2.CompleteQueryResponse result =
           new com.google.cloud.retail.v2.CompleteQueryResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2.CompleteQueryResponse result) {
       if (completionResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           completionResults_ = java.util.Collections.unmodifiableList(completionResults_);
@@ -2434,18 +2487,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.completionResults_ = completionResultsBuilder_.build();
       }
-      result.attributionToken_ = attributionToken_;
       if (recentSearchResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           recentSearchResults_ = java.util.Collections.unmodifiableList(recentSearchResults_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.recentSearchResults_ = recentSearchResults_;
       } else {
         result.recentSearchResults_ = recentSearchResultsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.CompleteQueryResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.attributionToken_ = attributionToken_;
+      }
     }
 
     @java.lang.Override
@@ -2523,13 +2580,14 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       if (!other.getAttributionToken().isEmpty()) {
         attributionToken_ = other.attributionToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (recentSearchResultsBuilder_ == null) {
         if (!other.recentSearchResults_.isEmpty()) {
           if (recentSearchResults_.isEmpty()) {
             recentSearchResults_ = other.recentSearchResults_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureRecentSearchResultsIsMutable();
             recentSearchResults_.addAll(other.recentSearchResults_);
@@ -2542,7 +2600,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
             recentSearchResultsBuilder_.dispose();
             recentSearchResultsBuilder_ = null;
             recentSearchResults_ = other.recentSearchResults_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             recentSearchResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRecentSearchResultsFieldBuilder()
@@ -2595,7 +2653,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
             case 18:
               {
                 attributionToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -3131,8 +3189,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       attributionToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3151,8 +3209,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAttributionToken() {
-
       attributionToken_ = getDefaultInstance().getAttributionToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3176,8 +3234,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       attributionToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3186,12 +3244,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         recentSearchResults_ = java.util.Collections.emptyList();
 
     private void ensureRecentSearchResultsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         recentSearchResults_ =
             new java.util.ArrayList<
                 com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult>(
                 recentSearchResults_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3595,7 +3653,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public Builder clearRecentSearchResults() {
       if (recentSearchResultsBuilder_ == null) {
         recentSearchResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         recentSearchResultsBuilder_.clear();
@@ -3841,7 +3899,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                 com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult.Builder,
                 com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResultOrBuilder>(
                 recentSearchResults_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         recentSearchResults_ = null;

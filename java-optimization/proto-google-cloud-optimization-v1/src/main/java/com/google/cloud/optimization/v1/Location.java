@@ -109,11 +109,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.LatLngOrBuilder getLatLngOrBuilder() {
-    return getLatLng();
+    return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
 
   public static final int HEADING_FIELD_NUMBER = 2;
-  private int heading_;
+  private int heading_ = 0;
   /**
    *
    *
@@ -367,14 +367,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (latLngBuilder_ == null) {
-        latLng_ = null;
-      } else {
-        latLng_ = null;
+      bitField0_ = 0;
+      latLng_ = null;
+      if (latLngBuilder_ != null) {
+        latLngBuilder_.dispose();
         latLngBuilder_ = null;
       }
       heading_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -402,20 +401,24 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.Location buildPartial() {
       com.google.cloud.optimization.v1.Location result =
           new com.google.cloud.optimization.v1.Location(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (latLngBuilder_ == null) {
-        result.latLng_ = latLng_;
-      } else {
-        result.latLng_ = latLngBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.Location result) {
+      int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.latLng_ = latLngBuilder_ == null ? latLng_ : latLngBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.heading_ = heading_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -498,13 +501,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getLatLngFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 heading_ = input.readInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -542,7 +545,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latLng field is set.
      */
     public boolean hasLatLng() {
-      return latLngBuilder_ != null || latLng_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -577,11 +580,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         latLng_ = value;
-        onChanged();
       } else {
         latLngBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -596,11 +599,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public Builder setLatLng(com.google.type.LatLng.Builder builderForValue) {
       if (latLngBuilder_ == null) {
         latLng_ = builderForValue.build();
-        onChanged();
       } else {
         latLngBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -614,16 +617,18 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLatLng(com.google.type.LatLng value) {
       if (latLngBuilder_ == null) {
-        if (latLng_ != null) {
-          latLng_ = com.google.type.LatLng.newBuilder(latLng_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && latLng_ != null
+            && latLng_ != com.google.type.LatLng.getDefaultInstance()) {
+          getLatLngBuilder().mergeFrom(value);
         } else {
           latLng_ = value;
         }
-        onChanged();
       } else {
         latLngBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,14 +641,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LatLng lat_lng = 1;</code>
      */
     public Builder clearLatLng() {
-      if (latLngBuilder_ == null) {
-        latLng_ = null;
-        onChanged();
-      } else {
-        latLng_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      latLng_ = null;
+      if (latLngBuilder_ != null) {
+        latLngBuilder_.dispose();
         latLngBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -656,7 +660,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LatLng lat_lng = 1;</code>
      */
     public com.google.type.LatLng.Builder getLatLngBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLatLngFieldBuilder().getBuilder();
     }
@@ -716,7 +720,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasHeading() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -752,8 +756,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setHeading(int value) {
-      bitField0_ |= 0x00000001;
+
       heading_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -772,7 +777,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHeading() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       heading_ = 0;
       onChanged();
       return this;

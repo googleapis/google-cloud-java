@@ -249,6 +249,8 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   }
 
   public static final int TYPES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList types_;
   /**
    *
@@ -314,7 +316,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   }
 
   public static final int INCOMPATIBILITY_MODE_FIELD_NUMBER = 2;
-  private int incompatibilityMode_;
+  private int incompatibilityMode_ = 0;
   /**
    *
    *
@@ -348,9 +350,8 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   @java.lang.Override
   public com.google.cloud.optimization.v1.ShipmentTypeIncompatibility.IncompatibilityMode
       getIncompatibilityMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.optimization.v1.ShipmentTypeIncompatibility.IncompatibilityMode result =
-        com.google.cloud.optimization.v1.ShipmentTypeIncompatibility.IncompatibilityMode.valueOf(
+        com.google.cloud.optimization.v1.ShipmentTypeIncompatibility.IncompatibilityMode.forNumber(
             incompatibilityMode_);
     return result == null
         ? com.google.cloud.optimization.v1.ShipmentTypeIncompatibility.IncompatibilityMode
@@ -580,10 +581,10 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       types_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       incompatibilityMode_ = 0;
-
       return this;
     }
 
@@ -612,15 +613,29 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     public com.google.cloud.optimization.v1.ShipmentTypeIncompatibility buildPartial() {
       com.google.cloud.optimization.v1.ShipmentTypeIncompatibility result =
           new com.google.cloud.optimization.v1.ShipmentTypeIncompatibility(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.optimization.v1.ShipmentTypeIncompatibility result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         types_ = types_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.types_ = types_;
-      result.incompatibilityMode_ = incompatibilityMode_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.optimization.v1.ShipmentTypeIncompatibility result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.incompatibilityMode_ = incompatibilityMode_;
+      }
     }
 
     @java.lang.Override
@@ -719,7 +734,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
             case 16:
               {
                 incompatibilityMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -951,8 +966,8 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setIncompatibilityModeValue(int value) {
-
       incompatibilityMode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -972,10 +987,9 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     @java.lang.Override
     public com.google.cloud.optimization.v1.ShipmentTypeIncompatibility.IncompatibilityMode
         getIncompatibilityMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.optimization.v1.ShipmentTypeIncompatibility.IncompatibilityMode result =
-          com.google.cloud.optimization.v1.ShipmentTypeIncompatibility.IncompatibilityMode.valueOf(
-              incompatibilityMode_);
+          com.google.cloud.optimization.v1.ShipmentTypeIncompatibility.IncompatibilityMode
+              .forNumber(incompatibilityMode_);
       return result == null
           ? com.google.cloud.optimization.v1.ShipmentTypeIncompatibility.IncompatibilityMode
               .UNRECOGNIZED
@@ -1000,7 +1014,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       incompatibilityMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1019,7 +1033,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearIncompatibilityMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       incompatibilityMode_ = 0;
       onChanged();
       return this;

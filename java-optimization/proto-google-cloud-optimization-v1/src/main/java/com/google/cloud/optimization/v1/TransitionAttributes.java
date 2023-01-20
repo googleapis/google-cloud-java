@@ -74,7 +74,9 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SRC_TAG_FIELD_NUMBER = 1;
-  private volatile java.lang.Object srcTag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object srcTag_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
   }
 
   public static final int EXCLUDED_SRC_TAG_FIELD_NUMBER = 2;
-  private volatile java.lang.Object excludedSrcTag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object excludedSrcTag_ = "";
   /**
    *
    *
@@ -184,7 +188,9 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DST_TAG_FIELD_NUMBER = 3;
-  private volatile java.lang.Object dstTag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dstTag_ = "";
   /**
    *
    *
@@ -241,7 +247,9 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
   }
 
   public static final int EXCLUDED_DST_TAG_FIELD_NUMBER = 4;
-  private volatile java.lang.Object excludedDstTag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object excludedDstTag_ = "";
   /**
    *
    *
@@ -292,7 +300,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
   }
 
   public static final int COST_FIELD_NUMBER = 5;
-  private double cost_;
+  private double cost_ = 0D;
   /**
    *
    *
@@ -312,7 +320,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
   }
 
   public static final int COST_PER_KILOMETER_FIELD_NUMBER = 6;
-  private double costPerKilometer_;
+  private double costPerKilometer_ = 0D;
   /**
    *
    *
@@ -383,7 +391,9 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.optimization.v1.DistanceLimitOrBuilder getDistanceLimitOrBuilder() {
-    return getDistanceLimit();
+    return distanceLimit_ == null
+        ? com.google.cloud.optimization.v1.DistanceLimit.getDefaultInstance()
+        : distanceLimit_;
   }
 
   public static final int DELAY_FIELD_NUMBER = 8;
@@ -435,7 +445,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDelayOrBuilder() {
-    return getDelay();
+    return delay_ == null ? com.google.protobuf.Duration.getDefaultInstance() : delay_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -719,28 +729,21 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       srcTag_ = "";
-
       excludedSrcTag_ = "";
-
       dstTag_ = "";
-
       excludedDstTag_ = "";
-
       cost_ = 0D;
-
       costPerKilometer_ = 0D;
-
-      if (distanceLimitBuilder_ == null) {
-        distanceLimit_ = null;
-      } else {
-        distanceLimit_ = null;
+      distanceLimit_ = null;
+      if (distanceLimitBuilder_ != null) {
+        distanceLimitBuilder_.dispose();
         distanceLimitBuilder_ = null;
       }
-      if (delayBuilder_ == null) {
-        delay_ = null;
-      } else {
-        delay_ = null;
+      delay_ = null;
+      if (delayBuilder_ != null) {
+        delayBuilder_.dispose();
         delayBuilder_ = null;
       }
       return this;
@@ -770,24 +773,40 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     public com.google.cloud.optimization.v1.TransitionAttributes buildPartial() {
       com.google.cloud.optimization.v1.TransitionAttributes result =
           new com.google.cloud.optimization.v1.TransitionAttributes(this);
-      result.srcTag_ = srcTag_;
-      result.excludedSrcTag_ = excludedSrcTag_;
-      result.dstTag_ = dstTag_;
-      result.excludedDstTag_ = excludedDstTag_;
-      result.cost_ = cost_;
-      result.costPerKilometer_ = costPerKilometer_;
-      if (distanceLimitBuilder_ == null) {
-        result.distanceLimit_ = distanceLimit_;
-      } else {
-        result.distanceLimit_ = distanceLimitBuilder_.build();
-      }
-      if (delayBuilder_ == null) {
-        result.delay_ = delay_;
-      } else {
-        result.delay_ = delayBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.optimization.v1.TransitionAttributes result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.srcTag_ = srcTag_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.excludedSrcTag_ = excludedSrcTag_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dstTag_ = dstTag_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.excludedDstTag_ = excludedDstTag_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.cost_ = cost_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.costPerKilometer_ = costPerKilometer_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.distanceLimit_ =
+            distanceLimitBuilder_ == null ? distanceLimit_ : distanceLimitBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.delay_ = delayBuilder_ == null ? delay_ : delayBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -838,18 +857,22 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getSrcTag().isEmpty()) {
         srcTag_ = other.srcTag_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getExcludedSrcTag().isEmpty()) {
         excludedSrcTag_ = other.excludedSrcTag_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDstTag().isEmpty()) {
         dstTag_ = other.dstTag_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getExcludedDstTag().isEmpty()) {
         excludedDstTag_ = other.excludedDstTag_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getCost() != 0D) {
@@ -893,49 +916,49 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 srcTag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 excludedSrcTag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 dstTag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 excludedDstTag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 41:
               {
                 cost_ = input.readDouble();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 41
             case 49:
               {
                 costPerKilometer_ = input.readDouble();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 49
             case 58:
               {
                 input.readMessage(getDistanceLimitFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getDelayFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -954,6 +977,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object srcTag_ = "";
     /**
@@ -1031,8 +1056,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       srcTag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1053,8 +1078,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSrcTag() {
-
       srcTag_ = getDefaultInstance().getSrcTag();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1080,8 +1105,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       srcTag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1150,8 +1175,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       excludedSrcTag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1168,8 +1193,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearExcludedSrcTag() {
-
       excludedSrcTag_ = getDefaultInstance().getExcludedSrcTag();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1191,8 +1216,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       excludedSrcTag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1270,8 +1295,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       dstTag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1291,8 +1316,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDstTag() {
-
       dstTag_ = getDefaultInstance().getDstTag();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1317,8 +1342,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dstTag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1387,8 +1412,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       excludedDstTag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1405,8 +1430,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearExcludedDstTag() {
-
       excludedDstTag_ = getDefaultInstance().getExcludedDstTag();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1428,8 +1453,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       excludedDstTag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1469,6 +1494,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     public Builder setCost(double value) {
 
       cost_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1486,7 +1512,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCost() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       cost_ = 0D;
       onChanged();
       return this;
@@ -1529,6 +1555,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     public Builder setCostPerKilometer(double value) {
 
       costPerKilometer_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1547,7 +1574,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCostPerKilometer() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       costPerKilometer_ = 0D;
       onChanged();
       return this;
@@ -1573,7 +1600,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * @return Whether the distanceLimit field is set.
      */
     public boolean hasDistanceLimit() {
-      return distanceLimitBuilder_ != null || distanceLimit_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1614,11 +1641,11 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         distanceLimit_ = value;
-        onChanged();
       } else {
         distanceLimitBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1636,11 +1663,11 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         com.google.cloud.optimization.v1.DistanceLimit.Builder builderForValue) {
       if (distanceLimitBuilder_ == null) {
         distanceLimit_ = builderForValue.build();
-        onChanged();
       } else {
         distanceLimitBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1656,19 +1683,19 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeDistanceLimit(com.google.cloud.optimization.v1.DistanceLimit value) {
       if (distanceLimitBuilder_ == null) {
-        if (distanceLimit_ != null) {
-          distanceLimit_ =
-              com.google.cloud.optimization.v1.DistanceLimit.newBuilder(distanceLimit_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && distanceLimit_ != null
+            && distanceLimit_
+                != com.google.cloud.optimization.v1.DistanceLimit.getDefaultInstance()) {
+          getDistanceLimitBuilder().mergeFrom(value);
         } else {
           distanceLimit_ = value;
         }
-        onChanged();
       } else {
         distanceLimitBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1683,14 +1710,13 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.optimization.v1.DistanceLimit distance_limit = 7;</code>
      */
     public Builder clearDistanceLimit() {
-      if (distanceLimitBuilder_ == null) {
-        distanceLimit_ = null;
-        onChanged();
-      } else {
-        distanceLimit_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      distanceLimit_ = null;
+      if (distanceLimitBuilder_ != null) {
+        distanceLimitBuilder_.dispose();
         distanceLimitBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1705,7 +1731,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.optimization.v1.DistanceLimit distance_limit = 7;</code>
      */
     public com.google.cloud.optimization.v1.DistanceLimit.Builder getDistanceLimitBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getDistanceLimitFieldBuilder().getBuilder();
     }
@@ -1777,7 +1803,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * @return Whether the delay field is set.
      */
     public boolean hasDelay() {
-      return delayBuilder_ != null || delay_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1816,11 +1842,11 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         delay_ = value;
-        onChanged();
       } else {
         delayBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1837,11 +1863,11 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     public Builder setDelay(com.google.protobuf.Duration.Builder builderForValue) {
       if (delayBuilder_ == null) {
         delay_ = builderForValue.build();
-        onChanged();
       } else {
         delayBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1857,16 +1883,18 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeDelay(com.google.protobuf.Duration value) {
       if (delayBuilder_ == null) {
-        if (delay_ != null) {
-          delay_ = com.google.protobuf.Duration.newBuilder(delay_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && delay_ != null
+            && delay_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDelayBuilder().mergeFrom(value);
         } else {
           delay_ = value;
         }
-        onChanged();
       } else {
         delayBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1881,14 +1909,13 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration delay = 8;</code>
      */
     public Builder clearDelay() {
-      if (delayBuilder_ == null) {
-        delay_ = null;
-        onChanged();
-      } else {
-        delay_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      delay_ = null;
+      if (delayBuilder_ != null) {
+        delayBuilder_.dispose();
         delayBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1903,7 +1930,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration delay = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getDelayBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getDelayFieldBuilder().getBuilder();
     }

@@ -680,7 +680,6 @@ public interface VehicleOrBuilder
    * <code>map&lt;string, .google.cloud.optimization.v1.Vehicle.LoadLimit&gt; load_limits = 30;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.optimization.v1.Vehicle.LoadLimit getLoadLimitsOrDefault(
       java.lang.String key,
@@ -987,7 +986,6 @@ public interface VehicleOrBuilder
    * <code>map&lt;string, .google.protobuf.Duration&gt; extra_visit_duration_for_visit_type = 24;
    * </code>
    */
-
   /* nullable */
   com.google.protobuf.Duration getExtraVisitDurationForVisitTypeOrDefault(
       java.lang.String key,

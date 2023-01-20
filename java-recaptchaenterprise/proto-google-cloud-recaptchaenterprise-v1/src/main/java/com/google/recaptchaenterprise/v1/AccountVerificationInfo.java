@@ -403,6 +403,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
   }
 
   public static final int ENDPOINTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.EndpointVerificationInfo> endpoints_;
   /**
    *
@@ -480,7 +482,9 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -531,7 +535,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
   }
 
   public static final int LATEST_VERIFICATION_RESULT_FIELD_NUMBER = 7;
-  private int latestVerificationResult_;
+  private int latestVerificationResult_ = 0;
   /**
    *
    *
@@ -565,9 +569,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result
       getLatestVerificationResult() {
-    @SuppressWarnings("deprecation")
     com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result result =
-        com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result.valueOf(
+        com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result.forNumber(
             latestVerificationResult_);
     return result == null
         ? com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result.UNRECOGNIZED
@@ -575,7 +578,9 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
   }
 
   public static final int USERNAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object username_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    *
    *
@@ -862,6 +867,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (endpointsBuilder_ == null) {
         endpoints_ = java.util.Collections.emptyList();
       } else {
@@ -870,11 +876,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       languageCode_ = "";
-
       latestVerificationResult_ = 0;
-
       username_ = "";
-
       return this;
     }
 
@@ -902,7 +905,16 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
     public com.google.recaptchaenterprise.v1.AccountVerificationInfo buildPartial() {
       com.google.recaptchaenterprise.v1.AccountVerificationInfo result =
           new com.google.recaptchaenterprise.v1.AccountVerificationInfo(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.recaptchaenterprise.v1.AccountVerificationInfo result) {
       if (endpointsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           endpoints_ = java.util.Collections.unmodifiableList(endpoints_);
@@ -912,11 +924,19 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       } else {
         result.endpoints_ = endpointsBuilder_.build();
       }
-      result.languageCode_ = languageCode_;
-      result.latestVerificationResult_ = latestVerificationResult_;
-      result.username_ = username_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.AccountVerificationInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.latestVerificationResult_ = latestVerificationResult_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.username_ = username_;
+      }
     }
 
     @java.lang.Override
@@ -994,6 +1014,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.latestVerificationResult_ != 0) {
@@ -1001,6 +1022,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1046,19 +1068,19 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
             case 18:
               {
                 username_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 56:
               {
                 latestVerificationResult_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 56
             default:
@@ -1528,8 +1550,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1546,8 +1568,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1569,8 +1591,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1608,8 +1630,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setLatestVerificationResultValue(int value) {
-
       latestVerificationResult_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1629,9 +1651,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
     @java.lang.Override
     public com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result
         getLatestVerificationResult() {
-      @SuppressWarnings("deprecation")
       com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result result =
-          com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result.valueOf(
+          com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result.forNumber(
               latestVerificationResult_);
       return result == null
           ? com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result.UNRECOGNIZED
@@ -1656,7 +1677,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       latestVerificationResult_ = value.getNumber();
       onChanged();
       return this;
@@ -1675,7 +1696,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearLatestVerificationResult() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       latestVerificationResult_ = 0;
       onChanged();
       return this;
@@ -1754,8 +1775,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       username_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1775,8 +1796,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      */
     @java.lang.Deprecated
     public Builder clearUsername() {
-
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1801,8 +1822,8 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       username_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

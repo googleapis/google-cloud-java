@@ -71,7 +71,9 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
   }
 
   public static final int PLUGIN_INSTANCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object pluginInstance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pluginInstance_ = "";
   /**
    *
    *
@@ -326,8 +328,8 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pluginInstance_ = "";
-
       return this;
     }
 
@@ -357,9 +359,19 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
     public com.google.cloud.networksecurity.v1beta1.CertificateProviderInstance buildPartial() {
       com.google.cloud.networksecurity.v1beta1.CertificateProviderInstance result =
           new com.google.cloud.networksecurity.v1beta1.CertificateProviderInstance(this);
-      result.pluginInstance_ = pluginInstance_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networksecurity.v1beta1.CertificateProviderInstance result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pluginInstance_ = pluginInstance_;
+      }
     }
 
     @java.lang.Override
@@ -413,6 +425,7 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
               .getDefaultInstance()) return this;
       if (!other.getPluginInstance().isEmpty()) {
         pluginInstance_ = other.pluginInstance_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -444,7 +457,7 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
             case 10:
               {
                 pluginInstance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -463,6 +476,8 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object pluginInstance_ = "";
     /**
@@ -531,8 +546,8 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       pluginInstance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -550,8 +565,8 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearPluginInstance() {
-
       pluginInstance_ = getDefaultInstance().getPluginInstance();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -574,8 +589,8 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pluginInstance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -372,7 +372,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int DISPLAY_PRICE_FIELD_NUMBER = 1;
-    private float displayPrice_;
+    private float displayPrice_ = 0F;
     /**
      *
      *
@@ -390,7 +390,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int ORIGINAL_PRICE_FIELD_NUMBER = 2;
-    private float originalPrice_;
+    private float originalPrice_ = 0F;
     /**
      *
      *
@@ -628,10 +628,9 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         displayPrice_ = 0F;
-
         originalPrice_ = 0F;
-
         return this;
       }
 
@@ -663,10 +662,22 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
           buildPartial() {
         com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice result =
             new com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice(this);
-        result.displayPrice_ = displayPrice_;
-        result.originalPrice_ = originalPrice_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.displayPrice_ = displayPrice_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.originalPrice_ = originalPrice_;
+        }
       }
 
       @java.lang.Override
@@ -757,13 +768,13 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
               case 13:
                 {
                   displayPrice_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   originalPrice_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               default:
@@ -782,6 +793,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float displayPrice_;
       /**
@@ -814,6 +827,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       public Builder setDisplayPrice(float value) {
 
         displayPrice_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -829,7 +843,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearDisplayPrice() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         displayPrice_ = 0F;
         onChanged();
         return this;
@@ -868,6 +882,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       public Builder setOriginalPrice(float value) {
 
         originalPrice_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -884,7 +899,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearOriginalPrice() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         originalPrice_ = 0F;
         onChanged();
         return this;
@@ -1039,7 +1054,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int MIN_FIELD_NUMBER = 1;
-    private float min_;
+    private float min_ = 0F;
     /**
      *
      *
@@ -1057,7 +1072,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int MAX_FIELD_NUMBER = 2;
-    private float max_;
+    private float max_ = 0F;
     /**
      *
      *
@@ -1295,10 +1310,9 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         min_ = 0F;
-
         max_ = 0F;
-
         return this;
       }
 
@@ -1330,10 +1344,22 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
           buildPartial() {
         com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange result =
             new com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange(this);
-        result.min_ = min_;
-        result.max_ = max_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.min_ = min_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.max_ = max_;
+        }
       }
 
       @java.lang.Override
@@ -1424,13 +1450,13 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
               case 13:
                 {
                   min_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   max_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               default:
@@ -1449,6 +1475,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float min_;
       /**
@@ -1481,6 +1509,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       public Builder setMin(float value) {
 
         min_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1496,7 +1525,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearMin() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         min_ = 0F;
         onChanged();
         return this;
@@ -1533,6 +1562,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       public Builder setMax(float value) {
 
         max_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1548,7 +1578,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearMax() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         max_ = 0F;
         onChanged();
         return this;
@@ -1804,6 +1834,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
             0F);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Float> costs_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Float> internalGetCosts() {
@@ -1910,7 +1941,9 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CURRENCY_CODE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object currencyCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currencyCode_ = "";
   /**
    *
    *
@@ -1961,7 +1994,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int STOCK_STATE_FIELD_NUMBER = 5;
-  private int stockState_;
+  private int stockState_ = 0;
   /**
    *
    *
@@ -1995,9 +2028,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState
       getStockState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState result =
-        com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState.valueOf(
+        com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState.forNumber(
             stockState_);
     return result == null
         ? com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState.UNRECOGNIZED
@@ -2005,7 +2037,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AVAILABLE_QUANTITY_FIELD_NUMBER = 6;
-  private long availableQuantity_;
+  private long availableQuantity_ = 0L;
   /**
    *
    *
@@ -2023,7 +2055,9 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CANONICAL_PRODUCT_URI_FIELD_NUMBER = 7;
-  private volatile java.lang.Object canonicalProductUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object canonicalProductUri_ = "";
   /**
    *
    *
@@ -2074,6 +2108,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IMAGES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommendationengine.v1beta1.Image> images_;
   /**
    *
@@ -2475,6 +2511,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (exactPriceBuilder_ != null) {
         exactPriceBuilder_.clear();
       }
@@ -2483,20 +2520,16 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       internalGetMutableCosts().clear();
       currencyCode_ = "";
-
       stockState_ = 0;
-
       availableQuantity_ = 0L;
-
       canonicalProductUri_ = "";
-
       if (imagesBuilder_ == null) {
         images_ = java.util.Collections.emptyList();
       } else {
         images_ = null;
         imagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       priceCase_ = 0;
       price_ = null;
       return this;
@@ -2527,39 +2560,59 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem result =
           new com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem(this);
-      int from_bitField0_ = bitField0_;
-      if (priceCase_ == 1) {
-        if (exactPriceBuilder_ == null) {
-          result.price_ = price_;
-        } else {
-          result.price_ = exactPriceBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (priceCase_ == 2) {
-        if (priceRangeBuilder_ == null) {
-          result.price_ = price_;
-        } else {
-          result.price_ = priceRangeBuilder_.build();
-        }
-      }
-      result.costs_ = internalGetCosts();
-      result.costs_.makeImmutable();
-      result.currencyCode_ = currencyCode_;
-      result.stockState_ = stockState_;
-      result.availableQuantity_ = availableQuantity_;
-      result.canonicalProductUri_ = canonicalProductUri_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem result) {
       if (imagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           images_ = java.util.Collections.unmodifiableList(images_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.images_ = images_;
       } else {
         result.images_ = imagesBuilder_.build();
       }
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.costs_ = internalGetCosts();
+        result.costs_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.currencyCode_ = currencyCode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.stockState_ = stockState_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.availableQuantity_ = availableQuantity_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.canonicalProductUri_ = canonicalProductUri_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem result) {
       result.priceCase_ = priceCase_;
-      onBuilt();
-      return result;
+      result.price_ = this.price_;
+      if (priceCase_ == 1 && exactPriceBuilder_ != null) {
+        result.price_ = exactPriceBuilder_.build();
+      }
+      if (priceCase_ == 2 && priceRangeBuilder_ != null) {
+        result.price_ = priceRangeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2611,8 +2664,10 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
           == com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.getDefaultInstance())
         return this;
       internalGetMutableCosts().mergeFrom(other.internalGetCosts());
+      bitField0_ |= 0x00000004;
       if (!other.getCurrencyCode().isEmpty()) {
         currencyCode_ = other.currencyCode_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.stockState_ != 0) {
@@ -2623,13 +2678,14 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getCanonicalProductUri().isEmpty()) {
         canonicalProductUri_ = other.canonicalProductUri_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (imagesBuilder_ == null) {
         if (!other.images_.isEmpty()) {
           if (images_.isEmpty()) {
             images_ = other.images_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureImagesIsMutable();
             images_.addAll(other.images_);
@@ -2642,7 +2698,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
             imagesBuilder_.dispose();
             imagesBuilder_ = null;
             images_ = other.images_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000080);
             imagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getImagesFieldBuilder()
@@ -2712,30 +2768,31 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
                     input.readMessage(
                         CostsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableCosts().getMutableMap().put(costs__.getKey(), costs__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 currencyCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 stockState_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 availableQuantity_ = input.readInt64();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 canonicalProductUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -3028,7 +3085,6 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       priceCase_ = 1;
       onChanged();
-      ;
       return exactPriceBuilder_;
     }
 
@@ -3275,7 +3331,6 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       priceCase_ = 2;
       onChanged();
-      ;
       return priceRangeBuilder_;
     }
 
@@ -3290,14 +3345,14 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
         internalGetMutableCosts() {
-      onChanged();
-      ;
       if (costs_ == null) {
         costs_ = com.google.protobuf.MapField.newMapField(CostsDefaultEntryHolder.defaultEntry);
       }
       if (!costs_.isMutable()) {
         costs_ = costs_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return costs_;
     }
 
@@ -3398,6 +3453,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearCosts() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableCosts().getMutableMap().clear();
       return this;
     }
@@ -3425,6 +3481,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getMutableCosts() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableCosts().getMutableMap();
     }
     /**
@@ -3447,6 +3504,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
 
       internalGetMutableCosts().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -3465,6 +3523,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllCosts(java.util.Map<java.lang.String, java.lang.Float> values) {
       internalGetMutableCosts().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -3532,8 +3591,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       currencyCode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3550,8 +3609,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCurrencyCode() {
-
       currencyCode_ = getDefaultInstance().getCurrencyCode();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3573,8 +3632,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       currencyCode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3612,8 +3671,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setStockStateValue(int value) {
-
       stockState_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3633,9 +3692,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState
         getStockState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState result =
-          com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState.valueOf(
+          com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState.forNumber(
               stockState_);
       return result == null
           ? com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState.UNRECOGNIZED
@@ -3660,7 +3718,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       stockState_ = value.getNumber();
       onChanged();
       return this;
@@ -3679,7 +3737,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearStockState() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       stockState_ = 0;
       onChanged();
       return this;
@@ -3716,6 +3774,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     public Builder setAvailableQuantity(long value) {
 
       availableQuantity_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3731,7 +3790,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAvailableQuantity() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       availableQuantity_ = 0L;
       onChanged();
       return this;
@@ -3801,8 +3860,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       canonicalProductUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3819,8 +3878,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCanonicalProductUri() {
-
       canonicalProductUri_ = getDefaultInstance().getCanonicalProductUri();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3842,8 +3901,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       canonicalProductUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3852,10 +3911,10 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureImagesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         images_ =
             new java.util.ArrayList<com.google.cloud.recommendationengine.v1beta1.Image>(images_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -4093,7 +4152,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     public Builder clearImages() {
       if (imagesBuilder_ == null) {
         images_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         imagesBuilder_.clear();
@@ -4231,7 +4290,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.recommendationengine.v1beta1.Image,
                 com.google.cloud.recommendationengine.v1beta1.Image.Builder,
                 com.google.cloud.recommendationengine.v1beta1.ImageOrBuilder>(
-                images_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                images_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         images_ = null;
       }
       return imagesBuilder_;

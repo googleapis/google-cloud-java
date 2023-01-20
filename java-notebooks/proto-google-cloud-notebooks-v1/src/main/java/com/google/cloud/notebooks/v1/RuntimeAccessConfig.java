@@ -239,7 +239,7 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ACCESS_TYPE_FIELD_NUMBER = 1;
-  private int accessType_;
+  private int accessType_ = 0;
   /**
    *
    *
@@ -268,16 +268,17 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType getAccessType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType result =
-        com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType.valueOf(accessType_);
+        com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType.forNumber(accessType_);
     return result == null
         ? com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType.UNRECOGNIZED
         : result;
   }
 
   public static final int RUNTIME_OWNER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object runtimeOwner_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object runtimeOwner_ = "";
   /**
    *
    *
@@ -328,7 +329,9 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PROXY_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object proxyUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object proxyUri_ = "";
   /**
    *
    *
@@ -597,12 +600,10 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       accessType_ = 0;
-
       runtimeOwner_ = "";
-
       proxyUri_ = "";
-
       return this;
     }
 
@@ -630,11 +631,24 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.notebooks.v1.RuntimeAccessConfig buildPartial() {
       com.google.cloud.notebooks.v1.RuntimeAccessConfig result =
           new com.google.cloud.notebooks.v1.RuntimeAccessConfig(this);
-      result.accessType_ = accessType_;
-      result.runtimeOwner_ = runtimeOwner_;
-      result.proxyUri_ = proxyUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.RuntimeAccessConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.accessType_ = accessType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.runtimeOwner_ = runtimeOwner_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.proxyUri_ = proxyUri_;
+      }
     }
 
     @java.lang.Override
@@ -688,10 +702,12 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
       }
       if (!other.getRuntimeOwner().isEmpty()) {
         runtimeOwner_ = other.runtimeOwner_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProxyUri().isEmpty()) {
         proxyUri_ = other.proxyUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -723,19 +739,19 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 accessType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 runtimeOwner_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 proxyUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -754,6 +770,8 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int accessType_ = 0;
     /**
@@ -786,8 +804,8 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setAccessTypeValue(int value) {
-
       accessType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -805,9 +823,9 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType getAccessType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType result =
-          com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType.valueOf(accessType_);
+          com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType.forNumber(
+              accessType_);
       return result == null
           ? com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType.UNRECOGNIZED
           : result;
@@ -830,7 +848,7 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       accessType_ = value.getNumber();
       onChanged();
       return this;
@@ -848,7 +866,7 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAccessType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       accessType_ = 0;
       onChanged();
       return this;
@@ -918,8 +936,8 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       runtimeOwner_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -936,8 +954,8 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRuntimeOwner() {
-
       runtimeOwner_ = getDefaultInstance().getRuntimeOwner();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -959,8 +977,8 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       runtimeOwner_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1026,8 +1044,8 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       proxyUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1043,8 +1061,8 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearProxyUri() {
-
       proxyUri_ = getDefaultInstance().getProxyUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1065,8 +1083,8 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       proxyUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

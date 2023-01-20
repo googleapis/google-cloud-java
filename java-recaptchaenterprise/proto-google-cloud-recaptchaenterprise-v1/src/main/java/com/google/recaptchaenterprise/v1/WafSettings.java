@@ -387,7 +387,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WAF_SERVICE_FIELD_NUMBER = 1;
-  private int wafService_;
+  private int wafService_ = 0;
   /**
    *
    *
@@ -420,16 +420,15 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.WafSettings.WafService getWafService() {
-    @SuppressWarnings("deprecation")
     com.google.recaptchaenterprise.v1.WafSettings.WafService result =
-        com.google.recaptchaenterprise.v1.WafSettings.WafService.valueOf(wafService_);
+        com.google.recaptchaenterprise.v1.WafSettings.WafService.forNumber(wafService_);
     return result == null
         ? com.google.recaptchaenterprise.v1.WafSettings.WafService.UNRECOGNIZED
         : result;
   }
 
   public static final int WAF_FEATURE_FIELD_NUMBER = 2;
-  private int wafFeature_;
+  private int wafFeature_ = 0;
   /**
    *
    *
@@ -462,9 +461,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.WafSettings.WafFeature getWafFeature() {
-    @SuppressWarnings("deprecation")
     com.google.recaptchaenterprise.v1.WafSettings.WafFeature result =
-        com.google.recaptchaenterprise.v1.WafSettings.WafFeature.valueOf(wafFeature_);
+        com.google.recaptchaenterprise.v1.WafSettings.WafFeature.forNumber(wafFeature_);
     return result == null
         ? com.google.recaptchaenterprise.v1.WafSettings.WafFeature.UNRECOGNIZED
         : result;
@@ -685,10 +683,9 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       wafService_ = 0;
-
       wafFeature_ = 0;
-
       return this;
     }
 
@@ -716,10 +713,21 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.WafSettings buildPartial() {
       com.google.recaptchaenterprise.v1.WafSettings result =
           new com.google.recaptchaenterprise.v1.WafSettings(this);
-      result.wafService_ = wafService_;
-      result.wafFeature_ = wafFeature_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.WafSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.wafService_ = wafService_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.wafFeature_ = wafFeature_;
+      }
     }
 
     @java.lang.Override
@@ -802,13 +810,13 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 wafService_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 wafFeature_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -827,6 +835,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int wafService_ = 0;
     /**
@@ -861,8 +871,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setWafServiceValue(int value) {
-
       wafService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -881,9 +891,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.recaptchaenterprise.v1.WafSettings.WafService getWafService() {
-      @SuppressWarnings("deprecation")
       com.google.recaptchaenterprise.v1.WafSettings.WafService result =
-          com.google.recaptchaenterprise.v1.WafSettings.WafService.valueOf(wafService_);
+          com.google.recaptchaenterprise.v1.WafSettings.WafService.forNumber(wafService_);
       return result == null
           ? com.google.recaptchaenterprise.v1.WafSettings.WafService.UNRECOGNIZED
           : result;
@@ -906,7 +915,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       wafService_ = value.getNumber();
       onChanged();
       return this;
@@ -925,7 +934,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWafService() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       wafService_ = 0;
       onChanged();
       return this;
@@ -964,8 +973,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setWafFeatureValue(int value) {
-
       wafFeature_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -984,9 +993,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.recaptchaenterprise.v1.WafSettings.WafFeature getWafFeature() {
-      @SuppressWarnings("deprecation")
       com.google.recaptchaenterprise.v1.WafSettings.WafFeature result =
-          com.google.recaptchaenterprise.v1.WafSettings.WafFeature.valueOf(wafFeature_);
+          com.google.recaptchaenterprise.v1.WafSettings.WafFeature.forNumber(wafFeature_);
       return result == null
           ? com.google.recaptchaenterprise.v1.WafSettings.WafFeature.UNRECOGNIZED
           : result;
@@ -1009,7 +1017,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       wafFeature_ = value.getNumber();
       onChanged();
       return this;
@@ -1028,7 +1036,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWafFeature() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       wafFeature_ = 0;
       onChanged();
       return this;

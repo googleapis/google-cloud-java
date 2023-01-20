@@ -68,7 +68,9 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,11 +173,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.retail.v2alpha.ModelOrBuilder getModelOrBuilder() {
-    return getModel();
+    return model_ == null ? com.google.cloud.retail.v2alpha.Model.getDefaultInstance() : model_;
   }
 
   public static final int DRY_RUN_FIELD_NUMBER = 3;
-  private boolean dryRun_;
+  private boolean dryRun_ = false;
   /**
    *
    *
@@ -413,16 +415,14 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (modelBuilder_ == null) {
-        model_ = null;
-      } else {
-        model_ = null;
+      model_ = null;
+      if (modelBuilder_ != null) {
+        modelBuilder_.dispose();
         modelBuilder_ = null;
       }
       dryRun_ = false;
-
       return this;
     }
 
@@ -450,15 +450,24 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.retail.v2alpha.CreateModelRequest buildPartial() {
       com.google.cloud.retail.v2alpha.CreateModelRequest result =
           new com.google.cloud.retail.v2alpha.CreateModelRequest(this);
-      result.parent_ = parent_;
-      if (modelBuilder_ == null) {
-        result.model_ = model_;
-      } else {
-        result.model_ = modelBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.dryRun_ = dryRun_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.CreateModelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.model_ = modelBuilder_ == null ? model_ : modelBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dryRun_ = dryRun_;
+      }
     }
 
     @java.lang.Override
@@ -509,6 +518,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasModel()) {
@@ -546,19 +556,19 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getModelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 dryRun_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -577,6 +587,8 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -648,8 +660,8 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +680,8 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -693,8 +705,8 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -719,7 +731,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the model field is set.
      */
     public boolean hasModel() {
-      return modelBuilder_ != null || model_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -758,11 +770,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         model_ = value;
-        onChanged();
       } else {
         modelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -779,11 +791,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
     public Builder setModel(com.google.cloud.retail.v2alpha.Model.Builder builderForValue) {
       if (modelBuilder_ == null) {
         model_ = builderForValue.build();
-        onChanged();
       } else {
         modelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,19 +811,18 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeModel(com.google.cloud.retail.v2alpha.Model value) {
       if (modelBuilder_ == null) {
-        if (model_ != null) {
-          model_ =
-              com.google.cloud.retail.v2alpha.Model.newBuilder(model_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && model_ != null
+            && model_ != com.google.cloud.retail.v2alpha.Model.getDefaultInstance()) {
+          getModelBuilder().mergeFrom(value);
         } else {
           model_ = value;
         }
-        onChanged();
       } else {
         modelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -826,14 +837,13 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearModel() {
-      if (modelBuilder_ == null) {
-        model_ = null;
-        onChanged();
-      } else {
-        model_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      model_ = null;
+      if (modelBuilder_ != null) {
+        modelBuilder_.dispose();
         modelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -848,7 +858,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.retail.v2alpha.Model.Builder getModelBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getModelFieldBuilder().getBuilder();
     }
@@ -931,6 +941,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
     public Builder setDryRun(boolean value) {
 
       dryRun_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -947,7 +958,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDryRun() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       dryRun_ = false;
       onChanged();
       return this;

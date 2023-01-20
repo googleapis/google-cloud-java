@@ -620,7 +620,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -675,7 +677,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   }
 
   public static final int ANNOTATION_FIELD_NUMBER = 2;
-  private int annotation_;
+  private int annotation_ = 0;
   /**
    *
    *
@@ -713,9 +715,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation
       getAnnotation() {
-    @SuppressWarnings("deprecation")
     com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation result =
-        com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation.valueOf(
+        com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation.forNumber(
             annotation_);
     return result == null
         ? com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation.UNRECOGNIZED
@@ -723,7 +724,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   }
 
   public static final int REASONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> reasons_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer,
           com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>
@@ -733,9 +737,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
               com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>() {
             public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason result =
-                  com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason.valueOf(
+                  com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason.forNumber(
                       from);
               return result == null
                   ? com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason
@@ -838,7 +841,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   private int reasonsMemoizedSerializedSize;
 
   public static final int HASHED_ACCOUNT_ID_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString hashedAccountId_;
+  private com.google.protobuf.ByteString hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -1106,14 +1109,12 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       annotation_ = 0;
-
       reasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -1142,17 +1143,35 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest buildPartial() {
       com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest result =
           new com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.annotation_ = annotation_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        reasons_ = java.util.Collections.unmodifiableList(reasons_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.reasons_ = reasons_;
-      result.hashedAccountId_ = hashedAccountId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        reasons_ = java.util.Collections.unmodifiableList(reasons_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.reasons_ = reasons_;
+    }
+
+    private void buildPartial0(
+        com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annotation_ = annotation_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.hashedAccountId_ = hashedAccountId_;
+      }
     }
 
     @java.lang.Override
@@ -1205,6 +1224,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.annotation_ != 0) {
@@ -1213,7 +1233,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       if (!other.reasons_.isEmpty()) {
         if (reasons_.isEmpty()) {
           reasons_ = other.reasons_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureReasonsIsMutable();
           reasons_.addAll(other.reasons_);
@@ -1252,13 +1272,13 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 annotation_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
@@ -1283,7 +1303,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
             case 34:
               {
                 hashedAccountId_ = input.readBytes();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -1375,8 +1395,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1395,8 +1415,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1420,8 +1440,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1463,8 +1483,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setAnnotationValue(int value) {
-
       annotation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1486,9 +1506,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation
         getAnnotation() {
-      @SuppressWarnings("deprecation")
       com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation result =
-          com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation.valueOf(
+          com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation.forNumber(
               annotation_);
       return result == null
           ? com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation.UNRECOGNIZED
@@ -1515,7 +1534,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       annotation_ = value.getNumber();
       onChanged();
       return this;
@@ -1536,7 +1555,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAnnotation() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       annotation_ = 0;
       onChanged();
       return this;
@@ -1545,9 +1564,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     private java.util.List<java.lang.Integer> reasons_ = java.util.Collections.emptyList();
 
     private void ensureReasonsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         reasons_ = new java.util.ArrayList<java.lang.Integer>(reasons_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1693,7 +1712,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      */
     public Builder clearReasons() {
       reasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1834,8 +1853,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       hashedAccountId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1855,7 +1874,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearHashedAccountId() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       hashedAccountId_ = getDefaultInstance().getHashedAccountId();
       onChanged();
       return this;

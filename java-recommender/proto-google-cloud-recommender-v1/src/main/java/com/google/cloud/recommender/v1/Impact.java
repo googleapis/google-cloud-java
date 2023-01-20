@@ -316,7 +316,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CATEGORY_FIELD_NUMBER = 1;
-  private int category_;
+  private int category_ = 0;
   /**
    *
    *
@@ -345,9 +345,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.recommender.v1.Impact.Category getCategory() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.recommender.v1.Impact.Category result =
-        com.google.cloud.recommender.v1.Impact.Category.valueOf(category_);
+        com.google.cloud.recommender.v1.Impact.Category.forNumber(category_);
     return result == null ? com.google.cloud.recommender.v1.Impact.Category.UNRECOGNIZED : result;
   }
 
@@ -691,8 +690,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       category_ = 0;
-
       if (costProjectionBuilder_ != null) {
         costProjectionBuilder_.clear();
       }
@@ -728,24 +727,30 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommender.v1.Impact buildPartial() {
       com.google.cloud.recommender.v1.Impact result =
           new com.google.cloud.recommender.v1.Impact(this);
-      result.category_ = category_;
-      if (projectionCase_ == 100) {
-        if (costProjectionBuilder_ == null) {
-          result.projection_ = projection_;
-        } else {
-          result.projection_ = costProjectionBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (projectionCase_ == 101) {
-        if (securityProjectionBuilder_ == null) {
-          result.projection_ = projection_;
-        } else {
-          result.projection_ = securityProjectionBuilder_.build();
-        }
-      }
-      result.projectionCase_ = projectionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommender.v1.Impact result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.category_ = category_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.recommender.v1.Impact result) {
+      result.projectionCase_ = projectionCase_;
+      result.projection_ = this.projection_;
+      if (projectionCase_ == 100 && costProjectionBuilder_ != null) {
+        result.projection_ = costProjectionBuilder_.build();
+      }
+      if (projectionCase_ == 101 && securityProjectionBuilder_ != null) {
+        result.projection_ = securityProjectionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -841,7 +846,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 category_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 802:
@@ -888,6 +893,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int category_ = 0;
     /**
      *
@@ -917,8 +924,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCategoryValue(int value) {
-
       category_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -935,9 +942,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.recommender.v1.Impact.Category getCategory() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.recommender.v1.Impact.Category result =
-          com.google.cloud.recommender.v1.Impact.Category.valueOf(category_);
+          com.google.cloud.recommender.v1.Impact.Category.forNumber(category_);
       return result == null ? com.google.cloud.recommender.v1.Impact.Category.UNRECOGNIZED : result;
     }
     /**
@@ -956,7 +962,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       category_ = value.getNumber();
       onChanged();
       return this;
@@ -973,7 +979,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCategory() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       category_ = 0;
       onChanged();
       return this;
@@ -1185,7 +1191,6 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       }
       projectionCase_ = 100;
       onChanged();
-      ;
       return costProjectionBuilder_;
     }
 
@@ -1399,7 +1404,6 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       }
       projectionCase_ = 101;
       onChanged();
-      ;
       return securityProjectionBuilder_;
     }
 

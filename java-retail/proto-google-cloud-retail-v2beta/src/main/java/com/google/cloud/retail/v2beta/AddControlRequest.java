@@ -69,7 +69,9 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SERVING_CONFIG_FIELD_NUMBER = 1;
-  private volatile java.lang.Object servingConfig_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object servingConfig_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CONTROL_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object controlId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object controlId_ = "";
   /**
    *
    *
@@ -380,10 +384,9 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       servingConfig_ = "";
-
       controlId_ = "";
-
       return this;
     }
 
@@ -411,10 +414,21 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.retail.v2beta.AddControlRequest buildPartial() {
       com.google.cloud.retail.v2beta.AddControlRequest result =
           new com.google.cloud.retail.v2beta.AddControlRequest(this);
-      result.servingConfig_ = servingConfig_;
-      result.controlId_ = controlId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.AddControlRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.servingConfig_ = servingConfig_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.controlId_ = controlId_;
+      }
     }
 
     @java.lang.Override
@@ -465,10 +479,12 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getServingConfig().isEmpty()) {
         servingConfig_ = other.servingConfig_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getControlId().isEmpty()) {
         controlId_ = other.controlId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -500,13 +516,13 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 servingConfig_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 controlId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -525,6 +541,8 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object servingConfig_ = "";
     /**
@@ -596,8 +614,8 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       servingConfig_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -616,8 +634,8 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearServingConfig() {
-
       servingConfig_ = getDefaultInstance().getServingConfig();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -641,8 +659,8 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       servingConfig_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +729,8 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       controlId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -729,8 +747,8 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearControlId() {
-
       controlId_ = getDefaultInstance().getControlId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -752,8 +770,8 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       controlId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

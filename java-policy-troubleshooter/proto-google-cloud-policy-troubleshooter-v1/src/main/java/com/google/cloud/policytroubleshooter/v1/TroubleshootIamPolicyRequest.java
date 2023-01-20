@@ -114,7 +114,9 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public google.cloud.policytroubleshooter.v1.Explanations.AccessTupleOrBuilder
       getAccessTupleOrBuilder() {
-    return getAccessTuple();
+    return accessTuple_ == null
+        ? google.cloud.policytroubleshooter.v1.Explanations.AccessTuple.getDefaultInstance()
+        : accessTuple_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -322,10 +324,10 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (accessTupleBuilder_ == null) {
-        accessTuple_ = null;
-      } else {
-        accessTuple_ = null;
+      bitField0_ = 0;
+      accessTuple_ = null;
+      if (accessTupleBuilder_ != null) {
+        accessTupleBuilder_.dispose();
         accessTupleBuilder_ = null;
       }
       return this;
@@ -357,13 +359,20 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
     public com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest buildPartial() {
       com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest result =
           new com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest(this);
-      if (accessTupleBuilder_ == null) {
-        result.accessTuple_ = accessTuple_;
-      } else {
-        result.accessTuple_ = accessTupleBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.accessTuple_ =
+            accessTupleBuilder_ == null ? accessTuple_ : accessTupleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -447,7 +456,7 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
             case 10:
               {
                 input.readMessage(getAccessTupleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -466,6 +475,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private google.cloud.policytroubleshooter.v1.Explanations.AccessTuple accessTuple_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -486,7 +497,7 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      * @return Whether the accessTuple field is set.
      */
     public boolean hasAccessTuple() {
-      return accessTupleBuilder_ != null || accessTuple_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -526,11 +537,11 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         accessTuple_ = value;
-        onChanged();
       } else {
         accessTupleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -547,11 +558,11 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
         google.cloud.policytroubleshooter.v1.Explanations.AccessTuple.Builder builderForValue) {
       if (accessTupleBuilder_ == null) {
         accessTuple_ = builderForValue.build();
-        onChanged();
       } else {
         accessTupleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -567,19 +578,20 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
     public Builder mergeAccessTuple(
         google.cloud.policytroubleshooter.v1.Explanations.AccessTuple value) {
       if (accessTupleBuilder_ == null) {
-        if (accessTuple_ != null) {
-          accessTuple_ =
-              google.cloud.policytroubleshooter.v1.Explanations.AccessTuple.newBuilder(accessTuple_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && accessTuple_ != null
+            && accessTuple_
+                != google.cloud.policytroubleshooter.v1.Explanations.AccessTuple
+                    .getDefaultInstance()) {
+          getAccessTupleBuilder().mergeFrom(value);
         } else {
           accessTuple_ = value;
         }
-        onChanged();
       } else {
         accessTupleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -593,14 +605,13 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
      */
     public Builder clearAccessTuple() {
-      if (accessTupleBuilder_ == null) {
-        accessTuple_ = null;
-        onChanged();
-      } else {
-        accessTuple_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      accessTuple_ = null;
+      if (accessTupleBuilder_ != null) {
+        accessTupleBuilder_.dispose();
         accessTupleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -615,7 +626,7 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      */
     public google.cloud.policytroubleshooter.v1.Explanations.AccessTuple.Builder
         getAccessTupleBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAccessTupleFieldBuilder().getBuilder();
     }

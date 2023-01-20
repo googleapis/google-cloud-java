@@ -116,7 +116,9 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -540,8 +542,8 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       imageCase_ = 0;
       image_ = null;
       return this;
@@ -571,16 +573,24 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v1.VmImage buildPartial() {
       com.google.cloud.notebooks.v1.VmImage result =
           new com.google.cloud.notebooks.v1.VmImage(this);
-      result.project_ = project_;
-      if (imageCase_ == 2) {
-        result.image_ = image_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (imageCase_ == 3) {
-        result.image_ = image_;
-      }
-      result.imageCase_ = imageCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.VmImage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.notebooks.v1.VmImage result) {
+      result.imageCase_ = imageCase_;
+      result.image_ = this.image_;
     }
 
     @java.lang.Override
@@ -630,6 +640,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.notebooks.v1.VmImage.getDefaultInstance()) return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getImageCase()) {
@@ -681,7 +692,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -728,6 +739,8 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -793,8 +806,8 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -811,8 +824,8 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -834,8 +847,8 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

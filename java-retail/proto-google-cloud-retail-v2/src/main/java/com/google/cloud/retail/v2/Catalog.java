@@ -69,7 +69,9 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -229,7 +233,9 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.retail.v2.ProductLevelConfigOrBuilder getProductLevelConfigOrBuilder() {
-    return getProductLevelConfig();
+    return productLevelConfig_ == null
+        ? com.google.cloud.retail.v2.ProductLevelConfig.getDefaultInstance()
+        : productLevelConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -450,14 +456,12 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
-      if (productLevelConfigBuilder_ == null) {
-        productLevelConfig_ = null;
-      } else {
-        productLevelConfig_ = null;
+      productLevelConfig_ = null;
+      if (productLevelConfigBuilder_ != null) {
+        productLevelConfigBuilder_.dispose();
         productLevelConfigBuilder_ = null;
       }
       return this;
@@ -486,15 +490,27 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.retail.v2.Catalog buildPartial() {
       com.google.cloud.retail.v2.Catalog result = new com.google.cloud.retail.v2.Catalog(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (productLevelConfigBuilder_ == null) {
-        result.productLevelConfig_ = productLevelConfig_;
-      } else {
-        result.productLevelConfig_ = productLevelConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.Catalog result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.productLevelConfig_ =
+            productLevelConfigBuilder_ == null
+                ? productLevelConfig_
+                : productLevelConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -544,10 +560,12 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.retail.v2.Catalog.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasProductLevelConfig()) {
@@ -582,20 +600,20 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(
                     getProductLevelConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -614,6 +632,8 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -682,8 +702,8 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -701,8 +721,8 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -725,8 +745,8 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -804,8 +824,8 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -825,8 +845,8 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -851,8 +871,8 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -877,7 +897,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the productLevelConfig field is set.
      */
     public boolean hasProductLevelConfig() {
-      return productLevelConfigBuilder_ != null || productLevelConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -918,11 +938,11 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         productLevelConfig_ = value;
-        onChanged();
       } else {
         productLevelConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -940,11 +960,11 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.retail.v2.ProductLevelConfig.Builder builderForValue) {
       if (productLevelConfigBuilder_ == null) {
         productLevelConfig_ = builderForValue.build();
-        onChanged();
       } else {
         productLevelConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -960,19 +980,19 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeProductLevelConfig(com.google.cloud.retail.v2.ProductLevelConfig value) {
       if (productLevelConfigBuilder_ == null) {
-        if (productLevelConfig_ != null) {
-          productLevelConfig_ =
-              com.google.cloud.retail.v2.ProductLevelConfig.newBuilder(productLevelConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && productLevelConfig_ != null
+            && productLevelConfig_
+                != com.google.cloud.retail.v2.ProductLevelConfig.getDefaultInstance()) {
+          getProductLevelConfigBuilder().mergeFrom(value);
         } else {
           productLevelConfig_ = value;
         }
-        onChanged();
       } else {
         productLevelConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -987,14 +1007,13 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearProductLevelConfig() {
-      if (productLevelConfigBuilder_ == null) {
-        productLevelConfig_ = null;
-        onChanged();
-      } else {
-        productLevelConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      productLevelConfig_ = null;
+      if (productLevelConfigBuilder_ != null) {
+        productLevelConfigBuilder_.dispose();
         productLevelConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1009,7 +1028,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.retail.v2.ProductLevelConfig.Builder getProductLevelConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getProductLevelConfigFieldBuilder().getBuilder();
     }

@@ -68,7 +68,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
   }
 
   public static final int PRIMARY_FEED_ID_FIELD_NUMBER = 1;
-  private long primaryFeedId_;
+  private long primaryFeedId_ = 0L;
   /**
    *
    *
@@ -86,7 +86,9 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
   }
 
   public static final int PRIMARY_FEED_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object primaryFeedName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object primaryFeedName_ = "";
   /**
    *
    *
@@ -343,10 +345,9 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       primaryFeedId_ = 0L;
-
       primaryFeedName_ = "";
-
       return this;
     }
 
@@ -374,10 +375,21 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
     public com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter buildPartial() {
       com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter result =
           new com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter(this);
-      result.primaryFeedId_ = primaryFeedId_;
-      result.primaryFeedName_ = primaryFeedName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.primaryFeedId_ = primaryFeedId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.primaryFeedName_ = primaryFeedName_;
+      }
     }
 
     @java.lang.Override
@@ -431,6 +443,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
       }
       if (!other.getPrimaryFeedName().isEmpty()) {
         primaryFeedName_ = other.primaryFeedName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -462,13 +475,13 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
             case 8:
               {
                 primaryFeedId_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 primaryFeedName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -487,6 +500,8 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long primaryFeedId_;
     /**
@@ -519,6 +534,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
     public Builder setPrimaryFeedId(long value) {
 
       primaryFeedId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -534,7 +550,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearPrimaryFeedId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       primaryFeedId_ = 0L;
       onChanged();
       return this;
@@ -604,8 +620,8 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       primaryFeedName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -622,8 +638,8 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearPrimaryFeedName() {
-
       primaryFeedName_ = getDefaultInstance().getPrimaryFeedName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -645,8 +661,8 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       primaryFeedName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -465,6 +465,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (grpcEndpointBuilder_ != null) {
         grpcEndpointBuilder_.clear();
       }
@@ -501,23 +502,29 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     public com.google.cloud.networksecurity.v1beta1.CertificateProvider buildPartial() {
       com.google.cloud.networksecurity.v1beta1.CertificateProvider result =
           new com.google.cloud.networksecurity.v1beta1.CertificateProvider(this);
-      if (typeCase_ == 2) {
-        if (grpcEndpointBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = grpcEndpointBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (typeCase_ == 3) {
-        if (certificateProviderInstanceBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = certificateProviderInstanceBuilder_.build();
-        }
-      }
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networksecurity.v1beta1.CertificateProvider result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.networksecurity.v1beta1.CertificateProvider result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 2 && grpcEndpointBuilder_ != null) {
+        result.type_ = grpcEndpointBuilder_.build();
+      }
+      if (typeCase_ == 3 && certificateProviderInstanceBuilder_ != null) {
+        result.type_ = certificateProviderInstanceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -652,6 +659,8 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.networksecurity.v1beta1.GrpcEndpoint,
@@ -870,7 +879,6 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       }
       typeCase_ = 2;
       onChanged();
-      ;
       return grpcEndpointBuilder_;
     }
 
@@ -1129,7 +1137,6 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       }
       typeCase_ = 3;
       onChanged();
-      ;
       return certificateProviderInstanceBuilder_;
     }
 

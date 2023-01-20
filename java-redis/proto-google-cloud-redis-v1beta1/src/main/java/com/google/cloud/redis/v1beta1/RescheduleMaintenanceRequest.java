@@ -252,7 +252,9 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -309,7 +311,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
   }
 
   public static final int RESCHEDULE_TYPE_FIELD_NUMBER = 2;
-  private int rescheduleType_;
+  private int rescheduleType_ = 0;
   /**
    *
    *
@@ -343,9 +345,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType
       getRescheduleType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType result =
-        com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType.valueOf(
+        com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType.forNumber(
             rescheduleType_);
     return result == null
         ? com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType.UNRECOGNIZED
@@ -406,7 +407,9 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
-    return getScheduleTime();
+    return scheduleTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : scheduleTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -636,14 +639,12 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       rescheduleType_ = 0;
-
-      if (scheduleTimeBuilder_ == null) {
-        scheduleTime_ = null;
-      } else {
-        scheduleTime_ = null;
+      scheduleTime_ = null;
+      if (scheduleTimeBuilder_ != null) {
+        scheduleTimeBuilder_.dispose();
         scheduleTimeBuilder_ = null;
       }
       return this;
@@ -673,15 +674,25 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
     public com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest buildPartial() {
       com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest result =
           new com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest(this);
-      result.name_ = name_;
-      result.rescheduleType_ = rescheduleType_;
-      if (scheduleTimeBuilder_ == null) {
-        result.scheduleTime_ = scheduleTime_;
-      } else {
-        result.scheduleTime_ = scheduleTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rescheduleType_ = rescheduleType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.scheduleTime_ =
+            scheduleTimeBuilder_ == null ? scheduleTime_ : scheduleTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -732,6 +743,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.rescheduleType_ != 0) {
@@ -769,19 +781,19 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 rescheduleType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getScheduleTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -800,6 +812,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -874,8 +888,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -895,8 +909,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -921,8 +935,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -960,8 +974,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setRescheduleTypeValue(int value) {
-
       rescheduleType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -981,9 +995,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType
         getRescheduleType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType result =
-          com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType.valueOf(
+          com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType.forNumber(
               rescheduleType_);
       return result == null
           ? com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType.UNRECOGNIZED
@@ -1008,7 +1021,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       rescheduleType_ = value.getNumber();
       onChanged();
       return this;
@@ -1027,7 +1040,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRescheduleType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       rescheduleType_ = 0;
       onChanged();
       return this;
@@ -1054,7 +1067,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
-      return scheduleTimeBuilder_ != null || scheduleTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1097,11 +1110,11 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         scheduleTime_ = value;
-        onChanged();
       } else {
         scheduleTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1119,11 +1132,11 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
     public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleTimeBuilder_ == null) {
         scheduleTime_ = builderForValue.build();
-        onChanged();
       } else {
         scheduleTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1140,19 +1153,18 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      */
     public Builder mergeScheduleTime(com.google.protobuf.Timestamp value) {
       if (scheduleTimeBuilder_ == null) {
-        if (scheduleTime_ != null) {
-          scheduleTime_ =
-              com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && scheduleTime_ != null
+            && scheduleTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getScheduleTimeBuilder().mergeFrom(value);
         } else {
           scheduleTime_ = value;
         }
-        onChanged();
       } else {
         scheduleTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1168,14 +1180,13 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearScheduleTime() {
-      if (scheduleTimeBuilder_ == null) {
-        scheduleTime_ = null;
-        onChanged();
-      } else {
-        scheduleTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      scheduleTime_ = null;
+      if (scheduleTimeBuilder_ != null) {
+        scheduleTimeBuilder_.dispose();
         scheduleTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1191,7 +1202,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }

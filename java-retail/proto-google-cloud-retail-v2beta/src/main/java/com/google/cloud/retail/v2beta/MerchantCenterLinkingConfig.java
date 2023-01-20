@@ -70,6 +70,8 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
   }
 
   public static final int LINKS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.MerchantCenterLink> links_;
   /**
    *
@@ -340,6 +342,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
       } else {
@@ -374,7 +377,16 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
     public com.google.cloud.retail.v2beta.MerchantCenterLinkingConfig buildPartial() {
       com.google.cloud.retail.v2beta.MerchantCenterLinkingConfig result =
           new com.google.cloud.retail.v2beta.MerchantCenterLinkingConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2beta.MerchantCenterLinkingConfig result) {
       if (linksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           links_ = java.util.Collections.unmodifiableList(links_);
@@ -384,8 +396,10 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       } else {
         result.links_ = linksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.MerchantCenterLinkingConfig result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

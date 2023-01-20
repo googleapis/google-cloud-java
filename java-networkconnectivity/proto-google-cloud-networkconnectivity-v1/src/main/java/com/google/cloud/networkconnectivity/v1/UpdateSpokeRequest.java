@@ -127,7 +127,7 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int SPOKE_FIELD_NUMBER = 2;
@@ -181,11 +181,15 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.networkconnectivity.v1.SpokeOrBuilder getSpokeOrBuilder() {
-    return getSpoke();
+    return spoke_ == null
+        ? com.google.cloud.networkconnectivity.v1.Spoke.getDefaultInstance()
+        : spoke_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -483,20 +487,18 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (spokeBuilder_ == null) {
-        spoke_ = null;
-      } else {
-        spoke_ = null;
+      spoke_ = null;
+      if (spokeBuilder_ != null) {
+        spokeBuilder_.dispose();
         spokeBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -524,19 +526,24 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest buildPartial() {
       com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest result =
           new com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (spokeBuilder_ == null) {
-        result.spoke_ = spoke_;
-      } else {
-        result.spoke_ = spokeBuilder_.build();
-      }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.spoke_ = spokeBuilder_ == null ? spoke_ : spokeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -593,6 +600,7 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -624,19 +632,19 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSpokeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -655,6 +663,8 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -679,7 +689,7 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -726,11 +736,11 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -750,11 +760,11 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -773,17 +783,18 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -801,14 +812,13 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -826,7 +836,7 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -904,7 +914,7 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the spoke field is set.
      */
     public boolean hasSpoke() {
-      return spokeBuilder_ != null || spoke_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -945,11 +955,11 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         spoke_ = value;
-        onChanged();
       } else {
         spokeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -966,11 +976,11 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
     public Builder setSpoke(com.google.cloud.networkconnectivity.v1.Spoke.Builder builderForValue) {
       if (spokeBuilder_ == null) {
         spoke_ = builderForValue.build();
-        onChanged();
       } else {
         spokeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -986,19 +996,18 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeSpoke(com.google.cloud.networkconnectivity.v1.Spoke value) {
       if (spokeBuilder_ == null) {
-        if (spoke_ != null) {
-          spoke_ =
-              com.google.cloud.networkconnectivity.v1.Spoke.newBuilder(spoke_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && spoke_ != null
+            && spoke_ != com.google.cloud.networkconnectivity.v1.Spoke.getDefaultInstance()) {
+          getSpokeBuilder().mergeFrom(value);
         } else {
           spoke_ = value;
         }
-        onChanged();
       } else {
         spokeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1013,14 +1022,13 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearSpoke() {
-      if (spokeBuilder_ == null) {
-        spoke_ = null;
-        onChanged();
-      } else {
-        spoke_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      spoke_ = null;
+      if (spokeBuilder_ != null) {
+        spokeBuilder_.dispose();
         spokeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1035,7 +1043,7 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.networkconnectivity.v1.Spoke.Builder getSpokeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSpokeFieldBuilder().getBuilder();
     }
@@ -1181,8 +1189,8 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1209,8 +1217,8 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1242,8 +1250,8 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

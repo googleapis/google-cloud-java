@@ -192,6 +192,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CATEGORIES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList categories_;
     /**
      *
@@ -480,6 +482,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -513,14 +516,26 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy result =
             new com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           categories_ = categories_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.categories_ = categories_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -946,7 +961,9 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -1003,6 +1020,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CATEGORY_HIERARCHIES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy>
       categoryHierarchies_;
@@ -1134,7 +1153,9 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TITLE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -1185,7 +1206,9 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1299,11 +1322,15 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMapOrBuilder
       getItemAttributesOrBuilder() {
-    return getItemAttributes();
+    return itemAttributes_ == null
+        ? com.google.cloud.recommendationengine.v1beta1.FeatureMap.getDefaultInstance()
+        : itemAttributes_;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -1360,6 +1387,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAGS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList tags_;
   /**
    *
@@ -1433,7 +1462,9 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ITEM_GROUP_ID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object itemGroupId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object itemGroupId_ = "";
   /**
    *
    *
@@ -1849,31 +1880,26 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       if (categoryHierarchiesBuilder_ == null) {
         categoryHierarchies_ = java.util.Collections.emptyList();
       } else {
         categoryHierarchies_ = null;
         categoryHierarchiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       title_ = "";
-
       description_ = "";
-
-      if (itemAttributesBuilder_ == null) {
-        itemAttributes_ = null;
-      } else {
-        itemAttributes_ = null;
+      itemAttributes_ = null;
+      if (itemAttributesBuilder_ != null) {
+        itemAttributesBuilder_.dispose();
         itemAttributesBuilder_ = null;
       }
       languageCode_ = "";
-
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       itemGroupId_ = "";
-
       if (productMetadataBuilder_ != null) {
         productMetadataBuilder_.clear();
       }
@@ -1906,41 +1932,63 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommendationengine.v1beta1.CatalogItem buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.CatalogItem result =
           new com.google.cloud.recommendationengine.v1beta1.CatalogItem(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.recommendationengine.v1beta1.CatalogItem result) {
       if (categoryHierarchiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           categoryHierarchies_ = java.util.Collections.unmodifiableList(categoryHierarchies_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.categoryHierarchies_ = categoryHierarchies_;
       } else {
         result.categoryHierarchies_ = categoryHierarchiesBuilder_.build();
       }
-      result.title_ = title_;
-      result.description_ = description_;
-      if (itemAttributesBuilder_ == null) {
-        result.itemAttributes_ = itemAttributes_;
-      } else {
-        result.itemAttributes_ = itemAttributesBuilder_.build();
-      }
-      result.languageCode_ = languageCode_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.tags_ = tags_;
-      result.itemGroupId_ = itemGroupId_;
-      if (recommendationTypeCase_ == 10) {
-        if (productMetadataBuilder_ == null) {
-          result.recommendationType_ = recommendationType_;
-        } else {
-          result.recommendationType_ = productMetadataBuilder_.build();
-        }
+    }
+
+    private void buildPartial0(com.google.cloud.recommendationengine.v1beta1.CatalogItem result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.itemAttributes_ =
+            itemAttributesBuilder_ == null ? itemAttributes_ : itemAttributesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.itemGroupId_ = itemGroupId_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.recommendationengine.v1beta1.CatalogItem result) {
       result.recommendationTypeCase_ = recommendationTypeCase_;
-      onBuilt();
-      return result;
+      result.recommendationType_ = this.recommendationType_;
+      if (recommendationTypeCase_ == 10 && productMetadataBuilder_ != null) {
+        result.recommendationType_ = productMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1991,13 +2039,14 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (categoryHierarchiesBuilder_ == null) {
         if (!other.categoryHierarchies_.isEmpty()) {
           if (categoryHierarchies_.isEmpty()) {
             categoryHierarchies_ = other.categoryHierarchies_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCategoryHierarchiesIsMutable();
             categoryHierarchies_.addAll(other.categoryHierarchies_);
@@ -2010,7 +2059,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             categoryHierarchiesBuilder_.dispose();
             categoryHierarchiesBuilder_ = null;
             categoryHierarchies_ = other.categoryHierarchies_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             categoryHierarchiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCategoryHierarchiesFieldBuilder()
@@ -2022,10 +2071,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasItemAttributes()) {
@@ -2033,12 +2084,13 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -2047,6 +2099,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getItemGroupId().isEmpty()) {
         itemGroupId_ = other.itemGroupId_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       switch (other.getRecommendationTypeCase()) {
@@ -2089,7 +2142,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -2110,25 +2163,25 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getItemAttributesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 66:
@@ -2141,7 +2194,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 itemGroupId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
@@ -2256,8 +2309,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2277,8 +2330,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2303,8 +2356,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2314,12 +2367,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         categoryHierarchies_ = java.util.Collections.emptyList();
 
     private void ensureCategoryHierarchiesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         categoryHierarchies_ =
             new java.util.ArrayList<
                 com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy>(
                 categoryHierarchies_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2672,7 +2725,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCategoryHierarchies() {
       if (categoryHierarchiesBuilder_ == null) {
         categoryHierarchies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         categoryHierarchiesBuilder_.clear();
@@ -2886,7 +2939,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.recommendationengine.v1beta1.CatalogItem
                     .CategoryHierarchyOrBuilder>(
                 categoryHierarchies_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         categoryHierarchies_ = null;
@@ -2958,8 +3011,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2976,8 +3029,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2999,8 +3052,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3069,8 +3122,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3087,8 +3140,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3110,8 +3163,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3140,7 +3193,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the itemAttributes field is set.
      */
     public boolean hasItemAttributes() {
-      return itemAttributesBuilder_ != null || itemAttributes_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3190,11 +3243,11 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         itemAttributes_ = value;
-        onChanged();
       } else {
         itemAttributesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3216,11 +3269,11 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.recommendationengine.v1beta1.FeatureMap.Builder builderForValue) {
       if (itemAttributesBuilder_ == null) {
         itemAttributes_ = builderForValue.build();
-        onChanged();
       } else {
         itemAttributesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3241,19 +3294,19 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeItemAttributes(
         com.google.cloud.recommendationengine.v1beta1.FeatureMap value) {
       if (itemAttributesBuilder_ == null) {
-        if (itemAttributes_ != null) {
-          itemAttributes_ =
-              com.google.cloud.recommendationengine.v1beta1.FeatureMap.newBuilder(itemAttributes_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && itemAttributes_ != null
+            && itemAttributes_
+                != com.google.cloud.recommendationengine.v1beta1.FeatureMap.getDefaultInstance()) {
+          getItemAttributesBuilder().mergeFrom(value);
         } else {
           itemAttributes_ = value;
         }
-        onChanged();
       } else {
         itemAttributesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3272,14 +3325,13 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearItemAttributes() {
-      if (itemAttributesBuilder_ == null) {
-        itemAttributes_ = null;
-        onChanged();
-      } else {
-        itemAttributes_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      itemAttributes_ = null;
+      if (itemAttributesBuilder_ != null) {
+        itemAttributesBuilder_.dispose();
         itemAttributesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3299,7 +3351,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.recommendationengine.v1beta1.FeatureMap.Builder
         getItemAttributesBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getItemAttributesFieldBuilder().getBuilder();
     }
@@ -3433,8 +3485,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3454,8 +3506,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3480,8 +3532,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3490,9 +3542,9 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -3651,7 +3703,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3751,8 +3803,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       itemGroupId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3771,8 +3823,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearItemGroupId() {
-
       itemGroupId_ = getDefaultInstance().getItemGroupId();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3796,8 +3848,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       itemGroupId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4040,7 +4092,6 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       recommendationTypeCase_ = 10;
       onChanged();
-      ;
       return productMetadataBuilder_;
     }
 

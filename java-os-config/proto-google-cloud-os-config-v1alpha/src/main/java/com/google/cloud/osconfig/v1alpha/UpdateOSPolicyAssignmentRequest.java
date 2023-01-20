@@ -118,7 +118,9 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOrBuilder
       getOsPolicyAssignmentOrBuilder() {
-    return getOsPolicyAssignment();
+    return osPolicyAssignment_ == null
+        ? com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.getDefaultInstance()
+        : osPolicyAssignment_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -167,7 +169,7 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -389,16 +391,15 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (osPolicyAssignmentBuilder_ == null) {
-        osPolicyAssignment_ = null;
-      } else {
-        osPolicyAssignment_ = null;
+      bitField0_ = 0;
+      osPolicyAssignment_ = null;
+      if (osPolicyAssignmentBuilder_ != null) {
+        osPolicyAssignmentBuilder_.dispose();
         osPolicyAssignmentBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -429,18 +430,25 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
     public com.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest buildPartial() {
       com.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest result =
           new com.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest(this);
-      if (osPolicyAssignmentBuilder_ == null) {
-        result.osPolicyAssignment_ = osPolicyAssignment_;
-      } else {
-        result.osPolicyAssignment_ = osPolicyAssignmentBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.osPolicyAssignment_ =
+            osPolicyAssignmentBuilder_ == null
+                ? osPolicyAssignment_
+                : osPolicyAssignmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -527,13 +535,13 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
               {
                 input.readMessage(
                     getOsPolicyAssignmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -552,6 +560,8 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.osconfig.v1alpha.OSPolicyAssignment osPolicyAssignment_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -573,7 +583,7 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * @return Whether the osPolicyAssignment field is set.
      */
     public boolean hasOsPolicyAssignment() {
-      return osPolicyAssignmentBuilder_ != null || osPolicyAssignment_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -615,11 +625,11 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         osPolicyAssignment_ = value;
-        onChanged();
       } else {
         osPolicyAssignmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -637,11 +647,11 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
         com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.Builder builderForValue) {
       if (osPolicyAssignmentBuilder_ == null) {
         osPolicyAssignment_ = builderForValue.build();
-        onChanged();
       } else {
         osPolicyAssignmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -658,19 +668,19 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
     public Builder mergeOsPolicyAssignment(
         com.google.cloud.osconfig.v1alpha.OSPolicyAssignment value) {
       if (osPolicyAssignmentBuilder_ == null) {
-        if (osPolicyAssignment_ != null) {
-          osPolicyAssignment_ =
-              com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.newBuilder(osPolicyAssignment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && osPolicyAssignment_ != null
+            && osPolicyAssignment_
+                != com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.getDefaultInstance()) {
+          getOsPolicyAssignmentBuilder().mergeFrom(value);
         } else {
           osPolicyAssignment_ = value;
         }
-        onChanged();
       } else {
         osPolicyAssignmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -685,14 +695,13 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearOsPolicyAssignment() {
-      if (osPolicyAssignmentBuilder_ == null) {
-        osPolicyAssignment_ = null;
-        onChanged();
-      } else {
-        osPolicyAssignment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      osPolicyAssignment_ = null;
+      if (osPolicyAssignmentBuilder_ != null) {
+        osPolicyAssignmentBuilder_.dispose();
         osPolicyAssignmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -708,7 +717,7 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
      */
     public com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.Builder
         getOsPolicyAssignmentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getOsPolicyAssignmentFieldBuilder().getBuilder();
     }
@@ -780,7 +789,7 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -819,11 +828,11 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,11 +848,11 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -858,17 +867,18 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -882,14 +892,13 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -903,7 +912,7 @@ public final class UpdateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

@@ -82,7 +82,9 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -131,7 +133,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REVENUE_FIELD_NUMBER = 2;
-  private float revenue_;
+  private float revenue_ = 0F;
   /**
    *
    *
@@ -164,6 +166,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
             0F);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Float> taxes_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Float> internalGetTaxes() {
@@ -262,6 +265,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
             0F);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Float> costs_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Float> internalGetCosts() {
@@ -380,7 +384,9 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CURRENCY_CODE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object currencyCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currencyCode_ = "";
   /**
    *
    *
@@ -707,14 +713,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       revenue_ = 0F;
-
       internalGetMutableTaxes().clear();
       internalGetMutableCosts().clear();
       currencyCode_ = "";
-
       return this;
     }
 
@@ -743,16 +747,33 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public com.google.cloud.recommendationengine.v1beta1.PurchaseTransaction buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.PurchaseTransaction result =
           new com.google.cloud.recommendationengine.v1beta1.PurchaseTransaction(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      result.revenue_ = revenue_;
-      result.taxes_ = internalGetTaxes();
-      result.taxes_.makeImmutable();
-      result.costs_ = internalGetCosts();
-      result.costs_.makeImmutable();
-      result.currencyCode_ = currencyCode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommendationengine.v1beta1.PurchaseTransaction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.revenue_ = revenue_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.taxes_ = internalGetTaxes();
+        result.taxes_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.costs_ = internalGetCosts();
+        result.costs_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.currencyCode_ = currencyCode_;
+      }
     }
 
     @java.lang.Override
@@ -805,15 +826,19 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getRevenue() != 0F) {
         setRevenue(other.getRevenue());
       }
       internalGetMutableTaxes().mergeFrom(other.internalGetTaxes());
+      bitField0_ |= 0x00000004;
       internalGetMutableCosts().mergeFrom(other.internalGetCosts());
+      bitField0_ |= 0x00000008;
       if (!other.getCurrencyCode().isEmpty()) {
         currencyCode_ = other.currencyCode_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -845,13 +870,13 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 revenue_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 26:
@@ -860,6 +885,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
                     input.readMessage(
                         TaxesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableTaxes().getMutableMap().put(taxes__.getKey(), taxes__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -868,12 +894,13 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
                     input.readMessage(
                         CostsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableCosts().getMutableMap().put(costs__.getKey(), costs__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
               {
                 currencyCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -956,8 +983,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -973,8 +1000,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -995,8 +1022,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1038,6 +1065,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public Builder setRevenue(float value) {
 
       revenue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1056,7 +1084,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRevenue() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       revenue_ = 0F;
       onChanged();
       return this;
@@ -1073,14 +1101,14 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
         internalGetMutableTaxes() {
-      onChanged();
-      ;
       if (taxes_ == null) {
         taxes_ = com.google.protobuf.MapField.newMapField(TaxesDefaultEntryHolder.defaultEntry);
       }
       if (!taxes_.isMutable()) {
         taxes_ = taxes_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return taxes_;
     }
 
@@ -1161,6 +1189,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearTaxes() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableTaxes().getMutableMap().clear();
       return this;
     }
@@ -1183,6 +1212,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getMutableTaxes() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableTaxes().getMutableMap();
     }
     /**
@@ -1200,6 +1230,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       }
 
       internalGetMutableTaxes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1213,6 +1244,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      */
     public Builder putAllTaxes(java.util.Map<java.lang.String, java.lang.Float> values) {
       internalGetMutableTaxes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1227,14 +1259,14 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
         internalGetMutableCosts() {
-      onChanged();
-      ;
       if (costs_ == null) {
         costs_ = com.google.protobuf.MapField.newMapField(CostsDefaultEntryHolder.defaultEntry);
       }
       if (!costs_.isMutable()) {
         costs_ = costs_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return costs_;
     }
 
@@ -1347,6 +1379,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearCosts() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableCosts().getMutableMap().clear();
       return this;
     }
@@ -1377,6 +1410,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getMutableCosts() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableCosts().getMutableMap();
     }
     /**
@@ -1402,6 +1436,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       }
 
       internalGetMutableCosts().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1423,6 +1458,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      */
     public Builder putAllCosts(java.util.Map<java.lang.String, java.lang.Float> values) {
       internalGetMutableCosts().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1490,8 +1526,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       currencyCode_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1508,8 +1544,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCurrencyCode() {
-
       currencyCode_ = getDefaultInstance().getCurrencyCode();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1531,8 +1567,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       currencyCode_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

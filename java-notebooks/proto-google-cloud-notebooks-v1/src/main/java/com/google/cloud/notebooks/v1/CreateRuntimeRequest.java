@@ -70,7 +70,9 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RUNTIME_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object runtimeId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object runtimeId_ = "";
   /**
    *
    *
@@ -219,11 +223,13 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.RuntimeOrBuilder getRuntimeOrBuilder() {
-    return getRuntime();
+    return runtime_ == null ? com.google.cloud.notebooks.v1.Runtime.getDefaultInstance() : runtime_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -500,18 +506,15 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       runtimeId_ = "";
-
-      if (runtimeBuilder_ == null) {
-        runtime_ = null;
-      } else {
-        runtime_ = null;
+      runtime_ = null;
+      if (runtimeBuilder_ != null) {
+        runtimeBuilder_.dispose();
         runtimeBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -539,16 +542,27 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.notebooks.v1.CreateRuntimeRequest buildPartial() {
       com.google.cloud.notebooks.v1.CreateRuntimeRequest result =
           new com.google.cloud.notebooks.v1.CreateRuntimeRequest(this);
-      result.parent_ = parent_;
-      result.runtimeId_ = runtimeId_;
-      if (runtimeBuilder_ == null) {
-        result.runtime_ = runtime_;
-      } else {
-        result.runtime_ = runtimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.CreateRuntimeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.runtimeId_ = runtimeId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.runtime_ = runtimeBuilder_ == null ? runtime_ : runtimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -599,10 +613,12 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRuntimeId().isEmpty()) {
         runtimeId_ = other.runtimeId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRuntime()) {
@@ -610,6 +626,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -641,25 +658,25 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 runtimeId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getRuntimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -678,6 +695,8 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -749,8 +768,8 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,8 +788,8 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -794,8 +813,8 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -861,8 +880,8 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       runtimeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,8 +897,8 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRuntimeId() {
-
       runtimeId_ = getDefaultInstance().getRuntimeId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -900,8 +919,8 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       runtimeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -926,7 +945,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the runtime field is set.
      */
     public boolean hasRuntime() {
-      return runtimeBuilder_ != null || runtime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -967,11 +986,11 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         runtime_ = value;
-        onChanged();
       } else {
         runtimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -988,11 +1007,11 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
     public Builder setRuntime(com.google.cloud.notebooks.v1.Runtime.Builder builderForValue) {
       if (runtimeBuilder_ == null) {
         runtime_ = builderForValue.build();
-        onChanged();
       } else {
         runtimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1008,19 +1027,18 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeRuntime(com.google.cloud.notebooks.v1.Runtime value) {
       if (runtimeBuilder_ == null) {
-        if (runtime_ != null) {
-          runtime_ =
-              com.google.cloud.notebooks.v1.Runtime.newBuilder(runtime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && runtime_ != null
+            && runtime_ != com.google.cloud.notebooks.v1.Runtime.getDefaultInstance()) {
+          getRuntimeBuilder().mergeFrom(value);
         } else {
           runtime_ = value;
         }
-        onChanged();
       } else {
         runtimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1035,14 +1053,13 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRuntime() {
-      if (runtimeBuilder_ == null) {
-        runtime_ = null;
-        onChanged();
-      } else {
-        runtime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      runtime_ = null;
+      if (runtimeBuilder_ != null) {
+        runtimeBuilder_.dispose();
         runtimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1057,7 +1074,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.notebooks.v1.Runtime.Builder getRuntimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRuntimeFieldBuilder().getBuilder();
     }
@@ -1170,8 +1187,8 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1187,8 +1204,8 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1209,8 +1226,8 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

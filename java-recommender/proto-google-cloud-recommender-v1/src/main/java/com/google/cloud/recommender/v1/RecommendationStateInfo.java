@@ -324,7 +324,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -353,9 +353,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.recommender.v1.RecommendationStateInfo.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.recommender.v1.RecommendationStateInfo.State result =
-        com.google.cloud.recommender.v1.RecommendationStateInfo.State.valueOf(state_);
+        com.google.cloud.recommender.v1.RecommendationStateInfo.State.forNumber(state_);
     return result == null
         ? com.google.cloud.recommender.v1.RecommendationStateInfo.State.UNRECOGNIZED
         : result;
@@ -374,6 +373,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> stateMetadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -433,8 +433,10 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getStateMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getStateMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -701,8 +703,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       internalGetMutableStateMetadata().clear();
       return this;
     }
@@ -731,12 +733,22 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     public com.google.cloud.recommender.v1.RecommendationStateInfo buildPartial() {
       com.google.cloud.recommender.v1.RecommendationStateInfo result =
           new com.google.cloud.recommender.v1.RecommendationStateInfo(this);
-      int from_bitField0_ = bitField0_;
-      result.state_ = state_;
-      result.stateMetadata_ = internalGetStateMetadata();
-      result.stateMetadata_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommender.v1.RecommendationStateInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stateMetadata_ = internalGetStateMetadata();
+        result.stateMetadata_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -789,6 +801,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
         setStateValue(other.getStateValue());
       }
       internalGetMutableStateMetadata().mergeFrom(other.internalGetStateMetadata());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -818,7 +831,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -830,6 +843,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
                 internalGetMutableStateMetadata()
                     .getMutableMap()
                     .put(stateMetadata__.getKey(), stateMetadata__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -880,8 +894,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -898,9 +912,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public com.google.cloud.recommender.v1.RecommendationStateInfo.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.recommender.v1.RecommendationStateInfo.State result =
-          com.google.cloud.recommender.v1.RecommendationStateInfo.State.valueOf(state_);
+          com.google.cloud.recommender.v1.RecommendationStateInfo.State.forNumber(state_);
       return result == null
           ? com.google.cloud.recommender.v1.RecommendationStateInfo.State.UNRECOGNIZED
           : result;
@@ -921,7 +934,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -938,7 +951,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -957,8 +970,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableStateMetadata() {
-      onChanged();
-      ;
       if (stateMetadata_ == null) {
         stateMetadata_ =
             com.google.protobuf.MapField.newMapField(StateMetadataDefaultEntryHolder.defaultEntry);
@@ -966,6 +977,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       if (!stateMetadata_.isMutable()) {
         stateMetadata_ = stateMetadata_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return stateMetadata_;
     }
 
@@ -1017,8 +1030,10 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getStateMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getStateMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1047,6 +1062,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     }
 
     public Builder clearStateMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableStateMetadata().getMutableMap().clear();
       return this;
     }
@@ -1069,6 +1085,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableStateMetadata() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableStateMetadata().getMutableMap();
     }
     /**
@@ -1087,8 +1104,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableStateMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1102,6 +1119,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      */
     public Builder putAllStateMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableStateMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

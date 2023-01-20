@@ -445,7 +445,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_ALL_DOMAINS_FIELD_NUMBER = 3;
-  private boolean allowAllDomains_;
+  private boolean allowAllDomains_ = false;
   /**
    *
    *
@@ -463,6 +463,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOWED_DOMAINS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowedDomains_;
   /**
    *
@@ -536,7 +538,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_AMP_TRAFFIC_FIELD_NUMBER = 2;
-  private boolean allowAmpTraffic_;
+  private boolean allowAmpTraffic_ = false;
   /**
    *
    *
@@ -555,7 +557,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTEGRATION_TYPE_FIELD_NUMBER = 4;
-  private int integrationType_;
+  private int integrationType_ = 0;
   /**
    *
    *
@@ -588,16 +590,16 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType getIntegrationType() {
-    @SuppressWarnings("deprecation")
     com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType result =
-        com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType.valueOf(integrationType_);
+        com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType.forNumber(
+            integrationType_);
     return result == null
         ? com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType.UNRECOGNIZED
         : result;
   }
 
   public static final int CHALLENGE_SECURITY_PREFERENCE_FIELD_NUMBER = 5;
-  private int challengeSecurityPreference_;
+  private int challengeSecurityPreference_ = 0;
   /**
    *
    *
@@ -635,9 +637,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference
       getChallengeSecurityPreference() {
-    @SuppressWarnings("deprecation")
     com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference result =
-        com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference.valueOf(
+        com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference.forNumber(
             challengeSecurityPreference_);
     return result == null
         ? com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference.UNRECOGNIZED
@@ -897,16 +898,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allowAllDomains_ = false;
-
       allowedDomains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       allowAmpTraffic_ = false;
-
       integrationType_ = 0;
-
       challengeSecurityPreference_ = 0;
-
       return this;
     }
 
@@ -934,18 +932,37 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.WebKeySettings buildPartial() {
       com.google.recaptchaenterprise.v1.WebKeySettings result =
           new com.google.recaptchaenterprise.v1.WebKeySettings(this);
-      int from_bitField0_ = bitField0_;
-      result.allowAllDomains_ = allowAllDomains_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        allowedDomains_ = allowedDomains_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.allowedDomains_ = allowedDomains_;
-      result.allowAmpTraffic_ = allowAmpTraffic_;
-      result.integrationType_ = integrationType_;
-      result.challengeSecurityPreference_ = challengeSecurityPreference_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.recaptchaenterprise.v1.WebKeySettings result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        allowedDomains_ = allowedDomains_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.allowedDomains_ = allowedDomains_;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.WebKeySettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allowAllDomains_ = allowAllDomains_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowAmpTraffic_ = allowAmpTraffic_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.integrationType_ = integrationType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.challengeSecurityPreference_ = challengeSecurityPreference_;
+      }
     }
 
     @java.lang.Override
@@ -1000,7 +1017,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowedDomains_.isEmpty()) {
         if (allowedDomains_.isEmpty()) {
           allowedDomains_ = other.allowedDomains_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAllowedDomainsIsMutable();
           allowedDomains_.addAll(other.allowedDomains_);
@@ -1052,25 +1069,25 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 allowAmpTraffic_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 24:
               {
                 allowAllDomains_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24
             case 32:
               {
                 integrationType_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 challengeSecurityPreference_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -1123,6 +1140,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowAllDomains(boolean value) {
 
       allowAllDomains_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1138,7 +1156,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowAllDomains() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allowAllDomains_ = false;
       onChanged();
       return this;
@@ -1148,9 +1166,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAllowedDomainsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         allowedDomains_ = new com.google.protobuf.LazyStringArrayList(allowedDomains_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1309,7 +1327,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAllowedDomains() {
       allowedDomains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1372,6 +1390,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowAmpTraffic(boolean value) {
 
       allowAmpTraffic_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1388,7 +1407,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowAmpTraffic() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowAmpTraffic_ = false;
       onChanged();
       return this;
@@ -1427,8 +1446,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIntegrationTypeValue(int value) {
-
       integrationType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1447,9 +1466,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType getIntegrationType() {
-      @SuppressWarnings("deprecation")
       com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType result =
-          com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType.valueOf(
+          com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType.forNumber(
               integrationType_);
       return result == null
           ? com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType.UNRECOGNIZED
@@ -1474,7 +1492,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       integrationType_ = value.getNumber();
       onChanged();
       return this;
@@ -1493,7 +1511,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIntegrationType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       integrationType_ = 0;
       onChanged();
       return this;
@@ -1536,8 +1554,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setChallengeSecurityPreferenceValue(int value) {
-
       challengeSecurityPreference_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1559,9 +1577,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference
         getChallengeSecurityPreference() {
-      @SuppressWarnings("deprecation")
       com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference result =
-          com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference.valueOf(
+          com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference.forNumber(
               challengeSecurityPreference_);
       return result == null
           ? com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference
@@ -1589,7 +1606,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       challengeSecurityPreference_ = value.getNumber();
       onChanged();
       return this;
@@ -1610,7 +1627,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearChallengeSecurityPreference() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       challengeSecurityPreference_ = 0;
       onChanged();
       return this;

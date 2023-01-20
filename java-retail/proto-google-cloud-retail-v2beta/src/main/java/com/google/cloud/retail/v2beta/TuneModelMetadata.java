@@ -68,7 +68,9 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -317,8 +319,8 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       model_ = "";
-
       return this;
     }
 
@@ -346,9 +348,18 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.retail.v2beta.TuneModelMetadata buildPartial() {
       com.google.cloud.retail.v2beta.TuneModelMetadata result =
           new com.google.cloud.retail.v2beta.TuneModelMetadata(this);
-      result.model_ = model_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.TuneModelMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.model_ = model_;
+      }
     }
 
     @java.lang.Override
@@ -399,6 +410,7 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -430,7 +442,7 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -449,6 +461,8 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object model_ = "";
     /**
@@ -517,8 +531,8 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -536,8 +550,8 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -560,8 +574,8 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

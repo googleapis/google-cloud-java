@@ -69,7 +69,7 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 1;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -88,7 +88,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -139,7 +141,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int QUERY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -453,12 +457,10 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pageSize_ = 0;
-
       pageToken_ = "";
-
       query_ = "";
-
       return this;
     }
 
@@ -486,11 +488,24 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.resourcemanager.v3.SearchFoldersRequest buildPartial() {
       com.google.cloud.resourcemanager.v3.SearchFoldersRequest result =
           new com.google.cloud.resourcemanager.v3.SearchFoldersRequest(this);
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.query_ = query_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcemanager.v3.SearchFoldersRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.query_ = query_;
+      }
     }
 
     @java.lang.Override
@@ -544,10 +559,12 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -579,19 +596,19 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -610,6 +627,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int pageSize_;
     /**
@@ -644,6 +663,7 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -660,7 +680,7 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -730,8 +750,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -748,8 +768,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -771,8 +791,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -913,8 +933,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -955,8 +975,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1002,8 +1022,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

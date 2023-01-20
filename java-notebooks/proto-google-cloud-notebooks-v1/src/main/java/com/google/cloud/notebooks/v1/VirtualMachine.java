@@ -69,7 +69,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instanceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceName_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object instanceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceId_ = "";
   /**
    *
    *
@@ -212,7 +216,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.notebooks.v1.VirtualMachineConfigOrBuilder
       getVirtualMachineConfigOrBuilder() {
-    return getVirtualMachineConfig();
+    return virtualMachineConfig_ == null
+        ? com.google.cloud.notebooks.v1.VirtualMachineConfig.getDefaultInstance()
+        : virtualMachineConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -436,14 +442,12 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceName_ = "";
-
       instanceId_ = "";
-
-      if (virtualMachineConfigBuilder_ == null) {
-        virtualMachineConfig_ = null;
-      } else {
-        virtualMachineConfig_ = null;
+      virtualMachineConfig_ = null;
+      if (virtualMachineConfigBuilder_ != null) {
+        virtualMachineConfigBuilder_.dispose();
         virtualMachineConfigBuilder_ = null;
       }
       return this;
@@ -473,15 +477,27 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v1.VirtualMachine buildPartial() {
       com.google.cloud.notebooks.v1.VirtualMachine result =
           new com.google.cloud.notebooks.v1.VirtualMachine(this);
-      result.instanceName_ = instanceName_;
-      result.instanceId_ = instanceId_;
-      if (virtualMachineConfigBuilder_ == null) {
-        result.virtualMachineConfig_ = virtualMachineConfig_;
-      } else {
-        result.virtualMachineConfig_ = virtualMachineConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.VirtualMachine result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceName_ = instanceName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instanceId_ = instanceId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.virtualMachineConfig_ =
+            virtualMachineConfigBuilder_ == null
+                ? virtualMachineConfig_
+                : virtualMachineConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -531,10 +547,12 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.notebooks.v1.VirtualMachine.getDefaultInstance()) return this;
       if (!other.getInstanceName().isEmpty()) {
         instanceName_ = other.instanceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasVirtualMachineConfig()) {
@@ -569,20 +587,20 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 instanceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 instanceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getVirtualMachineConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -601,6 +619,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instanceName_ = "";
     /**
@@ -663,8 +683,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -680,8 +700,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstanceName() {
-
       instanceName_ = getDefaultInstance().getInstanceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -702,8 +722,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,8 +789,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -786,8 +806,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
-
       instanceId_ = getDefaultInstance().getInstanceId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -808,8 +828,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -832,7 +852,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the virtualMachineConfig field is set.
      */
     public boolean hasVirtualMachineConfig() {
-      return virtualMachineConfigBuilder_ != null || virtualMachineConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -870,11 +890,11 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         virtualMachineConfig_ = value;
-        onChanged();
       } else {
         virtualMachineConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -890,11 +910,11 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.notebooks.v1.VirtualMachineConfig.Builder builderForValue) {
       if (virtualMachineConfigBuilder_ == null) {
         virtualMachineConfig_ = builderForValue.build();
-        onChanged();
       } else {
         virtualMachineConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -909,19 +929,19 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeVirtualMachineConfig(
         com.google.cloud.notebooks.v1.VirtualMachineConfig value) {
       if (virtualMachineConfigBuilder_ == null) {
-        if (virtualMachineConfig_ != null) {
-          virtualMachineConfig_ =
-              com.google.cloud.notebooks.v1.VirtualMachineConfig.newBuilder(virtualMachineConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && virtualMachineConfig_ != null
+            && virtualMachineConfig_
+                != com.google.cloud.notebooks.v1.VirtualMachineConfig.getDefaultInstance()) {
+          getVirtualMachineConfigBuilder().mergeFrom(value);
         } else {
           virtualMachineConfig_ = value;
         }
-        onChanged();
       } else {
         virtualMachineConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -934,14 +954,13 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.notebooks.v1.VirtualMachineConfig virtual_machine_config = 3;</code>
      */
     public Builder clearVirtualMachineConfig() {
-      if (virtualMachineConfigBuilder_ == null) {
-        virtualMachineConfig_ = null;
-        onChanged();
-      } else {
-        virtualMachineConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      virtualMachineConfig_ = null;
+      if (virtualMachineConfigBuilder_ != null) {
+        virtualMachineConfigBuilder_.dispose();
         virtualMachineConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -955,7 +974,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.notebooks.v1.VirtualMachineConfig.Builder
         getVirtualMachineConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getVirtualMachineConfigFieldBuilder().getBuilder();
     }

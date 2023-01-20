@@ -431,7 +431,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PERSISTENCE_MODE_FIELD_NUMBER = 1;
-  private int persistenceMode_;
+  private int persistenceMode_ = 0;
   /**
    *
    *
@@ -466,16 +466,16 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.redis.v1beta1.PersistenceConfig.PersistenceMode getPersistenceMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.redis.v1beta1.PersistenceConfig.PersistenceMode result =
-        com.google.cloud.redis.v1beta1.PersistenceConfig.PersistenceMode.valueOf(persistenceMode_);
+        com.google.cloud.redis.v1beta1.PersistenceConfig.PersistenceMode.forNumber(
+            persistenceMode_);
     return result == null
         ? com.google.cloud.redis.v1beta1.PersistenceConfig.PersistenceMode.UNRECOGNIZED
         : result;
   }
 
   public static final int RDB_SNAPSHOT_PERIOD_FIELD_NUMBER = 2;
-  private int rdbSnapshotPeriod_;
+  private int rdbSnapshotPeriod_ = 0;
   /**
    *
    *
@@ -518,9 +518,9 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.redis.v1beta1.PersistenceConfig.SnapshotPeriod getRdbSnapshotPeriod() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.redis.v1beta1.PersistenceConfig.SnapshotPeriod result =
-        com.google.cloud.redis.v1beta1.PersistenceConfig.SnapshotPeriod.valueOf(rdbSnapshotPeriod_);
+        com.google.cloud.redis.v1beta1.PersistenceConfig.SnapshotPeriod.forNumber(
+            rdbSnapshotPeriod_);
     return result == null
         ? com.google.cloud.redis.v1beta1.PersistenceConfig.SnapshotPeriod.UNRECOGNIZED
         : result;
@@ -577,7 +577,9 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRdbNextSnapshotTimeOrBuilder() {
-    return getRdbNextSnapshotTime();
+    return rdbNextSnapshotTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : rdbNextSnapshotTime_;
   }
 
   public static final int RDB_SNAPSHOT_START_TIME_FIELD_NUMBER = 5;
@@ -637,7 +639,9 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRdbSnapshotStartTimeOrBuilder() {
-    return getRdbSnapshotStartTime();
+    return rdbSnapshotStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : rdbSnapshotStartTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -887,20 +891,17 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       persistenceMode_ = 0;
-
       rdbSnapshotPeriod_ = 0;
-
-      if (rdbNextSnapshotTimeBuilder_ == null) {
-        rdbNextSnapshotTime_ = null;
-      } else {
-        rdbNextSnapshotTime_ = null;
+      rdbNextSnapshotTime_ = null;
+      if (rdbNextSnapshotTimeBuilder_ != null) {
+        rdbNextSnapshotTimeBuilder_.dispose();
         rdbNextSnapshotTimeBuilder_ = null;
       }
-      if (rdbSnapshotStartTimeBuilder_ == null) {
-        rdbSnapshotStartTime_ = null;
-      } else {
-        rdbSnapshotStartTime_ = null;
+      rdbSnapshotStartTime_ = null;
+      if (rdbSnapshotStartTimeBuilder_ != null) {
+        rdbSnapshotStartTimeBuilder_.dispose();
         rdbSnapshotStartTimeBuilder_ = null;
       }
       return this;
@@ -930,20 +931,33 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.redis.v1beta1.PersistenceConfig buildPartial() {
       com.google.cloud.redis.v1beta1.PersistenceConfig result =
           new com.google.cloud.redis.v1beta1.PersistenceConfig(this);
-      result.persistenceMode_ = persistenceMode_;
-      result.rdbSnapshotPeriod_ = rdbSnapshotPeriod_;
-      if (rdbNextSnapshotTimeBuilder_ == null) {
-        result.rdbNextSnapshotTime_ = rdbNextSnapshotTime_;
-      } else {
-        result.rdbNextSnapshotTime_ = rdbNextSnapshotTimeBuilder_.build();
-      }
-      if (rdbSnapshotStartTimeBuilder_ == null) {
-        result.rdbSnapshotStartTime_ = rdbSnapshotStartTime_;
-      } else {
-        result.rdbSnapshotStartTime_ = rdbSnapshotStartTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.redis.v1beta1.PersistenceConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.persistenceMode_ = persistenceMode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rdbSnapshotPeriod_ = rdbSnapshotPeriod_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.rdbNextSnapshotTime_ =
+            rdbNextSnapshotTimeBuilder_ == null
+                ? rdbNextSnapshotTime_
+                : rdbNextSnapshotTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rdbSnapshotStartTime_ =
+            rdbSnapshotStartTimeBuilder_ == null
+                ? rdbSnapshotStartTime_
+                : rdbSnapshotStartTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1033,27 +1047,27 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 persistenceMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 rdbSnapshotPeriod_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 34:
               {
                 input.readMessage(
                     getRdbNextSnapshotTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getRdbSnapshotStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -1072,6 +1086,8 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int persistenceMode_ = 0;
     /**
@@ -1108,8 +1124,8 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setPersistenceModeValue(int value) {
-
       persistenceMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1129,9 +1145,8 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.redis.v1beta1.PersistenceConfig.PersistenceMode getPersistenceMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.redis.v1beta1.PersistenceConfig.PersistenceMode result =
-          com.google.cloud.redis.v1beta1.PersistenceConfig.PersistenceMode.valueOf(
+          com.google.cloud.redis.v1beta1.PersistenceConfig.PersistenceMode.forNumber(
               persistenceMode_);
       return result == null
           ? com.google.cloud.redis.v1beta1.PersistenceConfig.PersistenceMode.UNRECOGNIZED
@@ -1157,7 +1172,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       persistenceMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1177,7 +1192,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPersistenceMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       persistenceMode_ = 0;
       onChanged();
       return this;
@@ -1226,8 +1241,8 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setRdbSnapshotPeriodValue(int value) {
-
       rdbSnapshotPeriod_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1251,9 +1266,8 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.redis.v1beta1.PersistenceConfig.SnapshotPeriod getRdbSnapshotPeriod() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.redis.v1beta1.PersistenceConfig.SnapshotPeriod result =
-          com.google.cloud.redis.v1beta1.PersistenceConfig.SnapshotPeriod.valueOf(
+          com.google.cloud.redis.v1beta1.PersistenceConfig.SnapshotPeriod.forNumber(
               rdbSnapshotPeriod_);
       return result == null
           ? com.google.cloud.redis.v1beta1.PersistenceConfig.SnapshotPeriod.UNRECOGNIZED
@@ -1283,7 +1297,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       rdbSnapshotPeriod_ = value.getNumber();
       onChanged();
       return this;
@@ -1307,7 +1321,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRdbSnapshotPeriod() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       rdbSnapshotPeriod_ = 0;
       onChanged();
       return this;
@@ -1333,7 +1347,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the rdbNextSnapshotTime field is set.
      */
     public boolean hasRdbNextSnapshotTime() {
-      return rdbNextSnapshotTimeBuilder_ != null || rdbNextSnapshotTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1374,11 +1388,11 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         rdbNextSnapshotTime_ = value;
-        onChanged();
       } else {
         rdbNextSnapshotTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1395,11 +1409,11 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public Builder setRdbNextSnapshotTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (rdbNextSnapshotTimeBuilder_ == null) {
         rdbNextSnapshotTime_ = builderForValue.build();
-        onChanged();
       } else {
         rdbNextSnapshotTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1415,19 +1429,18 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeRdbNextSnapshotTime(com.google.protobuf.Timestamp value) {
       if (rdbNextSnapshotTimeBuilder_ == null) {
-        if (rdbNextSnapshotTime_ != null) {
-          rdbNextSnapshotTime_ =
-              com.google.protobuf.Timestamp.newBuilder(rdbNextSnapshotTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && rdbNextSnapshotTime_ != null
+            && rdbNextSnapshotTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRdbNextSnapshotTimeBuilder().mergeFrom(value);
         } else {
           rdbNextSnapshotTime_ = value;
         }
-        onChanged();
       } else {
         rdbNextSnapshotTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1442,14 +1455,13 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearRdbNextSnapshotTime() {
-      if (rdbNextSnapshotTimeBuilder_ == null) {
-        rdbNextSnapshotTime_ = null;
-        onChanged();
-      } else {
-        rdbNextSnapshotTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      rdbNextSnapshotTime_ = null;
+      if (rdbNextSnapshotTimeBuilder_ != null) {
+        rdbNextSnapshotTimeBuilder_.dispose();
         rdbNextSnapshotTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1464,7 +1476,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getRdbNextSnapshotTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRdbNextSnapshotTimeFieldBuilder().getBuilder();
     }
@@ -1538,7 +1550,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the rdbSnapshotStartTime field is set.
      */
     public boolean hasRdbSnapshotStartTime() {
-      return rdbSnapshotStartTimeBuilder_ != null || rdbSnapshotStartTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1583,11 +1595,11 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         rdbSnapshotStartTime_ = value;
-        onChanged();
       } else {
         rdbSnapshotStartTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1606,11 +1618,11 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public Builder setRdbSnapshotStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (rdbSnapshotStartTimeBuilder_ == null) {
         rdbSnapshotStartTime_ = builderForValue.build();
-        onChanged();
       } else {
         rdbSnapshotStartTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1628,19 +1640,18 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeRdbSnapshotStartTime(com.google.protobuf.Timestamp value) {
       if (rdbSnapshotStartTimeBuilder_ == null) {
-        if (rdbSnapshotStartTime_ != null) {
-          rdbSnapshotStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(rdbSnapshotStartTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && rdbSnapshotStartTime_ != null
+            && rdbSnapshotStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRdbSnapshotStartTimeBuilder().mergeFrom(value);
         } else {
           rdbSnapshotStartTime_ = value;
         }
-        onChanged();
       } else {
         rdbSnapshotStartTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1657,14 +1668,13 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearRdbSnapshotStartTime() {
-      if (rdbSnapshotStartTimeBuilder_ == null) {
-        rdbSnapshotStartTime_ = null;
-        onChanged();
-      } else {
-        rdbSnapshotStartTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      rdbSnapshotStartTime_ = null;
+      if (rdbSnapshotStartTimeBuilder_ != null) {
+        rdbSnapshotStartTimeBuilder_.dispose();
         rdbSnapshotStartTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1681,7 +1691,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getRdbSnapshotStartTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRdbSnapshotStartTimeFieldBuilder().getBuilder();
     }

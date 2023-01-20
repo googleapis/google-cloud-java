@@ -68,7 +68,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
   }
 
   public static final int PURGED_EVENTS_COUNT_FIELD_NUMBER = 1;
-  private long purgedEventsCount_;
+  private long purgedEventsCount_ = 0L;
   /**
    *
    *
@@ -284,8 +284,8 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       purgedEventsCount_ = 0L;
-
       return this;
     }
 
@@ -313,9 +313,18 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     public com.google.cloud.retail.v2.PurgeUserEventsResponse buildPartial() {
       com.google.cloud.retail.v2.PurgeUserEventsResponse result =
           new com.google.cloud.retail.v2.PurgeUserEventsResponse(this);
-      result.purgedEventsCount_ = purgedEventsCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.PurgeUserEventsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.purgedEventsCount_ = purgedEventsCount_;
+      }
     }
 
     @java.lang.Override
@@ -396,7 +405,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
             case 8:
               {
                 purgedEventsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -415,6 +424,8 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long purgedEventsCount_;
     /**
@@ -447,6 +458,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     public Builder setPurgedEventsCount(long value) {
 
       purgedEventsCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -462,7 +474,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearPurgedEventsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       purgedEventsCount_ = 0L;
       onChanged();
       return this;

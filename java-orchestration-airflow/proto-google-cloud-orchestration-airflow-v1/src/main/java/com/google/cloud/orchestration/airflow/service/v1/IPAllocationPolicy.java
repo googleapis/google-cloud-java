@@ -161,7 +161,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int USE_IP_ALIASES_FIELD_NUMBER = 1;
-  private boolean useIpAliases_;
+  private boolean useIpAliases_ = false;
   /**
    *
    *
@@ -822,8 +822,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       useIpAliases_ = false;
-
       clusterIpAllocationCase_ = 0;
       clusterIpAllocation_ = null;
       servicesIpAllocationCase_ = 0;
@@ -857,23 +857,28 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.orchestration.airflow.service.v1.IPAllocationPolicy buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.IPAllocationPolicy result =
           new com.google.cloud.orchestration.airflow.service.v1.IPAllocationPolicy(this);
-      result.useIpAliases_ = useIpAliases_;
-      if (clusterIpAllocationCase_ == 2) {
-        result.clusterIpAllocation_ = clusterIpAllocation_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (clusterIpAllocationCase_ == 4) {
-        result.clusterIpAllocation_ = clusterIpAllocation_;
-      }
-      if (servicesIpAllocationCase_ == 3) {
-        result.servicesIpAllocation_ = servicesIpAllocation_;
-      }
-      if (servicesIpAllocationCase_ == 5) {
-        result.servicesIpAllocation_ = servicesIpAllocation_;
-      }
-      result.clusterIpAllocationCase_ = clusterIpAllocationCase_;
-      result.servicesIpAllocationCase_ = servicesIpAllocationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.IPAllocationPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.useIpAliases_ = useIpAliases_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.orchestration.airflow.service.v1.IPAllocationPolicy result) {
+      result.clusterIpAllocationCase_ = clusterIpAllocationCase_;
+      result.clusterIpAllocation_ = this.clusterIpAllocation_;
+      result.servicesIpAllocationCase_ = servicesIpAllocationCase_;
+      result.servicesIpAllocation_ = this.servicesIpAllocation_;
     }
 
     @java.lang.Override
@@ -997,7 +1002,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 useIpAliases_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -1073,6 +1078,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private boolean useIpAliases_;
     /**
      *
@@ -1112,6 +1119,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     public Builder setUseIpAliases(boolean value) {
 
       useIpAliases_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1131,7 +1139,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUseIpAliases() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       useIpAliases_ = false;
       onChanged();
       return this;

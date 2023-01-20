@@ -70,7 +70,9 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object machineType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
   /**
    *
    *
@@ -215,11 +219,15 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.notebooks.v1.RuntimeAcceleratorConfigOrBuilder
       getAcceleratorConfigOrBuilder() {
-    return getAcceleratorConfig();
+    return acceleratorConfig_ == null
+        ? com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.getDefaultInstance()
+        : acceleratorConfig_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -496,18 +504,15 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       machineType_ = "";
-
-      if (acceleratorConfigBuilder_ == null) {
-        acceleratorConfig_ = null;
-      } else {
-        acceleratorConfig_ = null;
+      acceleratorConfig_ = null;
+      if (acceleratorConfigBuilder_ != null) {
+        acceleratorConfigBuilder_.dispose();
         acceleratorConfigBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -535,16 +540,30 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.notebooks.v1.SwitchRuntimeRequest buildPartial() {
       com.google.cloud.notebooks.v1.SwitchRuntimeRequest result =
           new com.google.cloud.notebooks.v1.SwitchRuntimeRequest(this);
-      result.name_ = name_;
-      result.machineType_ = machineType_;
-      if (acceleratorConfigBuilder_ == null) {
-        result.acceleratorConfig_ = acceleratorConfig_;
-      } else {
-        result.acceleratorConfig_ = acceleratorConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.SwitchRuntimeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.acceleratorConfig_ =
+            acceleratorConfigBuilder_ == null
+                ? acceleratorConfig_
+                : acceleratorConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -595,10 +614,12 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasAcceleratorConfig()) {
@@ -606,6 +627,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -637,26 +659,26 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 machineType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getAcceleratorConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -675,6 +697,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -740,8 +764,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -758,8 +782,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -781,8 +805,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -848,8 +872,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,8 +889,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
       machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -887,8 +911,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -911,7 +935,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the acceleratorConfig field is set.
      */
     public boolean hasAcceleratorConfig() {
-      return acceleratorConfigBuilder_ != null || acceleratorConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -949,11 +973,11 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         acceleratorConfig_ = value;
-        onChanged();
       } else {
         acceleratorConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -969,11 +993,11 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.Builder builderForValue) {
       if (acceleratorConfigBuilder_ == null) {
         acceleratorConfig_ = builderForValue.build();
-        onChanged();
       } else {
         acceleratorConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -988,19 +1012,19 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     public Builder mergeAcceleratorConfig(
         com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig value) {
       if (acceleratorConfigBuilder_ == null) {
-        if (acceleratorConfig_ != null) {
-          acceleratorConfig_ =
-              com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.newBuilder(acceleratorConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && acceleratorConfig_ != null
+            && acceleratorConfig_
+                != com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.getDefaultInstance()) {
+          getAcceleratorConfigBuilder().mergeFrom(value);
         } else {
           acceleratorConfig_ = value;
         }
-        onChanged();
       } else {
         acceleratorConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1013,14 +1037,13 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.notebooks.v1.RuntimeAcceleratorConfig accelerator_config = 3;</code>
      */
     public Builder clearAcceleratorConfig() {
-      if (acceleratorConfigBuilder_ == null) {
-        acceleratorConfig_ = null;
-        onChanged();
-      } else {
-        acceleratorConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      acceleratorConfig_ = null;
+      if (acceleratorConfigBuilder_ != null) {
+        acceleratorConfigBuilder_.dispose();
         acceleratorConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1034,7 +1057,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.Builder
         getAcceleratorConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAcceleratorConfigFieldBuilder().getBuilder();
     }
@@ -1144,8 +1167,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1161,8 +1184,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1183,8 +1206,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

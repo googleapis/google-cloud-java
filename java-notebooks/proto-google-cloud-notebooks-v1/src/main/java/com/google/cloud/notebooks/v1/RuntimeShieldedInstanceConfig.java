@@ -69,7 +69,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
   }
 
   public static final int ENABLE_SECURE_BOOT_FIELD_NUMBER = 1;
-  private boolean enableSecureBoot_;
+  private boolean enableSecureBoot_ = false;
   /**
    *
    *
@@ -90,7 +90,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
   }
 
   public static final int ENABLE_VTPM_FIELD_NUMBER = 2;
-  private boolean enableVtpm_;
+  private boolean enableVtpm_ = false;
   /**
    *
    *
@@ -108,7 +108,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
   }
 
   public static final int ENABLE_INTEGRITY_MONITORING_FIELD_NUMBER = 3;
-  private boolean enableIntegrityMonitoring_;
+  private boolean enableIntegrityMonitoring_ = false;
   /**
    *
    *
@@ -348,12 +348,10 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableSecureBoot_ = false;
-
       enableVtpm_ = false;
-
       enableIntegrityMonitoring_ = false;
-
       return this;
     }
 
@@ -381,11 +379,24 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     public com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig buildPartial() {
       com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig result =
           new com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig(this);
-      result.enableSecureBoot_ = enableSecureBoot_;
-      result.enableVtpm_ = enableVtpm_;
-      result.enableIntegrityMonitoring_ = enableIntegrityMonitoring_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableSecureBoot_ = enableSecureBoot_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enableVtpm_ = enableVtpm_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enableIntegrityMonitoring_ = enableIntegrityMonitoring_;
+      }
     }
 
     @java.lang.Override
@@ -472,19 +483,19 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
             case 8:
               {
                 enableSecureBoot_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 enableVtpm_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 enableIntegrityMonitoring_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -503,6 +514,8 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableSecureBoot_;
     /**
@@ -541,6 +554,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     public Builder setEnableSecureBoot(boolean value) {
 
       enableSecureBoot_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -559,7 +573,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearEnableSecureBoot() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableSecureBoot_ = false;
       onChanged();
       return this;
@@ -596,6 +610,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     public Builder setEnableVtpm(boolean value) {
 
       enableVtpm_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -611,7 +626,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearEnableVtpm() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enableVtpm_ = false;
       onChanged();
       return this;
@@ -656,6 +671,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     public Builder setEnableIntegrityMonitoring(boolean value) {
 
       enableIntegrityMonitoring_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -675,7 +691,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearEnableIntegrityMonitoring() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableIntegrityMonitoring_ = false;
       onChanged();
       return this;

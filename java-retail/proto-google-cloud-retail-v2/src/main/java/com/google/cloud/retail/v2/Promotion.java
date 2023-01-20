@@ -68,7 +68,9 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROMOTION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object promotionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object promotionId_ = "";
   /**
    *
    *
@@ -323,8 +325,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       promotionId_ = "";
-
       return this;
     }
 
@@ -351,9 +353,18 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.retail.v2.Promotion buildPartial() {
       com.google.cloud.retail.v2.Promotion result = new com.google.cloud.retail.v2.Promotion(this);
-      result.promotionId_ = promotionId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.Promotion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.promotionId_ = promotionId_;
+      }
     }
 
     @java.lang.Override
@@ -403,6 +414,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.retail.v2.Promotion.getDefaultInstance()) return this;
       if (!other.getPromotionId().isEmpty()) {
         promotionId_ = other.promotionId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -434,7 +446,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 promotionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -453,6 +465,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object promotionId_ = "";
     /**
@@ -533,8 +547,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       promotionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -556,8 +570,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPromotionId() {
-
       promotionId_ = getDefaultInstance().getPromotionId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -584,8 +598,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       promotionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

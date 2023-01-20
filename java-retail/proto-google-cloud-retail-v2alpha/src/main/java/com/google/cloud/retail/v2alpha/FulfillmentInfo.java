@@ -70,7 +70,9 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -147,6 +149,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PLACE_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList placeIds_;
   /**
    *
@@ -453,10 +457,10 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -484,15 +488,28 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.retail.v2alpha.FulfillmentInfo buildPartial() {
       com.google.cloud.retail.v2alpha.FulfillmentInfo result =
           new com.google.cloud.retail.v2alpha.FulfillmentInfo(this);
-      int from_bitField0_ = bitField0_;
-      result.type_ = type_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        placeIds_ = placeIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.placeIds_ = placeIds_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2alpha.FulfillmentInfo result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        placeIds_ = placeIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.placeIds_ = placeIds_;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.FulfillmentInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -543,12 +560,13 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.placeIds_.isEmpty()) {
         if (placeIds_.isEmpty()) {
           placeIds_ = other.placeIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePlaceIdsIsMutable();
           placeIds_.addAll(other.placeIds_);
@@ -584,7 +602,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -716,8 +734,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -747,8 +765,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -783,8 +801,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -793,9 +811,9 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePlaceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         placeIds_ = new com.google.protobuf.LazyStringArrayList(placeIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -994,7 +1012,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearPlaceIds() {
       placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

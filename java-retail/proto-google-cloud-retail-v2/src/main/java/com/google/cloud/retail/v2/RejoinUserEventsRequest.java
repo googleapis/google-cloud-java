@@ -239,7 +239,9 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -290,7 +292,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
   }
 
   public static final int USER_EVENT_REJOIN_SCOPE_FIELD_NUMBER = 2;
-  private int userEventRejoinScope_;
+  private int userEventRejoinScope_ = 0;
   /**
    *
    *
@@ -330,9 +332,8 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.retail.v2.RejoinUserEventsRequest.UserEventRejoinScope
       getUserEventRejoinScope() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2.RejoinUserEventsRequest.UserEventRejoinScope result =
-        com.google.cloud.retail.v2.RejoinUserEventsRequest.UserEventRejoinScope.valueOf(
+        com.google.cloud.retail.v2.RejoinUserEventsRequest.UserEventRejoinScope.forNumber(
             userEventRejoinScope_);
     return result == null
         ? com.google.cloud.retail.v2.RejoinUserEventsRequest.UserEventRejoinScope.UNRECOGNIZED
@@ -551,10 +552,9 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       userEventRejoinScope_ = 0;
-
       return this;
     }
 
@@ -582,10 +582,21 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
     public com.google.cloud.retail.v2.RejoinUserEventsRequest buildPartial() {
       com.google.cloud.retail.v2.RejoinUserEventsRequest result =
           new com.google.cloud.retail.v2.RejoinUserEventsRequest(this);
-      result.parent_ = parent_;
-      result.userEventRejoinScope_ = userEventRejoinScope_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.RejoinUserEventsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.userEventRejoinScope_ = userEventRejoinScope_;
+      }
     }
 
     @java.lang.Override
@@ -636,6 +647,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.userEventRejoinScope_ != 0) {
@@ -670,13 +682,13 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 userEventRejoinScope_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -695,6 +707,8 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -760,8 +774,8 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -778,8 +792,8 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -801,8 +815,8 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -846,8 +860,8 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setUserEventRejoinScopeValue(int value) {
-
       userEventRejoinScope_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -870,9 +884,8 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public com.google.cloud.retail.v2.RejoinUserEventsRequest.UserEventRejoinScope
         getUserEventRejoinScope() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2.RejoinUserEventsRequest.UserEventRejoinScope result =
-          com.google.cloud.retail.v2.RejoinUserEventsRequest.UserEventRejoinScope.valueOf(
+          com.google.cloud.retail.v2.RejoinUserEventsRequest.UserEventRejoinScope.forNumber(
               userEventRejoinScope_);
       return result == null
           ? com.google.cloud.retail.v2.RejoinUserEventsRequest.UserEventRejoinScope.UNRECOGNIZED
@@ -900,7 +913,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       userEventRejoinScope_ = value.getNumber();
       onChanged();
       return this;
@@ -922,7 +935,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearUserEventRejoinScope() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       userEventRejoinScope_ = 0;
       onChanged();
       return this;

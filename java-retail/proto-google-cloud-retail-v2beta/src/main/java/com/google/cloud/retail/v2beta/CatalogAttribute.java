@@ -1039,7 +1039,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -1100,7 +1102,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int IN_USE_FIELD_NUMBER = 9;
-  private boolean inUse_;
+  private boolean inUse_ = false;
   /**
    *
    *
@@ -1137,7 +1139,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TYPE_FIELD_NUMBER = 10;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -1172,16 +1174,15 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.CatalogAttribute.AttributeType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.CatalogAttribute.AttributeType result =
-        com.google.cloud.retail.v2beta.CatalogAttribute.AttributeType.valueOf(type_);
+        com.google.cloud.retail.v2beta.CatalogAttribute.AttributeType.forNumber(type_);
     return result == null
         ? com.google.cloud.retail.v2beta.CatalogAttribute.AttributeType.UNRECOGNIZED
         : result;
   }
 
   public static final int INDEXABLE_OPTION_FIELD_NUMBER = 5;
-  private int indexableOption_;
+  private int indexableOption_ = 0;
   /**
    *
    *
@@ -1220,16 +1221,15 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.CatalogAttribute.IndexableOption getIndexableOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.CatalogAttribute.IndexableOption result =
-        com.google.cloud.retail.v2beta.CatalogAttribute.IndexableOption.valueOf(indexableOption_);
+        com.google.cloud.retail.v2beta.CatalogAttribute.IndexableOption.forNumber(indexableOption_);
     return result == null
         ? com.google.cloud.retail.v2beta.CatalogAttribute.IndexableOption.UNRECOGNIZED
         : result;
   }
 
   public static final int DYNAMIC_FACETABLE_OPTION_FIELD_NUMBER = 6;
-  private int dynamicFacetableOption_;
+  private int dynamicFacetableOption_ = 0;
   /**
    *
    *
@@ -1271,9 +1271,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.retail.v2beta.CatalogAttribute.DynamicFacetableOption
       getDynamicFacetableOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.CatalogAttribute.DynamicFacetableOption result =
-        com.google.cloud.retail.v2beta.CatalogAttribute.DynamicFacetableOption.valueOf(
+        com.google.cloud.retail.v2beta.CatalogAttribute.DynamicFacetableOption.forNumber(
             dynamicFacetableOption_);
     return result == null
         ? com.google.cloud.retail.v2beta.CatalogAttribute.DynamicFacetableOption.UNRECOGNIZED
@@ -1281,7 +1280,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SEARCHABLE_OPTION_FIELD_NUMBER = 7;
-  private int searchableOption_;
+  private int searchableOption_ = 0;
   /**
    *
    *
@@ -1330,16 +1329,16 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption getSearchableOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption result =
-        com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption.valueOf(searchableOption_);
+        com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption.forNumber(
+            searchableOption_);
     return result == null
         ? com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption.UNRECOGNIZED
         : result;
   }
 
   public static final int RECOMMENDATIONS_FILTERING_OPTION_FIELD_NUMBER = 8;
-  private int recommendationsFilteringOption_;
+  private int recommendationsFilteringOption_ = 0;
   /**
    *
    *
@@ -1383,9 +1382,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.retail.v2beta.RecommendationsFilteringOption
       getRecommendationsFilteringOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.RecommendationsFilteringOption result =
-        com.google.cloud.retail.v2beta.RecommendationsFilteringOption.valueOf(
+        com.google.cloud.retail.v2beta.RecommendationsFilteringOption.forNumber(
             recommendationsFilteringOption_);
     return result == null
         ? com.google.cloud.retail.v2beta.RecommendationsFilteringOption.UNRECOGNIZED
@@ -1393,7 +1391,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int EXACT_SEARCHABLE_OPTION_FIELD_NUMBER = 11;
-  private int exactSearchableOption_;
+  private int exactSearchableOption_ = 0;
   /**
    *
    *
@@ -1431,9 +1429,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption
       getExactSearchableOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption result =
-        com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption.valueOf(
+        com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption.forNumber(
             exactSearchableOption_);
     return result == null
         ? com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption.UNRECOGNIZED
@@ -1441,7 +1438,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RETRIEVABLE_OPTION_FIELD_NUMBER = 12;
-  private int retrievableOption_;
+  private int retrievableOption_ = 0;
   /**
    *
    *
@@ -1474,9 +1471,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.CatalogAttribute.RetrievableOption getRetrievableOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2beta.CatalogAttribute.RetrievableOption result =
-        com.google.cloud.retail.v2beta.CatalogAttribute.RetrievableOption.valueOf(
+        com.google.cloud.retail.v2beta.CatalogAttribute.RetrievableOption.forNumber(
             retrievableOption_);
     return result == null
         ? com.google.cloud.retail.v2beta.CatalogAttribute.RetrievableOption.UNRECOGNIZED
@@ -1792,24 +1788,16 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       inUse_ = false;
-
       type_ = 0;
-
       indexableOption_ = 0;
-
       dynamicFacetableOption_ = 0;
-
       searchableOption_ = 0;
-
       recommendationsFilteringOption_ = 0;
-
       exactSearchableOption_ = 0;
-
       retrievableOption_ = 0;
-
       return this;
     }
 
@@ -1837,17 +1825,42 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.retail.v2beta.CatalogAttribute buildPartial() {
       com.google.cloud.retail.v2beta.CatalogAttribute result =
           new com.google.cloud.retail.v2beta.CatalogAttribute(this);
-      result.key_ = key_;
-      result.inUse_ = inUse_;
-      result.type_ = type_;
-      result.indexableOption_ = indexableOption_;
-      result.dynamicFacetableOption_ = dynamicFacetableOption_;
-      result.searchableOption_ = searchableOption_;
-      result.recommendationsFilteringOption_ = recommendationsFilteringOption_;
-      result.exactSearchableOption_ = exactSearchableOption_;
-      result.retrievableOption_ = retrievableOption_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.CatalogAttribute result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.inUse_ = inUse_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.indexableOption_ = indexableOption_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dynamicFacetableOption_ = dynamicFacetableOption_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.searchableOption_ = searchableOption_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.recommendationsFilteringOption_ = recommendationsFilteringOption_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.exactSearchableOption_ = exactSearchableOption_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.retrievableOption_ = retrievableOption_;
+      }
     }
 
     @java.lang.Override
@@ -1898,6 +1911,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getInUse() != false) {
@@ -1953,55 +1967,55 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 40:
               {
                 indexableOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             case 48:
               {
                 dynamicFacetableOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 56:
               {
                 searchableOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 64:
               {
                 recommendationsFilteringOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 72:
               {
                 inUse_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 72
             case 80:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 80
             case 88:
               {
                 exactSearchableOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 88
             case 96:
               {
                 retrievableOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 96
             default:
@@ -2020,6 +2034,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object key_ = "";
     /**
@@ -2100,8 +2116,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2123,8 +2139,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2151,8 +2167,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2226,6 +2242,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public Builder setInUse(boolean value) {
 
       inUse_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2260,7 +2277,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInUse() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       inUse_ = false;
       onChanged();
       return this;
@@ -2301,8 +2318,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2322,9 +2339,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.CatalogAttribute.AttributeType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.CatalogAttribute.AttributeType result =
-          com.google.cloud.retail.v2beta.CatalogAttribute.AttributeType.valueOf(type_);
+          com.google.cloud.retail.v2beta.CatalogAttribute.AttributeType.forNumber(type_);
       return result == null
           ? com.google.cloud.retail.v2beta.CatalogAttribute.AttributeType.UNRECOGNIZED
           : result;
@@ -2348,7 +2364,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -2368,7 +2384,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       type_ = 0;
       onChanged();
       return this;
@@ -2415,8 +2431,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setIndexableOptionValue(int value) {
-
       indexableOption_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2439,9 +2455,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.CatalogAttribute.IndexableOption getIndexableOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.CatalogAttribute.IndexableOption result =
-          com.google.cloud.retail.v2beta.CatalogAttribute.IndexableOption.valueOf(indexableOption_);
+          com.google.cloud.retail.v2beta.CatalogAttribute.IndexableOption.forNumber(
+              indexableOption_);
       return result == null
           ? com.google.cloud.retail.v2beta.CatalogAttribute.IndexableOption.UNRECOGNIZED
           : result;
@@ -2469,7 +2485,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       indexableOption_ = value.getNumber();
       onChanged();
       return this;
@@ -2492,7 +2508,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIndexableOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       indexableOption_ = 0;
       onChanged();
       return this;
@@ -2539,8 +2555,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setDynamicFacetableOptionValue(int value) {
-
       dynamicFacetableOption_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2564,9 +2580,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.retail.v2beta.CatalogAttribute.DynamicFacetableOption
         getDynamicFacetableOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.CatalogAttribute.DynamicFacetableOption result =
-          com.google.cloud.retail.v2beta.CatalogAttribute.DynamicFacetableOption.valueOf(
+          com.google.cloud.retail.v2beta.CatalogAttribute.DynamicFacetableOption.forNumber(
               dynamicFacetableOption_);
       return result == null
           ? com.google.cloud.retail.v2beta.CatalogAttribute.DynamicFacetableOption.UNRECOGNIZED
@@ -2595,7 +2610,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       dynamicFacetableOption_ = value.getNumber();
       onChanged();
       return this;
@@ -2618,7 +2633,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDynamicFacetableOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       dynamicFacetableOption_ = 0;
       onChanged();
       return this;
@@ -2673,8 +2688,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setSearchableOptionValue(int value) {
-
       searchableOption_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2701,9 +2716,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption getSearchableOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption result =
-          com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption.valueOf(
+          com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption.forNumber(
               searchableOption_);
       return result == null
           ? com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption.UNRECOGNIZED
@@ -2736,7 +2750,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       searchableOption_ = value.getNumber();
       onChanged();
       return this;
@@ -2763,7 +2777,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSearchableOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       searchableOption_ = 0;
       onChanged();
       return this;
@@ -2812,8 +2826,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setRecommendationsFilteringOptionValue(int value) {
-
       recommendationsFilteringOption_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2838,9 +2852,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.retail.v2beta.RecommendationsFilteringOption
         getRecommendationsFilteringOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.RecommendationsFilteringOption result =
-          com.google.cloud.retail.v2beta.RecommendationsFilteringOption.valueOf(
+          com.google.cloud.retail.v2beta.RecommendationsFilteringOption.forNumber(
               recommendationsFilteringOption_);
       return result == null
           ? com.google.cloud.retail.v2beta.RecommendationsFilteringOption.UNRECOGNIZED
@@ -2870,7 +2883,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       recommendationsFilteringOption_ = value.getNumber();
       onChanged();
       return this;
@@ -2894,7 +2907,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRecommendationsFilteringOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       recommendationsFilteringOption_ = 0;
       onChanged();
       return this;
@@ -2937,8 +2950,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setExactSearchableOptionValue(int value) {
-
       exactSearchableOption_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2960,9 +2973,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption
         getExactSearchableOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption result =
-          com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption.valueOf(
+          com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption.forNumber(
               exactSearchableOption_);
       return result == null
           ? com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption.UNRECOGNIZED
@@ -2989,7 +3001,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       exactSearchableOption_ = value.getNumber();
       onChanged();
       return this;
@@ -3010,7 +3022,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExactSearchableOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       exactSearchableOption_ = 0;
       onChanged();
       return this;
@@ -3049,8 +3061,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setRetrievableOptionValue(int value) {
-
       retrievableOption_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3070,9 +3082,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.retail.v2beta.CatalogAttribute.RetrievableOption
         getRetrievableOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2beta.CatalogAttribute.RetrievableOption result =
-          com.google.cloud.retail.v2beta.CatalogAttribute.RetrievableOption.valueOf(
+          com.google.cloud.retail.v2beta.CatalogAttribute.RetrievableOption.forNumber(
               retrievableOption_);
       return result == null
           ? com.google.cloud.retail.v2beta.CatalogAttribute.RetrievableOption.UNRECOGNIZED
@@ -3097,7 +3108,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       retrievableOption_ = value.getNumber();
       onChanged();
       return this;
@@ -3116,7 +3127,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRetrievableOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       retrievableOption_ = 0;
       onChanged();
       return this;

@@ -71,7 +71,9 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VISITOR_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object visitorId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object visitorId_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object userId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userId_ = "";
   /**
    *
    *
@@ -181,7 +185,9 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 3;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -236,7 +242,9 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_AGENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object userAgent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userAgent_ = "";
   /**
    *
    *
@@ -291,7 +299,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIRECT_USER_REQUEST_FIELD_NUMBER = 5;
-  private boolean directUserRequest_;
+  private boolean directUserRequest_ = false;
   /**
    *
    *
@@ -547,16 +555,12 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       visitorId_ = "";
-
       userId_ = "";
-
       ipAddress_ = "";
-
       userAgent_ = "";
-
       directUserRequest_ = false;
-
       return this;
     }
 
@@ -584,13 +588,30 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommendationengine.v1beta1.UserInfo buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.UserInfo result =
           new com.google.cloud.recommendationengine.v1beta1.UserInfo(this);
-      result.visitorId_ = visitorId_;
-      result.userId_ = userId_;
-      result.ipAddress_ = ipAddress_;
-      result.userAgent_ = userAgent_;
-      result.directUserRequest_ = directUserRequest_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommendationengine.v1beta1.UserInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.visitorId_ = visitorId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.userId_ = userId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.userAgent_ = userAgent_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.directUserRequest_ = directUserRequest_;
+      }
     }
 
     @java.lang.Override
@@ -641,18 +662,22 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getVisitorId().isEmpty()) {
         visitorId_ = other.visitorId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getUserAgent().isEmpty()) {
         userAgent_ = other.userAgent_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getDirectUserRequest() != false) {
@@ -687,31 +712,31 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 visitorId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 userId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 userAgent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 directUserRequest_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -730,6 +755,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object visitorId_ = "";
     /**
@@ -807,8 +834,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       visitorId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -829,8 +856,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVisitorId() {
-
       visitorId_ = getDefaultInstance().getVisitorId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -856,8 +883,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       visitorId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -926,8 +953,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       userId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -944,8 +971,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
-
       userId_ = getDefaultInstance().getUserId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -967,8 +994,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1043,8 +1070,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1063,8 +1090,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1088,8 +1115,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1164,8 +1191,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       userAgent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1184,8 +1211,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserAgent() {
-
       userAgent_ = getDefaultInstance().getUserAgent();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1209,8 +1236,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userAgent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1256,6 +1283,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setDirectUserRequest(boolean value) {
 
       directUserRequest_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1276,7 +1304,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDirectUserRequest() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       directUserRequest_ = false;
       onChanged();
       return this;

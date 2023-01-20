@@ -69,7 +69,9 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -162,7 +164,9 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.devtools.cloudprofiler.v2.ProfileOrBuilder getProfileOrBuilder() {
-    return getProfile();
+    return profile_ == null
+        ? com.google.devtools.cloudprofiler.v2.Profile.getDefaultInstance()
+        : profile_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -378,12 +382,11 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (profileBuilder_ == null) {
-        profile_ = null;
-      } else {
-        profile_ = null;
+      profile_ = null;
+      if (profileBuilder_ != null) {
+        profileBuilder_.dispose();
         profileBuilder_ = null;
       }
       return this;
@@ -414,14 +417,22 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
     public com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest buildPartial() {
       com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest result =
           new com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest(this);
-      result.parent_ = parent_;
-      if (profileBuilder_ == null) {
-        result.profile_ = profile_;
-      } else {
-        result.profile_ = profileBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.profile_ = profileBuilder_ == null ? profile_ : profileBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -474,6 +485,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasProfile()) {
@@ -508,13 +520,13 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getProfileFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -533,6 +545,8 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -595,8 +609,8 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -612,8 +626,8 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -634,8 +648,8 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -658,7 +672,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
      * @return Whether the profile field is set.
      */
     public boolean hasProfile() {
-      return profileBuilder_ != null || profile_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -695,11 +709,11 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         profile_ = value;
-        onChanged();
       } else {
         profileBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -715,11 +729,11 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
         com.google.devtools.cloudprofiler.v2.Profile.Builder builderForValue) {
       if (profileBuilder_ == null) {
         profile_ = builderForValue.build();
-        onChanged();
       } else {
         profileBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -733,19 +747,18 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
      */
     public Builder mergeProfile(com.google.devtools.cloudprofiler.v2.Profile value) {
       if (profileBuilder_ == null) {
-        if (profile_ != null) {
-          profile_ =
-              com.google.devtools.cloudprofiler.v2.Profile.newBuilder(profile_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && profile_ != null
+            && profile_ != com.google.devtools.cloudprofiler.v2.Profile.getDefaultInstance()) {
+          getProfileBuilder().mergeFrom(value);
         } else {
           profile_ = value;
         }
-        onChanged();
       } else {
         profileBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -758,14 +771,13 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
      * <code>.google.devtools.cloudprofiler.v2.Profile profile = 2;</code>
      */
     public Builder clearProfile() {
-      if (profileBuilder_ == null) {
-        profile_ = null;
-        onChanged();
-      } else {
-        profile_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      profile_ = null;
+      if (profileBuilder_ != null) {
+        profileBuilder_.dispose();
         profileBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -778,7 +790,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
      * <code>.google.devtools.cloudprofiler.v2.Profile profile = 2;</code>
      */
     public com.google.devtools.cloudprofiler.v2.Profile.Builder getProfileBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProfileFieldBuilder().getBuilder();
     }

@@ -73,6 +73,8 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
   }
 
   public static final int INSTANCES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkconnectivity.v1.RouterApplianceInstance>
       instances_;
   /**
@@ -151,7 +153,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
   }
 
   public static final int SITE_TO_SITE_DATA_TRANSFER_FIELD_NUMBER = 2;
-  private boolean siteToSiteDataTransfer_;
+  private boolean siteToSiteDataTransfer_ = false;
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
   }
 
   public static final int VPC_NETWORK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object vpcNetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpcNetwork_ = "";
   /**
    *
    *
@@ -448,6 +452,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (instancesBuilder_ == null) {
         instances_ = java.util.Collections.emptyList();
       } else {
@@ -456,9 +461,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       siteToSiteDataTransfer_ = false;
-
       vpcNetwork_ = "";
-
       return this;
     }
 
@@ -489,7 +492,16 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     public com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances buildPartial() {
       com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances result =
           new com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances result) {
       if (instancesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           instances_ = java.util.Collections.unmodifiableList(instances_);
@@ -499,10 +511,17 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       } else {
         result.instances_ = instancesBuilder_.build();
       }
-      result.siteToSiteDataTransfer_ = siteToSiteDataTransfer_;
-      result.vpcNetwork_ = vpcNetwork_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.siteToSiteDataTransfer_ = siteToSiteDataTransfer_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.vpcNetwork_ = vpcNetwork_;
+      }
     }
 
     @java.lang.Override
@@ -586,6 +605,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       if (!other.getVpcNetwork().isEmpty()) {
         vpcNetwork_ = other.vpcNetwork_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -631,13 +651,13 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
             case 16:
               {
                 siteToSiteDataTransfer_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 vpcNetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1080,6 +1100,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     public Builder setSiteToSiteDataTransfer(boolean value) {
 
       siteToSiteDataTransfer_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1097,7 +1118,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearSiteToSiteDataTransfer() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       siteToSiteDataTransfer_ = false;
       onChanged();
       return this;
@@ -1173,8 +1194,8 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpcNetwork_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1193,8 +1214,8 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearVpcNetwork() {
-
       vpcNetwork_ = getDefaultInstance().getVpcNetwork();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1218,8 +1239,8 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpcNetwork_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

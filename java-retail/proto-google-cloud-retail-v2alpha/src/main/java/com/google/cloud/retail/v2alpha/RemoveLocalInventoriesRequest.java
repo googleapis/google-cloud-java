@@ -71,7 +71,9 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
   }
 
   public static final int PRODUCT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object product_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object product_ = "";
   /**
    *
    *
@@ -134,6 +136,8 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
   }
 
   public static final int PLACE_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList placeIds_;
   /**
    *
@@ -247,11 +251,11 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRemoveTimeOrBuilder() {
-    return getRemoveTime();
+    return removeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : removeTime_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -512,18 +516,16 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       product_ = "";
-
       placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (removeTimeBuilder_ == null) {
-        removeTime_ = null;
-      } else {
-        removeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      removeTime_ = null;
+      if (removeTimeBuilder_ != null) {
+        removeTimeBuilder_.dispose();
         removeTimeBuilder_ = null;
       }
       allowMissing_ = false;
-
       return this;
     }
 
@@ -552,21 +554,35 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
     public com.google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest buildPartial() {
       com.google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest result =
           new com.google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.product_ = product_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        placeIds_ = placeIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.placeIds_ = placeIds_;
-      if (removeTimeBuilder_ == null) {
-        result.removeTime_ = removeTime_;
-      } else {
-        result.removeTime_ = removeTimeBuilder_.build();
-      }
-      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        placeIds_ = placeIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.placeIds_ = placeIds_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.product_ = product_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.removeTime_ = removeTimeBuilder_ == null ? removeTime_ : removeTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -618,12 +634,13 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getProduct().isEmpty()) {
         product_ = other.product_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.placeIds_.isEmpty()) {
         if (placeIds_.isEmpty()) {
           placeIds_ = other.placeIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePlaceIdsIsMutable();
           placeIds_.addAll(other.placeIds_);
@@ -665,7 +682,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
             case 10:
               {
                 product_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -678,13 +695,13 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
             case 24:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 42:
               {
                 input.readMessage(getRemoveTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             default:
@@ -788,8 +805,8 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       product_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -812,8 +829,8 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearProduct() {
-
       product_ = getDefaultInstance().getProduct();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -841,8 +858,8 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       product_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -851,9 +868,9 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePlaceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         placeIds_ = new com.google.protobuf.LazyStringArrayList(placeIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -996,7 +1013,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      */
     public Builder clearPlaceIds() {
       placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1044,7 +1061,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * @return Whether the removeTime field is set.
      */
     public boolean hasRemoveTime() {
-      return removeTimeBuilder_ != null || removeTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1085,11 +1102,11 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         removeTime_ = value;
-        onChanged();
       } else {
         removeTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1106,11 +1123,11 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
     public Builder setRemoveTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (removeTimeBuilder_ == null) {
         removeTime_ = builderForValue.build();
-        onChanged();
       } else {
         removeTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1126,17 +1143,18 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      */
     public Builder mergeRemoveTime(com.google.protobuf.Timestamp value) {
       if (removeTimeBuilder_ == null) {
-        if (removeTime_ != null) {
-          removeTime_ =
-              com.google.protobuf.Timestamp.newBuilder(removeTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && removeTime_ != null
+            && removeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRemoveTimeBuilder().mergeFrom(value);
         } else {
           removeTime_ = value;
         }
-        onChanged();
       } else {
         removeTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1151,14 +1169,13 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * <code>.google.protobuf.Timestamp remove_time = 5;</code>
      */
     public Builder clearRemoveTime() {
-      if (removeTimeBuilder_ == null) {
-        removeTime_ = null;
-        onChanged();
-      } else {
-        removeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      removeTime_ = null;
+      if (removeTimeBuilder_ != null) {
+        removeTimeBuilder_.dispose();
         removeTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1173,7 +1190,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * <code>.google.protobuf.Timestamp remove_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRemoveTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRemoveTimeFieldBuilder().getBuilder();
     }
@@ -1266,6 +1283,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1286,7 +1304,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       allowMissing_ = false;
       onChanged();
       return this;

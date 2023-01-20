@@ -429,7 +429,6 @@ public interface PredictRequestOrBuilder
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
    */
-
   /* nullable */
   com.google.protobuf.Value getParamsOrDefault(
       java.lang.String key,
@@ -568,7 +567,6 @@ public interface PredictRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

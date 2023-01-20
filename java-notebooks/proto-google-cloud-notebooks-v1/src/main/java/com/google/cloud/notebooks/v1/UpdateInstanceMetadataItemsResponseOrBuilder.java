@@ -65,7 +65,6 @@ public interface UpdateInstanceMetadataItemsResponseOrBuilder
    *
    * <code>map&lt;string, string&gt; items = 1;</code>
    */
-
   /* nullable */
   java.lang.String getItemsOrDefault(
       java.lang.String key,

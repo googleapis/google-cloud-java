@@ -75,7 +75,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -152,7 +154,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object machineType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
   /**
    *
    *
@@ -239,7 +243,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -306,7 +312,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 4;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -369,7 +377,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 5;
-  private int diskSizeGb_;
+  private int diskSizeGb_ = 0;
   /**
    *
    *
@@ -390,6 +398,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OAUTH_SCOPES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList oauthScopes_;
   /**
    *
@@ -467,7 +477,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 7;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -520,6 +532,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAGS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList tags_;
   /**
    *
@@ -655,11 +669,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.IPAllocationPolicyOrBuilder
       getIpAllocationPolicyOrBuilder() {
-    return getIpAllocationPolicy();
+    return ipAllocationPolicy_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.IPAllocationPolicy
+            .getDefaultInstance()
+        : ipAllocationPolicy_;
   }
 
   public static final int MAX_PODS_PER_NODE_FIELD_NUMBER = 10;
-  private int maxPodsPerNode_;
+  private int maxPodsPerNode_ = 0;
   /**
    *
    *
@@ -688,7 +705,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_IP_MASQ_AGENT_FIELD_NUMBER = 11;
-  private boolean enableIpMasqAgent_;
+  private boolean enableIpMasqAgent_ = false;
   /**
    *
    *
@@ -1019,32 +1036,24 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       location_ = "";
-
       machineType_ = "";
-
       network_ = "";
-
       subnetwork_ = "";
-
       diskSizeGb_ = 0;
-
       oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       serviceAccount_ = "";
-
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (ipAllocationPolicyBuilder_ == null) {
-        ipAllocationPolicy_ = null;
-      } else {
-        ipAllocationPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      ipAllocationPolicy_ = null;
+      if (ipAllocationPolicyBuilder_ != null) {
+        ipAllocationPolicyBuilder_.dispose();
         ipAllocationPolicyBuilder_ = null;
       }
       maxPodsPerNode_ = 0;
-
       enableIpMasqAgent_ = false;
-
       return this;
     }
 
@@ -1073,32 +1082,61 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.location_ = location_;
-      result.machineType_ = machineType_;
-      result.network_ = network_;
-      result.subnetwork_ = subnetwork_;
-      result.diskSizeGb_ = diskSizeGb_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        oauthScopes_ = oauthScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.oauthScopes_ = oauthScopes_;
-      result.serviceAccount_ = serviceAccount_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.tags_ = tags_;
-      if (ipAllocationPolicyBuilder_ == null) {
-        result.ipAllocationPolicy_ = ipAllocationPolicy_;
-      } else {
-        result.ipAllocationPolicy_ = ipAllocationPolicyBuilder_.build();
-      }
-      result.maxPodsPerNode_ = maxPodsPerNode_;
-      result.enableIpMasqAgent_ = enableIpMasqAgent_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        oauthScopes_ = oauthScopes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.oauthScopes_ = oauthScopes_;
+      if (((bitField0_ & 0x00000080) != 0)) {
+        tags_ = tags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.tags_ = tags_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.subnetwork_ = subnetwork_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.ipAllocationPolicy_ =
+            ipAllocationPolicyBuilder_ == null
+                ? ipAllocationPolicy_
+                : ipAllocationPolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.maxPodsPerNode_ = maxPodsPerNode_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableIpMasqAgent_ = enableIpMasqAgent_;
+      }
     }
 
     @java.lang.Override
@@ -1151,18 +1189,22 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getSubnetwork().isEmpty()) {
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getDiskSizeGb() != 0) {
@@ -1171,7 +1213,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.oauthScopes_.isEmpty()) {
         if (oauthScopes_.isEmpty()) {
           oauthScopes_ = other.oauthScopes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureOauthScopesIsMutable();
           oauthScopes_.addAll(other.oauthScopes_);
@@ -1180,12 +1222,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -1230,31 +1273,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 machineType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 diskSizeGb_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
@@ -1267,7 +1310,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1281,19 +1324,19 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getIpAllocationPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 80:
               {
                 maxPodsPerNode_ = input.readInt32();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 88:
               {
                 enableIpMasqAgent_ = input.readBool();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             default:
@@ -1418,8 +1461,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1449,8 +1492,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1485,8 +1528,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1609,8 +1652,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1645,8 +1688,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
       machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1686,8 +1729,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1780,8 +1823,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1806,8 +1849,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1837,8 +1880,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1925,8 +1968,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1949,8 +1992,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1978,8 +2021,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2021,6 +2064,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setDiskSizeGb(int value) {
 
       diskSizeGb_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2039,7 +2083,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       diskSizeGb_ = 0;
       onChanged();
       return this;
@@ -2049,9 +2093,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureOauthScopesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         oauthScopes_ = new com.google.protobuf.LazyStringArrayList(oauthScopes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2218,7 +2262,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOauthScopes() {
       oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2316,8 +2360,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2335,8 +2379,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2359,8 +2403,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2369,9 +2413,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -2546,7 +2590,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2599,7 +2643,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ipAllocationPolicy field is set.
      */
     public boolean hasIpAllocationPolicy() {
-      return ipAllocationPolicyBuilder_ != null || ipAllocationPolicy_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2643,11 +2687,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         ipAllocationPolicy_ = value;
-        onChanged();
       } else {
         ipAllocationPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2666,11 +2710,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (ipAllocationPolicyBuilder_ == null) {
         ipAllocationPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         ipAllocationPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2687,20 +2731,20 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeIpAllocationPolicy(
         com.google.cloud.orchestration.airflow.service.v1beta1.IPAllocationPolicy value) {
       if (ipAllocationPolicyBuilder_ == null) {
-        if (ipAllocationPolicy_ != null) {
-          ipAllocationPolicy_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.IPAllocationPolicy.newBuilder(
-                      ipAllocationPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && ipAllocationPolicy_ != null
+            && ipAllocationPolicy_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.IPAllocationPolicy
+                    .getDefaultInstance()) {
+          getIpAllocationPolicyBuilder().mergeFrom(value);
         } else {
           ipAllocationPolicy_ = value;
         }
-        onChanged();
       } else {
         ipAllocationPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2715,14 +2759,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearIpAllocationPolicy() {
-      if (ipAllocationPolicyBuilder_ == null) {
-        ipAllocationPolicy_ = null;
-        onChanged();
-      } else {
-        ipAllocationPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ipAllocationPolicy_ = null;
+      if (ipAllocationPolicyBuilder_ != null) {
+        ipAllocationPolicyBuilder_.dispose();
         ipAllocationPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2738,7 +2781,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.IPAllocationPolicy.Builder
         getIpAllocationPolicyBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getIpAllocationPolicyFieldBuilder().getBuilder();
     }
@@ -2845,6 +2888,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxPodsPerNode(int value) {
 
       maxPodsPerNode_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2871,7 +2915,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxPodsPerNode() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       maxPodsPerNode_ = 0;
       onChanged();
       return this;
@@ -2916,6 +2960,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableIpMasqAgent(boolean value) {
 
       enableIpMasqAgent_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2935,7 +2980,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableIpMasqAgent() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       enableIpMasqAgent_ = false;
       onChanged();
       return this;

@@ -242,7 +242,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -293,7 +295,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -348,7 +352,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODEL_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object modelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelId_ = "";
   /**
    *
    *
@@ -411,7 +417,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRICE_RERANKING_LEVEL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object priceRerankingLevel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object priceRerankingLevel_ = "";
   /**
    *
    *
@@ -488,6 +496,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FACET_CONTROL_IDS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList facetControlIds_;
   /**
    *
@@ -642,10 +652,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpecOrBuilder
       getDynamicFacetSpecOrBuilder() {
-    return getDynamicFacetSpec();
+    return dynamicFacetSpec_ == null
+        ? com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.getDefaultInstance()
+        : dynamicFacetSpec_;
   }
 
   public static final int BOOST_CONTROL_IDS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList boostControlIds_;
   /**
    *
@@ -759,6 +773,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILTER_CONTROL_IDS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList filterControlIds_;
   /**
    *
@@ -844,6 +860,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REDIRECT_CONTROL_IDS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList redirectControlIds_;
   /**
    *
@@ -925,6 +943,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TWOWAY_SYNONYMS_CONTROL_IDS_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList twowaySynonymsControlIds_;
   /**
    *
@@ -1010,6 +1030,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ONEWAY_SYNONYMS_CONTROL_IDS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList onewaySynonymsControlIds_;
   /**
    *
@@ -1095,6 +1117,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DO_NOT_ASSOCIATE_CONTROL_IDS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList doNotAssociateControlIds_;
   /**
    *
@@ -1184,6 +1208,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPLACEMENT_CONTROL_IDS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList replacementControlIds_;
   /**
    *
@@ -1269,6 +1295,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IGNORE_CONTROL_IDS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ignoreControlIds_;
   /**
    *
@@ -1358,7 +1386,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIVERSITY_LEVEL_FIELD_NUMBER = 8;
-  private volatile java.lang.Object diversityLevel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object diversityLevel_ = "";
   /**
    *
    *
@@ -1429,7 +1459,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIVERSITY_TYPE_FIELD_NUMBER = 20;
-  private int diversityType_;
+  private int diversityType_ = 0;
   /**
    *
    *
@@ -1462,16 +1492,17 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.retail.v2.ServingConfig.DiversityType getDiversityType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.retail.v2.ServingConfig.DiversityType result =
-        com.google.cloud.retail.v2.ServingConfig.DiversityType.valueOf(diversityType_);
+        com.google.cloud.retail.v2.ServingConfig.DiversityType.forNumber(diversityType_);
     return result == null
         ? com.google.cloud.retail.v2.ServingConfig.DiversityType.UNRECOGNIZED
         : result;
   }
 
   public static final int ENABLE_CATEGORY_FILTER_LEVEL_FIELD_NUMBER = 16;
-  private volatile java.lang.Object enableCategoryFilterLevel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object enableCategoryFilterLevel_ = "";
   /**
    *
    *
@@ -1623,20 +1654,24 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpecOrBuilder
       getPersonalizationSpecOrBuilder() {
-    return getPersonalizationSpec();
+    return personalizationSpec_ == null
+        ? com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.getDefaultInstance()
+        : personalizationSpec_;
   }
 
   public static final int SOLUTION_TYPES_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> solutionTypes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.retail.v2.SolutionType>
       solutionTypes_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.retail.v2.SolutionType>() {
             public com.google.cloud.retail.v2.SolutionType convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.retail.v2.SolutionType result =
-                  com.google.cloud.retail.v2.SolutionType.valueOf(from);
+                  com.google.cloud.retail.v2.SolutionType.forNumber(from);
               return result == null ? com.google.cloud.retail.v2.SolutionType.UNRECOGNIZED : result;
             }
           };
@@ -2199,52 +2234,44 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       modelId_ = "";
-
       priceRerankingLevel_ = "";
-
       facetControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (dynamicFacetSpecBuilder_ == null) {
-        dynamicFacetSpec_ = null;
-      } else {
-        dynamicFacetSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      dynamicFacetSpec_ = null;
+      if (dynamicFacetSpecBuilder_ != null) {
+        dynamicFacetSpecBuilder_.dispose();
         dynamicFacetSpecBuilder_ = null;
       }
       boostControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      filterControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      redirectControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      twowaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onewaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
-      doNotAssociateControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000040);
-      replacementControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      filterControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000080);
-      ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      redirectControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000100);
+      twowaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onewaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      doNotAssociateControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      replacementControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00002000);
       diversityLevel_ = "";
-
       diversityType_ = 0;
-
       enableCategoryFilterLevel_ = "";
-
-      if (personalizationSpecBuilder_ == null) {
-        personalizationSpec_ = null;
-      } else {
-        personalizationSpec_ = null;
+      personalizationSpec_ = null;
+      if (personalizationSpecBuilder_ != null) {
+        personalizationSpecBuilder_.dispose();
         personalizationSpecBuilder_ = null;
       }
       solutionTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00040000);
       return this;
     }
 
@@ -2272,76 +2299,100 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2.ServingConfig buildPartial() {
       com.google.cloud.retail.v2.ServingConfig result =
           new com.google.cloud.retail.v2.ServingConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.modelId_ = modelId_;
-      result.priceRerankingLevel_ = priceRerankingLevel_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        facetControlIds_ = facetControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.facetControlIds_ = facetControlIds_;
-      if (dynamicFacetSpecBuilder_ == null) {
-        result.dynamicFacetSpec_ = dynamicFacetSpec_;
-      } else {
-        result.dynamicFacetSpec_ = dynamicFacetSpecBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        boostControlIds_ = boostControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.boostControlIds_ = boostControlIds_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        filterControlIds_ = filterControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.filterControlIds_ = filterControlIds_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        redirectControlIds_ = redirectControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.redirectControlIds_ = redirectControlIds_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        twowaySynonymsControlIds_ = twowaySynonymsControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.twowaySynonymsControlIds_ = twowaySynonymsControlIds_;
-      if (((bitField0_ & 0x00000020) != 0)) {
-        onewaySynonymsControlIds_ = onewaySynonymsControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.onewaySynonymsControlIds_ = onewaySynonymsControlIds_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        doNotAssociateControlIds_ = doNotAssociateControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.doNotAssociateControlIds_ = doNotAssociateControlIds_;
-      if (((bitField0_ & 0x00000080) != 0)) {
-        replacementControlIds_ = replacementControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.replacementControlIds_ = replacementControlIds_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        ignoreControlIds_ = ignoreControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.ignoreControlIds_ = ignoreControlIds_;
-      result.diversityLevel_ = diversityLevel_;
-      result.diversityType_ = diversityType_;
-      result.enableCategoryFilterLevel_ = enableCategoryFilterLevel_;
-      if (personalizationSpecBuilder_ == null) {
-        result.personalizationSpec_ = personalizationSpec_;
-      } else {
-        result.personalizationSpec_ = personalizationSpecBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        solutionTypes_ = java.util.Collections.unmodifiableList(solutionTypes_);
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.solutionTypes_ = solutionTypes_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.retail.v2.ServingConfig result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        facetControlIds_ = facetControlIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.facetControlIds_ = facetControlIds_;
+      if (((bitField0_ & 0x00000040) != 0)) {
+        boostControlIds_ = boostControlIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.boostControlIds_ = boostControlIds_;
+      if (((bitField0_ & 0x00000080) != 0)) {
+        filterControlIds_ = filterControlIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.filterControlIds_ = filterControlIds_;
+      if (((bitField0_ & 0x00000100) != 0)) {
+        redirectControlIds_ = redirectControlIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.redirectControlIds_ = redirectControlIds_;
+      if (((bitField0_ & 0x00000200) != 0)) {
+        twowaySynonymsControlIds_ = twowaySynonymsControlIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000200);
+      }
+      result.twowaySynonymsControlIds_ = twowaySynonymsControlIds_;
+      if (((bitField0_ & 0x00000400) != 0)) {
+        onewaySynonymsControlIds_ = onewaySynonymsControlIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      }
+      result.onewaySynonymsControlIds_ = onewaySynonymsControlIds_;
+      if (((bitField0_ & 0x00000800) != 0)) {
+        doNotAssociateControlIds_ = doNotAssociateControlIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000800);
+      }
+      result.doNotAssociateControlIds_ = doNotAssociateControlIds_;
+      if (((bitField0_ & 0x00001000) != 0)) {
+        replacementControlIds_ = replacementControlIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      }
+      result.replacementControlIds_ = replacementControlIds_;
+      if (((bitField0_ & 0x00002000) != 0)) {
+        ignoreControlIds_ = ignoreControlIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00002000);
+      }
+      result.ignoreControlIds_ = ignoreControlIds_;
+      if (((bitField0_ & 0x00040000) != 0)) {
+        solutionTypes_ = java.util.Collections.unmodifiableList(solutionTypes_);
+        bitField0_ = (bitField0_ & ~0x00040000);
+      }
+      result.solutionTypes_ = solutionTypes_;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.ServingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.modelId_ = modelId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.priceRerankingLevel_ = priceRerankingLevel_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.dynamicFacetSpec_ =
+            dynamicFacetSpecBuilder_ == null ? dynamicFacetSpec_ : dynamicFacetSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.diversityLevel_ = diversityLevel_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.diversityType_ = diversityType_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.enableCategoryFilterLevel_ = enableCategoryFilterLevel_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.personalizationSpec_ =
+            personalizationSpecBuilder_ == null
+                ? personalizationSpec_
+                : personalizationSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2391,24 +2442,28 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.retail.v2.ServingConfig.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getModelId().isEmpty()) {
         modelId_ = other.modelId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPriceRerankingLevel().isEmpty()) {
         priceRerankingLevel_ = other.priceRerankingLevel_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.facetControlIds_.isEmpty()) {
         if (facetControlIds_.isEmpty()) {
           facetControlIds_ = other.facetControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureFacetControlIdsIsMutable();
           facetControlIds_.addAll(other.facetControlIds_);
@@ -2421,7 +2476,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.boostControlIds_.isEmpty()) {
         if (boostControlIds_.isEmpty()) {
           boostControlIds_ = other.boostControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureBoostControlIdsIsMutable();
           boostControlIds_.addAll(other.boostControlIds_);
@@ -2431,7 +2486,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.filterControlIds_.isEmpty()) {
         if (filterControlIds_.isEmpty()) {
           filterControlIds_ = other.filterControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureFilterControlIdsIsMutable();
           filterControlIds_.addAll(other.filterControlIds_);
@@ -2441,7 +2496,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.redirectControlIds_.isEmpty()) {
         if (redirectControlIds_.isEmpty()) {
           redirectControlIds_ = other.redirectControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureRedirectControlIdsIsMutable();
           redirectControlIds_.addAll(other.redirectControlIds_);
@@ -2451,7 +2506,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.twowaySynonymsControlIds_.isEmpty()) {
         if (twowaySynonymsControlIds_.isEmpty()) {
           twowaySynonymsControlIds_ = other.twowaySynonymsControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           ensureTwowaySynonymsControlIdsIsMutable();
           twowaySynonymsControlIds_.addAll(other.twowaySynonymsControlIds_);
@@ -2461,7 +2516,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.onewaySynonymsControlIds_.isEmpty()) {
         if (onewaySynonymsControlIds_.isEmpty()) {
           onewaySynonymsControlIds_ = other.onewaySynonymsControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureOnewaySynonymsControlIdsIsMutable();
           onewaySynonymsControlIds_.addAll(other.onewaySynonymsControlIds_);
@@ -2471,7 +2526,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.doNotAssociateControlIds_.isEmpty()) {
         if (doNotAssociateControlIds_.isEmpty()) {
           doNotAssociateControlIds_ = other.doNotAssociateControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           ensureDoNotAssociateControlIdsIsMutable();
           doNotAssociateControlIds_.addAll(other.doNotAssociateControlIds_);
@@ -2481,7 +2536,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.replacementControlIds_.isEmpty()) {
         if (replacementControlIds_.isEmpty()) {
           replacementControlIds_ = other.replacementControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00001000);
         } else {
           ensureReplacementControlIdsIsMutable();
           replacementControlIds_.addAll(other.replacementControlIds_);
@@ -2491,7 +2546,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.ignoreControlIds_.isEmpty()) {
         if (ignoreControlIds_.isEmpty()) {
           ignoreControlIds_ = other.ignoreControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           ensureIgnoreControlIdsIsMutable();
           ignoreControlIds_.addAll(other.ignoreControlIds_);
@@ -2500,6 +2555,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDiversityLevel().isEmpty()) {
         diversityLevel_ = other.diversityLevel_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.diversityType_ != 0) {
@@ -2507,6 +2563,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEnableCategoryFilterLevel().isEmpty()) {
         enableCategoryFilterLevel_ = other.enableCategoryFilterLevel_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasPersonalizationSpec()) {
@@ -2515,7 +2572,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.solutionTypes_.isEmpty()) {
         if (solutionTypes_.isEmpty()) {
           solutionTypes_ = other.solutionTypes_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00040000);
         } else {
           ensureSolutionTypesIsMutable();
           solutionTypes_.addAll(other.solutionTypes_);
@@ -2551,25 +2608,25 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 modelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 priceRerankingLevel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -2583,7 +2640,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getDynamicFacetSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -2596,7 +2653,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 diversityLevel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 66
             case 74:
@@ -2644,7 +2701,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
             case 130:
               {
                 enableCategoryFilterLevel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 130
             case 146:
@@ -2676,14 +2733,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
             case 160:
               {
                 diversityType_ = input.readEnum();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 160
             case 170:
               {
                 input.readMessage(
                     getPersonalizationSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 170
             default:
@@ -2769,8 +2826,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2787,8 +2844,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2810,8 +2867,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2886,8 +2943,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2906,8 +2963,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2931,8 +2988,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3019,8 +3076,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3043,8 +3100,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearModelId() {
-
       modelId_ = getDefaultInstance().getModelId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3072,8 +3129,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3181,8 +3238,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       priceRerankingLevel_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3212,8 +3269,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPriceRerankingLevel() {
-
       priceRerankingLevel_ = getDefaultInstance().getPriceRerankingLevel();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3248,8 +3305,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       priceRerankingLevel_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3258,9 +3315,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFacetControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         facetControlIds_ = new com.google.protobuf.LazyStringArrayList(facetControlIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -3467,7 +3524,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFacetControlIds() {
       facetControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3525,7 +3582,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dynamicFacetSpec field is set.
      */
     public boolean hasDynamicFacetSpec() {
-      return dynamicFacetSpecBuilder_ != null || dynamicFacetSpec_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3571,11 +3628,11 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dynamicFacetSpec_ = value;
-        onChanged();
       } else {
         dynamicFacetSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3595,11 +3652,11 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.Builder builderForValue) {
       if (dynamicFacetSpecBuilder_ == null) {
         dynamicFacetSpec_ = builderForValue.build();
-        onChanged();
       } else {
         dynamicFacetSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3618,20 +3675,19 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDynamicFacetSpec(
         com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec value) {
       if (dynamicFacetSpecBuilder_ == null) {
-        if (dynamicFacetSpec_ != null) {
-          dynamicFacetSpec_ =
-              com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.newBuilder(
-                      dynamicFacetSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && dynamicFacetSpec_ != null
+            && dynamicFacetSpec_
+                != com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.getDefaultInstance()) {
+          getDynamicFacetSpecBuilder().mergeFrom(value);
         } else {
           dynamicFacetSpec_ = value;
         }
-        onChanged();
       } else {
         dynamicFacetSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3648,14 +3704,13 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;</code>
      */
     public Builder clearDynamicFacetSpec() {
-      if (dynamicFacetSpecBuilder_ == null) {
-        dynamicFacetSpec_ = null;
-        onChanged();
-      } else {
-        dynamicFacetSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      dynamicFacetSpec_ = null;
+      if (dynamicFacetSpecBuilder_ != null) {
+        dynamicFacetSpecBuilder_.dispose();
         dynamicFacetSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3673,7 +3728,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.Builder
         getDynamicFacetSpecBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getDynamicFacetSpecFieldBuilder().getBuilder();
     }
@@ -3734,9 +3789,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureBoostControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         boostControlIds_ = new com.google.protobuf.LazyStringArrayList(boostControlIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -3975,7 +4030,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBoostControlIds() {
       boostControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4019,9 +4074,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFilterControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         filterControlIds_ = new com.google.protobuf.LazyStringArrayList(filterControlIds_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -4204,7 +4259,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFilterControlIds() {
       filterControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4241,9 +4296,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRedirectControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         redirectControlIds_ = new com.google.protobuf.LazyStringArrayList(redirectControlIds_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -4418,7 +4473,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRedirectControlIds() {
       redirectControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4454,10 +4509,10 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTwowaySynonymsControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         twowaySynonymsControlIds_ =
             new com.google.protobuf.LazyStringArrayList(twowaySynonymsControlIds_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000200;
       }
     }
     /**
@@ -4640,7 +4695,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTwowaySynonymsControlIds() {
       twowaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4677,10 +4732,10 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureOnewaySynonymsControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         onewaySynonymsControlIds_ =
             new com.google.protobuf.LazyStringArrayList(onewaySynonymsControlIds_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -4863,7 +4918,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOnewaySynonymsControlIds() {
       onewaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4900,10 +4955,10 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDoNotAssociateControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         doNotAssociateControlIds_ =
             new com.google.protobuf.LazyStringArrayList(doNotAssociateControlIds_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000800;
       }
     }
     /**
@@ -5094,7 +5149,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDoNotAssociateControlIds() {
       doNotAssociateControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5132,10 +5187,10 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureReplacementControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         replacementControlIds_ =
             new com.google.protobuf.LazyStringArrayList(replacementControlIds_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00001000;
       }
     }
     /**
@@ -5318,7 +5373,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearReplacementControlIds() {
       replacementControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -5355,9 +5410,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIgnoreControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         ignoreControlIds_ = new com.google.protobuf.LazyStringArrayList(ignoreControlIds_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00002000;
       }
     }
     /**
@@ -5548,7 +5603,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIgnoreControlIds() {
       ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -5676,8 +5731,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       diversityLevel_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5704,8 +5759,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiversityLevel() {
-
       diversityLevel_ = getDefaultInstance().getDiversityLevel();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -5737,8 +5792,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       diversityLevel_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5776,8 +5831,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDiversityTypeValue(int value) {
-
       diversityType_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5796,9 +5851,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.retail.v2.ServingConfig.DiversityType getDiversityType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.retail.v2.ServingConfig.DiversityType result =
-          com.google.cloud.retail.v2.ServingConfig.DiversityType.valueOf(diversityType_);
+          com.google.cloud.retail.v2.ServingConfig.DiversityType.forNumber(diversityType_);
       return result == null
           ? com.google.cloud.retail.v2.ServingConfig.DiversityType.UNRECOGNIZED
           : result;
@@ -5821,7 +5875,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00008000;
       diversityType_ = value.getNumber();
       onChanged();
       return this;
@@ -5840,7 +5894,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiversityType() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       diversityType_ = 0;
       onChanged();
       return this;
@@ -5940,8 +5994,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       enableCategoryFilterLevel_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5968,8 +6022,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableCategoryFilterLevel() {
-
       enableCategoryFilterLevel_ = getDefaultInstance().getEnableCategoryFilterLevel();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -6001,8 +6055,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       enableCategoryFilterLevel_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6037,7 +6091,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the personalizationSpec field is set.
      */
     public boolean hasPersonalizationSpec() {
-      return personalizationSpecBuilder_ != null || personalizationSpec_ != null;
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -6099,11 +6153,11 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         personalizationSpec_ = value;
-        onChanged();
       } else {
         personalizationSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -6131,11 +6185,11 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder builderForValue) {
       if (personalizationSpecBuilder_ == null) {
         personalizationSpec_ = builderForValue.build();
-        onChanged();
       } else {
         personalizationSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -6162,20 +6216,20 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePersonalizationSpec(
         com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec value) {
       if (personalizationSpecBuilder_ == null) {
-        if (personalizationSpec_ != null) {
-          personalizationSpec_ =
-              com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.newBuilder(
-                      personalizationSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00020000) != 0)
+            && personalizationSpec_ != null
+            && personalizationSpec_
+                != com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec
+                    .getDefaultInstance()) {
+          getPersonalizationSpecBuilder().mergeFrom(value);
         } else {
           personalizationSpec_ = value;
         }
-        onChanged();
       } else {
         personalizationSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -6200,14 +6254,13 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPersonalizationSpec() {
-      if (personalizationSpecBuilder_ == null) {
-        personalizationSpec_ = null;
-        onChanged();
-      } else {
-        personalizationSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00020000);
+      personalizationSpec_ = null;
+      if (personalizationSpecBuilder_ != null) {
+        personalizationSpecBuilder_.dispose();
         personalizationSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6233,7 +6286,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder
         getPersonalizationSpecBuilder() {
-
+      bitField0_ |= 0x00020000;
       onChanged();
       return getPersonalizationSpecFieldBuilder().getBuilder();
     }
@@ -6309,9 +6362,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> solutionTypes_ = java.util.Collections.emptyList();
 
     private void ensureSolutionTypesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         solutionTypes_ = new java.util.ArrayList<java.lang.Integer>(solutionTypes_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00040000;
       }
     }
     /**
@@ -6457,7 +6510,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSolutionTypes() {
       solutionTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }

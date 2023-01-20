@@ -69,7 +69,9 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
   }
 
   public static final int API_KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object apiKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object apiKey_ = "";
   /**
    *
    *
@@ -324,8 +326,8 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       apiKey_ = "";
-
       return this;
     }
 
@@ -357,9 +359,19 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
         buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration result =
           new com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration(this);
-      result.apiKey_ = apiKey_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.apiKey_ = apiKey_;
+      }
     }
 
     @java.lang.Override
@@ -414,6 +426,7 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
               .getDefaultInstance()) return this;
       if (!other.getApiKey().isEmpty()) {
         apiKey_ = other.apiKey_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -445,7 +458,7 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
             case 10:
               {
                 apiKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -464,6 +477,8 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object apiKey_ = "";
     /**
@@ -526,8 +541,8 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       apiKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -543,8 +558,8 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearApiKey() {
-
       apiKey_ = getDefaultInstance().getApiKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -565,8 +580,8 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       apiKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

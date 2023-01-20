@@ -1163,7 +1163,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BASE_SCORE_FIELD_NUMBER = 1;
-  private float baseScore_;
+  private float baseScore_ = 0F;
   /**
    *
    *
@@ -1182,7 +1182,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPLOITABILITY_SCORE_FIELD_NUMBER = 2;
-  private float exploitabilityScore_;
+  private float exploitabilityScore_ = 0F;
   /**
    *
    *
@@ -1202,7 +1202,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMPACT_SCORE_FIELD_NUMBER = 3;
-  private float impactScore_;
+  private float impactScore_ = 0F;
   /**
    *
    *
@@ -1220,7 +1220,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ATTACK_VECTOR_FIELD_NUMBER = 5;
-  private int attackVector_;
+  private int attackVector_ = 0;
   /**
    *
    *
@@ -1251,14 +1251,13 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.CVSSv3.AttackVector getAttackVector() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.CVSSv3.AttackVector result =
-        com.google.cloud.osconfig.v1.CVSSv3.AttackVector.valueOf(attackVector_);
+        com.google.cloud.osconfig.v1.CVSSv3.AttackVector.forNumber(attackVector_);
     return result == null ? com.google.cloud.osconfig.v1.CVSSv3.AttackVector.UNRECOGNIZED : result;
   }
 
   public static final int ATTACK_COMPLEXITY_FIELD_NUMBER = 6;
-  private int attackComplexity_;
+  private int attackComplexity_ = 0;
   /**
    *
    *
@@ -1289,16 +1288,15 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity getAttackComplexity() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity result =
-        com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity.valueOf(attackComplexity_);
+        com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity.forNumber(attackComplexity_);
     return result == null
         ? com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity.UNRECOGNIZED
         : result;
   }
 
   public static final int PRIVILEGES_REQUIRED_FIELD_NUMBER = 7;
-  private int privilegesRequired_;
+  private int privilegesRequired_ = 0;
   /**
    *
    *
@@ -1329,16 +1327,15 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired getPrivilegesRequired() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired result =
-        com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired.valueOf(privilegesRequired_);
+        com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired.forNumber(privilegesRequired_);
     return result == null
         ? com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired.UNRECOGNIZED
         : result;
   }
 
   public static final int USER_INTERACTION_FIELD_NUMBER = 8;
-  private int userInteraction_;
+  private int userInteraction_ = 0;
   /**
    *
    *
@@ -1371,16 +1368,15 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.CVSSv3.UserInteraction getUserInteraction() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.CVSSv3.UserInteraction result =
-        com.google.cloud.osconfig.v1.CVSSv3.UserInteraction.valueOf(userInteraction_);
+        com.google.cloud.osconfig.v1.CVSSv3.UserInteraction.forNumber(userInteraction_);
     return result == null
         ? com.google.cloud.osconfig.v1.CVSSv3.UserInteraction.UNRECOGNIZED
         : result;
   }
 
   public static final int SCOPE_FIELD_NUMBER = 9;
-  private int scope_;
+  private int scope_ = 0;
   /**
    *
    *
@@ -1411,14 +1407,13 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.CVSSv3.Scope getScope() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.CVSSv3.Scope result =
-        com.google.cloud.osconfig.v1.CVSSv3.Scope.valueOf(scope_);
+        com.google.cloud.osconfig.v1.CVSSv3.Scope.forNumber(scope_);
     return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Scope.UNRECOGNIZED : result;
   }
 
   public static final int CONFIDENTIALITY_IMPACT_FIELD_NUMBER = 10;
-  private int confidentialityImpact_;
+  private int confidentialityImpact_ = 0;
   /**
    *
    *
@@ -1451,14 +1446,13 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.CVSSv3.Impact getConfidentialityImpact() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.CVSSv3.Impact result =
-        com.google.cloud.osconfig.v1.CVSSv3.Impact.valueOf(confidentialityImpact_);
+        com.google.cloud.osconfig.v1.CVSSv3.Impact.forNumber(confidentialityImpact_);
     return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Impact.UNRECOGNIZED : result;
   }
 
   public static final int INTEGRITY_IMPACT_FIELD_NUMBER = 11;
-  private int integrityImpact_;
+  private int integrityImpact_ = 0;
   /**
    *
    *
@@ -1489,14 +1483,13 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.CVSSv3.Impact getIntegrityImpact() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.CVSSv3.Impact result =
-        com.google.cloud.osconfig.v1.CVSSv3.Impact.valueOf(integrityImpact_);
+        com.google.cloud.osconfig.v1.CVSSv3.Impact.forNumber(integrityImpact_);
     return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Impact.UNRECOGNIZED : result;
   }
 
   public static final int AVAILABILITY_IMPACT_FIELD_NUMBER = 12;
-  private int availabilityImpact_;
+  private int availabilityImpact_ = 0;
   /**
    *
    *
@@ -1527,9 +1520,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.CVSSv3.Impact getAvailabilityImpact() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.osconfig.v1.CVSSv3.Impact result =
-        com.google.cloud.osconfig.v1.CVSSv3.Impact.valueOf(availabilityImpact_);
+        com.google.cloud.osconfig.v1.CVSSv3.Impact.forNumber(availabilityImpact_);
     return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Impact.UNRECOGNIZED : result;
   }
 
@@ -1842,28 +1834,18 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       baseScore_ = 0F;
-
       exploitabilityScore_ = 0F;
-
       impactScore_ = 0F;
-
       attackVector_ = 0;
-
       attackComplexity_ = 0;
-
       privilegesRequired_ = 0;
-
       userInteraction_ = 0;
-
       scope_ = 0;
-
       confidentialityImpact_ = 0;
-
       integrityImpact_ = 0;
-
       availabilityImpact_ = 0;
-
       return this;
     }
 
@@ -1890,19 +1872,48 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.osconfig.v1.CVSSv3 buildPartial() {
       com.google.cloud.osconfig.v1.CVSSv3 result = new com.google.cloud.osconfig.v1.CVSSv3(this);
-      result.baseScore_ = baseScore_;
-      result.exploitabilityScore_ = exploitabilityScore_;
-      result.impactScore_ = impactScore_;
-      result.attackVector_ = attackVector_;
-      result.attackComplexity_ = attackComplexity_;
-      result.privilegesRequired_ = privilegesRequired_;
-      result.userInteraction_ = userInteraction_;
-      result.scope_ = scope_;
-      result.confidentialityImpact_ = confidentialityImpact_;
-      result.integrityImpact_ = integrityImpact_;
-      result.availabilityImpact_ = availabilityImpact_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.osconfig.v1.CVSSv3 result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.baseScore_ = baseScore_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.exploitabilityScore_ = exploitabilityScore_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.impactScore_ = impactScore_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.attackVector_ = attackVector_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.attackComplexity_ = attackComplexity_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.privilegesRequired_ = privilegesRequired_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.userInteraction_ = userInteraction_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.scope_ = scope_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.confidentialityImpact_ = confidentialityImpact_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.integrityImpact_ = integrityImpact_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.availabilityImpact_ = availabilityImpact_;
+      }
     }
 
     @java.lang.Override
@@ -2012,67 +2023,67 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
             case 13:
               {
                 baseScore_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 21:
               {
                 exploitabilityScore_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 impactScore_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             case 40:
               {
                 attackVector_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             case 48:
               {
                 attackComplexity_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 56:
               {
                 privilegesRequired_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 64:
               {
                 userInteraction_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 72:
               {
                 scope_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 72
             case 80:
               {
                 confidentialityImpact_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 80
             case 88:
               {
                 integrityImpact_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 88
             case 96:
               {
                 availabilityImpact_ = input.readEnum();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 96
             default:
@@ -2091,6 +2102,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float baseScore_;
     /**
@@ -2125,6 +2138,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public Builder setBaseScore(float value) {
 
       baseScore_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2141,7 +2155,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBaseScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       baseScore_ = 0F;
       onChanged();
       return this;
@@ -2182,6 +2196,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public Builder setExploitabilityScore(float value) {
 
       exploitabilityScore_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2199,7 +2214,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExploitabilityScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       exploitabilityScore_ = 0F;
       onChanged();
       return this;
@@ -2236,6 +2251,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public Builder setImpactScore(float value) {
 
       impactScore_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2251,7 +2267,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImpactScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       impactScore_ = 0F;
       onChanged();
       return this;
@@ -2288,8 +2304,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAttackVectorValue(int value) {
-
       attackVector_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2307,9 +2323,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1.CVSSv3.AttackVector getAttackVector() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.CVSSv3.AttackVector result =
-          com.google.cloud.osconfig.v1.CVSSv3.AttackVector.valueOf(attackVector_);
+          com.google.cloud.osconfig.v1.CVSSv3.AttackVector.forNumber(attackVector_);
       return result == null
           ? com.google.cloud.osconfig.v1.CVSSv3.AttackVector.UNRECOGNIZED
           : result;
@@ -2331,7 +2346,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       attackVector_ = value.getNumber();
       onChanged();
       return this;
@@ -2349,7 +2364,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAttackVector() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       attackVector_ = 0;
       onChanged();
       return this;
@@ -2386,8 +2401,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAttackComplexityValue(int value) {
-
       attackComplexity_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2405,9 +2420,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity getAttackComplexity() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity result =
-          com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity.valueOf(attackComplexity_);
+          com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity.forNumber(attackComplexity_);
       return result == null
           ? com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity.UNRECOGNIZED
           : result;
@@ -2429,7 +2443,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       attackComplexity_ = value.getNumber();
       onChanged();
       return this;
@@ -2447,7 +2461,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAttackComplexity() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       attackComplexity_ = 0;
       onChanged();
       return this;
@@ -2484,8 +2498,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPrivilegesRequiredValue(int value) {
-
       privilegesRequired_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2503,9 +2517,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired getPrivilegesRequired() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired result =
-          com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired.valueOf(privilegesRequired_);
+          com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired.forNumber(privilegesRequired_);
       return result == null
           ? com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired.UNRECOGNIZED
           : result;
@@ -2528,7 +2541,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       privilegesRequired_ = value.getNumber();
       onChanged();
       return this;
@@ -2546,7 +2559,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrivilegesRequired() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       privilegesRequired_ = 0;
       onChanged();
       return this;
@@ -2585,8 +2598,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUserInteractionValue(int value) {
-
       userInteraction_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2605,9 +2618,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1.CVSSv3.UserInteraction getUserInteraction() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.CVSSv3.UserInteraction result =
-          com.google.cloud.osconfig.v1.CVSSv3.UserInteraction.valueOf(userInteraction_);
+          com.google.cloud.osconfig.v1.CVSSv3.UserInteraction.forNumber(userInteraction_);
       return result == null
           ? com.google.cloud.osconfig.v1.CVSSv3.UserInteraction.UNRECOGNIZED
           : result;
@@ -2630,7 +2642,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       userInteraction_ = value.getNumber();
       onChanged();
       return this;
@@ -2649,7 +2661,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserInteraction() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       userInteraction_ = 0;
       onChanged();
       return this;
@@ -2686,8 +2698,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
-
       scope_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2705,9 +2717,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1.CVSSv3.Scope getScope() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.CVSSv3.Scope result =
-          com.google.cloud.osconfig.v1.CVSSv3.Scope.valueOf(scope_);
+          com.google.cloud.osconfig.v1.CVSSv3.Scope.forNumber(scope_);
       return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Scope.UNRECOGNIZED : result;
     }
     /**
@@ -2727,7 +2738,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       scope_ = value.getNumber();
       onChanged();
       return this;
@@ -2745,7 +2756,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       scope_ = 0;
       onChanged();
       return this;
@@ -2784,8 +2795,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setConfidentialityImpactValue(int value) {
-
       confidentialityImpact_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2804,9 +2815,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1.CVSSv3.Impact getConfidentialityImpact() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.CVSSv3.Impact result =
-          com.google.cloud.osconfig.v1.CVSSv3.Impact.valueOf(confidentialityImpact_);
+          com.google.cloud.osconfig.v1.CVSSv3.Impact.forNumber(confidentialityImpact_);
       return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Impact.UNRECOGNIZED : result;
     }
     /**
@@ -2827,7 +2837,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       confidentialityImpact_ = value.getNumber();
       onChanged();
       return this;
@@ -2846,7 +2856,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidentialityImpact() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       confidentialityImpact_ = 0;
       onChanged();
       return this;
@@ -2883,8 +2893,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIntegrityImpactValue(int value) {
-
       integrityImpact_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2902,9 +2912,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1.CVSSv3.Impact getIntegrityImpact() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.CVSSv3.Impact result =
-          com.google.cloud.osconfig.v1.CVSSv3.Impact.valueOf(integrityImpact_);
+          com.google.cloud.osconfig.v1.CVSSv3.Impact.forNumber(integrityImpact_);
       return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Impact.UNRECOGNIZED : result;
     }
     /**
@@ -2924,7 +2933,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       integrityImpact_ = value.getNumber();
       onChanged();
       return this;
@@ -2942,7 +2951,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIntegrityImpact() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       integrityImpact_ = 0;
       onChanged();
       return this;
@@ -2979,8 +2988,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAvailabilityImpactValue(int value) {
-
       availabilityImpact_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2998,9 +3007,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.osconfig.v1.CVSSv3.Impact getAvailabilityImpact() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.CVSSv3.Impact result =
-          com.google.cloud.osconfig.v1.CVSSv3.Impact.valueOf(availabilityImpact_);
+          com.google.cloud.osconfig.v1.CVSSv3.Impact.forNumber(availabilityImpact_);
       return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Impact.UNRECOGNIZED : result;
     }
     /**
@@ -3020,7 +3028,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       availabilityImpact_ = value.getNumber();
       onChanged();
       return this;
@@ -3038,7 +3046,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvailabilityImpact() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       availabilityImpact_ = 0;
       onChanged();
       return this;

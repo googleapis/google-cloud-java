@@ -66,7 +66,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
   }
 
   public static final int SOURCE_EVENTS_COUNT_FIELD_NUMBER = 1;
-  private long sourceEventsCount_;
+  private long sourceEventsCount_ = 0L;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
   }
 
   public static final int TRANSFORMED_EVENTS_COUNT_FIELD_NUMBER = 2;
-  private long transformedEventsCount_;
+  private long transformedEventsCount_ = 0L;
   /**
    *
    *
@@ -309,10 +309,9 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceEventsCount_ = 0L;
-
       transformedEventsCount_ = 0L;
-
       return this;
     }
 
@@ -341,10 +340,22 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
     public com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata buildPartial() {
       com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata result =
           new com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata(this);
-      result.sourceEventsCount_ = sourceEventsCount_;
-      result.transformedEventsCount_ = transformedEventsCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceEventsCount_ = sourceEventsCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.transformedEventsCount_ = transformedEventsCount_;
+      }
     }
 
     @java.lang.Override
@@ -429,13 +440,13 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
             case 8:
               {
                 sourceEventsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 transformedEventsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -454,6 +465,8 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long sourceEventsCount_;
     /**
@@ -486,6 +499,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
     public Builder setSourceEventsCount(long value) {
 
       sourceEventsCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -501,7 +515,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearSourceEventsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sourceEventsCount_ = 0L;
       onChanged();
       return this;
@@ -540,6 +554,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
     public Builder setTransformedEventsCount(long value) {
 
       transformedEventsCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -556,7 +571,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearTransformedEventsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       transformedEventsCount_ = 0L;
       onChanged();
       return this;

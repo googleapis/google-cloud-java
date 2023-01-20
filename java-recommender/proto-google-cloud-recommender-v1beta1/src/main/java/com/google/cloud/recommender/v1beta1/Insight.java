@@ -559,7 +559,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RECOMMENDATION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object recommendation_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object recommendation_ = "";
     /**
      *
      *
@@ -811,8 +813,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         recommendation_ = "";
-
         return this;
       }
 
@@ -843,9 +845,19 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.recommender.v1beta1.Insight.RecommendationReference buildPartial() {
         com.google.cloud.recommender.v1beta1.Insight.RecommendationReference result =
             new com.google.cloud.recommender.v1beta1.Insight.RecommendationReference(this);
-        result.recommendation_ = recommendation_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.recommender.v1beta1.Insight.RecommendationReference result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recommendation_ = recommendation_;
+        }
       }
 
       @java.lang.Override
@@ -901,6 +913,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getRecommendation().isEmpty()) {
           recommendation_ = other.recommendation_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -932,7 +945,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   recommendation_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -951,6 +964,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object recommendation_ = "";
       /**
@@ -1016,8 +1031,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         recommendation_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1034,8 +1049,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRecommendation() {
-
         recommendation_ = getDefaultInstance().getRecommendation();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1057,8 +1072,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         recommendation_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1131,7 +1146,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1180,7 +1197,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1231,6 +1250,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_RESOURCES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList targetResources_;
   /**
    *
@@ -1292,7 +1313,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSIGHT_SUBTYPE_FIELD_NUMBER = 10;
-  private volatile java.lang.Object insightSubtype_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object insightSubtype_ = "";
   /**
    *
    *
@@ -1386,7 +1409,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getContentOrBuilder() {
-    return getContent();
+    return content_ == null ? com.google.protobuf.Struct.getDefaultInstance() : content_;
   }
 
   public static final int LAST_REFRESH_TIME_FIELD_NUMBER = 4;
@@ -1434,7 +1457,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastRefreshTimeOrBuilder() {
-    return getLastRefreshTime();
+    return lastRefreshTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastRefreshTime_;
   }
 
   public static final int OBSERVATION_PERIOD_FIELD_NUMBER = 5;
@@ -1488,7 +1513,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getObservationPeriodOrBuilder() {
-    return getObservationPeriod();
+    return observationPeriod_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : observationPeriod_;
   }
 
   public static final int STATE_INFO_FIELD_NUMBER = 6;
@@ -1536,11 +1563,13 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.recommender.v1beta1.InsightStateInfoOrBuilder getStateInfoOrBuilder() {
-    return getStateInfo();
+    return stateInfo_ == null
+        ? com.google.cloud.recommender.v1beta1.InsightStateInfo.getDefaultInstance()
+        : stateInfo_;
   }
 
   public static final int CATEGORY_FIELD_NUMBER = 7;
-  private int category_;
+  private int category_ = 0;
   /**
    *
    *
@@ -1569,16 +1598,15 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Insight.Category getCategory() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.recommender.v1beta1.Insight.Category result =
-        com.google.cloud.recommender.v1beta1.Insight.Category.valueOf(category_);
+        com.google.cloud.recommender.v1beta1.Insight.Category.forNumber(category_);
     return result == null
         ? com.google.cloud.recommender.v1beta1.Insight.Category.UNRECOGNIZED
         : result;
   }
 
   public static final int SEVERITY_FIELD_NUMBER = 15;
-  private int severity_;
+  private int severity_ = 0;
   /**
    *
    *
@@ -1607,16 +1635,17 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Insight.Severity getSeverity() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.recommender.v1beta1.Insight.Severity result =
-        com.google.cloud.recommender.v1beta1.Insight.Severity.valueOf(severity_);
+        com.google.cloud.recommender.v1beta1.Insight.Severity.forNumber(severity_);
     return result == null
         ? com.google.cloud.recommender.v1beta1.Insight.Severity.UNRECOGNIZED
         : result;
   }
 
   public static final int ETAG_FIELD_NUMBER = 11;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -1667,6 +1696,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSOCIATED_RECOMMENDATIONS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommender.v1beta1.Insight.RecommendationReference>
       associatedRecommendations_;
   /**
@@ -2083,51 +2114,42 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
       targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       insightSubtype_ = "";
-
-      if (contentBuilder_ == null) {
-        content_ = null;
-      } else {
-        content_ = null;
+      content_ = null;
+      if (contentBuilder_ != null) {
+        contentBuilder_.dispose();
         contentBuilder_ = null;
       }
-      if (lastRefreshTimeBuilder_ == null) {
-        lastRefreshTime_ = null;
-      } else {
-        lastRefreshTime_ = null;
+      lastRefreshTime_ = null;
+      if (lastRefreshTimeBuilder_ != null) {
+        lastRefreshTimeBuilder_.dispose();
         lastRefreshTimeBuilder_ = null;
       }
-      if (observationPeriodBuilder_ == null) {
-        observationPeriod_ = null;
-      } else {
-        observationPeriod_ = null;
+      observationPeriod_ = null;
+      if (observationPeriodBuilder_ != null) {
+        observationPeriodBuilder_.dispose();
         observationPeriodBuilder_ = null;
       }
-      if (stateInfoBuilder_ == null) {
-        stateInfo_ = null;
-      } else {
-        stateInfo_ = null;
+      stateInfo_ = null;
+      if (stateInfoBuilder_ != null) {
+        stateInfoBuilder_.dispose();
         stateInfoBuilder_ = null;
       }
       category_ = 0;
-
       severity_ = 0;
-
       etag_ = "";
-
       if (associatedRecommendationsBuilder_ == null) {
         associatedRecommendations_ = java.util.Collections.emptyList();
       } else {
         associatedRecommendations_ = null;
         associatedRecommendationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -2155,50 +2177,68 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommender.v1beta1.Insight buildPartial() {
       com.google.cloud.recommender.v1beta1.Insight result =
           new com.google.cloud.recommender.v1beta1.Insight(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.description_ = description_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.recommender.v1beta1.Insight result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         targetResources_ = targetResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.targetResources_ = targetResources_;
-      result.insightSubtype_ = insightSubtype_;
-      if (contentBuilder_ == null) {
-        result.content_ = content_;
-      } else {
-        result.content_ = contentBuilder_.build();
-      }
-      if (lastRefreshTimeBuilder_ == null) {
-        result.lastRefreshTime_ = lastRefreshTime_;
-      } else {
-        result.lastRefreshTime_ = lastRefreshTimeBuilder_.build();
-      }
-      if (observationPeriodBuilder_ == null) {
-        result.observationPeriod_ = observationPeriod_;
-      } else {
-        result.observationPeriod_ = observationPeriodBuilder_.build();
-      }
-      if (stateInfoBuilder_ == null) {
-        result.stateInfo_ = stateInfo_;
-      } else {
-        result.stateInfo_ = stateInfoBuilder_.build();
-      }
-      result.category_ = category_;
-      result.severity_ = severity_;
-      result.etag_ = etag_;
       if (associatedRecommendationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           associatedRecommendations_ =
               java.util.Collections.unmodifiableList(associatedRecommendations_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.associatedRecommendations_ = associatedRecommendations_;
       } else {
         result.associatedRecommendations_ = associatedRecommendationsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.recommender.v1beta1.Insight result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.insightSubtype_ = insightSubtype_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.content_ = contentBuilder_ == null ? content_ : contentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.lastRefreshTime_ =
+            lastRefreshTimeBuilder_ == null ? lastRefreshTime_ : lastRefreshTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.observationPeriod_ =
+            observationPeriodBuilder_ == null
+                ? observationPeriod_
+                : observationPeriodBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.stateInfo_ = stateInfoBuilder_ == null ? stateInfo_ : stateInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.category_ = category_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.severity_ = severity_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -2248,16 +2288,18 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.recommender.v1beta1.Insight.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.targetResources_.isEmpty()) {
         if (targetResources_.isEmpty()) {
           targetResources_ = other.targetResources_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureTargetResourcesIsMutable();
           targetResources_.addAll(other.targetResources_);
@@ -2266,6 +2308,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getInsightSubtype().isEmpty()) {
         insightSubtype_ = other.insightSubtype_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasContent()) {
@@ -2288,13 +2331,14 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (associatedRecommendationsBuilder_ == null) {
         if (!other.associatedRecommendations_.isEmpty()) {
           if (associatedRecommendations_.isEmpty()) {
             associatedRecommendations_ = other.associatedRecommendations_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureAssociatedRecommendationsIsMutable();
             associatedRecommendations_.addAll(other.associatedRecommendations_);
@@ -2307,7 +2351,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             associatedRecommendationsBuilder_.dispose();
             associatedRecommendationsBuilder_ = null;
             associatedRecommendations_ = other.associatedRecommendations_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000800);
             associatedRecommendationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAssociatedRecommendationsFieldBuilder()
@@ -2346,44 +2390,44 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getContentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getLastRefreshTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getObservationPeriodFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getStateInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 56:
               {
                 category_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 56
             case 66:
@@ -2411,19 +2455,19 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 insightSubtype_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 82
             case 90:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 120:
               {
                 severity_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 120
             default:
@@ -2506,8 +2550,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2523,8 +2567,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2545,8 +2589,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2615,8 +2659,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2633,8 +2677,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2656,8 +2700,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2666,9 +2710,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         targetResources_ = new com.google.protobuf.LazyStringArrayList(targetResources_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2803,7 +2847,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTargetResources() {
       targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2891,8 +2935,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       insightSubtype_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2908,8 +2952,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInsightSubtype() {
-
       insightSubtype_ = getDefaultInstance().getInsightSubtype();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2930,8 +2974,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       insightSubtype_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2955,7 +2999,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the content field is set.
      */
     public boolean hasContent() {
-      return contentBuilder_ != null || content_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2992,11 +3036,11 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         content_ = value;
-        onChanged();
       } else {
         contentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3012,11 +3056,11 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public Builder setContent(com.google.protobuf.Struct.Builder builderForValue) {
       if (contentBuilder_ == null) {
         content_ = builderForValue.build();
-        onChanged();
       } else {
         contentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3031,17 +3075,18 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeContent(com.google.protobuf.Struct value) {
       if (contentBuilder_ == null) {
-        if (content_ != null) {
-          content_ =
-              com.google.protobuf.Struct.newBuilder(content_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && content_ != null
+            && content_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getContentBuilder().mergeFrom(value);
         } else {
           content_ = value;
         }
-        onChanged();
       } else {
         contentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3055,14 +3100,13 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct content = 3;</code>
      */
     public Builder clearContent() {
-      if (contentBuilder_ == null) {
-        content_ = null;
-        onChanged();
-      } else {
-        content_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      content_ = null;
+      if (contentBuilder_ != null) {
+        contentBuilder_.dispose();
         contentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3076,7 +3120,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct content = 3;</code>
      */
     public com.google.protobuf.Struct.Builder getContentBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getContentFieldBuilder().getBuilder();
     }
@@ -3142,7 +3186,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastRefreshTime field is set.
      */
     public boolean hasLastRefreshTime() {
-      return lastRefreshTimeBuilder_ != null || lastRefreshTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3179,11 +3223,11 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastRefreshTime_ = value;
-        onChanged();
       } else {
         lastRefreshTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3198,11 +3242,11 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastRefreshTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastRefreshTimeBuilder_ == null) {
         lastRefreshTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastRefreshTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3216,19 +3260,18 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastRefreshTime(com.google.protobuf.Timestamp value) {
       if (lastRefreshTimeBuilder_ == null) {
-        if (lastRefreshTime_ != null) {
-          lastRefreshTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastRefreshTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && lastRefreshTime_ != null
+            && lastRefreshTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastRefreshTimeBuilder().mergeFrom(value);
         } else {
           lastRefreshTime_ = value;
         }
-        onChanged();
       } else {
         lastRefreshTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3241,14 +3284,13 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_refresh_time = 4;</code>
      */
     public Builder clearLastRefreshTime() {
-      if (lastRefreshTimeBuilder_ == null) {
-        lastRefreshTime_ = null;
-        onChanged();
-      } else {
-        lastRefreshTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      lastRefreshTime_ = null;
+      if (lastRefreshTimeBuilder_ != null) {
+        lastRefreshTimeBuilder_.dispose();
         lastRefreshTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3261,7 +3303,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_refresh_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastRefreshTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getLastRefreshTimeFieldBuilder().getBuilder();
     }
@@ -3329,7 +3371,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the observationPeriod field is set.
      */
     public boolean hasObservationPeriod() {
-      return observationPeriodBuilder_ != null || observationPeriod_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3370,11 +3412,11 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         observationPeriod_ = value;
-        onChanged();
       } else {
         observationPeriodBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3391,11 +3433,11 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public Builder setObservationPeriod(com.google.protobuf.Duration.Builder builderForValue) {
       if (observationPeriodBuilder_ == null) {
         observationPeriod_ = builderForValue.build();
-        onChanged();
       } else {
         observationPeriodBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3411,19 +3453,18 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeObservationPeriod(com.google.protobuf.Duration value) {
       if (observationPeriodBuilder_ == null) {
-        if (observationPeriod_ != null) {
-          observationPeriod_ =
-              com.google.protobuf.Duration.newBuilder(observationPeriod_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && observationPeriod_ != null
+            && observationPeriod_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getObservationPeriodBuilder().mergeFrom(value);
         } else {
           observationPeriod_ = value;
         }
-        onChanged();
       } else {
         observationPeriodBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3438,14 +3479,13 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration observation_period = 5;</code>
      */
     public Builder clearObservationPeriod() {
-      if (observationPeriodBuilder_ == null) {
-        observationPeriod_ = null;
-        onChanged();
-      } else {
-        observationPeriod_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      observationPeriod_ = null;
+      if (observationPeriodBuilder_ != null) {
+        observationPeriodBuilder_.dispose();
         observationPeriodBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3460,7 +3500,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration observation_period = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getObservationPeriodBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getObservationPeriodFieldBuilder().getBuilder();
     }
@@ -3530,7 +3570,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stateInfo field is set.
      */
     public boolean hasStateInfo() {
-      return stateInfoBuilder_ != null || stateInfo_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3567,11 +3607,11 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         stateInfo_ = value;
-        onChanged();
       } else {
         stateInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3587,11 +3627,11 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.recommender.v1beta1.InsightStateInfo.Builder builderForValue) {
       if (stateInfoBuilder_ == null) {
         stateInfo_ = builderForValue.build();
-        onChanged();
       } else {
         stateInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3605,19 +3645,19 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStateInfo(com.google.cloud.recommender.v1beta1.InsightStateInfo value) {
       if (stateInfoBuilder_ == null) {
-        if (stateInfo_ != null) {
-          stateInfo_ =
-              com.google.cloud.recommender.v1beta1.InsightStateInfo.newBuilder(stateInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && stateInfo_ != null
+            && stateInfo_
+                != com.google.cloud.recommender.v1beta1.InsightStateInfo.getDefaultInstance()) {
+          getStateInfoBuilder().mergeFrom(value);
         } else {
           stateInfo_ = value;
         }
-        onChanged();
       } else {
         stateInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3630,14 +3670,13 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.recommender.v1beta1.InsightStateInfo state_info = 6;</code>
      */
     public Builder clearStateInfo() {
-      if (stateInfoBuilder_ == null) {
-        stateInfo_ = null;
-        onChanged();
-      } else {
-        stateInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      stateInfo_ = null;
+      if (stateInfoBuilder_ != null) {
+        stateInfoBuilder_.dispose();
         stateInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3650,7 +3689,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.recommender.v1beta1.InsightStateInfo state_info = 6;</code>
      */
     public com.google.cloud.recommender.v1beta1.InsightStateInfo.Builder getStateInfoBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getStateInfoFieldBuilder().getBuilder();
     }
@@ -3727,8 +3766,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCategoryValue(int value) {
-
       category_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3745,9 +3784,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.recommender.v1beta1.Insight.Category getCategory() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.recommender.v1beta1.Insight.Category result =
-          com.google.cloud.recommender.v1beta1.Insight.Category.valueOf(category_);
+          com.google.cloud.recommender.v1beta1.Insight.Category.forNumber(category_);
       return result == null
           ? com.google.cloud.recommender.v1beta1.Insight.Category.UNRECOGNIZED
           : result;
@@ -3768,7 +3806,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       category_ = value.getNumber();
       onChanged();
       return this;
@@ -3785,7 +3823,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCategory() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       category_ = 0;
       onChanged();
       return this;
@@ -3820,8 +3858,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
-
       severity_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3838,9 +3876,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.recommender.v1beta1.Insight.Severity getSeverity() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.recommender.v1beta1.Insight.Severity result =
-          com.google.cloud.recommender.v1beta1.Insight.Severity.valueOf(severity_);
+          com.google.cloud.recommender.v1beta1.Insight.Severity.forNumber(severity_);
       return result == null
           ? com.google.cloud.recommender.v1beta1.Insight.Severity.UNRECOGNIZED
           : result;
@@ -3861,7 +3898,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       severity_ = value.getNumber();
       onChanged();
       return this;
@@ -3878,7 +3915,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       severity_ = 0;
       onChanged();
       return this;
@@ -3948,8 +3985,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3966,8 +4003,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3989,8 +4026,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3999,12 +4036,12 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         associatedRecommendations_ = java.util.Collections.emptyList();
 
     private void ensureAssociatedRecommendationsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         associatedRecommendations_ =
             new java.util.ArrayList<
                 com.google.cloud.recommender.v1beta1.Insight.RecommendationReference>(
                 associatedRecommendations_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -4254,7 +4291,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAssociatedRecommendations() {
       if (associatedRecommendationsBuilder_ == null) {
         associatedRecommendations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         associatedRecommendationsBuilder_.clear();
@@ -4402,7 +4439,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.recommender.v1beta1.Insight.RecommendationReference.Builder,
                 com.google.cloud.recommender.v1beta1.Insight.RecommendationReferenceOrBuilder>(
                 associatedRecommendations_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         associatedRecommendations_ = null;

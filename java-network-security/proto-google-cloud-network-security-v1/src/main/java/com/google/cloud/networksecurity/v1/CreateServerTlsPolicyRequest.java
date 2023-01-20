@@ -69,7 +69,9 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
   }
 
   public static final int SERVER_TLS_POLICY_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object serverTlsPolicyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serverTlsPolicyId_ = "";
   /**
    *
    *
@@ -228,7 +232,9 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.networksecurity.v1.ServerTlsPolicyOrBuilder
       getServerTlsPolicyOrBuilder() {
-    return getServerTlsPolicy();
+    return serverTlsPolicy_ == null
+        ? com.google.cloud.networksecurity.v1.ServerTlsPolicy.getDefaultInstance()
+        : serverTlsPolicy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -452,14 +458,12 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       serverTlsPolicyId_ = "";
-
-      if (serverTlsPolicyBuilder_ == null) {
-        serverTlsPolicy_ = null;
-      } else {
-        serverTlsPolicy_ = null;
+      serverTlsPolicy_ = null;
+      if (serverTlsPolicyBuilder_ != null) {
+        serverTlsPolicyBuilder_.dispose();
         serverTlsPolicyBuilder_ = null;
       }
       return this;
@@ -490,15 +494,26 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
     public com.google.cloud.networksecurity.v1.CreateServerTlsPolicyRequest buildPartial() {
       com.google.cloud.networksecurity.v1.CreateServerTlsPolicyRequest result =
           new com.google.cloud.networksecurity.v1.CreateServerTlsPolicyRequest(this);
-      result.parent_ = parent_;
-      result.serverTlsPolicyId_ = serverTlsPolicyId_;
-      if (serverTlsPolicyBuilder_ == null) {
-        result.serverTlsPolicy_ = serverTlsPolicy_;
-      } else {
-        result.serverTlsPolicy_ = serverTlsPolicyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networksecurity.v1.CreateServerTlsPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.serverTlsPolicyId_ = serverTlsPolicyId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serverTlsPolicy_ =
+            serverTlsPolicyBuilder_ == null ? serverTlsPolicy_ : serverTlsPolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -551,10 +566,12 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getServerTlsPolicyId().isEmpty()) {
         serverTlsPolicyId_ = other.serverTlsPolicyId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasServerTlsPolicy()) {
@@ -589,19 +606,19 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 serverTlsPolicyId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getServerTlsPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -620,6 +637,8 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -691,8 +710,8 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +730,8 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -736,8 +755,8 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -809,8 +828,8 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       serverTlsPolicyId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -828,8 +847,8 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearServerTlsPolicyId() {
-
       serverTlsPolicyId_ = getDefaultInstance().getServerTlsPolicyId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -852,8 +871,8 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serverTlsPolicyId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,7 +897,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
      * @return Whether the serverTlsPolicy field is set.
      */
     public boolean hasServerTlsPolicy() {
-      return serverTlsPolicyBuilder_ != null || serverTlsPolicy_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -919,11 +938,11 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         serverTlsPolicy_ = value;
-        onChanged();
       } else {
         serverTlsPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -941,11 +960,11 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
         com.google.cloud.networksecurity.v1.ServerTlsPolicy.Builder builderForValue) {
       if (serverTlsPolicyBuilder_ == null) {
         serverTlsPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         serverTlsPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -961,19 +980,19 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
      */
     public Builder mergeServerTlsPolicy(com.google.cloud.networksecurity.v1.ServerTlsPolicy value) {
       if (serverTlsPolicyBuilder_ == null) {
-        if (serverTlsPolicy_ != null) {
-          serverTlsPolicy_ =
-              com.google.cloud.networksecurity.v1.ServerTlsPolicy.newBuilder(serverTlsPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && serverTlsPolicy_ != null
+            && serverTlsPolicy_
+                != com.google.cloud.networksecurity.v1.ServerTlsPolicy.getDefaultInstance()) {
+          getServerTlsPolicyBuilder().mergeFrom(value);
         } else {
           serverTlsPolicy_ = value;
         }
-        onChanged();
       } else {
         serverTlsPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -988,14 +1007,13 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearServerTlsPolicy() {
-      if (serverTlsPolicyBuilder_ == null) {
-        serverTlsPolicy_ = null;
-        onChanged();
-      } else {
-        serverTlsPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      serverTlsPolicy_ = null;
+      if (serverTlsPolicyBuilder_ != null) {
+        serverTlsPolicyBuilder_.dispose();
         serverTlsPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1010,7 +1028,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.networksecurity.v1.ServerTlsPolicy.Builder getServerTlsPolicyBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getServerTlsPolicyFieldBuilder().getBuilder();
     }

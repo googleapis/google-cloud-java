@@ -70,6 +70,8 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIGQUERY_RESULT_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2alpha.BigQueryOutputResult> bigqueryResult_;
   /**
    *
@@ -141,6 +143,8 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_RESULT_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2alpha.GcsOutputResult> gcsResult_;
   /**
    *
@@ -420,6 +424,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bigqueryResultBuilder_ == null) {
         bigqueryResult_ = java.util.Collections.emptyList();
       } else {
@@ -461,7 +466,15 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.OutputResult buildPartial() {
       com.google.cloud.retail.v2alpha.OutputResult result =
           new com.google.cloud.retail.v2alpha.OutputResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.retail.v2alpha.OutputResult result) {
       if (bigqueryResultBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           bigqueryResult_ = java.util.Collections.unmodifiableList(bigqueryResult_);
@@ -480,8 +493,10 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.gcsResult_ = gcsResultBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2alpha.OutputResult result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

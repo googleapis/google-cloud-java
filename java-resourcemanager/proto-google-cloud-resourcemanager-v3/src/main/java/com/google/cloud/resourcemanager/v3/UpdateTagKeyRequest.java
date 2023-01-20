@@ -125,7 +125,9 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.resourcemanager.v3.TagKeyOrBuilder getTagKeyOrBuilder() {
-    return getTagKey();
+    return tagKey_ == null
+        ? com.google.cloud.resourcemanager.v3.TagKey.getDefaultInstance()
+        : tagKey_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -177,11 +179,11 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -425,20 +427,18 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tagKeyBuilder_ == null) {
-        tagKey_ = null;
-      } else {
-        tagKey_ = null;
+      bitField0_ = 0;
+      tagKey_ = null;
+      if (tagKeyBuilder_ != null) {
+        tagKeyBuilder_.dispose();
         tagKeyBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -466,19 +466,24 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.resourcemanager.v3.UpdateTagKeyRequest buildPartial() {
       com.google.cloud.resourcemanager.v3.UpdateTagKeyRequest result =
           new com.google.cloud.resourcemanager.v3.UpdateTagKeyRequest(this);
-      if (tagKeyBuilder_ == null) {
-        result.tagKey_ = tagKey_;
-      } else {
-        result.tagKey_ = tagKeyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.resourcemanager.v3.UpdateTagKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tagKey_ = tagKeyBuilder_ == null ? tagKey_ : tagKeyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -565,19 +570,19 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getTagKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -596,6 +601,8 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.resourcemanager.v3.TagKey tagKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -620,7 +627,7 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the tagKey field is set.
      */
     public boolean hasTagKey() {
-      return tagKeyBuilder_ != null || tagKey_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -667,11 +674,11 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         tagKey_ = value;
-        onChanged();
       } else {
         tagKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -691,11 +698,11 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
     public Builder setTagKey(com.google.cloud.resourcemanager.v3.TagKey.Builder builderForValue) {
       if (tagKeyBuilder_ == null) {
         tagKey_ = builderForValue.build();
-        onChanged();
       } else {
         tagKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -714,19 +721,18 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeTagKey(com.google.cloud.resourcemanager.v3.TagKey value) {
       if (tagKeyBuilder_ == null) {
-        if (tagKey_ != null) {
-          tagKey_ =
-              com.google.cloud.resourcemanager.v3.TagKey.newBuilder(tagKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && tagKey_ != null
+            && tagKey_ != com.google.cloud.resourcemanager.v3.TagKey.getDefaultInstance()) {
+          getTagKeyBuilder().mergeFrom(value);
         } else {
           tagKey_ = value;
         }
-        onChanged();
       } else {
         tagKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -744,14 +750,13 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearTagKey() {
-      if (tagKeyBuilder_ == null) {
-        tagKey_ = null;
-        onChanged();
-      } else {
-        tagKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      tagKey_ = null;
+      if (tagKeyBuilder_ != null) {
+        tagKeyBuilder_.dispose();
         tagKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -769,7 +774,7 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.resourcemanager.v3.TagKey.Builder getTagKeyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTagKeyFieldBuilder().getBuilder();
     }
@@ -847,7 +852,7 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -888,11 +893,11 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -909,11 +914,11 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -929,17 +934,18 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -954,14 +960,13 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -976,7 +981,7 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1061,6 +1066,7 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1077,7 +1083,7 @@ public final class UpdateTagKeyRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;
       onChanged();
       return this;

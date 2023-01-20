@@ -70,7 +70,9 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
   }
 
   public static final int AUTHORIZATION_POLICY_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object authorizationPolicyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authorizationPolicyId_ = "";
   /**
    *
    *
@@ -231,7 +235,9 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
   @java.lang.Override
   public com.google.cloud.networksecurity.v1.AuthorizationPolicyOrBuilder
       getAuthorizationPolicyOrBuilder() {
-    return getAuthorizationPolicy();
+    return authorizationPolicy_ == null
+        ? com.google.cloud.networksecurity.v1.AuthorizationPolicy.getDefaultInstance()
+        : authorizationPolicy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -457,14 +463,12 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       authorizationPolicyId_ = "";
-
-      if (authorizationPolicyBuilder_ == null) {
-        authorizationPolicy_ = null;
-      } else {
-        authorizationPolicy_ = null;
+      authorizationPolicy_ = null;
+      if (authorizationPolicyBuilder_ != null) {
+        authorizationPolicyBuilder_.dispose();
         authorizationPolicyBuilder_ = null;
       }
       return this;
@@ -496,15 +500,28 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
     public com.google.cloud.networksecurity.v1.CreateAuthorizationPolicyRequest buildPartial() {
       com.google.cloud.networksecurity.v1.CreateAuthorizationPolicyRequest result =
           new com.google.cloud.networksecurity.v1.CreateAuthorizationPolicyRequest(this);
-      result.parent_ = parent_;
-      result.authorizationPolicyId_ = authorizationPolicyId_;
-      if (authorizationPolicyBuilder_ == null) {
-        result.authorizationPolicy_ = authorizationPolicy_;
-      } else {
-        result.authorizationPolicy_ = authorizationPolicyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networksecurity.v1.CreateAuthorizationPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.authorizationPolicyId_ = authorizationPolicyId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.authorizationPolicy_ =
+            authorizationPolicyBuilder_ == null
+                ? authorizationPolicy_
+                : authorizationPolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -558,10 +575,12 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAuthorizationPolicyId().isEmpty()) {
         authorizationPolicyId_ = other.authorizationPolicyId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasAuthorizationPolicy()) {
@@ -596,20 +615,20 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 authorizationPolicyId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getAuthorizationPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -628,6 +647,8 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -699,8 +720,8 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -719,8 +740,8 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -744,8 +765,8 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -820,8 +841,8 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       authorizationPolicyId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -840,8 +861,8 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearAuthorizationPolicyId() {
-
       authorizationPolicyId_ = getDefaultInstance().getAuthorizationPolicyId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -865,8 +886,8 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       authorizationPolicyId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -891,7 +912,7 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
      * @return Whether the authorizationPolicy field is set.
      */
     public boolean hasAuthorizationPolicy() {
-      return authorizationPolicyBuilder_ != null || authorizationPolicy_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -933,11 +954,11 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         authorizationPolicy_ = value;
-        onChanged();
       } else {
         authorizationPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -955,11 +976,11 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
         com.google.cloud.networksecurity.v1.AuthorizationPolicy.Builder builderForValue) {
       if (authorizationPolicyBuilder_ == null) {
         authorizationPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         authorizationPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -976,20 +997,19 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
     public Builder mergeAuthorizationPolicy(
         com.google.cloud.networksecurity.v1.AuthorizationPolicy value) {
       if (authorizationPolicyBuilder_ == null) {
-        if (authorizationPolicy_ != null) {
-          authorizationPolicy_ =
-              com.google.cloud.networksecurity.v1.AuthorizationPolicy.newBuilder(
-                      authorizationPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && authorizationPolicy_ != null
+            && authorizationPolicy_
+                != com.google.cloud.networksecurity.v1.AuthorizationPolicy.getDefaultInstance()) {
+          getAuthorizationPolicyBuilder().mergeFrom(value);
         } else {
           authorizationPolicy_ = value;
         }
-        onChanged();
       } else {
         authorizationPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1004,14 +1024,13 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearAuthorizationPolicy() {
-      if (authorizationPolicyBuilder_ == null) {
-        authorizationPolicy_ = null;
-        onChanged();
-      } else {
-        authorizationPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      authorizationPolicy_ = null;
+      if (authorizationPolicyBuilder_ != null) {
+        authorizationPolicyBuilder_.dispose();
         authorizationPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1027,7 +1046,7 @@ public final class CreateAuthorizationPolicyRequest extends com.google.protobuf.
      */
     public com.google.cloud.networksecurity.v1.AuthorizationPolicy.Builder
         getAuthorizationPolicyBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAuthorizationPolicyFieldBuilder().getBuilder();
     }

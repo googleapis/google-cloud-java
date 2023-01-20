@@ -70,6 +70,8 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
   }
 
   public static final int ENVIRONMENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.orchestration.airflow.service.v1.Environment>
       environments_;
   /**
@@ -148,7 +150,9 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -414,6 +418,7 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (environmentsBuilder_ == null) {
         environments_ = java.util.Collections.emptyList();
       } else {
@@ -422,7 +427,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -454,7 +458,16 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
         buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse result =
           new com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse result) {
       if (environmentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           environments_ = java.util.Collections.unmodifiableList(environments_);
@@ -464,9 +477,14 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       } else {
         result.environments_ = environmentsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -548,6 +566,7 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -593,7 +612,7 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1062,8 +1081,8 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1079,8 +1098,8 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1101,8 +1120,8 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

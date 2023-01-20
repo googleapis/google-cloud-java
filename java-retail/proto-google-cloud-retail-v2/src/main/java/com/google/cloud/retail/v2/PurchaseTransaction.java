@@ -69,7 +69,9 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REVENUE_FIELD_NUMBER = 2;
-  private float revenue_;
+  private float revenue_ = 0F;
   /**
    *
    *
@@ -139,7 +141,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TAX_FIELD_NUMBER = 3;
-  private float tax_;
+  private float tax_ = 0F;
   /**
    *
    *
@@ -157,7 +159,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   }
 
   public static final int COST_FIELD_NUMBER = 4;
-  private float cost_;
+  private float cost_ = 0F;
   /**
    *
    *
@@ -180,7 +182,9 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CURRENCY_CODE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object currencyCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currencyCode_ = "";
   /**
    *
    *
@@ -464,16 +468,12 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       revenue_ = 0F;
-
       tax_ = 0F;
-
       cost_ = 0F;
-
       currencyCode_ = "";
-
       return this;
     }
 
@@ -501,13 +501,30 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public com.google.cloud.retail.v2.PurchaseTransaction buildPartial() {
       com.google.cloud.retail.v2.PurchaseTransaction result =
           new com.google.cloud.retail.v2.PurchaseTransaction(this);
-      result.id_ = id_;
-      result.revenue_ = revenue_;
-      result.tax_ = tax_;
-      result.cost_ = cost_;
-      result.currencyCode_ = currencyCode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.PurchaseTransaction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.revenue_ = revenue_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.tax_ = tax_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cost_ = cost_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.currencyCode_ = currencyCode_;
+      }
     }
 
     @java.lang.Override
@@ -557,6 +574,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.retail.v2.PurchaseTransaction.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getRevenue() != 0F) {
@@ -570,6 +588,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       }
       if (!other.getCurrencyCode().isEmpty()) {
         currencyCode_ = other.currencyCode_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -601,31 +620,31 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 revenue_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 tax_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             case 37:
               {
                 cost_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 42:
               {
                 currencyCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -644,6 +663,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -706,8 +727,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,8 +744,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -745,8 +766,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -788,6 +809,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public Builder setRevenue(float value) {
 
       revenue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -806,7 +828,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRevenue() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       revenue_ = 0F;
       onChanged();
       return this;
@@ -843,6 +865,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public Builder setTax(float value) {
 
       tax_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -858,7 +881,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTax() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       tax_ = 0F;
       onChanged();
       return this;
@@ -905,6 +928,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public Builder setCost(float value) {
 
       cost_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -925,7 +949,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCost() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       cost_ = 0F;
       onChanged();
       return this;
@@ -992,8 +1016,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       currencyCode_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1009,8 +1033,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCurrencyCode() {
-
       currencyCode_ = getDefaultInstance().getCurrencyCode();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1031,8 +1055,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       currencyCode_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

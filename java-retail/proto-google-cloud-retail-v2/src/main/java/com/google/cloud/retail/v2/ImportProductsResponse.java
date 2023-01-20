@@ -71,6 +71,8 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int ERROR_SAMPLES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
   /**
    *
@@ -183,7 +185,9 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.retail.v2.ImportErrorsConfigOrBuilder getErrorsConfigOrBuilder() {
-    return getErrorsConfig();
+    return errorsConfig_ == null
+        ? com.google.cloud.retail.v2.ImportErrorsConfig.getDefaultInstance()
+        : errorsConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -402,6 +406,7 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorSamplesBuilder_ == null) {
         errorSamples_ = java.util.Collections.emptyList();
       } else {
@@ -409,10 +414,9 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
         errorSamplesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (errorsConfigBuilder_ == null) {
-        errorsConfig_ = null;
-      } else {
-        errorsConfig_ = null;
+      errorsConfig_ = null;
+      if (errorsConfigBuilder_ != null) {
+        errorsConfigBuilder_.dispose();
         errorsConfigBuilder_ = null;
       }
       return this;
@@ -442,7 +446,16 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.retail.v2.ImportProductsResponse buildPartial() {
       com.google.cloud.retail.v2.ImportProductsResponse result =
           new com.google.cloud.retail.v2.ImportProductsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2.ImportProductsResponse result) {
       if (errorSamplesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errorSamples_ = java.util.Collections.unmodifiableList(errorSamples_);
@@ -452,13 +465,14 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       } else {
         result.errorSamples_ = errorSamplesBuilder_.build();
       }
-      if (errorsConfigBuilder_ == null) {
-        result.errorsConfig_ = errorsConfig_;
-      } else {
-        result.errorsConfig_ = errorsConfigBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.ImportProductsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorsConfig_ =
+            errorsConfigBuilder_ == null ? errorsConfig_ : errorsConfigBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -578,7 +592,7 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
             case 18:
               {
                 input.readMessage(getErrorsConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -956,7 +970,7 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
      * @return Whether the errorsConfig field is set.
      */
     public boolean hasErrorsConfig() {
-      return errorsConfigBuilder_ != null || errorsConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -993,11 +1007,11 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         errorsConfig_ = value;
-        onChanged();
       } else {
         errorsConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1013,11 +1027,11 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
         com.google.cloud.retail.v2.ImportErrorsConfig.Builder builderForValue) {
       if (errorsConfigBuilder_ == null) {
         errorsConfig_ = builderForValue.build();
-        onChanged();
       } else {
         errorsConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1031,19 +1045,19 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeErrorsConfig(com.google.cloud.retail.v2.ImportErrorsConfig value) {
       if (errorsConfigBuilder_ == null) {
-        if (errorsConfig_ != null) {
-          errorsConfig_ =
-              com.google.cloud.retail.v2.ImportErrorsConfig.newBuilder(errorsConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && errorsConfig_ != null
+            && errorsConfig_
+                != com.google.cloud.retail.v2.ImportErrorsConfig.getDefaultInstance()) {
+          getErrorsConfigBuilder().mergeFrom(value);
         } else {
           errorsConfig_ = value;
         }
-        onChanged();
       } else {
         errorsConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1056,14 +1070,13 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.retail.v2.ImportErrorsConfig errors_config = 2;</code>
      */
     public Builder clearErrorsConfig() {
-      if (errorsConfigBuilder_ == null) {
-        errorsConfig_ = null;
-        onChanged();
-      } else {
-        errorsConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      errorsConfig_ = null;
+      if (errorsConfigBuilder_ != null) {
+        errorsConfigBuilder_.dispose();
         errorsConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1076,7 +1089,7 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.retail.v2.ImportErrorsConfig errors_config = 2;</code>
      */
     public com.google.cloud.retail.v2.ImportErrorsConfig.Builder getErrorsConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getErrorsConfigFieldBuilder().getBuilder();
     }

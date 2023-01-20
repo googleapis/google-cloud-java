@@ -70,7 +70,9 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -163,10 +165,12 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int SCORE_METRICS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.ScoreMetrics> scoreMetrics_;
   /**
    *
@@ -242,6 +246,8 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHALLENGE_METRICS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.ChallengeMetrics> challengeMetrics_;
   /**
    *
@@ -560,12 +566,11 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
       if (scoreMetricsBuilder_ == null) {
@@ -574,14 +579,14 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         scoreMetrics_ = null;
         scoreMetricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (challengeMetricsBuilder_ == null) {
         challengeMetrics_ = java.util.Collections.emptyList();
       } else {
         challengeMetrics_ = null;
         challengeMetricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -609,33 +614,43 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.Metrics buildPartial() {
       com.google.recaptchaenterprise.v1.Metrics result =
           new com.google.recaptchaenterprise.v1.Metrics(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.recaptchaenterprise.v1.Metrics result) {
       if (scoreMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           scoreMetrics_ = java.util.Collections.unmodifiableList(scoreMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.scoreMetrics_ = scoreMetrics_;
       } else {
         result.scoreMetrics_ = scoreMetricsBuilder_.build();
       }
       if (challengeMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           challengeMetrics_ = java.util.Collections.unmodifiableList(challengeMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.challengeMetrics_ = challengeMetrics_;
       } else {
         result.challengeMetrics_ = challengeMetricsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.recaptchaenterprise.v1.Metrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -685,6 +700,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.recaptchaenterprise.v1.Metrics.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasStartTime()) {
@@ -694,7 +710,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         if (!other.scoreMetrics_.isEmpty()) {
           if (scoreMetrics_.isEmpty()) {
             scoreMetrics_ = other.scoreMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureScoreMetricsIsMutable();
             scoreMetrics_.addAll(other.scoreMetrics_);
@@ -707,7 +723,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
             scoreMetricsBuilder_.dispose();
             scoreMetricsBuilder_ = null;
             scoreMetrics_ = other.scoreMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             scoreMetricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getScoreMetricsFieldBuilder()
@@ -721,7 +737,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         if (!other.challengeMetrics_.isEmpty()) {
           if (challengeMetrics_.isEmpty()) {
             challengeMetrics_ = other.challengeMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureChallengeMetricsIsMutable();
             challengeMetrics_.addAll(other.challengeMetrics_);
@@ -734,7 +750,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
             challengeMetricsBuilder_.dispose();
             challengeMetricsBuilder_ = null;
             challengeMetrics_ = other.challengeMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             challengeMetricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getChallengeMetricsFieldBuilder()
@@ -773,7 +789,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
@@ -806,7 +822,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             default:
@@ -892,8 +908,8 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -910,8 +926,8 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -933,8 +949,8 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -957,7 +973,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -992,11 +1008,11 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1011,11 +1027,11 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1029,17 +1045,18 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1052,14 +1069,13 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1072,7 +1088,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -1122,10 +1138,10 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureScoreMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         scoreMetrics_ =
             new java.util.ArrayList<com.google.recaptchaenterprise.v1.ScoreMetrics>(scoreMetrics_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1354,7 +1370,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     public Builder clearScoreMetrics() {
       if (scoreMetricsBuilder_ == null) {
         scoreMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         scoreMetricsBuilder_.clear();
@@ -1486,7 +1502,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
                 com.google.recaptchaenterprise.v1.ScoreMetrics,
                 com.google.recaptchaenterprise.v1.ScoreMetrics.Builder,
                 com.google.recaptchaenterprise.v1.ScoreMetricsOrBuilder>(
-                scoreMetrics_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                scoreMetrics_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         scoreMetrics_ = null;
       }
       return scoreMetricsBuilder_;
@@ -1496,11 +1512,11 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureChallengeMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         challengeMetrics_ =
             new java.util.ArrayList<com.google.recaptchaenterprise.v1.ChallengeMetrics>(
                 challengeMetrics_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1752,7 +1768,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     public Builder clearChallengeMetrics() {
       if (challengeMetricsBuilder_ == null) {
         challengeMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         challengeMetricsBuilder_.clear();
@@ -1900,7 +1916,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
                 com.google.recaptchaenterprise.v1.ChallengeMetrics.Builder,
                 com.google.recaptchaenterprise.v1.ChallengeMetricsOrBuilder>(
                 challengeMetrics_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         challengeMetrics_ = null;

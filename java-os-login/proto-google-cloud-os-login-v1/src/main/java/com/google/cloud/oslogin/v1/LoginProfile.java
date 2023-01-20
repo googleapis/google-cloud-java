@@ -81,7 +81,9 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -130,6 +132,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POSIX_ACCOUNTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount> posixAccounts_;
   /**
    *
@@ -219,6 +223,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
       sshPublicKeys_;
@@ -283,9 +288,11 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
   @java.lang.Override
-  public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrDefault(
-      java.lang.String key,
-      com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue) {
+  public /* nullable */ com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey
+      getSshPublicKeysOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -564,15 +571,15 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (posixAccountsBuilder_ == null) {
         posixAccounts_ = java.util.Collections.emptyList();
       } else {
         posixAccounts_ = null;
         posixAccountsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableSshPublicKeys().clear();
       return this;
     }
@@ -601,21 +608,35 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.oslogin.v1.LoginProfile buildPartial() {
       com.google.cloud.oslogin.v1.LoginProfile result =
           new com.google.cloud.oslogin.v1.LoginProfile(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.oslogin.v1.LoginProfile result) {
       if (posixAccountsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           posixAccounts_ = java.util.Collections.unmodifiableList(posixAccounts_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.posixAccounts_ = posixAccounts_;
       } else {
         result.posixAccounts_ = posixAccountsBuilder_.build();
       }
-      result.sshPublicKeys_ = internalGetSshPublicKeys();
-      result.sshPublicKeys_.makeImmutable();
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.oslogin.v1.LoginProfile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sshPublicKeys_ = internalGetSshPublicKeys();
+        result.sshPublicKeys_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -665,13 +686,14 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.oslogin.v1.LoginProfile.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (posixAccountsBuilder_ == null) {
         if (!other.posixAccounts_.isEmpty()) {
           if (posixAccounts_.isEmpty()) {
             posixAccounts_ = other.posixAccounts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePosixAccountsIsMutable();
             posixAccounts_.addAll(other.posixAccounts_);
@@ -684,7 +706,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
             posixAccountsBuilder_.dispose();
             posixAccountsBuilder_ = null;
             posixAccounts_ = other.posixAccounts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             posixAccountsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPosixAccountsFieldBuilder()
@@ -695,6 +717,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableSshPublicKeys().mergeFrom(other.internalGetSshPublicKeys());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -724,7 +747,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -752,6 +775,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableSshPublicKeys()
                     .getMutableMap()
                     .put(sshPublicKeys__.getKey(), sshPublicKeys__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -834,8 +858,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -851,8 +875,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -873,8 +897,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -883,11 +907,11 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         posixAccounts_ = java.util.Collections.emptyList();
 
     private void ensurePosixAccountsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         posixAccounts_ =
             new java.util.ArrayList<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>(
                 posixAccounts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1110,7 +1134,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPosixAccounts() {
       if (posixAccountsBuilder_ == null) {
         posixAccounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         posixAccountsBuilder_.clear();
@@ -1241,7 +1265,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder,
                 com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder>(
                 posixAccounts_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         posixAccounts_ = null;
@@ -1266,8 +1290,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
         internalGetMutableSshPublicKeys() {
-      onChanged();
-      ;
       if (sshPublicKeys_ == null) {
         sshPublicKeys_ =
             com.google.protobuf.MapField.newMapField(SshPublicKeysDefaultEntryHolder.defaultEntry);
@@ -1275,6 +1297,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       if (!sshPublicKeys_.isMutable()) {
         sshPublicKeys_ = sshPublicKeys_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return sshPublicKeys_;
     }
 
@@ -1333,9 +1357,11 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrDefault(
-        java.lang.String key,
-        com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue) {
+    public /* nullable */ com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey
+        getSshPublicKeysOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1368,6 +1394,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearSshPublicKeys() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableSshPublicKeys().getMutableMap().clear();
       return this;
     }
@@ -1393,6 +1420,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<
             java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
         getMutableSshPublicKeys() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableSshPublicKeys().getMutableMap();
     }
     /**
@@ -1413,8 +1441,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableSshPublicKeys().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1431,6 +1459,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
             values) {
       internalGetMutableSshPublicKeys().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

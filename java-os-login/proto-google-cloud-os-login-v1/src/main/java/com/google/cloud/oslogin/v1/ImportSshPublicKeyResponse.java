@@ -112,11 +112,15 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.oslogin.v1.LoginProfileOrBuilder getLoginProfileOrBuilder() {
-    return getLoginProfile();
+    return loginProfile_ == null
+        ? com.google.cloud.oslogin.v1.LoginProfile.getDefaultInstance()
+        : loginProfile_;
   }
 
   public static final int DETAILS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object details_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object details_ = "";
   /**
    *
    *
@@ -376,14 +380,13 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (loginProfileBuilder_ == null) {
-        loginProfile_ = null;
-      } else {
-        loginProfile_ = null;
+      bitField0_ = 0;
+      loginProfile_ = null;
+      if (loginProfileBuilder_ != null) {
+        loginProfileBuilder_.dispose();
         loginProfileBuilder_ = null;
       }
       details_ = "";
-
       return this;
     }
 
@@ -411,14 +414,22 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
     public com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse buildPartial() {
       com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse result =
           new com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse(this);
-      if (loginProfileBuilder_ == null) {
-        result.loginProfile_ = loginProfile_;
-      } else {
-        result.loginProfile_ = loginProfileBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.details_ = details_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.loginProfile_ =
+            loginProfileBuilder_ == null ? loginProfile_ : loginProfileBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.details_ = details_;
+      }
     }
 
     @java.lang.Override
@@ -472,6 +483,7 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
       }
       if (!other.getDetails().isEmpty()) {
         details_ = other.details_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -503,13 +515,13 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getLoginProfileFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 details_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -529,6 +541,8 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.oslogin.v1.LoginProfile loginProfile_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.oslogin.v1.LoginProfile,
@@ -547,7 +561,7 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
      * @return Whether the loginProfile field is set.
      */
     public boolean hasLoginProfile() {
-      return loginProfileBuilder_ != null || loginProfile_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -584,11 +598,11 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         loginProfile_ = value;
-        onChanged();
       } else {
         loginProfileBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -604,11 +618,11 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
         com.google.cloud.oslogin.v1.LoginProfile.Builder builderForValue) {
       if (loginProfileBuilder_ == null) {
         loginProfile_ = builderForValue.build();
-        onChanged();
       } else {
         loginProfileBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -622,19 +636,18 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
      */
     public Builder mergeLoginProfile(com.google.cloud.oslogin.v1.LoginProfile value) {
       if (loginProfileBuilder_ == null) {
-        if (loginProfile_ != null) {
-          loginProfile_ =
-              com.google.cloud.oslogin.v1.LoginProfile.newBuilder(loginProfile_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && loginProfile_ != null
+            && loginProfile_ != com.google.cloud.oslogin.v1.LoginProfile.getDefaultInstance()) {
+          getLoginProfileBuilder().mergeFrom(value);
         } else {
           loginProfile_ = value;
         }
-        onChanged();
       } else {
         loginProfileBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -647,14 +660,13 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
      * <code>.google.cloud.oslogin.v1.LoginProfile login_profile = 1;</code>
      */
     public Builder clearLoginProfile() {
-      if (loginProfileBuilder_ == null) {
-        loginProfile_ = null;
-        onChanged();
-      } else {
-        loginProfile_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      loginProfile_ = null;
+      if (loginProfileBuilder_ != null) {
+        loginProfileBuilder_.dispose();
         loginProfileBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -667,7 +679,7 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
      * <code>.google.cloud.oslogin.v1.LoginProfile login_profile = 1;</code>
      */
     public com.google.cloud.oslogin.v1.LoginProfile.Builder getLoginProfileBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLoginProfileFieldBuilder().getBuilder();
     }
@@ -776,8 +788,8 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       details_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -793,8 +805,8 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearDetails() {
-
       details_ = getDefaultInstance().getDetails();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -815,8 +827,8 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       details_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

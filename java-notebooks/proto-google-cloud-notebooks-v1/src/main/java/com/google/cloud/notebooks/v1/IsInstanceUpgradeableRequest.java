@@ -69,7 +69,9 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
   }
 
   public static final int NOTEBOOK_INSTANCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object notebookInstance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object notebookInstance_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -155,9 +157,8 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.UpgradeType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.notebooks.v1.UpgradeType result =
-        com.google.cloud.notebooks.v1.UpgradeType.valueOf(type_);
+        com.google.cloud.notebooks.v1.UpgradeType.forNumber(type_);
     return result == null ? com.google.cloud.notebooks.v1.UpgradeType.UNRECOGNIZED : result;
   }
 
@@ -368,10 +369,9 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       notebookInstance_ = "";
-
       type_ = 0;
-
       return this;
     }
 
@@ -399,10 +399,21 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
     public com.google.cloud.notebooks.v1.IsInstanceUpgradeableRequest buildPartial() {
       com.google.cloud.notebooks.v1.IsInstanceUpgradeableRequest result =
           new com.google.cloud.notebooks.v1.IsInstanceUpgradeableRequest(this);
-      result.notebookInstance_ = notebookInstance_;
-      result.type_ = type_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.IsInstanceUpgradeableRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.notebookInstance_ = notebookInstance_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -453,6 +464,7 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getNotebookInstance().isEmpty()) {
         notebookInstance_ = other.notebookInstance_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -487,13 +499,13 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
             case 10:
               {
                 notebookInstance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -512,6 +524,8 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object notebookInstance_ = "";
     /**
@@ -577,8 +591,8 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       notebookInstance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -595,8 +609,8 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearNotebookInstance() {
-
       notebookInstance_ = getDefaultInstance().getNotebookInstance();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -618,8 +632,8 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       notebookInstance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -659,8 +673,8 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -680,9 +694,8 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
      */
     @java.lang.Override
     public com.google.cloud.notebooks.v1.UpgradeType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.notebooks.v1.UpgradeType result =
-          com.google.cloud.notebooks.v1.UpgradeType.valueOf(type_);
+          com.google.cloud.notebooks.v1.UpgradeType.forNumber(type_);
       return result == null ? com.google.cloud.notebooks.v1.UpgradeType.UNRECOGNIZED : result;
     }
     /**
@@ -704,7 +717,7 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -724,7 +737,7 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;

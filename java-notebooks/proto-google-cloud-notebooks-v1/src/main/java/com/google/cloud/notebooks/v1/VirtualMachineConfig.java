@@ -685,7 +685,9 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ZONE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -742,7 +744,9 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object machineType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
   /**
    *
    *
@@ -797,6 +801,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CONTAINER_IMAGES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.notebooks.v1.ContainerImage> containerImages_;
   /**
    *
@@ -927,7 +933,9 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.LocalDiskOrBuilder getDataDiskOrBuilder() {
-    return getDataDisk();
+    return dataDisk_ == null
+        ? com.google.cloud.notebooks.v1.LocalDisk.getDefaultInstance()
+        : dataDisk_;
   }
 
   public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 5;
@@ -981,7 +989,9 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder() {
-    return getEncryptionConfig();
+    return encryptionConfig_ == null
+        ? com.google.cloud.notebooks.v1.EncryptionConfig.getDefaultInstance()
+        : encryptionConfig_;
   }
 
   public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 6;
@@ -1036,7 +1046,9 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfigOrBuilder
       getShieldedInstanceConfigOrBuilder() {
-    return getShieldedInstanceConfig();
+    return shieldedInstanceConfig_ == null
+        ? com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig.getDefaultInstance()
+        : shieldedInstanceConfig_;
   }
 
   public static final int ACCELERATOR_CONFIG_FIELD_NUMBER = 7;
@@ -1091,11 +1103,15 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.notebooks.v1.RuntimeAcceleratorConfigOrBuilder
       getAcceleratorConfigOrBuilder() {
-    return getAcceleratorConfig();
+    return acceleratorConfig_ == null
+        ? com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.getDefaultInstance()
+        : acceleratorConfig_;
   }
 
   public static final int NETWORK_FIELD_NUMBER = 8;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -1170,7 +1186,9 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SUBNET_FIELD_NUMBER = 9;
-  private volatile java.lang.Object subnet_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnet_ = "";
   /**
    *
    *
@@ -1227,7 +1245,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INTERNAL_IP_ONLY_FIELD_NUMBER = 10;
-  private boolean internalIpOnly_;
+  private boolean internalIpOnly_ = false;
   /**
    *
    *
@@ -1250,6 +1268,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TAGS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList tags_;
   /**
    *
@@ -1327,6 +1347,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> guestAttributes_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -1401,8 +1422,10 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getGuestAttributesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getGuestAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1448,6 +1471,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -1511,8 +1535,10 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; metadata = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1555,6 +1581,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -1630,7 +1657,10 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; labels = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1665,7 +1695,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NIC_TYPE_FIELD_NUMBER = 17;
-  private int nicType_;
+  private int nicType_ = 0;
   /**
    *
    *
@@ -1700,16 +1730,17 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType getNicType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType result =
-        com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType.valueOf(nicType_);
+        com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType.forNumber(nicType_);
     return result == null
         ? com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType.UNRECOGNIZED
         : result;
   }
 
   public static final int RESERVED_IP_RANGE_FIELD_NUMBER = 18;
-  private volatile java.lang.Object reservedIpRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reservedIpRange_ = "";
   /**
    *
    *
@@ -1831,7 +1862,9 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImageOrBuilder
       getBootImageOrBuilder() {
-    return getBootImage();
+    return bootImage_ == null
+        ? com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.getDefaultInstance()
+        : bootImage_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2266,60 +2299,49 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       zone_ = "";
-
       machineType_ = "";
-
       if (containerImagesBuilder_ == null) {
         containerImages_ = java.util.Collections.emptyList();
       } else {
         containerImages_ = null;
         containerImagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (dataDiskBuilder_ == null) {
-        dataDisk_ = null;
-      } else {
-        dataDisk_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      dataDisk_ = null;
+      if (dataDiskBuilder_ != null) {
+        dataDiskBuilder_.dispose();
         dataDiskBuilder_ = null;
       }
-      if (encryptionConfigBuilder_ == null) {
-        encryptionConfig_ = null;
-      } else {
-        encryptionConfig_ = null;
+      encryptionConfig_ = null;
+      if (encryptionConfigBuilder_ != null) {
+        encryptionConfigBuilder_.dispose();
         encryptionConfigBuilder_ = null;
       }
-      if (shieldedInstanceConfigBuilder_ == null) {
-        shieldedInstanceConfig_ = null;
-      } else {
-        shieldedInstanceConfig_ = null;
+      shieldedInstanceConfig_ = null;
+      if (shieldedInstanceConfigBuilder_ != null) {
+        shieldedInstanceConfigBuilder_.dispose();
         shieldedInstanceConfigBuilder_ = null;
       }
-      if (acceleratorConfigBuilder_ == null) {
-        acceleratorConfig_ = null;
-      } else {
-        acceleratorConfig_ = null;
+      acceleratorConfig_ = null;
+      if (acceleratorConfigBuilder_ != null) {
+        acceleratorConfigBuilder_.dispose();
         acceleratorConfigBuilder_ = null;
       }
       network_ = "";
-
       subnet_ = "";
-
       internalIpOnly_ = false;
-
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableGuestAttributes().clear();
       internalGetMutableMetadata().clear();
       internalGetMutableLabels().clear();
       nicType_ = 0;
-
       reservedIpRange_ = "";
-
-      if (bootImageBuilder_ == null) {
-        bootImage_ = null;
-      } else {
-        bootImage_ = null;
+      bootImage_ = null;
+      if (bootImageBuilder_ != null) {
+        bootImageBuilder_.dispose();
         bootImageBuilder_ = null;
       }
       return this;
@@ -2349,61 +2371,89 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.notebooks.v1.VirtualMachineConfig buildPartial() {
       com.google.cloud.notebooks.v1.VirtualMachineConfig result =
           new com.google.cloud.notebooks.v1.VirtualMachineConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.zone_ = zone_;
-      result.machineType_ = machineType_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.notebooks.v1.VirtualMachineConfig result) {
       if (containerImagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           containerImages_ = java.util.Collections.unmodifiableList(containerImages_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.containerImages_ = containerImages_;
       } else {
         result.containerImages_ = containerImagesBuilder_.build();
       }
-      if (dataDiskBuilder_ == null) {
-        result.dataDisk_ = dataDisk_;
-      } else {
-        result.dataDisk_ = dataDiskBuilder_.build();
-      }
-      if (encryptionConfigBuilder_ == null) {
-        result.encryptionConfig_ = encryptionConfig_;
-      } else {
-        result.encryptionConfig_ = encryptionConfigBuilder_.build();
-      }
-      if (shieldedInstanceConfigBuilder_ == null) {
-        result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
-      } else {
-        result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
-      }
-      if (acceleratorConfigBuilder_ == null) {
-        result.acceleratorConfig_ = acceleratorConfig_;
-      } else {
-        result.acceleratorConfig_ = acceleratorConfigBuilder_.build();
-      }
-      result.network_ = network_;
-      result.subnet_ = subnet_;
-      result.internalIpOnly_ = internalIpOnly_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.tags_ = tags_;
-      result.guestAttributes_ = internalGetGuestAttributes();
-      result.guestAttributes_.makeImmutable();
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.nicType_ = nicType_;
-      result.reservedIpRange_ = reservedIpRange_;
-      if (bootImageBuilder_ == null) {
-        result.bootImage_ = bootImage_;
-      } else {
-        result.bootImage_ = bootImageBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.notebooks.v1.VirtualMachineConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.zone_ = zone_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dataDisk_ = dataDiskBuilder_ == null ? dataDisk_ : dataDiskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.encryptionConfig_ =
+            encryptionConfigBuilder_ == null ? encryptionConfig_ : encryptionConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.shieldedInstanceConfig_ =
+            shieldedInstanceConfigBuilder_ == null
+                ? shieldedInstanceConfig_
+                : shieldedInstanceConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.acceleratorConfig_ =
+            acceleratorConfigBuilder_ == null
+                ? acceleratorConfig_
+                : acceleratorConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.subnet_ = subnet_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.internalIpOnly_ = internalIpOnly_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.guestAttributes_ = internalGetGuestAttributes();
+        result.guestAttributes_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.nicType_ = nicType_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.reservedIpRange_ = reservedIpRange_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.bootImage_ = bootImageBuilder_ == null ? bootImage_ : bootImageBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2454,17 +2504,19 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (containerImagesBuilder_ == null) {
         if (!other.containerImages_.isEmpty()) {
           if (containerImages_.isEmpty()) {
             containerImages_ = other.containerImages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureContainerImagesIsMutable();
             containerImages_.addAll(other.containerImages_);
@@ -2477,7 +2529,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
             containerImagesBuilder_.dispose();
             containerImagesBuilder_ = null;
             containerImages_ = other.containerImages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             containerImagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContainerImagesFieldBuilder()
@@ -2501,10 +2553,12 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getSubnet().isEmpty()) {
         subnet_ = other.subnet_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.getInternalIpOnly() != false) {
@@ -2513,7 +2567,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -2521,13 +2575,17 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         onChanged();
       }
       internalGetMutableGuestAttributes().mergeFrom(other.internalGetGuestAttributes());
+      bitField0_ |= 0x00000800;
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00001000;
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00002000;
       if (other.nicType_ != 0) {
         setNicTypeValue(other.getNicTypeValue());
       }
       if (!other.getReservedIpRange().isEmpty()) {
         reservedIpRange_ = other.reservedIpRange_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasBootImage()) {
@@ -2562,13 +2620,13 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 machineType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -2587,46 +2645,46 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
             case 34:
               {
                 input.readMessage(getDataDiskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getShieldedInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getAcceleratorConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 subnet_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 80:
               {
                 internalIpOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 106:
@@ -2645,6 +2703,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
                 internalGetMutableGuestAttributes()
                     .getMutableMap()
                     .put(guestAttributes__.getKey(), guestAttributes__.getValue());
+                bitField0_ |= 0x00000800;
                 break;
               } // case 114
             case 122:
@@ -2656,6 +2715,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00001000;
                 break;
               } // case 122
             case 130:
@@ -2667,24 +2727,25 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00002000;
                 break;
               } // case 130
             case 136:
               {
                 nicType_ = input.readEnum();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 136
             case 146:
               {
                 reservedIpRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(getBootImageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 154
             default:
@@ -2779,8 +2840,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2800,8 +2861,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2826,8 +2887,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2902,8 +2963,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2922,8 +2983,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
       machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2947,8 +3008,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2957,10 +3018,10 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureContainerImagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         containerImages_ =
             new java.util.ArrayList<com.google.cloud.notebooks.v1.ContainerImage>(containerImages_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3200,7 +3261,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     public Builder clearContainerImages() {
       if (containerImagesBuilder_ == null) {
         containerImages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         containerImagesBuilder_.clear();
@@ -3340,7 +3401,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
                 com.google.cloud.notebooks.v1.ContainerImage.Builder,
                 com.google.cloud.notebooks.v1.ContainerImageOrBuilder>(
                 containerImages_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         containerImages_ = null;
@@ -3368,7 +3429,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the dataDisk field is set.
      */
     public boolean hasDataDisk() {
-      return dataDiskBuilder_ != null || dataDisk_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3409,11 +3470,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         dataDisk_ = value;
-        onChanged();
       } else {
         dataDiskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3430,11 +3491,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     public Builder setDataDisk(com.google.cloud.notebooks.v1.LocalDisk.Builder builderForValue) {
       if (dataDiskBuilder_ == null) {
         dataDisk_ = builderForValue.build();
-        onChanged();
       } else {
         dataDiskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3450,19 +3511,18 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeDataDisk(com.google.cloud.notebooks.v1.LocalDisk value) {
       if (dataDiskBuilder_ == null) {
-        if (dataDisk_ != null) {
-          dataDisk_ =
-              com.google.cloud.notebooks.v1.LocalDisk.newBuilder(dataDisk_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && dataDisk_ != null
+            && dataDisk_ != com.google.cloud.notebooks.v1.LocalDisk.getDefaultInstance()) {
+          getDataDiskBuilder().mergeFrom(value);
         } else {
           dataDisk_ = value;
         }
-        onChanged();
       } else {
         dataDiskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3477,14 +3537,13 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearDataDisk() {
-      if (dataDiskBuilder_ == null) {
-        dataDisk_ = null;
-        onChanged();
-      } else {
-        dataDisk_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      dataDisk_ = null;
+      if (dataDiskBuilder_ != null) {
+        dataDiskBuilder_.dispose();
         dataDiskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3499,7 +3558,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.notebooks.v1.LocalDisk.Builder getDataDiskBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDataDiskFieldBuilder().getBuilder();
     }
@@ -3571,7 +3630,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the encryptionConfig field is set.
      */
     public boolean hasEncryptionConfig() {
-      return encryptionConfigBuilder_ != null || encryptionConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3612,11 +3671,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         encryptionConfig_ = value;
-        onChanged();
       } else {
         encryptionConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3634,11 +3693,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         com.google.cloud.notebooks.v1.EncryptionConfig.Builder builderForValue) {
       if (encryptionConfigBuilder_ == null) {
         encryptionConfig_ = builderForValue.build();
-        onChanged();
       } else {
         encryptionConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3654,19 +3713,19 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeEncryptionConfig(com.google.cloud.notebooks.v1.EncryptionConfig value) {
       if (encryptionConfigBuilder_ == null) {
-        if (encryptionConfig_ != null) {
-          encryptionConfig_ =
-              com.google.cloud.notebooks.v1.EncryptionConfig.newBuilder(encryptionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && encryptionConfig_ != null
+            && encryptionConfig_
+                != com.google.cloud.notebooks.v1.EncryptionConfig.getDefaultInstance()) {
+          getEncryptionConfigBuilder().mergeFrom(value);
         } else {
           encryptionConfig_ = value;
         }
-        onChanged();
       } else {
         encryptionConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3681,14 +3740,13 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearEncryptionConfig() {
-      if (encryptionConfigBuilder_ == null) {
-        encryptionConfig_ = null;
-        onChanged();
-      } else {
-        encryptionConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      encryptionConfig_ = null;
+      if (encryptionConfigBuilder_ != null) {
+        encryptionConfigBuilder_.dispose();
         encryptionConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3703,7 +3761,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.notebooks.v1.EncryptionConfig.Builder getEncryptionConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
@@ -3775,7 +3833,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the shieldedInstanceConfig field is set.
      */
     public boolean hasShieldedInstanceConfig() {
-      return shieldedInstanceConfigBuilder_ != null || shieldedInstanceConfig_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3817,11 +3875,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         shieldedInstanceConfig_ = value;
-        onChanged();
       } else {
         shieldedInstanceConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3839,11 +3897,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig.Builder builderForValue) {
       if (shieldedInstanceConfigBuilder_ == null) {
         shieldedInstanceConfig_ = builderForValue.build();
-        onChanged();
       } else {
         shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3860,20 +3918,20 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeShieldedInstanceConfig(
         com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig value) {
       if (shieldedInstanceConfigBuilder_ == null) {
-        if (shieldedInstanceConfig_ != null) {
-          shieldedInstanceConfig_ =
-              com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig.newBuilder(
-                      shieldedInstanceConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && shieldedInstanceConfig_ != null
+            && shieldedInstanceConfig_
+                != com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig
+                    .getDefaultInstance()) {
+          getShieldedInstanceConfigBuilder().mergeFrom(value);
         } else {
           shieldedInstanceConfig_ = value;
         }
-        onChanged();
       } else {
         shieldedInstanceConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3888,14 +3946,13 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearShieldedInstanceConfig() {
-      if (shieldedInstanceConfigBuilder_ == null) {
-        shieldedInstanceConfig_ = null;
-        onChanged();
-      } else {
-        shieldedInstanceConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      shieldedInstanceConfig_ = null;
+      if (shieldedInstanceConfigBuilder_ != null) {
+        shieldedInstanceConfigBuilder_.dispose();
         shieldedInstanceConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3911,7 +3968,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig.Builder
         getShieldedInstanceConfigBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
@@ -3984,7 +4041,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the acceleratorConfig field is set.
      */
     public boolean hasAcceleratorConfig() {
-      return acceleratorConfigBuilder_ != null || acceleratorConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -4026,11 +4083,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         acceleratorConfig_ = value;
-        onChanged();
       } else {
         acceleratorConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4048,11 +4105,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.Builder builderForValue) {
       if (acceleratorConfigBuilder_ == null) {
         acceleratorConfig_ = builderForValue.build();
-        onChanged();
       } else {
         acceleratorConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4069,19 +4126,19 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeAcceleratorConfig(
         com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig value) {
       if (acceleratorConfigBuilder_ == null) {
-        if (acceleratorConfig_ != null) {
-          acceleratorConfig_ =
-              com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.newBuilder(acceleratorConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && acceleratorConfig_ != null
+            && acceleratorConfig_
+                != com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.getDefaultInstance()) {
+          getAcceleratorConfigBuilder().mergeFrom(value);
         } else {
           acceleratorConfig_ = value;
         }
-        onChanged();
       } else {
         acceleratorConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4096,14 +4153,13 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearAcceleratorConfig() {
-      if (acceleratorConfigBuilder_ == null) {
-        acceleratorConfig_ = null;
-        onChanged();
-      } else {
-        acceleratorConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      acceleratorConfig_ = null;
+      if (acceleratorConfigBuilder_ != null) {
+        acceleratorConfigBuilder_.dispose();
         acceleratorConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4119,7 +4175,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.Builder
         getAcceleratorConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getAcceleratorConfigFieldBuilder().getBuilder();
     }
@@ -4272,8 +4328,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4302,8 +4358,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4337,8 +4393,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4416,8 +4472,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnet_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4437,8 +4493,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSubnet() {
-
       subnet_ = getDefaultInstance().getSubnet();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4463,8 +4519,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnet_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4510,6 +4566,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     public Builder setInternalIpOnly(boolean value) {
 
       internalIpOnly_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4530,7 +4587,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearInternalIpOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalIpOnly_ = false;
       onChanged();
       return this;
@@ -4540,9 +4597,9 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -4685,7 +4742,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4726,8 +4783,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableGuestAttributes() {
-      onChanged();
-      ;
       if (guestAttributes_ == null) {
         guestAttributes_ =
             com.google.protobuf.MapField.newMapField(
@@ -4736,6 +4791,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (!guestAttributes_.isMutable()) {
         guestAttributes_ = guestAttributes_.copy();
       }
+      bitField0_ |= 0x00000800;
+      onChanged();
       return guestAttributes_;
     }
 
@@ -4802,8 +4859,10 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getGuestAttributesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getGuestAttributesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4837,6 +4896,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearGuestAttributes() {
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableGuestAttributes().getMutableMap().clear();
       return this;
     }
@@ -4864,6 +4924,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableGuestAttributes() {
+      bitField0_ |= 0x00000800;
       return internalGetMutableGuestAttributes().getMutableMap();
     }
     /**
@@ -4887,8 +4948,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableGuestAttributes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -4907,6 +4968,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllGuestAttributes(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableGuestAttributes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000800;
       return this;
     }
 
@@ -4921,8 +4983,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -4930,6 +4990,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00001000;
+      onChanged();
       return metadata_;
     }
 
@@ -4990,8 +5052,10 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -5023,6 +5087,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00001000);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -5048,6 +5113,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00001000;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -5069,8 +5135,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00001000;
       return this;
     }
     /**
@@ -5087,6 +5153,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00001000;
       return this;
     }
 
@@ -5101,14 +5168,14 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00002000;
+      onChanged();
       return labels_;
     }
 
@@ -5178,8 +5245,10 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, string&gt; labels = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -5214,6 +5283,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00002000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -5242,6 +5312,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00002000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -5266,8 +5337,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -5287,6 +5358,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00002000;
       return this;
     }
 
@@ -5325,8 +5397,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setNicTypeValue(int value) {
-
       nicType_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5346,9 +5418,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType getNicType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType result =
-          com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType.valueOf(nicType_);
+          com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType.forNumber(nicType_);
       return result == null
           ? com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType.UNRECOGNIZED
           : result;
@@ -5372,7 +5443,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00004000;
       nicType_ = value.getNumber();
       onChanged();
       return this;
@@ -5392,7 +5463,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNicType() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       nicType_ = 0;
       onChanged();
       return this;
@@ -5492,8 +5563,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       reservedIpRange_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5520,8 +5591,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearReservedIpRange() {
-
       reservedIpRange_ = getDefaultInstance().getReservedIpRange();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5553,8 +5624,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reservedIpRange_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5579,7 +5650,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the bootImage field is set.
      */
     public boolean hasBootImage() {
-      return bootImageBuilder_ != null || bootImage_ != null;
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -5621,11 +5692,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         bootImage_ = value;
-        onChanged();
       } else {
         bootImageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5643,11 +5714,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.Builder builderForValue) {
       if (bootImageBuilder_ == null) {
         bootImage_ = builderForValue.build();
-        onChanged();
       } else {
         bootImageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5664,19 +5735,20 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeBootImage(
         com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage value) {
       if (bootImageBuilder_ == null) {
-        if (bootImage_ != null) {
-          bootImage_ =
-              com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.newBuilder(bootImage_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00010000) != 0)
+            && bootImage_ != null
+            && bootImage_
+                != com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage
+                    .getDefaultInstance()) {
+          getBootImageBuilder().mergeFrom(value);
         } else {
           bootImage_ = value;
         }
-        onChanged();
       } else {
         bootImageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5691,14 +5763,13 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearBootImage() {
-      if (bootImageBuilder_ == null) {
-        bootImage_ = null;
-        onChanged();
-      } else {
-        bootImage_ = null;
+      bitField0_ = (bitField0_ & ~0x00010000);
+      bootImage_ = null;
+      if (bootImageBuilder_ != null) {
+        bootImageBuilder_.dispose();
         bootImageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5714,7 +5785,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.Builder
         getBootImageBuilder() {
-
+      bitField0_ |= 0x00010000;
       onChanged();
       return getBootImageFieldBuilder().getBuilder();
     }

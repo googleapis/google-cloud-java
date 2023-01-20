@@ -68,7 +68,9 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -169,11 +171,13 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.UserEventOrBuilder getUserEventOrBuilder() {
-    return getUserEvent();
+    return userEvent_ == null
+        ? com.google.cloud.retail.v2beta.UserEvent.getDefaultInstance()
+        : userEvent_;
   }
 
   public static final int WRITE_ASYNC_FIELD_NUMBER = 3;
-  private boolean writeAsync_;
+  private boolean writeAsync_ = false;
   /**
    *
    *
@@ -413,16 +417,14 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (userEventBuilder_ == null) {
-        userEvent_ = null;
-      } else {
-        userEvent_ = null;
+      userEvent_ = null;
+      if (userEventBuilder_ != null) {
+        userEventBuilder_.dispose();
         userEventBuilder_ = null;
       }
       writeAsync_ = false;
-
       return this;
     }
 
@@ -450,15 +452,24 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.retail.v2beta.WriteUserEventRequest buildPartial() {
       com.google.cloud.retail.v2beta.WriteUserEventRequest result =
           new com.google.cloud.retail.v2beta.WriteUserEventRequest(this);
-      result.parent_ = parent_;
-      if (userEventBuilder_ == null) {
-        result.userEvent_ = userEvent_;
-      } else {
-        result.userEvent_ = userEventBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.writeAsync_ = writeAsync_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.WriteUserEventRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.userEvent_ = userEventBuilder_ == null ? userEvent_ : userEventBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.writeAsync_ = writeAsync_;
+      }
     }
 
     @java.lang.Override
@@ -509,6 +520,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUserEvent()) {
@@ -546,19 +558,19 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUserEventFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 writeAsync_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -577,6 +589,8 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -642,8 +656,8 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -660,8 +674,8 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -683,8 +697,8 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,7 +723,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the userEvent field is set.
      */
     public boolean hasUserEvent() {
-      return userEventBuilder_ != null || userEvent_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -750,11 +764,11 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         userEvent_ = value;
-        onChanged();
       } else {
         userEventBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -771,11 +785,11 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     public Builder setUserEvent(com.google.cloud.retail.v2beta.UserEvent.Builder builderForValue) {
       if (userEventBuilder_ == null) {
         userEvent_ = builderForValue.build();
-        onChanged();
       } else {
         userEventBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -791,19 +805,18 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUserEvent(com.google.cloud.retail.v2beta.UserEvent value) {
       if (userEventBuilder_ == null) {
-        if (userEvent_ != null) {
-          userEvent_ =
-              com.google.cloud.retail.v2beta.UserEvent.newBuilder(userEvent_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && userEvent_ != null
+            && userEvent_ != com.google.cloud.retail.v2beta.UserEvent.getDefaultInstance()) {
+          getUserEventBuilder().mergeFrom(value);
         } else {
           userEvent_ = value;
         }
-        onChanged();
       } else {
         userEventBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -818,14 +831,13 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearUserEvent() {
-      if (userEventBuilder_ == null) {
-        userEvent_ = null;
-        onChanged();
-      } else {
-        userEvent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      userEvent_ = null;
+      if (userEventBuilder_ != null) {
+        userEventBuilder_.dispose();
         userEventBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -840,7 +852,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.retail.v2beta.UserEvent.Builder getUserEventBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUserEventFieldBuilder().getBuilder();
     }
@@ -929,6 +941,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     public Builder setWriteAsync(boolean value) {
 
       writeAsync_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -947,7 +960,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearWriteAsync() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       writeAsync_ = false;
       onChanged();
       return this;

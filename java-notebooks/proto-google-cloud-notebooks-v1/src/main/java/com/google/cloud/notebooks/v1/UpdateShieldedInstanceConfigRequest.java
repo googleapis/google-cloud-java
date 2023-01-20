@@ -71,7 +71,9 @@ public final class UpdateShieldedInstanceConfigRequest
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -170,7 +172,9 @@ public final class UpdateShieldedInstanceConfigRequest
   @java.lang.Override
   public com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfigOrBuilder
       getShieldedInstanceConfigOrBuilder() {
-    return getShieldedInstanceConfig();
+    return shieldedInstanceConfig_ == null
+        ? com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig.getDefaultInstance()
+        : shieldedInstanceConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -389,12 +393,11 @@ public final class UpdateShieldedInstanceConfigRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (shieldedInstanceConfigBuilder_ == null) {
-        shieldedInstanceConfig_ = null;
-      } else {
-        shieldedInstanceConfig_ = null;
+      shieldedInstanceConfig_ = null;
+      if (shieldedInstanceConfigBuilder_ != null) {
+        shieldedInstanceConfigBuilder_.dispose();
         shieldedInstanceConfigBuilder_ = null;
       }
       return this;
@@ -425,14 +428,25 @@ public final class UpdateShieldedInstanceConfigRequest
     public com.google.cloud.notebooks.v1.UpdateShieldedInstanceConfigRequest buildPartial() {
       com.google.cloud.notebooks.v1.UpdateShieldedInstanceConfigRequest result =
           new com.google.cloud.notebooks.v1.UpdateShieldedInstanceConfigRequest(this);
-      result.name_ = name_;
-      if (shieldedInstanceConfigBuilder_ == null) {
-        result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
-      } else {
-        result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.notebooks.v1.UpdateShieldedInstanceConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.shieldedInstanceConfig_ =
+            shieldedInstanceConfigBuilder_ == null
+                ? shieldedInstanceConfig_
+                : shieldedInstanceConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -485,6 +499,7 @@ public final class UpdateShieldedInstanceConfigRequest
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasShieldedInstanceConfig()) {
@@ -519,14 +534,14 @@ public final class UpdateShieldedInstanceConfigRequest
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getShieldedInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -545,6 +560,8 @@ public final class UpdateShieldedInstanceConfigRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -610,8 +627,8 @@ public final class UpdateShieldedInstanceConfigRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -628,8 +645,8 @@ public final class UpdateShieldedInstanceConfigRequest
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -651,8 +668,8 @@ public final class UpdateShieldedInstanceConfigRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,7 +694,7 @@ public final class UpdateShieldedInstanceConfigRequest
      * @return Whether the shieldedInstanceConfig field is set.
      */
     public boolean hasShieldedInstanceConfig() {
-      return shieldedInstanceConfigBuilder_ != null || shieldedInstanceConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -720,11 +737,11 @@ public final class UpdateShieldedInstanceConfigRequest
           throw new NullPointerException();
         }
         shieldedInstanceConfig_ = value;
-        onChanged();
       } else {
         shieldedInstanceConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -742,11 +759,11 @@ public final class UpdateShieldedInstanceConfigRequest
         com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig.Builder builderForValue) {
       if (shieldedInstanceConfigBuilder_ == null) {
         shieldedInstanceConfig_ = builderForValue.build();
-        onChanged();
       } else {
         shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -763,20 +780,20 @@ public final class UpdateShieldedInstanceConfigRequest
     public Builder mergeShieldedInstanceConfig(
         com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig value) {
       if (shieldedInstanceConfigBuilder_ == null) {
-        if (shieldedInstanceConfig_ != null) {
-          shieldedInstanceConfig_ =
-              com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig.newBuilder(
-                      shieldedInstanceConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && shieldedInstanceConfig_ != null
+            && shieldedInstanceConfig_
+                != com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig
+                    .getDefaultInstance()) {
+          getShieldedInstanceConfigBuilder().mergeFrom(value);
         } else {
           shieldedInstanceConfig_ = value;
         }
-        onChanged();
       } else {
         shieldedInstanceConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -791,14 +808,13 @@ public final class UpdateShieldedInstanceConfigRequest
      * </code>
      */
     public Builder clearShieldedInstanceConfig() {
-      if (shieldedInstanceConfigBuilder_ == null) {
-        shieldedInstanceConfig_ = null;
-        onChanged();
-      } else {
-        shieldedInstanceConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      shieldedInstanceConfig_ = null;
+      if (shieldedInstanceConfigBuilder_ != null) {
+        shieldedInstanceConfigBuilder_.dispose();
         shieldedInstanceConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -814,7 +830,7 @@ public final class UpdateShieldedInstanceConfigRequest
      */
     public com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig.Builder
         getShieldedInstanceConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }

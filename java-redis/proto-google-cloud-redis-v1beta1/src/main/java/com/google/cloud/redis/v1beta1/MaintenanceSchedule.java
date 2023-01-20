@@ -112,7 +112,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 2;
@@ -161,11 +161,11 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int CAN_RESCHEDULE_FIELD_NUMBER = 3;
-  private boolean canReschedule_;
+  private boolean canReschedule_ = false;
   /**
    *
    *
@@ -239,7 +239,9 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getScheduleDeadlineTimeOrBuilder() {
-    return getScheduleDeadlineTime();
+    return scheduleDeadlineTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : scheduleDeadlineTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -483,24 +485,21 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      bitField0_ = 0;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       canReschedule_ = false;
-
-      if (scheduleDeadlineTimeBuilder_ == null) {
-        scheduleDeadlineTime_ = null;
-      } else {
-        scheduleDeadlineTime_ = null;
+      scheduleDeadlineTime_ = null;
+      if (scheduleDeadlineTimeBuilder_ != null) {
+        scheduleDeadlineTimeBuilder_.dispose();
         scheduleDeadlineTimeBuilder_ = null;
       }
       return this;
@@ -530,24 +529,30 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
     public com.google.cloud.redis.v1beta1.MaintenanceSchedule buildPartial() {
       com.google.cloud.redis.v1beta1.MaintenanceSchedule result =
           new com.google.cloud.redis.v1beta1.MaintenanceSchedule(this);
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.canReschedule_ = canReschedule_;
-      if (scheduleDeadlineTimeBuilder_ == null) {
-        result.scheduleDeadlineTime_ = scheduleDeadlineTime_;
-      } else {
-        result.scheduleDeadlineTime_ = scheduleDeadlineTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.redis.v1beta1.MaintenanceSchedule result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.canReschedule_ = canReschedule_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.scheduleDeadlineTime_ =
+            scheduleDeadlineTimeBuilder_ == null
+                ? scheduleDeadlineTime_
+                : scheduleDeadlineTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -637,26 +642,26 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 canReschedule_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 42:
               {
                 input.readMessage(
                     getScheduleDeadlineTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -675,6 +680,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -695,7 +702,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -732,11 +739,11 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -752,11 +759,11 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -771,17 +778,18 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -795,14 +803,13 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -816,7 +823,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -883,7 +890,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -920,11 +927,11 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -940,11 +947,11 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -959,17 +966,18 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -983,14 +991,13 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1004,7 +1011,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1089,6 +1096,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
     public Builder setCanReschedule(boolean value) {
 
       canReschedule_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1107,7 +1115,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Deprecated
     public Builder clearCanReschedule() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       canReschedule_ = false;
       onChanged();
       return this;
@@ -1134,7 +1142,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * @return Whether the scheduleDeadlineTime field is set.
      */
     public boolean hasScheduleDeadlineTime() {
-      return scheduleDeadlineTimeBuilder_ != null || scheduleDeadlineTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1177,11 +1185,11 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         scheduleDeadlineTime_ = value;
-        onChanged();
       } else {
         scheduleDeadlineTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1199,11 +1207,11 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
     public Builder setScheduleDeadlineTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleDeadlineTimeBuilder_ == null) {
         scheduleDeadlineTime_ = builderForValue.build();
-        onChanged();
       } else {
         scheduleDeadlineTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1220,19 +1228,18 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeScheduleDeadlineTime(com.google.protobuf.Timestamp value) {
       if (scheduleDeadlineTimeBuilder_ == null) {
-        if (scheduleDeadlineTime_ != null) {
-          scheduleDeadlineTime_ =
-              com.google.protobuf.Timestamp.newBuilder(scheduleDeadlineTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && scheduleDeadlineTime_ != null
+            && scheduleDeadlineTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getScheduleDeadlineTimeBuilder().mergeFrom(value);
         } else {
           scheduleDeadlineTime_ = value;
         }
-        onChanged();
       } else {
         scheduleDeadlineTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1248,14 +1255,13 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearScheduleDeadlineTime() {
-      if (scheduleDeadlineTimeBuilder_ == null) {
-        scheduleDeadlineTime_ = null;
-        onChanged();
-      } else {
-        scheduleDeadlineTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      scheduleDeadlineTime_ = null;
+      if (scheduleDeadlineTimeBuilder_ != null) {
+        scheduleDeadlineTimeBuilder_.dispose();
         scheduleDeadlineTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1271,7 +1277,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleDeadlineTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getScheduleDeadlineTimeFieldBuilder().getBuilder();
     }

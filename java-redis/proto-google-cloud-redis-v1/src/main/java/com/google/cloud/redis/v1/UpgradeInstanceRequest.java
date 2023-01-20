@@ -69,7 +69,9 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int REDIS_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object redisVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redisVersion_ = "";
   /**
    *
    *
@@ -380,10 +384,9 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       redisVersion_ = "";
-
       return this;
     }
 
@@ -411,10 +414,21 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.redis.v1.UpgradeInstanceRequest buildPartial() {
       com.google.cloud.redis.v1.UpgradeInstanceRequest result =
           new com.google.cloud.redis.v1.UpgradeInstanceRequest(this);
-      result.name_ = name_;
-      result.redisVersion_ = redisVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.redis.v1.UpgradeInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.redisVersion_ = redisVersion_;
+      }
     }
 
     @java.lang.Override
@@ -465,10 +479,12 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRedisVersion().isEmpty()) {
         redisVersion_ = other.redisVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -500,13 +516,13 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 redisVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -525,6 +541,8 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -599,8 +617,8 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -620,8 +638,8 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -646,8 +664,8 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -713,8 +731,8 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       redisVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -730,8 +748,8 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRedisVersion() {
-
       redisVersion_ = getDefaultInstance().getRedisVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -752,8 +770,8 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       redisVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

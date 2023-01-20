@@ -75,7 +75,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   }
 
   public static final int ENABLE_PRIVATE_ENVIRONMENT_FIELD_NUMBER = 1;
-  private boolean enablePrivateEnvironment_;
+  private boolean enablePrivateEnvironment_ = false;
   /**
    *
    *
@@ -153,11 +153,16 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfigOrBuilder
       getPrivateClusterConfigOrBuilder() {
-    return getPrivateClusterConfig();
+    return privateClusterConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfig
+            .getDefaultInstance()
+        : privateClusterConfig_;
   }
 
   public static final int WEB_SERVER_IPV4_CIDR_BLOCK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object webServerIpv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object webServerIpv4CidrBlock_ = "";
   /**
    *
    *
@@ -214,7 +219,9 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   }
 
   public static final int CLOUD_SQL_IPV4_CIDR_BLOCK_FIELD_NUMBER = 4;
-  private volatile java.lang.Object cloudSqlIpv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudSqlIpv4CidrBlock_ = "";
   /**
    *
    *
@@ -265,7 +272,9 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   }
 
   public static final int WEB_SERVER_IPV4_RESERVED_RANGE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object webServerIpv4ReservedRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object webServerIpv4ReservedRange_ = "";
   /**
    *
    *
@@ -320,7 +329,9 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   }
 
   public static final int CLOUD_COMPOSER_NETWORK_IPV4_CIDR_BLOCK_FIELD_NUMBER = 7;
-  private volatile java.lang.Object cloudComposerNetworkIpv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudComposerNetworkIpv4CidrBlock_ = "";
   /**
    *
    *
@@ -383,7 +394,9 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   }
 
   public static final int CLOUD_COMPOSER_NETWORK_IPV4_RESERVED_RANGE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object cloudComposerNetworkIpv4ReservedRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudComposerNetworkIpv4ReservedRange_ = "";
   /**
    *
    *
@@ -440,7 +453,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   }
 
   public static final int ENABLE_PRIVATELY_USED_PUBLIC_IPS_FIELD_NUMBER = 6;
-  private boolean enablePrivatelyUsedPublicIps_;
+  private boolean enablePrivatelyUsedPublicIps_ = false;
   /**
    *
    *
@@ -461,7 +474,9 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   }
 
   public static final int CLOUD_COMPOSER_CONNECTION_SUBNETWORK_FIELD_NUMBER = 9;
-  private volatile java.lang.Object cloudComposerConnectionSubnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudComposerConnectionSubnetwork_ = "";
   /**
    *
    *
@@ -571,7 +586,9 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1.NetworkingConfigOrBuilder
       getNetworkingConfigOrBuilder() {
-    return getNetworkingConfig();
+    return networkingConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.getDefaultInstance()
+        : networkingConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -892,32 +909,23 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enablePrivateEnvironment_ = false;
-
-      if (privateClusterConfigBuilder_ == null) {
-        privateClusterConfig_ = null;
-      } else {
-        privateClusterConfig_ = null;
+      privateClusterConfig_ = null;
+      if (privateClusterConfigBuilder_ != null) {
+        privateClusterConfigBuilder_.dispose();
         privateClusterConfigBuilder_ = null;
       }
       webServerIpv4CidrBlock_ = "";
-
       cloudSqlIpv4CidrBlock_ = "";
-
       webServerIpv4ReservedRange_ = "";
-
       cloudComposerNetworkIpv4CidrBlock_ = "";
-
       cloudComposerNetworkIpv4ReservedRange_ = "";
-
       enablePrivatelyUsedPublicIps_ = false;
-
       cloudComposerConnectionSubnetwork_ = "";
-
-      if (networkingConfigBuilder_ == null) {
-        networkingConfig_ = null;
-      } else {
-        networkingConfig_ = null;
+      networkingConfig_ = null;
+      if (networkingConfigBuilder_ != null) {
+        networkingConfigBuilder_.dispose();
         networkingConfigBuilder_ = null;
       }
       return this;
@@ -951,26 +959,50 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfig result =
           new com.google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfig(this);
-      result.enablePrivateEnvironment_ = enablePrivateEnvironment_;
-      if (privateClusterConfigBuilder_ == null) {
-        result.privateClusterConfig_ = privateClusterConfig_;
-      } else {
-        result.privateClusterConfig_ = privateClusterConfigBuilder_.build();
-      }
-      result.webServerIpv4CidrBlock_ = webServerIpv4CidrBlock_;
-      result.cloudSqlIpv4CidrBlock_ = cloudSqlIpv4CidrBlock_;
-      result.webServerIpv4ReservedRange_ = webServerIpv4ReservedRange_;
-      result.cloudComposerNetworkIpv4CidrBlock_ = cloudComposerNetworkIpv4CidrBlock_;
-      result.cloudComposerNetworkIpv4ReservedRange_ = cloudComposerNetworkIpv4ReservedRange_;
-      result.enablePrivatelyUsedPublicIps_ = enablePrivatelyUsedPublicIps_;
-      result.cloudComposerConnectionSubnetwork_ = cloudComposerConnectionSubnetwork_;
-      if (networkingConfigBuilder_ == null) {
-        result.networkingConfig_ = networkingConfig_;
-      } else {
-        result.networkingConfig_ = networkingConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enablePrivateEnvironment_ = enablePrivateEnvironment_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.privateClusterConfig_ =
+            privateClusterConfigBuilder_ == null
+                ? privateClusterConfig_
+                : privateClusterConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.webServerIpv4CidrBlock_ = webServerIpv4CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cloudSqlIpv4CidrBlock_ = cloudSqlIpv4CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.webServerIpv4ReservedRange_ = webServerIpv4ReservedRange_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.cloudComposerNetworkIpv4CidrBlock_ = cloudComposerNetworkIpv4CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.cloudComposerNetworkIpv4ReservedRange_ = cloudComposerNetworkIpv4ReservedRange_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enablePrivatelyUsedPublicIps_ = enablePrivatelyUsedPublicIps_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.cloudComposerConnectionSubnetwork_ = cloudComposerConnectionSubnetwork_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.networkingConfig_ =
+            networkingConfigBuilder_ == null ? networkingConfig_ : networkingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1031,22 +1063,27 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       }
       if (!other.getWebServerIpv4CidrBlock().isEmpty()) {
         webServerIpv4CidrBlock_ = other.webServerIpv4CidrBlock_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getCloudSqlIpv4CidrBlock().isEmpty()) {
         cloudSqlIpv4CidrBlock_ = other.cloudSqlIpv4CidrBlock_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getWebServerIpv4ReservedRange().isEmpty()) {
         webServerIpv4ReservedRange_ = other.webServerIpv4ReservedRange_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getCloudComposerNetworkIpv4CidrBlock().isEmpty()) {
         cloudComposerNetworkIpv4CidrBlock_ = other.cloudComposerNetworkIpv4CidrBlock_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getCloudComposerNetworkIpv4ReservedRange().isEmpty()) {
         cloudComposerNetworkIpv4ReservedRange_ = other.cloudComposerNetworkIpv4ReservedRange_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getEnablePrivatelyUsedPublicIps() != false) {
@@ -1054,6 +1091,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       }
       if (!other.getCloudComposerConnectionSubnetwork().isEmpty()) {
         cloudComposerConnectionSubnetwork_ = other.cloudComposerConnectionSubnetwork_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasNetworkingConfig()) {
@@ -1088,63 +1126,63 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
             case 8:
               {
                 enablePrivateEnvironment_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(
                     getPrivateClusterConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 webServerIpv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 cloudSqlIpv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 webServerIpv4ReservedRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 enablePrivatelyUsedPublicIps_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 48
             case 58:
               {
                 cloudComposerNetworkIpv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 cloudComposerNetworkIpv4ReservedRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
               {
                 cloudComposerConnectionSubnetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(
                     getNetworkingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             default:
@@ -1163,6 +1201,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enablePrivateEnvironment_;
     /**
@@ -1201,6 +1241,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     public Builder setEnablePrivateEnvironment(boolean value) {
 
       enablePrivateEnvironment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1219,7 +1260,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearEnablePrivateEnvironment() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enablePrivateEnvironment_ = false;
       onChanged();
       return this;
@@ -1247,7 +1288,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * @return Whether the privateClusterConfig field is set.
      */
     public boolean hasPrivateClusterConfig() {
-      return privateClusterConfigBuilder_ != null || privateClusterConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1293,11 +1334,11 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         privateClusterConfig_ = value;
-        onChanged();
       } else {
         privateClusterConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1317,11 +1358,11 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
             builderForValue) {
       if (privateClusterConfigBuilder_ == null) {
         privateClusterConfig_ = builderForValue.build();
-        onChanged();
       } else {
         privateClusterConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1339,20 +1380,20 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     public Builder mergePrivateClusterConfig(
         com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfig value) {
       if (privateClusterConfigBuilder_ == null) {
-        if (privateClusterConfig_ != null) {
-          privateClusterConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfig.newBuilder(
-                      privateClusterConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && privateClusterConfig_ != null
+            && privateClusterConfig_
+                != com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfig
+                    .getDefaultInstance()) {
+          getPrivateClusterConfigBuilder().mergeFrom(value);
         } else {
           privateClusterConfig_ = value;
         }
-        onChanged();
       } else {
         privateClusterConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1368,14 +1409,13 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearPrivateClusterConfig() {
-      if (privateClusterConfigBuilder_ == null) {
-        privateClusterConfig_ = null;
-        onChanged();
-      } else {
-        privateClusterConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      privateClusterConfig_ = null;
+      if (privateClusterConfigBuilder_ != null) {
+        privateClusterConfigBuilder_.dispose();
         privateClusterConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1392,7 +1432,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      */
     public com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfig.Builder
         getPrivateClusterConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPrivateClusterConfigFieldBuilder().getBuilder();
     }
@@ -1521,8 +1561,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       webServerIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1542,8 +1582,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearWebServerIpv4CidrBlock() {
-
       webServerIpv4CidrBlock_ = getDefaultInstance().getWebServerIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1568,8 +1608,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       webServerIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1638,8 +1678,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       cloudSqlIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1656,8 +1696,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearCloudSqlIpv4CidrBlock() {
-
       cloudSqlIpv4CidrBlock_ = getDefaultInstance().getCloudSqlIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1679,8 +1719,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cloudSqlIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1755,8 +1795,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       webServerIpv4ReservedRange_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1775,8 +1815,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearWebServerIpv4ReservedRange() {
-
       webServerIpv4ReservedRange_ = getDefaultInstance().getWebServerIpv4ReservedRange();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1800,8 +1840,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       webServerIpv4ReservedRange_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1888,8 +1928,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       cloudComposerNetworkIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1912,9 +1952,9 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearCloudComposerNetworkIpv4CidrBlock() {
-
       cloudComposerNetworkIpv4CidrBlock_ =
           getDefaultInstance().getCloudComposerNetworkIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1942,8 +1982,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cloudComposerNetworkIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2021,8 +2061,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       cloudComposerNetworkIpv4ReservedRange_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2042,9 +2082,9 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearCloudComposerNetworkIpv4ReservedRange() {
-
       cloudComposerNetworkIpv4ReservedRange_ =
           getDefaultInstance().getCloudComposerNetworkIpv4ReservedRange();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2070,8 +2110,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cloudComposerNetworkIpv4ReservedRange_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2113,6 +2153,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     public Builder setEnablePrivatelyUsedPublicIps(boolean value) {
 
       enablePrivatelyUsedPublicIps_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2131,7 +2172,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearEnablePrivatelyUsedPublicIps() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       enablePrivatelyUsedPublicIps_ = false;
       onChanged();
       return this;
@@ -2213,8 +2254,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       cloudComposerConnectionSubnetwork_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2235,9 +2276,9 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearCloudComposerConnectionSubnetwork() {
-
       cloudComposerConnectionSubnetwork_ =
           getDefaultInstance().getCloudComposerConnectionSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2263,8 +2304,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cloudComposerConnectionSubnetwork_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2289,7 +2330,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * @return Whether the networkingConfig field is set.
      */
     public boolean hasNetworkingConfig() {
-      return networkingConfigBuilder_ != null || networkingConfig_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2333,11 +2374,11 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         networkingConfig_ = value;
-        onChanged();
       } else {
         networkingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2356,11 +2397,11 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
             builderForValue) {
       if (networkingConfigBuilder_ == null) {
         networkingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         networkingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2377,20 +2418,20 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     public Builder mergeNetworkingConfig(
         com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig value) {
       if (networkingConfigBuilder_ == null) {
-        if (networkingConfig_ != null) {
-          networkingConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.newBuilder(
-                      networkingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && networkingConfig_ != null
+            && networkingConfig_
+                != com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig
+                    .getDefaultInstance()) {
+          getNetworkingConfigBuilder().mergeFrom(value);
         } else {
           networkingConfig_ = value;
         }
-        onChanged();
       } else {
         networkingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2405,14 +2446,13 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearNetworkingConfig() {
-      if (networkingConfigBuilder_ == null) {
-        networkingConfig_ = null;
-        onChanged();
-      } else {
-        networkingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      networkingConfig_ = null;
+      if (networkingConfigBuilder_ != null) {
+        networkingConfigBuilder_.dispose();
         networkingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2428,7 +2468,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      */
     public com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.Builder
         getNetworkingConfigBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getNetworkingConfigFieldBuilder().getBuilder();
     }

@@ -70,7 +70,9 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
   }
 
   public static final int ATTRIBUTES_CONFIG_FIELD_NUMBER = 1;
-  private volatile java.lang.Object attributesConfig_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attributesConfig_ = "";
   /**
    *
    *
@@ -178,7 +180,9 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.retail.v2.CatalogAttributeOrBuilder getCatalogAttributeOrBuilder() {
-    return getCatalogAttribute();
+    return catalogAttribute_ == null
+        ? com.google.cloud.retail.v2.CatalogAttribute.getDefaultInstance()
+        : catalogAttribute_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -395,12 +399,11 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       attributesConfig_ = "";
-
-      if (catalogAttributeBuilder_ == null) {
-        catalogAttribute_ = null;
-      } else {
-        catalogAttribute_ = null;
+      catalogAttribute_ = null;
+      if (catalogAttributeBuilder_ != null) {
+        catalogAttributeBuilder_.dispose();
         catalogAttributeBuilder_ = null;
       }
       return this;
@@ -430,14 +433,22 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
     public com.google.cloud.retail.v2.AddCatalogAttributeRequest buildPartial() {
       com.google.cloud.retail.v2.AddCatalogAttributeRequest result =
           new com.google.cloud.retail.v2.AddCatalogAttributeRequest(this);
-      result.attributesConfig_ = attributesConfig_;
-      if (catalogAttributeBuilder_ == null) {
-        result.catalogAttribute_ = catalogAttribute_;
-      } else {
-        result.catalogAttribute_ = catalogAttributeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2.AddCatalogAttributeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.attributesConfig_ = attributesConfig_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.catalogAttribute_ =
+            catalogAttributeBuilder_ == null ? catalogAttribute_ : catalogAttributeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -488,6 +499,7 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getAttributesConfig().isEmpty()) {
         attributesConfig_ = other.attributesConfig_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCatalogAttribute()) {
@@ -522,14 +534,14 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
             case 10:
               {
                 attributesConfig_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getCatalogAttributeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +560,8 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object attributesConfig_ = "";
     /**
@@ -619,8 +633,8 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       attributesConfig_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +653,8 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearAttributesConfig() {
-
       attributesConfig_ = getDefaultInstance().getAttributesConfig();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -664,8 +678,8 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       attributesConfig_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,7 +705,7 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
      * @return Whether the catalogAttribute field is set.
      */
     public boolean hasCatalogAttribute() {
-      return catalogAttributeBuilder_ != null || catalogAttribute_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -734,11 +748,11 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         catalogAttribute_ = value;
-        onChanged();
       } else {
         catalogAttributeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -757,11 +771,11 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
         com.google.cloud.retail.v2.CatalogAttribute.Builder builderForValue) {
       if (catalogAttributeBuilder_ == null) {
         catalogAttribute_ = builderForValue.build();
-        onChanged();
       } else {
         catalogAttributeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -778,19 +792,19 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
      */
     public Builder mergeCatalogAttribute(com.google.cloud.retail.v2.CatalogAttribute value) {
       if (catalogAttributeBuilder_ == null) {
-        if (catalogAttribute_ != null) {
-          catalogAttribute_ =
-              com.google.cloud.retail.v2.CatalogAttribute.newBuilder(catalogAttribute_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && catalogAttribute_ != null
+            && catalogAttribute_
+                != com.google.cloud.retail.v2.CatalogAttribute.getDefaultInstance()) {
+          getCatalogAttributeBuilder().mergeFrom(value);
         } else {
           catalogAttribute_ = value;
         }
-        onChanged();
       } else {
         catalogAttributeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -806,14 +820,13 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearCatalogAttribute() {
-      if (catalogAttributeBuilder_ == null) {
-        catalogAttribute_ = null;
-        onChanged();
-      } else {
-        catalogAttribute_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      catalogAttribute_ = null;
+      if (catalogAttributeBuilder_ != null) {
+        catalogAttributeBuilder_.dispose();
         catalogAttributeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -829,7 +842,7 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.retail.v2.CatalogAttribute.Builder getCatalogAttributeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCatalogAttributeFieldBuilder().getBuilder();
     }

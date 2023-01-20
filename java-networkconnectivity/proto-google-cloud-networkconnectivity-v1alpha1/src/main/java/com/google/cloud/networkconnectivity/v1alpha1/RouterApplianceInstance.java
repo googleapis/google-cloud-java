@@ -71,7 +71,9 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
   }
 
   public static final int VIRTUAL_MACHINE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object virtualMachine_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object virtualMachine_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 3;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -169,7 +173,9 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
   }
 
   public static final int NETWORK_INTERFACE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object networkInterface_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkInterface_ = "";
   /**
    * <code>string network_interface = 2 [deprecated = true];</code>
    *
@@ -430,12 +436,10 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       virtualMachine_ = "";
-
       ipAddress_ = "";
-
       networkInterface_ = "";
-
       return this;
     }
 
@@ -465,11 +469,25 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     public com.google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance buildPartial() {
       com.google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance result =
           new com.google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance(this);
-      result.virtualMachine_ = virtualMachine_;
-      result.ipAddress_ = ipAddress_;
-      result.networkInterface_ = networkInterface_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.virtualMachine_ = virtualMachine_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.networkInterface_ = networkInterface_;
+      }
     }
 
     @java.lang.Override
@@ -523,14 +541,17 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
               .getDefaultInstance()) return this;
       if (!other.getVirtualMachine().isEmpty()) {
         virtualMachine_ = other.virtualMachine_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getNetworkInterface().isEmpty()) {
         networkInterface_ = other.networkInterface_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -562,19 +583,19 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
             case 10:
               {
                 virtualMachine_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 networkInterface_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -593,6 +614,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object virtualMachine_ = "";
     /**
@@ -655,8 +678,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       virtualMachine_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -672,8 +695,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearVirtualMachine() {
-
       virtualMachine_ = getDefaultInstance().getVirtualMachine();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -694,8 +717,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       virtualMachine_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -761,8 +784,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -778,8 +801,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -800,8 +823,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -861,8 +884,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkInterface_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -876,8 +899,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
      */
     @java.lang.Deprecated
     public Builder clearNetworkInterface() {
-
       networkInterface_ = getDefaultInstance().getNetworkInterface();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -896,8 +919,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkInterface_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

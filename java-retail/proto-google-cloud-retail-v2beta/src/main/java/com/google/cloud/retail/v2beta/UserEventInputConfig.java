@@ -529,6 +529,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (userEventInlineSourceBuilder_ != null) {
         userEventInlineSourceBuilder_.clear();
       }
@@ -567,30 +568,30 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.retail.v2beta.UserEventInputConfig buildPartial() {
       com.google.cloud.retail.v2beta.UserEventInputConfig result =
           new com.google.cloud.retail.v2beta.UserEventInputConfig(this);
-      if (sourceCase_ == 1) {
-        if (userEventInlineSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = userEventInlineSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 2) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 3) {
-        if (bigQuerySourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = bigQuerySourceBuilder_.build();
-        }
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.retail.v2beta.UserEventInputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.retail.v2beta.UserEventInputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && userEventInlineSourceBuilder_ != null) {
+        result.source_ = userEventInlineSourceBuilder_.build();
+      }
+      if (sourceCase_ == 2 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 3 && bigQuerySourceBuilder_ != null) {
+        result.source_ = bigQuerySourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -735,6 +736,8 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.retail.v2beta.UserEventInlineSource,
@@ -965,7 +968,6 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return userEventInlineSourceBuilder_;
     }
 
@@ -1192,7 +1194,6 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -1420,7 +1421,6 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return bigQuerySourceBuilder_;
     }
 

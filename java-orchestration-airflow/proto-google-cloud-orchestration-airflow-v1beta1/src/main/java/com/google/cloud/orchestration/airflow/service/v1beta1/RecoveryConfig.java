@@ -120,7 +120,10 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfigOrBuilder
       getScheduledSnapshotsConfigOrBuilder() {
-    return getScheduledSnapshotsConfig();
+    return scheduledSnapshotsConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfig
+            .getDefaultInstance()
+        : scheduledSnapshotsConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -330,10 +333,10 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (scheduledSnapshotsConfigBuilder_ == null) {
-        scheduledSnapshotsConfig_ = null;
-      } else {
-        scheduledSnapshotsConfig_ = null;
+      bitField0_ = 0;
+      scheduledSnapshotsConfig_ = null;
+      if (scheduledSnapshotsConfigBuilder_ != null) {
+        scheduledSnapshotsConfigBuilder_.dispose();
         scheduledSnapshotsConfigBuilder_ = null;
       }
       return this;
@@ -365,13 +368,22 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig(this);
-      if (scheduledSnapshotsConfigBuilder_ == null) {
-        result.scheduledSnapshotsConfig_ = scheduledSnapshotsConfig_;
-      } else {
-        result.scheduledSnapshotsConfig_ = scheduledSnapshotsConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scheduledSnapshotsConfig_ =
+            scheduledSnapshotsConfigBuilder_ == null
+                ? scheduledSnapshotsConfig_
+                : scheduledSnapshotsConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -456,7 +468,7 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getScheduledSnapshotsConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -475,6 +487,8 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfig
         scheduledSnapshotsConfig_;
@@ -498,7 +512,7 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduledSnapshotsConfig field is set.
      */
     public boolean hasScheduledSnapshotsConfig() {
-      return scheduledSnapshotsConfigBuilder_ != null || scheduledSnapshotsConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -542,11 +556,11 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         scheduledSnapshotsConfig_ = value;
-        onChanged();
       } else {
         scheduledSnapshotsConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -565,11 +579,11 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (scheduledSnapshotsConfigBuilder_ == null) {
         scheduledSnapshotsConfig_ = builderForValue.build();
-        onChanged();
       } else {
         scheduledSnapshotsConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -586,20 +600,20 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeScheduledSnapshotsConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfig value) {
       if (scheduledSnapshotsConfigBuilder_ == null) {
-        if (scheduledSnapshotsConfig_ != null) {
-          scheduledSnapshotsConfig_ =
-              com.google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfig
-                  .newBuilder(scheduledSnapshotsConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && scheduledSnapshotsConfig_ != null
+            && scheduledSnapshotsConfig_
+                != com.google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfig
+                    .getDefaultInstance()) {
+          getScheduledSnapshotsConfigBuilder().mergeFrom(value);
         } else {
           scheduledSnapshotsConfig_ = value;
         }
-        onChanged();
       } else {
         scheduledSnapshotsConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -614,14 +628,13 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearScheduledSnapshotsConfig() {
-      if (scheduledSnapshotsConfigBuilder_ == null) {
-        scheduledSnapshotsConfig_ = null;
-        onChanged();
-      } else {
-        scheduledSnapshotsConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      scheduledSnapshotsConfig_ = null;
+      if (scheduledSnapshotsConfigBuilder_ != null) {
+        scheduledSnapshotsConfigBuilder_.dispose();
         scheduledSnapshotsConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -637,7 +650,7 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfig.Builder
         getScheduledSnapshotsConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getScheduledSnapshotsConfigFieldBuilder().getBuilder();
     }

@@ -237,7 +237,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CONNECTION_TYPE_FIELD_NUMBER = 1;
-  private int connectionType_;
+  private int connectionType_ = 0;
   /**
    *
    *
@@ -275,9 +275,8 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.ConnectionType
       getConnectionType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.ConnectionType result =
-        com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.ConnectionType.valueOf(
+        com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.ConnectionType.forNumber(
             connectionType_);
     return result == null
         ? com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.ConnectionType
@@ -492,8 +491,8 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       connectionType_ = 0;
-
       return this;
     }
 
@@ -523,9 +522,19 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig result =
           new com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig(this);
-      result.connectionType_ = connectionType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.connectionType_ = connectionType_;
+      }
     }
 
     @java.lang.Override
@@ -609,7 +618,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 connectionType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -628,6 +637,8 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int connectionType_ = 0;
     /**
@@ -666,8 +677,8 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setConnectionTypeValue(int value) {
-
       connectionType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -689,10 +700,9 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.ConnectionType
         getConnectionType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.ConnectionType result =
-          com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.ConnectionType.valueOf(
-              connectionType_);
+          com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.ConnectionType
+              .forNumber(connectionType_);
       return result == null
           ? com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.ConnectionType
               .UNRECOGNIZED
@@ -719,7 +729,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       connectionType_ = value.getNumber();
       onChanged();
       return this;
@@ -740,7 +750,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearConnectionType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       connectionType_ = 0;
       onChanged();
       return this;
