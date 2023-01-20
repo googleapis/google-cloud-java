@@ -56,8 +56,9 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Execution. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -69,8 +70,9 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Execution. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -103,9 +105,10 @@ public interface JobOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 Job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -121,9 +124,10 @@ public interface JobOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 Job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -142,9 +146,10 @@ public interface JobOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 Job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -160,14 +165,14 @@ public interface JobOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 Job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -183,9 +188,10 @@ public interface JobOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 Job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -199,10 +205,13 @@ public interface JobOrBuilder
    * KRM-style annotations for the resource. Unstructured key value map that may
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
-   * when modifying objects. Cloud Run will populate some annotations using
-   * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-   * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * when modifying objects.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 Job.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules. More info: https://kubernetes.io/docs/user-guide/annotations
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -215,10 +224,13 @@ public interface JobOrBuilder
    * KRM-style annotations for the resource. Unstructured key value map that may
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
-   * when modifying objects. Cloud Run will populate some annotations using
-   * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-   * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * when modifying objects.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 Job.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules. More info: https://kubernetes.io/docs/user-guide/annotations
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -234,10 +246,13 @@ public interface JobOrBuilder
    * KRM-style annotations for the resource. Unstructured key value map that may
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
-   * when modifying objects. Cloud Run will populate some annotations using
-   * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-   * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * when modifying objects.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 Job.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules. More info: https://kubernetes.io/docs/user-guide/annotations
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -250,15 +265,17 @@ public interface JobOrBuilder
    * KRM-style annotations for the resource. Unstructured key value map that may
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
-   * when modifying objects. Cloud Run will populate some annotations using
-   * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-   * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * when modifying objects.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 Job.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules. More info: https://kubernetes.io/docs/user-guide/annotations
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,
@@ -271,10 +288,13 @@ public interface JobOrBuilder
    * KRM-style annotations for the resource. Unstructured key value map that may
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
-   * when modifying objects. Cloud Run will populate some annotations using
-   * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-   * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * when modifying objects.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 Job.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules. More info: https://kubernetes.io/docs/user-guide/annotations
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -647,8 +667,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The generation of this Job. See comments in `reconciling` for additional
-   * information on reconciliation process in Cloud Run.
+   * Output only. The generation of this Job. See comments in `reconciling` for
+   * additional information on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>int64 observed_generation = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -661,8 +681,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Job, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Job, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -676,8 +696,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Job, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Job, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -691,8 +711,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Job, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Job, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -705,10 +725,10 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The Conditions of all other associated sub-resources. They contain
-   * additional diagnostics information in case the Job does not reach its
-   * desired state. See comments in `reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * Output only. The Conditions of all other associated sub-resources. They
+   * contain additional diagnostics information in case the Job does not reach
+   * its desired state. See comments in `reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>
@@ -720,10 +740,10 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The Conditions of all other associated sub-resources. They contain
-   * additional diagnostics information in case the Job does not reach its
-   * desired state. See comments in `reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * Output only. The Conditions of all other associated sub-resources. They
+   * contain additional diagnostics information in case the Job does not reach
+   * its desired state. See comments in `reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>
@@ -735,10 +755,10 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The Conditions of all other associated sub-resources. They contain
-   * additional diagnostics information in case the Job does not reach its
-   * desired state. See comments in `reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * Output only. The Conditions of all other associated sub-resources. They
+   * contain additional diagnostics information in case the Job does not reach
+   * its desired state. See comments in `reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>
@@ -750,10 +770,10 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The Conditions of all other associated sub-resources. They contain
-   * additional diagnostics information in case the Job does not reach its
-   * desired state. See comments in `reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * Output only. The Conditions of all other associated sub-resources. They
+   * contain additional diagnostics information in case the Job does not reach
+   * its desired state. See comments in `reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>
@@ -765,10 +785,10 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The Conditions of all other associated sub-resources. They contain
-   * additional diagnostics information in case the Job does not reach its
-   * desired state. See comments in `reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * Output only. The Conditions of all other associated sub-resources. They
+   * contain additional diagnostics information in case the Job does not reach
+   * its desired state. See comments in `reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>
@@ -835,8 +855,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. Returns true if the Job is currently being acted upon by the system to
-   * bring it into the desired state.
+   * Output only. Returns true if the Job is currently being acted upon by the
+   * system to bring it into the desired state.
    * When a new Job is created, or an existing one is updated, Cloud Run
    * will asynchronously perform all necessary steps to bring the Job to the
    * desired state. This process is called reconciliation.

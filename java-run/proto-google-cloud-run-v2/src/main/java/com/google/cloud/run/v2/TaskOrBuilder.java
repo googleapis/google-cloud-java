@@ -52,8 +52,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Task. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Task. The value is a
+   * UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -65,8 +66,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Task. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Task. The value is a
+   * UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -99,9 +101,6 @@ public interface TaskOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -117,9 +116,6 @@ public interface TaskOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -138,9 +134,6 @@ public interface TaskOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -156,14 +149,10 @@ public interface TaskOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -179,9 +168,6 @@ public interface TaskOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -230,7 +216,6 @@ public interface TaskOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,
@@ -251,9 +236,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the task was created by the job controller.
-   * It is not guaranteed to be set in happens-before order across separate
-   * operations.
+   * Output only. Represents time when the task was created by the job
+   * controller. It is not guaranteed to be set in happens-before order across
+   * separate operations.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -266,9 +251,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the task was created by the job controller.
-   * It is not guaranteed to be set in happens-before order across separate
-   * operations.
+   * Output only. Represents time when the task was created by the job
+   * controller. It is not guaranteed to be set in happens-before order across
+   * separate operations.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -281,9 +266,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the task was created by the job controller.
-   * It is not guaranteed to be set in happens-before order across separate
-   * operations.
+   * Output only. Represents time when the task was created by the job
+   * controller. It is not guaranteed to be set in happens-before order across
+   * separate operations.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -339,8 +324,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the Task was completed. It is not guaranteed to
-   * be set in happens-before order across separate operations.
+   * Output only. Represents time when the Task was completed. It is not
+   * guaranteed to be set in happens-before order across separate operations.
    * </pre>
    *
    * <code>
@@ -354,8 +339,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the Task was completed. It is not guaranteed to
-   * be set in happens-before order across separate operations.
+   * Output only. Represents time when the Task was completed. It is not
+   * guaranteed to be set in happens-before order across separate operations.
    * </pre>
    *
    * <code>
@@ -369,8 +354,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the Task was completed. It is not guaranteed to
-   * be set in happens-before order across separate operations.
+   * Output only. Represents time when the Task was completed. It is not
+   * guaranteed to be set in happens-before order across separate operations.
    * </pre>
    *
    * <code>
@@ -781,8 +766,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Indicates whether the resource's reconciliation is still in progress.
-   * See comments in `Job.reconciling` for additional information on
+   * Output only. Indicates whether the resource's reconciliation is still in
+   * progress. See comments in `Job.reconciling` for additional information on
    * reconciliation process in Cloud Run.
    * </pre>
    *
@@ -796,8 +781,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Task, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Task, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -809,8 +794,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Task, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Task, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -822,8 +807,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Task, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Task, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -835,8 +820,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Task, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Task, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -848,8 +833,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Task, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Task, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -944,8 +929,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. A reference to a customer managed encryption key (CMEK) to use to encrypt
-   * this container image. For more information, go to
+   * Output only. A reference to a customer managed encryption key (CMEK) to use
+   * to encrypt this container image. For more information, go to
    * https://cloud.google.com/run/docs/securing/using-cmek
    * </pre>
    *
@@ -960,8 +945,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. A reference to a customer managed encryption key (CMEK) to use to encrypt
-   * this container image. For more information, go to
+   * Output only. A reference to a customer managed encryption key (CMEK) to use
+   * to encrypt this container image. For more information, go to
    * https://cloud.google.com/run/docs/securing/using-cmek
    * </pre>
    *
@@ -977,8 +962,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. VPC Access configuration to use for this Task. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Output only. VPC Access configuration to use for this Task. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
    * <code>
@@ -992,8 +978,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. VPC Access configuration to use for this Task. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Output only. VPC Access configuration to use for this Task. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
    * <code>
@@ -1007,8 +994,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. VPC Access configuration to use for this Task. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Output only. VPC Access configuration to use for this Task. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
    * <code>
@@ -1016,6 +1004,33 @@ public interface TaskOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URI where logs for this execution can be found in Cloud
+   * Console.
+   * </pre>
+   *
+   * <code>string log_uri = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The logUri.
+   */
+  java.lang.String getLogUri();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URI where logs for this execution can be found in Cloud
+   * Console.
+   * </pre>
+   *
+   * <code>string log_uri = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for logUri.
+   */
+  com.google.protobuf.ByteString getLogUriBytes();
 
   /**
    *

@@ -111,6 +111,7 @@ public class TasksClientHttpJsonTest {
             .setLastAttemptResult(TaskAttemptResult.newBuilder().build())
             .setEncryptionKey("encryptionKey-36224036")
             .setVpcAccess(VpcAccess.newBuilder().build())
+            .setLogUri("logUri-1097354360")
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -184,6 +185,7 @@ public class TasksClientHttpJsonTest {
             .setLastAttemptResult(TaskAttemptResult.newBuilder().build())
             .setEncryptionKey("encryptionKey-36224036")
             .setVpcAccess(VpcAccess.newBuilder().build())
+            .setLogUri("logUri-1097354360")
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);

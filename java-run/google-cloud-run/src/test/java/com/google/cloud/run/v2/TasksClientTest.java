@@ -117,6 +117,7 @@ public class TasksClientTest {
             .setLastAttemptResult(TaskAttemptResult.newBuilder().build())
             .setEncryptionKey("encryptionKey-36224036")
             .setVpcAccess(VpcAccess.newBuilder().build())
+            .setLogUri("logUri-1097354360")
             .setEtag("etag3123477")
             .build();
     mockTasks.addResponse(expectedResponse);
@@ -184,6 +185,7 @@ public class TasksClientTest {
             .setLastAttemptResult(TaskAttemptResult.newBuilder().build())
             .setEncryptionKey("encryptionKey-36224036")
             .setVpcAccess(VpcAccess.newBuilder().build())
+            .setLogUri("logUri-1097354360")
             .setEtag("etag3123477")
             .build();
     mockTasks.addResponse(expectedResponse);

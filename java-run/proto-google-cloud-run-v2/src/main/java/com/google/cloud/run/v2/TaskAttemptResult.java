@@ -111,11 +111,11 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
 
   public static final int EXIT_CODE_FIELD_NUMBER = 2;
-  private int exitCode_;
+  private int exitCode_ = 0;
   /**
    *
    *
@@ -346,14 +346,13 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      bitField0_ = 0;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
       exitCode_ = 0;
-
       return this;
     }
 
@@ -381,14 +380,21 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.run.v2.TaskAttemptResult buildPartial() {
       com.google.cloud.run.v2.TaskAttemptResult result =
           new com.google.cloud.run.v2.TaskAttemptResult(this);
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.exitCode_ = exitCode_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.TaskAttemptResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.exitCode_ = exitCode_;
+      }
     }
 
     @java.lang.Override
@@ -471,13 +477,13 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 exitCode_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -497,6 +503,8 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.rpc.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
@@ -514,7 +522,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -551,11 +559,11 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -571,11 +579,11 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -590,16 +598,18 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && status_ != null
+            && status_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -613,14 +623,13 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
      * <code>.google.rpc.Status status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -634,7 +643,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
      * <code>.google.rpc.Status status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -716,6 +725,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     public Builder setExitCode(int value) {
 
       exitCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -734,7 +744,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearExitCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       exitCode_ = 0;
       onChanged();
       return this;

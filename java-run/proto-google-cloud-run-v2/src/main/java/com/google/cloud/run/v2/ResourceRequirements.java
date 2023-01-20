@@ -89,6 +89,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> limits_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLimits() {
@@ -158,7 +159,10 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; limits = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getLimitsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLimitsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -191,7 +195,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CPU_IDLE_FIELD_NUMBER = 2;
-  private boolean cpuIdle_;
+  private boolean cpuIdle_ = false;
   /**
    *
    *
@@ -442,9 +446,9 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableLimits().clear();
       cpuIdle_ = false;
-
       return this;
     }
 
@@ -472,12 +476,22 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     public com.google.cloud.run.v2.ResourceRequirements buildPartial() {
       com.google.cloud.run.v2.ResourceRequirements result =
           new com.google.cloud.run.v2.ResourceRequirements(this);
-      int from_bitField0_ = bitField0_;
-      result.limits_ = internalGetLimits();
-      result.limits_.makeImmutable();
-      result.cpuIdle_ = cpuIdle_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.ResourceRequirements result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.limits_ = internalGetLimits();
+        result.limits_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cpuIdle_ = cpuIdle_;
+      }
     }
 
     @java.lang.Override
@@ -526,6 +540,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     public Builder mergeFrom(com.google.cloud.run.v2.ResourceRequirements other) {
       if (other == com.google.cloud.run.v2.ResourceRequirements.getDefaultInstance()) return this;
       internalGetMutableLimits().mergeFrom(other.internalGetLimits());
+      bitField0_ |= 0x00000001;
       if (other.getCpuIdle() != false) {
         setCpuIdle(other.getCpuIdle());
       }
@@ -564,12 +579,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
                 internalGetMutableLimits()
                     .getMutableMap()
                     .put(limits__.getKey(), limits__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 cpuIdle_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -602,14 +618,14 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLimits() {
-      onChanged();
-      ;
       if (limits_ == null) {
         limits_ = com.google.protobuf.MapField.newMapField(LimitsDefaultEntryHolder.defaultEntry);
       }
       if (!limits_.isMutable()) {
         limits_ = limits_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return limits_;
     }
 
@@ -673,8 +689,10 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, string&gt; limits = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getLimitsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLimitsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -707,6 +725,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearLimits() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLimits().getMutableMap().clear();
       return this;
     }
@@ -733,6 +752,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLimits() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableLimits().getMutableMap();
     }
     /**
@@ -755,8 +775,8 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLimits().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -774,6 +794,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllLimits(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLimits().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -808,6 +829,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     public Builder setCpuIdle(boolean value) {
 
       cpuIdle_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -823,7 +845,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCpuIdle() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       cpuIdle_ = false;
       onChanged();
       return this;

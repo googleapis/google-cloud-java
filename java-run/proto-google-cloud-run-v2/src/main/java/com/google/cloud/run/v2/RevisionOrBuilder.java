@@ -52,8 +52,9 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Revision. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Revision. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -65,8 +66,9 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Revision. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Revision. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -99,9 +101,6 @@ public interface RevisionOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -117,9 +116,6 @@ public interface RevisionOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -138,9 +134,6 @@ public interface RevisionOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -156,14 +149,10 @@ public interface RevisionOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -179,9 +168,6 @@ public interface RevisionOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -230,7 +216,6 @@ public interface RevisionOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,
@@ -783,9 +768,74 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Output only. Indicates whether the resource's reconciliation is still in progress.
-   * See comments in `Service.reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * The action to take if the encryption key is revoked.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 23;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for encryptionKeyRevocationAction.
+   */
+  int getEncryptionKeyRevocationActionValue();
+  /**
+   *
+   *
+   * <pre>
+   * The action to take if the encryption key is revoked.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 23;
+   * </code>
+   *
+   * @return The encryptionKeyRevocationAction.
+   */
+  com.google.cloud.run.v2.EncryptionKeyRevocationAction getEncryptionKeyRevocationAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+   *
+   * @return Whether the encryptionKeyShutdownDuration field is set.
+   */
+  boolean hasEncryptionKeyShutdownDuration();
+  /**
+   *
+   *
+   * <pre>
+   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+   *
+   * @return The encryptionKeyShutdownDuration.
+   */
+  com.google.protobuf.Duration getEncryptionKeyShutdownDuration();
+  /**
+   *
+   *
+   * <pre>
+   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getEncryptionKeyShutdownDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the resource's reconciliation is still in
+   * progress. See comments in `Service.reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>bool reconciling = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -798,8 +848,9 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Revision, containing its readiness status, and
-   * detailed error information in case it did not reach a serving state.
+   * Output only. The Condition of this Revision, containing its readiness
+   * status, and detailed error information in case it did not reach a serving
+   * state.
    * </pre>
    *
    * <code>
@@ -811,8 +862,9 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Revision, containing its readiness status, and
-   * detailed error information in case it did not reach a serving state.
+   * Output only. The Condition of this Revision, containing its readiness
+   * status, and detailed error information in case it did not reach a serving
+   * state.
    * </pre>
    *
    * <code>
@@ -824,8 +876,9 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Revision, containing its readiness status, and
-   * detailed error information in case it did not reach a serving state.
+   * Output only. The Condition of this Revision, containing its readiness
+   * status, and detailed error information in case it did not reach a serving
+   * state.
    * </pre>
    *
    * <code>
@@ -837,8 +890,9 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Revision, containing its readiness status, and
-   * detailed error information in case it did not reach a serving state.
+   * Output only. The Condition of this Revision, containing its readiness
+   * status, and detailed error information in case it did not reach a serving
+   * state.
    * </pre>
    *
    * <code>
@@ -850,8 +904,9 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Revision, containing its readiness status, and
-   * detailed error information in case it did not reach a serving state.
+   * Output only. The Condition of this Revision, containing its readiness
+   * status, and detailed error information in case it did not reach a serving
+   * state.
    * </pre>
    *
    * <code>
@@ -864,9 +919,9 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Output only. The generation of this Revision currently serving traffic. See comments in
-   * `reconciling` for additional information on reconciliation process in Cloud
-   * Run.
+   * Output only. The generation of this Revision currently serving traffic. See
+   * comments in `reconciling` for additional information on reconciliation
+   * process in Cloud Run.
    * </pre>
    *
    * <code>int64 observed_generation = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

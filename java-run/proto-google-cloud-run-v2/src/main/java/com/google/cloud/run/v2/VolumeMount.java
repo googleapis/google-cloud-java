@@ -69,7 +69,9 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -118,13 +120,15 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MOUNT_PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object mountPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mountPath_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Path within the container at which the volume should be mounted.  Must
-   * not contain ':'. For Cloud SQL volumes, it can be left empty, or must
+   * Required. Path within the container at which the volume should be mounted.
+   * Must not contain ':'. For Cloud SQL volumes, it can be left empty, or must
    * otherwise be `/cloudsql`. All instances defined in the Volume will be
    * available as `/cloudsql/[instance]`. For more information on Cloud SQL
    * volumes, visit https://cloud.google.com/sql/docs/mysql/connect-run
@@ -150,8 +154,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Path within the container at which the volume should be mounted.  Must
-   * not contain ':'. For Cloud SQL volumes, it can be left empty, or must
+   * Required. Path within the container at which the volume should be mounted.
+   * Must not contain ':'. For Cloud SQL volumes, it can be left empty, or must
    * otherwise be `/cloudsql`. All instances defined in the Volume will be
    * available as `/cloudsql/[instance]`. For more information on Cloud SQL
    * volumes, visit https://cloud.google.com/sql/docs/mysql/connect-run
@@ -378,10 +382,9 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       mountPath_ = "";
-
       return this;
     }
 
@@ -408,10 +411,21 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.VolumeMount buildPartial() {
       com.google.cloud.run.v2.VolumeMount result = new com.google.cloud.run.v2.VolumeMount(this);
-      result.name_ = name_;
-      result.mountPath_ = mountPath_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.VolumeMount result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mountPath_ = mountPath_;
+      }
     }
 
     @java.lang.Override
@@ -461,10 +475,12 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.run.v2.VolumeMount.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMountPath().isEmpty()) {
         mountPath_ = other.mountPath_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -496,13 +512,13 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 mountPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -521,6 +537,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -583,8 +601,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -600,8 +618,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -622,8 +640,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +651,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Path within the container at which the volume should be mounted.  Must
-     * not contain ':'. For Cloud SQL volumes, it can be left empty, or must
+     * Required. Path within the container at which the volume should be mounted.
+     * Must not contain ':'. For Cloud SQL volumes, it can be left empty, or must
      * otherwise be `/cloudsql`. All instances defined in the Volume will be
      * available as `/cloudsql/[instance]`. For more information on Cloud SQL
      * volumes, visit https://cloud.google.com/sql/docs/mysql/connect-run
@@ -659,8 +677,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Path within the container at which the volume should be mounted.  Must
-     * not contain ':'. For Cloud SQL volumes, it can be left empty, or must
+     * Required. Path within the container at which the volume should be mounted.
+     * Must not contain ':'. For Cloud SQL volumes, it can be left empty, or must
      * otherwise be `/cloudsql`. All instances defined in the Volume will be
      * available as `/cloudsql/[instance]`. For more information on Cloud SQL
      * volumes, visit https://cloud.google.com/sql/docs/mysql/connect-run
@@ -685,8 +703,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Path within the container at which the volume should be mounted.  Must
-     * not contain ':'. For Cloud SQL volumes, it can be left empty, or must
+     * Required. Path within the container at which the volume should be mounted.
+     * Must not contain ':'. For Cloud SQL volumes, it can be left empty, or must
      * otherwise be `/cloudsql`. All instances defined in the Volume will be
      * available as `/cloudsql/[instance]`. For more information on Cloud SQL
      * volumes, visit https://cloud.google.com/sql/docs/mysql/connect-run
@@ -701,8 +719,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mountPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -710,8 +728,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Path within the container at which the volume should be mounted.  Must
-     * not contain ':'. For Cloud SQL volumes, it can be left empty, or must
+     * Required. Path within the container at which the volume should be mounted.
+     * Must not contain ':'. For Cloud SQL volumes, it can be left empty, or must
      * otherwise be `/cloudsql`. All instances defined in the Volume will be
      * available as `/cloudsql/[instance]`. For more information on Cloud SQL
      * volumes, visit https://cloud.google.com/sql/docs/mysql/connect-run
@@ -722,8 +740,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMountPath() {
-
       mountPath_ = getDefaultInstance().getMountPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -731,8 +749,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Path within the container at which the volume should be mounted.  Must
-     * not contain ':'. For Cloud SQL volumes, it can be left empty, or must
+     * Required. Path within the container at which the volume should be mounted.
+     * Must not contain ':'. For Cloud SQL volumes, it can be left empty, or must
      * otherwise be `/cloudsql`. All instances defined in the Volume will be
      * available as `/cloudsql/[instance]`. For more information on Cloud SQL
      * volumes, visit https://cloud.google.com/sql/docs/mysql/connect-run
@@ -748,8 +766,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mountPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

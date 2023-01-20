@@ -117,6 +117,8 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTAINERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Container> containers_;
   /**
    *
@@ -191,6 +193,8 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VOLUMES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Volume> volumes_;
   /**
    *
@@ -343,11 +347,13 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -402,7 +408,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXECUTION_ENVIRONMENT_FIELD_NUMBER = 6;
-  private int executionEnvironment_;
+  private int executionEnvironment_ = 0;
   /**
    *
    *
@@ -431,14 +437,15 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.ExecutionEnvironment getExecutionEnvironment() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.run.v2.ExecutionEnvironment result =
-        com.google.cloud.run.v2.ExecutionEnvironment.valueOf(executionEnvironment_);
+        com.google.cloud.run.v2.ExecutionEnvironment.forNumber(executionEnvironment_);
     return result == null ? com.google.cloud.run.v2.ExecutionEnvironment.UNRECOGNIZED : result;
   }
 
   public static final int ENCRYPTION_KEY_FIELD_NUMBER = 7;
-  private volatile java.lang.Object encryptionKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object encryptionKey_ = "";
   /**
    *
    *
@@ -536,7 +543,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder() {
-    return getVpcAccess();
+    return vpcAccess_ == null ? com.google.cloud.run.v2.VpcAccess.getDefaultInstance() : vpcAccess_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -831,6 +838,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (containersBuilder_ == null) {
         containers_ = java.util.Collections.emptyList();
       } else {
@@ -845,22 +853,17 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         volumesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       serviceAccount_ = "";
-
       executionEnvironment_ = 0;
-
       encryptionKey_ = "";
-
-      if (vpcAccessBuilder_ == null) {
-        vpcAccess_ = null;
-      } else {
-        vpcAccess_ = null;
+      vpcAccess_ = null;
+      if (vpcAccessBuilder_ != null) {
+        vpcAccessBuilder_.dispose();
         vpcAccessBuilder_ = null;
       }
       retriesCase_ = 0;
@@ -891,7 +894,16 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.TaskTemplate buildPartial() {
       com.google.cloud.run.v2.TaskTemplate result = new com.google.cloud.run.v2.TaskTemplate(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.run.v2.TaskTemplate result) {
       if (containersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           containers_ = java.util.Collections.unmodifiableList(containers_);
@@ -910,25 +922,30 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
-      if (retriesCase_ == 3) {
-        result.retries_ = retries_;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.TaskTemplate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
       }
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
       }
-      result.serviceAccount_ = serviceAccount_;
-      result.executionEnvironment_ = executionEnvironment_;
-      result.encryptionKey_ = encryptionKey_;
-      if (vpcAccessBuilder_ == null) {
-        result.vpcAccess_ = vpcAccess_;
-      } else {
-        result.vpcAccess_ = vpcAccessBuilder_.build();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.executionEnvironment_ = executionEnvironment_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.encryptionKey_ = encryptionKey_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.vpcAccess_ = vpcAccessBuilder_ == null ? vpcAccess_ : vpcAccessBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.run.v2.TaskTemplate result) {
       result.retriesCase_ = retriesCase_;
-      onBuilt();
-      return result;
+      result.retries_ = this.retries_;
     }
 
     @java.lang.Override
@@ -1035,6 +1052,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.executionEnvironment_ != 0) {
@@ -1042,6 +1060,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEncryptionKey().isEmpty()) {
         encryptionKey_ = other.encryptionKey_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasVpcAccess()) {
@@ -1118,31 +1137,31 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 executionEnvironment_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 encryptionKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getVpcAccessFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -1934,6 +1953,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxRetries(int value) {
+
       retriesCase_ = 3;
       retries_ = value;
       onChanged();
@@ -1979,7 +1999,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2018,11 +2038,11 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2039,11 +2059,11 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2059,17 +2079,18 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2084,14 +2105,13 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 4;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2106,7 +2126,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -2226,8 +2246,8 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2246,8 +2266,8 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2271,8 +2291,8 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2306,8 +2326,8 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExecutionEnvironmentValue(int value) {
-
       executionEnvironment_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2324,9 +2344,8 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.run.v2.ExecutionEnvironment getExecutionEnvironment() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.run.v2.ExecutionEnvironment result =
-          com.google.cloud.run.v2.ExecutionEnvironment.valueOf(executionEnvironment_);
+          com.google.cloud.run.v2.ExecutionEnvironment.forNumber(executionEnvironment_);
       return result == null ? com.google.cloud.run.v2.ExecutionEnvironment.UNRECOGNIZED : result;
     }
     /**
@@ -2345,7 +2364,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       executionEnvironment_ = value.getNumber();
       onChanged();
       return this;
@@ -2362,7 +2381,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExecutionEnvironment() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       executionEnvironment_ = 0;
       onChanged();
       return this;
@@ -2435,8 +2454,8 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       encryptionKey_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2454,8 +2473,8 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEncryptionKey() {
-
       encryptionKey_ = getDefaultInstance().getEncryptionKey();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2478,8 +2497,8 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       encryptionKey_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2503,7 +2522,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vpcAccess field is set.
      */
     public boolean hasVpcAccess() {
-      return vpcAccessBuilder_ != null || vpcAccess_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2542,11 +2561,11 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         vpcAccess_ = value;
-        onChanged();
       } else {
         vpcAccessBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2562,11 +2581,11 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     public Builder setVpcAccess(com.google.cloud.run.v2.VpcAccess.Builder builderForValue) {
       if (vpcAccessBuilder_ == null) {
         vpcAccess_ = builderForValue.build();
-        onChanged();
       } else {
         vpcAccessBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2581,19 +2600,18 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVpcAccess(com.google.cloud.run.v2.VpcAccess value) {
       if (vpcAccessBuilder_ == null) {
-        if (vpcAccess_ != null) {
-          vpcAccess_ =
-              com.google.cloud.run.v2.VpcAccess.newBuilder(vpcAccess_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && vpcAccess_ != null
+            && vpcAccess_ != com.google.cloud.run.v2.VpcAccess.getDefaultInstance()) {
+          getVpcAccessBuilder().mergeFrom(value);
         } else {
           vpcAccess_ = value;
         }
-        onChanged();
       } else {
         vpcAccessBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2607,14 +2625,13 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.VpcAccess vpc_access = 8;</code>
      */
     public Builder clearVpcAccess() {
-      if (vpcAccessBuilder_ == null) {
-        vpcAccess_ = null;
-        onChanged();
-      } else {
-        vpcAccess_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      vpcAccess_ = null;
+      if (vpcAccessBuilder_ != null) {
+        vpcAccessBuilder_.dispose();
         vpcAccessBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2628,7 +2645,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.VpcAccess vpc_access = 8;</code>
      */
     public com.google.cloud.run.v2.VpcAccess.Builder getVpcAccessBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getVpcAccessFieldBuilder().getBuilder();
     }

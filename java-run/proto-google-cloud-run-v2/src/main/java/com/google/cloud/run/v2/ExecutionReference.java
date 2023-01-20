@@ -69,7 +69,9 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -160,7 +162,7 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int COMPLETION_TIME_FIELD_NUMBER = 3;
@@ -208,7 +210,9 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
-    return getCompletionTime();
+    return completionTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : completionTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -437,18 +441,16 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (completionTimeBuilder_ == null) {
-        completionTime_ = null;
-      } else {
-        completionTime_ = null;
+      completionTime_ = null;
+      if (completionTimeBuilder_ != null) {
+        completionTimeBuilder_.dispose();
         completionTimeBuilder_ = null;
       }
       return this;
@@ -478,19 +480,25 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.run.v2.ExecutionReference buildPartial() {
       com.google.cloud.run.v2.ExecutionReference result =
           new com.google.cloud.run.v2.ExecutionReference(this);
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (completionTimeBuilder_ == null) {
-        result.completionTime_ = completionTime_;
-      } else {
-        result.completionTime_ = completionTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.ExecutionReference result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.completionTime_ =
+            completionTimeBuilder_ == null ? completionTime_ : completionTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -540,6 +548,7 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.run.v2.ExecutionReference.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -577,19 +586,19 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCompletionTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -608,6 +617,8 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -670,8 +681,8 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,8 +698,8 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -709,8 +720,8 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -733,7 +744,7 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -770,11 +781,11 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -789,11 +800,11 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -807,17 +818,18 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -830,14 +842,13 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -850,7 +861,7 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -916,7 +927,7 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
      * @return Whether the completionTime field is set.
      */
     public boolean hasCompletionTime() {
-      return completionTimeBuilder_ != null || completionTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -953,11 +964,11 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         completionTime_ = value;
-        onChanged();
       } else {
         completionTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -972,11 +983,11 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
     public Builder setCompletionTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (completionTimeBuilder_ == null) {
         completionTime_ = builderForValue.build();
-        onChanged();
       } else {
         completionTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -990,19 +1001,18 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeCompletionTime(com.google.protobuf.Timestamp value) {
       if (completionTimeBuilder_ == null) {
-        if (completionTime_ != null) {
-          completionTime_ =
-              com.google.protobuf.Timestamp.newBuilder(completionTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && completionTime_ != null
+            && completionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCompletionTimeBuilder().mergeFrom(value);
         } else {
           completionTime_ = value;
         }
-        onChanged();
       } else {
         completionTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1015,14 +1025,13 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp completion_time = 3;</code>
      */
     public Builder clearCompletionTime() {
-      if (completionTimeBuilder_ == null) {
-        completionTime_ = null;
-        onChanged();
-      } else {
-        completionTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      completionTime_ = null;
+      if (completionTimeBuilder_ != null) {
+        completionTimeBuilder_.dispose();
         completionTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1035,7 +1044,7 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp completion_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCompletionTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCompletionTimeFieldBuilder().getBuilder();
     }

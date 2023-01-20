@@ -28,6 +28,10 @@ public interface ExecutionTemplateOrBuilder
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -38,6 +42,10 @@ public interface ExecutionTemplateOrBuilder
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -51,6 +59,10 @@ public interface ExecutionTemplateOrBuilder
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -61,11 +73,14 @@ public interface ExecutionTemplateOrBuilder
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -76,6 +91,10 @@ public interface ExecutionTemplateOrBuilder
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -87,6 +106,10 @@ public interface ExecutionTemplateOrBuilder
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -97,6 +120,10 @@ public interface ExecutionTemplateOrBuilder
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -110,6 +137,10 @@ public interface ExecutionTemplateOrBuilder
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -120,11 +151,14 @@ public interface ExecutionTemplateOrBuilder
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 2;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,
@@ -135,6 +169,10 @@ public interface ExecutionTemplateOrBuilder
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -181,7 +219,8 @@ public interface ExecutionTemplateOrBuilder
    *
    *
    * <pre>
-   * Required. Describes the task(s) that will be created when executing an execution.
+   * Required. Describes the task(s) that will be created when executing an
+   * execution.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TaskTemplate template = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -194,7 +233,8 @@ public interface ExecutionTemplateOrBuilder
    *
    *
    * <pre>
-   * Required. Describes the task(s) that will be created when executing an execution.
+   * Required. Describes the task(s) that will be created when executing an
+   * execution.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TaskTemplate template = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -207,7 +247,8 @@ public interface ExecutionTemplateOrBuilder
    *
    *
    * <pre>
-   * Required. Describes the task(s) that will be created when executing an execution.
+   * Required. Describes the task(s) that will be created when executing an
+   * execution.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TaskTemplate template = 5 [(.google.api.field_behavior) = REQUIRED];

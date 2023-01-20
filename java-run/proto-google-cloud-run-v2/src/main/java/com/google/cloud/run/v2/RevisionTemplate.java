@@ -87,7 +87,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REVISION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object revision_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revision_ = "";
   /**
    *
    *
@@ -150,6 +152,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -167,6 +170,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -189,6 +196,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -202,12 +213,19 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -219,6 +237,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -248,6 +270,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -266,6 +289,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -288,6 +315,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -301,13 +332,19 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -319,6 +356,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -380,7 +421,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.run.v2.RevisionScalingOrBuilder getScalingOrBuilder() {
-    return getScaling();
+    return scaling_ == null
+        ? com.google.cloud.run.v2.RevisionScaling.getDefaultInstance()
+        : scaling_;
   }
 
   public static final int VPC_ACCESS_FIELD_NUMBER = 6;
@@ -429,7 +472,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder() {
-    return getVpcAccess();
+    return vpcAccess_ == null ? com.google.cloud.run.v2.VpcAccess.getDefaultInstance() : vpcAccess_;
   }
 
   public static final int TIMEOUT_FIELD_NUMBER = 8;
@@ -475,11 +518,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 9;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -534,6 +579,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CONTAINERS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Container> containers_;
   /**
    *
@@ -608,6 +655,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VOLUMES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Volume> volumes_;
   /**
    *
@@ -677,7 +726,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int EXECUTION_ENVIRONMENT_FIELD_NUMBER = 13;
-  private int executionEnvironment_;
+  private int executionEnvironment_ = 0;
   /**
    *
    *
@@ -706,14 +755,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.run.v2.ExecutionEnvironment getExecutionEnvironment() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.run.v2.ExecutionEnvironment result =
-        com.google.cloud.run.v2.ExecutionEnvironment.valueOf(executionEnvironment_);
+        com.google.cloud.run.v2.ExecutionEnvironment.forNumber(executionEnvironment_);
     return result == null ? com.google.cloud.run.v2.ExecutionEnvironment.UNRECOGNIZED : result;
   }
 
   public static final int ENCRYPTION_KEY_FIELD_NUMBER = 14;
-  private volatile java.lang.Object encryptionKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object encryptionKey_ = "";
   /**
    *
    *
@@ -766,7 +816,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MAX_INSTANCE_REQUEST_CONCURRENCY_FIELD_NUMBER = 15;
-  private int maxInstanceRequestConcurrency_;
+  private int maxInstanceRequestConcurrency_ = 0;
   /**
    *
    *
@@ -1145,50 +1195,43 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       revision_ = "";
-
       internalGetMutableLabels().clear();
       internalGetMutableAnnotations().clear();
-      if (scalingBuilder_ == null) {
-        scaling_ = null;
-      } else {
-        scaling_ = null;
+      scaling_ = null;
+      if (scalingBuilder_ != null) {
+        scalingBuilder_.dispose();
         scalingBuilder_ = null;
       }
-      if (vpcAccessBuilder_ == null) {
-        vpcAccess_ = null;
-      } else {
-        vpcAccess_ = null;
+      vpcAccess_ = null;
+      if (vpcAccessBuilder_ != null) {
+        vpcAccessBuilder_.dispose();
         vpcAccessBuilder_ = null;
       }
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       serviceAccount_ = "";
-
       if (containersBuilder_ == null) {
         containers_ = java.util.Collections.emptyList();
       } else {
         containers_ = null;
         containersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
       } else {
         volumes_ = null;
         volumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       executionEnvironment_ = 0;
-
       encryptionKey_ = "";
-
       maxInstanceRequestConcurrency_ = 0;
-
       return this;
     }
 
@@ -1216,51 +1259,69 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.run.v2.RevisionTemplate buildPartial() {
       com.google.cloud.run.v2.RevisionTemplate result =
           new com.google.cloud.run.v2.RevisionTemplate(this);
-      int from_bitField0_ = bitField0_;
-      result.revision_ = revision_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
-      if (scalingBuilder_ == null) {
-        result.scaling_ = scaling_;
-      } else {
-        result.scaling_ = scalingBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (vpcAccessBuilder_ == null) {
-        result.vpcAccess_ = vpcAccess_;
-      } else {
-        result.vpcAccess_ = vpcAccessBuilder_.build();
-      }
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
-      }
-      result.serviceAccount_ = serviceAccount_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.run.v2.RevisionTemplate result) {
       if (containersBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           containers_ = java.util.Collections.unmodifiableList(containers_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.containers_ = containers_;
       } else {
         result.containers_ = containersBuilder_.build();
       }
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.volumes_ = volumes_;
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
-      result.executionEnvironment_ = executionEnvironment_;
-      result.encryptionKey_ = encryptionKey_;
-      result.maxInstanceRequestConcurrency_ = maxInstanceRequestConcurrency_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.RevisionTemplate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.revision_ = revision_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.scaling_ = scalingBuilder_ == null ? scaling_ : scalingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.vpcAccess_ = vpcAccessBuilder_ == null ? vpcAccess_ : vpcAccessBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.executionEnvironment_ = executionEnvironment_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.encryptionKey_ = encryptionKey_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.maxInstanceRequestConcurrency_ = maxInstanceRequestConcurrency_;
+      }
     }
 
     @java.lang.Override
@@ -1310,10 +1371,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.run.v2.RevisionTemplate.getDefaultInstance()) return this;
       if (!other.getRevision().isEmpty()) {
         revision_ = other.revision_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000002;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000004;
       if (other.hasScaling()) {
         mergeScaling(other.getScaling());
       }
@@ -1325,13 +1389,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (containersBuilder_ == null) {
         if (!other.containers_.isEmpty()) {
           if (containers_.isEmpty()) {
             containers_ = other.containers_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureContainersIsMutable();
             containers_.addAll(other.containers_);
@@ -1344,7 +1409,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             containersBuilder_.dispose();
             containersBuilder_ = null;
             containers_ = other.containers_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000080);
             containersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContainersFieldBuilder()
@@ -1358,7 +1423,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -1371,7 +1436,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000100);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVolumesFieldBuilder()
@@ -1386,6 +1451,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEncryptionKey().isEmpty()) {
         encryptionKey_ = other.encryptionKey_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.getMaxInstanceRequestConcurrency() != 0) {
@@ -1420,7 +1486,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 revision_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1432,6 +1498,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1443,30 +1510,31 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getScalingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
               {
                 input.readMessage(getVpcAccessFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 66:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             case 74:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 82:
@@ -1497,19 +1565,19 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             case 104:
               {
                 executionEnvironment_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 104
             case 114:
               {
                 encryptionKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 114
             case 120:
               {
                 maxInstanceRequestConcurrency_ = input.readInt32();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 120
             default:
@@ -1595,8 +1663,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       revision_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1613,8 +1681,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRevision() {
-
       revision_ = getDefaultInstance().getRevision();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1636,8 +1704,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       revision_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1653,14 +1721,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return labels_;
     }
 
@@ -1672,6 +1740,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1694,6 +1766,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1707,13 +1783,19 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1725,6 +1807,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1742,6 +1828,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1750,6 +1837,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1764,6 +1855,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1771,6 +1863,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1782,8 +1878,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1791,12 +1887,17 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1813,8 +1914,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -1822,6 +1921,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return annotations_;
     }
 
@@ -1833,6 +1934,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -1855,6 +1960,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -1868,13 +1977,19 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1886,6 +2001,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -1903,6 +2022,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -1911,6 +2031,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -1925,6 +2049,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -1932,6 +2057,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -1943,8 +2072,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1952,12 +2081,17 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 RevisionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1979,7 +2113,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return Whether the scaling field is set.
      */
     public boolean hasScaling() {
-      return scalingBuilder_ != null || scaling_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2016,11 +2150,11 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         scaling_ = value;
-        onChanged();
       } else {
         scalingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2035,11 +2169,11 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public Builder setScaling(com.google.cloud.run.v2.RevisionScaling.Builder builderForValue) {
       if (scalingBuilder_ == null) {
         scaling_ = builderForValue.build();
-        onChanged();
       } else {
         scalingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2053,19 +2187,18 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeScaling(com.google.cloud.run.v2.RevisionScaling value) {
       if (scalingBuilder_ == null) {
-        if (scaling_ != null) {
-          scaling_ =
-              com.google.cloud.run.v2.RevisionScaling.newBuilder(scaling_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && scaling_ != null
+            && scaling_ != com.google.cloud.run.v2.RevisionScaling.getDefaultInstance()) {
+          getScalingBuilder().mergeFrom(value);
         } else {
           scaling_ = value;
         }
-        onChanged();
       } else {
         scalingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2078,14 +2211,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
      */
     public Builder clearScaling() {
-      if (scalingBuilder_ == null) {
-        scaling_ = null;
-        onChanged();
-      } else {
-        scaling_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      scaling_ = null;
+      if (scalingBuilder_ != null) {
+        scalingBuilder_.dispose();
         scalingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2098,7 +2230,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
      */
     public com.google.cloud.run.v2.RevisionScaling.Builder getScalingBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getScalingFieldBuilder().getBuilder();
     }
@@ -2165,7 +2297,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return Whether the vpcAccess field is set.
      */
     public boolean hasVpcAccess() {
-      return vpcAccessBuilder_ != null || vpcAccess_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2204,11 +2336,11 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         vpcAccess_ = value;
-        onChanged();
       } else {
         vpcAccessBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2224,11 +2356,11 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public Builder setVpcAccess(com.google.cloud.run.v2.VpcAccess.Builder builderForValue) {
       if (vpcAccessBuilder_ == null) {
         vpcAccess_ = builderForValue.build();
-        onChanged();
       } else {
         vpcAccessBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2243,19 +2375,18 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeVpcAccess(com.google.cloud.run.v2.VpcAccess value) {
       if (vpcAccessBuilder_ == null) {
-        if (vpcAccess_ != null) {
-          vpcAccess_ =
-              com.google.cloud.run.v2.VpcAccess.newBuilder(vpcAccess_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && vpcAccess_ != null
+            && vpcAccess_ != com.google.cloud.run.v2.VpcAccess.getDefaultInstance()) {
+          getVpcAccessBuilder().mergeFrom(value);
         } else {
           vpcAccess_ = value;
         }
-        onChanged();
       } else {
         vpcAccessBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2269,14 +2400,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
      */
     public Builder clearVpcAccess() {
-      if (vpcAccessBuilder_ == null) {
-        vpcAccess_ = null;
-        onChanged();
-      } else {
-        vpcAccess_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      vpcAccess_ = null;
+      if (vpcAccessBuilder_ != null) {
+        vpcAccessBuilder_.dispose();
         vpcAccessBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2290,7 +2420,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
      */
     public com.google.cloud.run.v2.VpcAccess.Builder getVpcAccessBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getVpcAccessFieldBuilder().getBuilder();
     }
@@ -2358,7 +2488,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2393,11 +2523,11 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2412,11 +2542,11 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2430,17 +2560,18 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2453,14 +2584,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2473,7 +2603,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -2589,8 +2719,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2609,8 +2739,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2634,8 +2764,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2644,9 +2774,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureContainersIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         containers_ = new java.util.ArrayList<com.google.cloud.run.v2.Container>(containers_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2872,7 +3002,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public Builder clearContainers() {
       if (containersBuilder_ == null) {
         containers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         containersBuilder_.clear();
@@ -3000,7 +3130,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.run.v2.Container,
                 com.google.cloud.run.v2.Container.Builder,
                 com.google.cloud.run.v2.ContainerOrBuilder>(
-                containers_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                containers_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         containers_ = null;
       }
       return containersBuilder_;
@@ -3010,9 +3140,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.cloud.run.v2.Volume>(volumes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -3225,7 +3355,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -3346,7 +3476,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.run.v2.Volume,
                 com.google.cloud.run.v2.Volume.Builder,
                 com.google.cloud.run.v2.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;
@@ -3381,8 +3511,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setExecutionEnvironmentValue(int value) {
-
       executionEnvironment_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3399,9 +3529,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.run.v2.ExecutionEnvironment getExecutionEnvironment() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.run.v2.ExecutionEnvironment result =
-          com.google.cloud.run.v2.ExecutionEnvironment.valueOf(executionEnvironment_);
+          com.google.cloud.run.v2.ExecutionEnvironment.forNumber(executionEnvironment_);
       return result == null ? com.google.cloud.run.v2.ExecutionEnvironment.UNRECOGNIZED : result;
     }
     /**
@@ -3420,7 +3549,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       executionEnvironment_ = value.getNumber();
       onChanged();
       return this;
@@ -3437,7 +3566,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExecutionEnvironment() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       executionEnvironment_ = 0;
       onChanged();
       return this;
@@ -3510,8 +3639,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       encryptionKey_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3529,8 +3658,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEncryptionKey() {
-
       encryptionKey_ = getDefaultInstance().getEncryptionKey();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3553,8 +3682,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       encryptionKey_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3590,6 +3719,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public Builder setMaxInstanceRequestConcurrency(int value) {
 
       maxInstanceRequestConcurrency_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3605,7 +3735,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMaxInstanceRequestConcurrency() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       maxInstanceRequestConcurrency_ = 0;
       onChanged();
       return this;

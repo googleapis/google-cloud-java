@@ -149,7 +149,9 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   }
 
   public static final int BREAKGLASS_JUSTIFICATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object breakglassJustification_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object breakglassJustification_ = "";
   /**
    *
    *
@@ -424,8 +426,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       breakglassJustification_ = "";
-
       binauthzMethodCase_ = 0;
       binauthzMethod_ = null;
       return this;
@@ -455,13 +457,24 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     public com.google.cloud.run.v2.BinaryAuthorization buildPartial() {
       com.google.cloud.run.v2.BinaryAuthorization result =
           new com.google.cloud.run.v2.BinaryAuthorization(this);
-      if (binauthzMethodCase_ == 1) {
-        result.binauthzMethod_ = binauthzMethod_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.breakglassJustification_ = breakglassJustification_;
-      result.binauthzMethodCase_ = binauthzMethodCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.BinaryAuthorization result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.breakglassJustification_ = breakglassJustification_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.run.v2.BinaryAuthorization result) {
+      result.binauthzMethodCase_ = binauthzMethodCase_;
+      result.binauthzMethod_ = this.binauthzMethod_;
     }
 
     @java.lang.Override
@@ -511,6 +524,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.run.v2.BinaryAuthorization.getDefaultInstance()) return this;
       if (!other.getBreakglassJustification().isEmpty()) {
         breakglassJustification_ = other.breakglassJustification_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getBinauthzMethodCase()) {
@@ -559,7 +573,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 breakglassJustification_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -592,6 +606,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -640,6 +656,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setUseDefault(boolean value) {
+
       binauthzMethodCase_ = 1;
       binauthzMethod_ = value;
       onChanged();
@@ -736,8 +753,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       breakglassJustification_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -756,8 +773,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearBreakglassJustification() {
-
       breakglassJustification_ = getDefaultInstance().getBreakglassJustification();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -781,8 +798,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       breakglassJustification_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

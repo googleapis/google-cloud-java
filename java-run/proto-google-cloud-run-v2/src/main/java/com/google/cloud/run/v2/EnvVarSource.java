@@ -110,7 +110,9 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.SecretKeySelectorOrBuilder getSecretKeyRefOrBuilder() {
-    return getSecretKeyRef();
+    return secretKeyRef_ == null
+        ? com.google.cloud.run.v2.SecretKeySelector.getDefaultInstance()
+        : secretKeyRef_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,10 +315,10 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (secretKeyRefBuilder_ == null) {
-        secretKeyRef_ = null;
-      } else {
-        secretKeyRef_ = null;
+      bitField0_ = 0;
+      secretKeyRef_ = null;
+      if (secretKeyRefBuilder_ != null) {
+        secretKeyRefBuilder_.dispose();
         secretKeyRefBuilder_ = null;
       }
       return this;
@@ -345,13 +347,19 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.EnvVarSource buildPartial() {
       com.google.cloud.run.v2.EnvVarSource result = new com.google.cloud.run.v2.EnvVarSource(this);
-      if (secretKeyRefBuilder_ == null) {
-        result.secretKeyRef_ = secretKeyRef_;
-      } else {
-        result.secretKeyRef_ = secretKeyRefBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.EnvVarSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.secretKeyRef_ =
+            secretKeyRefBuilder_ == null ? secretKeyRef_ : secretKeyRefBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -431,7 +439,7 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getSecretKeyRefFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -451,6 +459,8 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.run.v2.SecretKeySelector secretKeyRef_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.run.v2.SecretKeySelector,
@@ -469,7 +479,7 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the secretKeyRef field is set.
      */
     public boolean hasSecretKeyRef() {
-      return secretKeyRefBuilder_ != null || secretKeyRef_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -506,11 +516,11 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         secretKeyRef_ = value;
-        onChanged();
       } else {
         secretKeyRefBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -526,11 +536,11 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.run.v2.SecretKeySelector.Builder builderForValue) {
       if (secretKeyRefBuilder_ == null) {
         secretKeyRef_ = builderForValue.build();
-        onChanged();
       } else {
         secretKeyRefBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -544,19 +554,18 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSecretKeyRef(com.google.cloud.run.v2.SecretKeySelector value) {
       if (secretKeyRefBuilder_ == null) {
-        if (secretKeyRef_ != null) {
-          secretKeyRef_ =
-              com.google.cloud.run.v2.SecretKeySelector.newBuilder(secretKeyRef_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && secretKeyRef_ != null
+            && secretKeyRef_ != com.google.cloud.run.v2.SecretKeySelector.getDefaultInstance()) {
+          getSecretKeyRefBuilder().mergeFrom(value);
         } else {
           secretKeyRef_ = value;
         }
-        onChanged();
       } else {
         secretKeyRefBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -569,14 +578,13 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.SecretKeySelector secret_key_ref = 1;</code>
      */
     public Builder clearSecretKeyRef() {
-      if (secretKeyRefBuilder_ == null) {
-        secretKeyRef_ = null;
-        onChanged();
-      } else {
-        secretKeyRef_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      secretKeyRef_ = null;
+      if (secretKeyRefBuilder_ != null) {
+        secretKeyRefBuilder_.dispose();
         secretKeyRefBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -589,7 +597,7 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.SecretKeySelector secret_key_ref = 1;</code>
      */
     public com.google.cloud.run.v2.SecretKeySelector.Builder getSecretKeyRefBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSecretKeyRefFieldBuilder().getBuilder();
     }

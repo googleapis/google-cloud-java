@@ -79,12 +79,14 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
    * <pre>
-   * Name of the container specified as a DNS_LABEL.
+   * Name of the container specified as a DNS_LABEL (RFC 1123).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -107,7 +109,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the container specified as a DNS_LABEL.
+   * Name of the container specified as a DNS_LABEL (RFC 1123).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -128,13 +130,17 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object image_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object image_ = "";
   /**
    *
    *
    * <pre>
-   * Required. URL of the Container image in Google Container Registry or Google Artifact
-   * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
+   * Required. Name of the container image in Dockerhub, Google Artifact
+   * Registry, or Google Container Registry. If the host is not provided,
+   * Dockerhub is assumed. More info:
+   * https://kubernetes.io/docs/concepts/containers/images
    * </pre>
    *
    * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -157,8 +163,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. URL of the Container image in Google Container Registry or Google Artifact
-   * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
+   * Required. Name of the container image in Dockerhub, Google Artifact
+   * Registry, or Google Container Registry. If the host is not provided,
+   * Dockerhub is assumed. More info:
+   * https://kubernetes.io/docs/concepts/containers/images
    * </pre>
    *
    * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -179,6 +187,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMMAND_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList command_;
   /**
    *
@@ -272,6 +282,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARGS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList args_;
   /**
    *
@@ -365,6 +377,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENV_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.EnvVar> env_;
   /**
    *
@@ -483,10 +497,14 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.ResourceRequirementsOrBuilder getResourcesOrBuilder() {
-    return getResources();
+    return resources_ == null
+        ? com.google.cloud.run.v2.ResourceRequirements.getDefaultInstance()
+        : resources_;
   }
 
   public static final int PORTS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.ContainerPort> ports_;
   /**
    *
@@ -576,6 +594,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VOLUME_MOUNTS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.VolumeMount> volumeMounts_;
   /**
    *
@@ -645,7 +665,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKING_DIR_FIELD_NUMBER = 9;
-  private volatile java.lang.Object workingDir_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workingDir_ = "";
   /**
    *
    *
@@ -751,7 +773,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.ProbeOrBuilder getLivenessProbeOrBuilder() {
-    return getLivenessProbe();
+    return livenessProbe_ == null
+        ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+        : livenessProbe_;
   }
 
   public static final int STARTUP_PROBE_FIELD_NUMBER = 11;
@@ -814,7 +838,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.ProbeOrBuilder getStartupProbeOrBuilder() {
-    return getStartupProbe();
+    return startupProbe_ == null
+        ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+        : startupProbe_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1141,25 +1167,23 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       image_ = "";
-
       command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (envBuilder_ == null) {
         env_ = java.util.Collections.emptyList();
       } else {
         env_ = null;
         envBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (resourcesBuilder_ == null) {
-        resources_ = null;
-      } else {
-        resources_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      resources_ = null;
+      if (resourcesBuilder_ != null) {
+        resourcesBuilder_.dispose();
         resourcesBuilder_ = null;
       }
       if (portsBuilder_ == null) {
@@ -1168,26 +1192,23 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         ports_ = null;
         portsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (volumeMountsBuilder_ == null) {
         volumeMounts_ = java.util.Collections.emptyList();
       } else {
         volumeMounts_ = null;
         volumeMountsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       workingDir_ = "";
-
-      if (livenessProbeBuilder_ == null) {
-        livenessProbe_ = null;
-      } else {
-        livenessProbe_ = null;
+      livenessProbe_ = null;
+      if (livenessProbeBuilder_ != null) {
+        livenessProbeBuilder_.dispose();
         livenessProbeBuilder_ = null;
       }
-      if (startupProbeBuilder_ == null) {
-        startupProbe_ = null;
-      } else {
-        startupProbe_ = null;
+      startupProbe_ = null;
+      if (startupProbeBuilder_ != null) {
+        startupProbeBuilder_.dispose();
         startupProbeBuilder_ = null;
       }
       return this;
@@ -1216,64 +1237,76 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.Container buildPartial() {
       com.google.cloud.run.v2.Container result = new com.google.cloud.run.v2.Container(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.image_ = image_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.run.v2.Container result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         command_ = command_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.command_ = command_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.args_ = args_;
       if (envBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           env_ = java.util.Collections.unmodifiableList(env_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.env_ = env_;
       } else {
         result.env_ = envBuilder_.build();
       }
-      if (resourcesBuilder_ == null) {
-        result.resources_ = resources_;
-      } else {
-        result.resources_ = resourcesBuilder_.build();
-      }
       if (portsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           ports_ = java.util.Collections.unmodifiableList(ports_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.ports_ = ports_;
       } else {
         result.ports_ = portsBuilder_.build();
       }
       if (volumeMountsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           volumeMounts_ = java.util.Collections.unmodifiableList(volumeMounts_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.volumeMounts_ = volumeMounts_;
       } else {
         result.volumeMounts_ = volumeMountsBuilder_.build();
       }
-      result.workingDir_ = workingDir_;
-      if (livenessProbeBuilder_ == null) {
-        result.livenessProbe_ = livenessProbe_;
-      } else {
-        result.livenessProbe_ = livenessProbeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.Container result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (startupProbeBuilder_ == null) {
-        result.startupProbe_ = startupProbe_;
-      } else {
-        result.startupProbe_ = startupProbeBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.image_ = image_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.resources_ = resourcesBuilder_ == null ? resources_ : resourcesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.workingDir_ = workingDir_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.livenessProbe_ =
+            livenessProbeBuilder_ == null ? livenessProbe_ : livenessProbeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.startupProbe_ =
+            startupProbeBuilder_ == null ? startupProbe_ : startupProbeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1323,16 +1356,18 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.run.v2.Container.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getImage().isEmpty()) {
         image_ = other.image_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.command_.isEmpty()) {
         if (command_.isEmpty()) {
           command_ = other.command_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureCommandIsMutable();
           command_.addAll(other.command_);
@@ -1342,7 +1377,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -1353,7 +1388,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         if (!other.env_.isEmpty()) {
           if (env_.isEmpty()) {
             env_ = other.env_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureEnvIsMutable();
             env_.addAll(other.env_);
@@ -1366,7 +1401,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
             envBuilder_.dispose();
             envBuilder_ = null;
             env_ = other.env_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             envBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEnvFieldBuilder()
@@ -1383,7 +1418,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         if (!other.ports_.isEmpty()) {
           if (ports_.isEmpty()) {
             ports_ = other.ports_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensurePortsIsMutable();
             ports_.addAll(other.ports_);
@@ -1396,7 +1431,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
             portsBuilder_.dispose();
             portsBuilder_ = null;
             ports_ = other.ports_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
             portsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPortsFieldBuilder()
@@ -1410,7 +1445,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         if (!other.volumeMounts_.isEmpty()) {
           if (volumeMounts_.isEmpty()) {
             volumeMounts_ = other.volumeMounts_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureVolumeMountsIsMutable();
             volumeMounts_.addAll(other.volumeMounts_);
@@ -1423,7 +1458,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
             volumeMountsBuilder_.dispose();
             volumeMountsBuilder_ = null;
             volumeMounts_ = other.volumeMounts_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000080);
             volumeMountsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVolumeMountsFieldBuilder()
@@ -1435,6 +1470,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWorkingDir().isEmpty()) {
         workingDir_ = other.workingDir_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasLivenessProbe()) {
@@ -1472,13 +1508,13 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 image_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1510,7 +1546,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 input.readMessage(getResourcesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -1542,19 +1578,19 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 workingDir_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getLivenessProbeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getStartupProbeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             default:
@@ -1581,7 +1617,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the container specified as a DNS_LABEL.
+     * Name of the container specified as a DNS_LABEL (RFC 1123).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1603,7 +1639,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the container specified as a DNS_LABEL.
+     * Name of the container specified as a DNS_LABEL (RFC 1123).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1625,7 +1661,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the container specified as a DNS_LABEL.
+     * Name of the container specified as a DNS_LABEL (RFC 1123).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1637,8 +1673,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1646,7 +1682,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the container specified as a DNS_LABEL.
+     * Name of the container specified as a DNS_LABEL (RFC 1123).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1654,8 +1690,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1663,7 +1699,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the container specified as a DNS_LABEL.
+     * Name of the container specified as a DNS_LABEL (RFC 1123).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1676,8 +1712,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1687,8 +1723,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URL of the Container image in Google Container Registry or Google Artifact
-     * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
+     * Required. Name of the container image in Dockerhub, Google Artifact
+     * Registry, or Google Container Registry. If the host is not provided,
+     * Dockerhub is assumed. More info:
+     * https://kubernetes.io/docs/concepts/containers/images
      * </pre>
      *
      * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1710,8 +1748,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URL of the Container image in Google Container Registry or Google Artifact
-     * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
+     * Required. Name of the container image in Dockerhub, Google Artifact
+     * Registry, or Google Container Registry. If the host is not provided,
+     * Dockerhub is assumed. More info:
+     * https://kubernetes.io/docs/concepts/containers/images
      * </pre>
      *
      * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1733,8 +1773,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URL of the Container image in Google Container Registry or Google Artifact
-     * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
+     * Required. Name of the container image in Dockerhub, Google Artifact
+     * Registry, or Google Container Registry. If the host is not provided,
+     * Dockerhub is assumed. More info:
+     * https://kubernetes.io/docs/concepts/containers/images
      * </pre>
      *
      * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1746,8 +1788,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       image_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1755,8 +1797,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URL of the Container image in Google Container Registry or Google Artifact
-     * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
+     * Required. Name of the container image in Dockerhub, Google Artifact
+     * Registry, or Google Container Registry. If the host is not provided,
+     * Dockerhub is assumed. More info:
+     * https://kubernetes.io/docs/concepts/containers/images
      * </pre>
      *
      * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1764,8 +1808,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImage() {
-
       image_ = getDefaultInstance().getImage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1773,8 +1817,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URL of the Container image in Google Container Registry or Google Artifact
-     * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
+     * Required. Name of the container image in Dockerhub, Google Artifact
+     * Registry, or Google Container Registry. If the host is not provided,
+     * Dockerhub is assumed. More info:
+     * https://kubernetes.io/docs/concepts/containers/images
      * </pre>
      *
      * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1787,8 +1833,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       image_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1797,9 +1843,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCommandIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         command_ = new com.google.protobuf.LazyStringArrayList(command_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1998,7 +2044,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCommand() {
       command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2037,9 +2083,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -2238,7 +2284,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2276,9 +2322,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.cloud.run.v2.EnvVar> env_ = java.util.Collections.emptyList();
 
     private void ensureEnvIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         env_ = new java.util.ArrayList<com.google.cloud.run.v2.EnvVar>(env_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2490,7 +2536,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnv() {
       if (envBuilder_ == null) {
         env_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         envBuilder_.clear();
@@ -2609,7 +2655,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.EnvVar,
                 com.google.cloud.run.v2.EnvVar.Builder,
                 com.google.cloud.run.v2.EnvVarOrBuilder>(
-                env_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                env_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         env_ = null;
       }
       return envBuilder_;
@@ -2635,7 +2681,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resources field is set.
      */
     public boolean hasResources() {
-      return resourcesBuilder_ != null || resources_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2676,11 +2722,11 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         resources_ = value;
-        onChanged();
       } else {
         resourcesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2698,11 +2744,11 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.run.v2.ResourceRequirements.Builder builderForValue) {
       if (resourcesBuilder_ == null) {
         resources_ = builderForValue.build();
-        onChanged();
       } else {
         resourcesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2718,19 +2764,18 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResources(com.google.cloud.run.v2.ResourceRequirements value) {
       if (resourcesBuilder_ == null) {
-        if (resources_ != null) {
-          resources_ =
-              com.google.cloud.run.v2.ResourceRequirements.newBuilder(resources_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && resources_ != null
+            && resources_ != com.google.cloud.run.v2.ResourceRequirements.getDefaultInstance()) {
+          getResourcesBuilder().mergeFrom(value);
         } else {
           resources_ = value;
         }
-        onChanged();
       } else {
         resourcesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2745,14 +2790,13 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.ResourceRequirements resources = 6;</code>
      */
     public Builder clearResources() {
-      if (resourcesBuilder_ == null) {
-        resources_ = null;
-        onChanged();
-      } else {
-        resources_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      resources_ = null;
+      if (resourcesBuilder_ != null) {
+        resourcesBuilder_.dispose();
         resourcesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2767,7 +2811,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.ResourceRequirements resources = 6;</code>
      */
     public com.google.cloud.run.v2.ResourceRequirements.Builder getResourcesBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getResourcesFieldBuilder().getBuilder();
     }
@@ -2823,9 +2867,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePortsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         ports_ = new java.util.ArrayList<com.google.cloud.run.v2.ContainerPort>(ports_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -3084,7 +3128,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPorts() {
       if (portsBuilder_ == null) {
         ports_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         portsBuilder_.clear();
@@ -3233,7 +3277,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.ContainerPort,
                 com.google.cloud.run.v2.ContainerPort.Builder,
                 com.google.cloud.run.v2.ContainerPortOrBuilder>(
-                ports_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                ports_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         ports_ = null;
       }
       return portsBuilder_;
@@ -3243,9 +3287,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVolumeMountsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         volumeMounts_ = new java.util.ArrayList<com.google.cloud.run.v2.VolumeMount>(volumeMounts_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -3460,7 +3504,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVolumeMounts() {
       if (volumeMountsBuilder_ == null) {
         volumeMounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         volumeMountsBuilder_.clear();
@@ -3582,7 +3626,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.VolumeMount,
                 com.google.cloud.run.v2.VolumeMount.Builder,
                 com.google.cloud.run.v2.VolumeMountOrBuilder>(
-                volumeMounts_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                volumeMounts_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         volumeMounts_ = null;
       }
       return volumeMountsBuilder_;
@@ -3655,8 +3699,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       workingDir_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3674,8 +3718,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkingDir() {
-
       workingDir_ = getDefaultInstance().getWorkingDir();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3698,8 +3742,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workingDir_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3725,7 +3769,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the livenessProbe field is set.
      */
     public boolean hasLivenessProbe() {
-      return livenessProbeBuilder_ != null || livenessProbe_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3768,11 +3812,11 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         livenessProbe_ = value;
-        onChanged();
       } else {
         livenessProbeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3790,11 +3834,11 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public Builder setLivenessProbe(com.google.cloud.run.v2.Probe.Builder builderForValue) {
       if (livenessProbeBuilder_ == null) {
         livenessProbe_ = builderForValue.build();
-        onChanged();
       } else {
         livenessProbeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3811,19 +3855,18 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLivenessProbe(com.google.cloud.run.v2.Probe value) {
       if (livenessProbeBuilder_ == null) {
-        if (livenessProbe_ != null) {
-          livenessProbe_ =
-              com.google.cloud.run.v2.Probe.newBuilder(livenessProbe_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && livenessProbe_ != null
+            && livenessProbe_ != com.google.cloud.run.v2.Probe.getDefaultInstance()) {
+          getLivenessProbeBuilder().mergeFrom(value);
         } else {
           livenessProbe_ = value;
         }
-        onChanged();
       } else {
         livenessProbeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3839,14 +3882,13 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
      */
     public Builder clearLivenessProbe() {
-      if (livenessProbeBuilder_ == null) {
-        livenessProbe_ = null;
-        onChanged();
-      } else {
-        livenessProbe_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      livenessProbe_ = null;
+      if (livenessProbeBuilder_ != null) {
+        livenessProbeBuilder_.dispose();
         livenessProbeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3862,7 +3904,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
      */
     public com.google.cloud.run.v2.Probe.Builder getLivenessProbeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getLivenessProbeFieldBuilder().getBuilder();
     }
@@ -3939,7 +3981,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startupProbe field is set.
      */
     public boolean hasStartupProbe() {
-      return startupProbeBuilder_ != null || startupProbe_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3986,11 +4028,11 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startupProbe_ = value;
-        onChanged();
       } else {
         startupProbeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4010,11 +4052,11 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartupProbe(com.google.cloud.run.v2.Probe.Builder builderForValue) {
       if (startupProbeBuilder_ == null) {
         startupProbe_ = builderForValue.build();
-        onChanged();
       } else {
         startupProbeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4033,19 +4075,18 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartupProbe(com.google.cloud.run.v2.Probe value) {
       if (startupProbeBuilder_ == null) {
-        if (startupProbe_ != null) {
-          startupProbe_ =
-              com.google.cloud.run.v2.Probe.newBuilder(startupProbe_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && startupProbe_ != null
+            && startupProbe_ != com.google.cloud.run.v2.Probe.getDefaultInstance()) {
+          getStartupProbeBuilder().mergeFrom(value);
         } else {
           startupProbe_ = value;
         }
-        onChanged();
       } else {
         startupProbeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4063,14 +4104,13 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
      */
     public Builder clearStartupProbe() {
-      if (startupProbeBuilder_ == null) {
-        startupProbe_ = null;
-        onChanged();
-      } else {
-        startupProbe_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      startupProbe_ = null;
+      if (startupProbeBuilder_ != null) {
+        startupProbeBuilder_.dispose();
         startupProbeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4088,7 +4128,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
      */
     public com.google.cloud.run.v2.Probe.Builder getStartupProbeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getStartupProbeFieldBuilder().getBuilder();
     }

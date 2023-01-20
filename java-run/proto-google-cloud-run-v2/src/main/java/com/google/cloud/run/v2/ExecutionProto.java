@@ -83,7 +83,7 @@ public final class ExecutionProto {
           + "cution\022\027\n\017next_page_token\030\002 \001(\t\"q\n\026Delet"
           + "eExecutionRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n"
           + "\034run.googleapis.com/Execution\022\025\n\rvalidat"
-          + "e_only\030\002 \001(\010\022\014\n\004etag\030\003 \001(\t\"\214\t\n\tExecution"
+          + "e_only\030\002 \001(\010\022\014\n\004etag\030\003 \001(\t\"\334\t\n\tExecution"
           + "\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\027\n"
           + "\ngeneration\030\003 \001(\003B\003\340A\003\022:\n\006labels\030\004 \003(\0132*"
           + ".google.cloud.run.v2.Execution.LabelsEnt"
@@ -107,6 +107,8 @@ public final class ExecutionProto {
           + "\340A\003\022 \n\023observed_generation\030\022 \001(\003B\003\340A\003\022\032\n"
           + "\rrunning_count\030\023 \001(\005B\003\340A\003\022\034\n\017succeeded_c"
           + "ount\030\024 \001(\005B\003\340A\003\022\031\n\014failed_count\030\025 \001(\005B\003\340"
+          + "A\003\022\034\n\017cancelled_count\030\030 \001(\005B\003\340A\003\022\032\n\rretr"
+          + "ied_count\030\031 \001(\005B\003\340A\003\022\024\n\007log_uri\030\032 \001(\tB\003\340"
           + "A\003\022\021\n\004etag\030c \001(\tB\003\340A\003\032-\n\013LabelsEntry\022\013\n\003"
           + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020Annotati"
           + "onsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
@@ -207,6 +209,9 @@ public final class ExecutionProto {
               "RunningCount",
               "SucceededCount",
               "FailedCount",
+              "CancelledCount",
+              "RetriedCount",
+              "LogUri",
               "Etag",
             });
     internal_static_google_cloud_run_v2_Execution_LabelsEntry_descriptor =

@@ -52,8 +52,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Execution. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -65,8 +66,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Execution. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -99,9 +101,6 @@ public interface ExecutionOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -117,9 +116,6 @@ public interface ExecutionOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -138,9 +134,6 @@ public interface ExecutionOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -156,14 +149,10 @@ public interface ExecutionOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -179,9 +168,6 @@ public interface ExecutionOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -230,7 +216,6 @@ public interface ExecutionOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,
@@ -251,9 +236,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the execution was acknowledged by the execution
-   * controller. It is not guaranteed to be set in happens-before order across
-   * separate operations.
+   * Output only. Represents time when the execution was acknowledged by the
+   * execution controller. It is not guaranteed to be set in happens-before
+   * order across separate operations.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -266,9 +251,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the execution was acknowledged by the execution
-   * controller. It is not guaranteed to be set in happens-before order across
-   * separate operations.
+   * Output only. Represents time when the execution was acknowledged by the
+   * execution controller. It is not guaranteed to be set in happens-before
+   * order across separate operations.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -281,9 +266,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the execution was acknowledged by the execution
-   * controller. It is not guaranteed to be set in happens-before order across
-   * separate operations.
+   * Output only. Represents time when the execution was acknowledged by the
+   * execution controller. It is not guaranteed to be set in happens-before
+   * order across separate operations.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -339,8 +324,8 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the execution was completed. It is not guaranteed to
-   * be set in happens-before order across separate operations.
+   * Output only. Represents time when the execution was completed. It is not
+   * guaranteed to be set in happens-before order across separate operations.
    * </pre>
    *
    * <code>
@@ -354,8 +339,8 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the execution was completed. It is not guaranteed to
-   * be set in happens-before order across separate operations.
+   * Output only. Represents time when the execution was completed. It is not
+   * guaranteed to be set in happens-before order across separate operations.
    * </pre>
    *
    * <code>
@@ -369,8 +354,8 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the execution was completed. It is not guaranteed to
-   * be set in happens-before order across separate operations.
+   * Output only. Represents time when the execution was completed. It is not
+   * guaranteed to be set in happens-before order across separate operations.
    * </pre>
    *
    * <code>
@@ -566,8 +551,8 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Specifies the maximum desired number of tasks the execution should
-   * run at any given time. Must be &lt;= task_count. The actual number of
+   * Output only. Specifies the maximum desired number of tasks the execution
+   * should run at any given time. Must be &lt;= task_count. The actual number of
    * tasks running in steady state will be less than this number when
    * ((.spec.task_count - .status.successful) &lt; .spec.parallelism), i.e. when
    * the work left to do is less than max parallelism. More info:
@@ -584,8 +569,8 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Specifies the desired number of tasks the execution should run.
-   * Setting to 1 means that parallelism is limited to 1 and the success of
+   * Output only. Specifies the desired number of tasks the execution should
+   * run. Setting to 1 means that parallelism is limited to 1 and the success of
    * that task signals the success of the execution.
    * More info:
    * https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
@@ -642,8 +627,8 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. Indicates whether the resource's reconciliation is still in progress.
-   * See comments in `Job.reconciling` for additional information on
+   * Output only. Indicates whether the resource's reconciliation is still in
+   * progress. See comments in `Job.reconciling` for additional information on
    * reconciliation process in Cloud Run.
    * </pre>
    *
@@ -657,8 +642,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Execution, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Execution, containing its readiness
+   * status, and detailed error information in case it did not reach the desired
+   * state.
    * </pre>
    *
    * <code>
@@ -670,8 +656,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Execution, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Execution, containing its readiness
+   * status, and detailed error information in case it did not reach the desired
+   * state.
    * </pre>
    *
    * <code>
@@ -683,8 +670,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Execution, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Execution, containing its readiness
+   * status, and detailed error information in case it did not reach the desired
+   * state.
    * </pre>
    *
    * <code>
@@ -696,8 +684,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Execution, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Execution, containing its readiness
+   * status, and detailed error information in case it did not reach the desired
+   * state.
    * </pre>
    *
    * <code>
@@ -709,8 +698,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. The Condition of this Execution, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Execution, containing its readiness
+   * status, and detailed error information in case it did not reach the desired
+   * state.
    * </pre>
    *
    * <code>
@@ -723,8 +713,9 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Output only. The generation of this Execution. See comments in `reconciling` for
-   * additional information on reconciliation process in Cloud Run.
+   * Output only. The generation of this Execution. See comments in
+   * `reconciling` for additional information on reconciliation process in Cloud
+   * Run.
    * </pre>
    *
    * <code>int64 observed_generation = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -771,6 +762,59 @@ public interface ExecutionOrBuilder
    * @return The failedCount.
    */
   int getFailedCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of tasks which reached phase Cancelled.
+   * </pre>
+   *
+   * <code>int32 cancelled_count = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The cancelledCount.
+   */
+  int getCancelledCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of tasks which have retried at least once.
+   * </pre>
+   *
+   * <code>int32 retried_count = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The retriedCount.
+   */
+  int getRetriedCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URI where logs for this execution can be found in Cloud
+   * Console.
+   * </pre>
+   *
+   * <code>string log_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The logUri.
+   */
+  java.lang.String getLogUri();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URI where logs for this execution can be found in Cloud
+   * Console.
+   * </pre>
+   *
+   * <code>string log_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for logUri.
+   */
+  com.google.protobuf.ByteString getLogUriBytes();
 
   /**
    *

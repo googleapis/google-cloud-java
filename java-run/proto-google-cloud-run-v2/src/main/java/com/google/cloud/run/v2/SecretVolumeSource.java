@@ -71,7 +71,9 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SECRET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object secret_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secret_ = "";
   /**
    *
    *
@@ -126,6 +128,8 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ITEMS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.VersionToPath> items_;
   /**
    *
@@ -215,7 +219,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DEFAULT_MODE_FIELD_NUMBER = 3;
-  private int defaultMode_;
+  private int defaultMode_ = 0;
   /**
    *
    *
@@ -465,17 +469,16 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       secret_ = "";
-
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
       } else {
         items_ = null;
         itemsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       defaultMode_ = 0;
-
       return this;
     }
 
@@ -503,20 +506,34 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.run.v2.SecretVolumeSource buildPartial() {
       com.google.cloud.run.v2.SecretVolumeSource result =
           new com.google.cloud.run.v2.SecretVolumeSource(this);
-      int from_bitField0_ = bitField0_;
-      result.secret_ = secret_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.run.v2.SecretVolumeSource result) {
       if (itemsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           items_ = java.util.Collections.unmodifiableList(items_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.items_ = items_;
       } else {
         result.items_ = itemsBuilder_.build();
       }
-      result.defaultMode_ = defaultMode_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.SecretVolumeSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.secret_ = secret_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.defaultMode_ = defaultMode_;
+      }
     }
 
     @java.lang.Override
@@ -566,13 +583,14 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.run.v2.SecretVolumeSource.getDefaultInstance()) return this;
       if (!other.getSecret().isEmpty()) {
         secret_ = other.secret_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (itemsBuilder_ == null) {
         if (!other.items_.isEmpty()) {
           if (items_.isEmpty()) {
             items_ = other.items_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureItemsIsMutable();
             items_.addAll(other.items_);
@@ -585,7 +603,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
             itemsBuilder_.dispose();
             itemsBuilder_ = null;
             items_ = other.items_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             itemsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getItemsFieldBuilder()
@@ -627,7 +645,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 secret_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -646,7 +664,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
             case 24:
               {
                 defaultMode_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -738,8 +756,8 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       secret_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -758,8 +776,8 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSecret() {
-
       secret_ = getDefaultInstance().getSecret();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -783,8 +801,8 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secret_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -793,9 +811,9 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureItemsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         items_ = new java.util.ArrayList<com.google.cloud.run.v2.VersionToPath>(items_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1054,7 +1072,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     public Builder clearItems() {
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         itemsBuilder_.clear();
@@ -1203,7 +1221,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.run.v2.VersionToPath,
                 com.google.cloud.run.v2.VersionToPath.Builder,
                 com.google.cloud.run.v2.VersionToPathOrBuilder>(
-                items_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                items_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         items_ = null;
       }
       return itemsBuilder_;
@@ -1268,6 +1286,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     public Builder setDefaultMode(int value) {
 
       defaultMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1297,7 +1316,7 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDefaultMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       defaultMode_ = 0;
       onChanged();
       return this;

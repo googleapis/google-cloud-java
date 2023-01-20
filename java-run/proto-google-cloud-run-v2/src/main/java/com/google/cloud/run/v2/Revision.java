@@ -49,6 +49,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     volumes_ = java.util.Collections.emptyList();
     executionEnvironment_ = 0;
     encryptionKey_ = "";
+    encryptionKeyRevocationAction_ = 0;
     conditions_ = java.util.Collections.emptyList();
     logUri_ = "";
     etag_ = "";
@@ -93,7 +94,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -142,13 +145,16 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Revision. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Revision. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -171,8 +177,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Revision. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Revision. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -193,7 +200,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GENERATION_FIELD_NUMBER = 3;
-  private long generation_;
+  private long generation_ = 0L;
   /**
    *
    *
@@ -224,6 +231,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -246,9 +254,6 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -276,9 +281,6 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -297,15 +299,15 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -322,9 +324,6 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -354,6 +353,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -412,8 +412,10 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -487,7 +489,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
@@ -536,7 +538,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int DELETE_TIME_FIELD_NUMBER = 8;
@@ -588,7 +590,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
-    return getDeleteTime();
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 9;
@@ -643,11 +645,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   public static final int LAUNCH_STAGE_FIELD_NUMBER = 10;
-  private int launchStage_;
+  private int launchStage_ = 0;
   /**
    *
    *
@@ -682,13 +684,14 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.LaunchStage getLaunchStage() {
-    @SuppressWarnings("deprecation")
-    com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+    com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(launchStage_);
     return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
   }
 
   public static final int SERVICE_FIELD_NUMBER = 11;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -785,7 +788,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.RevisionScalingOrBuilder getScalingOrBuilder() {
-    return getScaling();
+    return scaling_ == null
+        ? com.google.cloud.run.v2.RevisionScaling.getDefaultInstance()
+        : scaling_;
   }
 
   public static final int VPC_ACCESS_FIELD_NUMBER = 13;
@@ -834,11 +839,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder() {
-    return getVpcAccess();
+    return vpcAccess_ == null ? com.google.cloud.run.v2.VpcAccess.getDefaultInstance() : vpcAccess_;
   }
 
   public static final int MAX_INSTANCE_REQUEST_CONCURRENCY_FIELD_NUMBER = 34;
-  private int maxInstanceRequestConcurrency_;
+  private int maxInstanceRequestConcurrency_ = 0;
   /**
    *
    *
@@ -898,11 +903,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 16;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -955,6 +962,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTAINERS_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Container> containers_;
   /**
    *
@@ -1029,6 +1038,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VOLUMES_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Volume> volumes_;
   /**
    *
@@ -1098,7 +1109,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXECUTION_ENVIRONMENT_FIELD_NUMBER = 20;
-  private int executionEnvironment_;
+  private int executionEnvironment_ = 0;
   /**
    *
    *
@@ -1127,14 +1138,15 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.ExecutionEnvironment getExecutionEnvironment() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.run.v2.ExecutionEnvironment result =
-        com.google.cloud.run.v2.ExecutionEnvironment.valueOf(executionEnvironment_);
+        com.google.cloud.run.v2.ExecutionEnvironment.forNumber(executionEnvironment_);
     return result == null ? com.google.cloud.run.v2.ExecutionEnvironment.UNRECOGNIZED : result;
   }
 
   public static final int ENCRYPTION_KEY_FIELD_NUMBER = 21;
-  private volatile java.lang.Object encryptionKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object encryptionKey_ = "";
   /**
    *
    *
@@ -1186,15 +1198,108 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int RECONCILING_FIELD_NUMBER = 30;
-  private boolean reconciling_;
+  public static final int ENCRYPTION_KEY_REVOCATION_ACTION_FIELD_NUMBER = 23;
+  private int encryptionKeyRevocationAction_ = 0;
   /**
    *
    *
    * <pre>
-   * Output only. Indicates whether the resource's reconciliation is still in progress.
-   * See comments in `Service.reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * The action to take if the encryption key is revoked.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 23;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for encryptionKeyRevocationAction.
+   */
+  @java.lang.Override
+  public int getEncryptionKeyRevocationActionValue() {
+    return encryptionKeyRevocationAction_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The action to take if the encryption key is revoked.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 23;
+   * </code>
+   *
+   * @return The encryptionKeyRevocationAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.EncryptionKeyRevocationAction getEncryptionKeyRevocationAction() {
+    com.google.cloud.run.v2.EncryptionKeyRevocationAction result =
+        com.google.cloud.run.v2.EncryptionKeyRevocationAction.forNumber(
+            encryptionKeyRevocationAction_);
+    return result == null
+        ? com.google.cloud.run.v2.EncryptionKeyRevocationAction.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ENCRYPTION_KEY_SHUTDOWN_DURATION_FIELD_NUMBER = 24;
+  private com.google.protobuf.Duration encryptionKeyShutdownDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+   *
+   * @return Whether the encryptionKeyShutdownDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionKeyShutdownDuration() {
+    return encryptionKeyShutdownDuration_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+   *
+   * @return The encryptionKeyShutdownDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getEncryptionKeyShutdownDuration() {
+    return encryptionKeyShutdownDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : encryptionKeyShutdownDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getEncryptionKeyShutdownDurationOrBuilder() {
+    return encryptionKeyShutdownDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : encryptionKeyShutdownDuration_;
+  }
+
+  public static final int RECONCILING_FIELD_NUMBER = 30;
+  private boolean reconciling_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the resource's reconciliation is still in
+   * progress. See comments in `Service.reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>bool reconciling = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1207,13 +1312,16 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONDITIONS_FIELD_NUMBER = 31;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Condition> conditions_;
   /**
    *
    *
    * <pre>
-   * Output only. The Condition of this Revision, containing its readiness status, and
-   * detailed error information in case it did not reach a serving state.
+   * Output only. The Condition of this Revision, containing its readiness
+   * status, and detailed error information in case it did not reach a serving
+   * state.
    * </pre>
    *
    * <code>
@@ -1228,8 +1336,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Condition of this Revision, containing its readiness status, and
-   * detailed error information in case it did not reach a serving state.
+   * Output only. The Condition of this Revision, containing its readiness
+   * status, and detailed error information in case it did not reach a serving
+   * state.
    * </pre>
    *
    * <code>
@@ -1245,8 +1354,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Condition of this Revision, containing its readiness status, and
-   * detailed error information in case it did not reach a serving state.
+   * Output only. The Condition of this Revision, containing its readiness
+   * status, and detailed error information in case it did not reach a serving
+   * state.
    * </pre>
    *
    * <code>
@@ -1261,8 +1371,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Condition of this Revision, containing its readiness status, and
-   * detailed error information in case it did not reach a serving state.
+   * Output only. The Condition of this Revision, containing its readiness
+   * status, and detailed error information in case it did not reach a serving
+   * state.
    * </pre>
    *
    * <code>
@@ -1277,8 +1388,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Condition of this Revision, containing its readiness status, and
-   * detailed error information in case it did not reach a serving state.
+   * Output only. The Condition of this Revision, containing its readiness
+   * status, and detailed error information in case it did not reach a serving
+   * state.
    * </pre>
    *
    * <code>
@@ -1291,14 +1403,14 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OBSERVED_GENERATION_FIELD_NUMBER = 32;
-  private long observedGeneration_;
+  private long observedGeneration_ = 0L;
   /**
    *
    *
    * <pre>
-   * Output only. The generation of this Revision currently serving traffic. See comments in
-   * `reconciling` for additional information on reconciliation process in Cloud
-   * Run.
+   * Output only. The generation of this Revision currently serving traffic. See
+   * comments in `reconciling` for additional information on reconciliation
+   * process in Cloud Run.
    * </pre>
    *
    * <code>int64 observed_generation = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1311,7 +1423,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOG_URI_FIELD_NUMBER = 33;
-  private volatile java.lang.Object logUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logUri_ = "";
   /**
    *
    *
@@ -1360,7 +1474,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 99;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -1481,6 +1597,15 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, encryptionKey_);
     }
+    if (encryptionKeyRevocationAction_
+        != com.google.cloud.run.v2.EncryptionKeyRevocationAction
+            .ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(23, encryptionKeyRevocationAction_);
+    }
+    if (encryptionKeyShutdownDuration_ != null) {
+      output.writeMessage(24, getEncryptionKeyShutdownDuration());
+    }
     if (reconciling_ != false) {
       output.writeBool(30, reconciling_);
     }
@@ -1581,6 +1706,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, encryptionKey_);
     }
+    if (encryptionKeyRevocationAction_
+        != com.google.cloud.run.v2.EncryptionKeyRevocationAction
+            .ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(23, encryptionKeyRevocationAction_);
+    }
+    if (encryptionKeyShutdownDuration_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, getEncryptionKeyShutdownDuration());
+    }
     if (reconciling_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, reconciling_);
     }
@@ -1658,6 +1795,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (!getVolumesList().equals(other.getVolumesList())) return false;
     if (executionEnvironment_ != other.executionEnvironment_) return false;
     if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
+    if (encryptionKeyRevocationAction_ != other.encryptionKeyRevocationAction_) return false;
+    if (hasEncryptionKeyShutdownDuration() != other.hasEncryptionKeyShutdownDuration())
+      return false;
+    if (hasEncryptionKeyShutdownDuration()) {
+      if (!getEncryptionKeyShutdownDuration().equals(other.getEncryptionKeyShutdownDuration()))
+        return false;
+    }
     if (getReconciling() != other.getReconciling()) return false;
     if (!getConditionsList().equals(other.getConditionsList())) return false;
     if (getObservedGeneration() != other.getObservedGeneration()) return false;
@@ -1736,6 +1880,12 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + executionEnvironment_;
     hash = (37 * hash) + ENCRYPTION_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getEncryptionKey().hashCode();
+    hash = (37 * hash) + ENCRYPTION_KEY_REVOCATION_ACTION_FIELD_NUMBER;
+    hash = (53 * hash) + encryptionKeyRevocationAction_;
+    if (hasEncryptionKeyShutdownDuration()) {
+      hash = (37 * hash) + ENCRYPTION_KEY_SHUTDOWN_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionKeyShutdownDuration().hashCode();
+    }
     hash = (37 * hash) + RECONCILING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     if (getConditionsCount() > 0) {
@@ -1911,97 +2061,84 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       uid_ = "";
-
       generation_ = 0L;
-
       internalGetMutableLabels().clear();
       internalGetMutableAnnotations().clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-      } else {
-        deleteTime_ = null;
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       launchStage_ = 0;
-
       service_ = "";
-
-      if (scalingBuilder_ == null) {
-        scaling_ = null;
-      } else {
-        scaling_ = null;
+      scaling_ = null;
+      if (scalingBuilder_ != null) {
+        scalingBuilder_.dispose();
         scalingBuilder_ = null;
       }
-      if (vpcAccessBuilder_ == null) {
-        vpcAccess_ = null;
-      } else {
-        vpcAccess_ = null;
+      vpcAccess_ = null;
+      if (vpcAccessBuilder_ != null) {
+        vpcAccessBuilder_.dispose();
         vpcAccessBuilder_ = null;
       }
       maxInstanceRequestConcurrency_ = 0;
-
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       serviceAccount_ = "";
-
       if (containersBuilder_ == null) {
         containers_ = java.util.Collections.emptyList();
       } else {
         containers_ = null;
         containersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00010000);
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
       } else {
         volumes_ = null;
         volumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00020000);
       executionEnvironment_ = 0;
-
       encryptionKey_ = "";
-
+      encryptionKeyRevocationAction_ = 0;
+      encryptionKeyShutdownDuration_ = null;
+      if (encryptionKeyShutdownDurationBuilder_ != null) {
+        encryptionKeyShutdownDurationBuilder_.dispose();
+        encryptionKeyShutdownDurationBuilder_ = null;
+      }
       reconciling_ = false;
-
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
       } else {
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00800000);
       observedGeneration_ = 0L;
-
       logUri_ = "";
-
       etag_ = "";
-
       return this;
     }
 
@@ -2028,88 +2165,123 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.Revision buildPartial() {
       com.google.cloud.run.v2.Revision result = new com.google.cloud.run.v2.Revision(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.uid_ = uid_;
-      result.generation_ = generation_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (deleteTimeBuilder_ == null) {
-        result.deleteTime_ = deleteTime_;
-      } else {
-        result.deleteTime_ = deleteTimeBuilder_.build();
-      }
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
-      }
-      result.launchStage_ = launchStage_;
-      result.service_ = service_;
-      if (scalingBuilder_ == null) {
-        result.scaling_ = scaling_;
-      } else {
-        result.scaling_ = scalingBuilder_.build();
-      }
-      if (vpcAccessBuilder_ == null) {
-        result.vpcAccess_ = vpcAccess_;
-      } else {
-        result.vpcAccess_ = vpcAccessBuilder_.build();
-      }
-      result.maxInstanceRequestConcurrency_ = maxInstanceRequestConcurrency_;
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
-      }
-      result.serviceAccount_ = serviceAccount_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.run.v2.Revision result) {
       if (containersBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           containers_ = java.util.Collections.unmodifiableList(containers_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.containers_ = containers_;
       } else {
         result.containers_ = containersBuilder_.build();
       }
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.volumes_ = volumes_;
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
-      result.executionEnvironment_ = executionEnvironment_;
-      result.encryptionKey_ = encryptionKey_;
-      result.reconciling_ = reconciling_;
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00800000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00800000);
         }
         result.conditions_ = conditions_;
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
-      result.observedGeneration_ = observedGeneration_;
-      result.logUri_ = logUri_;
-      result.etag_ = etag_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.Revision result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.generation_ = generation_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.launchStage_ = launchStage_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.scaling_ = scalingBuilder_ == null ? scaling_ : scalingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.vpcAccess_ = vpcAccessBuilder_ == null ? vpcAccess_ : vpcAccessBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.maxInstanceRequestConcurrency_ = maxInstanceRequestConcurrency_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.executionEnvironment_ = executionEnvironment_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.encryptionKey_ = encryptionKey_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.encryptionKeyRevocationAction_ = encryptionKeyRevocationAction_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.encryptionKeyShutdownDuration_ =
+            encryptionKeyShutdownDurationBuilder_ == null
+                ? encryptionKeyShutdownDuration_
+                : encryptionKeyShutdownDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.observedGeneration_ = observedGeneration_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.logUri_ = logUri_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -2159,17 +2331,21 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.run.v2.Revision.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getGeneration() != 0L) {
         setGeneration(other.getGeneration());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000010;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -2187,6 +2363,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasScaling()) {
@@ -2203,13 +2380,14 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (containersBuilder_ == null) {
         if (!other.containers_.isEmpty()) {
           if (containers_.isEmpty()) {
             containers_ = other.containers_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureContainersIsMutable();
             containers_.addAll(other.containers_);
@@ -2222,7 +2400,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
             containersBuilder_.dispose();
             containersBuilder_ = null;
             containers_ = other.containers_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00010000);
             containersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContainersFieldBuilder()
@@ -2236,7 +2414,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -2249,7 +2427,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00020000);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVolumesFieldBuilder()
@@ -2264,7 +2442,14 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEncryptionKey().isEmpty()) {
         encryptionKey_ = other.encryptionKey_;
+        bitField0_ |= 0x00080000;
         onChanged();
+      }
+      if (other.encryptionKeyRevocationAction_ != 0) {
+        setEncryptionKeyRevocationActionValue(other.getEncryptionKeyRevocationActionValue());
+      }
+      if (other.hasEncryptionKeyShutdownDuration()) {
+        mergeEncryptionKeyShutdownDuration(other.getEncryptionKeyShutdownDuration());
       }
       if (other.getReconciling() != false) {
         setReconciling(other.getReconciling());
@@ -2273,7 +2458,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00800000);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -2286,7 +2471,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00800000);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -2301,10 +2486,12 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLogUri().isEmpty()) {
         logUri_ = other.logUri_;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2336,19 +2523,19 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 generation_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -2360,6 +2547,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -2371,66 +2559,67 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 80:
               {
                 launchStage_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 90:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getScalingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getVpcAccessFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 122:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             case 130:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 138:
@@ -2461,19 +2650,32 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
             case 160:
               {
                 executionEnvironment_ = input.readEnum();
-
+                bitField0_ |= 0x00040000;
                 break;
               } // case 160
             case 170:
               {
                 encryptionKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00080000;
                 break;
               } // case 170
+            case 184:
+              {
+                encryptionKeyRevocationAction_ = input.readEnum();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 184
+            case 194:
+              {
+                input.readMessage(
+                    getEncryptionKeyShutdownDurationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 194
             case 240:
               {
                 reconciling_ = input.readBool();
-
+                bitField0_ |= 0x00400000;
                 break;
               } // case 240
             case 250:
@@ -2492,25 +2694,25 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
             case 256:
               {
                 observedGeneration_ = input.readInt64();
-
+                bitField0_ |= 0x01000000;
                 break;
               } // case 256
             case 266:
               {
                 logUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x02000000;
                 break;
               } // case 266
             case 272:
               {
                 maxInstanceRequestConcurrency_ = input.readInt32();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 272
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x04000000;
                 break;
               } // case 794
             default:
@@ -2593,8 +2795,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2610,8 +2812,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2632,8 +2834,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2643,8 +2845,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the Revision. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the Revision. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2666,8 +2869,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the Revision. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the Revision. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2689,8 +2893,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the Revision. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the Revision. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2702,8 +2907,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2711,8 +2916,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the Revision. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the Revision. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2720,8 +2926,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2729,8 +2935,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the Revision. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the Revision. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2743,8 +2950,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2782,6 +2989,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setGeneration(long value) {
 
       generation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2798,7 +3006,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGeneration() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       generation_ = 0L;
       onChanged();
       return this;
@@ -2815,14 +3023,14 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -2839,9 +3047,6 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -2869,9 +3074,6 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -2890,16 +3092,15 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2916,9 +3117,6 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -2936,6 +3134,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2949,9 +3148,6 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -2966,6 +3162,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2978,9 +3175,6 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -2992,8 +3186,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -3006,15 +3200,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -3031,8 +3223,6 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -3040,6 +3230,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return annotations_;
     }
 
@@ -3091,8 +3283,10 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; annotations = 5;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3121,6 +3315,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -3143,6 +3338,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -3161,8 +3357,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -3176,6 +3372,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -3199,7 +3396,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3240,11 +3437,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3261,11 +3458,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3281,17 +3478,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3306,14 +3504,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3328,7 +3525,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3400,7 +3597,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3441,11 +3638,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3462,11 +3659,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3482,17 +3679,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3507,14 +3705,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3529,7 +3726,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3602,7 +3799,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
-      return deleteTimeBuilder_ != null || deleteTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3645,11 +3842,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deleteTime_ = value;
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3667,11 +3864,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deleteTimeBuilder_ == null) {
         deleteTime_ = builderForValue.build();
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3688,17 +3885,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
-        if (deleteTime_ != null) {
-          deleteTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deleteTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
         } else {
           deleteTime_ = value;
         }
-        onChanged();
       } else {
         deleteTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3714,14 +3912,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeleteTime() {
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-        onChanged();
-      } else {
-        deleteTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3737,7 +3934,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
@@ -3813,7 +4010,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3858,11 +4055,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3881,11 +4078,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3903,17 +4100,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3930,14 +4128,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3954,7 +4151,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -4045,8 +4242,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLaunchStageValue(int value) {
-
       launchStage_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4066,8 +4263,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.LaunchStage getLaunchStage() {
-      @SuppressWarnings("deprecation")
-      com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+      com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(launchStage_);
       return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
     }
     /**
@@ -4089,7 +4285,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       launchStage_ = value.getNumber();
       onChanged();
       return this;
@@ -4109,7 +4305,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLaunchStage() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       launchStage_ = 0;
       onChanged();
       return this;
@@ -4182,8 +4378,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4201,8 +4397,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4225,8 +4421,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4249,7 +4445,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scaling field is set.
      */
     public boolean hasScaling() {
-      return scalingBuilder_ != null || scaling_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4286,11 +4482,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         scaling_ = value;
-        onChanged();
       } else {
         scalingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4305,11 +4501,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setScaling(com.google.cloud.run.v2.RevisionScaling.Builder builderForValue) {
       if (scalingBuilder_ == null) {
         scaling_ = builderForValue.build();
-        onChanged();
       } else {
         scalingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4323,19 +4519,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScaling(com.google.cloud.run.v2.RevisionScaling value) {
       if (scalingBuilder_ == null) {
-        if (scaling_ != null) {
-          scaling_ =
-              com.google.cloud.run.v2.RevisionScaling.newBuilder(scaling_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && scaling_ != null
+            && scaling_ != com.google.cloud.run.v2.RevisionScaling.getDefaultInstance()) {
+          getScalingBuilder().mergeFrom(value);
         } else {
           scaling_ = value;
         }
-        onChanged();
       } else {
         scalingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4348,14 +4543,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.RevisionScaling scaling = 12;</code>
      */
     public Builder clearScaling() {
-      if (scalingBuilder_ == null) {
-        scaling_ = null;
-        onChanged();
-      } else {
-        scaling_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      scaling_ = null;
+      if (scalingBuilder_ != null) {
+        scalingBuilder_.dispose();
         scalingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4368,7 +4562,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.RevisionScaling scaling = 12;</code>
      */
     public com.google.cloud.run.v2.RevisionScaling.Builder getScalingBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getScalingFieldBuilder().getBuilder();
     }
@@ -4435,7 +4629,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vpcAccess field is set.
      */
     public boolean hasVpcAccess() {
-      return vpcAccessBuilder_ != null || vpcAccess_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4474,11 +4668,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         vpcAccess_ = value;
-        onChanged();
       } else {
         vpcAccessBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4494,11 +4688,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setVpcAccess(com.google.cloud.run.v2.VpcAccess.Builder builderForValue) {
       if (vpcAccessBuilder_ == null) {
         vpcAccess_ = builderForValue.build();
-        onChanged();
       } else {
         vpcAccessBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4513,19 +4707,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVpcAccess(com.google.cloud.run.v2.VpcAccess value) {
       if (vpcAccessBuilder_ == null) {
-        if (vpcAccess_ != null) {
-          vpcAccess_ =
-              com.google.cloud.run.v2.VpcAccess.newBuilder(vpcAccess_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && vpcAccess_ != null
+            && vpcAccess_ != com.google.cloud.run.v2.VpcAccess.getDefaultInstance()) {
+          getVpcAccessBuilder().mergeFrom(value);
         } else {
           vpcAccess_ = value;
         }
-        onChanged();
       } else {
         vpcAccessBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4539,14 +4732,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.VpcAccess vpc_access = 13;</code>
      */
     public Builder clearVpcAccess() {
-      if (vpcAccessBuilder_ == null) {
-        vpcAccess_ = null;
-        onChanged();
-      } else {
-        vpcAccess_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      vpcAccess_ = null;
+      if (vpcAccessBuilder_ != null) {
+        vpcAccessBuilder_.dispose();
         vpcAccessBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4560,7 +4752,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.VpcAccess vpc_access = 13;</code>
      */
     public com.google.cloud.run.v2.VpcAccess.Builder getVpcAccessBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getVpcAccessFieldBuilder().getBuilder();
     }
@@ -4641,6 +4833,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxInstanceRequestConcurrency(int value) {
 
       maxInstanceRequestConcurrency_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4656,7 +4849,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxInstanceRequestConcurrency() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       maxInstanceRequestConcurrency_ = 0;
       onChanged();
       return this;
@@ -4680,7 +4873,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4715,11 +4908,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4734,11 +4927,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4752,17 +4945,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00004000) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4775,14 +4969,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 15;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00004000);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4795,7 +4988,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 15;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00004000;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -4908,8 +5101,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4927,8 +5120,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4951,8 +5144,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4961,9 +5154,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureContainersIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         containers_ = new java.util.ArrayList<com.google.cloud.run.v2.Container>(containers_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -5189,7 +5382,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder clearContainers() {
       if (containersBuilder_ == null) {
         containers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         containersBuilder_.clear();
@@ -5317,7 +5510,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.Container,
                 com.google.cloud.run.v2.Container.Builder,
                 com.google.cloud.run.v2.ContainerOrBuilder>(
-                containers_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                containers_, ((bitField0_ & 0x00010000) != 0), getParentForChildren(), isClean());
         containers_ = null;
       }
       return containersBuilder_;
@@ -5327,9 +5520,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.cloud.run.v2.Volume>(volumes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -5542,7 +5735,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -5663,7 +5856,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.Volume,
                 com.google.cloud.run.v2.Volume.Builder,
                 com.google.cloud.run.v2.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;
@@ -5698,8 +5891,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExecutionEnvironmentValue(int value) {
-
       executionEnvironment_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5716,9 +5909,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.run.v2.ExecutionEnvironment getExecutionEnvironment() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.run.v2.ExecutionEnvironment result =
-          com.google.cloud.run.v2.ExecutionEnvironment.valueOf(executionEnvironment_);
+          com.google.cloud.run.v2.ExecutionEnvironment.forNumber(executionEnvironment_);
       return result == null ? com.google.cloud.run.v2.ExecutionEnvironment.UNRECOGNIZED : result;
     }
     /**
@@ -5737,7 +5929,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00040000;
       executionEnvironment_ = value.getNumber();
       onChanged();
       return this;
@@ -5754,7 +5946,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExecutionEnvironment() {
-
+      bitField0_ = (bitField0_ & ~0x00040000);
       executionEnvironment_ = 0;
       onChanged();
       return this;
@@ -5827,8 +6019,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       encryptionKey_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5846,8 +6038,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEncryptionKey() {
-
       encryptionKey_ = getDefaultInstance().getEncryptionKey();
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -5870,10 +6062,309 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       encryptionKey_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
+    }
+
+    private int encryptionKeyRevocationAction_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The action to take if the encryption key is revoked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 23;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for encryptionKeyRevocationAction.
+     */
+    @java.lang.Override
+    public int getEncryptionKeyRevocationActionValue() {
+      return encryptionKeyRevocationAction_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action to take if the encryption key is revoked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 23;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for encryptionKeyRevocationAction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEncryptionKeyRevocationActionValue(int value) {
+      encryptionKeyRevocationAction_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action to take if the encryption key is revoked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 23;
+     * </code>
+     *
+     * @return The encryptionKeyRevocationAction.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.EncryptionKeyRevocationAction
+        getEncryptionKeyRevocationAction() {
+      com.google.cloud.run.v2.EncryptionKeyRevocationAction result =
+          com.google.cloud.run.v2.EncryptionKeyRevocationAction.forNumber(
+              encryptionKeyRevocationAction_);
+      return result == null
+          ? com.google.cloud.run.v2.EncryptionKeyRevocationAction.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action to take if the encryption key is revoked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 23;
+     * </code>
+     *
+     * @param value The encryptionKeyRevocationAction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEncryptionKeyRevocationAction(
+        com.google.cloud.run.v2.EncryptionKeyRevocationAction value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00100000;
+      encryptionKeyRevocationAction_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action to take if the encryption key is revoked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 23;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEncryptionKeyRevocationAction() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      encryptionKeyRevocationAction_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Duration encryptionKeyShutdownDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        encryptionKeyShutdownDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+     *
+     * @return Whether the encryptionKeyShutdownDuration field is set.
+     */
+    public boolean hasEncryptionKeyShutdownDuration() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+     *
+     * @return The encryptionKeyShutdownDuration.
+     */
+    public com.google.protobuf.Duration getEncryptionKeyShutdownDuration() {
+      if (encryptionKeyShutdownDurationBuilder_ == null) {
+        return encryptionKeyShutdownDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : encryptionKeyShutdownDuration_;
+      } else {
+        return encryptionKeyShutdownDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+     */
+    public Builder setEncryptionKeyShutdownDuration(com.google.protobuf.Duration value) {
+      if (encryptionKeyShutdownDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionKeyShutdownDuration_ = value;
+      } else {
+        encryptionKeyShutdownDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+     */
+    public Builder setEncryptionKeyShutdownDuration(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (encryptionKeyShutdownDurationBuilder_ == null) {
+        encryptionKeyShutdownDuration_ = builderForValue.build();
+      } else {
+        encryptionKeyShutdownDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+     */
+    public Builder mergeEncryptionKeyShutdownDuration(com.google.protobuf.Duration value) {
+      if (encryptionKeyShutdownDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && encryptionKeyShutdownDuration_ != null
+            && encryptionKeyShutdownDuration_
+                != com.google.protobuf.Duration.getDefaultInstance()) {
+          getEncryptionKeyShutdownDurationBuilder().mergeFrom(value);
+        } else {
+          encryptionKeyShutdownDuration_ = value;
+        }
+      } else {
+        encryptionKeyShutdownDurationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+     */
+    public Builder clearEncryptionKeyShutdownDuration() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      encryptionKeyShutdownDuration_ = null;
+      if (encryptionKeyShutdownDurationBuilder_ != null) {
+        encryptionKeyShutdownDurationBuilder_.dispose();
+        encryptionKeyShutdownDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+     */
+    public com.google.protobuf.Duration.Builder getEncryptionKeyShutdownDurationBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getEncryptionKeyShutdownDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getEncryptionKeyShutdownDurationOrBuilder() {
+      if (encryptionKeyShutdownDurationBuilder_ != null) {
+        return encryptionKeyShutdownDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionKeyShutdownDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : encryptionKeyShutdownDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getEncryptionKeyShutdownDurationFieldBuilder() {
+      if (encryptionKeyShutdownDurationBuilder_ == null) {
+        encryptionKeyShutdownDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getEncryptionKeyShutdownDuration(), getParentForChildren(), isClean());
+        encryptionKeyShutdownDuration_ = null;
+      }
+      return encryptionKeyShutdownDurationBuilder_;
     }
 
     private boolean reconciling_;
@@ -5881,9 +6372,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the resource's reconciliation is still in progress.
-     * See comments in `Service.reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. Indicates whether the resource's reconciliation is still in
+     * progress. See comments in `Service.reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>bool reconciling = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5898,9 +6389,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the resource's reconciliation is still in progress.
-     * See comments in `Service.reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. Indicates whether the resource's reconciliation is still in
+     * progress. See comments in `Service.reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>bool reconciling = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5911,6 +6402,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5918,9 +6410,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the resource's reconciliation is still in progress.
-     * See comments in `Service.reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. Indicates whether the resource's reconciliation is still in
+     * progress. See comments in `Service.reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>bool reconciling = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5928,7 +6420,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-
+      bitField0_ = (bitField0_ & ~0x00400000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -5938,9 +6430,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00800000) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.cloud.run.v2.Condition>(conditions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00800000;
       }
     }
 
@@ -5954,8 +6446,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -5973,8 +6466,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -5992,8 +6486,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6011,8 +6506,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6036,8 +6532,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6059,8 +6556,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6084,8 +6582,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6109,8 +6608,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6131,8 +6631,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6154,8 +6655,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6177,8 +6679,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6188,7 +6691,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00800000);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -6199,8 +6702,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6221,8 +6725,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6236,8 +6741,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6255,8 +6761,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6275,8 +6782,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6291,8 +6799,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6307,8 +6816,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Revision, containing its readiness status, and
-     * detailed error information in case it did not reach a serving state.
+     * Output only. The Condition of this Revision, containing its readiness
+     * status, and detailed error information in case it did not reach a serving
+     * state.
      * </pre>
      *
      * <code>
@@ -6330,7 +6840,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.Condition,
                 com.google.cloud.run.v2.Condition.Builder,
                 com.google.cloud.run.v2.ConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00800000) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -6341,9 +6851,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The generation of this Revision currently serving traffic. See comments in
-     * `reconciling` for additional information on reconciliation process in Cloud
-     * Run.
+     * Output only. The generation of this Revision currently serving traffic. See
+     * comments in `reconciling` for additional information on reconciliation
+     * process in Cloud Run.
      * </pre>
      *
      * <code>int64 observed_generation = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6358,9 +6868,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The generation of this Revision currently serving traffic. See comments in
-     * `reconciling` for additional information on reconciliation process in Cloud
-     * Run.
+     * Output only. The generation of this Revision currently serving traffic. See
+     * comments in `reconciling` for additional information on reconciliation
+     * process in Cloud Run.
      * </pre>
      *
      * <code>int64 observed_generation = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6371,6 +6881,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder setObservedGeneration(long value) {
 
       observedGeneration_ = value;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -6378,9 +6889,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The generation of this Revision currently serving traffic. See comments in
-     * `reconciling` for additional information on reconciliation process in Cloud
-     * Run.
+     * Output only. The generation of this Revision currently serving traffic. See
+     * comments in `reconciling` for additional information on reconciliation
+     * process in Cloud Run.
      * </pre>
      *
      * <code>int64 observed_generation = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6388,7 +6899,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearObservedGeneration() {
-
+      bitField0_ = (bitField0_ & ~0x01000000);
       observedGeneration_ = 0L;
       onChanged();
       return this;
@@ -6455,8 +6966,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       logUri_ = value;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -6472,8 +6983,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogUri() {
-
       logUri_ = getDefaultInstance().getLogUri();
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -6494,8 +7005,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       logUri_ = value;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -6564,8 +7075,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -6582,8 +7093,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -6605,8 +7116,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }

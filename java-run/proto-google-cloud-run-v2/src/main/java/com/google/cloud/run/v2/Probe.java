@@ -115,7 +115,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INITIAL_DELAY_SECONDS_FIELD_NUMBER = 1;
-  private int initialDelaySeconds_;
+  private int initialDelaySeconds_ = 0;
   /**
    *
    *
@@ -138,7 +138,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMEOUT_SECONDS_FIELD_NUMBER = 2;
-  private int timeoutSeconds_;
+  private int timeoutSeconds_ = 0;
   /**
    *
    *
@@ -160,7 +160,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERIOD_SECONDS_FIELD_NUMBER = 3;
-  private int periodSeconds_;
+  private int periodSeconds_ = 0;
   /**
    *
    *
@@ -181,7 +181,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAILURE_THRESHOLD_FIELD_NUMBER = 4;
-  private int failureThreshold_;
+  private int failureThreshold_ = 0;
   /**
    *
    *
@@ -637,14 +637,11 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       initialDelaySeconds_ = 0;
-
       timeoutSeconds_ = 0;
-
       periodSeconds_ = 0;
-
       failureThreshold_ = 0;
-
       if (httpGetBuilder_ != null) {
         httpGetBuilder_.clear();
       }
@@ -682,34 +679,42 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.Probe buildPartial() {
       com.google.cloud.run.v2.Probe result = new com.google.cloud.run.v2.Probe(this);
-      result.initialDelaySeconds_ = initialDelaySeconds_;
-      result.timeoutSeconds_ = timeoutSeconds_;
-      result.periodSeconds_ = periodSeconds_;
-      result.failureThreshold_ = failureThreshold_;
-      if (probeTypeCase_ == 5) {
-        if (httpGetBuilder_ == null) {
-          result.probeType_ = probeType_;
-        } else {
-          result.probeType_ = httpGetBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (probeTypeCase_ == 6) {
-        if (tcpSocketBuilder_ == null) {
-          result.probeType_ = probeType_;
-        } else {
-          result.probeType_ = tcpSocketBuilder_.build();
-        }
-      }
-      if (probeTypeCase_ == 7) {
-        if (grpcBuilder_ == null) {
-          result.probeType_ = probeType_;
-        } else {
-          result.probeType_ = grpcBuilder_.build();
-        }
-      }
-      result.probeTypeCase_ = probeTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.Probe result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.initialDelaySeconds_ = initialDelaySeconds_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timeoutSeconds_ = timeoutSeconds_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.periodSeconds_ = periodSeconds_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.failureThreshold_ = failureThreshold_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.run.v2.Probe result) {
+      result.probeTypeCase_ = probeTypeCase_;
+      result.probeType_ = this.probeType_;
+      if (probeTypeCase_ == 5 && httpGetBuilder_ != null) {
+        result.probeType_ = httpGetBuilder_.build();
+      }
+      if (probeTypeCase_ == 6 && tcpSocketBuilder_ != null) {
+        result.probeType_ = tcpSocketBuilder_.build();
+      }
+      if (probeTypeCase_ == 7 && grpcBuilder_ != null) {
+        result.probeType_ = grpcBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -819,25 +824,25 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 initialDelaySeconds_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 timeoutSeconds_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 periodSeconds_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 failureThreshold_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
@@ -889,6 +894,8 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int initialDelaySeconds_;
     /**
      *
@@ -930,6 +937,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     public Builder setInitialDelaySeconds(int value) {
 
       initialDelaySeconds_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -950,7 +958,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInitialDelaySeconds() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       initialDelaySeconds_ = 0;
       onChanged();
       return this;
@@ -995,6 +1003,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeoutSeconds(int value) {
 
       timeoutSeconds_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1014,7 +1023,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSeconds() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       timeoutSeconds_ = 0;
       onChanged();
       return this;
@@ -1057,6 +1066,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     public Builder setPeriodSeconds(int value) {
 
       periodSeconds_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1075,7 +1085,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeriodSeconds() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       periodSeconds_ = 0;
       onChanged();
       return this;
@@ -1114,6 +1124,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     public Builder setFailureThreshold(int value) {
 
       failureThreshold_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1130,7 +1141,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailureThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       failureThreshold_ = 0;
       onChanged();
       return this;
@@ -1350,7 +1361,6 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       }
       probeTypeCase_ = 5;
       onChanged();
-      ;
       return httpGetBuilder_;
     }
 
@@ -1568,7 +1578,6 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       }
       probeTypeCase_ = 6;
       onChanged();
-      ;
       return tcpSocketBuilder_;
     }
 
@@ -1784,7 +1793,6 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       }
       probeTypeCase_ = 7;
       onChanged();
-      ;
       return grpcBuilder_;
     }
 

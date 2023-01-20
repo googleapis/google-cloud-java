@@ -69,7 +69,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,11 +173,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.run.v2.ServiceOrBuilder getServiceOrBuilder() {
-    return getService();
+    return service_ == null ? com.google.cloud.run.v2.Service.getDefaultInstance() : service_;
   }
 
   public static final int SERVICE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object serviceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceId_ = "";
   /**
    *
    *
@@ -228,7 +232,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -475,18 +479,15 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (serviceBuilder_ == null) {
-        service_ = null;
-      } else {
-        service_ = null;
+      service_ = null;
+      if (serviceBuilder_ != null) {
+        serviceBuilder_.dispose();
         serviceBuilder_ = null;
       }
       serviceId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -514,16 +515,27 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.run.v2.CreateServiceRequest buildPartial() {
       com.google.cloud.run.v2.CreateServiceRequest result =
           new com.google.cloud.run.v2.CreateServiceRequest(this);
-      result.parent_ = parent_;
-      if (serviceBuilder_ == null) {
-        result.service_ = service_;
-      } else {
-        result.service_ = serviceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.serviceId_ = serviceId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.CreateServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.service_ = serviceBuilder_ == null ? service_ : serviceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceId_ = serviceId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -573,6 +585,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.run.v2.CreateServiceRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasService()) {
@@ -580,6 +593,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getServiceId().isEmpty()) {
         serviceId_ = other.serviceId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -614,25 +628,25 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getServiceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 serviceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -651,6 +665,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -725,8 +741,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -746,8 +762,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -772,8 +788,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -797,7 +813,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the service field is set.
      */
     public boolean hasService() {
-      return serviceBuilder_ != null || service_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -834,11 +850,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         service_ = value;
-        onChanged();
       } else {
         serviceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -854,11 +870,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
     public Builder setService(com.google.cloud.run.v2.Service.Builder builderForValue) {
       if (serviceBuilder_ == null) {
         service_ = builderForValue.build();
-        onChanged();
       } else {
         serviceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -873,17 +889,18 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeService(com.google.cloud.run.v2.Service value) {
       if (serviceBuilder_ == null) {
-        if (service_ != null) {
-          service_ =
-              com.google.cloud.run.v2.Service.newBuilder(service_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && service_ != null
+            && service_ != com.google.cloud.run.v2.Service.getDefaultInstance()) {
+          getServiceBuilder().mergeFrom(value);
         } else {
           service_ = value;
         }
-        onChanged();
       } else {
         serviceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -897,14 +914,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearService() {
-      if (serviceBuilder_ == null) {
-        service_ = null;
-        onChanged();
-      } else {
-        service_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      service_ = null;
+      if (serviceBuilder_ != null) {
+        serviceBuilder_.dispose();
         serviceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -918,7 +934,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.run.v2.Service.Builder getServiceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getServiceFieldBuilder().getBuilder();
     }
@@ -1033,8 +1049,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1052,8 +1068,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearServiceId() {
-
       serviceId_ = getDefaultInstance().getServiceId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1076,8 +1092,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1115,6 +1131,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1131,7 +1148,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

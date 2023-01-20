@@ -114,7 +114,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -506,8 +508,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (secretBuilder_ != null) {
         secretBuilder_.clear();
       }
@@ -542,24 +544,30 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.Volume buildPartial() {
       com.google.cloud.run.v2.Volume result = new com.google.cloud.run.v2.Volume(this);
-      result.name_ = name_;
-      if (volumeTypeCase_ == 2) {
-        if (secretBuilder_ == null) {
-          result.volumeType_ = volumeType_;
-        } else {
-          result.volumeType_ = secretBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (volumeTypeCase_ == 3) {
-        if (cloudSqlInstanceBuilder_ == null) {
-          result.volumeType_ = volumeType_;
-        } else {
-          result.volumeType_ = cloudSqlInstanceBuilder_.build();
-        }
-      }
-      result.volumeTypeCase_ = volumeTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.Volume result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.run.v2.Volume result) {
+      result.volumeTypeCase_ = volumeTypeCase_;
+      result.volumeType_ = this.volumeType_;
+      if (volumeTypeCase_ == 2 && secretBuilder_ != null) {
+        result.volumeType_ = secretBuilder_.build();
+      }
+      if (volumeTypeCase_ == 3 && cloudSqlInstanceBuilder_ != null) {
+        result.volumeType_ = cloudSqlInstanceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -609,6 +617,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.run.v2.Volume.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getVolumeTypeCase()) {
@@ -656,7 +665,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -702,6 +711,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -764,8 +775,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -781,8 +792,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -803,8 +814,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1023,7 +1034,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       volumeTypeCase_ = 2;
       onChanged();
-      ;
       return secretBuilder_;
     }
 
@@ -1251,7 +1261,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       volumeTypeCase_ = 3;
       onChanged();
-      ;
       return cloudSqlInstanceBuilder_;
     }
 

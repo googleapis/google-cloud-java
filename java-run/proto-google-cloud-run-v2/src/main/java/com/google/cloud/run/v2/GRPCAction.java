@@ -68,7 +68,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PORT_FIELD_NUMBER = 1;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -87,7 +87,9 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -343,10 +345,9 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       port_ = 0;
-
       service_ = "";
-
       return this;
     }
 
@@ -373,10 +374,21 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.GRPCAction buildPartial() {
       com.google.cloud.run.v2.GRPCAction result = new com.google.cloud.run.v2.GRPCAction(this);
-      result.port_ = port_;
-      result.service_ = service_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.GRPCAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.port_ = port_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.service_ = service_;
+      }
     }
 
     @java.lang.Override
@@ -429,6 +441,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -460,13 +473,13 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 port_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -485,6 +498,8 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int port_;
     /**
@@ -519,6 +534,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
     public Builder setPort(int value) {
 
       port_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -535,7 +551,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       port_ = 0;
       onChanged();
       return this;
@@ -608,8 +624,8 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -627,8 +643,8 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -651,8 +667,8 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

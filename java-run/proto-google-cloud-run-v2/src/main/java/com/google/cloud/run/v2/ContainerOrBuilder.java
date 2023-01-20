@@ -27,7 +27,7 @@ public interface ContainerOrBuilder
    *
    *
    * <pre>
-   * Name of the container specified as a DNS_LABEL.
+   * Name of the container specified as a DNS_LABEL (RFC 1123).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +39,7 @@ public interface ContainerOrBuilder
    *
    *
    * <pre>
-   * Name of the container specified as a DNS_LABEL.
+   * Name of the container specified as a DNS_LABEL (RFC 1123).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,8 +52,10 @@ public interface ContainerOrBuilder
    *
    *
    * <pre>
-   * Required. URL of the Container image in Google Container Registry or Google Artifact
-   * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
+   * Required. Name of the container image in Dockerhub, Google Artifact
+   * Registry, or Google Container Registry. If the host is not provided,
+   * Dockerhub is assumed. More info:
+   * https://kubernetes.io/docs/concepts/containers/images
    * </pre>
    *
    * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -65,8 +67,10 @@ public interface ContainerOrBuilder
    *
    *
    * <pre>
-   * Required. URL of the Container image in Google Container Registry or Google Artifact
-   * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
+   * Required. Name of the container image in Dockerhub, Google Artifact
+   * Registry, or Google Container Registry. If the host is not provided,
+   * Dockerhub is assumed. More info:
+   * https://kubernetes.io/docs/concepts/containers/images
    * </pre>
    *
    * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>

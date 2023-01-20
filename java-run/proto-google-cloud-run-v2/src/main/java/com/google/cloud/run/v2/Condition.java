@@ -1007,6 +1007,17 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>HEALTH_CHECK_SKIPPED = 11;</code>
      */
     HEALTH_CHECK_SKIPPED(11),
+    /**
+     *
+     *
+     * <pre>
+     * A revision with min_instance_count &gt; 0 was created and is waiting for
+     * enough instances to begin a traffic migration.
+     * </pre>
+     *
+     * <code>MIN_INSTANCES_WARMING = 12;</code>
+     */
+    MIN_INSTANCES_WARMING(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -1136,6 +1147,17 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>HEALTH_CHECK_SKIPPED = 11;</code>
      */
     public static final int HEALTH_CHECK_SKIPPED_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * A revision with min_instance_count &gt; 0 was created and is waiting for
+     * enough instances to begin a traffic migration.
+     * </pre>
+     *
+     * <code>MIN_INSTANCES_WARMING = 12;</code>
+     */
+    public static final int MIN_INSTANCES_WARMING_VALUE = 12;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1185,6 +1207,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return NO_DEPLOYMENT;
         case 11:
           return HEALTH_CHECK_SKIPPED;
+        case 12:
+          return MIN_INSTANCES_WARMING;
         default:
           return null;
       }
@@ -1472,7 +1496,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -1529,7 +1555,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1558,14 +1584,15 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.Condition.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.run.v2.Condition.State result =
-        com.google.cloud.run.v2.Condition.State.valueOf(state_);
+        com.google.cloud.run.v2.Condition.State.forNumber(state_);
     return result == null ? com.google.cloud.run.v2.Condition.State.UNRECOGNIZED : result;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -1658,11 +1685,13 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastTransitionTimeOrBuilder() {
-    return getLastTransitionTime();
+    return lastTransitionTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastTransitionTime_;
   }
 
   public static final int SEVERITY_FIELD_NUMBER = 5;
-  private int severity_;
+  private int severity_ = 0;
   /**
    *
    *
@@ -1691,9 +1720,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.Condition.Severity getSeverity() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.run.v2.Condition.Severity result =
-        com.google.cloud.run.v2.Condition.Severity.valueOf(severity_);
+        com.google.cloud.run.v2.Condition.Severity.forNumber(severity_);
     return result == null ? com.google.cloud.run.v2.Condition.Severity.UNRECOGNIZED : result;
   }
 
@@ -1742,9 +1770,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.cloud.run.v2.Condition.CommonReason getReason() {
     if (reasonsCase_ == 6) {
-      @SuppressWarnings("deprecation")
       com.google.cloud.run.v2.Condition.CommonReason result =
-          com.google.cloud.run.v2.Condition.CommonReason.valueOf((java.lang.Integer) reasons_);
+          com.google.cloud.run.v2.Condition.CommonReason.forNumber((java.lang.Integer) reasons_);
       return result == null ? com.google.cloud.run.v2.Condition.CommonReason.UNRECOGNIZED : result;
     }
     return com.google.cloud.run.v2.Condition.CommonReason.COMMON_REASON_UNDEFINED;
@@ -1795,9 +1822,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.cloud.run.v2.Condition.RevisionReason getRevisionReason() {
     if (reasonsCase_ == 9) {
-      @SuppressWarnings("deprecation")
       com.google.cloud.run.v2.Condition.RevisionReason result =
-          com.google.cloud.run.v2.Condition.RevisionReason.valueOf((java.lang.Integer) reasons_);
+          com.google.cloud.run.v2.Condition.RevisionReason.forNumber((java.lang.Integer) reasons_);
       return result == null
           ? com.google.cloud.run.v2.Condition.RevisionReason.UNRECOGNIZED
           : result;
@@ -1850,9 +1876,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.cloud.run.v2.Condition.ExecutionReason getExecutionReason() {
     if (reasonsCase_ == 11) {
-      @SuppressWarnings("deprecation")
       com.google.cloud.run.v2.Condition.ExecutionReason result =
-          com.google.cloud.run.v2.Condition.ExecutionReason.valueOf((java.lang.Integer) reasons_);
+          com.google.cloud.run.v2.Condition.ExecutionReason.forNumber((java.lang.Integer) reasons_);
       return result == null
           ? com.google.cloud.run.v2.Condition.ExecutionReason.UNRECOGNIZED
           : result;
@@ -2147,20 +2172,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       state_ = 0;
-
       message_ = "";
-
-      if (lastTransitionTimeBuilder_ == null) {
-        lastTransitionTime_ = null;
-      } else {
-        lastTransitionTime_ = null;
+      lastTransitionTime_ = null;
+      if (lastTransitionTimeBuilder_ != null) {
+        lastTransitionTimeBuilder_.dispose();
         lastTransitionTimeBuilder_ = null;
       }
       severity_ = 0;
-
       reasonsCase_ = 0;
       reasons_ = null;
       return this;
@@ -2189,27 +2210,39 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.Condition buildPartial() {
       com.google.cloud.run.v2.Condition result = new com.google.cloud.run.v2.Condition(this);
-      result.type_ = type_;
-      result.state_ = state_;
-      result.message_ = message_;
-      if (lastTransitionTimeBuilder_ == null) {
-        result.lastTransitionTime_ = lastTransitionTime_;
-      } else {
-        result.lastTransitionTime_ = lastTransitionTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.severity_ = severity_;
-      if (reasonsCase_ == 6) {
-        result.reasons_ = reasons_;
-      }
-      if (reasonsCase_ == 9) {
-        result.reasons_ = reasons_;
-      }
-      if (reasonsCase_ == 11) {
-        result.reasons_ = reasons_;
-      }
-      result.reasonsCase_ = reasonsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.Condition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.lastTransitionTime_ =
+            lastTransitionTimeBuilder_ == null
+                ? lastTransitionTime_
+                : lastTransitionTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.severity_ = severity_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.run.v2.Condition result) {
+      result.reasonsCase_ = reasonsCase_;
+      result.reasons_ = this.reasons_;
     }
 
     @java.lang.Override
@@ -2259,6 +2292,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.run.v2.Condition.getDefaultInstance()) return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -2266,6 +2300,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasLastTransitionTime()) {
@@ -2324,32 +2359,32 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getLastTransitionTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 severity_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
@@ -2403,6 +2438,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object type_ = "";
     /**
@@ -2477,8 +2514,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2498,8 +2535,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2524,8 +2561,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2559,8 +2596,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2577,9 +2614,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.run.v2.Condition.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.run.v2.Condition.State result =
-          com.google.cloud.run.v2.Condition.State.valueOf(state_);
+          com.google.cloud.run.v2.Condition.State.forNumber(state_);
       return result == null ? com.google.cloud.run.v2.Condition.State.UNRECOGNIZED : result;
     }
     /**
@@ -2598,7 +2634,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2615,7 +2651,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -2682,8 +2718,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2699,8 +2735,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2721,8 +2757,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2745,7 +2781,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastTransitionTime field is set.
      */
     public boolean hasLastTransitionTime() {
-      return lastTransitionTimeBuilder_ != null || lastTransitionTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2782,11 +2818,11 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastTransitionTime_ = value;
-        onChanged();
       } else {
         lastTransitionTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2801,11 +2837,11 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastTransitionTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastTransitionTimeBuilder_ == null) {
         lastTransitionTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastTransitionTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2819,19 +2855,18 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastTransitionTime(com.google.protobuf.Timestamp value) {
       if (lastTransitionTimeBuilder_ == null) {
-        if (lastTransitionTime_ != null) {
-          lastTransitionTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastTransitionTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && lastTransitionTime_ != null
+            && lastTransitionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastTransitionTimeBuilder().mergeFrom(value);
         } else {
           lastTransitionTime_ = value;
         }
-        onChanged();
       } else {
         lastTransitionTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2844,14 +2879,13 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_transition_time = 4;</code>
      */
     public Builder clearLastTransitionTime() {
-      if (lastTransitionTimeBuilder_ == null) {
-        lastTransitionTime_ = null;
-        onChanged();
-      } else {
-        lastTransitionTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      lastTransitionTime_ = null;
+      if (lastTransitionTimeBuilder_ != null) {
+        lastTransitionTimeBuilder_.dispose();
         lastTransitionTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2864,7 +2898,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_transition_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastTransitionTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLastTransitionTimeFieldBuilder().getBuilder();
     }
@@ -2941,8 +2975,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
-
       severity_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2959,9 +2993,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.run.v2.Condition.Severity getSeverity() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.run.v2.Condition.Severity result =
-          com.google.cloud.run.v2.Condition.Severity.valueOf(severity_);
+          com.google.cloud.run.v2.Condition.Severity.forNumber(severity_);
       return result == null ? com.google.cloud.run.v2.Condition.Severity.UNRECOGNIZED : result;
     }
     /**
@@ -2980,7 +3013,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       severity_ = value.getNumber();
       onChanged();
       return this;
@@ -2997,7 +3030,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       severity_ = 0;
       onChanged();
       return this;
@@ -3068,9 +3101,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.Condition.CommonReason getReason() {
       if (reasonsCase_ == 6) {
-        @SuppressWarnings("deprecation")
         com.google.cloud.run.v2.Condition.CommonReason result =
-            com.google.cloud.run.v2.Condition.CommonReason.valueOf((java.lang.Integer) reasons_);
+            com.google.cloud.run.v2.Condition.CommonReason.forNumber((java.lang.Integer) reasons_);
         return result == null
             ? com.google.cloud.run.v2.Condition.CommonReason.UNRECOGNIZED
             : result;
@@ -3183,9 +3215,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.Condition.RevisionReason getRevisionReason() {
       if (reasonsCase_ == 9) {
-        @SuppressWarnings("deprecation")
         com.google.cloud.run.v2.Condition.RevisionReason result =
-            com.google.cloud.run.v2.Condition.RevisionReason.valueOf((java.lang.Integer) reasons_);
+            com.google.cloud.run.v2.Condition.RevisionReason.forNumber(
+                (java.lang.Integer) reasons_);
         return result == null
             ? com.google.cloud.run.v2.Condition.RevisionReason.UNRECOGNIZED
             : result;
@@ -3298,9 +3330,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.Condition.ExecutionReason getExecutionReason() {
       if (reasonsCase_ == 11) {
-        @SuppressWarnings("deprecation")
         com.google.cloud.run.v2.Condition.ExecutionReason result =
-            com.google.cloud.run.v2.Condition.ExecutionReason.valueOf((java.lang.Integer) reasons_);
+            com.google.cloud.run.v2.Condition.ExecutionReason.forNumber(
+                (java.lang.Integer) reasons_);
         return result == null
             ? com.google.cloud.run.v2.Condition.ExecutionReason.UNRECOGNIZED
             : result;

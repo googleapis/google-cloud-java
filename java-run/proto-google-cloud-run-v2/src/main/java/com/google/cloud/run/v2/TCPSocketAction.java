@@ -66,7 +66,7 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PORT_FIELD_NUMBER = 1;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -280,8 +280,8 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       port_ = 0;
-
       return this;
     }
 
@@ -309,9 +309,18 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.run.v2.TCPSocketAction buildPartial() {
       com.google.cloud.run.v2.TCPSocketAction result =
           new com.google.cloud.run.v2.TCPSocketAction(this);
-      result.port_ = port_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.TCPSocketAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.port_ = port_;
+      }
     }
 
     @java.lang.Override
@@ -391,7 +400,7 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 port_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -410,6 +419,8 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int port_;
     /**
@@ -444,6 +455,7 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
     public Builder setPort(int value) {
 
       port_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -460,7 +472,7 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       port_ = 0;
       onChanged();
       return this;

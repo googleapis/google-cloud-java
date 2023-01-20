@@ -108,11 +108,11 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.run.v2.JobOrBuilder getJobOrBuilder() {
-    return getJob();
+    return job_ == null ? com.google.cloud.run.v2.Job.getDefaultInstance() : job_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -131,7 +131,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -369,16 +369,14 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (jobBuilder_ == null) {
-        job_ = null;
-      } else {
-        job_ = null;
+      bitField0_ = 0;
+      job_ = null;
+      if (jobBuilder_ != null) {
+        jobBuilder_.dispose();
         jobBuilder_ = null;
       }
       validateOnly_ = false;
-
       allowMissing_ = false;
-
       return this;
     }
 
@@ -406,15 +404,24 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.run.v2.UpdateJobRequest buildPartial() {
       com.google.cloud.run.v2.UpdateJobRequest result =
           new com.google.cloud.run.v2.UpdateJobRequest(this);
-      if (jobBuilder_ == null) {
-        result.job_ = job_;
-      } else {
-        result.job_ = jobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
-      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.UpdateJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.job_ = jobBuilder_ == null ? job_ : jobBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -500,19 +507,19 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             case 32:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             default:
@@ -532,6 +539,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.run.v2.Job job_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.run.v2.Job,
@@ -550,7 +559,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the job field is set.
      */
     public boolean hasJob() {
-      return jobBuilder_ != null || job_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -585,11 +594,11 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         job_ = value;
-        onChanged();
       } else {
         jobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -604,11 +613,11 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public Builder setJob(com.google.cloud.run.v2.Job.Builder builderForValue) {
       if (jobBuilder_ == null) {
         job_ = builderForValue.build();
-        onChanged();
       } else {
         jobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -622,16 +631,18 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeJob(com.google.cloud.run.v2.Job value) {
       if (jobBuilder_ == null) {
-        if (job_ != null) {
-          job_ = com.google.cloud.run.v2.Job.newBuilder(job_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && job_ != null
+            && job_ != com.google.cloud.run.v2.Job.getDefaultInstance()) {
+          getJobBuilder().mergeFrom(value);
         } else {
           job_ = value;
         }
-        onChanged();
       } else {
         jobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -644,14 +655,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.run.v2.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearJob() {
-      if (jobBuilder_ == null) {
-        job_ = null;
-        onChanged();
-      } else {
-        job_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      job_ = null;
+      if (jobBuilder_ != null) {
+        jobBuilder_.dispose();
         jobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -664,7 +674,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.run.v2.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.run.v2.Job.Builder getJobBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }
@@ -742,6 +752,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -758,7 +769,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validateOnly_ = false;
       onChanged();
       return this;
@@ -799,6 +810,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -816,7 +828,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowMissing_ = false;
       onChanged();
       return this;

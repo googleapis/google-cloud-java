@@ -66,7 +66,7 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MIN_INSTANCE_COUNT_FIELD_NUMBER = 1;
-  private int minInstanceCount_;
+  private int minInstanceCount_ = 0;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MAX_INSTANCE_COUNT_FIELD_NUMBER = 2;
-  private int maxInstanceCount_;
+  private int maxInstanceCount_ = 0;
   /**
    *
    *
@@ -306,10 +306,9 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       minInstanceCount_ = 0;
-
       maxInstanceCount_ = 0;
-
       return this;
     }
 
@@ -337,10 +336,21 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.run.v2.RevisionScaling buildPartial() {
       com.google.cloud.run.v2.RevisionScaling result =
           new com.google.cloud.run.v2.RevisionScaling(this);
-      result.minInstanceCount_ = minInstanceCount_;
-      result.maxInstanceCount_ = maxInstanceCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.RevisionScaling result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.minInstanceCount_ = minInstanceCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxInstanceCount_ = maxInstanceCount_;
+      }
     }
 
     @java.lang.Override
@@ -423,13 +433,13 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 minInstanceCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 maxInstanceCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -448,6 +458,8 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int minInstanceCount_;
     /**
@@ -480,6 +492,7 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
     public Builder setMinInstanceCount(int value) {
 
       minInstanceCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -495,7 +508,7 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMinInstanceCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       minInstanceCount_ = 0;
       onChanged();
       return this;
@@ -532,6 +545,7 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
     public Builder setMaxInstanceCount(int value) {
 
       maxInstanceCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -547,7 +561,7 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMaxInstanceCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxInstanceCount_ = 0;
       onChanged();
       return this;

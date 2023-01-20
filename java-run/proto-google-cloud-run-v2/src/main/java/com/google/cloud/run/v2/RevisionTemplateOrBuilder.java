@@ -55,6 +55,10 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -65,6 +69,10 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -78,6 +86,10 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -88,11 +100,14 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -103,6 +118,10 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -114,6 +133,10 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -124,6 +147,10 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -137,6 +164,10 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -147,11 +178,14 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,
@@ -162,6 +196,10 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 RevisionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>

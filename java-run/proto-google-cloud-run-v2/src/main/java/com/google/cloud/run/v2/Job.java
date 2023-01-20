@@ -22,8 +22,8 @@ package com.google.cloud.run.v2;
  *
  *
  * <pre>
- * Job represents the configuration of a single job. A job an immutable resource
- * that references a container image which is run to completion.
+ * Job represents the configuration of a single job, which references a
+ * container image that is run to completion.
  * </pre>
  *
  * Protobuf type {@code google.cloud.run.v2.Job}
@@ -88,7 +88,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -141,13 +143,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Execution. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -170,8 +175,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the Execution. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -192,7 +198,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GENERATION_FIELD_NUMBER = 3;
-  private long generation_;
+  private long generation_ = 0L;
   /**
    *
    *
@@ -223,6 +229,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -245,9 +252,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 Job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -275,9 +283,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 Job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -296,15 +305,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 Job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -321,9 +334,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
-   * Cloud Run will populate some labels with 'run.googleapis.com' or
-   * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-   * changes will not be preserved.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 Job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -353,6 +367,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -373,10 +388,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * KRM-style annotations for the resource. Unstructured key value map that may
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
-   * when modifying objects. Cloud Run will populate some annotations using
-   * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-   * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * when modifying objects.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 Job.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules. More info: https://kubernetes.io/docs/user-guide/annotations
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -401,10 +419,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * KRM-style annotations for the resource. Unstructured key value map that may
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
-   * when modifying objects. Cloud Run will populate some annotations using
-   * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-   * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * when modifying objects.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 Job.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules. More info: https://kubernetes.io/docs/user-guide/annotations
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -420,17 +441,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * KRM-style annotations for the resource. Unstructured key value map that may
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
-   * when modifying objects. Cloud Run will populate some annotations using
-   * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-   * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * when modifying objects.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 Job.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules. More info: https://kubernetes.io/docs/user-guide/annotations
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -444,10 +470,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * KRM-style annotations for the resource. Unstructured key value map that may
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
-   * when modifying objects. Cloud Run will populate some annotations using
-   * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-   * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * when modifying objects.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 Job.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules. More info: https://kubernetes.io/docs/user-guide/annotations
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -510,7 +539,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
@@ -559,7 +588,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int DELETE_TIME_FIELD_NUMBER = 8;
@@ -608,7 +637,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
-    return getDeleteTime();
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 9;
@@ -660,11 +689,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   public static final int CREATOR_FIELD_NUMBER = 10;
-  private volatile java.lang.Object creator_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creator_ = "";
   /**
    *
    *
@@ -713,7 +744,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAST_MODIFIER_FIELD_NUMBER = 11;
-  private volatile java.lang.Object lastModifier_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastModifier_ = "";
   /**
    *
    *
@@ -762,7 +795,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLIENT_FIELD_NUMBER = 12;
-  private volatile java.lang.Object client_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object client_ = "";
   /**
    *
    *
@@ -811,7 +846,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLIENT_VERSION_FIELD_NUMBER = 13;
-  private volatile java.lang.Object clientVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientVersion_ = "";
   /**
    *
    *
@@ -860,7 +897,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAUNCH_STAGE_FIELD_NUMBER = 14;
-  private int launchStage_;
+  private int launchStage_ = 0;
   /**
    *
    *
@@ -895,8 +932,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.LaunchStage getLaunchStage() {
-    @SuppressWarnings("deprecation")
-    com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+    com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(launchStage_);
     return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
   }
 
@@ -945,7 +981,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.BinaryAuthorizationOrBuilder getBinaryAuthorizationOrBuilder() {
-    return getBinaryAuthorization();
+    return binaryAuthorization_ == null
+        ? com.google.cloud.run.v2.BinaryAuthorization.getDefaultInstance()
+        : binaryAuthorization_;
   }
 
   public static final int TEMPLATE_FIELD_NUMBER = 16;
@@ -999,17 +1037,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.ExecutionTemplateOrBuilder getTemplateOrBuilder() {
-    return getTemplate();
+    return template_ == null
+        ? com.google.cloud.run.v2.ExecutionTemplate.getDefaultInstance()
+        : template_;
   }
 
   public static final int OBSERVED_GENERATION_FIELD_NUMBER = 17;
-  private long observedGeneration_;
+  private long observedGeneration_ = 0L;
   /**
    *
    *
    * <pre>
-   * Output only. The generation of this Job. See comments in `reconciling` for additional
-   * information on reconciliation process in Cloud Run.
+   * Output only. The generation of this Job. See comments in `reconciling` for
+   * additional information on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>int64 observed_generation = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1027,8 +1067,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Condition of this Job, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Job, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -1045,8 +1085,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Condition of this Job, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Job, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -1065,8 +1105,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Condition of this Job, containing its readiness status, and
-   * detailed error information in case it did not reach the desired state.
+   * Output only. The Condition of this Job, containing its readiness status,
+   * and detailed error information in case it did not reach the desired state.
    * </pre>
    *
    * <code>
@@ -1075,19 +1115,23 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.ConditionOrBuilder getTerminalConditionOrBuilder() {
-    return getTerminalCondition();
+    return terminalCondition_ == null
+        ? com.google.cloud.run.v2.Condition.getDefaultInstance()
+        : terminalCondition_;
   }
 
   public static final int CONDITIONS_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Condition> conditions_;
   /**
    *
    *
    * <pre>
-   * Output only. The Conditions of all other associated sub-resources. They contain
-   * additional diagnostics information in case the Job does not reach its
-   * desired state. See comments in `reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * Output only. The Conditions of all other associated sub-resources. They
+   * contain additional diagnostics information in case the Job does not reach
+   * its desired state. See comments in `reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>
@@ -1102,10 +1146,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Conditions of all other associated sub-resources. They contain
-   * additional diagnostics information in case the Job does not reach its
-   * desired state. See comments in `reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * Output only. The Conditions of all other associated sub-resources. They
+   * contain additional diagnostics information in case the Job does not reach
+   * its desired state. See comments in `reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>
@@ -1121,10 +1165,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Conditions of all other associated sub-resources. They contain
-   * additional diagnostics information in case the Job does not reach its
-   * desired state. See comments in `reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * Output only. The Conditions of all other associated sub-resources. They
+   * contain additional diagnostics information in case the Job does not reach
+   * its desired state. See comments in `reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>
@@ -1139,10 +1183,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Conditions of all other associated sub-resources. They contain
-   * additional diagnostics information in case the Job does not reach its
-   * desired state. See comments in `reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * Output only. The Conditions of all other associated sub-resources. They
+   * contain additional diagnostics information in case the Job does not reach
+   * its desired state. See comments in `reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>
@@ -1157,10 +1201,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Conditions of all other associated sub-resources. They contain
-   * additional diagnostics information in case the Job does not reach its
-   * desired state. See comments in `reconciling` for additional information on
-   * reconciliation process in Cloud Run.
+   * Output only. The Conditions of all other associated sub-resources. They
+   * contain additional diagnostics information in case the Job does not reach
+   * its desired state. See comments in `reconciling` for additional information
+   * on reconciliation process in Cloud Run.
    * </pre>
    *
    * <code>
@@ -1173,7 +1217,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXECUTION_COUNT_FIELD_NUMBER = 20;
-  private int executionCount_;
+  private int executionCount_ = 0;
   /**
    *
    *
@@ -1241,17 +1285,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.run.v2.ExecutionReferenceOrBuilder getLatestCreatedExecutionOrBuilder() {
-    return getLatestCreatedExecution();
+    return latestCreatedExecution_ == null
+        ? com.google.cloud.run.v2.ExecutionReference.getDefaultInstance()
+        : latestCreatedExecution_;
   }
 
   public static final int RECONCILING_FIELD_NUMBER = 23;
-  private boolean reconciling_;
+  private boolean reconciling_ = false;
   /**
    *
    *
    * <pre>
-   * Output only. Returns true if the Job is currently being acted upon by the system to
-   * bring it into the desired state.
+   * Output only. Returns true if the Job is currently being acted upon by the
+   * system to bring it into the desired state.
    * When a new Job is created, or an existing one is updated, Cloud Run
    * will asynchronously perform all necessary steps to bring the Job to the
    * desired state. This process is called reconciliation.
@@ -1280,7 +1326,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 99;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -1749,8 +1797,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Job represents the configuration of a single job. A job an immutable resource
-   * that references a container image which is run to completion.
+   * Job represents the configuration of a single job, which references a
+   * container image that is run to completion.
    * </pre>
    *
    * Protobuf type {@code google.cloud.run.v2.Job}
@@ -1806,66 +1854,51 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       uid_ = "";
-
       generation_ = 0L;
-
       internalGetMutableLabels().clear();
       internalGetMutableAnnotations().clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-      } else {
-        deleteTime_ = null;
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       creator_ = "";
-
       lastModifier_ = "";
-
       client_ = "";
-
       clientVersion_ = "";
-
       launchStage_ = 0;
-
-      if (binaryAuthorizationBuilder_ == null) {
-        binaryAuthorization_ = null;
-      } else {
-        binaryAuthorization_ = null;
+      binaryAuthorization_ = null;
+      if (binaryAuthorizationBuilder_ != null) {
+        binaryAuthorizationBuilder_.dispose();
         binaryAuthorizationBuilder_ = null;
       }
-      if (templateBuilder_ == null) {
-        template_ = null;
-      } else {
-        template_ = null;
+      template_ = null;
+      if (templateBuilder_ != null) {
+        templateBuilder_.dispose();
         templateBuilder_ = null;
       }
       observedGeneration_ = 0L;
-
-      if (terminalConditionBuilder_ == null) {
-        terminalCondition_ = null;
-      } else {
-        terminalCondition_ = null;
+      terminalCondition_ = null;
+      if (terminalConditionBuilder_ != null) {
+        terminalConditionBuilder_.dispose();
         terminalConditionBuilder_ = null;
       }
       if (conditionsBuilder_ == null) {
@@ -1874,19 +1907,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00040000);
       executionCount_ = 0;
-
-      if (latestCreatedExecutionBuilder_ == null) {
-        latestCreatedExecution_ = null;
-      } else {
-        latestCreatedExecution_ = null;
+      latestCreatedExecution_ = null;
+      if (latestCreatedExecutionBuilder_ != null) {
+        latestCreatedExecutionBuilder_.dispose();
         latestCreatedExecutionBuilder_ = null;
       }
       reconciling_ = false;
-
       etag_ = "";
-
       return this;
     }
 
@@ -1912,74 +1941,105 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.Job buildPartial() {
       com.google.cloud.run.v2.Job result = new com.google.cloud.run.v2.Job(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.uid_ = uid_;
-      result.generation_ = generation_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (deleteTimeBuilder_ == null) {
-        result.deleteTime_ = deleteTime_;
-      } else {
-        result.deleteTime_ = deleteTimeBuilder_.build();
-      }
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
-      }
-      result.creator_ = creator_;
-      result.lastModifier_ = lastModifier_;
-      result.client_ = client_;
-      result.clientVersion_ = clientVersion_;
-      result.launchStage_ = launchStage_;
-      if (binaryAuthorizationBuilder_ == null) {
-        result.binaryAuthorization_ = binaryAuthorization_;
-      } else {
-        result.binaryAuthorization_ = binaryAuthorizationBuilder_.build();
-      }
-      if (templateBuilder_ == null) {
-        result.template_ = template_;
-      } else {
-        result.template_ = templateBuilder_.build();
-      }
-      result.observedGeneration_ = observedGeneration_;
-      if (terminalConditionBuilder_ == null) {
-        result.terminalCondition_ = terminalCondition_;
-      } else {
-        result.terminalCondition_ = terminalConditionBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.run.v2.Job result) {
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00040000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00040000);
         }
         result.conditions_ = conditions_;
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
-      result.executionCount_ = executionCount_;
-      if (latestCreatedExecutionBuilder_ == null) {
-        result.latestCreatedExecution_ = latestCreatedExecution_;
-      } else {
-        result.latestCreatedExecution_ = latestCreatedExecutionBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.Job result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      result.reconciling_ = reconciling_;
-      result.etag_ = etag_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.generation_ = generation_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.creator_ = creator_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.lastModifier_ = lastModifier_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.client_ = client_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.clientVersion_ = clientVersion_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.launchStage_ = launchStage_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.binaryAuthorization_ =
+            binaryAuthorizationBuilder_ == null
+                ? binaryAuthorization_
+                : binaryAuthorizationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.template_ = templateBuilder_ == null ? template_ : templateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.observedGeneration_ = observedGeneration_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.terminalCondition_ =
+            terminalConditionBuilder_ == null
+                ? terminalCondition_
+                : terminalConditionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.executionCount_ = executionCount_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.latestCreatedExecution_ =
+            latestCreatedExecutionBuilder_ == null
+                ? latestCreatedExecution_
+                : latestCreatedExecutionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -2029,17 +2089,21 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.run.v2.Job.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getGeneration() != 0L) {
         setGeneration(other.getGeneration());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000010;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -2054,18 +2118,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCreator().isEmpty()) {
         creator_ = other.creator_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getLastModifier().isEmpty()) {
         lastModifier_ = other.lastModifier_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getClient().isEmpty()) {
         client_ = other.client_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getClientVersion().isEmpty()) {
         clientVersion_ = other.clientVersion_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.launchStage_ != 0) {
@@ -2087,7 +2155,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00040000);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -2100,7 +2168,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00040000);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -2121,6 +2189,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2152,19 +2221,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 generation_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -2176,6 +2245,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -2187,86 +2257,87 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 creator_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 lastModifier_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 client_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 clientVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 112:
               {
                 launchStage_ = input.readEnum();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 112
             case 122:
               {
                 input.readMessage(
                     getBinaryAuthorizationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(getTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 136:
               {
                 observedGeneration_ = input.readInt64();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 136
             case 146:
               {
                 input.readMessage(
                     getTerminalConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 146
             case 154:
@@ -2285,26 +2356,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 160:
               {
                 executionCount_ = input.readInt32();
-
+                bitField0_ |= 0x00080000;
                 break;
               } // case 160
             case 178:
               {
                 input.readMessage(
                     getLatestCreatedExecutionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00100000;
                 break;
               } // case 178
             case 184:
               {
                 reconciling_ = input.readBool();
-
+                bitField0_ |= 0x00200000;
                 break;
               } // case 184
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00400000;
                 break;
               } // case 794
             default:
@@ -2393,8 +2464,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2412,8 +2483,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2436,8 +2507,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2447,8 +2518,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the Execution. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2470,8 +2542,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the Execution. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2493,8 +2566,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the Execution. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2506,8 +2580,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2515,8 +2589,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the Execution. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2524,8 +2599,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2533,8 +2608,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the Execution. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the Execution. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2547,8 +2623,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2586,6 +2662,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setGeneration(long value) {
 
       generation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2602,7 +2679,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGeneration() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       generation_ = 0L;
       onChanged();
       return this;
@@ -2619,14 +2696,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -2643,9 +2720,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 Job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -2673,9 +2751,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 Job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -2694,16 +2773,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 Job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2720,9 +2802,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 Job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -2740,6 +2823,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2753,9 +2837,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 Job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -2770,6 +2855,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2782,9 +2868,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 Job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -2796,8 +2883,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2810,15 +2897,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
-     * Cloud Run will populate some labels with 'run.googleapis.com' or
-     * 'serving.knative.dev' namespaces. Those labels are read-only, and user
-     * changes will not be preserved.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 Job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -2835,8 +2924,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -2844,6 +2931,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return annotations_;
     }
 
@@ -2857,10 +2946,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * KRM-style annotations for the resource. Unstructured key value map that may
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
-     * when modifying objects. Cloud Run will populate some annotations using
-     * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-     * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * when modifying objects.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 Job.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules. More info: https://kubernetes.io/docs/user-guide/annotations
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -2885,10 +2977,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * KRM-style annotations for the resource. Unstructured key value map that may
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
-     * when modifying objects. Cloud Run will populate some annotations using
-     * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-     * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * when modifying objects.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 Job.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules. More info: https://kubernetes.io/docs/user-guide/annotations
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -2904,17 +2999,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * KRM-style annotations for the resource. Unstructured key value map that may
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
-     * when modifying objects. Cloud Run will populate some annotations using
-     * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-     * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * when modifying objects.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 Job.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules. More info: https://kubernetes.io/docs/user-guide/annotations
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 5;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2928,10 +3028,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * KRM-style annotations for the resource. Unstructured key value map that may
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
-     * when modifying objects. Cloud Run will populate some annotations using
-     * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-     * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * when modifying objects.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 Job.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules. More info: https://kubernetes.io/docs/user-guide/annotations
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -2949,6 +3052,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -2959,10 +3063,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * KRM-style annotations for the resource. Unstructured key value map that may
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
-     * when modifying objects. Cloud Run will populate some annotations using
-     * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-     * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * when modifying objects.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 Job.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules. More info: https://kubernetes.io/docs/user-guide/annotations
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -2977,6 +3084,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -2986,10 +3094,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * KRM-style annotations for the resource. Unstructured key value map that may
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
-     * when modifying objects. Cloud Run will populate some annotations using
-     * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-     * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * when modifying objects.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 Job.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules. More info: https://kubernetes.io/docs/user-guide/annotations
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 5;</code>
@@ -3001,8 +3112,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -3012,16 +3123,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * KRM-style annotations for the resource. Unstructured key value map that may
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
-     * when modifying objects. Cloud Run will populate some annotations using
-     * 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field
-     * follows Kubernetes annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * when modifying objects.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 Job.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules. More info: https://kubernetes.io/docs/user-guide/annotations
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 5;</code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -3045,7 +3160,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3086,11 +3201,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3107,11 +3222,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3127,17 +3242,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3152,14 +3268,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3174,7 +3289,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3246,7 +3361,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3287,11 +3402,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3308,11 +3423,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3328,17 +3443,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3353,14 +3469,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3375,7 +3490,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3447,7 +3562,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
-      return deleteTimeBuilder_ != null || deleteTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3488,11 +3603,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deleteTime_ = value;
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3509,11 +3624,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deleteTimeBuilder_ == null) {
         deleteTime_ = builderForValue.build();
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3529,17 +3644,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
-        if (deleteTime_ != null) {
-          deleteTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deleteTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
         } else {
           deleteTime_ = value;
         }
-        onChanged();
       } else {
         deleteTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3554,14 +3670,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeleteTime() {
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-        onChanged();
-      } else {
-        deleteTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3576,7 +3691,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
@@ -3649,7 +3764,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3692,11 +3807,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3714,11 +3829,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3735,17 +3850,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3761,14 +3877,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3784,7 +3899,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -3899,8 +4014,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       creator_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3916,8 +4031,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreator() {
-
       creator_ = getDefaultInstance().getCreator();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3938,8 +4053,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       creator_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4005,8 +4120,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       lastModifier_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4022,8 +4137,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLastModifier() {
-
       lastModifier_ = getDefaultInstance().getLastModifier();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4044,8 +4159,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       lastModifier_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4111,8 +4226,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       client_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4128,8 +4243,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClient() {
-
       client_ = getDefaultInstance().getClient();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4150,8 +4265,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       client_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4217,8 +4332,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientVersion_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4234,8 +4349,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClientVersion() {
-
       clientVersion_ = getDefaultInstance().getClientVersion();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4256,8 +4371,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientVersion_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4297,8 +4412,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLaunchStageValue(int value) {
-
       launchStage_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4318,8 +4433,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.LaunchStage getLaunchStage() {
-      @SuppressWarnings("deprecation")
-      com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+      com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(launchStage_);
       return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
     }
     /**
@@ -4341,7 +4455,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00002000;
       launchStage_ = value.getNumber();
       onChanged();
       return this;
@@ -4361,7 +4475,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLaunchStage() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       launchStage_ = 0;
       onChanged();
       return this;
@@ -4385,7 +4499,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the binaryAuthorization field is set.
      */
     public boolean hasBinaryAuthorization() {
-      return binaryAuthorizationBuilder_ != null || binaryAuthorization_ != null;
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4422,11 +4536,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         binaryAuthorization_ = value;
-        onChanged();
       } else {
         binaryAuthorizationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4442,11 +4556,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.run.v2.BinaryAuthorization.Builder builderForValue) {
       if (binaryAuthorizationBuilder_ == null) {
         binaryAuthorization_ = builderForValue.build();
-        onChanged();
       } else {
         binaryAuthorizationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4460,19 +4574,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBinaryAuthorization(com.google.cloud.run.v2.BinaryAuthorization value) {
       if (binaryAuthorizationBuilder_ == null) {
-        if (binaryAuthorization_ != null) {
-          binaryAuthorization_ =
-              com.google.cloud.run.v2.BinaryAuthorization.newBuilder(binaryAuthorization_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00004000) != 0)
+            && binaryAuthorization_ != null
+            && binaryAuthorization_
+                != com.google.cloud.run.v2.BinaryAuthorization.getDefaultInstance()) {
+          getBinaryAuthorizationBuilder().mergeFrom(value);
         } else {
           binaryAuthorization_ = value;
         }
-        onChanged();
       } else {
         binaryAuthorizationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4485,14 +4599,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 15;</code>
      */
     public Builder clearBinaryAuthorization() {
-      if (binaryAuthorizationBuilder_ == null) {
-        binaryAuthorization_ = null;
-        onChanged();
-      } else {
-        binaryAuthorization_ = null;
+      bitField0_ = (bitField0_ & ~0x00004000);
+      binaryAuthorization_ = null;
+      if (binaryAuthorizationBuilder_ != null) {
+        binaryAuthorizationBuilder_.dispose();
         binaryAuthorizationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4505,7 +4618,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 15;</code>
      */
     public com.google.cloud.run.v2.BinaryAuthorization.Builder getBinaryAuthorizationBuilder() {
-
+      bitField0_ |= 0x00004000;
       onChanged();
       return getBinaryAuthorizationFieldBuilder().getBuilder();
     }
@@ -4573,7 +4686,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the template field is set.
      */
     public boolean hasTemplate() {
-      return templateBuilder_ != null || template_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4614,11 +4727,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         template_ = value;
-        onChanged();
       } else {
         templateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4635,11 +4748,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setTemplate(com.google.cloud.run.v2.ExecutionTemplate.Builder builderForValue) {
       if (templateBuilder_ == null) {
         template_ = builderForValue.build();
-        onChanged();
       } else {
         templateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4655,19 +4768,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTemplate(com.google.cloud.run.v2.ExecutionTemplate value) {
       if (templateBuilder_ == null) {
-        if (template_ != null) {
-          template_ =
-              com.google.cloud.run.v2.ExecutionTemplate.newBuilder(template_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00008000) != 0)
+            && template_ != null
+            && template_ != com.google.cloud.run.v2.ExecutionTemplate.getDefaultInstance()) {
+          getTemplateBuilder().mergeFrom(value);
         } else {
           template_ = value;
         }
-        onChanged();
       } else {
         templateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4682,14 +4794,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTemplate() {
-      if (templateBuilder_ == null) {
-        template_ = null;
-        onChanged();
-      } else {
-        template_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      template_ = null;
+      if (templateBuilder_ != null) {
+        templateBuilder_.dispose();
         templateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4704,7 +4815,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.run.v2.ExecutionTemplate.Builder getTemplateBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getTemplateFieldBuilder().getBuilder();
     }
@@ -4761,8 +4872,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The generation of this Job. See comments in `reconciling` for additional
-     * information on reconciliation process in Cloud Run.
+     * Output only. The generation of this Job. See comments in `reconciling` for
+     * additional information on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>int64 observed_generation = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4777,8 +4888,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The generation of this Job. See comments in `reconciling` for additional
-     * information on reconciliation process in Cloud Run.
+     * Output only. The generation of this Job. See comments in `reconciling` for
+     * additional information on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>int64 observed_generation = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4789,6 +4900,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setObservedGeneration(long value) {
 
       observedGeneration_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4796,8 +4908,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The generation of this Job. See comments in `reconciling` for additional
-     * information on reconciliation process in Cloud Run.
+     * Output only. The generation of this Job. See comments in `reconciling` for
+     * additional information on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>int64 observed_generation = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4805,7 +4917,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearObservedGeneration() {
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       observedGeneration_ = 0L;
       onChanged();
       return this;
@@ -4821,8 +4933,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Job, containing its readiness status, and
-     * detailed error information in case it did not reach the desired state.
+     * Output only. The Condition of this Job, containing its readiness status,
+     * and detailed error information in case it did not reach the desired state.
      * </pre>
      *
      * <code>
@@ -4832,14 +4944,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the terminalCondition field is set.
      */
     public boolean hasTerminalCondition() {
-      return terminalConditionBuilder_ != null || terminalCondition_ != null;
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. The Condition of this Job, containing its readiness status, and
-     * detailed error information in case it did not reach the desired state.
+     * Output only. The Condition of this Job, containing its readiness status,
+     * and detailed error information in case it did not reach the desired state.
      * </pre>
      *
      * <code>
@@ -4861,8 +4973,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Job, containing its readiness status, and
-     * detailed error information in case it did not reach the desired state.
+     * Output only. The Condition of this Job, containing its readiness status,
+     * and detailed error information in case it did not reach the desired state.
      * </pre>
      *
      * <code>
@@ -4875,19 +4987,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         terminalCondition_ = value;
-        onChanged();
       } else {
         terminalConditionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The Condition of this Job, containing its readiness status, and
-     * detailed error information in case it did not reach the desired state.
+     * Output only. The Condition of this Job, containing its readiness status,
+     * and detailed error information in case it did not reach the desired state.
      * </pre>
      *
      * <code>
@@ -4897,19 +5009,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setTerminalCondition(com.google.cloud.run.v2.Condition.Builder builderForValue) {
       if (terminalConditionBuilder_ == null) {
         terminalCondition_ = builderForValue.build();
-        onChanged();
       } else {
         terminalConditionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The Condition of this Job, containing its readiness status, and
-     * detailed error information in case it did not reach the desired state.
+     * Output only. The Condition of this Job, containing its readiness status,
+     * and detailed error information in case it did not reach the desired state.
      * </pre>
      *
      * <code>
@@ -4918,27 +5030,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTerminalCondition(com.google.cloud.run.v2.Condition value) {
       if (terminalConditionBuilder_ == null) {
-        if (terminalCondition_ != null) {
-          terminalCondition_ =
-              com.google.cloud.run.v2.Condition.newBuilder(terminalCondition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00020000) != 0)
+            && terminalCondition_ != null
+            && terminalCondition_ != com.google.cloud.run.v2.Condition.getDefaultInstance()) {
+          getTerminalConditionBuilder().mergeFrom(value);
         } else {
           terminalCondition_ = value;
         }
-        onChanged();
       } else {
         terminalConditionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The Condition of this Job, containing its readiness status, and
-     * detailed error information in case it did not reach the desired state.
+     * Output only. The Condition of this Job, containing its readiness status,
+     * and detailed error information in case it did not reach the desired state.
      * </pre>
      *
      * <code>
@@ -4946,22 +5057,21 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTerminalCondition() {
-      if (terminalConditionBuilder_ == null) {
-        terminalCondition_ = null;
-        onChanged();
-      } else {
-        terminalCondition_ = null;
+      bitField0_ = (bitField0_ & ~0x00020000);
+      terminalCondition_ = null;
+      if (terminalConditionBuilder_ != null) {
+        terminalConditionBuilder_.dispose();
         terminalConditionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The Condition of this Job, containing its readiness status, and
-     * detailed error information in case it did not reach the desired state.
+     * Output only. The Condition of this Job, containing its readiness status,
+     * and detailed error information in case it did not reach the desired state.
      * </pre>
      *
      * <code>
@@ -4969,7 +5079,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.run.v2.Condition.Builder getTerminalConditionBuilder() {
-
+      bitField0_ |= 0x00020000;
       onChanged();
       return getTerminalConditionFieldBuilder().getBuilder();
     }
@@ -4977,8 +5087,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Job, containing its readiness status, and
-     * detailed error information in case it did not reach the desired state.
+     * Output only. The Condition of this Job, containing its readiness status,
+     * and detailed error information in case it did not reach the desired state.
      * </pre>
      *
      * <code>
@@ -4998,8 +5108,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Condition of this Job, containing its readiness status, and
-     * detailed error information in case it did not reach the desired state.
+     * Output only. The Condition of this Job, containing its readiness status,
+     * and detailed error information in case it did not reach the desired state.
      * </pre>
      *
      * <code>
@@ -5027,9 +5137,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.cloud.run.v2.Condition>(conditions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00040000;
       }
     }
 
@@ -5043,10 +5153,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5064,10 +5174,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5085,10 +5195,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5106,10 +5216,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5133,10 +5243,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5158,10 +5268,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5185,10 +5295,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5212,10 +5322,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5236,10 +5346,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5261,10 +5371,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5286,10 +5396,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5299,7 +5409,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -5310,10 +5420,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5334,10 +5444,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5351,10 +5461,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5372,10 +5482,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5394,10 +5504,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5412,10 +5522,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5430,10 +5540,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Conditions of all other associated sub-resources. They contain
-     * additional diagnostics information in case the Job does not reach its
-     * desired state. See comments in `reconciling` for additional information on
-     * reconciliation process in Cloud Run.
+     * Output only. The Conditions of all other associated sub-resources. They
+     * contain additional diagnostics information in case the Job does not reach
+     * its desired state. See comments in `reconciling` for additional information
+     * on reconciliation process in Cloud Run.
      * </pre>
      *
      * <code>
@@ -5455,7 +5565,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.Condition,
                 com.google.cloud.run.v2.Condition.Builder,
                 com.google.cloud.run.v2.ConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00040000) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -5492,6 +5602,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setExecutionCount(int value) {
 
       executionCount_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5507,7 +5618,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExecutionCount() {
-
+      bitField0_ = (bitField0_ & ~0x00080000);
       executionCount_ = 0;
       onChanged();
       return this;
@@ -5533,7 +5644,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latestCreatedExecution field is set.
      */
     public boolean hasLatestCreatedExecution() {
-      return latestCreatedExecutionBuilder_ != null || latestCreatedExecution_ != null;
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -5574,11 +5685,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         latestCreatedExecution_ = value;
-        onChanged();
       } else {
         latestCreatedExecutionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00100000;
+      onChanged();
       return this;
     }
     /**
@@ -5596,11 +5707,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.run.v2.ExecutionReference.Builder builderForValue) {
       if (latestCreatedExecutionBuilder_ == null) {
         latestCreatedExecution_ = builderForValue.build();
-        onChanged();
       } else {
         latestCreatedExecutionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00100000;
+      onChanged();
       return this;
     }
     /**
@@ -5616,19 +5727,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLatestCreatedExecution(com.google.cloud.run.v2.ExecutionReference value) {
       if (latestCreatedExecutionBuilder_ == null) {
-        if (latestCreatedExecution_ != null) {
-          latestCreatedExecution_ =
-              com.google.cloud.run.v2.ExecutionReference.newBuilder(latestCreatedExecution_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00100000) != 0)
+            && latestCreatedExecution_ != null
+            && latestCreatedExecution_
+                != com.google.cloud.run.v2.ExecutionReference.getDefaultInstance()) {
+          getLatestCreatedExecutionBuilder().mergeFrom(value);
         } else {
           latestCreatedExecution_ = value;
         }
-        onChanged();
       } else {
         latestCreatedExecutionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00100000;
+      onChanged();
       return this;
     }
     /**
@@ -5643,14 +5754,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLatestCreatedExecution() {
-      if (latestCreatedExecutionBuilder_ == null) {
-        latestCreatedExecution_ = null;
-        onChanged();
-      } else {
-        latestCreatedExecution_ = null;
+      bitField0_ = (bitField0_ & ~0x00100000);
+      latestCreatedExecution_ = null;
+      if (latestCreatedExecutionBuilder_ != null) {
+        latestCreatedExecutionBuilder_.dispose();
         latestCreatedExecutionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5665,7 +5775,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.run.v2.ExecutionReference.Builder getLatestCreatedExecutionBuilder() {
-
+      bitField0_ |= 0x00100000;
       onChanged();
       return getLatestCreatedExecutionFieldBuilder().getBuilder();
     }
@@ -5723,8 +5833,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Returns true if the Job is currently being acted upon by the system to
-     * bring it into the desired state.
+     * Output only. Returns true if the Job is currently being acted upon by the
+     * system to bring it into the desired state.
      * When a new Job is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Job to the
      * desired state. This process is called reconciliation.
@@ -5755,8 +5865,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Returns true if the Job is currently being acted upon by the system to
-     * bring it into the desired state.
+     * Output only. Returns true if the Job is currently being acted upon by the
+     * system to bring it into the desired state.
      * When a new Job is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Job to the
      * desired state. This process is called reconciliation.
@@ -5783,6 +5893,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5790,8 +5901,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Returns true if the Job is currently being acted upon by the system to
-     * bring it into the desired state.
+     * Output only. Returns true if the Job is currently being acted upon by the
+     * system to bring it into the desired state.
      * When a new Job is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Job to the
      * desired state. This process is called reconciliation.
@@ -5815,7 +5926,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-
+      bitField0_ = (bitField0_ & ~0x00200000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -5885,8 +5996,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5903,8 +6014,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -5926,8 +6037,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }

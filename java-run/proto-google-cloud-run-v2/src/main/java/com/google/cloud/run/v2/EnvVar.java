@@ -114,13 +114,15 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Name of the environment variable. Must be a C_IDENTIFIER, and mnay not
-   * exceed 32768 characters.
+   * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
+   * mnay not exceed 32768 characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -143,8 +145,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the environment variable. Must be a C_IDENTIFIER, and mnay not
-   * exceed 32768 characters.
+   * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
+   * mnay not exceed 32768 characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -537,8 +539,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (valueSourceBuilder_ != null) {
         valueSourceBuilder_.clear();
       }
@@ -570,20 +572,27 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.EnvVar buildPartial() {
       com.google.cloud.run.v2.EnvVar result = new com.google.cloud.run.v2.EnvVar(this);
-      result.name_ = name_;
-      if (valuesCase_ == 2) {
-        result.values_ = values_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valuesCase_ == 3) {
-        if (valueSourceBuilder_ == null) {
-          result.values_ = values_;
-        } else {
-          result.values_ = valueSourceBuilder_.build();
-        }
-      }
-      result.valuesCase_ = valuesCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.EnvVar result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.run.v2.EnvVar result) {
+      result.valuesCase_ = valuesCase_;
+      result.values_ = this.values_;
+      if (valuesCase_ == 3 && valueSourceBuilder_ != null) {
+        result.values_ = valueSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -633,6 +642,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.run.v2.EnvVar.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getValuesCase()) {
@@ -682,7 +692,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -729,13 +739,15 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and mnay not
-     * exceed 32768 characters.
+     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
+     * mnay not exceed 32768 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -757,8 +769,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and mnay not
-     * exceed 32768 characters.
+     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
+     * mnay not exceed 32768 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -780,8 +792,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and mnay not
-     * exceed 32768 characters.
+     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
+     * mnay not exceed 32768 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -793,8 +805,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -802,8 +814,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and mnay not
-     * exceed 32768 characters.
+     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
+     * mnay not exceed 32768 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -811,8 +823,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -820,8 +832,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and mnay not
-     * exceed 32768 characters.
+     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
+     * mnay not exceed 32768 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -834,8 +846,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1219,7 +1231,6 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
       }
       valuesCase_ = 3;
       onChanged();
-      ;
       return valueSourceBuilder_;
     }
 

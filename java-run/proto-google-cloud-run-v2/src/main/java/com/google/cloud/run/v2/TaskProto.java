@@ -80,7 +80,7 @@ public final class TaskProto {
           + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\024\n\014show_dele"
           + "ted\030\004 \001(\010\"V\n\021ListTasksResponse\022(\n\005tasks\030"
           + "\001 \003(\0132\031.google.cloud.run.v2.Task\022\027\n\017next"
-          + "_page_token\030\002 \001(\t\"\303\013\n\004Task\022\021\n\004name\030\001 \001(\t"
+          + "_page_token\030\002 \001(\t\"\331\013\n\004Task\022\021\n\004name\030\001 \001(\t"
           + "B\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\027\n\ngeneration\030\003 "
           + "\001(\003B\003\340A\003\0225\n\006labels\030\004 \003(\0132%.google.cloud."
           + "run.v2.Task.LabelsEntry\022?\n\013annotations\030\005"
@@ -111,28 +111,28 @@ public final class TaskProto {
           + "tResultB\003\340A\003\022A\n\016encryption_key\030\034 \001(\tB)\340A"
           + "\003\372A#\n!cloudkms.googleapis.com/CryptoKey\022"
           + "7\n\nvpc_access\030\035 \001(\0132\036.google.cloud.run.v"
-          + "2.VpcAccessB\003\340A\003\022\021\n\004etag\030c \001(\tB\003\340A\003\032-\n\013L"
-          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-          + "8\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\001:w\352At\n\027run.googleapis.com/"
-          + "Task\022Vprojects/{project}/locations/{loca"
-          + "tion}/jobs/{job}/executions/{execution}/"
-          + "tasks/{task}R\001\001\"T\n\021TaskAttemptResult\022\'\n\006"
-          + "status\030\001 \001(\0132\022.google.rpc.StatusB\003\340A\003\022\026\n"
-          + "\texit_code\030\002 \001(\005B\003\340A\0032\226\003\n\005Tasks\022\227\001\n\007GetT"
-          + "ask\022#.google.cloud.run.v2.GetTaskRequest"
-          + "\032\031.google.cloud.run.v2.Task\"L\202\323\344\223\002?\022=/v2"
-          + "/{name=projects/*/locations/*/jobs/*/exe"
-          + "cutions/*/tasks/*}\332A\004name\022\252\001\n\tListTasks\022"
-          + "%.google.cloud.run.v2.ListTasksRequest\032&"
-          + ".google.cloud.run.v2.ListTasksResponse\"N"
-          + "\202\323\344\223\002?\022=/v2/{parent=projects/*/locations"
-          + "/*/jobs/*/executions/*}/tasks\332A\006parent\032F"
-          + "\312A\022run.googleapis.com\322A.https://www.goog"
-          + "leapis.com/auth/cloud-platformB^\n\027com.go"
-          + "ogle.cloud.run.v2B\tTaskProtoP\001Z6google.g"
-          + "olang.org/genproto/googleapis/cloud/run/"
-          + "v2;runb\006proto3"
+          + "2.VpcAccessB\003\340A\003\022\024\n\007log_uri\030  \001(\tB\003\340A\003\022\021"
+          + "\n\004etag\030c \001(\tB\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:w\352A"
+          + "t\n\027run.googleapis.com/Task\022Vprojects/{pr"
+          + "oject}/locations/{location}/jobs/{job}/e"
+          + "xecutions/{execution}/tasks/{task}R\001\001\"T\n"
+          + "\021TaskAttemptResult\022\'\n\006status\030\001 \001(\0132\022.goo"
+          + "gle.rpc.StatusB\003\340A\003\022\026\n\texit_code\030\002 \001(\005B\003"
+          + "\340A\0032\226\003\n\005Tasks\022\227\001\n\007GetTask\022#.google.cloud"
+          + ".run.v2.GetTaskRequest\032\031.google.cloud.ru"
+          + "n.v2.Task\"L\202\323\344\223\002?\022=/v2/{name=projects/*/"
+          + "locations/*/jobs/*/executions/*/tasks/*}"
+          + "\332A\004name\022\252\001\n\tListTasks\022%.google.cloud.run"
+          + ".v2.ListTasksRequest\032&.google.cloud.run."
+          + "v2.ListTasksResponse\"N\202\323\344\223\002?\022=/v2/{paren"
+          + "t=projects/*/locations/*/jobs/*/executio"
+          + "ns/*}/tasks\332A\006parent\032F\312A\022run.googleapis."
+          + "com\322A.https://www.googleapis.com/auth/cl"
+          + "oud-platformB^\n\027com.google.cloud.run.v2B"
+          + "\tTaskProtoP\001Z6google.golang.org/genproto"
+          + "/googleapis/cloud/run/v2;runb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -205,6 +205,7 @@ public final class TaskProto {
               "LastAttemptResult",
               "EncryptionKey",
               "VpcAccess",
+              "LogUri",
               "Etag",
             });
     internal_static_google_cloud_run_v2_Task_LabelsEntry_descriptor =

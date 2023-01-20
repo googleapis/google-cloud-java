@@ -69,7 +69,9 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -118,6 +120,8 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HTTP_HEADERS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.HTTPHeader> httpHeaders_;
   /**
    *
@@ -392,15 +396,15 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       path_ = "";
-
       if (httpHeadersBuilder_ == null) {
         httpHeaders_ = java.util.Collections.emptyList();
       } else {
         httpHeaders_ = null;
         httpHeadersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -428,19 +432,31 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.run.v2.HTTPGetAction buildPartial() {
       com.google.cloud.run.v2.HTTPGetAction result =
           new com.google.cloud.run.v2.HTTPGetAction(this);
-      int from_bitField0_ = bitField0_;
-      result.path_ = path_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.run.v2.HTTPGetAction result) {
       if (httpHeadersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           httpHeaders_ = java.util.Collections.unmodifiableList(httpHeaders_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.httpHeaders_ = httpHeaders_;
       } else {
         result.httpHeaders_ = httpHeadersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.HTTPGetAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.path_ = path_;
+      }
     }
 
     @java.lang.Override
@@ -490,13 +506,14 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.run.v2.HTTPGetAction.getDefaultInstance()) return this;
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (httpHeadersBuilder_ == null) {
         if (!other.httpHeaders_.isEmpty()) {
           if (httpHeaders_.isEmpty()) {
             httpHeaders_ = other.httpHeaders_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureHttpHeadersIsMutable();
             httpHeaders_.addAll(other.httpHeaders_);
@@ -509,7 +526,7 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
             httpHeadersBuilder_.dispose();
             httpHeadersBuilder_ = null;
             httpHeaders_ = other.httpHeaders_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             httpHeadersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHttpHeadersFieldBuilder()
@@ -548,7 +565,7 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 34:
@@ -644,8 +661,8 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -661,8 +678,8 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -683,8 +700,8 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,9 +710,9 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureHttpHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         httpHeaders_ = new java.util.ArrayList<com.google.cloud.run.v2.HTTPHeader>(httpHeaders_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -910,7 +927,7 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
     public Builder clearHttpHeaders() {
       if (httpHeadersBuilder_ == null) {
         httpHeaders_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         httpHeadersBuilder_.clear();
@@ -1031,7 +1048,7 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.HTTPHeader,
                 com.google.cloud.run.v2.HTTPHeader.Builder,
                 com.google.cloud.run.v2.HTTPHeaderOrBuilder>(
-                httpHeaders_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                httpHeaders_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         httpHeaders_ = null;
       }
       return httpHeadersBuilder_;

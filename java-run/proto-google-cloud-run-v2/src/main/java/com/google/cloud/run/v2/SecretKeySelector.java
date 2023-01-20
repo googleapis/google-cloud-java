@@ -69,7 +69,9 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SECRET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object secret_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secret_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -386,10 +390,9 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       secret_ = "";
-
       version_ = "";
-
       return this;
     }
 
@@ -417,10 +420,21 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.run.v2.SecretKeySelector buildPartial() {
       com.google.cloud.run.v2.SecretKeySelector result =
           new com.google.cloud.run.v2.SecretKeySelector(this);
-      result.secret_ = secret_;
-      result.version_ = version_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.SecretKeySelector result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.secret_ = secret_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -470,10 +484,12 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.run.v2.SecretKeySelector.getDefaultInstance()) return this;
       if (!other.getSecret().isEmpty()) {
         secret_ = other.secret_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -505,13 +521,13 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 secret_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -530,6 +546,8 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object secret_ = "";
     /**
@@ -607,8 +625,8 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       secret_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -629,8 +647,8 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSecret() {
-
       secret_ = getDefaultInstance().getSecret();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +674,8 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secret_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -729,8 +747,8 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -748,8 +766,8 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -772,8 +790,8 @@ public final class SecretKeySelector extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

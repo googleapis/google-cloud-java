@@ -71,7 +71,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -100,16 +100,17 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.run.v2.TrafficTargetAllocationType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.run.v2.TrafficTargetAllocationType result =
-        com.google.cloud.run.v2.TrafficTargetAllocationType.valueOf(type_);
+        com.google.cloud.run.v2.TrafficTargetAllocationType.forNumber(type_);
     return result == null
         ? com.google.cloud.run.v2.TrafficTargetAllocationType.UNRECOGNIZED
         : result;
   }
 
   public static final int REVISION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object revision_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revision_ = "";
   /**
    *
    *
@@ -158,7 +159,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PERCENT_FIELD_NUMBER = 3;
-  private int percent_;
+  private int percent_ = 0;
   /**
    *
    *
@@ -176,7 +177,9 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TAG_FIELD_NUMBER = 4;
-  private volatile java.lang.Object tag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tag_ = "";
   /**
    *
    *
@@ -225,7 +228,9 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
   }
 
   public static final int URI_FIELD_NUMBER = 5;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -512,16 +517,12 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       revision_ = "";
-
       percent_ = 0;
-
       tag_ = "";
-
       uri_ = "";
-
       return this;
     }
 
@@ -549,13 +550,30 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     public com.google.cloud.run.v2.TrafficTargetStatus buildPartial() {
       com.google.cloud.run.v2.TrafficTargetStatus result =
           new com.google.cloud.run.v2.TrafficTargetStatus(this);
-      result.type_ = type_;
-      result.revision_ = revision_;
-      result.percent_ = percent_;
-      result.tag_ = tag_;
-      result.uri_ = uri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.TrafficTargetStatus result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.revision_ = revision_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.percent_ = percent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tag_ = tag_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.uri_ = uri_;
+      }
     }
 
     @java.lang.Override
@@ -608,6 +626,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       }
       if (!other.getRevision().isEmpty()) {
         revision_ = other.revision_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getPercent() != 0) {
@@ -615,10 +634,12 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       }
       if (!other.getTag().isEmpty()) {
         tag_ = other.tag_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -650,31 +671,31 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 revision_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 percent_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 tag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -693,6 +714,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -723,8 +746,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -741,9 +764,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.run.v2.TrafficTargetAllocationType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.run.v2.TrafficTargetAllocationType result =
-          com.google.cloud.run.v2.TrafficTargetAllocationType.valueOf(type_);
+          com.google.cloud.run.v2.TrafficTargetAllocationType.forNumber(type_);
       return result == null
           ? com.google.cloud.run.v2.TrafficTargetAllocationType.UNRECOGNIZED
           : result;
@@ -764,7 +786,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -781,7 +803,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -848,8 +870,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       revision_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,8 +887,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRevision() {
-
       revision_ = getDefaultInstance().getRevision();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -887,8 +909,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       revision_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -924,6 +946,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     public Builder setPercent(int value) {
 
       percent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -939,7 +962,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       percent_ = 0;
       onChanged();
       return this;
@@ -1006,8 +1029,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       tag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1023,8 +1046,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTag() {
-
       tag_ = getDefaultInstance().getTag();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1045,8 +1068,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1112,8 +1135,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1129,8 +1152,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1151,8 +1174,8 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

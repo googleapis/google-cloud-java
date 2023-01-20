@@ -22,7 +22,10 @@ package com.google.cloud.run.v2;
  *
  *
  * <pre>
- * Represents a specific Cloud SQL instance.
+ * Represents a set of Cloud SQL instances. Each one will be available under
+ * /cloudsql/[instance]. Visit
+ * https://cloud.google.com/sql/docs/mysql/connect-run for more information on
+ * how to connect Cloud SQL and Cloud Run.
  * </pre>
  *
  * Protobuf type {@code google.cloud.run.v2.CloudSqlInstance}
@@ -68,6 +71,8 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INSTANCES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList instances_;
   /**
    *
@@ -313,7 +318,10 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Represents a specific Cloud SQL instance.
+   * Represents a set of Cloud SQL instances. Each one will be available under
+   * /cloudsql/[instance]. Visit
+   * https://cloud.google.com/sql/docs/mysql/connect-run for more information on
+   * how to connect Cloud SQL and Cloud Run.
    * </pre>
    *
    * Protobuf type {@code google.cloud.run.v2.CloudSqlInstance}
@@ -347,6 +355,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -376,14 +385,24 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.run.v2.CloudSqlInstance buildPartial() {
       com.google.cloud.run.v2.CloudSqlInstance result =
           new com.google.cloud.run.v2.CloudSqlInstance(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.run.v2.CloudSqlInstance result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         instances_ = instances_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.instances_ = instances_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.CloudSqlInstance result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

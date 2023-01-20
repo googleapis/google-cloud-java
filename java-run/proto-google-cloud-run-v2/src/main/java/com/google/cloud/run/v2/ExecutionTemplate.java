@@ -92,6 +92,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -109,6 +110,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -131,6 +136,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -144,12 +153,19 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -161,6 +177,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * KRM-style labels for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system labels in v1 now have a
+   * corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -190,6 +210,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -208,6 +229,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -230,6 +255,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -243,13 +272,19 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -261,6 +296,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * KRM-style annotations for the resource.
+   * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+   * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+   * namespaces, and they will be rejected. All system annotations in v1 now
+   * have a corresponding field in v2 ExecutionTemplate.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -278,7 +317,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARALLELISM_FIELD_NUMBER = 3;
-  private int parallelism_;
+  private int parallelism_ = 0;
   /**
    *
    *
@@ -302,7 +341,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TASK_COUNT_FIELD_NUMBER = 4;
-  private int taskCount_;
+  private int taskCount_ = 0;
   /**
    *
    *
@@ -329,7 +368,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Describes the task(s) that will be created when executing an execution.
+   * Required. Describes the task(s) that will be created when executing an
+   * execution.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TaskTemplate template = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -345,7 +385,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Describes the task(s) that will be created when executing an execution.
+   * Required. Describes the task(s) that will be created when executing an
+   * execution.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TaskTemplate template = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -363,7 +404,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Describes the task(s) that will be created when executing an execution.
+   * Required. Describes the task(s) that will be created when executing an
+   * execution.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TaskTemplate template = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -371,7 +413,9 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.run.v2.TaskTemplateOrBuilder getTemplateOrBuilder() {
-    return getTemplate();
+    return template_ == null
+        ? com.google.cloud.run.v2.TaskTemplate.getDefaultInstance()
+        : template_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -653,16 +697,14 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableLabels().clear();
       internalGetMutableAnnotations().clear();
       parallelism_ = 0;
-
       taskCount_ = 0;
-
-      if (templateBuilder_ == null) {
-        template_ = null;
-      } else {
-        template_ = null;
+      template_ = null;
+      if (templateBuilder_ != null) {
+        templateBuilder_.dispose();
         templateBuilder_ = null;
       }
       return this;
@@ -692,20 +734,32 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.run.v2.ExecutionTemplate buildPartial() {
       com.google.cloud.run.v2.ExecutionTemplate result =
           new com.google.cloud.run.v2.ExecutionTemplate(this);
-      int from_bitField0_ = bitField0_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
-      result.parallelism_ = parallelism_;
-      result.taskCount_ = taskCount_;
-      if (templateBuilder_ == null) {
-        result.template_ = template_;
-      } else {
-        result.template_ = templateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.run.v2.ExecutionTemplate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parallelism_ = parallelism_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.taskCount_ = taskCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.template_ = templateBuilder_ == null ? template_ : templateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -754,7 +808,9 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public Builder mergeFrom(com.google.cloud.run.v2.ExecutionTemplate other) {
       if (other == com.google.cloud.run.v2.ExecutionTemplate.getDefaultInstance()) return this;
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000001;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000002;
       if (other.getParallelism() != 0) {
         setParallelism(other.getParallelism());
       }
@@ -799,6 +855,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -810,24 +867,25 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 parallelism_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 taskCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -860,14 +918,14 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return labels_;
     }
 
@@ -879,6 +937,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -901,6 +963,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -914,13 +980,19 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -932,6 +1004,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -949,6 +1025,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -957,6 +1034,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -971,6 +1052,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -978,6 +1060,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -989,8 +1075,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -998,12 +1084,17 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style labels for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system labels in v1 now have a
+     * corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 1;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -1020,8 +1111,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -1029,6 +1118,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return annotations_;
     }
 
@@ -1040,6 +1131,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -1062,6 +1157,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -1075,13 +1174,19 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1093,6 +1198,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -1110,6 +1219,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -1118,6 +1228,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -1132,6 +1246,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -1139,6 +1254,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 2;</code>
@@ -1150,8 +1269,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1159,12 +1278,17 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * KRM-style annotations for the resource.
+     * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
+     * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
+     * namespaces, and they will be rejected. All system annotations in v1 now
+     * have a corresponding field in v2 ExecutionTemplate.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 2;</code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1211,6 +1335,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public Builder setParallelism(int value) {
 
       parallelism_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1232,7 +1357,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParallelism() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       parallelism_ = 0;
       onChanged();
       return this;
@@ -1277,6 +1402,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public Builder setTaskCount(int value) {
 
       taskCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1296,7 +1422,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTaskCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       taskCount_ = 0;
       onChanged();
       return this;
@@ -1312,7 +1438,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes the task(s) that will be created when executing an execution.
+     * Required. Describes the task(s) that will be created when executing an
+     * execution.
      * </pre>
      *
      * <code>
@@ -1322,13 +1449,14 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * @return Whether the template field is set.
      */
     public boolean hasTemplate() {
-      return templateBuilder_ != null || template_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Required. Describes the task(s) that will be created when executing an execution.
+     * Required. Describes the task(s) that will be created when executing an
+     * execution.
      * </pre>
      *
      * <code>
@@ -1350,7 +1478,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes the task(s) that will be created when executing an execution.
+     * Required. Describes the task(s) that will be created when executing an
+     * execution.
      * </pre>
      *
      * <code>
@@ -1363,18 +1492,19 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         template_ = value;
-        onChanged();
       } else {
         templateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Describes the task(s) that will be created when executing an execution.
+     * Required. Describes the task(s) that will be created when executing an
+     * execution.
      * </pre>
      *
      * <code>
@@ -1384,18 +1514,19 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public Builder setTemplate(com.google.cloud.run.v2.TaskTemplate.Builder builderForValue) {
       if (templateBuilder_ == null) {
         template_ = builderForValue.build();
-        onChanged();
       } else {
         templateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Describes the task(s) that will be created when executing an execution.
+     * Required. Describes the task(s) that will be created when executing an
+     * execution.
      * </pre>
      *
      * <code>
@@ -1404,26 +1535,26 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeTemplate(com.google.cloud.run.v2.TaskTemplate value) {
       if (templateBuilder_ == null) {
-        if (template_ != null) {
-          template_ =
-              com.google.cloud.run.v2.TaskTemplate.newBuilder(template_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && template_ != null
+            && template_ != com.google.cloud.run.v2.TaskTemplate.getDefaultInstance()) {
+          getTemplateBuilder().mergeFrom(value);
         } else {
           template_ = value;
         }
-        onChanged();
       } else {
         templateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Describes the task(s) that will be created when executing an execution.
+     * Required. Describes the task(s) that will be created when executing an
+     * execution.
      * </pre>
      *
      * <code>
@@ -1431,21 +1562,21 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearTemplate() {
-      if (templateBuilder_ == null) {
-        template_ = null;
-        onChanged();
-      } else {
-        template_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      template_ = null;
+      if (templateBuilder_ != null) {
+        templateBuilder_.dispose();
         templateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Describes the task(s) that will be created when executing an execution.
+     * Required. Describes the task(s) that will be created when executing an
+     * execution.
      * </pre>
      *
      * <code>
@@ -1453,7 +1584,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.run.v2.TaskTemplate.Builder getTemplateBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTemplateFieldBuilder().getBuilder();
     }
@@ -1461,7 +1592,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes the task(s) that will be created when executing an execution.
+     * Required. Describes the task(s) that will be created when executing an
+     * execution.
      * </pre>
      *
      * <code>
@@ -1481,7 +1613,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes the task(s) that will be created when executing an execution.
+     * Required. Describes the task(s) that will be created when executing an
+     * execution.
      * </pre>
      *
      * <code>
