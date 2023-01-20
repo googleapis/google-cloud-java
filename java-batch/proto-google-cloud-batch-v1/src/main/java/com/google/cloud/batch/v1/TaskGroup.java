@@ -70,7 +70,9 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -170,11 +172,11 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.batch.v1.TaskSpecOrBuilder getTaskSpecOrBuilder() {
-    return getTaskSpec();
+    return taskSpec_ == null ? com.google.cloud.batch.v1.TaskSpec.getDefaultInstance() : taskSpec_;
   }
 
   public static final int TASK_COUNT_FIELD_NUMBER = 4;
-  private long taskCount_;
+  private long taskCount_ = 0L;
   /**
    *
    *
@@ -193,7 +195,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARALLELISM_FIELD_NUMBER = 5;
-  private long parallelism_;
+  private long parallelism_ = 0L;
   /**
    *
    *
@@ -212,6 +214,8 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TASK_ENVIRONMENTS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1.Environment> taskEnvironments_;
   /**
    *
@@ -321,7 +325,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TASK_COUNT_PER_NODE_FIELD_NUMBER = 10;
-  private long taskCountPerNode_;
+  private long taskCountPerNode_ = 0L;
   /**
    *
    *
@@ -341,7 +345,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REQUIRE_HOSTS_FILE_FIELD_NUMBER = 11;
-  private boolean requireHostsFile_;
+  private boolean requireHostsFile_ = false;
   /**
    *
    *
@@ -361,7 +365,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERMISSIVE_SSH_FIELD_NUMBER = 12;
-  private boolean permissiveSsh_;
+  private boolean permissiveSsh_ = false;
   /**
    *
    *
@@ -645,31 +649,25 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (taskSpecBuilder_ == null) {
-        taskSpec_ = null;
-      } else {
-        taskSpec_ = null;
+      taskSpec_ = null;
+      if (taskSpecBuilder_ != null) {
+        taskSpecBuilder_.dispose();
         taskSpecBuilder_ = null;
       }
       taskCount_ = 0L;
-
       parallelism_ = 0L;
-
       if (taskEnvironmentsBuilder_ == null) {
         taskEnvironments_ = java.util.Collections.emptyList();
       } else {
         taskEnvironments_ = null;
         taskEnvironmentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       taskCountPerNode_ = 0L;
-
       requireHostsFile_ = false;
-
       permissiveSsh_ = false;
-
       return this;
     }
 
@@ -696,29 +694,49 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.batch.v1.TaskGroup buildPartial() {
       com.google.cloud.batch.v1.TaskGroup result = new com.google.cloud.batch.v1.TaskGroup(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (taskSpecBuilder_ == null) {
-        result.taskSpec_ = taskSpec_;
-      } else {
-        result.taskSpec_ = taskSpecBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.taskCount_ = taskCount_;
-      result.parallelism_ = parallelism_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.batch.v1.TaskGroup result) {
       if (taskEnvironmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           taskEnvironments_ = java.util.Collections.unmodifiableList(taskEnvironments_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.taskEnvironments_ = taskEnvironments_;
       } else {
         result.taskEnvironments_ = taskEnvironmentsBuilder_.build();
       }
-      result.taskCountPerNode_ = taskCountPerNode_;
-      result.requireHostsFile_ = requireHostsFile_;
-      result.permissiveSsh_ = permissiveSsh_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1.TaskGroup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.taskSpec_ = taskSpecBuilder_ == null ? taskSpec_ : taskSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.taskCount_ = taskCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.parallelism_ = parallelism_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.taskCountPerNode_ = taskCountPerNode_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.requireHostsFile_ = requireHostsFile_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.permissiveSsh_ = permissiveSsh_;
+      }
     }
 
     @java.lang.Override
@@ -768,6 +786,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.batch.v1.TaskGroup.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTaskSpec()) {
@@ -783,7 +802,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         if (!other.taskEnvironments_.isEmpty()) {
           if (taskEnvironments_.isEmpty()) {
             taskEnvironments_ = other.taskEnvironments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureTaskEnvironmentsIsMutable();
             taskEnvironments_.addAll(other.taskEnvironments_);
@@ -796,7 +815,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
             taskEnvironmentsBuilder_.dispose();
             taskEnvironmentsBuilder_ = null;
             taskEnvironments_ = other.taskEnvironments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             taskEnvironmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTaskEnvironmentsFieldBuilder()
@@ -844,25 +863,25 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getTaskSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 32:
               {
                 taskCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 40:
               {
                 parallelism_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             case 74:
@@ -881,19 +900,19 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
             case 80:
               {
                 taskCountPerNode_ = input.readInt64();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 80
             case 88:
               {
                 requireHostsFile_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 88
             case 96:
               {
                 permissiveSsh_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 96
             default:
@@ -985,8 +1004,8 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1005,8 +1024,8 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1030,8 +1049,8 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1056,7 +1075,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the taskSpec field is set.
      */
     public boolean hasTaskSpec() {
-      return taskSpecBuilder_ != null || taskSpec_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1097,11 +1116,11 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         taskSpec_ = value;
-        onChanged();
       } else {
         taskSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1118,11 +1137,11 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder setTaskSpec(com.google.cloud.batch.v1.TaskSpec.Builder builderForValue) {
       if (taskSpecBuilder_ == null) {
         taskSpec_ = builderForValue.build();
-        onChanged();
       } else {
         taskSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1138,19 +1157,18 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTaskSpec(com.google.cloud.batch.v1.TaskSpec value) {
       if (taskSpecBuilder_ == null) {
-        if (taskSpec_ != null) {
-          taskSpec_ =
-              com.google.cloud.batch.v1.TaskSpec.newBuilder(taskSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && taskSpec_ != null
+            && taskSpec_ != com.google.cloud.batch.v1.TaskSpec.getDefaultInstance()) {
+          getTaskSpecBuilder().mergeFrom(value);
         } else {
           taskSpec_ = value;
         }
-        onChanged();
       } else {
         taskSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1165,14 +1183,13 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTaskSpec() {
-      if (taskSpecBuilder_ == null) {
-        taskSpec_ = null;
-        onChanged();
-      } else {
-        taskSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      taskSpec_ = null;
+      if (taskSpecBuilder_ != null) {
+        taskSpecBuilder_.dispose();
         taskSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1187,7 +1204,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.batch.v1.TaskSpec.Builder getTaskSpecBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTaskSpecFieldBuilder().getBuilder();
     }
@@ -1272,6 +1289,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder setTaskCount(long value) {
 
       taskCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1288,7 +1306,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTaskCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       taskCount_ = 0L;
       onChanged();
       return this;
@@ -1327,6 +1345,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder setParallelism(long value) {
 
       parallelism_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1343,7 +1362,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParallelism() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       parallelism_ = 0L;
       onChanged();
       return this;
@@ -1353,10 +1372,10 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTaskEnvironmentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         taskEnvironments_ =
             new java.util.ArrayList<com.google.cloud.batch.v1.Environment>(taskEnvironments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1660,7 +1679,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTaskEnvironments() {
       if (taskEnvironmentsBuilder_ == null) {
         taskEnvironments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         taskEnvironmentsBuilder_.clear();
@@ -1839,7 +1858,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.batch.v1.Environment.Builder,
                 com.google.cloud.batch.v1.EnvironmentOrBuilder>(
                 taskEnvironments_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         taskEnvironments_ = null;
@@ -1882,6 +1901,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder setTaskCountPerNode(long value) {
 
       taskCountPerNode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1899,7 +1919,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTaskCountPerNode() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       taskCountPerNode_ = 0L;
       onChanged();
       return this;
@@ -1940,6 +1960,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequireHostsFile(boolean value) {
 
       requireHostsFile_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1957,7 +1978,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequireHostsFile() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       requireHostsFile_ = false;
       onChanged();
       return this;
@@ -1996,6 +2017,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder setPermissiveSsh(boolean value) {
 
       permissiveSsh_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2012,7 +2034,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPermissiveSsh() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       permissiveSsh_ = false;
       onChanged();
       return this;

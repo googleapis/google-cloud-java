@@ -327,6 +327,8 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int EXIT_CODES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList exitCodes_;
     /**
      *
@@ -601,8 +603,8 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         exitCodes_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -630,14 +632,25 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition buildPartial() {
         com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition result =
             new com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           exitCodes_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.exitCodes_ = exitCodes_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -840,6 +853,7 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder setExitCodes(int index, int value) {
+
         ensureExitCodesIsMutable();
         exitCodes_.setInt(index, value);
         onChanged();
@@ -861,6 +875,7 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder addExitCodes(int value) {
+
         ensureExitCodesIsMutable();
         exitCodes_.addInt(value);
         onChanged();
@@ -973,7 +988,7 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ACTION_FIELD_NUMBER = 1;
-  private int action_;
+  private int action_ = 0;
   /**
    *
    *
@@ -1002,9 +1017,8 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.batch.v1.LifecyclePolicy.Action getAction() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.batch.v1.LifecyclePolicy.Action result =
-        com.google.cloud.batch.v1.LifecyclePolicy.Action.valueOf(action_);
+        com.google.cloud.batch.v1.LifecyclePolicy.Action.forNumber(action_);
     return result == null ? com.google.cloud.batch.v1.LifecyclePolicy.Action.UNRECOGNIZED : result;
   }
 
@@ -1054,7 +1068,9 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.batch.v1.LifecyclePolicy.ActionConditionOrBuilder
       getActionConditionOrBuilder() {
-    return getActionCondition();
+    return actionCondition_ == null
+        ? com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition.getDefaultInstance()
+        : actionCondition_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1271,12 +1287,11 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       action_ = 0;
-
-      if (actionConditionBuilder_ == null) {
-        actionCondition_ = null;
-      } else {
-        actionCondition_ = null;
+      actionCondition_ = null;
+      if (actionConditionBuilder_ != null) {
+        actionConditionBuilder_.dispose();
         actionConditionBuilder_ = null;
       }
       return this;
@@ -1306,14 +1321,22 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.batch.v1.LifecyclePolicy buildPartial() {
       com.google.cloud.batch.v1.LifecyclePolicy result =
           new com.google.cloud.batch.v1.LifecyclePolicy(this);
-      result.action_ = action_;
-      if (actionConditionBuilder_ == null) {
-        result.actionCondition_ = actionCondition_;
-      } else {
-        result.actionCondition_ = actionConditionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1.LifecyclePolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.action_ = action_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.actionCondition_ =
+            actionConditionBuilder_ == null ? actionCondition_ : actionConditionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1396,13 +1419,13 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 action_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getActionConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1421,6 +1444,8 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int action_ = 0;
     /**
@@ -1451,8 +1476,8 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
-
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1469,9 +1494,8 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.batch.v1.LifecyclePolicy.Action getAction() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.batch.v1.LifecyclePolicy.Action result =
-          com.google.cloud.batch.v1.LifecyclePolicy.Action.valueOf(action_);
+          com.google.cloud.batch.v1.LifecyclePolicy.Action.forNumber(action_);
       return result == null
           ? com.google.cloud.batch.v1.LifecyclePolicy.Action.UNRECOGNIZED
           : result;
@@ -1492,7 +1516,7 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       action_ = value.getNumber();
       onChanged();
       return this;
@@ -1509,7 +1533,7 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       action_ = 0;
       onChanged();
       return this;
@@ -1533,7 +1557,7 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
      * @return Whether the actionCondition field is set.
      */
     public boolean hasActionCondition() {
-      return actionConditionBuilder_ != null || actionCondition_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1571,11 +1595,11 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         actionCondition_ = value;
-        onChanged();
       } else {
         actionConditionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1591,11 +1615,11 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition.Builder builderForValue) {
       if (actionConditionBuilder_ == null) {
         actionCondition_ = builderForValue.build();
-        onChanged();
       } else {
         actionConditionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1610,19 +1634,19 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
     public Builder mergeActionCondition(
         com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition value) {
       if (actionConditionBuilder_ == null) {
-        if (actionCondition_ != null) {
-          actionCondition_ =
-              com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition.newBuilder(actionCondition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && actionCondition_ != null
+            && actionCondition_
+                != com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition.getDefaultInstance()) {
+          getActionConditionBuilder().mergeFrom(value);
         } else {
           actionCondition_ = value;
         }
-        onChanged();
       } else {
         actionConditionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1635,14 +1659,13 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.batch.v1.LifecyclePolicy.ActionCondition action_condition = 2;</code>
      */
     public Builder clearActionCondition() {
-      if (actionConditionBuilder_ == null) {
-        actionCondition_ = null;
-        onChanged();
-      } else {
-        actionCondition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      actionCondition_ = null;
+      if (actionConditionBuilder_ != null) {
+        actionConditionBuilder_.dispose();
         actionConditionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1656,7 +1679,7 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition.Builder
         getActionConditionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getActionConditionFieldBuilder().getBuilder();
     }

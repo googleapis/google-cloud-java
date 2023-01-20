@@ -81,6 +81,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RUNNABLES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1alpha.Runnable> runnables_;
   /**
    *
@@ -234,7 +236,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.batch.v1alpha.ComputeResourceOrBuilder getComputeResourceOrBuilder() {
-    return getComputeResource();
+    return computeResource_ == null
+        ? com.google.cloud.batch.v1alpha.ComputeResource.getDefaultInstance()
+        : computeResource_;
   }
 
   public static final int MAX_RUN_DURATION_FIELD_NUMBER = 4;
@@ -285,11 +289,13 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMaxRunDurationOrBuilder() {
-    return getMaxRunDuration();
+    return maxRunDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxRunDuration_;
   }
 
   public static final int MAX_RETRY_COUNT_FIELD_NUMBER = 5;
-  private int maxRetryCount_;
+  private int maxRetryCount_ = 0;
   /**
    *
    *
@@ -309,6 +315,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LIFECYCLE_POLICIES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1alpha.LifecyclePolicy> lifecyclePolicies_;
   /**
    *
@@ -431,6 +439,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> environments_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -455,8 +464,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
-  @java.lang.Deprecated
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean containsEnvironments(java.lang.String key) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -494,8 +503,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.lang.String getEnvironmentsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getEnvironmentsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -525,6 +536,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VOLUMES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1alpha.Volume> volumes_;
   /**
    *
@@ -638,7 +651,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.batch.v1alpha.EnvironmentOrBuilder getEnvironmentOrBuilder() {
-    return getEnvironment();
+    return environment_ == null
+        ? com.google.cloud.batch.v1alpha.Environment.getDefaultInstance()
+        : environment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -950,6 +965,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (runnablesBuilder_ == null) {
         runnables_ = java.util.Collections.emptyList();
       } else {
@@ -957,27 +973,24 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         runnablesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (computeResourceBuilder_ == null) {
-        computeResource_ = null;
-      } else {
-        computeResource_ = null;
+      computeResource_ = null;
+      if (computeResourceBuilder_ != null) {
+        computeResourceBuilder_.dispose();
         computeResourceBuilder_ = null;
       }
-      if (maxRunDurationBuilder_ == null) {
-        maxRunDuration_ = null;
-      } else {
-        maxRunDuration_ = null;
+      maxRunDuration_ = null;
+      if (maxRunDurationBuilder_ != null) {
+        maxRunDurationBuilder_.dispose();
         maxRunDurationBuilder_ = null;
       }
       maxRetryCount_ = 0;
-
       if (lifecyclePoliciesBuilder_ == null) {
         lifecyclePolicies_ = java.util.Collections.emptyList();
       } else {
         lifecyclePolicies_ = null;
         lifecyclePoliciesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableEnvironments().clear();
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
@@ -985,11 +998,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         volumes_ = null;
         volumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-      } else {
-        environment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      environment_ = null;
+      if (environmentBuilder_ != null) {
+        environmentBuilder_.dispose();
         environmentBuilder_ = null;
       }
       return this;
@@ -1019,7 +1031,15 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1alpha.TaskSpec buildPartial() {
       com.google.cloud.batch.v1alpha.TaskSpec result =
           new com.google.cloud.batch.v1alpha.TaskSpec(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.batch.v1alpha.TaskSpec result) {
       if (runnablesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           runnables_ = java.util.Collections.unmodifiableList(runnables_);
@@ -1029,44 +1049,47 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.runnables_ = runnablesBuilder_.build();
       }
-      if (computeResourceBuilder_ == null) {
-        result.computeResource_ = computeResource_;
-      } else {
-        result.computeResource_ = computeResourceBuilder_.build();
-      }
-      if (maxRunDurationBuilder_ == null) {
-        result.maxRunDuration_ = maxRunDuration_;
-      } else {
-        result.maxRunDuration_ = maxRunDurationBuilder_.build();
-      }
-      result.maxRetryCount_ = maxRetryCount_;
       if (lifecyclePoliciesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           lifecyclePolicies_ = java.util.Collections.unmodifiableList(lifecyclePolicies_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.lifecyclePolicies_ = lifecyclePolicies_;
       } else {
         result.lifecyclePolicies_ = lifecyclePoliciesBuilder_.build();
       }
-      result.environments_ = internalGetEnvironments();
-      result.environments_.makeImmutable();
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.volumes_ = volumes_;
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
-      if (environmentBuilder_ == null) {
-        result.environment_ = environment_;
-      } else {
-        result.environment_ = environmentBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1alpha.TaskSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.computeResource_ =
+            computeResourceBuilder_ == null ? computeResource_ : computeResourceBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxRunDuration_ =
+            maxRunDurationBuilder_ == null ? maxRunDuration_ : maxRunDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxRetryCount_ = maxRetryCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.environments_ = internalGetEnvironments();
+        result.environments_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.environment_ =
+            environmentBuilder_ == null ? environment_ : environmentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1154,7 +1177,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         if (!other.lifecyclePolicies_.isEmpty()) {
           if (lifecyclePolicies_.isEmpty()) {
             lifecyclePolicies_ = other.lifecyclePolicies_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureLifecyclePoliciesIsMutable();
             lifecyclePolicies_.addAll(other.lifecyclePolicies_);
@@ -1167,7 +1190,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             lifecyclePoliciesBuilder_.dispose();
             lifecyclePoliciesBuilder_ = null;
             lifecyclePolicies_ = other.lifecyclePolicies_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             lifecyclePoliciesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLifecyclePoliciesFieldBuilder()
@@ -1178,11 +1201,12 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableEnvironments().mergeFrom(other.internalGetEnvironments());
+      bitField0_ |= 0x00000020;
       if (volumesBuilder_ == null) {
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -1195,7 +1219,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVolumesFieldBuilder()
@@ -1237,19 +1261,19 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getComputeResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getMaxRunDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 40:
               {
                 maxRetryCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             case 50:
@@ -1261,6 +1285,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableEnvironments()
                     .getMutableMap()
                     .put(environments__.getKey(), environments__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -1305,7 +1330,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             default:
@@ -1838,7 +1863,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the computeResource field is set.
      */
     public boolean hasComputeResource() {
-      return computeResourceBuilder_ != null || computeResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1875,11 +1900,11 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         computeResource_ = value;
-        onChanged();
       } else {
         computeResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1895,11 +1920,11 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.batch.v1alpha.ComputeResource.Builder builderForValue) {
       if (computeResourceBuilder_ == null) {
         computeResource_ = builderForValue.build();
-        onChanged();
       } else {
         computeResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1913,19 +1938,19 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeComputeResource(com.google.cloud.batch.v1alpha.ComputeResource value) {
       if (computeResourceBuilder_ == null) {
-        if (computeResource_ != null) {
-          computeResource_ =
-              com.google.cloud.batch.v1alpha.ComputeResource.newBuilder(computeResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && computeResource_ != null
+            && computeResource_
+                != com.google.cloud.batch.v1alpha.ComputeResource.getDefaultInstance()) {
+          getComputeResourceBuilder().mergeFrom(value);
         } else {
           computeResource_ = value;
         }
-        onChanged();
       } else {
         computeResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1938,14 +1963,13 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1alpha.ComputeResource compute_resource = 3;</code>
      */
     public Builder clearComputeResource() {
-      if (computeResourceBuilder_ == null) {
-        computeResource_ = null;
-        onChanged();
-      } else {
-        computeResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      computeResource_ = null;
+      if (computeResourceBuilder_ != null) {
+        computeResourceBuilder_.dispose();
         computeResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1958,7 +1982,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1alpha.ComputeResource compute_resource = 3;</code>
      */
     public com.google.cloud.batch.v1alpha.ComputeResource.Builder getComputeResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getComputeResourceFieldBuilder().getBuilder();
     }
@@ -2025,7 +2049,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxRunDuration field is set.
      */
     public boolean hasMaxRunDuration() {
-      return maxRunDurationBuilder_ != null || maxRunDuration_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2064,11 +2088,11 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         maxRunDuration_ = value;
-        onChanged();
       } else {
         maxRunDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2084,11 +2108,11 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxRunDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (maxRunDurationBuilder_ == null) {
         maxRunDuration_ = builderForValue.build();
-        onChanged();
       } else {
         maxRunDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2103,19 +2127,18 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMaxRunDuration(com.google.protobuf.Duration value) {
       if (maxRunDurationBuilder_ == null) {
-        if (maxRunDuration_ != null) {
-          maxRunDuration_ =
-              com.google.protobuf.Duration.newBuilder(maxRunDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && maxRunDuration_ != null
+            && maxRunDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMaxRunDurationBuilder().mergeFrom(value);
         } else {
           maxRunDuration_ = value;
         }
-        onChanged();
       } else {
         maxRunDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2129,14 +2152,13 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>
      */
     public Builder clearMaxRunDuration() {
-      if (maxRunDurationBuilder_ == null) {
-        maxRunDuration_ = null;
-        onChanged();
-      } else {
-        maxRunDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      maxRunDuration_ = null;
+      if (maxRunDurationBuilder_ != null) {
+        maxRunDurationBuilder_.dispose();
         maxRunDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2150,7 +2172,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getMaxRunDurationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMaxRunDurationFieldBuilder().getBuilder();
     }
@@ -2235,6 +2257,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxRetryCount(int value) {
 
       maxRetryCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2252,7 +2275,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxRetryCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       maxRetryCount_ = 0;
       onChanged();
       return this;
@@ -2262,11 +2285,11 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLifecyclePoliciesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         lifecyclePolicies_ =
             new java.util.ArrayList<com.google.cloud.batch.v1alpha.LifecyclePolicy>(
                 lifecyclePolicies_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2573,7 +2596,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLifecyclePolicies() {
       if (lifecyclePoliciesBuilder_ == null) {
         lifecyclePolicies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         lifecyclePoliciesBuilder_.clear();
@@ -2755,7 +2778,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.batch.v1alpha.LifecyclePolicy.Builder,
                 com.google.cloud.batch.v1alpha.LifecyclePolicyOrBuilder>(
                 lifecyclePolicies_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         lifecyclePolicies_ = null;
@@ -2765,6 +2788,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> environments_;
 
+    @java.lang.Deprecated
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetEnvironments() {
       if (environments_ == null) {
@@ -2774,10 +2798,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       return environments_;
     }
 
+    @java.lang.Deprecated
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableEnvironments() {
-      onChanged();
-      ;
       if (environments_ == null) {
         environments_ =
             com.google.protobuf.MapField.newMapField(EnvironmentsDefaultEntryHolder.defaultEntry);
@@ -2785,6 +2808,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       if (!environments_.isMutable()) {
         environments_ = environments_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return environments_;
     }
 
@@ -2801,8 +2826,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
      */
-    @java.lang.Deprecated
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean containsEnvironments(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -2840,8 +2865,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.lang.String getEnvironmentsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getEnvironmentsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2872,6 +2899,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Deprecated
     public Builder clearEnvironments() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableEnvironments().getMutableMap().clear();
       return this;
     }
@@ -2895,6 +2923,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnvironments() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableEnvironments().getMutableMap();
     }
     /**
@@ -2914,8 +2943,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableEnvironments().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2930,6 +2959,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public Builder putAllEnvironments(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEnvironments().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2937,9 +2967,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.cloud.batch.v1alpha.Volume>(volumes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -3154,7 +3184,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -3275,7 +3305,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.batch.v1alpha.Volume,
                 com.google.cloud.batch.v1alpha.Volume.Builder,
                 com.google.cloud.batch.v1alpha.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;
@@ -3299,7 +3329,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the environment field is set.
      */
     public boolean hasEnvironment() {
-      return environmentBuilder_ != null || environment_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3336,11 +3366,11 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         environment_ = value;
-        onChanged();
       } else {
         environmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3356,11 +3386,11 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.batch.v1alpha.Environment.Builder builderForValue) {
       if (environmentBuilder_ == null) {
         environment_ = builderForValue.build();
-        onChanged();
       } else {
         environmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3374,19 +3404,18 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEnvironment(com.google.cloud.batch.v1alpha.Environment value) {
       if (environmentBuilder_ == null) {
-        if (environment_ != null) {
-          environment_ =
-              com.google.cloud.batch.v1alpha.Environment.newBuilder(environment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && environment_ != null
+            && environment_ != com.google.cloud.batch.v1alpha.Environment.getDefaultInstance()) {
+          getEnvironmentBuilder().mergeFrom(value);
         } else {
           environment_ = value;
         }
-        onChanged();
       } else {
         environmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3399,14 +3428,13 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1alpha.Environment environment = 10;</code>
      */
     public Builder clearEnvironment() {
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-        onChanged();
-      } else {
-        environment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      environment_ = null;
+      if (environmentBuilder_ != null) {
+        environmentBuilder_.dispose();
         environmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3419,7 +3447,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1alpha.Environment environment = 10;</code>
      */
     public com.google.cloud.batch.v1alpha.Environment.Builder getEnvironmentBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }

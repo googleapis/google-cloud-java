@@ -411,6 +411,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ALLOWED_LOCATIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList allowedLocations_;
     /**
      *
@@ -714,6 +716,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         allowedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -743,14 +746,25 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy buildPartial() {
         com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy result =
             new com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           allowedLocations_ = allowedLocations_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.allowedLocations_ = allowedLocations_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1588,7 +1602,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object type_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
     /**
      *
      *
@@ -1639,7 +1655,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int SIZE_GB_FIELD_NUMBER = 2;
-    private long sizeGb_;
+    private long sizeGb_ = 0L;
     /**
      *
      *
@@ -1660,7 +1676,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int DISK_INTERFACE_FIELD_NUMBER = 6;
-    private volatile java.lang.Object diskInterface_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object diskInterface_ = "";
     /**
      *
      *
@@ -1967,12 +1985,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = "";
-
         sizeGb_ = 0L;
-
         diskInterface_ = "";
-
         dataSourceCase_ = 0;
         dataSource_ = null;
         return this;
@@ -2002,18 +2018,30 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.batch.v1.AllocationPolicy.Disk buildPartial() {
         com.google.cloud.batch.v1.AllocationPolicy.Disk result =
             new com.google.cloud.batch.v1.AllocationPolicy.Disk(this);
-        if (dataSourceCase_ == 4) {
-          result.dataSource_ = dataSource_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (dataSourceCase_ == 5) {
-          result.dataSource_ = dataSource_;
-        }
-        result.type_ = type_;
-        result.sizeGb_ = sizeGb_;
-        result.diskInterface_ = diskInterface_;
-        result.dataSourceCase_ = dataSourceCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1.AllocationPolicy.Disk result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.sizeGb_ = sizeGb_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.diskInterface_ = diskInterface_;
+        }
+      }
+
+      private void buildPartialOneofs(com.google.cloud.batch.v1.AllocationPolicy.Disk result) {
+        result.dataSourceCase_ = dataSourceCase_;
+        result.dataSource_ = this.dataSource_;
       }
 
       @java.lang.Override
@@ -2066,6 +2094,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getSizeGb() != 0L) {
@@ -2073,6 +2102,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         if (!other.getDiskInterface().isEmpty()) {
           diskInterface_ = other.diskInterface_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         switch (other.getDataSourceCase()) {
@@ -2124,13 +2154,13 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   type_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 10
               case 16:
                 {
                   sizeGb_ = input.readInt64();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 16
               case 34:
@@ -2150,7 +2180,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               case 50:
                 {
                   diskInterface_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 50
               default:
@@ -2183,6 +2213,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       /**
        *
@@ -2516,8 +2548,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         type_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2534,8 +2566,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
         type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -2557,8 +2589,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         type_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2600,6 +2632,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder setSizeGb(long value) {
 
         sizeGb_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2618,7 +2651,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearSizeGb() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         sizeGb_ = 0L;
         onChanged();
         return this;
@@ -2691,8 +2724,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         diskInterface_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2710,8 +2743,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearDiskInterface() {
-
         diskInterface_ = getDefaultInstance().getDiskInterface();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -2734,8 +2767,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         diskInterface_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3093,7 +3126,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int DEVICE_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object deviceName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object deviceName_ = "";
     /**
      *
      *
@@ -3385,11 +3420,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (newDiskBuilder_ != null) {
           newDiskBuilder_.clear();
         }
         deviceName_ = "";
-
         attachedCase_ = 0;
         attached_ = null;
         return this;
@@ -3419,20 +3454,28 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk buildPartial() {
         com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk result =
             new com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk(this);
-        if (attachedCase_ == 1) {
-          if (newDiskBuilder_ == null) {
-            result.attached_ = attached_;
-          } else {
-            result.attached_ = newDiskBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (attachedCase_ == 2) {
-          result.attached_ = attached_;
-        }
-        result.deviceName_ = deviceName_;
-        result.attachedCase_ = attachedCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.deviceName_ = deviceName_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk result) {
+        result.attachedCase_ = attachedCase_;
+        result.attached_ = this.attached_;
+        if (attachedCase_ == 1 && newDiskBuilder_ != null) {
+          result.attached_ = newDiskBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3485,6 +3528,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getDeviceName().isEmpty()) {
           deviceName_ = other.deviceName_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         switch (other.getAttachedCase()) {
@@ -3547,7 +3591,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               case 26:
                 {
                   deviceName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -3580,6 +3624,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.batch.v1.AllocationPolicy.Disk,
@@ -3720,7 +3766,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         attachedCase_ = 1;
         onChanged();
-        ;
         return newDiskBuilder_;
       }
 
@@ -3928,8 +3973,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         deviceName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3948,8 +3993,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearDeviceName() {
-
         deviceName_ = getDefaultInstance().getDeviceName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -3973,8 +4018,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         deviceName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4098,7 +4143,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=292
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=294
      * @return The installGpuDrivers.
      */
     @java.lang.Deprecated
@@ -4154,7 +4199,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object type_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
     /**
      *
      *
@@ -4205,7 +4252,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int COUNT_FIELD_NUMBER = 2;
-    private long count_;
+    private long count_ = 0L;
     /**
      *
      *
@@ -4223,7 +4270,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int INSTALL_GPU_DRIVERS_FIELD_NUMBER = 3;
-    private boolean installGpuDrivers_;
+    private boolean installGpuDrivers_ = false;
     /**
      *
      *
@@ -4234,7 +4281,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=292
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=294
      * @return The installGpuDrivers.
      */
     @java.lang.Override
@@ -4461,12 +4508,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = "";
-
         count_ = 0L;
-
         installGpuDrivers_ = false;
-
         return this;
       }
 
@@ -4494,11 +4539,24 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.batch.v1.AllocationPolicy.Accelerator buildPartial() {
         com.google.cloud.batch.v1.AllocationPolicy.Accelerator result =
             new com.google.cloud.batch.v1.AllocationPolicy.Accelerator(this);
-        result.type_ = type_;
-        result.count_ = count_;
-        result.installGpuDrivers_ = installGpuDrivers_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1.AllocationPolicy.Accelerator result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.count_ = count_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.installGpuDrivers_ = installGpuDrivers_;
+        }
       }
 
       @java.lang.Override
@@ -4551,6 +4609,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getCount() != 0L) {
@@ -4588,19 +4647,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   type_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   count_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   installGpuDrivers_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -4619,6 +4678,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object type_ = "";
       /**
@@ -4684,8 +4745,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4702,8 +4763,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
         type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4725,8 +4786,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4762,6 +4823,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder setCount(long value) {
 
         count_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4777,7 +4839,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         count_ = 0L;
         onChanged();
         return this;
@@ -4794,7 +4856,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=292
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=294
        * @return The installGpuDrivers.
        */
       @java.lang.Override
@@ -4812,7 +4874,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=292
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=294
        * @param value The installGpuDrivers to set.
        * @return This builder for chaining.
        */
@@ -4820,6 +4882,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder setInstallGpuDrivers(boolean value) {
 
         installGpuDrivers_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4833,12 +4896,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=292
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=294
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder clearInstallGpuDrivers() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         installGpuDrivers_ = false;
         onChanged();
         return this;
@@ -5161,7 +5224,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int MACHINE_TYPE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object machineType_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object machineType_ = "";
     /**
      *
      *
@@ -5210,7 +5275,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 3;
-    private volatile java.lang.Object minCpuPlatform_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object minCpuPlatform_ = "";
     /**
      *
      *
@@ -5265,7 +5332,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int PROVISIONING_MODEL_FIELD_NUMBER = 4;
-    private int provisioningModel_;
+    private int provisioningModel_ = 0;
     /**
      *
      *
@@ -5296,15 +5363,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel getProvisioningModel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel result =
-          com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.valueOf(provisioningModel_);
+          com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.forNumber(
+              provisioningModel_);
       return result == null
           ? com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.UNRECOGNIZED
           : result;
     }
 
     public static final int ACCELERATORS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.batch.v1.AllocationPolicy.Accelerator> accelerators_;
     /**
      *
@@ -5376,6 +5445,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int DISKS_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk> disks_;
     /**
      *
@@ -5698,26 +5769,24 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         machineType_ = "";
-
         minCpuPlatform_ = "";
-
         provisioningModel_ = 0;
-
         if (acceleratorsBuilder_ == null) {
           accelerators_ = java.util.Collections.emptyList();
         } else {
           accelerators_ = null;
           acceleratorsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (disksBuilder_ == null) {
           disks_ = java.util.Collections.emptyList();
         } else {
           disks_ = null;
           disksBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -5745,30 +5814,47 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy buildPartial() {
         com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy result =
             new com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy(this);
-        int from_bitField0_ = bitField0_;
-        result.machineType_ = machineType_;
-        result.minCpuPlatform_ = minCpuPlatform_;
-        result.provisioningModel_ = provisioningModel_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy result) {
         if (acceleratorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.accelerators_ = accelerators_;
         } else {
           result.accelerators_ = acceleratorsBuilder_.build();
         }
         if (disksBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             disks_ = java.util.Collections.unmodifiableList(disks_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.disks_ = disks_;
         } else {
           result.disks_ = disksBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.machineType_ = machineType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.minCpuPlatform_ = minCpuPlatform_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.provisioningModel_ = provisioningModel_;
+        }
       }
 
       @java.lang.Override
@@ -5821,10 +5907,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getMachineType().isEmpty()) {
           machineType_ = other.machineType_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getMinCpuPlatform().isEmpty()) {
           minCpuPlatform_ = other.minCpuPlatform_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.provisioningModel_ != 0) {
@@ -5834,7 +5922,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           if (!other.accelerators_.isEmpty()) {
             if (accelerators_.isEmpty()) {
               accelerators_ = other.accelerators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureAcceleratorsIsMutable();
               accelerators_.addAll(other.accelerators_);
@@ -5847,7 +5935,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               acceleratorsBuilder_.dispose();
               acceleratorsBuilder_ = null;
               accelerators_ = other.accelerators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               acceleratorsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getAcceleratorsFieldBuilder()
@@ -5861,7 +5949,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           if (!other.disks_.isEmpty()) {
             if (disks_.isEmpty()) {
               disks_ = other.disks_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureDisksIsMutable();
               disks_.addAll(other.disks_);
@@ -5874,7 +5962,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               disksBuilder_.dispose();
               disksBuilder_ = null;
               disks_ = other.disks_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
               disksBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getDisksFieldBuilder()
@@ -5913,19 +6001,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               case 18:
                 {
                   machineType_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 18
               case 26:
                 {
                   minCpuPlatform_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 26
               case 32:
                 {
                   provisioningModel_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 32
               case 42:
@@ -6036,8 +6124,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         machineType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6053,8 +6141,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearMachineType() {
-
         machineType_ = getDefaultInstance().getMachineType();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -6075,8 +6163,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         machineType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6151,8 +6239,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         minCpuPlatform_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6171,8 +6259,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearMinCpuPlatform() {
-
         minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -6196,8 +6284,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         minCpuPlatform_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6233,8 +6321,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder setProvisioningModelValue(int value) {
-
         provisioningModel_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6252,9 +6340,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        */
       @java.lang.Override
       public com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel getProvisioningModel() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel result =
-            com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.valueOf(
+            com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.forNumber(
                 provisioningModel_);
         return result == null
             ? com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.UNRECOGNIZED
@@ -6278,7 +6365,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         provisioningModel_ = value.getNumber();
         onChanged();
         return this;
@@ -6296,7 +6383,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearProvisioningModel() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         provisioningModel_ = 0;
         onChanged();
         return this;
@@ -6306,11 +6393,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           java.util.Collections.emptyList();
 
       private void ensureAcceleratorsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           accelerators_ =
               new java.util.ArrayList<com.google.cloud.batch.v1.AllocationPolicy.Accelerator>(
                   accelerators_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -6532,7 +6619,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder clearAccelerators() {
         if (acceleratorsBuilder_ == null) {
           accelerators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           acceleratorsBuilder_.clear();
@@ -6662,7 +6749,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                   com.google.cloud.batch.v1.AllocationPolicy.Accelerator.Builder,
                   com.google.cloud.batch.v1.AllocationPolicy.AcceleratorOrBuilder>(
                   accelerators_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           accelerators_ = null;
@@ -6674,11 +6761,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           java.util.Collections.emptyList();
 
       private void ensureDisksIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           disks_ =
               new java.util.ArrayList<com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk>(
                   disks_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000010;
         }
       }
 
@@ -6911,7 +6998,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder clearDisks() {
         if (disksBuilder_ == null) {
           disks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           disksBuilder_.clear();
@@ -7047,7 +7134,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                   com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk,
                   com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk.Builder,
                   com.google.cloud.batch.v1.AllocationPolicy.AttachedDiskOrBuilder>(
-                  disks_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  disks_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
           disks_ = null;
         }
         return disksBuilder_;
@@ -7441,7 +7528,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int INSTALL_GPU_DRIVERS_FIELD_NUMBER = 3;
-    private boolean installGpuDrivers_;
+    private boolean installGpuDrivers_ = false;
     /**
      *
      *
@@ -7701,11 +7788,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (policyBuilder_ != null) {
           policyBuilder_.clear();
         }
         installGpuDrivers_ = false;
-
         policyTemplateCase_ = 0;
         policyTemplate_ = null;
         return this;
@@ -7737,20 +7824,29 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate buildPartial() {
         com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate result =
             new com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate(this);
-        if (policyTemplateCase_ == 1) {
-          if (policyBuilder_ == null) {
-            result.policyTemplate_ = policyTemplate_;
-          } else {
-            result.policyTemplate_ = policyBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (policyTemplateCase_ == 2) {
-          result.policyTemplate_ = policyTemplate_;
-        }
-        result.installGpuDrivers_ = installGpuDrivers_;
-        result.policyTemplateCase_ = policyTemplateCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.installGpuDrivers_ = installGpuDrivers_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate result) {
+        result.policyTemplateCase_ = policyTemplateCase_;
+        result.policyTemplate_ = this.policyTemplate_;
+        if (policyTemplateCase_ == 1 && policyBuilder_ != null) {
+          result.policyTemplate_ = policyBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -7867,7 +7963,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               case 24:
                 {
                   installGpuDrivers_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -7900,6 +7996,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy,
@@ -8111,7 +8209,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         policyTemplateCase_ = 1;
         onChanged();
-        ;
         return policyBuilder_;
       }
 
@@ -8298,6 +8395,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder setInstallGpuDrivers(boolean value) {
 
         installGpuDrivers_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8316,7 +8414,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearInstallGpuDrivers() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         installGpuDrivers_ = false;
         onChanged();
         return this;
@@ -8534,7 +8632,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int NETWORK_FIELD_NUMBER = 1;
-    private volatile java.lang.Object network_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object network_ = "";
     /**
      *
      *
@@ -8593,7 +8693,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int SUBNETWORK_FIELD_NUMBER = 2;
-    private volatile java.lang.Object subnetwork_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object subnetwork_ = "";
     /**
      *
      *
@@ -8652,7 +8754,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int NO_EXTERNAL_IP_ADDRESS_FIELD_NUMBER = 3;
-    private boolean noExternalIpAddress_;
+    private boolean noExternalIpAddress_ = false;
     /**
      *
      *
@@ -8893,12 +8995,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         network_ = "";
-
         subnetwork_ = "";
-
         noExternalIpAddress_ = false;
-
         return this;
       }
 
@@ -8927,11 +9027,25 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface buildPartial() {
         com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface result =
             new com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface(this);
-        result.network_ = network_;
-        result.subnetwork_ = subnetwork_;
-        result.noExternalIpAddress_ = noExternalIpAddress_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.network_ = network_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.subnetwork_ = subnetwork_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.noExternalIpAddress_ = noExternalIpAddress_;
+        }
       }
 
       @java.lang.Override
@@ -8985,10 +9099,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getNetwork().isEmpty()) {
           network_ = other.network_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getSubnetwork().isEmpty()) {
           subnetwork_ = other.subnetwork_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getNoExternalIpAddress() != false) {
@@ -9023,19 +9139,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   network_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   subnetwork_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   noExternalIpAddress_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -9054,6 +9170,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object network_ = "";
       /**
@@ -9131,8 +9249,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         network_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9153,8 +9271,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearNetwork() {
-
         network_ = getDefaultInstance().getNetwork();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -9180,8 +9298,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         network_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9262,8 +9380,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         subnetwork_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9284,8 +9402,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearSubnetwork() {
-
         subnetwork_ = getDefaultInstance().getSubnetwork();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -9311,8 +9429,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         subnetwork_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9360,6 +9478,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder setNoExternalIpAddress(boolean value) {
 
         noExternalIpAddress_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9381,7 +9500,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearNoExternalIpAddress() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         noExternalIpAddress_ = false;
         onChanged();
         return this;
@@ -9571,6 +9690,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int NETWORK_INTERFACES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface>
         networkInterfaces_;
     /**
@@ -9857,6 +9978,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (networkInterfacesBuilder_ == null) {
           networkInterfaces_ = java.util.Collections.emptyList();
         } else {
@@ -9891,7 +10013,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy buildPartial() {
         com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy result =
             new com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy result) {
         if (networkInterfacesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             networkInterfaces_ = java.util.Collections.unmodifiableList(networkInterfaces_);
@@ -9901,8 +10032,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         } else {
           result.networkInterfaces_ = networkInterfacesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -10555,10 +10688,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.batch.v1.AllocationPolicy.LocationPolicyOrBuilder getLocationOrBuilder() {
-    return getLocation();
+    return location_ == null
+        ? com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy.getDefaultInstance()
+        : location_;
   }
 
   public static final int INSTANCES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate>
       instances_;
   /**
@@ -10687,7 +10824,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.batch.v1.ServiceAccountOrBuilder getServiceAccountOrBuilder() {
-    return getServiceAccount();
+    return serviceAccount_ == null
+        ? com.google.cloud.batch.v1.ServiceAccount.getDefaultInstance()
+        : serviceAccount_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 6;
@@ -10703,6 +10842,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -10778,7 +10918,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -10857,7 +11000,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicyOrBuilder getNetworkOrBuilder() {
-    return getNetwork();
+    return network_ == null
+        ? com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy.getDefaultInstance()
+        : network_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -11139,10 +11284,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (locationBuilder_ == null) {
-        location_ = null;
-      } else {
-        location_ = null;
+      bitField0_ = 0;
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
       if (instancesBuilder_ == null) {
@@ -11151,18 +11296,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         instances_ = null;
         instancesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (serviceAccountBuilder_ == null) {
-        serviceAccount_ = null;
-      } else {
-        serviceAccount_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      serviceAccount_ = null;
+      if (serviceAccountBuilder_ != null) {
+        serviceAccountBuilder_.dispose();
         serviceAccountBuilder_ = null;
       }
       internalGetMutableLabels().clear();
-      if (networkBuilder_ == null) {
-        network_ = null;
-      } else {
-        network_ = null;
+      network_ = null;
+      if (networkBuilder_ != null) {
+        networkBuilder_.dispose();
         networkBuilder_ = null;
       }
       return this;
@@ -11192,35 +11335,42 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.batch.v1.AllocationPolicy buildPartial() {
       com.google.cloud.batch.v1.AllocationPolicy result =
           new com.google.cloud.batch.v1.AllocationPolicy(this);
-      int from_bitField0_ = bitField0_;
-      if (locationBuilder_ == null) {
-        result.location_ = location_;
-      } else {
-        result.location_ = locationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.batch.v1.AllocationPolicy result) {
       if (instancesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           instances_ = java.util.Collections.unmodifiableList(instances_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.instances_ = instances_;
       } else {
         result.instances_ = instancesBuilder_.build();
       }
-      if (serviceAccountBuilder_ == null) {
-        result.serviceAccount_ = serviceAccount_;
-      } else {
-        result.serviceAccount_ = serviceAccountBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1.AllocationPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
       }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (networkBuilder_ == null) {
-        result.network_ = network_;
-      } else {
-        result.network_ = networkBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceAccount_ =
+            serviceAccountBuilder_ == null ? serviceAccount_ : serviceAccountBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.network_ = networkBuilder_ == null ? network_ : networkBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -11275,7 +11425,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (!other.instances_.isEmpty()) {
           if (instances_.isEmpty()) {
             instances_ = other.instances_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureInstancesIsMutable();
             instances_.addAll(other.instances_);
@@ -11288,7 +11438,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             instancesBuilder_.dispose();
             instancesBuilder_ = null;
             instances_ = other.instances_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             instancesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInstancesFieldBuilder()
@@ -11302,6 +11452,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         mergeServiceAccount(other.getServiceAccount());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (other.hasNetwork()) {
         mergeNetwork(other.getNetwork());
       }
@@ -11334,7 +11485,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 50:
@@ -11346,12 +11497,13 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getNetworkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 66:
@@ -11372,7 +11524,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             case 74:
               {
                 input.readMessage(getServiceAccountFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 74
             default:
@@ -11412,7 +11564,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return locationBuilder_ != null || location_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -11449,11 +11601,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         location_ = value;
-        onChanged();
       } else {
         locationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -11469,11 +11621,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
-        onChanged();
       } else {
         locationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -11487,19 +11639,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeLocation(com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy value) {
       if (locationBuilder_ == null) {
-        if (location_ != null) {
-          location_ =
-              com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy.newBuilder(location_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && location_ != null
+            && location_
+                != com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy.getDefaultInstance()) {
+          getLocationBuilder().mergeFrom(value);
         } else {
           location_ = value;
         }
-        onChanged();
       } else {
         locationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -11512,14 +11664,13 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.batch.v1.AllocationPolicy.LocationPolicy location = 1;</code>
      */
     public Builder clearLocation() {
-      if (locationBuilder_ == null) {
-        location_ = null;
-        onChanged();
-      } else {
-        location_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -11532,7 +11683,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.batch.v1.AllocationPolicy.LocationPolicy location = 1;</code>
      */
     public com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy.Builder getLocationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
@@ -11585,11 +11736,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         instances_ = java.util.Collections.emptyList();
 
     private void ensureInstancesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         instances_ =
             new java.util.ArrayList<
                 com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate>(instances_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -11850,7 +12001,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     public Builder clearInstances() {
       if (instancesBuilder_ == null) {
         instances_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         instancesBuilder_.clear();
@@ -12004,7 +12155,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate,
                 com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate.Builder,
                 com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplateOrBuilder>(
-                instances_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                instances_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         instances_ = null;
       }
       return instancesBuilder_;
@@ -12028,7 +12179,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the serviceAccount field is set.
      */
     public boolean hasServiceAccount() {
-      return serviceAccountBuilder_ != null || serviceAccount_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -12065,11 +12216,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         serviceAccount_ = value;
-        onChanged();
       } else {
         serviceAccountBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -12085,11 +12236,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         com.google.cloud.batch.v1.ServiceAccount.Builder builderForValue) {
       if (serviceAccountBuilder_ == null) {
         serviceAccount_ = builderForValue.build();
-        onChanged();
       } else {
         serviceAccountBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -12103,19 +12254,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeServiceAccount(com.google.cloud.batch.v1.ServiceAccount value) {
       if (serviceAccountBuilder_ == null) {
-        if (serviceAccount_ != null) {
-          serviceAccount_ =
-              com.google.cloud.batch.v1.ServiceAccount.newBuilder(serviceAccount_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && serviceAccount_ != null
+            && serviceAccount_ != com.google.cloud.batch.v1.ServiceAccount.getDefaultInstance()) {
+          getServiceAccountBuilder().mergeFrom(value);
         } else {
           serviceAccount_ = value;
         }
-        onChanged();
       } else {
         serviceAccountBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -12128,14 +12278,13 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
      */
     public Builder clearServiceAccount() {
-      if (serviceAccountBuilder_ == null) {
-        serviceAccount_ = null;
-        onChanged();
-      } else {
-        serviceAccount_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      serviceAccount_ = null;
+      if (serviceAccountBuilder_ != null) {
+        serviceAccountBuilder_.dispose();
         serviceAccountBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -12148,7 +12297,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
      */
     public com.google.cloud.batch.v1.ServiceAccount.Builder getServiceAccountBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getServiceAccountFieldBuilder().getBuilder();
     }
@@ -12207,14 +12356,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -12284,8 +12433,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -12320,6 +12471,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -12348,6 +12500,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -12372,8 +12525,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -12393,6 +12546,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -12414,7 +12568,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return networkBuilder_ != null || network_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -12451,11 +12605,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         network_ = value;
-        onChanged();
       } else {
         networkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -12471,11 +12625,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy.Builder builderForValue) {
       if (networkBuilder_ == null) {
         network_ = builderForValue.build();
-        onChanged();
       } else {
         networkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -12489,19 +12643,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeNetwork(com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy value) {
       if (networkBuilder_ == null) {
-        if (network_ != null) {
-          network_ =
-              com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy.newBuilder(network_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && network_ != null
+            && network_
+                != com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy.getDefaultInstance()) {
+          getNetworkBuilder().mergeFrom(value);
         } else {
           network_ = value;
         }
-        onChanged();
       } else {
         networkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -12514,14 +12668,13 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
      */
     public Builder clearNetwork() {
-      if (networkBuilder_ == null) {
-        network_ = null;
-        onChanged();
-      } else {
-        network_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      network_ = null;
+      if (networkBuilder_ != null) {
+        networkBuilder_.dispose();
         networkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -12534,7 +12687,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
      */
     public com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy.Builder getNetworkBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getNetworkFieldBuilder().getBuilder();
     }

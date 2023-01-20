@@ -69,7 +69,9 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object disk_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object disk_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEVICE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object device_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object device_ = "";
   /**
    *
    *
@@ -167,7 +171,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXISTING_FIELD_NUMBER = 3;
-  private boolean existing_;
+  private boolean existing_ = false;
   /**
    *
    *
@@ -403,12 +407,10 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       disk_ = "";
-
       device_ = "";
-
       existing_ = false;
-
       return this;
     }
 
@@ -435,11 +437,24 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.batch.v1alpha.PD buildPartial() {
       com.google.cloud.batch.v1alpha.PD result = new com.google.cloud.batch.v1alpha.PD(this);
-      result.disk_ = disk_;
-      result.device_ = device_;
-      result.existing_ = existing_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1alpha.PD result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disk_ = disk_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.device_ = device_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.existing_ = existing_;
+      }
     }
 
     @java.lang.Override
@@ -489,10 +504,12 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.batch.v1alpha.PD.getDefaultInstance()) return this;
       if (!other.getDisk().isEmpty()) {
         disk_ = other.disk_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDevice().isEmpty()) {
         device_ = other.device_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getExisting() != false) {
@@ -527,19 +544,19 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 disk_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 device_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 existing_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -558,6 +575,8 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object disk_ = "";
     /**
@@ -620,8 +639,8 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       disk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -637,8 +656,8 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisk() {
-
       disk_ = getDefaultInstance().getDisk();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -659,8 +678,8 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       disk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -726,8 +745,8 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       device_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -743,8 +762,8 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDevice() {
-
       device_ = getDefaultInstance().getDevice();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -765,8 +784,8 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       device_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -814,6 +833,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
     public Builder setExisting(boolean value) {
 
       existing_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -835,7 +855,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearExisting() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       existing_ = false;
       onChanged();
       return this;

@@ -358,7 +358,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -387,16 +387,15 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.batch.v1alpha.JobNotification.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.batch.v1alpha.JobNotification.Type result =
-          com.google.cloud.batch.v1alpha.JobNotification.Type.valueOf(type_);
+          com.google.cloud.batch.v1alpha.JobNotification.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.batch.v1alpha.JobNotification.Type.UNRECOGNIZED
           : result;
     }
 
     public static final int NEW_JOB_STATE_FIELD_NUMBER = 2;
-    private int newJobState_;
+    private int newJobState_ = 0;
     /**
      *
      *
@@ -425,14 +424,13 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.batch.v1alpha.JobStatus.State getNewJobState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.batch.v1alpha.JobStatus.State result =
-          com.google.cloud.batch.v1alpha.JobStatus.State.valueOf(newJobState_);
+          com.google.cloud.batch.v1alpha.JobStatus.State.forNumber(newJobState_);
       return result == null ? com.google.cloud.batch.v1alpha.JobStatus.State.UNRECOGNIZED : result;
     }
 
     public static final int NEW_TASK_STATE_FIELD_NUMBER = 3;
-    private int newTaskState_;
+    private int newTaskState_ = 0;
     /**
      *
      *
@@ -461,9 +459,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.batch.v1alpha.TaskStatus.State getNewTaskState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.batch.v1alpha.TaskStatus.State result =
-          com.google.cloud.batch.v1alpha.TaskStatus.State.valueOf(newTaskState_);
+          com.google.cloud.batch.v1alpha.TaskStatus.State.forNumber(newTaskState_);
       return result == null ? com.google.cloud.batch.v1alpha.TaskStatus.State.UNRECOGNIZED : result;
     }
 
@@ -693,12 +690,10 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         newJobState_ = 0;
-
         newTaskState_ = 0;
-
         return this;
       }
 
@@ -726,11 +721,24 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.batch.v1alpha.JobNotification.Message buildPartial() {
         com.google.cloud.batch.v1alpha.JobNotification.Message result =
             new com.google.cloud.batch.v1alpha.JobNotification.Message(this);
-        result.type_ = type_;
-        result.newJobState_ = newJobState_;
-        result.newTaskState_ = newTaskState_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1alpha.JobNotification.Message result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.newJobState_ = newJobState_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.newTaskState_ = newTaskState_;
+        }
       }
 
       @java.lang.Override
@@ -819,19 +827,19 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
               case 8:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   newJobState_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   newTaskState_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -850,6 +858,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int type_ = 0;
       /**
@@ -880,8 +890,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -898,9 +908,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
        */
       @java.lang.Override
       public com.google.cloud.batch.v1alpha.JobNotification.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.batch.v1alpha.JobNotification.Type result =
-            com.google.cloud.batch.v1alpha.JobNotification.Type.valueOf(type_);
+            com.google.cloud.batch.v1alpha.JobNotification.Type.forNumber(type_);
         return result == null
             ? com.google.cloud.batch.v1alpha.JobNotification.Type.UNRECOGNIZED
             : result;
@@ -921,7 +930,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -938,7 +947,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -973,8 +982,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder setNewJobStateValue(int value) {
-
         newJobState_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -991,9 +1000,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
        */
       @java.lang.Override
       public com.google.cloud.batch.v1alpha.JobStatus.State getNewJobState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.batch.v1alpha.JobStatus.State result =
-            com.google.cloud.batch.v1alpha.JobStatus.State.valueOf(newJobState_);
+            com.google.cloud.batch.v1alpha.JobStatus.State.forNumber(newJobState_);
         return result == null
             ? com.google.cloud.batch.v1alpha.JobStatus.State.UNRECOGNIZED
             : result;
@@ -1014,7 +1022,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         newJobState_ = value.getNumber();
         onChanged();
         return this;
@@ -1031,7 +1039,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearNewJobState() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         newJobState_ = 0;
         onChanged();
         return this;
@@ -1066,8 +1074,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder setNewTaskStateValue(int value) {
-
         newTaskState_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1084,9 +1092,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
        */
       @java.lang.Override
       public com.google.cloud.batch.v1alpha.TaskStatus.State getNewTaskState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.batch.v1alpha.TaskStatus.State result =
-            com.google.cloud.batch.v1alpha.TaskStatus.State.valueOf(newTaskState_);
+            com.google.cloud.batch.v1alpha.TaskStatus.State.forNumber(newTaskState_);
         return result == null
             ? com.google.cloud.batch.v1alpha.TaskStatus.State.UNRECOGNIZED
             : result;
@@ -1107,7 +1114,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         newTaskState_ = value.getNumber();
         onChanged();
         return this;
@@ -1124,7 +1131,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearNewTaskState() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         newTaskState_ = 0;
         onChanged();
         return this;
@@ -1195,7 +1202,9 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PUBSUB_TOPIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object pubsubTopic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pubsubTopic_ = "";
   /**
    *
    *
@@ -1299,7 +1308,9 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.batch.v1alpha.JobNotification.MessageOrBuilder getMessageOrBuilder() {
-    return getMessage();
+    return message_ == null
+        ? com.google.cloud.batch.v1alpha.JobNotification.Message.getDefaultInstance()
+        : message_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1513,12 +1524,11 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pubsubTopic_ = "";
-
-      if (messageBuilder_ == null) {
-        message_ = null;
-      } else {
-        message_ = null;
+      message_ = null;
+      if (messageBuilder_ != null) {
+        messageBuilder_.dispose();
         messageBuilder_ = null;
       }
       return this;
@@ -1548,14 +1558,21 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.batch.v1alpha.JobNotification buildPartial() {
       com.google.cloud.batch.v1alpha.JobNotification result =
           new com.google.cloud.batch.v1alpha.JobNotification(this);
-      result.pubsubTopic_ = pubsubTopic_;
-      if (messageBuilder_ == null) {
-        result.message_ = message_;
-      } else {
-        result.message_ = messageBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1alpha.JobNotification result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pubsubTopic_ = pubsubTopic_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.message_ = messageBuilder_ == null ? message_ : messageBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1605,6 +1622,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.batch.v1alpha.JobNotification.getDefaultInstance()) return this;
       if (!other.getPubsubTopic().isEmpty()) {
         pubsubTopic_ = other.pubsubTopic_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMessage()) {
@@ -1639,13 +1657,13 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 pubsubTopic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMessageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1664,6 +1682,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object pubsubTopic_ = "";
     /**
@@ -1738,8 +1758,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       pubsubTopic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1759,8 +1779,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPubsubTopic() {
-
       pubsubTopic_ = getDefaultInstance().getPubsubTopic();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1785,8 +1805,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pubsubTopic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1810,7 +1830,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      * @return Whether the message field is set.
      */
     public boolean hasMessage() {
-      return messageBuilder_ != null || message_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1849,11 +1869,11 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         message_ = value;
-        onChanged();
       } else {
         messageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1870,11 +1890,11 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.batch.v1alpha.JobNotification.Message.Builder builderForValue) {
       if (messageBuilder_ == null) {
         message_ = builderForValue.build();
-        onChanged();
       } else {
         messageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1889,19 +1909,19 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeMessage(com.google.cloud.batch.v1alpha.JobNotification.Message value) {
       if (messageBuilder_ == null) {
-        if (message_ != null) {
-          message_ =
-              com.google.cloud.batch.v1alpha.JobNotification.Message.newBuilder(message_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && message_ != null
+            && message_
+                != com.google.cloud.batch.v1alpha.JobNotification.Message.getDefaultInstance()) {
+          getMessageBuilder().mergeFrom(value);
         } else {
           message_ = value;
         }
-        onChanged();
       } else {
         messageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1915,14 +1935,13 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.batch.v1alpha.JobNotification.Message message = 2;</code>
      */
     public Builder clearMessage() {
-      if (messageBuilder_ == null) {
-        message_ = null;
-        onChanged();
-      } else {
-        message_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      message_ = null;
+      if (messageBuilder_ != null) {
+        messageBuilder_.dispose();
         messageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1936,7 +1955,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.batch.v1alpha.JobNotification.Message message = 2;</code>
      */
     public com.google.cloud.batch.v1alpha.JobNotification.Message.Builder getMessageBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMessageFieldBuilder().getBuilder();
     }

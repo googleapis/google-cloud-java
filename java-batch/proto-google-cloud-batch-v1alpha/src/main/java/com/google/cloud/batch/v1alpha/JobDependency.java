@@ -270,6 +270,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1alpha.JobDependency.Type.TYPE_UNSPECIFIED.getNumber());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> items_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> internalGetItems() {
@@ -686,6 +687,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableItems().clear();
       return this;
     }
@@ -714,11 +716,19 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1alpha.JobDependency buildPartial() {
       com.google.cloud.batch.v1alpha.JobDependency result =
           new com.google.cloud.batch.v1alpha.JobDependency(this);
-      int from_bitField0_ = bitField0_;
-      result.items_ = internalGetItems();
-      result.items_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1alpha.JobDependency result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.items_ = internalGetItems();
+        result.items_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -767,6 +777,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.batch.v1alpha.JobDependency other) {
       if (other == com.google.cloud.batch.v1alpha.JobDependency.getDefaultInstance()) return this;
       internalGetMutableItems().mergeFrom(other.internalGetItems());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -799,6 +810,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
                     input.readMessage(
                         ItemsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableItems().getMutableMap().put(items__.getKey(), items__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -831,14 +843,14 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
         internalGetMutableItems() {
-      onChanged();
-      ;
       if (items_ == null) {
         items_ = com.google.protobuf.MapField.newMapField(ItemsDefaultEntryHolder.defaultEntry);
       }
       if (!items_.isMutable()) {
         items_ = items_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return items_;
     }
 
@@ -1008,6 +1020,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearItems() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableItems().getMutableMap().clear();
       return this;
     }
@@ -1035,6 +1048,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.batch.v1alpha.JobDependency.Type>
         getMutableItems() {
+      bitField0_ |= 0x00000001;
       return internalGetAdaptedItemsMap(internalGetMutableItems().getMutableMap());
     }
     /**
@@ -1057,6 +1071,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       }
 
       internalGetMutableItems().getMutableMap().put(key, itemsValueConverter.doBackward(value));
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1075,11 +1090,13 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllItems(
         java.util.Map<java.lang.String, com.google.cloud.batch.v1alpha.JobDependency.Type> values) {
       internalGetAdaptedItemsMap(internalGetMutableItems().getMutableMap()).putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableItemsValue() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableItems().getMutableMap();
     }
     /**
@@ -1101,6 +1118,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       }
 
       internalGetMutableItems().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1118,6 +1136,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllItemsValue(java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableItems().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

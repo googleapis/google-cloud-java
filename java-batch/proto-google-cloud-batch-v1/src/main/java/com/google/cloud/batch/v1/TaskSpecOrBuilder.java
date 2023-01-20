@@ -339,8 +339,7 @@ public interface TaskSpecOrBuilder
    *
    * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
-  @java.lang.Deprecated
-  /* nullable */
+  @java.lang.Deprecated /* nullable */
   java.lang.String getEnvironmentsOrDefault(
       java.lang.String key,
       /* nullable */
